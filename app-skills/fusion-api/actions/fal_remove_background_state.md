@@ -1,0 +1,25 @@
+# Oomol Fusion API · `fal_remove_background_state`
+
+Get fal-remove-background task state
+
+- **Service**: `fusion-api`
+- **Action**: `fal_remove_background_state`
+- **Action id**: `fusion-api.fal_remove_background_state`
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "fusion-api" --action "fal_remove_background_state"
+```
+
+## Run
+
+```bash
+oo connector run "fusion-api" --action "fal_remove_background_state" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
+
+> **Destructive action.** This removes or overwrites Oomol Fusion API data. Always confirm the target and get explicit user approval before running.

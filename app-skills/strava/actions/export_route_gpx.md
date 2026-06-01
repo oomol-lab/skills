@@ -1,0 +1,24 @@
+# Strava · `export_route_gpx`
+
+Export the GPX content of a specified Strava route.
+
+- **Service**: `strava`
+- **Action**: `export_route_gpx`
+- **Action id**: `strava.export_route_gpx`
+- **Required scopes**: strava.read
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "strava" --action "export_route_gpx"
+```
+
+## Run
+
+```bash
+oo connector run "strava" --action "export_route_gpx" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.

@@ -1,0 +1,23 @@
+# TPSCheck · `get_credits`
+
+Retrieve current TPSCheck usage, remaining requests, and plan reset details.
+
+- **Service**: `tpscheck`
+- **Action**: `get_credits`
+- **Action id**: `tpscheck.get_credits`
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "tpscheck" --action "get_credits"
+```
+
+## Run
+
+```bash
+oo connector run "tpscheck" --action "get_credits" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
