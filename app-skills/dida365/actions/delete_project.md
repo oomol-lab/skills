@@ -1,0 +1,26 @@
+# Dida365 · `delete_project`
+
+Delete a Dida365 project by project ID. The connector treats a missing project as already deleted.
+
+- **Service**: `dida365`
+- **Action**: `delete_project`
+- **Action id**: `dida365.delete_project`
+- **Required scopes**: dida365.write
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "dida365" --action "delete_project"
+```
+
+## Run
+
+```bash
+oo connector run "dida365" --action "delete_project" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
+
+> **Destructive action.** This removes or overwrites Dida365 data. Always confirm the target and get explicit user approval before running.

@@ -1,0 +1,23 @@
+# Vercel · `get_project_domain`
+
+Get a Vercel project domain.
+
+- **Service**: `vercel`
+- **Action**: `get_project_domain`
+- **Action id**: `vercel.get_project_domain`
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "vercel" --action "get_project_domain"
+```
+
+## Run
+
+```bash
+oo connector run "vercel" --action "get_project_domain" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.

@@ -1,0 +1,23 @@
+# ipdata.co · `get_continent_name`
+
+Look up the continent_name field for a specific IP address or the caller's current IP address.
+
+- **Service**: `ipdata_co`
+- **Action**: `get_continent_name`
+- **Action id**: `ipdata_co.get_continent_name`
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "ipdata_co" --action "get_continent_name"
+```
+
+## Run
+
+```bash
+oo connector run "ipdata_co" --action "get_continent_name" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
