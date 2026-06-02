@@ -6,11 +6,13 @@ import {
     buildPublishArgs,
     buildSourceLine,
     classify,
+    extractManifestTitle,
     extractManifestVersion,
     formatPlan,
     generateChangelog,
     parseSemver,
     readCodexConfig,
+    readManifestTitle,
     readManifestVersion,
     readPublishConfig,
     readRunConfig,
@@ -99,6 +101,42 @@ describe("readManifestVersion", () => {
     test("returns the version on success", () => {
         const readText = () => `---\nmetadata:\n  version: "3.1.0"\n---\n`;
         expect(readManifestVersion("app-skills/foo", readText)).toEqual(["3.1.0", null]);
+    });
+});
+
+// ---------------------------------------------------------------------------
+// manifest title extraction (display name)
+// ---------------------------------------------------------------------------
+describe("extractManifestTitle", () => {
+    test("reads a quoted title under metadata and strips the quotes", () => {
+        expect(extractManifestTitle(`---\nname: oo-ably\nmetadata:\n  title: "Ably"\n  version: "1.0.0"\n---\n`)).toBe("Ably");
+    });
+    test("preserves curated casing and inner spaces", () => {
+        expect(extractManifestTitle(`---\nmetadata:\n  title: "Alibaba Cloud OSS"\n---\n`)).toBe("Alibaba Cloud OSS");
+        expect(extractManifestTitle(`---\nmetadata:\n  title: "AbuseIPDB"\n---\n`)).toBe("AbuseIPDB");
+    });
+    test("reads an unquoted title", () => {
+        expect(extractManifestTitle(`---\nmetadata:\n  title: Airtable\n---\n`)).toBe("Airtable");
+    });
+    test("does not match a top-level (unindented) title key", () => {
+        expect(extractManifestTitle(`---\ntitle: Nope\n---\n`)).toBeNull();
+    });
+    test("returns null without frontmatter or when title is absent", () => {
+        expect(extractManifestTitle("# no frontmatter\n")).toBeNull();
+        expect(extractManifestTitle(`---\nname: x\n---\n`)).toBeNull();
+    });
+});
+
+describe("readManifestTitle", () => {
+    test("returns the title on success", () => {
+        const readText = () => `---\nmetadata:\n  title: "Convex"\n---\n`;
+        expect(readManifestTitle("app-skills/oo-convex", readText)).toBe("Convex");
+    });
+    test("returns null on read failure (non-fatal)", () => {
+        const readText = () => {
+            throw new Error("ENOENT");
+        };
+        expect(readManifestTitle("app-skills/oo-convex", readText)).toBeNull();
     });
 });
 
@@ -246,6 +284,18 @@ describe("buildPublishArgs", () => {
         expect(args[args.indexOf("--tags") + 1]).toBe("latest");
         expect(args[args.indexOf("--changelog") + 1]).toBe("notes");
     });
+    test("omits --name when no display name is given", () => {
+        expect(args).not.toContain("--name");
+    });
+    test("passes a curated display name via --name without disturbing the folder arg", () => {
+        const withName = buildPublishArgs(cfg, "/r/app-skills/oo-ably", "1.0.0", "notes", "Ably");
+        expect(withName[withName.indexOf("--name") + 1]).toBe("Ably");
+        // folder stays the first positional after the publish subcommand
+        expect(withName[withName.indexOf("publish") + 1]).toBe("/r/app-skills/oo-ably");
+    });
+    test("treats a blank display name as absent", () => {
+        expect(buildPublishArgs(cfg, "/r/app-skills/oo-ably", "1.0.0", "notes", "   ")).not.toContain("--name");
+    });
 });
 
 // ---------------------------------------------------------------------------
@@ -329,15 +379,23 @@ describe("generateChangelog", () => {
 describe("formatPlan", () => {
     test("renders a header and one row per target", () => {
         const targets = [
-            { slug: "ably", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null },
-            { slug: "slack", folder: "f", status: "update", latest: "1.0.0", version: "1.0.0", action: "skip" as const, error: "x" },
+            { slug: "oo-ably", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null, displayName: "Ably" },
+            { slug: "oo-slack", folder: "f", status: "update", latest: "1.0.0", version: "1.0.0", action: "skip" as const, error: "x", displayName: "Slack" },
         ];
         const lines = formatPlan(targets, "oomol");
         expect(lines[0]).toBe("Plan (2 candidate skill(s), owner=oomol):");
         expect(lines[1]).toContain("SKILL");
-        expect(lines[2]).toContain("ably");
+        expect(lines[1]).toContain("DISPLAY NAME");
+        expect(lines[2]).toContain("oo-ably");
+        expect(lines[2]).toContain("Ably");
         expect(lines[2]).toContain("PUBLISH");
         expect(lines[3]).toContain("SKIP");
+    });
+    test("shows (auto) when a target has no curated display name", () => {
+        const targets = [
+            { slug: "oo-x", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null },
+        ];
+        expect(formatPlan(targets, "oomol")[2]).toContain("(auto)");
     });
     test("falls back to placeholder owner", () => {
         expect(formatPlan([], "")[0]).toBe("Plan (0 candidate skill(s), owner=<your account>):");
@@ -350,6 +408,7 @@ describe("formatPlan", () => {
 interface FakeOpts {
     sync: unknown;
     versions?: Record<string, [string | null, string | null]>;
+    titles?: Record<string, string | null>;
     existing?: string[];
     publishCode?: (cmd: string[]) => number;
 }
@@ -366,6 +425,7 @@ function makeDeps(cfg: RunConfig, opts: FakeOpts) {
         },
         exists: p => (opts.existing ?? []).includes(p),
         readVersion: folder => opts.versions?.[folder] ?? [null, "no version stubbed"],
+        readTitle: folder => opts.titles?.[folder] ?? null,
         makeChangelog: (folder, slug, version) => {
             changelogCalls.push({ folder, slug, version });
             return "CHANGELOG";
@@ -438,21 +498,39 @@ describe("run", () => {
         const { deps, publishCalls, changelogCalls } = makeDeps(cfg, {
             sync: {
                 wouldPublish: [
-                    { slug: "ably", folder: "app-skills/ably", status: "new", latestVersion: null },
-                    { slug: "notion", folder: "app-skills/notion", status: "update", latestVersion: "1.1.0" },
+                    { slug: "oo-ably", folder: "app-skills/oo-ably", status: "new", latestVersion: null },
+                    { slug: "oo-notion", folder: "app-skills/oo-notion", status: "update", latestVersion: "1.1.0" },
                 ],
             },
-            versions: { "app-skills/ably": ["1.0.0", null], "app-skills/notion": ["1.2.0", null] },
+            versions: { "app-skills/oo-ably": ["1.0.0", null], "app-skills/oo-notion": ["1.2.0", null] },
+            titles: { "app-skills/oo-ably": "Ably", "app-skills/oo-notion": "Notion" },
         });
         expect(run(cfg, deps)).toBe(0);
         expect(changelogCalls).toHaveLength(2);
         expect(publishCalls).toHaveLength(2);
-        // built args carry the resolved manifest version and the generated changelog
-        const ably = publishCalls.find(c => c.includes("app-skills/ably"))!;
+        // built args carry the resolved manifest version, the curated display name, and the changelog
+        const ably = publishCalls.find(c => c.includes("app-skills/oo-ably"))!;
         expect(ably[ably.indexOf("--version") + 1]).toBe("1.0.0");
         expect(ably[ably.indexOf("--changelog") + 1]).toBe("CHANGELOG");
-        const notion = publishCalls.find(c => c.includes("app-skills/notion"))!;
+        // the slug keeps its oo- prefix, but the published display name is the curated title
+        expect(ably[ably.indexOf("publish") + 1]).toBe("app-skills/oo-ably");
+        expect(ably[ably.indexOf("--name") + 1]).toBe("Ably");
+        const notion = publishCalls.find(c => c.includes("app-skills/oo-notion"))!;
         expect(notion[notion.indexOf("--version") + 1]).toBe("1.2.0");
+        expect(notion[notion.indexOf("--name") + 1]).toBe("Notion");
+    });
+
+    test("publish without a curated title omits --name and warns", () => {
+        const cfg = { ...baseCfg };
+        const { deps, publishCalls, logs } = makeDeps(cfg, {
+            sync: { wouldPublish: [{ slug: "oo-x", folder: "app-skills/oo-x", status: "new", latestVersion: null }] },
+            versions: { "app-skills/oo-x": ["1.0.0", null] },
+            // no titles stubbed -> readTitle returns null
+        });
+        expect(run(cfg, deps)).toBe(0);
+        const x = publishCalls[0]!;
+        expect(x).not.toContain("--name");
+        expect(logs.some(l => l.includes("::warning::oo-x: no metadata.title"))).toBe(true);
     });
 
     test("publish failure -> exit 1 but other skills still attempted", () => {

@@ -109,6 +109,51 @@ export function readManifestVersion(
 }
 
 // ----------------------------------------------------------------------------
+// SKILL.md manifest title (the human-readable display name)
+// ----------------------------------------------------------------------------
+/**
+ * Extract metadata.title from SKILL.md *content*. Like `version:`, `title:` only
+ * ever appears indented under `metadata:` in these manifests, so we take the first
+ * indented `title:` line inside the frontmatter and strip one pair of surrounding
+ * quotes. Returns the title, or null when absent (a non-fatal: ClawHub then falls
+ * back to title-casing the slug). We pass this as `clawhub publish --name` so the
+ * published display name is the curated title (e.g. "Ably") rather than ClawHub's
+ * slug-derived default (e.g. "Oo Ably" from the `oo-ably` folder).
+ */
+export function extractManifestTitle(text: string): string | null {
+    const lines = text.split(/\r?\n/);
+    if (lines.length === 0 || lines[0]!.trim() !== "---")
+        return null;
+    for (const line of lines.slice(1)) {
+        if (line.trim() === "---")
+            break;
+        const m = /^\s+title:(.*)$/.exec(line);
+        if (!m)
+            continue;
+        let value = m[1]!.trim();
+        const quote = value[0];
+        if ((quote === "\"" || quote === "'") && value.length >= 2 && value[value.length - 1] === quote)
+            value = value.slice(1, -1);
+        value = value.trim();
+        return value || null;
+    }
+    return null;
+}
+
+/** Read a skill folder's SKILL.md title. Non-fatal: returns null on any read/parse miss. */
+export function readManifestTitle(
+    folder: string,
+    readText: (path: string) => string,
+): string | null {
+    try {
+        return extractManifestTitle(readText(join(folder, "SKILL.md")));
+    }
+    catch {
+        return null;
+    }
+}
+
+// ----------------------------------------------------------------------------
 // candidate classification
 // ----------------------------------------------------------------------------
 export interface Candidate {
@@ -128,6 +173,8 @@ export interface Target {
     version: string | null;
     action: Action;
     error: string | null;
+    /** Curated display name from metadata.title; null falls back to ClawHub's slug-derived name. */
+    displayName?: string | null;
 }
 
 /** Decide what to do with one candidate. `readVersion` (folder -> [version, err]) is injected. */
@@ -336,7 +383,17 @@ export interface PublishConfig {
     owner: string;
 }
 
-export function buildPublishArgs(cfg: PublishConfig, folder: string, version: string, changelog: string): string[] {
+export function buildPublishArgs(
+    cfg: PublishConfig,
+    folder: string,
+    version: string,
+    changelog: string,
+    displayName: string | null = null,
+): string[] {
+    // `clawhub publish` sets the registry display name to `--name` when given, else it
+    // title-cases the folder basename ("oo-ably" -> "Oo Ably"). Pass the curated title so
+    // the published display name drops the "Oo " prefix while the slug stays "oo-ably".
+    const name = (displayName ?? "").trim();
     return [
         cfg.bin,
         "--registry",
@@ -346,6 +403,7 @@ export function buildPublishArgs(cfg: PublishConfig, folder: string, version: st
         "--no-input",
         "publish",
         folder,
+        ...(name ? ["--name", name] : []),
         "--owner",
         cfg.owner,
         "--version",
@@ -363,11 +421,14 @@ export function buildPublishArgs(cfg: PublishConfig, folder: string, version: st
 export function formatPlan(targets: Target[], owner: string): string[] {
     const lines: string[] = [];
     lines.push(`Plan (${targets.length} candidate skill(s), owner=${owner || "<your account>"}):`);
-    lines.push(`${"SKILL".padEnd(28)} ${"STATUS".padEnd(8)} ${"REGISTRY".padEnd(12)} ${"MANIFEST".padEnd(12)} ACTION`);
+    lines.push(
+        `${"SKILL".padEnd(24)} ${"DISPLAY NAME".padEnd(22)} ${"STATUS".padEnd(8)} `
+        + `${"REGISTRY".padEnd(10)} ${"MANIFEST".padEnd(10)} ACTION`,
+    );
     for (const t of targets) {
         lines.push(
-            `${t.slug.padEnd(28)} ${(t.status ?? "?").padEnd(8)} ${(t.latest ?? "-").padEnd(12)} `
-            + `${String(t.version ?? "?").padEnd(12)} ${t.action.toUpperCase()}`,
+            `${t.slug.padEnd(24)} ${(t.displayName ?? "(auto)").padEnd(22)} ${(t.status ?? "?").padEnd(8)} `
+            + `${(t.latest ?? "-").padEnd(10)} ${String(t.version ?? "?").padEnd(10)} ${t.action.toUpperCase()}`,
         );
     }
     return lines;
@@ -390,6 +451,7 @@ export interface RunDeps {
     readText: (path: string) => string;
     exists: (path: string) => boolean;
     readVersion: (folder: string) => [string | null, string | null];
+    readTitle: (folder: string) => string | null;
     makeChangelog: (folder: string, slug: string, version: string) => string;
     publish: (cmd: string[]) => number;
     publishConfig: PublishConfig;
@@ -417,7 +479,9 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
         return 0;
     }
 
-    const targets = sel.candidates.map(c => classify(c, cfg.root, deps.readVersion));
+    const targets = sel.candidates
+        .map(c => classify(c, cfg.root, deps.readVersion))
+        .map(t => ({ ...t, displayName: deps.readTitle(t.folder) }));
     const errors = targets.filter(t => t.error).map(t => t.error!);
 
     deps.log("");
@@ -453,9 +517,11 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
     let idx = 0;
     for (const t of toPublish) {
         idx++;
-        deps.log(`==> [${idx}/${total}] ${t.slug} @ ${t.version} — generating changelog…`);
+        if (!t.displayName)
+            deps.log(`::warning::${t.slug}: no metadata.title — ClawHub will derive the display name from the slug.`);
+        deps.log(`==> [${idx}/${total}] ${t.slug} (${t.displayName ?? "auto"}) @ ${t.version} — generating changelog…`);
         const changelog = deps.makeChangelog(t.folder, t.slug, t.version!);
-        const cmd = buildPublishArgs(deps.publishConfig, t.folder, t.version!, changelog);
+        const cmd = buildPublishArgs(deps.publishConfig, t.folder, t.version!, changelog, t.displayName ?? null);
         const code = deps.publish(cmd);
         if (code === 0) {
             published.push([t.slug, t.version!]);
@@ -559,6 +625,7 @@ if (import.meta.main) {
         readText,
         exists: existsSync,
         readVersion: folder => readManifestVersion(folder, readText),
+        readTitle: folder => readManifestTitle(folder, readText),
         makeChangelog: (folder, slug, version) => generateChangelog(folder, slug, version, cfg.repo, cfg.sha, codexCfg, changelogDeps),
         publish: realPublish,
         publishConfig: readPublishConfig(getenv),
