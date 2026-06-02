@@ -21,9 +21,9 @@
  * spawning anything. The real wiring lives behind `import.meta.main` at the bottom.
  * Run with: `bun clawhub_publish.ts`. Tests: `bun test`.
  */
-import { existsSync, mkdtempSync, readFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { basename, join } from "node:path";
+import { basename, join, sep } from "node:path";
 import process from "node:process";
 
 // ----------------------------------------------------------------------------
@@ -261,6 +261,58 @@ export function changelogPrompt(slug: string, version: string): string {
         + `capabilities as 3-6 short bullet points. Output ONLY the Markdown body — no top-level `
         + `title heading, no surrounding code fences, no preamble or sign-off.`
     );
+}
+
+// ----------------------------------------------------------------------------
+// changelog cache (content-addressed; shared by the pre-generate and publish steps)
+// ----------------------------------------------------------------------------
+/**
+ * Bump this when `changelogPrompt` or the codex invocation changes, so previously
+ * cached bodies are treated as stale and regenerated. It is folded into the cache key.
+ */
+export const CHANGELOG_PROMPT_VERSION = "1";
+
+export interface HashInputsConfig {
+    model: string;
+    effort: string;
+    promptVersion: string;
+}
+
+export interface HashInputsDeps {
+    /** Every file under the skill folder, as paths relative to it (order-independent). */
+    listFiles: (folder: string) => string[];
+    readText: (path: string) => string;
+    /** Hex digest of a string (e.g. sha256). */
+    hash: (text: string) => string;
+}
+
+/**
+ * Content-addressed cache key for one skill's changelog. Folds in every file under the
+ * skill folder plus the codex model/effort/prompt version, so the key changes iff an
+ * input that could change the generated changelog changes. Same inputs -> same key, so
+ * the pre-generate step's output is reused at publish time and across CI re-runs.
+ *
+ * Side effects are injected (`listFiles`/`readText`/`hash`) so the keying logic stays
+ * pure and unit-testable, and so the pre-generate and publish steps key identically.
+ */
+export function hashSkillInputs(folder: string, cfg: HashInputsConfig, deps: HashInputsDeps): string {
+    const parts: string[] = [`prompt=${cfg.promptVersion}`, `model=${cfg.model}`, `effort=${cfg.effort}`];
+    for (const rel of deps.listFiles(folder).slice().sort()) {
+        let digest: string;
+        try {
+            digest = deps.hash(deps.readText(join(folder, rel)));
+        }
+        catch {
+            digest = "<unreadable>";
+        }
+        parts.push(`${rel}\n${digest}`);
+    }
+    return deps.hash(parts.join("\n--\n"));
+}
+
+/** Filesystem path of the cached changelog body for a given content hash. */
+export function changelogCachePath(cacheDir: string, hash: string): string {
+    return join(cacheDir, `${hash}.md`);
 }
 
 export interface CodexConfig {
@@ -606,6 +658,27 @@ function realPublish(cmd: string[]): number {
     return p.exitCode;
 }
 
+// Shared IO helpers for the content-addressed changelog cache. Exported so the
+// pre-generate step (clawhub_changelog.ts) keys cache entries with the *exact* same
+// file listing + hash as the publish step reads them back with — any divergence here
+// would silently turn every lookup into a cache miss.
+export function sha256Hex(text: string): string {
+    return new Bun.CryptoHasher("sha256").update(text).digest("hex");
+}
+
+export function listSkillFiles(folder: string): string[] {
+    return readdirSync(folder, { recursive: true })
+        .map(p => String(p).split(sep).join("/"))
+        .filter((rel) => {
+            try {
+                return statSync(join(folder, rel)).isFile();
+            }
+            catch {
+                return false;
+            }
+        });
+}
+
 if (import.meta.main) {
     const getenv: Getenv = n => process.env[n];
     const cfg = readRunConfig(getenv);
@@ -621,12 +694,39 @@ if (import.meta.main) {
         log,
     };
 
+    // When CHANGELOG_CACHE_DIR is set, the pre-generate step has already produced each
+    // changelog body in parallel; read it by content hash and append the source line.
+    // A cache miss (codex failed upstream, or pre-generate was skipped) falls back to a
+    // plain changelog — publish never runs codex itself, so it stays fast and serial.
+    const cacheDir = env(getenv, "CHANGELOG_CACHE_DIR").trim();
+    const hashCfg: HashInputsConfig = { model: codexCfg.model, effort: codexCfg.effort, promptVersion: CHANGELOG_PROMPT_VERSION };
+    const hashDeps: HashInputsDeps = { listFiles: listSkillFiles, readText, hash: sha256Hex };
+    const changelogFromCache = (folder: string, slug: string, version: string): string => {
+        const path = changelogCachePath(cacheDir, hashSkillInputs(folder, hashCfg, hashDeps));
+        if (existsSync(path)) {
+            let body = "";
+            try {
+                body = readText(path).trim();
+            }
+            catch {
+                body = "";
+            }
+            if (body) {
+                const sourceLine = buildSourceLine(cfg.repo, cfg.sha);
+                return sourceLine ? `${body}\n\n${sourceLine}` : body;
+            }
+        }
+        return buildFallbackChangelog(slug, version, cfg.repo, cfg.sha);
+    };
+
     const deps: RunDeps = {
         readText,
         exists: existsSync,
         readVersion: folder => readManifestVersion(folder, readText),
         readTitle: folder => readManifestTitle(folder, readText),
-        makeChangelog: (folder, slug, version) => generateChangelog(folder, slug, version, cfg.repo, cfg.sha, codexCfg, changelogDeps),
+        makeChangelog: cacheDir
+            ? changelogFromCache
+            : (folder, slug, version) => generateChangelog(folder, slug, version, cfg.repo, cfg.sha, codexCfg, changelogDeps),
         publish: realPublish,
         publishConfig: readPublishConfig(getenv),
         log,

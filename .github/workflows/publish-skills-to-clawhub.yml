@@ -67,8 +67,9 @@ env:
 jobs:
   publish:
     runs-on: blacksmith-4vcpu-ubuntu-2404
-    # Generous: one codex exec runs per published skill (~20s each at effort=medium), so a
-    # large first-time catalog publish can take a while. Job hard-limit on hosted runners is 6h.
+    # Generous: changelogs are pre-generated in parallel (default 10 at a time, ~20s each at
+    # effort=medium) and cached across re-runs, but a first-time catalog publish of hundreds
+    # of skills can still take a while. Job hard-limit on hosted runners is 6h.
     timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
@@ -156,14 +157,58 @@ jobs:
             sync --all --json --no-clawdbot-roots --dry-run --concurrency 16 \
             | tee "${RUNNER_TEMP}/clawhub-sync.json"
 
+      # Restore previously-generated changelogs so a re-run (or a publish of an unchanged
+      # skill) reuses them instead of paying for codex again. Cache keys are immutable, so
+      # the key is unique per attempt and restore-keys pulls the most recent prior snapshot
+      # to seed it — that way a re-run after a partial/failed attempt keeps its progress.
+      # On Blacksmith runners actions/cache transparently uses Blacksmith's colocated cache.
+      - name: Restore changelog cache
+        if: inputs.mode != 'dry-run' && inputs.generate_changelog
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/changelog-cache
+          key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            changelog-
+
+      # Generate every publishable skill's changelog up front, in parallel (default 10 at a
+      # time), writing each to a content-addressed file in the cache dir. codex runs ONLY
+      # here — best-effort, so a failure for one skill never blocks the publish. The publish
+      # step below reads these by the same content hash.
+      - name: Generate changelogs (parallel)
+        if: inputs.mode != 'dry-run' && inputs.generate_changelog
+        env:
+          MODE: ${{ inputs.mode }}
+          SKILL_PATH: ${{ inputs.skill_path }}
+          SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
+          CHANGELOG_CACHE_DIR: ${{ runner.temp }}/changelog-cache
+          CHANGELOG_CONCURRENCY: "10"
+          CODEX_CHANGELOG_ENABLED: ${{ inputs.generate_changelog }}
+          CODEX_BIN: codex
+          # API key + base URL come from secrets only (never hardcoded in the repo).
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_BASE_URL: ${{ secrets.CODEX_BASE_URL }}
+        run: bun contrib/scripts/clawhub_changelog.ts
+
+      # Persist the cache (even if a later step fails) so the next re-run starts from here.
+      - name: Save changelog cache
+        if: always() && inputs.mode != 'dry-run' && inputs.generate_changelog
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/changelog-cache
+          key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
+
       - name: Publish using metadata.version
         env:
           MODE: ${{ inputs.mode }}
           SKILL_PATH: ${{ inputs.skill_path }}
           SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
           CLAWHUB_BIN: clawhub
-          # Changelog generation via codex exec (one run per published skill).
+          # Changelogs were pre-generated in parallel above; publish just reads them from
+          # this cache dir by content hash (a miss falls back to a plain changelog — publish
+          # never runs codex itself, so this step stays fast and serial).
           CODEX_CHANGELOG_ENABLED: ${{ inputs.generate_changelog }}
+          CHANGELOG_CACHE_DIR: ${{ runner.temp }}/changelog-cache
           CODEX_BIN: codex
           # API key + base URL come from secrets only (never hardcoded in the repo).
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
