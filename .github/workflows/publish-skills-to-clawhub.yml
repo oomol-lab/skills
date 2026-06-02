@@ -7,7 +7,7 @@ name: Publish Skills to ClawHub
 # How it works:
 #   1. `clawhub sync --dry-run --json` detects which skills are new or changed
 #      (scoped to app-skills/ only, so other directories are never published).
-#   2. .github/scripts/clawhub_publish.py reads metadata.version from each
+#   2. contrib/scripts/clawhub_publish.ts reads metadata.version from each
 #      changed skill and runs `clawhub publish <folder> --version <metadata.version>`.
 #   3. A changed skill whose metadata.version was NOT bumped above the published
 #      version aborts the run — bump metadata.version in its SKILL.md to publish.
