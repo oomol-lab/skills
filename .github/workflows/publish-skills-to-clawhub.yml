@@ -146,13 +146,14 @@ jobs:
       - name: Diff skills against the registry
         run: |
           set -euo pipefail
+          # Registry check phase is per-skill; clawhub caps concurrency at 16 (default 4).
           clawhub \
             --workdir "$SKILLS_ROOT" \
             --dir . \
             --registry "$CLAWHUB_REGISTRY" \
             --site "$CLAWHUB_SITE" \
             --no-input \
-            sync --all --json --no-clawdbot-roots --dry-run \
+            sync --all --json --no-clawdbot-roots --dry-run --concurrency 16 \
             | tee "${RUNNER_TEMP}/clawhub-sync.json"
 
       - name: Publish using metadata.version
