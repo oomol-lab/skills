@@ -1,0 +1,157 @@
+name: Publish Skills to ClawHub
+
+# Publishes the skill folders under app-skills/ to ClawHub, using each skill's
+# declared metadata.version (from its SKILL.md frontmatter) as the published
+# version — NOT ClawHub's default registry+bump auto-versioning.
+#
+# How it works:
+#   1. `clawhub sync --dry-run --json` detects which skills are new or changed
+#      (scoped to app-skills/ only, so other directories are never published).
+#   2. .github/scripts/clawhub_publish.py reads metadata.version from each
+#      changed skill and runs `clawhub publish <folder> --version <metadata.version>`.
+#   3. A changed skill whose metadata.version was NOT bumped above the published
+#      version aborts the run — bump metadata.version in its SKILL.md to publish.
+#
+# Run it from the Actions tab ("Run workflow") and pick a mode:
+#   dry-run         Preview the plan (which skills, at which version). No upload.
+#   publish-single  Publish one folder, e.g. app-skills/<slug>.
+#   publish-catalog Publish every new/changed skill under app-skills/.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to run.
+        type: choice
+        required: true
+        default: dry-run
+        options:
+          - dry-run
+          - publish-single
+          - publish-catalog
+      skill_path:
+        description: Skill folder for publish-single, for example app-skills/<slug>.
+        type: string
+        required: false
+        default: ""
+      generate_changelog:
+        description: Generate each skill's changelog with codex exec (one run per skill). Off uses a plain changelog.
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: read
+
+env:
+  # Bump to adopt a newer ClawHub CLI release.
+  CLAWHUB_CLI_VERSION: 0.18.0
+  CLAWHUB_OWNER: oomol
+  SKILLS_ROOT: app-skills
+  CLAWHUB_REGISTRY: https://clawhub.ai
+  CLAWHUB_SITE: https://clawhub.ai
+  # Codex CLI (changelog generation). Model/effort are fixed config; the API key and
+  # base URL are NOT hardcoded — they come from secrets.OPENAI_API_KEY / secrets.CODEX_BASE_URL.
+  CODEX_CLI_VERSION: 0.135.0
+  CODEX_MODEL: gpt-5.5
+  CODEX_EFFORT: medium
+  CODEX_PROVIDER: oomol
+  CODEX_WIRE_API: responses
+  CODEX_API_KEY_ENV: OPENAI_API_KEY
+
+jobs:
+  publish:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    # Generous: one codex exec runs per published skill (~20s each at effort=medium), so a
+    # large first-time catalog publish can take a while. Job hard-limit on hosted runners is 6h.
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate inputs
+        env:
+          MODE: ${{ inputs.mode }}
+          SKILL_PATH: ${{ inputs.skill_path }}
+        run: |
+          set -euo pipefail
+          if [[ "$MODE" == "publish-single" ]]; then
+            if [[ -z "$SKILL_PATH" ]]; then
+              echo "::error::skill_path is required when mode is publish-single."
+              exit 1
+            fi
+            case "$SKILL_PATH" in
+              "$SKILLS_ROOT"/*) ;;
+              *)
+                echo "::error::skill_path must point under $SKILLS_ROOT/, for example $SKILLS_ROOT/<slug>."
+                exit 1
+                ;;
+            esac
+            if [[ ! -f "${SKILL_PATH%/}/SKILL.md" ]]; then
+              echo "::error::No SKILL.md found at ${SKILL_PATH%/}/SKILL.md."
+              exit 1
+            fi
+          fi
+
+      # Node runs the published clawhub/codex CLIs; Bun runs the orchestrator script.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+
+      - name: Install ClawHub CLI
+        run: npm install -g "clawhub@${CLAWHUB_CLI_VERSION}"
+
+      - name: Install Codex CLI
+        if: inputs.mode != 'dry-run' && inputs.generate_changelog
+        run: npm install -g "@openai/codex@${CODEX_CLI_VERSION}"
+
+      - name: Configure ClawHub auth
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLAWHUB_TOKEN:-}" ]]; then
+            echo "::error::Missing secret CLAWHUB_TOKEN"
+            exit 1
+          fi
+          config_path="${RUNNER_TEMP}/clawhub-config.json"
+          jq -n --arg registry "$CLAWHUB_REGISTRY" --arg token "$CLAWHUB_TOKEN" \
+            '{registry: $registry, token: $token}' > "$config_path"
+          echo "CLAWHUB_CONFIG_PATH=$config_path" >> "$GITHUB_ENV"
+
+      - name: Diff skills against the registry
+        run: |
+          set -euo pipefail
+          clawhub \
+            --workdir "$SKILLS_ROOT" \
+            --dir . \
+            --registry "$CLAWHUB_REGISTRY" \
+            --site "$CLAWHUB_SITE" \
+            --no-input \
+            sync --all --json --no-clawdbot-roots --dry-run \
+            | tee "${RUNNER_TEMP}/clawhub-sync.json"
+
+      - name: Publish using metadata.version
+        env:
+          MODE: ${{ inputs.mode }}
+          SKILL_PATH: ${{ inputs.skill_path }}
+          SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
+          CLAWHUB_BIN: clawhub
+          # Changelog generation via codex exec (one run per published skill).
+          CODEX_CHANGELOG_ENABLED: ${{ inputs.generate_changelog }}
+          CODEX_BIN: codex
+          # API key + base URL come from secrets only (never hardcoded in the repo).
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_BASE_URL: ${{ secrets.CODEX_BASE_URL }}
+        run: bun contrib/scripts/clawhub_publish.ts
+
+      - name: Upload sync diff artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clawhub-sync-json
+          path: ${{ runner.temp }}/clawhub-sync.json
+          if-no-files-found: warn
