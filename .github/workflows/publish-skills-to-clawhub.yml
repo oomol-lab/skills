@@ -12,6 +12,9 @@ name: Publish Skills to ClawHub
 #   3. A changed skill whose metadata.version was NOT bumped above the published
 #      version aborts the run — bump metadata.version in its SKILL.md to publish.
 #
+# The ClawHub CLI is run from source (openclaw/clawhub, pinned commit) because the
+# published npm release does not yet support `sync --json`, which step 1 relies on.
+#
 # Run it from the Actions tab ("Run workflow") and pick a mode:
 #   dry-run         Preview the plan (which skills, at which version). No upload.
 #   publish-single  Publish one folder, e.g. app-skills/<slug>.
@@ -44,8 +47,10 @@ permissions:
   contents: read
 
 env:
-  # Bump to adopt a newer ClawHub CLI release.
-  CLAWHUB_CLI_VERSION: 0.18.0
+  # The published npm clawhub release lacks `sync --json`, so the CLI is run from
+  # source. Pin to a commit of openclaw/clawhub; bump to adopt newer CLI behavior.
+  CLAWHUB_SOURCE_REPO: openclaw/clawhub
+  CLAWHUB_SOURCE_REF: dcbc38999f1a7bae27187e236e28dbc4c605051a
   CLAWHUB_OWNER: oomol
   SKILLS_ROOT: app-skills
   CLAWHUB_REGISTRY: https://clawhub.ai
@@ -92,7 +97,7 @@ jobs:
             fi
           fi
 
-      # Node runs the published clawhub/codex CLIs; Bun runs the orchestrator script.
+      # Node runs the codex CLI (npm); Bun runs the ClawHub CLI from source and the orchestrator.
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -101,8 +106,24 @@ jobs:
         with:
           bun-version-file: .bun-version
 
-      - name: Install ClawHub CLI
-        run: npm install -g "clawhub@${CLAWHUB_CLI_VERSION}"
+      - name: Check out ClawHub CLI source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.CLAWHUB_SOURCE_REPO }}
+          ref: ${{ env.CLAWHUB_SOURCE_REF }}
+          path: clawhub-source
+
+      - name: Install ClawHub CLI from source
+        run: |
+          set -euo pipefail
+          ( cd clawhub-source && bun install --frozen-lockfile )
+          mkdir -p "$RUNNER_TEMP/bin"
+          cat > "$RUNNER_TEMP/bin/clawhub" <<EOF
+          #!/usr/bin/env bash
+          exec bun "$GITHUB_WORKSPACE/clawhub-source/packages/clawhub/src/cli.ts" "\$@"
+          EOF
+          chmod +x "$RUNNER_TEMP/bin/clawhub"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
 
       - name: Install Codex CLI
         if: inputs.mode != 'dry-run' && inputs.generate_changelog
