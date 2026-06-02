@@ -1,0 +1,86 @@
+---
+name: oo-feishu-custom-bot
+description: "Feishu Custom Bot (feishu.cn). Use this skill for ANY Feishu Custom Bot request — reading, creating, and updating data. Whenever a task involves Feishu Custom Bot, use this skill instead of calling the API directly."
+allowed-tools: [Bash(oo *)]
+metadata:
+  title: "Feishu Custom Bot"
+  author: "OOMOL"
+  version: "1.0.0"
+  service: "feishu_custom_bot"
+  categories: "Communication"
+  homepage: "https://www.feishu.cn"
+  icon: "https://static.oomol.com/logo/third-party/feishu_custom_bot.svg"
+---
+
+# Feishu Custom Bot
+
+Operate **Feishu Custom Bot** through your OOMOL-connected account. This skill calls the `feishu_custom_bot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+
+Category: Communication. Exposes 5 action(s).
+
+## Running an action
+
+Assume the user has already installed the oo CLI, signed in, and connected Feishu Custom Bot. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+
+**1. Inspect the contract** to get the authoritative input/output schema before building a payload:
+
+```bash
+oo connector schema "feishu_custom_bot" --action "<action_name>"
+```
+
+**2. Run the action** with a JSON payload that matches the input schema:
+
+```bash
+oo connector run "feishu_custom_bot" --action "<action_name>" --data '<json>' --json
+```
+
+- `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
+- The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
+
+Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+
+## Available actions
+
+- [`send_image_message`](actions/send_image_message.md) — Send an image message through the Feishu/Lark custom bot webhook.
+- [`send_interactive_message`](actions/send_interactive_message.md) — Send an interactive card message through the Feishu/Lark custom bot webhook.
+- [`send_post_message`](actions/send_post_message.md) — Send a post rich-text message through the Feishu/Lark custom bot webhook.
+- [`send_share_chat_message`](actions/send_share_chat_message.md) — Send a shared-chat card through the Feishu/Lark custom bot webhook.
+- [`send_text_message`](actions/send_text_message.md) — Send a text message through the Feishu/Lark custom bot webhook.
+
+## Safety
+
+- Read actions (get / list / search) are safe to run directly.
+- **Create, update, send, or post actions change Feishu Custom Bot state — confirm the exact payload and effect with the user before running.**
+- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+
+## First-time setup
+
+These are **one-time** steps — do not repeat them on every call. Run a step only when a command fails for the matching reason.
+
+- **`oo: command not found`** — install the oo CLI (other platforms: <https://cli.oomol.com/install-guide.md>):
+
+  ```bash
+  curl -fsSL https://cli.oomol.com/install.sh | bash    # macOS / Linux
+  ```
+
+  ```powershell
+  irm https://cli.oomol.com/install.ps1 | iex           # Windows PowerShell
+  ```
+
+- **Not signed in / authentication error** — sign in to your OOMOL account once:
+
+  ```bash
+  oo auth login
+  ```
+
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Feishu Custom Bot is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+
+  ```text
+  https://console.oomol.com/app-connections?provider=feishu_custom_bot
+  ```
+
+- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+## Resources
+
+- Feishu Custom Bot homepage: https://www.feishu.cn

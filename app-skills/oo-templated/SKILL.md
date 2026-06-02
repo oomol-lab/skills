@@ -1,0 +1,88 @@
+---
+name: oo-templated
+description: "Templated (templated.io). Use this skill for ANY Templated request — reading, creating, updating, and deleting data. Whenever a task involves Templated, use this skill instead of calling the API directly."
+allowed-tools: [Bash(oo *)]
+metadata:
+  title: "Templated"
+  author: "OOMOL"
+  version: "1.0.0"
+  service: "templated"
+  categories: "Design & Media, Marketing"
+  homepage: "https://templated.io"
+  icon: "https://static.oomol.com/logo/third-party/Templated.svg"
+---
+
+# Templated
+
+Operate **Templated** through your OOMOL-connected account. This skill calls the `templated` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+
+Category: Design & Media, Marketing. Exposes 7 action(s).
+
+## Running an action
+
+Assume the user has already installed the oo CLI, signed in, and connected Templated. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+
+**1. Inspect the contract** to get the authoritative input/output schema before building a payload:
+
+```bash
+oo connector schema "templated" --action "<action_name>"
+```
+
+**2. Run the action** with a JSON payload that matches the input schema:
+
+```bash
+oo connector run "templated" --action "<action_name>" --data '<json>' --json
+```
+
+- `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
+- The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
+
+Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+
+## Available actions
+
+- [`create_render`](actions/create_render.md) — Create a Templated render from one template with optional shared layer overrides and image or PDF output settings.
+- [`delete_render`](actions/delete_render.md) — Delete a Templated render by its render ID.
+- [`get_account`](actions/get_account.md) — Get the current Templated account associated with the API key.
+- [`get_render`](actions/get_render.md) — Retrieve a single Templated render by its render ID.
+- [`get_template`](actions/get_template.md) — Retrieve a single Templated template by its template ID.
+- [`list_renders`](actions/list_renders.md) — List all renders owned by the current Templated account.
+- [`list_templates`](actions/list_templates.md) — List Templated templates with optional filters for name, dimensions, and tags.
+
+## Safety
+
+- Read actions (get / list / search) are safe to run directly.
+- **Create, update, send, or post actions change Templated state — confirm the exact payload and effect with the user before running.**
+- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+
+## First-time setup
+
+These are **one-time** steps — do not repeat them on every call. Run a step only when a command fails for the matching reason.
+
+- **`oo: command not found`** — install the oo CLI (other platforms: <https://cli.oomol.com/install-guide.md>):
+
+  ```bash
+  curl -fsSL https://cli.oomol.com/install.sh | bash    # macOS / Linux
+  ```
+
+  ```powershell
+  irm https://cli.oomol.com/install.ps1 | iex           # Windows PowerShell
+  ```
+
+- **Not signed in / authentication error** — sign in to your OOMOL account once:
+
+  ```bash
+  oo auth login
+  ```
+
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Templated is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+
+  ```text
+  https://console.oomol.com/app-connections?provider=templated
+  ```
+
+- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+## Resources
+
+- Templated homepage: https://templated.io
