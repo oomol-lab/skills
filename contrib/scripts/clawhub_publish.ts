@@ -21,7 +21,7 @@
  * spawning anything. The real wiring lives behind `import.meta.main` at the bottom.
  * Run with: `bun clawhub_publish.ts`. Tests: `bun test`.
  */
-import { existsSync, mkdtempSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { appendFileSync, existsSync, mkdtempSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { basename, join, sep } from "node:path";
 import process from "node:process";
@@ -435,6 +435,32 @@ export interface PublishConfig {
     owner: string;
 }
 
+/** Result of one `clawhub publish` invocation: exit code plus its combined stdout+stderr. */
+export interface PublishOutcome {
+    code: number;
+    output: string;
+}
+
+/**
+ * True when a failed publish was rejected by ClawHub's hourly new-skill quota (the message is
+ * "Rate limit: max 5 new skills per hour. Please wait before publishing more."). In drip mode
+ * this is expected back-pressure, not a failure — we stop and let the next scheduled run resume.
+ */
+export function isRateLimitError(output: string): boolean {
+    return /rate limit/i.test(output) || /new skills per hour/i.test(output);
+}
+
+/**
+ * Pick which publish targets to attempt this run. Sorting by slug makes the selection
+ * deterministic so a capped (drip) run always advances through the catalog in the same order —
+ * already-published skills drop out of the next diff, so progress is monotonic. `limit <= 0`
+ * returns every target (still sorted), preserving the legacy "publish everything" behavior.
+ */
+export function limitPublishTargets<T extends { slug: string }>(targets: readonly T[], limit: number): T[] {
+    const sorted = targets.slice().sort((a, b) => a.slug.localeCompare(b.slug));
+    return limit > 0 && sorted.length > limit ? sorted.slice(0, limit) : sorted;
+}
+
 export function buildPublishArgs(
     cfg: PublishConfig,
     folder: string,
@@ -497,6 +523,14 @@ export interface RunConfig {
     syncJsonPath: string;
     repo: string;
     sha: string;
+    /**
+     * Max skills to publish in a single run; 0 means "no cap" (the legacy behavior — publish
+     * every changed skill). When > 0 the run is in "drip" mode: it publishes at most this many
+     * skills (sorted by slug for deterministic, monotonic progress across runs) and treats the
+     * rest as deferred. ClawHub caps NEW-skill publishes at 5/hour, so a full-catalog backfill
+     * must be spread across many scheduled runs — see drip-publish-skills-to-clawhub.yml.
+     */
+    publishLimit: number;
 }
 
 export interface RunDeps {
@@ -505,9 +539,11 @@ export interface RunDeps {
     readVersion: (folder: string) => [string | null, string | null];
     readTitle: (folder: string) => string | null;
     makeChangelog: (folder: string, slug: string, version: string) => string;
-    publish: (cmd: string[]) => number;
+    publish: (cmd: string[]) => PublishOutcome;
     publishConfig: PublishConfig;
     log: (line: string) => void;
+    /** Optional sink for a machine-readable run summary (the CLI wiring writes it to $GITHUB_OUTPUT). */
+    report?: (summary: { published: number; remaining: number; rateLimited: boolean }) => void;
 }
 
 /** Pure orchestration: returns the process exit code, never calls process.exit. */
@@ -528,6 +564,7 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
     }
     if (sel.candidates.length === 0) {
         deps.log(`No new or changed skills under ${cfg.root}/. Nothing to publish.`);
+        deps.report?.({ published: 0, remaining: 0, rateLimited: false });
         return 0;
     }
 
@@ -557,26 +594,42 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
         return 1;
     }
 
-    const toPublish = targets.filter(t => t.action === "publish");
-    if (toPublish.length === 0) {
+    const allToPublish = targets.filter(t => t.action === "publish");
+    if (allToPublish.length === 0) {
         deps.log("Nothing to publish after version checks.");
+        deps.report?.({ published: 0, remaining: 0, rateLimited: false });
         return 0;
     }
 
+    // Drip mode (publishLimit > 0): publish at most `publishLimit` skills this run and defer
+    // the rest. ClawHub caps NEW-skill publishes at 5/hour, so a full-catalog backfill is
+    // spread across many scheduled runs (see drip-publish-skills-to-clawhub.yml). With no cap
+    // (publishLimit === 0) this is exactly the legacy behavior: publish every changed skill.
+    const drip = cfg.publishLimit > 0;
+    const selected = limitPublishTargets(allToPublish, cfg.publishLimit);
+
     const published: [string, string][] = [];
     const failed: [string, string, number][] = [];
-    const total = toPublish.length;
+    const total = selected.length;
+    let rateLimited = false;
     let idx = 0;
-    for (const t of toPublish) {
+    for (const t of selected) {
         idx++;
         if (!t.displayName)
             deps.log(`::warning::${t.slug}: no metadata.title — ClawHub will derive the display name from the slug.`);
         deps.log(`==> [${idx}/${total}] ${t.slug} (${t.displayName ?? "auto"}) @ ${t.version} — generating changelog…`);
         const changelog = deps.makeChangelog(t.folder, t.slug, t.version!);
         const cmd = buildPublishArgs(deps.publishConfig, t.folder, t.version!, changelog, t.displayName ?? null);
-        const code = deps.publish(cmd);
+        const { code, output } = deps.publish(cmd);
         if (code === 0) {
             published.push([t.slug, t.version!]);
+        }
+        else if (drip && isRateLimitError(output)) {
+            // Hourly new-skill quota exhausted: stop now and let the next scheduled run resume.
+            // Expected back-pressure, not a failure — the remaining skills are simply deferred.
+            rateLimited = true;
+            deps.log(`::warning::${t.slug}: ClawHub rate limit reached — deferring this and the remaining skill(s) to the next scheduled run.`);
+            break;
         }
         else {
             failed.push([t.slug, t.version!, code]);
@@ -584,13 +637,25 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
         }
     }
 
+    // Skills still needing a future publish: everything publishable this run minus what we
+    // actually published and minus genuine failures (those are surfaced as errors, not deferred).
+    const remaining = allToPublish.length - published.length - failed.length;
+
     deps.log("");
-    deps.log(`Published ${published.length}/${total} skill(s).`);
+    deps.log(`Published ${published.length}/${total} skill(s)${drip ? " this run" : ""}.`);
     for (const [slug, version] of published) deps.log(`  ✓ ${slug} @ ${version}`);
+    deps.report?.({ published: published.length, remaining, rateLimited });
+
     if (failed.length) {
         deps.log("Failed:");
         for (const [slug, version, code] of failed) deps.log(`  ✗ ${slug} @ ${version} (exit ${code})`);
         return 1;
+    }
+    if (remaining > 0) {
+        deps.log(
+            `${remaining} skill(s) still pending (${rateLimited ? "rate-limited" : "deferred by the per-run cap"}); `
+            + `the next scheduled run will continue.`,
+        );
     }
     return 0;
 }
@@ -614,6 +679,7 @@ export function readRunConfig(getenv: Getenv): RunConfig {
         syncJsonPath: env(getenv, "SYNC_JSON"),
         repo: env(getenv, "GITHUB_REPOSITORY"),
         sha: env(getenv, "GITHUB_SHA"),
+        publishLimit: Math.max(0, Number.parseInt(env(getenv, "PUBLISH_LIMIT", "0"), 10) || 0),
     };
 }
 
@@ -653,9 +719,17 @@ function realSpawnCapture(cmd: string[]): Spawned {
     return { exitCode: p.exitCode, stdout: decode(p.stdout), stderr: decode(p.stderr) };
 }
 
-function realPublish(cmd: string[]): number {
-    const p = Bun.spawnSync(cmd, { stdin: "ignore", stdout: "inherit", stderr: "inherit" });
-    return p.exitCode;
+function realPublish(cmd: string[]): PublishOutcome {
+    // Capture (rather than inherit) so we can inspect the output for ClawHub's rate-limit
+    // message, then echo it through so the live log is unchanged.
+    const p = Bun.spawnSync(cmd, { stdin: "ignore", stdout: "pipe", stderr: "pipe" });
+    const out = decode(p.stdout);
+    const err = decode(p.stderr);
+    if (out)
+        process.stdout.write(out);
+    if (err)
+        process.stderr.write(err);
+    return { code: p.exitCode, output: `${out}\n${err}` };
 }
 
 // Shared IO helpers for the content-addressed changelog cache. Exported so the
@@ -719,6 +793,23 @@ if (import.meta.main) {
         return buildFallbackChangelog(slug, version, cfg.repo, cfg.sha);
     };
 
+    // When GitHub Actions provides $GITHUB_OUTPUT, expose a machine-readable run summary so the
+    // workflow can branch on it (e.g. the drip workflow stops its schedule once `done` is true).
+    const outputPath = env(getenv, "GITHUB_OUTPUT").trim();
+    const report = outputPath
+        ? (s: { published: number; remaining: number; rateLimited: boolean }): void => {
+                try {
+                    appendFileSync(
+                        outputPath,
+                        `published=${s.published}\nremaining=${s.remaining}\ndone=${s.remaining === 0}\nrate_limited=${s.rateLimited}\n`,
+                    );
+                }
+                catch (e) {
+                    log(`::warning::could not write step outputs to GITHUB_OUTPUT: ${e}`);
+                }
+            }
+        : undefined;
+
     const deps: RunDeps = {
         readText,
         exists: existsSync,
@@ -730,6 +821,7 @@ if (import.meta.main) {
         publish: realPublish,
         publishConfig: readPublishConfig(getenv),
         log,
+        report,
     };
 
     process.exit(run(cfg, deps));

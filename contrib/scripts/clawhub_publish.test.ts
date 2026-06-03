@@ -10,6 +10,8 @@ import {
     extractManifestVersion,
     formatPlan,
     generateChangelog,
+    isRateLimitError,
+    limitPublishTargets,
     parseSemver,
     readCodexConfig,
     readManifestTitle,
@@ -299,6 +301,52 @@ describe("buildPublishArgs", () => {
 });
 
 // ---------------------------------------------------------------------------
+// isRateLimitError
+// ---------------------------------------------------------------------------
+describe("isRateLimitError", () => {
+    test("matches ClawHub's hourly new-skill quota message", () => {
+        expect(isRateLimitError("✖ Rate limit: max 5 new skills per hour. Please wait before publishing more.")).toBe(true);
+    });
+    test("matches either phrasing independently", () => {
+        expect(isRateLimitError("RATE LIMIT exceeded")).toBe(true);
+        expect(isRateLimitError("you may publish 5 new skills per hour")).toBe(true);
+    });
+    test("does not match unrelated failures", () => {
+        expect(isRateLimitError("Error: network timeout")).toBe(false);
+        expect(isRateLimitError("")).toBe(false);
+    });
+});
+
+// ---------------------------------------------------------------------------
+// limitPublishTargets
+// ---------------------------------------------------------------------------
+describe("limitPublishTargets", () => {
+    const t = (slug: string) => ({ slug });
+
+    test("sorts by slug and keeps the first N", () => {
+        const out = limitPublishTargets([t("c"), t("a"), t("b"), t("d")], 2);
+        expect(out.map(x => x.slug)).toEqual(["a", "b"]);
+    });
+    test("limit 0 returns everything (still sorted)", () => {
+        const out = limitPublishTargets([t("c"), t("a"), t("b")], 0);
+        expect(out.map(x => x.slug)).toEqual(["a", "b", "c"]);
+    });
+    test("limit >= length returns everything", () => {
+        expect(limitPublishTargets([t("a"), t("b")], 5).map(x => x.slug)).toEqual(["a", "b"]);
+    });
+    test("is deterministic — same input, same first N across calls", () => {
+        const input = [t("oo-zeta"), t("oo-alpha"), t("oo-mid"), t("oo-beta")];
+        expect(limitPublishTargets(input, 2).map(x => x.slug)).toEqual(limitPublishTargets(input, 2).map(x => x.slug));
+        expect(limitPublishTargets(input, 2).map(x => x.slug)).toEqual(["oo-alpha", "oo-beta"]);
+    });
+    test("does not mutate the input array", () => {
+        const input = [t("c"), t("a"), t("b")];
+        limitPublishTargets(input, 1);
+        expect(input.map(x => x.slug)).toEqual(["c", "a", "b"]);
+    });
+});
+
+// ---------------------------------------------------------------------------
 // generateChangelog (with injected spawn/io)
 // ---------------------------------------------------------------------------
 describe("generateChangelog", () => {
@@ -411,12 +459,14 @@ interface FakeOpts {
     titles?: Record<string, string | null>;
     existing?: string[];
     publishCode?: (cmd: string[]) => number;
+    publishOutput?: (cmd: string[]) => string;
 }
 
 function makeDeps(cfg: RunConfig, opts: FakeOpts) {
     const logs: string[] = [];
     const publishCalls: string[][] = [];
     const changelogCalls: Array<{ folder: string; slug: string; version: string }> = [];
+    const reports: Array<{ published: number; remaining: number; rateLimited: boolean }> = [];
     const deps: RunDeps = {
         readText: (p) => {
             if (p === cfg.syncJsonPath)
@@ -432,12 +482,16 @@ function makeDeps(cfg: RunConfig, opts: FakeOpts) {
         },
         publish: (cmd) => {
             publishCalls.push(cmd);
-            return opts.publishCode ? opts.publishCode(cmd) : 0;
+            return {
+                code: opts.publishCode ? opts.publishCode(cmd) : 0,
+                output: opts.publishOutput ? opts.publishOutput(cmd) : "",
+            };
         },
         publishConfig: { bin: "clawhub", registry: "https://r", site: "https://s", owner: cfg.owner },
         log: l => logs.push(l),
+        report: s => reports.push(s),
     };
-    return { deps, logs, publishCalls, changelogCalls };
+    return { deps, logs, publishCalls, changelogCalls, reports };
 }
 
 const baseCfg: RunConfig = {
@@ -448,6 +502,7 @@ const baseCfg: RunConfig = {
     syncJsonPath: "sync.json",
     repo: "oomol-lab/skills",
     sha: "abcdef1234567",
+    publishLimit: 0,
 };
 
 describe("run", () => {
@@ -582,6 +637,71 @@ describe("run", () => {
         expect(logs.some(l => l.includes("::warning::clawhub sync flagged boom"))).toBe(true);
         expect(logs.some(l => l.includes("::warning::clawhub sync skipped dup"))).toBe(true);
     });
+
+    // ------------------------------------------------------------------------
+    // drip mode (publishLimit > 0): the rate-limit-aware backfill path
+    // ------------------------------------------------------------------------
+    const dripSync = (slugs: string[]) => ({
+        wouldPublish: slugs.map(s => ({ slug: s, folder: `app-skills/${s}`, status: "new", latestVersion: null })),
+    });
+    const dripVersions = (slugs: string[]): Record<string, [string | null, string | null]> =>
+        Object.fromEntries(slugs.map(s => [`app-skills/${s}`, ["1.0.0", null] as [string | null, string | null]]));
+
+    test("reports a done summary when there is nothing to publish at all", () => {
+        const cfg = { ...baseCfg, publishLimit: 5 };
+        const { deps, reports } = makeDeps(cfg, { sync: { wouldPublish: [] } });
+        expect(run(cfg, deps)).toBe(0);
+        expect(reports).toEqual([{ published: 0, remaining: 0, rateLimited: false }]);
+    });
+
+    test("drip mode publishes at most publishLimit skills (slug-sorted) and defers the rest", () => {
+        const cfg = { ...baseCfg, publishLimit: 2 };
+        const slugs = ["oo-c", "oo-a", "oo-e", "oo-b", "oo-d"];
+        const { deps, publishCalls, reports, logs } = makeDeps(cfg, {
+            sync: dripSync(slugs),
+            versions: dripVersions(slugs),
+        });
+        expect(run(cfg, deps)).toBe(0);
+        // exactly publishLimit published, and they are the two lowest slugs (deterministic order)
+        expect(publishCalls).toHaveLength(2);
+        expect(publishCalls[0]).toContain("app-skills/oo-a");
+        expect(publishCalls[1]).toContain("app-skills/oo-b");
+        expect(reports).toEqual([{ published: 2, remaining: 3, rateLimited: false }]);
+        expect(logs.some(l => l.includes("3 skill(s) still pending") && l.includes("per-run cap"))).toBe(true);
+    });
+
+    test("drip mode stops cleanly on a ClawHub rate-limit error and defers the rest", () => {
+        const cfg = { ...baseCfg, publishLimit: 5 };
+        const slugs = ["oo-a", "oo-b", "oo-c", "oo-d"];
+        const { deps, publishCalls, reports, logs } = makeDeps(cfg, {
+            sync: dripSync(slugs),
+            versions: dripVersions(slugs),
+            // oo-a, oo-b succeed; oo-c is rejected by the hourly quota; oo-d is never attempted
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-c")) ? 1 : 0),
+            publishOutput: cmd => (cmd.some(a => a.includes("app-skills/oo-c")) ? "✖ Rate limit: max 5 new skills per hour." : ""),
+        });
+        expect(run(cfg, deps)).toBe(0); // soft-stop is success, not failure
+        expect(publishCalls).toHaveLength(3); // a, b, c attempted; broke before d
+        expect(publishCalls[2]).toContain("app-skills/oo-c");
+        expect(reports).toEqual([{ published: 2, remaining: 2, rateLimited: true }]);
+        expect(logs.some(l => l.includes("rate limit reached"))).toBe(true);
+        expect(logs.some(l => l.includes("2 skill(s) still pending") && l.includes("rate-limited"))).toBe(true);
+    });
+
+    test("without a per-run cap a rate-limit error stays a genuine failure (exit 1)", () => {
+        // The main (uncapped) workflow must still fail loudly on a rate limit so the operator
+        // knows to run the drip workflow — only drip mode treats it as deferrable back-pressure.
+        const cfg = { ...baseCfg, publishLimit: 0 };
+        const slugs = ["oo-a", "oo-b"];
+        const { deps, publishCalls } = makeDeps(cfg, {
+            sync: dripSync(slugs),
+            versions: dripVersions(slugs),
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? 1 : 0),
+            publishOutput: () => "Rate limit: max 5 new skills per hour.",
+        });
+        expect(run(cfg, deps)).toBe(1);
+        expect(publishCalls).toHaveLength(2); // legacy mode never short-circuits — every skill attempted
+    });
 });
 
 // ---------------------------------------------------------------------------
@@ -598,6 +718,13 @@ describe("config readers", () => {
     });
     test("readRunConfig falls back to app-skills when SKILLS_ROOT empty", () => {
         expect(readRunConfig(fakeEnv({})).root).toBe("app-skills");
+    });
+    test("readRunConfig reads PUBLISH_LIMIT, defaulting to 0 (no cap)", () => {
+        expect(readRunConfig(fakeEnv({})).publishLimit).toBe(0);
+        expect(readRunConfig(fakeEnv({ PUBLISH_LIMIT: "5" })).publishLimit).toBe(5);
+        // garbage / negative values fall back to 0 rather than throwing or capping at a bad value
+        expect(readRunConfig(fakeEnv({ PUBLISH_LIMIT: "oops" })).publishLimit).toBe(0);
+        expect(readRunConfig(fakeEnv({ PUBLISH_LIMIT: "-3" })).publishLimit).toBe(0);
     });
     test("readCodexConfig defaults and api-key presence", () => {
         const cfg = readCodexConfig(fakeEnv({ CODEX_BASE_URL: "https://x/v1", OPENAI_API_KEY: "sk-xxx" }));
