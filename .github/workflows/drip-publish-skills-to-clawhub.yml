@@ -1,0 +1,273 @@
+name: Drip Publish Skills to ClawHub
+
+# Rate-limit recovery for "Publish Skills to ClawHub".
+#
+# ClawHub caps NEW-skill publishes at 5 per hour. A first-time catalog publish of hundreds of
+# skills therefore cannot finish in one run — publish-skills-to-clawhub.yml publishes the first 5
+# and then fails when the 6th is rejected with:
+#   "Rate limit: max 5 new skills per hour. Please wait before publishing more."
+#
+# This workflow drains the rest, 5 at a time, on a schedule:
+#   * Every 72 minutes (just over ClawHub's 1-hour window, with a 12-minute safety margin) it
+#     diffs app-skills/ against the registry, then publishes at most `max_per_run` (default 5)
+#     of the still-unpublished skills — the lowest slugs first, so progress is deterministic and
+#     monotonic (each published skill drops out of the next diff).
+#   * It is idempotent: the diff is the source of truth, so re-running never double-publishes.
+#   * Changelogs are reused from the shared content-addressed cache (same key as the main
+#     workflow), so a warm cache makes every drip run fast; a cold cache only generates the 5
+#     changelogs this run actually needs (PUBLISH_LIMIT also caps pre-generation).
+#   * Hitting the rate limit mid-run is treated as back-pressure, not a failure: the run stops
+#     cleanly and the next tick resumes. (The main, uncapped workflow still fails loudly on it.)
+#   * Once nothing is left to publish, the final run disables this workflow's own schedule so it
+#     stops firing (toggle off with `disable_when_done`). Re-enable for the next backlog with
+#     `gh workflow enable drip-publish-skills-to-clawhub.yml` or the Actions tab.
+#
+# How to use it:
+#   1. Run "Publish Skills to ClawHub" (publish-catalog). If it fails on the rate limit, come here.
+#   2. Merge this file to the default branch (scheduled workflows only run from the default branch),
+#      then "Run workflow" once to kick it off — it self-continues every 72 minutes until done.
+#   Do NOT run this while the main publish workflow is running; both publishing at once would blow
+#   the shared hourly quota.
+
+on:
+  schedule:
+    # Every 72 minutes (1440 / 72 = 20 fires/day, perfectly periodic, 12-min margin over the
+    # 1-hour quota). cron cannot express "every 72 min" as a single step, so the 20 daily fire
+    # times are listed across five lines (minutes 0/12/24/36/48 stepping the hour by 6 each).
+    - cron: "0 0,6,12,18 * * *"
+    - cron: "12 1,7,13,19 * * *"
+    - cron: "24 2,8,14,20 * * *"
+    - cron: "36 3,9,15,21 * * *"
+    - cron: "48 4,10,16,22 * * *"
+  workflow_dispatch:
+    inputs:
+      max_per_run:
+        description: Max skills to publish per run. Keep at or below ClawHub's hourly new-skill quota (5).
+        type: string
+        required: false
+        default: "5"
+      dry_run:
+        description: Preview only — diff and print how many skills remain, publish nothing.
+        type: boolean
+        required: false
+        default: false
+      generate_changelog:
+        description: Generate each skill's changelog with codex exec. Off uses a plain changelog.
+        type: boolean
+        required: false
+        default: true
+      disable_when_done:
+        description: When the backlog clears, disable this workflow's schedule so it stops firing.
+        type: boolean
+        required: false
+        default: true
+
+# actions:write lets the final run disable the schedule once the catalog is fully published.
+permissions:
+  contents: read
+  actions: write
+
+# Never let two drip runs publish at the same time — concurrent publishes would exceed the quota.
+# A scheduled tick that lands while one is still running waits instead of racing it.
+concurrency:
+  group: drip-publish-skills-to-clawhub
+  cancel-in-progress: false
+
+env:
+  # Keep these identical to publish-skills-to-clawhub.yml so the changelog cache (keyed by codex
+  # model/effort/prompt + skill content) is SHARED — a drip run reuses changelogs the main run
+  # already generated instead of paying codex again.
+  CLAWHUB_SOURCE_REPO: openclaw/clawhub
+  CLAWHUB_SOURCE_REF: dcbc38999f1a7bae27187e236e28dbc4c605051a
+  CLAWHUB_OWNER: oomol
+  SKILLS_ROOT: app-skills
+  CLAWHUB_REGISTRY: https://clawhub.ai
+  CLAWHUB_SITE: https://clawhub.ai
+  CODEX_CLI_VERSION: 0.135.0
+  CODEX_MODEL: gpt-5.5
+  CODEX_EFFORT: medium
+  CODEX_PROVIDER: oomol
+  CODEX_WIRE_API: responses
+  CODEX_API_KEY_ENV: OPENAI_API_KEY
+  WORKFLOW_FILE: drip-publish-skills-to-clawhub.yml
+
+jobs:
+  drip-publish:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    # Each run does a registry diff + at most `max_per_run` publishes (changelogs come from cache),
+    # so it finishes in minutes. The cap is generous in case the diff is slow on a large catalog.
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      # Scheduled runs carry no inputs, so resolve the effective parameters here (with drip
+      # defaults) and reuse them across the steps below.
+      - name: Resolve run parameters
+        id: params
+        env:
+          IN_MAX: ${{ inputs.max_per_run }}
+          IN_DRY: ${{ inputs.dry_run }}
+          IN_GEN: ${{ inputs.generate_changelog }}
+          IN_DISABLE: ${{ inputs.disable_when_done }}
+        run: |
+          set -euo pipefail
+          max="${IN_MAX:-}"; [[ "$max" =~ ^[0-9]+$ ]] || max=5
+          dry="${IN_DRY:-false}"; [[ "$dry" == "true" ]] || dry=false
+          gen="${IN_GEN:-true}"; [[ "$gen" == "false" ]] && gen=false || gen=true
+          disable="${IN_DISABLE:-true}"; [[ "$disable" == "false" ]] && disable=false || disable=true
+          if [[ "$dry" == "true" ]]; then mode=dry-run; else mode=publish-catalog; fi
+          {
+            echo "max_per_run=$max"
+            echo "dry_run=$dry"
+            echo "generate_changelog=$gen"
+            echo "disable_when_done=$disable"
+            echo "mode=$mode"
+          } >> "$GITHUB_OUTPUT"
+          echo "Resolved: mode=$mode max_per_run=$max generate_changelog=$gen disable_when_done=$disable"
+
+      # Node runs the codex CLI (npm); Bun runs the ClawHub CLI from source and the orchestrator.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+
+      - name: Check out ClawHub CLI source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.CLAWHUB_SOURCE_REPO }}
+          ref: ${{ env.CLAWHUB_SOURCE_REF }}
+          path: clawhub-source
+
+      - name: Install ClawHub CLI from source
+        run: |
+          set -euo pipefail
+          ( cd clawhub-source && bun install --frozen-lockfile )
+          mkdir -p "$RUNNER_TEMP/bin"
+          cat > "$RUNNER_TEMP/bin/clawhub" <<EOF
+          #!/usr/bin/env bash
+          exec bun "$GITHUB_WORKSPACE/clawhub-source/packages/clawhub/src/cli.ts" "\$@"
+          EOF
+          chmod +x "$RUNNER_TEMP/bin/clawhub"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+
+      - name: Install Codex CLI
+        if: steps.params.outputs.dry_run != 'true' && steps.params.outputs.generate_changelog == 'true'
+        run: npm install -g "@openai/codex@${CODEX_CLI_VERSION}"
+
+      - name: Configure ClawHub auth
+        env:
+          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLAWHUB_TOKEN:-}" ]]; then
+            echo "::error::Missing secret CLAWHUB_TOKEN"
+            exit 1
+          fi
+          config_path="${RUNNER_TEMP}/clawhub-config.json"
+          jq -n --arg registry "$CLAWHUB_REGISTRY" --arg token "$CLAWHUB_TOKEN" \
+            '{registry: $registry, token: $token}' > "$config_path"
+          echo "CLAWHUB_CONFIG_PATH=$config_path" >> "$GITHUB_ENV"
+
+      # Source of truth for what is still unpublished: already-published skills are "in sync" and
+      # drop out of wouldPublish, so this naturally shrinks as the drip progresses.
+      - name: Diff skills against the registry
+        run: |
+          set -euo pipefail
+          clawhub \
+            --workdir "$SKILLS_ROOT" \
+            --dir . \
+            --registry "$CLAWHUB_REGISTRY" \
+            --site "$CLAWHUB_SITE" \
+            --no-input \
+            sync --all --json --no-clawdbot-roots --dry-run --concurrency 16 \
+            | tee "${RUNNER_TEMP}/clawhub-sync.json"
+
+      # Restore the shared changelog cache (same path/keys as the main workflow) so this run reuses
+      # changelogs the main run already generated. restore-keys pulls the most recent prior snapshot.
+      - name: Restore changelog cache
+        if: steps.params.outputs.dry_run != 'true' && steps.params.outputs.generate_changelog == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/changelog-cache
+          key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            changelog-
+
+      # Fill the shared changelog cache. Changelog generation does NOT hit ClawHub's publish quota
+      # (it only calls codex), and a warm cache — e.g. one the main workflow already populated for
+      # the whole catalog — makes this a near-instant string of cache hits. So there is no per-run
+      # cap here: any skill still missing a changelog is generated once and reused forever after.
+      # Best-effort: a codex failure never blocks the publish (it falls back to a plain changelog).
+      - name: Generate changelogs (parallel)
+        if: steps.params.outputs.dry_run != 'true' && steps.params.outputs.generate_changelog == 'true'
+        env:
+          MODE: ${{ steps.params.outputs.mode }}
+          SKILL_PATH: ""
+          SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
+          CHANGELOG_CACHE_DIR: ${{ runner.temp }}/changelog-cache
+          CHANGELOG_CONCURRENCY: "10"
+          CODEX_CHANGELOG_ENABLED: ${{ steps.params.outputs.generate_changelog }}
+          CODEX_BIN: codex
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_BASE_URL: ${{ secrets.CODEX_BASE_URL }}
+        run: bun contrib/scripts/clawhub_changelog.ts
+
+      - name: Save changelog cache
+        if: always() && steps.params.outputs.dry_run != 'true' && steps.params.outputs.generate_changelog == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/changelog-cache
+          key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
+
+      # Publish at most max_per_run skills, then exit 0 with `remaining`/`done` outputs. In drip
+      # mode a rate-limit rejection stops the run cleanly (deferred to the next tick), not fails it.
+      - name: Publish (rate-limited drip)
+        id: publish
+        env:
+          MODE: ${{ steps.params.outputs.mode }}
+          SKILL_PATH: ""
+          PUBLISH_LIMIT: ${{ steps.params.outputs.max_per_run }}
+          SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
+          CLAWHUB_BIN: clawhub
+          CODEX_CHANGELOG_ENABLED: ${{ steps.params.outputs.generate_changelog }}
+          CHANGELOG_CACHE_DIR: ${{ runner.temp }}/changelog-cache
+          CODEX_BIN: codex
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CODEX_BASE_URL: ${{ secrets.CODEX_BASE_URL }}
+        run: bun contrib/scripts/clawhub_publish.ts
+
+      - name: Summarize progress
+        if: always() && steps.publish.outputs.published != ''
+        run: |
+          {
+            echo "### ClawHub drip publish"
+            echo ""
+            echo "- Published this run: **${{ steps.publish.outputs.published }}**"
+            echo "- Still pending: **${{ steps.publish.outputs.remaining }}**"
+            echo "- Rate-limited: \`${{ steps.publish.outputs.rate_limited }}\`"
+            echo "- Backlog clear: \`${{ steps.publish.outputs.done }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # When the catalog is fully published, stop the schedule so it does not keep firing forever.
+      # Non-fatal: a permissions hiccup here must not fail an otherwise-successful publish run.
+      - name: Stop the schedule once the backlog is clear
+        if: ${{ success() && steps.params.outputs.dry_run != 'true' && steps.params.outputs.disable_when_done == 'true' && steps.publish.outputs.done == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          echo "Backlog clear — disabling this workflow's schedule so it stops firing."
+          echo "Re-enable for the next backlog with: gh workflow enable \"$WORKFLOW_FILE\" (or Actions tab → ⋯ → Enable workflow)."
+          gh workflow disable "$WORKFLOW_FILE" --repo "$GITHUB_REPOSITORY" \
+            || echo "::warning::Could not disable the schedule (needs actions:write) — disable it manually from the Actions tab."
+
+      - name: Upload sync diff artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clawhub-drip-sync-json
+          path: ${{ runner.temp }}/clawhub-sync.json
+          if-no-files-found: warn

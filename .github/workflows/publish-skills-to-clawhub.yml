@@ -19,6 +19,10 @@ name: Publish Skills to ClawHub
 #   dry-run         Preview the plan (which skills, at which version). No upload.
 #   publish-single  Publish one folder, e.g. app-skills/<slug>.
 #   publish-catalog Publish every new/changed skill under app-skills/.
+#
+# ClawHub caps NEW-skill publishes at 5 per hour, so a large publish-catalog run fails once the
+# 6th new skill is rejected. When that happens, drain the rest 5-at-a-time on a schedule with
+# .github/workflows/drip-publish-skills-to-clawhub.yml.
 
 on:
   workflow_dispatch:
