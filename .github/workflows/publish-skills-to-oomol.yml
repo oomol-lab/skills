@@ -1,0 +1,150 @@
+name: Publish Skills to OOMOL
+
+# Publishes the skill folders under app-skills/ to the OOMOL skills hub (an npm/cnpm
+# registry at https://registry.oomol.com), using each skill's declared metadata.version
+# (from its SKILL.md frontmatter) as the published version.
+#
+# How it works (see contrib/scripts/oomol_publish.ts for the details):
+#   1. For each skill under app-skills/, read its SKILL.md frontmatter and query the
+#      registry for the currently-published version via
+#      GET https://registry.oomol.com/-/oomol/package-info/<slug>/latest (concurrency 10).
+#   2. A skill is published when it is new, or when its metadata.version is greater than
+#      the published version; otherwise it is skipped (so re-runs are idempotent).
+#   3. Each publishable skill is transformed into the package shape the hub expects —
+#        <slug>/package.json
+#        <slug>/package/package.oo.yaml
+#        <slug>/package/skills/<slug>/   (a verbatim copy of the authored skill)
+#      — and uploaded with `npm publish` (concurrency 10). The registry has no rate limit
+#      and no TOTP. A publish the registry rejects because the version already exists is
+#      treated as a no-op, so concurrent/duplicate runs never fail.
+#
+# Run it from the Actions tab ("Run workflow") and pick a mode:
+#   dry-run         Preview the plan and validate each package with `npm publish --dry-run`
+#                   (no upload). Does not require the OOMOL_API_KEY secret.
+#   publish-single  Publish one folder, e.g. app-skills/<slug>.
+#   publish-catalog Publish every new/changed skill under app-skills/.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to run.
+        type: choice
+        required: true
+        default: dry-run
+        options:
+          - dry-run
+          - publish-single
+          - publish-catalog
+      skill_path:
+        description: Skill folder for publish-single, for example app-skills/<slug>.
+        type: string
+        required: false
+        default: ""
+      concurrency:
+        description: How many skills to query/publish at once (the registry has no rate limit).
+        type: string
+        required: false
+        default: "10"
+
+permissions:
+  contents: read
+
+env:
+  SKILLS_ROOT: app-skills
+  OOMOL_REGISTRY: https://registry.oomol.com
+
+jobs:
+  publish:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    # A catalog publish of the whole app-skills/ tree (hundreds of skills) at concurrency 10
+    # still finishes well inside this; the cap is generous headroom.
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate inputs
+        env:
+          MODE: ${{ inputs.mode }}
+          SKILL_PATH: ${{ inputs.skill_path }}
+        run: |
+          set -euo pipefail
+          if [[ "$MODE" == "publish-single" ]]; then
+            if [[ -z "$SKILL_PATH" ]]; then
+              echo "::error::skill_path is required when mode is publish-single."
+              exit 1
+            fi
+            case "$SKILL_PATH" in
+              "$SKILLS_ROOT"/*) ;;
+              *)
+                echo "::error::skill_path must point under $SKILLS_ROOT/, for example $SKILLS_ROOT/<slug>."
+                exit 1
+                ;;
+            esac
+            if [[ ! -f "${SKILL_PATH%/}/SKILL.md" ]]; then
+              echo "::error::No SKILL.md found at ${SKILL_PATH%/}/SKILL.md."
+              exit 1
+            fi
+          fi
+
+      # Node provides `npm` (the publish transport); Bun runs the orchestrator script.
+      # We manage ~/.npmrc and pass --registry ourselves, so we deliberately do NOT set
+      # setup-node's `registry-url` (it would write a competing project .npmrc keyed to
+      # NODE_AUTH_TOKEN).
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+
+      # Write the registry auth into ~/.npmrc. The secret value is NOT written to disk: we
+      # store the literal `${OOMOL_API_KEY}` placeholder, which npm interpolates from the
+      # environment at publish time (so OOMOL_API_KEY is passed to the publish step's env).
+      # The _authToken host must match the registry we publish to (registry.oomol.com).
+      - name: Configure OOMOL registry auth
+        env:
+          MODE: ${{ inputs.mode }}
+          OOMOL_API_KEY: ${{ secrets.OOMOL_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${OOMOL_API_KEY:-}" ]]; then
+            if [[ "$MODE" == "dry-run" ]]; then
+              echo "::warning::OOMOL_API_KEY is not set — fine for dry-run, but a real publish will fail to authenticate."
+            else
+              echo "::error::Missing secret OOMOL_API_KEY (required for $MODE)."
+              exit 1
+            fi
+          fi
+          host="${OOMOL_REGISTRY#https://}"
+          host="${host#http://}"
+          host="${host%/}"
+          {
+            echo "registry=${OOMOL_REGISTRY}/"
+            echo "//${host}/:_authToken=\${OOMOL_API_KEY}"
+          } > "$HOME/.npmrc"
+          echo "Wrote auth for //${host}/ to ~/.npmrc (token interpolated from env at publish time)."
+
+      - name: Publish to OOMOL
+        id: publish
+        env:
+          MODE: ${{ inputs.mode }}
+          SKILL_PATH: ${{ inputs.skill_path }}
+          PUBLISH_CONCURRENCY: ${{ inputs.concurrency }}
+          # npm interpolates ${OOMOL_API_KEY} from ~/.npmrc using this env var at publish time.
+          OOMOL_API_KEY: ${{ secrets.OOMOL_API_KEY }}
+        run: bun contrib/scripts/oomol_publish.ts
+
+      - name: Summarize
+        if: always() && steps.publish.outputs.total != ''
+        run: |
+          {
+            echo "### OOMOL publish"
+            echo ""
+            echo "- Mode: \`${{ inputs.mode }}\`"
+            echo "- Published this run: **${{ steps.publish.outputs.published }}**"
+            echo "- Skipped (up-to-date / already present): **${{ steps.publish.outputs.skipped }}**"
+            echo "- Failed: **${{ steps.publish.outputs.failed }}**"
+            echo "- Skills considered: **${{ steps.publish.outputs.total }}**"
+          } >> "$GITHUB_STEP_SUMMARY"
