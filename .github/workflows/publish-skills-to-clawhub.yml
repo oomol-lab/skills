@@ -86,7 +86,7 @@ jobs:
     # of skills can still take a while. Job hard-limit on hosted runners is 6h.
     timeout-minutes: 350
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Validate inputs
         env:
@@ -113,7 +113,7 @@ jobs:
           fi
 
       # Node runs the codex CLI (npm); Bun runs the ClawHub CLI from source and the orchestrator.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "20"
 
@@ -122,7 +122,7 @@ jobs:
           bun-version-file: .bun-version
 
       - name: Check out ClawHub CLI source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ env.CLAWHUB_SOURCE_REPO }}
           ref: ${{ env.CLAWHUB_SOURCE_REF }}
@@ -172,7 +172,7 @@ jobs:
       # On Blacksmith runners actions/cache transparently uses Blacksmith's colocated cache.
       - name: Restore changelog cache
         if: inputs.mode != 'dry-run' && inputs.generate_changelog
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ runner.temp }}/changelog-cache
           key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
@@ -201,7 +201,7 @@ jobs:
       # Persist the cache (even if a later step fails) so the next re-run starts from here.
       - name: Save changelog cache
         if: always() && inputs.mode != 'dry-run' && inputs.generate_changelog
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ runner.temp }}/changelog-cache
           key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
@@ -230,7 +230,7 @@ jobs:
 
       - name: Upload sync diff artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: clawhub-sync-json
           path: ${{ runner.temp }}/clawhub-sync.json
