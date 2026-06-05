@@ -1,25 +1,40 @@
 /**
- * Publish app-skills to ClawHub using each skill's declared metadata.version.
+ * Publish app-skills to ClawHub using each skill's declared metadata.version, spread across
+ * several publishing accounts to get around ClawHub's per-key rate limit.
  *
- * ClawHub's `clawhub sync` auto-derives versions from the registry (+ --bump) and
- * ignores the version written in SKILL.md. We want the opposite: the published
- * version must equal `metadata.version` from each skill's SKILL.md frontmatter.
+ * ClawHub's `clawhub sync` auto-derives versions from the registry (+ --bump) and ignores the
+ * version written in SKILL.md. We want the opposite: the published version must equal
+ * `metadata.version` from each skill's SKILL.md frontmatter.
+ *
+ * ClawHub also rate-limits NEW-skill publishes per API key (5/hour, 20/24h). Updating an existing
+ * skill's version is NOT rate-limited. To drain a large catalog faster we publish under several
+ * accounts at once (CLAWHUB_TOKENS = "NAME:KEY,NAME:KEY"): each account publishes at most
+ * MAX_NEW_PER_ACCOUNT new skills this run (default 5 — one hourly quota), plus all of its assigned
+ * updates. The operator re-runs the workflow (~hourly) to drain the rest; every run is idempotent.
  *
  * So this orchestrator:
- *   1. Reads the JSON produced by `clawhub sync --dry-run --json` to learn which
- *      skills are new/changed (and each one's current registry version).
- *   2. Reads metadata.version from every changed skill's SKILL.md.
- *   3. Publishes each changed skill with `clawhub publish <folder> --version <metadata.version>`,
- *      attaching a changelog generated per skill by `codex exec`.
+ *   1. Reads the JSON produced by `clawhub sync --dry-run --json` to learn which skills are
+ *      new/changed (and each one's current registry version).
+ *   2. Reads metadata.version from every changed skill's SKILL.md and classifies it.
+ *   3. Round-robin assigns the publishable skills to the accounts, caps NEW publishes per account,
+ *      and publishes each with `clawhub publish <folder> --version <metadata.version>` under that
+ *      account's token, attaching a per-skill changelog.
+ *   4. Emits a per-account results table (published / updated / failed / rate-limited / remaining)
+ *      to $GITHUB_STEP_SUMMARY plus machine-readable totals to $GITHUB_OUTPUT.
  *
- * It refuses to publish a changed skill whose metadata.version was not bumped above
- * the registry version — that would be a silent no-op (you cannot republish an
- * existing version), so it is almost always a forgotten bump.
+ * SECURITY: this script never handles raw tokens. clawhub_auth.ts parses CLAWHUB_TOKENS, writes a
+ * per-account clawhub config file, and hands this script a token-free manifest of
+ * {name, configPath}. We select an account's token by pointing clawhub at its config path via
+ * CLAWHUB_CONFIG_PATH — no key ever reaches a log line, a command line, or this script's memory.
  *
- * Design: every decision is a pure, exported function; all side effects (file reads,
- * subprocesses, env, logging) are injected so the logic is unit-testable without
- * spawning anything. The real wiring lives behind `import.meta.main` at the bottom.
- * Run with: `bun clawhub_publish.ts`. Tests: `bun test`.
+ * A changed skill whose metadata.version was not bumped above the registry version is "blocked":
+ * it cannot publish (you can't republish an existing version) and is surfaced as a warning rather
+ * than published — bump it and re-run.
+ *
+ * Design: every decision is a pure, exported function; all side effects (file reads, subprocesses,
+ * env, logging) are injected so the logic is unit-testable without spawning anything. The real
+ * wiring lives behind `import.meta.main` at the bottom. Run with: `bun clawhub_publish.ts`.
+ * Tests: `bun test`.
  */
 import { appendFileSync, existsSync, mkdtempSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -426,6 +441,178 @@ export function generateChangelog(
 }
 
 // ----------------------------------------------------------------------------
+// publishing accounts (CLAWHUB_TOKENS = "NAME:API_KEY,NAME:API_KEY")
+// ----------------------------------------------------------------------------
+export interface Account {
+    name: string;
+    /** Secret API key. NEVER log this or put it on a command line / in any CI output. */
+    key: string;
+}
+
+/**
+ * Parse CLAWHUB_TOKENS ("NAME:API_KEY,NAME:API_KEY") into named accounts. Publishing under several
+ * accounts multiplies ClawHub's per-key new-skill quota (5/hour, 20/24h), so a big catalog drains
+ * faster. The key is split on the FIRST colon only (API keys may themselves contain ':').
+ *
+ * SECURITY: every code path here is key-free in its outputs — a malformed entry is reported by
+ * position ("#2"), never by echoing its contents, so a bad token can't leak into a log. Duplicate
+ * names are disambiguated ("Kevin", "Kevin#2") so the results table stays unambiguous. Returns
+ * [accounts, errors]; never throws.
+ */
+export function parseAccounts(raw: string): [Account[], string[]] {
+    const accounts: Account[] = [];
+    const errors: string[] = [];
+    const used = new Map<string, number>();
+    const entries = (raw ?? "").split(",").map(s => s.trim()).filter(Boolean);
+    entries.forEach((entry, i) => {
+        const colon = entry.indexOf(":");
+        const name = colon > 0 ? entry.slice(0, colon).trim() : "";
+        const key = colon > 0 ? entry.slice(colon + 1).trim() : "";
+        if (!name || !key) {
+            errors.push(`token entry #${i + 1} is malformed (expected NAME:API_KEY) — skipping it.`);
+            return;
+        }
+        const seen = used.get(name) ?? 0;
+        used.set(name, seen + 1);
+        accounts.push({ name: seen === 0 ? name : `${name}#${seen + 1}`, key });
+    });
+    return [accounts, errors];
+}
+
+// ----------------------------------------------------------------------------
+// distribution across accounts
+// ----------------------------------------------------------------------------
+/** Round-robin partition: bucket i of n gets items at indices where idx % n === i, in order. */
+export function roundRobin<T>(items: readonly T[], n: number): T[][] {
+    const buckets: T[][] = Array.from({ length: Math.max(0, n) }, () => []);
+    if (n <= 0)
+        return buckets;
+    items.forEach((item, i) => buckets[i % n]!.push(item));
+    return buckets;
+}
+
+function bySlug<T extends { slug: string }>(targets: readonly T[]): T[] {
+    return targets.slice().sort((a, b) => a.slug.localeCompare(b.slug));
+}
+
+/** A publishing account as the publish step sees it: a name and a path to its clawhub config. */
+export interface AccountRef {
+    name: string;
+    /** Path to this account's clawhub config file (registry + token), written by clawhub_auth.ts. */
+    configPath: string;
+}
+
+export interface AccountPlan {
+    account: AccountRef;
+    /** New-skill publishes to attempt this run (already capped at maxNewPerAccount). */
+    newTargets: Target[];
+    /** Version updates to attempt this run (uncapped — ClawHub only rate-limits NEW skills). */
+    updateTargets: Target[];
+    /** New skills assigned to this account but beyond its per-run cap; deferred to a later run. */
+    deferredNew: Target[];
+}
+
+/**
+ * Spread the publishable targets across the accounts for one run.
+ *
+ * NEW skills are the rate-limited resource (ClawHub caps them at 5/hour, 20/24h per key), so they
+ * are round-robin assigned and then capped at `maxNewPerAccount` per account — the union published
+ * this run is the lowest `maxNewPerAccount * accounts.length` slugs, so progress marches
+ * deterministically through the catalog and re-runs are monotonic (published skills drop out of the
+ * next diff). UPDATES are not rate-limited, so every assigned update is attempted this run.
+ * `maxNewPerAccount <= 0` means "no cap" (attempt every assigned new skill).
+ */
+export function planDistribution(
+    newTargets: readonly Target[],
+    updateTargets: readonly Target[],
+    accounts: readonly AccountRef[],
+    maxNewPerAccount: number,
+): AccountPlan[] {
+    const newShares = roundRobin(bySlug(newTargets), accounts.length);
+    const updateShares = roundRobin(bySlug(updateTargets), accounts.length);
+    const cap = maxNewPerAccount > 0 ? maxNewPerAccount : Number.POSITIVE_INFINITY;
+    return accounts.map((account, i) => {
+        const share = newShares[i] ?? [];
+        return {
+            account,
+            newTargets: share.slice(0, cap),
+            deferredNew: cap === Number.POSITIVE_INFINITY ? [] : share.slice(cap),
+            updateTargets: updateShares[i] ?? [],
+        };
+    });
+}
+
+// ----------------------------------------------------------------------------
+// per-account stats + totals + results table
+// ----------------------------------------------------------------------------
+export interface AccountStats {
+    name: string;
+    /** NEW skills successfully published this run. */
+    published: number;
+    /** Existing skills successfully updated (new version) this run. */
+    updated: number;
+    /** Skills attempted but rejected for a non-rate-limit reason. */
+    failed: number;
+    /** True when ClawHub's quota stopped this account mid-run (the rest is deferred). */
+    rateLimited: boolean;
+    /** Skills assigned to this account but not published this run (over-cap, failed, or deferred). */
+    remaining: number;
+}
+
+export interface Totals {
+    published: number;
+    updated: number;
+    failed: number;
+    remaining: number;
+    rateLimitedAccounts: string[];
+}
+
+export function totalsOf(stats: readonly AccountStats[]): Totals {
+    return {
+        published: stats.reduce((n, s) => n + s.published, 0),
+        updated: stats.reduce((n, s) => n + s.updated, 0),
+        failed: stats.reduce((n, s) => n + s.failed, 0),
+        remaining: stats.reduce((n, s) => n + s.remaining, 0),
+        rateLimitedAccounts: stats.filter(s => s.rateLimited).map(s => s.name),
+    };
+}
+
+/** A skill that can't publish as-is (version not bumped, invalid semver, unreadable manifest). */
+export interface Blocked {
+    slug: string;
+    reason: string;
+}
+
+/**
+ * Render the run's results as GitHub-flavored Markdown for $GITHUB_STEP_SUMMARY: a per-account
+ * table (published / updated / failed / rate-limited / remaining), a totals row, and a "blocked"
+ * section for skills needing a manual version bump. Uses account NAMES only — never keys.
+ */
+export function formatSummaryMarkdown(stats: readonly AccountStats[], blocked: readonly Blocked[]): string[] {
+    const t = totalsOf(stats);
+    const lines: string[] = [];
+    lines.push("### ClawHub publish results");
+    lines.push("");
+    lines.push("| Account | Published (new) | Updated | Failed | Rate-limited | Remaining |");
+    lines.push("| --- | ---: | ---: | ---: | :---: | ---: |");
+    for (const s of stats) {
+        lines.push(`| ${s.name} | ${s.published} | ${s.updated} | ${s.failed} | ${s.rateLimited ? "⚠️ yes" : "—"} | ${s.remaining} |`);
+    }
+    lines.push(`| **Total** | **${t.published}** | **${t.updated}** | **${t.failed}** | ${t.rateLimitedAccounts.length ? `**${t.rateLimitedAccounts.length}**` : "—"} | **${t.remaining}** |`);
+    lines.push("");
+    if (t.rateLimitedAccounts.length)
+        lines.push(`> Rate-limited this run: ${t.rateLimitedAccounts.join(", ")} — their remaining skills roll over to the next run.`);
+    if (t.remaining > 0)
+        lines.push(`> ${t.remaining} skill(s) still pending — re-run this workflow (e.g. in ~1h) to continue. It is idempotent.`);
+    if (blocked.length) {
+        lines.push("");
+        lines.push(`#### Blocked (${blocked.length}) — bump metadata.version before they can publish`);
+        for (const b of blocked) lines.push(`- \`${b.slug}\`: ${b.reason}`);
+    }
+    return lines;
+}
+
+// ----------------------------------------------------------------------------
 // publish
 // ----------------------------------------------------------------------------
 export interface PublishConfig {
@@ -442,23 +629,13 @@ export interface PublishOutcome {
 }
 
 /**
- * True when a failed publish was rejected by ClawHub's hourly new-skill quota (the message is
- * "Rate limit: max 5 new skills per hour. Please wait before publishing more."). In drip mode
- * this is expected back-pressure, not a failure — we stop and let the next scheduled run resume.
+ * True when a failed publish was rejected by ClawHub's new-skill quota (the message is
+ * "Rate limit: max 5 new skills per hour. Please wait before publishing more." — the 24h/20 cap
+ * surfaces the same way). This is expected back-pressure, not a failure: we stop that account and
+ * let a later run resume.
  */
 export function isRateLimitError(output: string): boolean {
     return /rate limit/i.test(output) || /new skills per hour/i.test(output);
-}
-
-/**
- * Pick which publish targets to attempt this run. Sorting by slug makes the selection
- * deterministic so a capped (drip) run always advances through the catalog in the same order —
- * already-published skills drop out of the next diff, so progress is monotonic. `limit <= 0`
- * returns every target (still sorted), preserving the legacy "publish everything" behavior.
- */
-export function limitPublishTargets<T extends { slug: string }>(targets: readonly T[], limit: number): T[] {
-    const sorted = targets.slice().sort((a, b) => a.slug.localeCompare(b.slug));
-    return limit > 0 && sorted.length > limit ? sorted.slice(0, limit) : sorted;
 }
 
 export function buildPublishArgs(
@@ -524,13 +701,11 @@ export interface RunConfig {
     repo: string;
     sha: string;
     /**
-     * Max skills to publish in a single run; 0 means "no cap" (the legacy behavior — publish
-     * every changed skill). When > 0 the run is in "drip" mode: it publishes at most this many
-     * skills (sorted by slug for deterministic, monotonic progress across runs) and treats the
-     * rest as deferred. ClawHub caps NEW-skill publishes at 5/hour, so a full-catalog backfill
-     * must be spread across many scheduled runs — see drip-publish-skills-to-clawhub.yml.
+     * Per-account cap on NEW-skill publishes per run — the rate-limited resource (ClawHub caps new
+     * skills at 5/hour, 20/24h per key). Default 5 (one hourly quota). 0 means "no cap". Updates are
+     * never capped here because ClawHub does not rate-limit version updates of existing skills.
      */
-    publishLimit: number;
+    maxNewPerAccount: number;
 }
 
 export interface RunDeps {
@@ -539,11 +714,16 @@ export interface RunDeps {
     readVersion: (folder: string) => [string | null, string | null];
     readTitle: (folder: string) => string | null;
     makeChangelog: (folder: string, slug: string, version: string) => string;
-    publish: (cmd: string[]) => PublishOutcome;
+    /** Publish one skill as `account` (its config path selects the token). Returns code + output. */
+    publish: (cmd: string[], account: AccountRef) => PublishOutcome;
     publishConfig: PublishConfig;
+    /** Accounts to publish under — name + config path only (no tokens). From clawhub_auth.ts. */
+    accounts: AccountRef[];
     log: (line: string) => void;
-    /** Optional sink for a machine-readable run summary (the CLI wiring writes it to $GITHUB_OUTPUT). */
-    report?: (summary: { published: number; remaining: number; rateLimited: boolean }) => void;
+    /** Optional sink for the Markdown results table ($GITHUB_STEP_SUMMARY). */
+    writeSummary?: (lines: string[]) => void;
+    /** Optional sink for machine-readable totals ($GITHUB_OUTPUT). */
+    report?: (totals: Totals) => void;
 }
 
 /** Pure orchestration: returns the process exit code, never calls process.exit. */
@@ -562,102 +742,112 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
             deps.log(sel.done.message);
         return sel.done.code;
     }
-    if (sel.candidates.length === 0) {
-        deps.log(`No new or changed skills under ${cfg.root}/. Nothing to publish.`);
-        deps.report?.({ published: 0, remaining: 0, rateLimited: false });
-        return 0;
-    }
 
     const targets = sel.candidates
         .map(c => classify(c, cfg.root, deps.readVersion))
         .map(t => ({ ...t, displayName: deps.readTitle(t.folder) }));
-    const errors = targets.filter(t => t.error).map(t => t.error!);
+
+    const blocked: Blocked[] = targets.filter(t => t.error).map(t => ({ slug: t.slug, reason: t.error! }));
+    const newTargets = targets.filter(t => t.action === "publish" && t.status === "new");
+    const updateTargets = targets.filter(t => t.action === "publish" && t.status !== "new");
 
     deps.log("");
     for (const line of formatPlan(targets, cfg.owner)) deps.log(line);
     deps.log("");
 
     if (cfg.mode === "dry-run") {
+        if (deps.accounts.length) {
+            const plans = planDistribution(newTargets, updateTargets, deps.accounts, cfg.maxNewPerAccount);
+            deps.log(`Distribution preview across ${deps.accounts.length} account(s) (cap ${cfg.maxNewPerAccount || "∞"} new/account):`);
+            for (const p of plans)
+                deps.log(`  - ${p.account.name}: ${p.newTargets.length} new + ${p.updateTargets.length} update this run, ${p.deferredNew.length} new deferred`);
+        }
+        deps.log("");
         deps.log("Dry-run: no skills were published.");
-        if (errors.length) {
+        if (blocked.length) {
             deps.log("");
-            deps.log("The following issues would block a real publish:");
-            for (const e of errors) deps.log(`  - ${e}`);
+            deps.log("These skills would be blocked until their metadata.version is bumped:");
+            for (const b of blocked) deps.log(`  - ${b.reason}`);
         }
         return 0;
     }
 
-    // Real publish modes: fail fast on any version problem before mutating the registry.
-    if (errors.length) {
-        for (const e of errors) deps.log(`::error::${e}`);
-        deps.log("::error::Aborting publish — fix the version issues above and re-run.");
-        return 1;
-    }
+    // Blocked skills (version not bumped / invalid / unreadable) are surfaced but non-fatal: the
+    // healthy skills still publish, and a re-run picks the blocked ones up once they are fixed.
+    for (const b of blocked) deps.log(`::warning::${b.reason}`);
 
-    const allToPublish = targets.filter(t => t.action === "publish");
-    if (allToPublish.length === 0) {
+    if (newTargets.length === 0 && updateTargets.length === 0) {
         deps.log("Nothing to publish after version checks.");
-        deps.report?.({ published: 0, remaining: 0, rateLimited: false });
+        deps.writeSummary?.(formatSummaryMarkdown([], blocked));
+        deps.report?.(totalsOf([]));
         return 0;
     }
 
-    // Drip mode (publishLimit > 0): publish at most `publishLimit` skills this run and defer
-    // the rest. ClawHub caps NEW-skill publishes at 5/hour, so a full-catalog backfill is
-    // spread across many scheduled runs (see drip-publish-skills-to-clawhub.yml). With no cap
-    // (publishLimit === 0) this is exactly the legacy behavior: publish every changed skill.
-    const drip = cfg.publishLimit > 0;
-    const selected = limitPublishTargets(allToPublish, cfg.publishLimit);
-
-    const published: [string, string][] = [];
-    const failed: [string, string, number][] = [];
-    const total = selected.length;
-    let rateLimited = false;
-    let idx = 0;
-    for (const t of selected) {
-        idx++;
-        if (!t.displayName)
-            deps.log(`::warning::${t.slug}: no metadata.title — ClawHub will derive the display name from the slug.`);
-        deps.log(`==> [${idx}/${total}] ${t.slug} (${t.displayName ?? "auto"}) @ ${t.version} — generating changelog…`);
-        const changelog = deps.makeChangelog(t.folder, t.slug, t.version!);
-        const cmd = buildPublishArgs(deps.publishConfig, t.folder, t.version!, changelog, t.displayName ?? null);
-        const { code, output } = deps.publish(cmd);
-        if (code === 0) {
-            published.push([t.slug, t.version!]);
-        }
-        else if (drip && isRateLimitError(output)) {
-            // Hourly new-skill quota exhausted: stop now and let the next scheduled run resume.
-            // Expected back-pressure, not a failure — the remaining skills are simply deferred.
-            rateLimited = true;
-            deps.log(`::warning::${t.slug}: ClawHub rate limit reached — deferring this and the remaining skill(s) to the next scheduled run.`);
-            break;
-        }
-        else {
-            failed.push([t.slug, t.version!, code]);
-            deps.log(`::error::${t.slug}: clawhub publish exited with code ${code}`);
-        }
-    }
-
-    // Skills still needing a future publish: everything publishable this run minus what we
-    // actually published and minus genuine failures (those are surfaced as errors, not deferred).
-    const remaining = allToPublish.length - published.length - failed.length;
-
-    deps.log("");
-    deps.log(`Published ${published.length}/${total} skill(s)${drip ? " this run" : ""}.`);
-    for (const [slug, version] of published) deps.log(`  ✓ ${slug} @ ${version}`);
-    deps.report?.({ published: published.length, remaining, rateLimited });
-
-    if (failed.length) {
-        deps.log("Failed:");
-        for (const [slug, version, code] of failed) deps.log(`  ✗ ${slug} @ ${version} (exit ${code})`);
+    if (deps.accounts.length === 0) {
+        deps.log("::error::No publishing accounts available (CLAWHUB_TOKENS is empty or malformed) — cannot publish.");
         return 1;
     }
-    if (remaining > 0) {
-        deps.log(
-            `${remaining} skill(s) still pending (${rateLimited ? "rate-limited" : "deferred by the per-run cap"}); `
-            + `the next scheduled run will continue.`,
-        );
+
+    const plans = planDistribution(newTargets, updateTargets, deps.accounts, cfg.maxNewPerAccount);
+    const stats: AccountStats[] = [];
+    let hardFailure = false;
+
+    // Accounts are processed sequentially (no concurrency needed): each publishes its assigned new
+    // skills (up to the cap) then its updates, stopping early on its own rate limit. Per-account
+    // remaining = everything assigned that did not publish this run (over-cap, failed, or deferred).
+    for (const plan of plans) {
+        const s: AccountStats = { name: plan.account.name, published: 0, updated: 0, failed: 0, rateLimited: false, remaining: 0 };
+        const queue: Array<{ kind: "new" | "update"; t: Target }> = [
+            ...plan.newTargets.map(t => ({ kind: "new" as const, t })),
+            ...plan.updateTargets.map(t => ({ kind: "update" as const, t })),
+        ];
+        const assigned = queue.length + plan.deferredNew.length;
+        deps.log("");
+        deps.log(`== ${plan.account.name}: attempting ${plan.newTargets.length} new + ${plan.updateTargets.length} update (${plan.deferredNew.length} new deferred to a later run) ==`);
+
+        for (let i = 0; i < queue.length; i++) {
+            const { kind, t } = queue[i]!;
+            if (!t.displayName)
+                deps.log(`::warning::${t.slug}: no metadata.title — ClawHub will derive the display name from the slug.`);
+            deps.log(`==> [${plan.account.name} ${i + 1}/${queue.length}] ${t.slug} (${t.displayName ?? "auto"}) @ ${t.version} [${kind}]`);
+            const changelog = deps.makeChangelog(t.folder, t.slug, t.version!);
+            const cmd = buildPublishArgs(deps.publishConfig, t.folder, t.version!, changelog, t.displayName ?? null);
+            const { code, output } = deps.publish(cmd, plan.account);
+            if (code === 0) {
+                if (kind === "new")
+                    s.published++;
+                else
+                    s.updated++;
+            }
+            else if (isRateLimitError(output)) {
+                // Quota exhausted for this key: stop now (everything left is deferred to a later run).
+                s.rateLimited = true;
+                deps.log(`::warning::[${plan.account.name}] ClawHub rate limit reached — deferring ${t.slug} and the rest to a later run.`);
+                break;
+            }
+            else {
+                s.failed++;
+                hardFailure = true;
+                deps.log(`::error::[${plan.account.name}] ${t.slug}: clawhub publish exited with code ${code}`);
+            }
+        }
+        s.remaining = assigned - s.published - s.updated;
+        stats.push(s);
     }
-    return 0;
+
+    const totals = totalsOf(stats);
+    deps.log("");
+    deps.log(`Done. Published ${totals.published} new, updated ${totals.updated}, failed ${totals.failed}, remaining ${totals.remaining}.`);
+    if (totals.rateLimitedAccounts.length)
+        deps.log(`Rate-limited account(s) this run: ${totals.rateLimitedAccounts.join(", ")}.`);
+    if (totals.remaining > 0)
+        deps.log(`${totals.remaining} skill(s) still pending — re-run the workflow (idempotent) to continue.`);
+    deps.writeSummary?.(formatSummaryMarkdown(stats, blocked));
+    deps.report?.(totals);
+
+    // Genuine publish failures (non-rate-limit) fail the run; a rate limit or a remaining backlog is
+    // expected back-pressure and exits 0 so the operator just re-runs.
+    return hardFailure ? 1 : 0;
 }
 
 // ----------------------------------------------------------------------------
@@ -671,6 +861,8 @@ function env(getenv: Getenv, name: string, def = ""): string {
 }
 
 export function readRunConfig(getenv: Getenv): RunConfig {
+    const rawCap = env(getenv, "MAX_NEW_PER_ACCOUNT", "5").trim();
+    const cap = Number.parseInt(rawCap, 10);
     return {
         mode: env(getenv, "MODE").trim(),
         skillPath: env(getenv, "SKILL_PATH").trim().replace(/\/+$/, ""),
@@ -679,7 +871,8 @@ export function readRunConfig(getenv: Getenv): RunConfig {
         syncJsonPath: env(getenv, "SYNC_JSON"),
         repo: env(getenv, "GITHUB_REPOSITORY"),
         sha: env(getenv, "GITHUB_SHA"),
-        publishLimit: Math.max(0, Number.parseInt(env(getenv, "PUBLISH_LIMIT", "0"), 10) || 0),
+        // garbage -> default 5; negative -> 0 (no cap).
+        maxNewPerAccount: Number.isNaN(cap) ? 5 : Math.max(0, cap),
     };
 }
 
@@ -707,6 +900,32 @@ export function readCodexConfig(getenv: Getenv): CodexConfig {
     };
 }
 
+/**
+ * Read the token-free accounts manifest written by clawhub_auth.ts: a JSON array of
+ * {name, configPath}. Falls back to a single "default" account from CLAWHUB_CONFIG_PATH when no
+ * manifest is set (e.g. a local single-token run). Never contains key material.
+ */
+export function readAccounts(getenv: Getenv, readText: (p: string) => string, exists: (p: string) => boolean, log: (l: string) => void): AccountRef[] {
+    const manifestPath = env(getenv, "CLAWHUB_ACCOUNTS_MANIFEST").trim();
+    if (manifestPath && exists(manifestPath)) {
+        try {
+            const parsed = JSON.parse(readText(manifestPath));
+            if (Array.isArray(parsed)) {
+                const refs = parsed
+                    .filter(a => a && typeof a.name === "string" && typeof a.configPath === "string")
+                    .map(a => ({ name: a.name as string, configPath: a.configPath as string }));
+                if (refs.length)
+                    return refs;
+            }
+        }
+        catch (e) {
+            log(`::warning::could not read accounts manifest at ${manifestPath}: ${e}`);
+        }
+    }
+    const single = env(getenv, "CLAWHUB_CONFIG_PATH").trim();
+    return single ? [{ name: "default", configPath: single }] : [];
+}
+
 // ----------------------------------------------------------------------------
 // real wiring (only runs when executed directly, not when imported by tests)
 // ----------------------------------------------------------------------------
@@ -719,10 +938,18 @@ function realSpawnCapture(cmd: string[]): Spawned {
     return { exitCode: p.exitCode, stdout: decode(p.stdout), stderr: decode(p.stderr) };
 }
 
-function realPublish(cmd: string[]): PublishOutcome {
-    // Capture (rather than inherit) so we can inspect the output for ClawHub's rate-limit
-    // message, then echo it through so the live log is unchanged.
-    const p = Bun.spawnSync(cmd, { stdin: "ignore", stdout: "pipe", stderr: "pipe" });
+/**
+ * Publish one skill under a specific account by pointing clawhub at that account's config file via
+ * CLAWHUB_CONFIG_PATH (so the token is selected from a file, never a command line or a log). Output
+ * is captured to detect ClawHub's rate-limit message, then echoed through so the live log is intact.
+ */
+function realPublishFor(cmd: string[], account: AccountRef): PublishOutcome {
+    const p = Bun.spawnSync(cmd, {
+        stdin: "ignore",
+        stdout: "pipe",
+        stderr: "pipe",
+        env: { ...process.env, CLAWHUB_CONFIG_PATH: account.configPath },
+    });
     const out = decode(p.stdout);
     const err = decode(p.stderr);
     if (out)
@@ -793,15 +1020,16 @@ if (import.meta.main) {
         return buildFallbackChangelog(slug, version, cfg.repo, cfg.sha);
     };
 
-    // When GitHub Actions provides $GITHUB_OUTPUT, expose a machine-readable run summary so the
-    // workflow can branch on it (e.g. the drip workflow stops its schedule once `done` is true).
+    // Machine-readable totals for $GITHUB_OUTPUT so downstream steps/automation can branch on the
+    // result (done = nothing failed and nothing left to publish). Token-free by construction.
     const outputPath = env(getenv, "GITHUB_OUTPUT").trim();
     const report = outputPath
-        ? (s: { published: number; remaining: number; rateLimited: boolean }): void => {
+        ? (t: Totals): void => {
                 try {
                     appendFileSync(
                         outputPath,
-                        `published=${s.published}\nremaining=${s.remaining}\ndone=${s.remaining === 0}\nrate_limited=${s.rateLimited}\n`,
+                        `published=${t.published}\nupdated=${t.updated}\nfailed=${t.failed}\nremaining=${t.remaining}\n`
+                        + `rate_limited=${t.rateLimitedAccounts.length > 0}\ndone=${t.remaining === 0 && t.failed === 0}\n`,
                     );
                 }
                 catch (e) {
@@ -809,6 +1037,22 @@ if (import.meta.main) {
                 }
             }
         : undefined;
+
+    // The human-readable results table goes to $GITHUB_STEP_SUMMARY; with no summary file (local
+    // runs) it is printed to the log instead. Account names only — never any token.
+    const summaryPath = env(getenv, "GITHUB_STEP_SUMMARY").trim();
+    const writeSummary = (lines: string[]): void => {
+        if (summaryPath) {
+            try {
+                appendFileSync(summaryPath, `${lines.join("\n")}\n`);
+                return;
+            }
+            catch (e) {
+                log(`::warning::could not write step summary: ${e}`);
+            }
+        }
+        for (const l of lines) log(l);
+    };
 
     const deps: RunDeps = {
         readText,
@@ -818,9 +1062,11 @@ if (import.meta.main) {
         makeChangelog: cacheDir
             ? changelogFromCache
             : (folder, slug, version) => generateChangelog(folder, slug, version, cfg.repo, cfg.sha, codexCfg, changelogDeps),
-        publish: realPublish,
+        publish: realPublishFor,
         publishConfig: readPublishConfig(getenv),
+        accounts: readAccounts(getenv, readText, existsSync, log),
         log,
+        writeSummary,
         report,
     };
 
