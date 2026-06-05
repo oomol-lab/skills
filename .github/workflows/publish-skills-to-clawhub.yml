@@ -1,28 +1,33 @@
 name: Publish Skills to ClawHub
 
-# Publishes the skill folders under app-skills/ to ClawHub, using each skill's
-# declared metadata.version (from its SKILL.md frontmatter) as the published
-# version — NOT ClawHub's default registry+bump auto-versioning.
+# Publishes the skill folders under app-skills/ to ClawHub, using each skill's declared
+# metadata.version (from its SKILL.md frontmatter) as the published version — NOT ClawHub's default
+# registry+bump auto-versioning.
 #
 # How it works:
-#   1. `clawhub sync --dry-run --json` detects which skills are new or changed
-#      (scoped to app-skills/ only, so other directories are never published).
-#   2. contrib/scripts/clawhub_publish.ts reads metadata.version from each
-#      changed skill and runs `clawhub publish <folder> --version <metadata.version>`.
-#   3. A changed skill whose metadata.version was NOT bumped above the published
-#      version aborts the run — bump metadata.version in its SKILL.md to publish.
+#   1. `clawhub sync --dry-run --json` detects which skills are new or changed (scoped to
+#      app-skills/ only, so other directories are never published).
+#   2. contrib/scripts/clawhub_publish.ts reads metadata.version from each changed skill and runs
+#      `clawhub publish <folder> --version <metadata.version>` under one of the configured accounts.
+#   3. A changed skill whose metadata.version was NOT bumped above the published version is reported
+#      as "blocked" (it cannot republish an existing version) — bump it and re-run.
 #
-# The ClawHub CLI is run from source (openclaw/clawhub, pinned commit) because the
-# published npm release does not yet support `sync --json`, which step 1 relies on.
+# Rate limit & multiple accounts:
+#   ClawHub caps NEW-skill publishes per API key (5/hour, 20/24h). Updating an existing skill's
+#   version is NOT capped. To drain a large catalog faster, set the CLAWHUB_TOKENS secret to several
+#   accounts — "NAME:API_KEY,NAME:API_KEY" (e.g. "Kevin:...,Jack:...") — and each account publishes
+#   up to `max_per_account` new skills this run (default 5, one hourly quota) plus all of its
+#   assigned updates. Each run is idempotent (the registry diff is the source of truth), so when
+#   skills are left over, just re-run the workflow (~1h later, after the quota resets) to continue;
+#   the results table reports who published/updated/failed/hit-the-rate-limit and what remains.
+#
+# The ClawHub CLI is run from source (openclaw/clawhub, pinned commit) because the published npm
+# release does not yet support `sync --json`, which step 1 relies on.
 #
 # Run it from the Actions tab ("Run workflow") and pick a mode:
-#   dry-run         Preview the plan (which skills, at which version). No upload.
+#   dry-run         Preview the plan + per-account distribution. No upload.
 #   publish-single  Publish one folder, e.g. app-skills/<slug>.
-#   publish-catalog Publish every new/changed skill under app-skills/.
-#
-# ClawHub caps NEW-skill publishes at 5 per hour, so a large publish-catalog run fails once the
-# 6th new skill is rejected. When that happens, drain the rest 5-at-a-time on a schedule with
-# .github/workflows/drip-publish-skills-to-clawhub.yml.
+#   publish-catalog Publish every new/changed skill under app-skills/, spread across the accounts.
 
 on:
   workflow_dispatch:
@@ -41,6 +46,11 @@ on:
         type: string
         required: false
         default: ""
+      max_per_account:
+        description: Max NEW skills each account publishes per run (ClawHub's hourly new-skill quota is 5). Updates are not capped. 0 = no cap.
+        type: string
+        required: false
+        default: "5"
       generate_changelog:
         description: Generate each skill's changelog with codex exec (one run per skill). Off uses a plain changelog.
         type: boolean
@@ -134,19 +144,13 @@ jobs:
         if: inputs.mode != 'dry-run' && inputs.generate_changelog
         run: npm install -g "@openai/codex@${CODEX_CLI_VERSION}"
 
+      # Parse CLAWHUB_TOKENS into one clawhub config per account and a token-free manifest. This is
+      # the only step that touches raw tokens: it masks every key and exports CLAWHUB_CONFIG_PATH
+      # (first account, for the diff) + CLAWHUB_ACCOUNTS_MANIFEST (for the publish step).
       - name: Configure ClawHub auth
         env:
-          CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          if [[ -z "${CLAWHUB_TOKEN:-}" ]]; then
-            echo "::error::Missing secret CLAWHUB_TOKEN"
-            exit 1
-          fi
-          config_path="${RUNNER_TEMP}/clawhub-config.json"
-          jq -n --arg registry "$CLAWHUB_REGISTRY" --arg token "$CLAWHUB_TOKEN" \
-            '{registry: $registry, token: $token}' > "$config_path"
-          echo "CLAWHUB_CONFIG_PATH=$config_path" >> "$GITHUB_ENV"
+          CLAWHUB_TOKENS: ${{ secrets.CLAWHUB_TOKENS }}
+        run: bun contrib/scripts/clawhub_auth.ts
 
       - name: Diff skills against the registry
         run: |
@@ -202,10 +206,15 @@ jobs:
           path: ${{ runner.temp }}/changelog-cache
           key: changelog-${{ github.run_id }}-${{ github.run_attempt }}
 
+      # Publish across the configured accounts using metadata.version. CLAWHUB_CONFIG_PATH and
+      # CLAWHUB_ACCOUNTS_MANIFEST come from the auth step (via $GITHUB_ENV). The script writes the
+      # per-account results table to $GITHUB_STEP_SUMMARY and totals to $GITHUB_OUTPUT.
       - name: Publish using metadata.version
+        id: publish
         env:
           MODE: ${{ inputs.mode }}
           SKILL_PATH: ${{ inputs.skill_path }}
+          MAX_NEW_PER_ACCOUNT: ${{ inputs.max_per_account }}
           SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
           CLAWHUB_BIN: clawhub
           # Changelogs were pre-generated in parallel above; publish just reads them from

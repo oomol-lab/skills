@@ -1,4 +1,4 @@
-import type { Candidate, ChangelogDeps, CodexConfig, RunConfig, RunDeps, Spawned } from "./clawhub_publish.ts";
+import type { AccountRef, Candidate, ChangelogDeps, CodexConfig, RunConfig, RunDeps, Target, Totals } from "./clawhub_publish.ts";
 import { describe, expect, test } from "bun:test";
 import {
     buildCodexArgs,
@@ -9,19 +9,23 @@ import {
     extractManifestTitle,
     extractManifestVersion,
     formatPlan,
+    formatSummaryMarkdown,
     generateChangelog,
     isRateLimitError,
-    limitPublishTargets,
+    parseAccounts,
     parseSemver,
+    planDistribution,
+    readAccounts,
     readCodexConfig,
     readManifestTitle,
     readManifestVersion,
     readPublishConfig,
     readRunConfig,
+    roundRobin,
     run,
     selectCandidates,
     semverGt,
-
+    totalsOf,
 } from "./clawhub_publish.ts";
 
 // ---------------------------------------------------------------------------
@@ -76,7 +80,6 @@ describe("extractManifestVersion", () => {
         expect(extractManifestVersion("---\nmetadata:\n  version: 2.0.0\n---\n")).toEqual(["2.0.0", null]);
     });
     test("does not match a top-level (unindented) version key", () => {
-    // top-level `version:` has no leading whitespace, so it must not match
         expect(extractManifestVersion("---\nversion: 9.9.9\n---\n")).toEqual([null, "has no metadata.version field"]);
     });
     test("errors without frontmatter", () => {
@@ -286,13 +289,15 @@ describe("buildPublishArgs", () => {
         expect(args[args.indexOf("--tags") + 1]).toBe("latest");
         expect(args[args.indexOf("--changelog") + 1]).toBe("notes");
     });
+    test("does not carry a token (auth comes from CLAWHUB_CONFIG_PATH, never the args)", () => {
+        expect(args.some(a => /token|api[_-]?key/i.test(a))).toBe(false);
+    });
     test("omits --name when no display name is given", () => {
         expect(args).not.toContain("--name");
     });
     test("passes a curated display name via --name without disturbing the folder arg", () => {
         const withName = buildPublishArgs(cfg, "/r/app-skills/oo-ably", "1.0.0", "notes", "Ably");
         expect(withName[withName.indexOf("--name") + 1]).toBe("Ably");
-        // folder stays the first positional after the publish subcommand
         expect(withName[withName.indexOf("publish") + 1]).toBe("/r/app-skills/oo-ably");
     });
     test("treats a blank display name as absent", () => {
@@ -318,31 +323,190 @@ describe("isRateLimitError", () => {
 });
 
 // ---------------------------------------------------------------------------
-// limitPublishTargets
+// parseAccounts (CLAWHUB_TOKENS) — token-handling code; NOTHING may echo a key
 // ---------------------------------------------------------------------------
-describe("limitPublishTargets", () => {
-    const t = (slug: string) => ({ slug });
+describe("parseAccounts", () => {
+    test("parses NAME:KEY,NAME:KEY", () => {
+        const [accounts, errors] = parseAccounts("Kevin:abc123,Jack:def456");
+        expect(errors).toEqual([]);
+        expect(accounts).toEqual([
+            { name: "Kevin", key: "abc123" },
+            { name: "Jack", key: "def456" },
+        ]);
+    });
+    test("trims whitespace around entries and names", () => {
+        const [accounts] = parseAccounts(" Kevin : abc , Jack:def ");
+        expect(accounts.map(a => a.name)).toEqual(["Kevin", "Jack"]);
+        expect(accounts.map(a => a.key)).toEqual(["abc", "def"]);
+    });
+    test("splits on the FIRST colon only (keys may contain colons)", () => {
+        const [accounts] = parseAccounts("Kevin:sk:live:abc");
+        expect(accounts).toEqual([{ name: "Kevin", key: "sk:live:abc" }]);
+    });
+    test("skips blank entries (trailing/double commas)", () => {
+        const [accounts, errors] = parseAccounts("Kevin:abc,,Jack:def,");
+        expect(accounts.map(a => a.name)).toEqual(["Kevin", "Jack"]);
+        expect(errors).toEqual([]);
+    });
+    test("disambiguates duplicate names so the table stays unambiguous", () => {
+        const [accounts] = parseAccounts("Kevin:abc,Kevin:def,Kevin:ghi");
+        expect(accounts.map(a => a.name)).toEqual(["Kevin", "Kevin#2", "Kevin#3"]);
+    });
+    test("reports malformed entries by POSITION and NEVER echoes the key material", () => {
+        const [accounts, errors] = parseAccounts("Kevin:abc,noColonHere,:emptyName,EmptyKey:");
+        expect(accounts).toEqual([{ name: "Kevin", key: "abc" }]);
+        expect(errors).toHaveLength(3);
+        for (const e of errors) {
+            expect(e).toMatch(/token entry #\d+ is malformed/);
+            // the key/secret-bearing strings must not appear in any error
+            expect(e).not.toContain("noColonHere");
+            expect(e).not.toContain("emptyName");
+            expect(e).not.toContain("EmptyKey");
+        }
+    });
+    test("empty input yields no accounts and no errors", () => {
+        expect(parseAccounts("")).toEqual([[], []]);
+        expect(parseAccounts("   ")).toEqual([[], []]);
+    });
+});
 
-    test("sorts by slug and keeps the first N", () => {
-        const out = limitPublishTargets([t("c"), t("a"), t("b"), t("d")], 2);
-        expect(out.map(x => x.slug)).toEqual(["a", "b"]);
+// ---------------------------------------------------------------------------
+// roundRobin
+// ---------------------------------------------------------------------------
+describe("roundRobin", () => {
+    test("distributes items by index modulo n, preserving order", () => {
+        expect(roundRobin(["a", "b", "c", "d", "e"], 2)).toEqual([["a", "c", "e"], ["b", "d"]]);
+        expect(roundRobin(["a", "b", "c"], 3)).toEqual([["a"], ["b"], ["c"]]);
     });
-    test("limit 0 returns everything (still sorted)", () => {
-        const out = limitPublishTargets([t("c"), t("a"), t("b")], 0);
-        expect(out.map(x => x.slug)).toEqual(["a", "b", "c"]);
+    test("n larger than item count leaves trailing buckets empty", () => {
+        expect(roundRobin(["a"], 3)).toEqual([["a"], [], []]);
     });
-    test("limit >= length returns everything", () => {
-        expect(limitPublishTargets([t("a"), t("b")], 5).map(x => x.slug)).toEqual(["a", "b"]);
+    test("n <= 0 returns no buckets", () => {
+        expect(roundRobin(["a", "b"], 0)).toEqual([]);
+        expect(roundRobin(["a", "b"], -1)).toEqual([]);
     });
-    test("is deterministic — same input, same first N across calls", () => {
-        const input = [t("oo-zeta"), t("oo-alpha"), t("oo-mid"), t("oo-beta")];
-        expect(limitPublishTargets(input, 2).map(x => x.slug)).toEqual(limitPublishTargets(input, 2).map(x => x.slug));
-        expect(limitPublishTargets(input, 2).map(x => x.slug)).toEqual(["oo-alpha", "oo-beta"]);
+    test("empty items returns n empty buckets", () => {
+        expect(roundRobin([], 2)).toEqual([[], []]);
     });
-    test("does not mutate the input array", () => {
-        const input = [t("c"), t("a"), t("b")];
-        limitPublishTargets(input, 1);
-        expect(input.map(x => x.slug)).toEqual(["c", "a", "b"]);
+});
+
+// ---------------------------------------------------------------------------
+// planDistribution
+// ---------------------------------------------------------------------------
+describe("planDistribution", () => {
+    const acc = (name: string): AccountRef => ({ name, configPath: `/cfg/${name}` });
+    const target = (slug: string, status: string): Target => ({
+        slug,
+        folder: `app-skills/${slug}`,
+        status,
+        latest: null,
+        version: "1.0.0",
+        action: "publish",
+        error: null,
+    });
+
+    test("caps NEW publishes per account and defers the overflow; updates are uncapped", () => {
+        const news = ["oo-a", "oo-b", "oo-c", "oo-d", "oo-e"].map(s => target(s, "new"));
+        const updates = ["oo-u1", "oo-u2", "oo-u3"].map(s => target(s, "update"));
+        const plans = planDistribution(news, updates, [acc("A"), acc("B")], 2);
+        // round-robin over sorted new: A=[a,c,e], B=[b,d]; cap 2 -> A attempts [a,c] (e deferred), B attempts [b,d]
+        expect(plans[0]!.newTargets.map(t => t.slug)).toEqual(["oo-a", "oo-c"]);
+        expect(plans[0]!.deferredNew.map(t => t.slug)).toEqual(["oo-e"]);
+        expect(plans[1]!.newTargets.map(t => t.slug)).toEqual(["oo-b", "oo-d"]);
+        expect(plans[1]!.deferredNew).toEqual([]);
+        // updates round-robin uncapped: A=[u1,u3], B=[u2]
+        expect(plans[0]!.updateTargets.map(t => t.slug)).toEqual(["oo-u1", "oo-u3"]);
+        expect(plans[1]!.updateTargets.map(t => t.slug)).toEqual(["oo-u2"]);
+    });
+
+    test("the new skills attempted this run are the lowest slugs overall (monotonic progress)", () => {
+        const news = ["oo-e", "oo-a", "oo-d", "oo-b", "oo-c"].map(s => target(s, "new"));
+        const plans = planDistribution(news, [], [acc("A"), acc("B")], 1);
+        const attempted = plans.flatMap(p => p.newTargets.map(t => t.slug)).sort();
+        expect(attempted).toEqual(["oo-a", "oo-b"]); // 1 per account * 2 accounts = lowest 2 slugs
+    });
+
+    test("cap 0 means no cap — every assigned new skill is attempted", () => {
+        const news = ["oo-a", "oo-b", "oo-c"].map(s => target(s, "new"));
+        const plans = planDistribution(news, [], [acc("A")], 0);
+        expect(plans[0]!.newTargets.map(t => t.slug)).toEqual(["oo-a", "oo-b", "oo-c"]);
+        expect(plans[0]!.deferredNew).toEqual([]);
+    });
+});
+
+// ---------------------------------------------------------------------------
+// totalsOf + formatSummaryMarkdown
+// ---------------------------------------------------------------------------
+describe("totalsOf", () => {
+    test("sums each column and lists the rate-limited accounts", () => {
+        const stats = [
+            { name: "Kevin", published: 5, updated: 3, failed: 0, rateLimited: false, remaining: 10 },
+            { name: "Jack", published: 4, updated: 1, failed: 2, rateLimited: true, remaining: 7 },
+        ];
+        expect(totalsOf(stats)).toEqual({ published: 9, updated: 4, failed: 2, remaining: 17, rateLimitedAccounts: ["Jack"] });
+    });
+    test("empty -> all zero", () => {
+        expect(totalsOf([])).toEqual({ published: 0, updated: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] });
+    });
+});
+
+describe("formatSummaryMarkdown", () => {
+    const stats = [
+        { name: "Kevin", published: 5, updated: 3, failed: 0, rateLimited: false, remaining: 10 },
+        { name: "Jack", published: 5, updated: 2, failed: 1, rateLimited: true, remaining: 12 },
+    ];
+
+    test("renders a per-account table, a totals row and a rate-limit note", () => {
+        const md = formatSummaryMarkdown(stats, []).join("\n");
+        expect(md).toContain("### ClawHub publish results");
+        expect(md).toContain("| Account | Published (new) | Updated | Failed | Rate-limited | Remaining |");
+        expect(md).toContain("| Kevin | 5 | 3 | 0 | — | 10 |");
+        expect(md).toContain("| Jack | 5 | 2 | 1 | ⚠️ yes | 12 |");
+        expect(md).toContain("| **Total** | **10** | **5** | **1** |");
+        expect(md).toContain("Rate-limited this run: Jack");
+        expect(md).toContain("22 skill(s) still pending");
+    });
+
+    test("lists blocked skills needing a version bump", () => {
+        const md = formatSummaryMarkdown([], [{ slug: "oo-foo", reason: "oo-foo: not greater than published" }]).join("\n");
+        expect(md).toContain("#### Blocked (1)");
+        expect(md).toContain("`oo-foo`: oo-foo: not greater than published");
+    });
+
+    test("uses account NAMES only — a results table can never carry a token", () => {
+        const md = formatSummaryMarkdown([{ name: "Kevin", published: 1, updated: 0, failed: 0, rateLimited: false, remaining: 0 }], []).join("\n");
+        expect(md).toContain("Kevin");
+        expect(md).not.toContain("configPath");
+        expect(md).not.toMatch(/token|api[_-]?key/i);
+    });
+});
+
+// ---------------------------------------------------------------------------
+// formatPlan
+// ---------------------------------------------------------------------------
+describe("formatPlan", () => {
+    test("renders a header and one row per target", () => {
+        const targets = [
+            { slug: "oo-ably", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null, displayName: "Ably" },
+            { slug: "oo-slack", folder: "f", status: "update", latest: "1.0.0", version: "1.0.0", action: "skip" as const, error: "x", displayName: "Slack" },
+        ];
+        const lines = formatPlan(targets, "oomol");
+        expect(lines[0]).toBe("Plan (2 candidate skill(s), owner=oomol):");
+        expect(lines[1]).toContain("SKILL");
+        expect(lines[1]).toContain("DISPLAY NAME");
+        expect(lines[2]).toContain("oo-ably");
+        expect(lines[2]).toContain("Ably");
+        expect(lines[2]).toContain("PUBLISH");
+        expect(lines[3]).toContain("SKIP");
+    });
+    test("shows (auto) when a target has no curated display name", () => {
+        const targets = [
+            { slug: "oo-x", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null },
+        ];
+        expect(formatPlan(targets, "oomol")[2]).toContain("(auto)");
+    });
+    test("falls back to placeholder owner", () => {
+        expect(formatPlan([], "")[0]).toBe("Plan (0 candidate skill(s), owner=<your account>):");
     });
 });
 
@@ -361,7 +525,7 @@ describe("generateChangelog", () => {
         apiKeyEnv: "OPENAI_API_KEY",
         apiKeyPresent: true,
     };
-    const okSpawn = (): Spawned => ({ exitCode: 0, stdout: "", stderr: "" });
+    const okSpawn = (): { exitCode: number; stdout: string; stderr: string } => ({ exitCode: 0, stdout: "", stderr: "" });
     const baseDeps = (over: Partial<ChangelogDeps> = {}): { deps: ChangelogDeps; logs: string[] } => {
         const logs: string[] = [];
         const deps: ChangelogDeps = {
@@ -422,51 +586,24 @@ describe("generateChangelog", () => {
 });
 
 // ---------------------------------------------------------------------------
-// formatPlan
-// ---------------------------------------------------------------------------
-describe("formatPlan", () => {
-    test("renders a header and one row per target", () => {
-        const targets = [
-            { slug: "oo-ably", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null, displayName: "Ably" },
-            { slug: "oo-slack", folder: "f", status: "update", latest: "1.0.0", version: "1.0.0", action: "skip" as const, error: "x", displayName: "Slack" },
-        ];
-        const lines = formatPlan(targets, "oomol");
-        expect(lines[0]).toBe("Plan (2 candidate skill(s), owner=oomol):");
-        expect(lines[1]).toContain("SKILL");
-        expect(lines[1]).toContain("DISPLAY NAME");
-        expect(lines[2]).toContain("oo-ably");
-        expect(lines[2]).toContain("Ably");
-        expect(lines[2]).toContain("PUBLISH");
-        expect(lines[3]).toContain("SKIP");
-    });
-    test("shows (auto) when a target has no curated display name", () => {
-        const targets = [
-            { slug: "oo-x", folder: "f", status: "new", latest: null, version: "1.0.0", action: "publish" as const, error: null },
-        ];
-        expect(formatPlan(targets, "oomol")[2]).toContain("(auto)");
-    });
-    test("falls back to placeholder owner", () => {
-        expect(formatPlan([], "")[0]).toBe("Plan (0 candidate skill(s), owner=<your account>):");
-    });
-});
-
-// ---------------------------------------------------------------------------
-// run (full orchestration with fakes)
+// run (multi-account orchestration with fakes)
 // ---------------------------------------------------------------------------
 interface FakeOpts {
     sync: unknown;
     versions?: Record<string, [string | null, string | null]>;
     titles?: Record<string, string | null>;
     existing?: string[];
-    publishCode?: (cmd: string[]) => number;
-    publishOutput?: (cmd: string[]) => string;
+    accounts?: AccountRef[];
+    publishCode?: (cmd: string[], account: AccountRef) => number;
+    publishOutput?: (cmd: string[], account: AccountRef) => string;
 }
 
 function makeDeps(cfg: RunConfig, opts: FakeOpts) {
     const logs: string[] = [];
-    const publishCalls: string[][] = [];
+    const publishCalls: Array<{ cmd: string[]; account: string }> = [];
     const changelogCalls: Array<{ folder: string; slug: string; version: string }> = [];
-    const reports: Array<{ published: number; remaining: number; rateLimited: boolean }> = [];
+    const summaries: string[][] = [];
+    const reports: Totals[] = [];
     const deps: RunDeps = {
         readText: (p) => {
             if (p === cfg.syncJsonPath)
@@ -480,18 +617,20 @@ function makeDeps(cfg: RunConfig, opts: FakeOpts) {
             changelogCalls.push({ folder, slug, version });
             return "CHANGELOG";
         },
-        publish: (cmd) => {
-            publishCalls.push(cmd);
+        publish: (cmd, account) => {
+            publishCalls.push({ cmd, account: account.name });
             return {
-                code: opts.publishCode ? opts.publishCode(cmd) : 0,
-                output: opts.publishOutput ? opts.publishOutput(cmd) : "",
+                code: opts.publishCode ? opts.publishCode(cmd, account) : 0,
+                output: opts.publishOutput ? opts.publishOutput(cmd, account) : "",
             };
         },
         publishConfig: { bin: "clawhub", registry: "https://r", site: "https://s", owner: cfg.owner },
+        accounts: opts.accounts ?? [{ name: "solo", configPath: "/cfg/solo" }],
         log: l => logs.push(l),
-        report: s => reports.push(s),
+        writeSummary: l => summaries.push(l),
+        report: t => reports.push(t),
     };
-    return { deps, logs, publishCalls, changelogCalls, reports };
+    return { deps, logs, publishCalls, changelogCalls, summaries, reports };
 }
 
 const baseCfg: RunConfig = {
@@ -502,108 +641,128 @@ const baseCfg: RunConfig = {
     syncJsonPath: "sync.json",
     repo: "oomol-lab/skills",
     sha: "abcdef1234567",
-    publishLimit: 0,
+    maxNewPerAccount: 0,
 };
 
+// helpers to build sync candidates and stub their versions
+const newCand = (slug: string) => ({ slug, folder: `app-skills/${slug}`, status: "new", latestVersion: null });
+const updateCand = (slug: string, latest: string) => ({ slug, folder: `app-skills/${slug}`, status: "update", latestVersion: latest });
+function versionsFor(map: Record<string, string>): Record<string, [string | null, string | null]> {
+    return Object.fromEntries(Object.entries(map).map(([slug, v]) => [`app-skills/${slug}`, [v, null] as [string | null, string | null]]));
+}
+
 describe("run", () => {
-    test("no candidates -> exit 0, nothing published", () => {
+    test("no candidates -> exit 0, nothing published, zero totals reported", () => {
         const cfg = { ...baseCfg };
-        const { deps, publishCalls, logs } = makeDeps(cfg, { sync: { wouldPublish: [] } });
+        const { deps, publishCalls, logs, reports } = makeDeps(cfg, { sync: { wouldPublish: [] } });
         expect(run(cfg, deps)).toBe(0);
         expect(publishCalls).toHaveLength(0);
-        expect(logs.some(l => l.includes("Nothing to publish") || l.includes("No new or changed"))).toBe(true);
+        expect(logs.some(l => l.includes("Nothing to publish"))).toBe(true);
+        expect(reports).toEqual([{ published: 0, updated: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] }]);
     });
 
-    test("dry-run -> exit 0, never publishes or generates changelogs, reports issues", () => {
-        const cfg = { ...baseCfg, mode: "dry-run" };
+    test("dry-run -> never publishes, previews distribution, lists blockers", () => {
+        const cfg = { ...baseCfg, mode: "dry-run", maxNewPerAccount: 5 };
         const { deps, publishCalls, changelogCalls, logs } = makeDeps(cfg, {
-            sync: {
-                wouldPublish: [
-                    { slug: "ok", folder: "app-skills/ok", status: "new", latestVersion: null },
-                    { slug: "stale", folder: "app-skills/stale", status: "update", latestVersion: "1.0.0" },
-                ],
-            },
-            versions: { "app-skills/ok": ["1.0.0", null], "app-skills/stale": ["1.0.0", null] },
+            sync: { wouldPublish: [newCand("ok"), updateCand("stale", "1.0.0")] },
+            versions: versionsFor({ ok: "1.0.0", stale: "1.0.0" }),
+            accounts: [{ name: "Kevin", configPath: "/k" }, { name: "Jack", configPath: "/j" }],
         });
         expect(run(cfg, deps)).toBe(0);
         expect(publishCalls).toHaveLength(0);
         expect(changelogCalls).toHaveLength(0);
+        expect(logs.some(l => l.includes("Distribution preview across 2 account(s)"))).toBe(true);
         expect(logs.some(l => l.includes("Dry-run: no skills were published."))).toBe(true);
-        expect(logs.some(l => l.includes("would block a real publish"))).toBe(true);
+        expect(logs.some(l => l.includes("would be blocked"))).toBe(true);
     });
 
-    test("publish-catalog aborts fast when a changed skill is not bumped", () => {
+    test("publishes new vs update across accounts and tags each publish with its account", () => {
         const cfg = { ...baseCfg };
-        const { deps, publishCalls, logs } = makeDeps(cfg, {
-            sync: {
-                wouldPublish: [
-                    { slug: "ok", folder: "app-skills/ok", status: "new", latestVersion: null },
-                    { slug: "stale", folder: "app-skills/stale", status: "update", latestVersion: "1.0.0" },
-                ],
-            },
-            versions: { "app-skills/ok": ["1.0.0", null], "app-skills/stale": ["1.0.0", null] },
-        });
-        expect(run(cfg, deps)).toBe(1);
-        expect(publishCalls).toHaveLength(0); // nothing published — atomic
-        expect(logs.some(l => l.startsWith("::error::") && l.includes("Aborting publish"))).toBe(true);
-    });
-
-    test("publish-catalog happy path publishes every changed skill", () => {
-        const cfg = { ...baseCfg };
-        const { deps, publishCalls, changelogCalls } = makeDeps(cfg, {
-            sync: {
-                wouldPublish: [
-                    { slug: "oo-ably", folder: "app-skills/oo-ably", status: "new", latestVersion: null },
-                    { slug: "oo-notion", folder: "app-skills/oo-notion", status: "update", latestVersion: "1.1.0" },
-                ],
-            },
-            versions: { "app-skills/oo-ably": ["1.0.0", null], "app-skills/oo-notion": ["1.2.0", null] },
-            titles: { "app-skills/oo-ably": "Ably", "app-skills/oo-notion": "Notion" },
+        const accounts = [{ name: "Kevin", configPath: "/k" }, { name: "Jack", configPath: "/j" }];
+        const { deps, publishCalls, reports } = makeDeps(cfg, {
+            // sorted new: oo-a, oo-b, oo-c -> Kevin=[a,c], Jack=[b]; update oo-x -> Kevin
+            sync: { wouldPublish: [newCand("oo-a"), newCand("oo-b"), newCand("oo-c"), updateCand("oo-x", "1.0.0")] },
+            versions: versionsFor({ "oo-a": "1.0.0", "oo-b": "1.0.0", "oo-c": "1.0.0", "oo-x": "1.1.0" }),
+            accounts,
         });
         expect(run(cfg, deps)).toBe(0);
-        expect(changelogCalls).toHaveLength(2);
-        expect(publishCalls).toHaveLength(2);
-        // built args carry the resolved manifest version, the curated display name, and the changelog
-        const ably = publishCalls.find(c => c.includes("app-skills/oo-ably"))!;
-        expect(ably[ably.indexOf("--version") + 1]).toBe("1.0.0");
-        expect(ably[ably.indexOf("--changelog") + 1]).toBe("CHANGELOG");
-        // the slug keeps its oo- prefix, but the published display name is the curated title
-        expect(ably[ably.indexOf("publish") + 1]).toBe("app-skills/oo-ably");
-        expect(ably[ably.indexOf("--name") + 1]).toBe("Ably");
-        const notion = publishCalls.find(c => c.includes("app-skills/oo-notion"))!;
-        expect(notion[notion.indexOf("--version") + 1]).toBe("1.2.0");
-        expect(notion[notion.indexOf("--name") + 1]).toBe("Notion");
+        const kevin = publishCalls.filter(c => c.account === "Kevin").flatMap(c => c.cmd.filter(a => a.startsWith("app-skills/")));
+        const jack = publishCalls.filter(c => c.account === "Jack").flatMap(c => c.cmd.filter(a => a.startsWith("app-skills/")));
+        expect(kevin.sort()).toEqual(["app-skills/oo-a", "app-skills/oo-c", "app-skills/oo-x"]);
+        expect(jack.sort()).toEqual(["app-skills/oo-b"]);
+        // 3 new published, 1 updated, nothing left
+        expect(reports[0]).toEqual({ published: 3, updated: 1, failed: 0, remaining: 0, rateLimitedAccounts: [] });
     });
 
-    test("publish without a curated title omits --name and warns", () => {
-        const cfg = { ...baseCfg };
-        const { deps, publishCalls, logs } = makeDeps(cfg, {
-            sync: { wouldPublish: [{ slug: "oo-x", folder: "app-skills/oo-x", status: "new", latestVersion: null }] },
-            versions: { "app-skills/oo-x": ["1.0.0", null] },
-            // no titles stubbed -> readTitle returns null
+    test("caps NEW publishes per account and reports the overflow as remaining", () => {
+        const cfg = { ...baseCfg, maxNewPerAccount: 2 };
+        const slugs = ["oo-a", "oo-b", "oo-c", "oo-d", "oo-e"];
+        const { deps, publishCalls, reports } = makeDeps(cfg, {
+            sync: { wouldPublish: slugs.map(newCand) },
+            versions: versionsFor(Object.fromEntries(slugs.map(s => [s, "1.0.0"]))),
+            accounts: [{ name: "solo", configPath: "/s" }],
         });
         expect(run(cfg, deps)).toBe(0);
-        const x = publishCalls[0]!;
-        expect(x).not.toContain("--name");
-        expect(logs.some(l => l.includes("::warning::oo-x: no metadata.title"))).toBe(true);
+        // one account, cap 2 -> publishes the 2 lowest, defers 3
+        expect(publishCalls).toHaveLength(2);
+        expect(reports[0]).toEqual({ published: 2, updated: 0, failed: 0, remaining: 3, rateLimitedAccounts: [] });
     });
 
-    test("publish failure -> exit 1 but other skills still attempted", () => {
+    test("a per-account rate limit soft-stops that account and defers the rest (exit 0)", () => {
         const cfg = { ...baseCfg };
-        const { deps, publishCalls, logs } = makeDeps(cfg, {
-            sync: {
-                wouldPublish: [
-                    { slug: "good", folder: "app-skills/good", status: "new", latestVersion: null },
-                    { slug: "bad", folder: "app-skills/bad", status: "new", latestVersion: null },
-                ],
-            },
-            versions: { "app-skills/good": ["1.0.0", null], "app-skills/bad": ["1.0.0", null] },
-            publishCode: cmd => (cmd.includes("app-skills/bad") ? 7 : 0),
+        const slugs = ["oo-a", "oo-b", "oo-c"];
+        const { deps, publishCalls, reports, logs } = makeDeps(cfg, {
+            sync: { wouldPublish: slugs.map(newCand) },
+            versions: versionsFor(Object.fromEntries(slugs.map(s => [s, "1.0.0"]))),
+            accounts: [{ name: "solo", configPath: "/s" }],
+            // oo-a ok, oo-b hits the quota, oo-c never attempted
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? 1 : 0),
+            publishOutput: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? "✖ Rate limit: max 5 new skills per hour." : ""),
+        });
+        expect(run(cfg, deps)).toBe(0);
+        expect(publishCalls.map(c => c.cmd.find(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-a", "app-skills/oo-b"]);
+        expect(reports[0]).toEqual({ published: 1, updated: 0, failed: 0, remaining: 2, rateLimitedAccounts: ["solo"] });
+        expect(logs.some(l => l.includes("rate limit reached"))).toBe(true);
+    });
+
+    test("a genuine publish failure is counted and fails the run (exit 1) but other skills still go", () => {
+        const cfg = { ...baseCfg };
+        const { deps, publishCalls, reports, logs } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-good"), newCand("oo-bad")] },
+            versions: versionsFor({ "oo-good": "1.0.0", "oo-bad": "1.0.0" }),
+            accounts: [{ name: "solo", configPath: "/s" }],
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-bad")) ? 7 : 0),
         });
         expect(run(cfg, deps)).toBe(1);
-        expect(publishCalls).toHaveLength(2);
-        expect(logs.some(l => l.includes("exit 7"))).toBe(true);
-        expect(logs.some(l => l.includes("✓ good @ 1.0.0"))).toBe(true);
+        expect(publishCalls).toHaveLength(2); // not short-circuited
+        expect(reports[0]).toMatchObject({ published: 1, failed: 1, remaining: 1 });
+        expect(logs.some(l => l.includes("exited with code 7"))).toBe(true);
+    });
+
+    test("blocked skills (version not bumped) are non-fatal: healthy skills still publish", () => {
+        const cfg = { ...baseCfg };
+        const { deps, publishCalls, reports, summaries } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-ok"), updateCand("oo-stale", "2.0.0")] },
+            versions: versionsFor({ "oo-ok": "1.0.0", "oo-stale": "1.0.0" }), // stale not greater than 2.0.0 -> blocked
+            accounts: [{ name: "solo", configPath: "/s" }],
+        });
+        expect(run(cfg, deps)).toBe(0); // blocked is a warning, not a failure
+        expect(publishCalls).toHaveLength(1);
+        expect(publishCalls[0]!.cmd).toContain("app-skills/oo-ok");
+        expect(reports[0]).toMatchObject({ published: 1, remaining: 0 });
+        // the blocked skill shows up in the summary table
+        expect(summaries[0]!.join("\n")).toContain("Blocked (1)");
+    });
+
+    test("real publish without any accounts -> exit 1", () => {
+        const cfg = { ...baseCfg };
+        const { deps, publishCalls } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-a")] },
+            versions: versionsFor({ "oo-a": "1.0.0" }),
+            accounts: [],
+        });
+        expect(run(cfg, deps)).toBe(1);
+        expect(publishCalls).toHaveLength(0);
     });
 
     test("publish-single not found -> exit 1, no publish", () => {
@@ -638,69 +797,80 @@ describe("run", () => {
         expect(logs.some(l => l.includes("::warning::clawhub sync skipped dup"))).toBe(true);
     });
 
-    // ------------------------------------------------------------------------
-    // drip mode (publishLimit > 0): the rate-limit-aware backfill path
-    // ------------------------------------------------------------------------
-    const dripSync = (slugs: string[]) => ({
-        wouldPublish: slugs.map(s => ({ slug: s, folder: `app-skills/${s}`, status: "new", latestVersion: null })),
-    });
-    const dripVersions = (slugs: string[]): Record<string, [string | null, string | null]> =>
-        Object.fromEntries(slugs.map(s => [`app-skills/${s}`, ["1.0.0", null] as [string | null, string | null]]));
-
-    test("reports a done summary when there is nothing to publish at all", () => {
-        const cfg = { ...baseCfg, publishLimit: 5 };
-        const { deps, reports } = makeDeps(cfg, { sync: { wouldPublish: [] } });
-        expect(run(cfg, deps)).toBe(0);
-        expect(reports).toEqual([{ published: 0, remaining: 0, rateLimited: false }]);
+    test("the run summary written to GITHUB_STEP_SUMMARY carries account names but never a config path/token", () => {
+        const cfg = { ...baseCfg };
+        const { deps, summaries } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-a")] },
+            versions: versionsFor({ "oo-a": "1.0.0" }),
+            accounts: [{ name: "Kevin", configPath: "/secret/path/k.json" }],
+        });
+        run(cfg, deps);
+        const md = summaries[0]!.join("\n");
+        expect(md).toContain("Kevin");
+        expect(md).not.toContain("/secret/path/k.json");
     });
 
-    test("drip mode publishes at most publishLimit skills (slug-sorted) and defers the rest", () => {
-        const cfg = { ...baseCfg, publishLimit: 2 };
-        const slugs = ["oo-c", "oo-a", "oo-e", "oo-b", "oo-d"];
-        const { deps, publishCalls, reports, logs } = makeDeps(cfg, {
-            sync: dripSync(slugs),
-            versions: dripVersions(slugs),
+    test("accounts fail heterogeneously in one run: one genuine failure + one rate-limit are tallied independently", () => {
+        const cfg = { ...baseCfg };
+        // sorted new: oo-a..oo-d -> round-robin over [Kevin, Jack]: Kevin=[oo-a, oo-c], Jack=[oo-b, oo-d]
+        const slugs = ["oo-a", "oo-b", "oo-c", "oo-d"];
+        const { deps, reports, summaries } = makeDeps(cfg, {
+            sync: { wouldPublish: slugs.map(newCand) },
+            versions: versionsFor(Object.fromEntries(slugs.map(s => [s, "1.0.0"]))),
+            accounts: [{ name: "Kevin", configPath: "/k" }, { name: "Jack", configPath: "/j" }],
+            // Kevin: oo-a ok, oo-c genuine-fails (code 7). Jack: oo-b ok, oo-d rate-limits.
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-c")) ? 7 : cmd.some(a => a.includes("app-skills/oo-d")) ? 1 : 0),
+            publishOutput: cmd => (cmd.some(a => a.includes("app-skills/oo-d")) ? "✖ Rate limit: max 5 new skills per hour." : ""),
+        });
+        // a genuine failure (Kevin) fails the whole run; Jack's rate limit is soft.
+        expect(run(cfg, deps)).toBe(1);
+        // totals aggregate both accounts; only Jack is rate-limited.
+        expect(reports[0]).toEqual({ published: 2, updated: 0, failed: 1, remaining: 2, rateLimitedAccounts: ["Jack"] });
+        // per-account rows in the results table are independent
+        const md = summaries[0]!.join("\n");
+        expect(md).toContain("| Kevin | 1 | 0 | 1 | — | 1 |");
+        expect(md).toContain("| Jack | 1 | 0 | 0 | ⚠️ yes | 1 |");
+    });
+
+    test("updates-only re-run: every update publishes (uncapped), round-robin across accounts, nothing remaining", () => {
+        const cfg = { ...baseCfg, maxNewPerAccount: 5 };
+        const accounts = [{ name: "Alice", configPath: "/a" }, { name: "Bob", configPath: "/b" }, { name: "Carol", configPath: "/c" }];
+        const slugs = ["oo-v", "oo-w", "oo-x", "oo-y", "oo-z"];
+        const { deps, publishCalls, reports } = makeDeps(cfg, {
+            sync: { wouldPublish: slugs.map(s => updateCand(s, "1.0.0")) },
+            versions: versionsFor(Object.fromEntries(slugs.map(s => [s, "2.0.0"]))), // all bumped -> publishable updates
+            accounts,
         });
         expect(run(cfg, deps)).toBe(0);
-        // exactly publishLimit published, and they are the two lowest slugs (deterministic order)
-        expect(publishCalls).toHaveLength(2);
-        expect(publishCalls[0]).toContain("app-skills/oo-a");
-        expect(publishCalls[1]).toContain("app-skills/oo-b");
-        expect(reports).toEqual([{ published: 2, remaining: 3, rateLimited: false }]);
-        expect(logs.some(l => l.includes("3 skill(s) still pending") && l.includes("per-run cap"))).toBe(true);
+        // updates are never capped, so all 5 publish
+        expect(publishCalls).toHaveLength(5);
+        // round-robin over sorted [oo-v,oo-w,oo-x,oo-y,oo-z] across 3 accounts:
+        //   Alice=[oo-v,oo-y]  Bob=[oo-w,oo-z]  Carol=[oo-x]
+        const folders = (name: string) => publishCalls.filter(c => c.account === name).flatMap(c => c.cmd.filter(a => a.startsWith("app-skills/"))).sort();
+        expect(folders("Alice")).toEqual(["app-skills/oo-v", "app-skills/oo-y"]);
+        expect(folders("Bob")).toEqual(["app-skills/oo-w", "app-skills/oo-z"]);
+        expect(folders("Carol")).toEqual(["app-skills/oo-x"]);
+        // 0 new, 5 updated, nothing deferred or pending
+        expect(reports[0]).toEqual({ published: 0, updated: 5, failed: 0, remaining: 0, rateLimitedAccounts: [] });
     });
 
-    test("drip mode stops cleanly on a ClawHub rate-limit error and defers the rest", () => {
-        const cfg = { ...baseCfg, publishLimit: 5 };
-        const slugs = ["oo-a", "oo-b", "oo-c", "oo-d"];
+    test("genuine failure then rate-limit within one account: failed counted, then loop breaks, exit 1", () => {
+        const cfg = { ...baseCfg };
+        const slugs = ["oo-a", "oo-b", "oo-c"];
         const { deps, publishCalls, reports, logs } = makeDeps(cfg, {
-            sync: dripSync(slugs),
-            versions: dripVersions(slugs),
-            // oo-a, oo-b succeed; oo-c is rejected by the hourly quota; oo-d is never attempted
-            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-c")) ? 1 : 0),
+            sync: { wouldPublish: slugs.map(newCand) },
+            versions: versionsFor(Object.fromEntries(slugs.map(s => [s, "1.0.0"]))),
+            accounts: [{ name: "solo", configPath: "/s" }],
+            // oo-a ok, oo-b genuine-fails (continue), oo-c rate-limits (break)
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? 42 : cmd.some(a => a.includes("app-skills/oo-c")) ? 1 : 0),
             publishOutput: cmd => (cmd.some(a => a.includes("app-skills/oo-c")) ? "✖ Rate limit: max 5 new skills per hour." : ""),
         });
-        expect(run(cfg, deps)).toBe(0); // soft-stop is success, not failure
-        expect(publishCalls).toHaveLength(3); // a, b, c attempted; broke before d
-        expect(publishCalls[2]).toContain("app-skills/oo-c");
-        expect(reports).toEqual([{ published: 2, remaining: 2, rateLimited: true }]);
+        expect(run(cfg, deps)).toBe(1); // a genuine failure takes precedence over the soft rate-limit stop
+        expect(publishCalls.map(c => c.cmd.find(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-a", "app-skills/oo-b", "app-skills/oo-c"]);
+        // remaining = assigned(3) - published(1) - updated(0) = 2 (the failed oo-b + the rate-limited oo-c)
+        expect(reports[0]).toEqual({ published: 1, updated: 0, failed: 1, remaining: 2, rateLimitedAccounts: ["solo"] });
+        expect(logs.some(l => l.includes("exited with code 42"))).toBe(true);
         expect(logs.some(l => l.includes("rate limit reached"))).toBe(true);
-        expect(logs.some(l => l.includes("2 skill(s) still pending") && l.includes("rate-limited"))).toBe(true);
-    });
-
-    test("without a per-run cap a rate-limit error stays a genuine failure (exit 1)", () => {
-        // The main (uncapped) workflow must still fail loudly on a rate limit so the operator
-        // knows to run the drip workflow — only drip mode treats it as deferrable back-pressure.
-        const cfg = { ...baseCfg, publishLimit: 0 };
-        const slugs = ["oo-a", "oo-b"];
-        const { deps, publishCalls } = makeDeps(cfg, {
-            sync: dripSync(slugs),
-            versions: dripVersions(slugs),
-            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? 1 : 0),
-            publishOutput: () => "Rate limit: max 5 new skills per hour.",
-        });
-        expect(run(cfg, deps)).toBe(1);
-        expect(publishCalls).toHaveLength(2); // legacy mode never short-circuits — every skill attempted
     });
 });
 
@@ -719,12 +889,12 @@ describe("config readers", () => {
     test("readRunConfig falls back to app-skills when SKILLS_ROOT empty", () => {
         expect(readRunConfig(fakeEnv({})).root).toBe("app-skills");
     });
-    test("readRunConfig reads PUBLISH_LIMIT, defaulting to 0 (no cap)", () => {
-        expect(readRunConfig(fakeEnv({})).publishLimit).toBe(0);
-        expect(readRunConfig(fakeEnv({ PUBLISH_LIMIT: "5" })).publishLimit).toBe(5);
-        // garbage / negative values fall back to 0 rather than throwing or capping at a bad value
-        expect(readRunConfig(fakeEnv({ PUBLISH_LIMIT: "oops" })).publishLimit).toBe(0);
-        expect(readRunConfig(fakeEnv({ PUBLISH_LIMIT: "-3" })).publishLimit).toBe(0);
+    test("readRunConfig reads MAX_NEW_PER_ACCOUNT: default 5, garbage -> 5, negative -> 0 (no cap), explicit 0 -> 0", () => {
+        expect(readRunConfig(fakeEnv({})).maxNewPerAccount).toBe(5);
+        expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "3" })).maxNewPerAccount).toBe(3);
+        expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "oops" })).maxNewPerAccount).toBe(5);
+        expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "-3" })).maxNewPerAccount).toBe(0);
+        expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "0" })).maxNewPerAccount).toBe(0);
     });
     test("readCodexConfig defaults and api-key presence", () => {
         const cfg = readCodexConfig(fakeEnv({ CODEX_BASE_URL: "https://x/v1", OPENAI_API_KEY: "sk-xxx" }));
@@ -747,5 +917,48 @@ describe("config readers", () => {
             site: "https://s",
             owner: "oomol",
         });
+    });
+});
+
+// ---------------------------------------------------------------------------
+// readAccounts (token-free manifest, with CLAWHUB_CONFIG_PATH fallback)
+// ---------------------------------------------------------------------------
+describe("readAccounts", () => {
+    const fakeEnv = (m: Record<string, string>): ((n: string) => string | undefined) => n => m[n];
+    const noLog = () => {};
+
+    test("reads the {name, configPath} manifest", () => {
+        const manifest = JSON.stringify([{ name: "Kevin", configPath: "/k.json" }, { name: "Jack", configPath: "/j.json" }]);
+        const refs = readAccounts(
+            fakeEnv({ CLAWHUB_ACCOUNTS_MANIFEST: "/m.json" }),
+            p => (p === "/m.json" ? manifest : ""),
+            p => p === "/m.json",
+            noLog,
+        );
+        expect(refs).toEqual([{ name: "Kevin", configPath: "/k.json" }, { name: "Jack", configPath: "/j.json" }]);
+    });
+
+    test("falls back to a single default account from CLAWHUB_CONFIG_PATH", () => {
+        const refs = readAccounts(
+            fakeEnv({ CLAWHUB_CONFIG_PATH: "/single.json" }),
+            () => "",
+            () => false,
+            noLog,
+        );
+        expect(refs).toEqual([{ name: "default", configPath: "/single.json" }]);
+    });
+
+    test("ignores malformed manifest entries and falls back when none remain", () => {
+        const refs = readAccounts(
+            fakeEnv({ CLAWHUB_ACCOUNTS_MANIFEST: "/m.json", CLAWHUB_CONFIG_PATH: "/single.json" }),
+            () => JSON.stringify([{ nope: 1 }]),
+            () => true,
+            noLog,
+        );
+        expect(refs).toEqual([{ name: "default", configPath: "/single.json" }]);
+    });
+
+    test("returns [] when nothing is configured", () => {
+        expect(readAccounts(fakeEnv({}), () => "", () => false, noLog)).toEqual([]);
     });
 });
