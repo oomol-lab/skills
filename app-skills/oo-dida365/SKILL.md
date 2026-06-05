@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dida365"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "dida365"
   categories: "Productivity"
   homepage: "https://dida365.com"
@@ -41,25 +41,25 @@ Each action below links to a reference file with its purpose and exact commands.
 
 ## Available actions
 
-- [`complete_task`](actions/complete_task.md) — Mark a Dida365 task as completed by project ID and task ID.
-- [`create_or_update_habit_checkin`](actions/create_or_update_habit_checkin.md) — Create or update a Dida365 habit check-in for a date stamp.
-- [`create_project`](actions/create_project.md) — Create a Dida365 project with optional color, sort order, view mode, and kind.
-- [`create_task`](actions/create_task.md) — Create a Dida365 task under a project with optional schedule, reminders, recurrence, and checklist items.
-- [`delete_project`](actions/delete_project.md) — Delete a Dida365 project by project ID. The connector treats a missing project as already deleted.
-- [`delete_task`](actions/delete_task.md) — Delete a Dida365 task by project ID and task ID. The connector treats a missing task as already deleted.
-- [`filter_tasks`](actions/filter_tasks.md) — Filter Dida365 tasks by project, date range, priority, tags, and status by using the official filter endpoint.
-- [`get_habit`](actions/get_habit.md) — Get a Dida365 habit by its habit ID.
-- [`get_project_by_id`](actions/get_project_by_id.md) — Get a Dida365 project by its project ID.
-- [`get_project_with_data`](actions/get_project_with_data.md) — Get a Dida365 project together with its undone tasks and columns by project ID.
-- [`get_task_by_project_and_id`](actions/get_task_by_project_and_id.md) — Get a Dida365 task by project ID and task ID.
-- [`get_user_project`](actions/get_user_project.md) — List the projects available to the connected Dida365 account.
-- [`list_all_tasks`](actions/list_all_tasks.md) — List undone Dida365 tasks across projects. This is a connector-level aggregate helper over list-projects plus project-data fetches.
-- [`list_completed_tasks`](actions/list_completed_tasks.md) — List completed Dida365 tasks within optional project and date filters by using the official completed-tasks endpoint.
-- [`list_habit_checkins`](actions/list_habit_checkins.md) — List Dida365 habit check-ins for one or more habits over a date stamp range.
-- [`list_habits`](actions/list_habits.md) — List habits available to the connected Dida365 account.
-- [`move_tasks`](actions/move_tasks.md) — Move one or more Dida365 tasks between projects by using the official move endpoint.
-- [`update_project`](actions/update_project.md) — Update a Dida365 project by project ID.
-- [`update_task`](actions/update_task.md) — Update a Dida365 task by task ID and project ID, including checklist items and recurrence fields.
+- [`complete_task`](actions/complete_task.md) — Mark a Dida365 (滴答清单) task as completed by project ID and task ID.
+- [`create_or_update_habit_checkin`](actions/create_or_update_habit_checkin.md) — Create or update a Dida365 (滴答清单) habit check-in for a date stamp.
+- [`create_project`](actions/create_project.md) — Create a Dida365 (滴答清单) project with optional color, sort order, view mode, and kind.
+- [`create_task`](actions/create_task.md) — Create a Dida365 (滴答清单) task under a project with optional schedule, reminders, recurrence, and checklist items.
+- [`delete_project`](actions/delete_project.md) — Delete a Dida365 (滴答清单) project by project ID. The connector treats a missing project as already deleted.
+- [`delete_task`](actions/delete_task.md) — Delete a Dida365 (滴答清单) task by project ID and task ID. The connector treats a missing task as already deleted.
+- [`filter_tasks`](actions/filter_tasks.md) — Filter Dida365 (滴答清单) tasks by project, date range, priority, tags, and status by using the official filter endpoint.
+- [`get_habit`](actions/get_habit.md) — Get a Dida365 (滴答清单) habit by its habit ID.
+- [`get_project_by_id`](actions/get_project_by_id.md) — Get a Dida365 (滴答清单) project by its project ID.
+- [`get_project_with_data`](actions/get_project_with_data.md) — Get a Dida365 (滴答清单) project together with its undone tasks and columns by project ID.
+- [`get_task_by_project_and_id`](actions/get_task_by_project_and_id.md) — Get a Dida365 (滴答清单) task by project ID and task ID.
+- [`get_user_project`](actions/get_user_project.md) — List the projects available to the connected Dida365 (滴答清单) account.
+- [`list_all_tasks`](actions/list_all_tasks.md) — List undone Dida365 (滴答清单) tasks across projects. This is a connector-level aggregate helper over list-projects plus project-data fetches.
+- [`list_completed_tasks`](actions/list_completed_tasks.md) — List completed Dida365 (滴答清单) tasks within optional project and date filters by using the official completed-tasks endpoint.
+- [`list_habit_checkins`](actions/list_habit_checkins.md) — List Dida365 (滴答清单) habit check-ins for one or more habits over a date stamp range.
+- [`list_habits`](actions/list_habits.md) — List habits available to the connected Dida365 (滴答清单) account.
+- [`move_tasks`](actions/move_tasks.md) — Move one or more Dida365 (滴答清单) tasks between projects by using the official move endpoint.
+- [`update_project`](actions/update_project.md) — Update a Dida365 (滴答清单) project by project ID.
+- [`update_task`](actions/update_task.md) — Update a Dida365 (滴答清单) task by task ID and project ID, including checklist items and recurrence fields.
 
 ## Safety
 

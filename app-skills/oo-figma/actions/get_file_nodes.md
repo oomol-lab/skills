@@ -5,7 +5,7 @@ Get JSON for selected node IDs from a Figma file or branch.
 - **Service**: `figma`
 - **Action**: `get_file_nodes`
 - **Action id**: `figma.get_file_nodes`
-- **Required scopes**: file_content:read
+- **Required scopes**: figma.file.content.read
 
 ## Inspect the schema
 

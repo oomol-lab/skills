@@ -1,6 +1,6 @@
 # Dida365 · `create_project`
 
-Create a Dida365 project with optional color, sort order, view mode, and kind.
+Create a Dida365 (滴答清单) project with optional color, sort order, view mode, and kind.
 
 - **Service**: `dida365`
 - **Action**: `create_project`

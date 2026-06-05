@@ -5,7 +5,7 @@ List version history records for a Figma file.
 - **Service**: `figma`
 - **Action**: `list_file_versions`
 - **Action id**: `figma.list_file_versions`
-- **Required scopes**: file_versions:read
+- **Required scopes**: figma.file.versions.read
 
 ## Inspect the schema
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ima"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "ima"
   categories: "AI, Productivity"
   homepage: "https://ima.qq.com"
@@ -16,7 +16,7 @@ metadata:
 
 Operate **ima** through your OOMOL-connected account. This skill calls the `ima` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: AI, Productivity. Exposes 13 action(s).
+Category: AI, Productivity. Exposes 17 action(s).
 
 ## Running an action
 
@@ -43,8 +43,11 @@ Each action below links to a reference file with its purpose and exact commands.
 
 - [`add_note_to_knowledge_base`](actions/add_note_to_knowledge_base.md) — Add an existing IMA note into one IMA knowledge base.
 - [`append_note`](actions/append_note.md) — Append Markdown content to an existing IMA note.
+- [`check_repeated_names`](actions/check_repeated_names.md) — Check whether file names already exist in an IMA knowledge-base folder.
 - [`create_note`](actions/create_note.md) — Create a new IMA note from Markdown content.
 - [`get_knowledge_bases`](actions/get_knowledge_bases.md) — Fetch metadata for one or more IMA knowledge bases.
+- [`get_knowledge_item_original`](actions/get_knowledge_item_original.md) — Fetch access information for a knowledge-base item and download URL-backed original content through file transit when available.
+- [`get_media_info`](actions/get_media_info.md) — Get IMA knowledge-base media access information for one media item.
 - [`get_note_content`](actions/get_note_content.md) — Fetch the plain-text or JSON content for one IMA note.
 - [`import_urls`](actions/import_urls.md) — Import webpages or WeChat article URLs into one IMA knowledge base.
 - [`list_addable_knowledge_bases`](actions/list_addable_knowledge_bases.md) — List the IMA knowledge bases that accept new content.
@@ -54,6 +57,7 @@ Each action below links to a reference file with its purpose and exact commands.
 - [`search_knowledge_bases`](actions/search_knowledge_bases.md) — Search IMA knowledge bases by name, or pass an empty query to list accessible knowledge bases.
 - [`search_knowledge_items`](actions/search_knowledge_items.md) — Search files and folders inside one IMA knowledge base.
 - [`search_notes`](actions/search_notes.md) — Search IMA notes by title or note body text.
+- [`upload_file_to_knowledge_base`](actions/upload_file_to_knowledge_base.md) — Upload a file from an HTTP URL into one IMA knowledge base, including duplicate checks, COS upload, and add_knowledge.
 
 ## Safety
 

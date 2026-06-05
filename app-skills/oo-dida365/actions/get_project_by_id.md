@@ -1,6 +1,6 @@
 # Dida365 · `get_project_by_id`
 
-Get a Dida365 project by its project ID.
+Get a Dida365 (滴答清单) project by its project ID.
 
 - **Service**: `dida365`
 - **Action**: `get_project_by_id`

@@ -5,7 +5,7 @@ Get temporary download URLs for image fills used in a Figma file.
 - **Service**: `figma`
 - **Action**: `get_image_fills`
 - **Action id**: `figma.get_image_fills`
-- **Required scopes**: file_content:read
+- **Required scopes**: figma.file.content.read
 
 ## Inspect the schema
 

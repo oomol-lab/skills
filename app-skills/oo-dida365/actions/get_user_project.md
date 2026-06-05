@@ -1,6 +1,6 @@
 # Dida365 · `get_user_project`
 
-List the projects available to the connected Dida365 account.
+List the projects available to the connected Dida365 (滴答清单) account.
 
 - **Service**: `dida365`
 - **Action**: `get_user_project`

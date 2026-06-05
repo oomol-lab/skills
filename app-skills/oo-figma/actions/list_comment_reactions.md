@@ -5,7 +5,7 @@ List emoji reactions on a Figma file comment.
 - **Service**: `figma`
 - **Action**: `list_comment_reactions`
 - **Action id**: `figma.list_comment_reactions`
-- **Required scopes**: file_comments:read
+- **Required scopes**: figma.file.comments.read
 
 ## Inspect the schema
 

@@ -5,7 +5,7 @@ Get metadata for a Figma project.
 - **Service**: `figma`
 - **Action**: `get_project_metadata`
 - **Action id**: `figma.get_project_metadata`
-- **Required scopes**: project_metadata:read
+- **Required scopes**: figma.project.metadata.read
 
 ## Inspect the schema
 

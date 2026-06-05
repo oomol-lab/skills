@@ -1,6 +1,6 @@
 # Dida365 · `complete_task`
 
-Mark a Dida365 task as completed by project ID and task ID.
+Mark a Dida365 (滴答清单) task as completed by project ID and task ID.
 
 - **Service**: `dida365`
 - **Action**: `complete_task`

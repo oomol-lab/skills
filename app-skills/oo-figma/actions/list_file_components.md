@@ -5,7 +5,7 @@ List published components in a Figma main file library.
 - **Service**: `figma`
 - **Action**: `list_file_components`
 - **Action id**: `figma.list_file_components`
-- **Required scopes**: library_content:read
+- **Required scopes**: figma.library.content.read
 
 ## Inspect the schema
 

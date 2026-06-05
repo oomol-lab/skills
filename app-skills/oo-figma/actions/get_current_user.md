@@ -5,7 +5,7 @@ Get the current Figma user associated with the API key.
 - **Service**: `figma`
 - **Action**: `get_current_user`
 - **Action id**: `figma.get_current_user`
-- **Required scopes**: current_user:read
+- **Required scopes**: figma.user.read
 
 ## Inspect the schema
 

@@ -5,7 +5,7 @@ List projects visible to the authenticated user in a Figma team.
 - **Service**: `figma`
 - **Action**: `list_team_projects`
 - **Action id**: `figma.list_team_projects`
-- **Required scopes**: projects:read
+- **Required scopes**: figma.projects.read
 
 ## Inspect the schema
 

@@ -1,6 +1,6 @@
 # Dida365 · `list_habits`
 
-List habits available to the connected Dida365 account.
+List habits available to the connected Dida365 (滴答清单) account.
 
 - **Service**: `dida365`
 - **Action**: `list_habits`

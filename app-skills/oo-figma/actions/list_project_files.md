@@ -5,7 +5,7 @@ List files in a Figma project.
 - **Service**: `figma`
 - **Action**: `list_project_files`
 - **Action id**: `figma.list_project_files`
-- **Required scopes**: projects:read
+- **Required scopes**: figma.projects.read
 
 ## Inspect the schema
 

@@ -1,6 +1,6 @@
 # Dida365 · `delete_project`
 
-Delete a Dida365 project by project ID. The connector treats a missing project as already deleted.
+Delete a Dida365 (滴答清单) project by project ID. The connector treats a missing project as already deleted.
 
 - **Service**: `dida365`
 - **Action**: `delete_project`

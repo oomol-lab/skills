@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Figma"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "figma"
   categories: "Design & Media, Productivity"
   homepage: "https://www.figma.com"

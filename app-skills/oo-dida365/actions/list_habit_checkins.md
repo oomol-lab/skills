@@ -1,6 +1,6 @@
 # Dida365 · `list_habit_checkins`
 
-List Dida365 habit check-ins for one or more habits over a date stamp range.
+List Dida365 (滴答清单) habit check-ins for one or more habits over a date stamp range.
 
 - **Service**: `dida365`
 - **Action**: `list_habit_checkins`

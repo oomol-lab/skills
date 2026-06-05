@@ -1,6 +1,6 @@
 # Dida365 · `create_or_update_habit_checkin`
 
-Create or update a Dida365 habit check-in for a date stamp.
+Create or update a Dida365 (滴答清单) habit check-in for a date stamp.
 
 - **Service**: `dida365`
 - **Action**: `create_or_update_habit_checkin`

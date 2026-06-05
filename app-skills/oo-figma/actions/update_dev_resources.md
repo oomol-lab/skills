@@ -5,7 +5,7 @@ Update existing Figma dev resources.
 - **Service**: `figma`
 - **Action**: `update_dev_resources`
 - **Action id**: `figma.update_dev_resources`
-- **Required scopes**: file_dev_resources:write
+- **Required scopes**: figma.file.dev_resources.write
 
 ## Inspect the schema
 

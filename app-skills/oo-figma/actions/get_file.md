@@ -5,7 +5,7 @@ Get the JSON document for a Figma file or branch.
 - **Service**: `figma`
 - **Action**: `get_file`
 - **Action id**: `figma.get_file`
-- **Required scopes**: file_content:read
+- **Required scopes**: figma.file.content.read
 
 ## Inspect the schema
 

@@ -5,7 +5,7 @@ Get metadata for a published Figma style by key.
 - **Service**: `figma`
 - **Action**: `get_style`
 - **Action id**: `figma.get_style`
-- **Required scopes**: library_assets:read
+- **Required scopes**: figma.library.assets.read
 
 ## Inspect the schema
 

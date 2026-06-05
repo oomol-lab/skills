@@ -1,6 +1,6 @@
 # Dida365 · `list_all_tasks`
 
-List undone Dida365 tasks across projects. This is a connector-level aggregate helper over list-projects plus project-data fetches.
+List undone Dida365 (滴答清单) tasks across projects. This is a connector-level aggregate helper over list-projects plus project-data fetches.
 
 - **Service**: `dida365`
 - **Action**: `list_all_tasks`

@@ -5,7 +5,7 @@ List published component sets in a Figma main file library.
 - **Service**: `figma`
 - **Action**: `list_file_component_sets`
 - **Action id**: `figma.list_file_component_sets`
-- **Required scopes**: library_content:read
+- **Required scopes**: figma.library.content.read
 
 ## Inspect the schema
 

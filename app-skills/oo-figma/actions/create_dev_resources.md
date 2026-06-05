@@ -5,7 +5,7 @@ Create dev resources and attach them to Figma file nodes.
 - **Service**: `figma`
 - **Action**: `create_dev_resources`
 - **Action id**: `figma.create_dev_resources`
-- **Required scopes**: file_dev_resources:write
+- **Required scopes**: figma.file.dev_resources.write
 
 ## Inspect the schema
 
