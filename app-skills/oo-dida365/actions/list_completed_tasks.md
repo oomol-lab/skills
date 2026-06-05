@@ -1,6 +1,6 @@
 # Dida365 · `list_completed_tasks`
 
-List completed Dida365 tasks within optional project and date filters by using the official completed-tasks endpoint.
+List completed Dida365 (滴答清单) tasks within optional project and date filters by using the official completed-tasks endpoint.
 
 - **Service**: `dida365`
 - **Action**: `list_completed_tasks`

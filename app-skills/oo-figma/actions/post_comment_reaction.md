@@ -5,7 +5,7 @@ Add an emoji reaction to a Figma file comment.
 - **Service**: `figma`
 - **Action**: `post_comment_reaction`
 - **Action id**: `figma.post_comment_reaction`
-- **Required scopes**: file_comments:write
+- **Required scopes**: figma.file.comments.write
 
 ## Inspect the schema
 

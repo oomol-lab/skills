@@ -1,6 +1,6 @@
 # Dida365 · `update_project`
 
-Update a Dida365 project by project ID.
+Update a Dida365 (滴答清单) project by project ID.
 
 - **Service**: `dida365`
 - **Action**: `update_project`

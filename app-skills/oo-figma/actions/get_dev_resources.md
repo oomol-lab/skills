@@ -5,7 +5,7 @@ Get dev resources attached to a Figma main file.
 - **Service**: `figma`
 - **Action**: `get_dev_resources`
 - **Action id**: `figma.get_dev_resources`
-- **Required scopes**: file_dev_resources:read
+- **Required scopes**: figma.file.dev_resources.read
 
 ## Inspect the schema
 

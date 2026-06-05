@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Elasticsearch"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "elasticsearch"
   categories: "Data & Analytics, Developer Tools"
   homepage: "https://www.elastic.co/elasticsearch"
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Elasticsearch is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Elasticsearch is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key, custom credential) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=elasticsearch

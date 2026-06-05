@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "flomo"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "flomo"
   categories: "Productivity"
   homepage: "https://flomoapp.com"
@@ -16,7 +16,7 @@ metadata:
 
 Operate **flomo** through your OOMOL-connected account. This skill calls the `flomo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: Productivity. Exposes 1 action(s).
+Category: Productivity. Exposes 13 action(s).
 
 ## Running an action
 
@@ -42,6 +42,18 @@ Each action below links to a reference file with its purpose and exact commands.
 ## Available actions
 
 - [`create_memo`](actions/create_memo.md) — Create a flomo memo by sending markdown or plain text to the incoming webhook.
+- [`get_daily_review`](actions/get_daily_review.md) — Fetch flomo daily review content through the flomo Max MCP server.
+- [`get_format_guide`](actions/get_format_guide.md) — Fetch flomo memo formatting guidance through the flomo Max MCP server.
+- [`get_tag_guide`](actions/get_tag_guide.md) — Fetch flomo tag usage guidance through the flomo Max MCP server.
+- [`memo_batch_get`](actions/memo_batch_get.md) — Fetch multiple flomo memos through the flomo Max MCP server in a single tool call.
+- [`memo_recommended`](actions/memo_recommended.md) — Find flomo memos related to a target memo through the flomo Max MCP server.
+- [`memo_search`](actions/memo_search.md) — Search flomo memos through the flomo Max MCP server by keywords, tags, time range, or semantic search options.
+- [`memo_update`](actions/memo_update.md) — Update an existing flomo memo through the flomo Max MCP server. The exact arguments are validated by flomo MCP.
+- [`memory_context`](actions/memory_context.md) — Read the generated flomo memory context through the flomo Max MCP server.
+- [`memory_user`](actions/memory_user.md) — Read the generated flomo memory user profile through the flomo Max MCP server.
+- [`tag_rename`](actions/tag_rename.md) — Rename flomo tags through the flomo Max MCP server and update associated memos.
+- [`tag_search`](actions/tag_search.md) — Search flomo tags through the flomo Max MCP server.
+- [`tag_tree`](actions/tag_tree.md) — Fetch the flomo tag tree through the flomo Max MCP server.
 
 ## Safety
 
@@ -69,7 +81,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — flomo is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — flomo is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key, custom credential) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=flomo

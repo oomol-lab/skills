@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zoom"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "zoom"
   categories: "Communication, Productivity"
   homepage: "https://www.zoom.com"
@@ -16,7 +16,7 @@ metadata:
 
 Operate **Zoom** through your OOMOL-connected account. This skill calls the `zoom` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: Communication, Productivity. Exposes 18 action(s).
+Category: Communication, Productivity. Exposes 4 action(s).
 
 ## Running an action
 
@@ -41,23 +41,9 @@ Each action below links to a reference file with its purpose and exact commands.
 
 ## Available actions
 
-- [`add_meeting_registrant`](actions/add_meeting_registrant.md) — Register one participant for a Zoom meeting that has registration enabled.
-- [`add_webinar_registrant`](actions/add_webinar_registrant.md) — Register one participant for a Zoom webinar that has registration enabled.
 - [`create_meeting`](actions/create_meeting.md) — Create a Zoom meeting for a user with the core official scheduling fields and first-pass settings.
-- [`get_meeting_recordings`](actions/get_meeting_recordings.md) — Fetch recording metadata and file URLs for one Zoom meeting without downloading files.
-- [`get_meeting_summary`](actions/get_meeting_summary.md) — Fetch the AI Companion summary for a Zoom meeting when available.
 - [`get_user`](actions/get_user.md) — Fetch one Zoom user by user ID, email address, or me when supported by the app.
-- [`get_user_settings`](actions/get_user_settings.md) — Fetch Zoom settings for one user, optionally limited to one settings group.
-- [`get_user_summary`](actions/get_user_summary.md) — Fetch Zoom account user summary metrics visible to the connected OAuth app.
-- [`get_webinar_summary`](actions/get_webinar_summary.md) — Fetch the AI Companion summary for a Zoom webinar when available.
-- [`list_archived_files`](actions/list_archived_files.md) — List archived Zoom meeting and webinar files for a short official date window.
-- [`list_meeting_registrants`](actions/list_meeting_registrants.md) — List registrants for a Zoom meeting using official pagination.
 - [`list_meetings`](actions/list_meetings.md) — List scheduled, live, upcoming, or previous meetings for a Zoom user using official pagination.
-- [`list_user_recordings`](actions/list_user_recordings.md) — List cloud recordings for a Zoom user without downloading recording files.
-- [`list_users`](actions/list_users.md) — List users in the Zoom account visible to the connected OAuth app.
-- [`list_webinar_participants`](actions/list_webinar_participants.md) — List participants who attended a past Zoom webinar using official pagination.
-- [`list_webinar_registrants`](actions/list_webinar_registrants.md) — List registrants for a Zoom webinar using official pagination.
-- [`list_webinars`](actions/list_webinars.md) — List scheduled webinars for a Zoom user using official pagination.
 - [`update_meeting`](actions/update_meeting.md) — Update a Zoom meeting by meeting ID with the core official scheduling fields and first-pass settings.
 
 ## Safety

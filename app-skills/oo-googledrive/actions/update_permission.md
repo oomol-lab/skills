@@ -1,6 +1,6 @@
 # Google Drive · `update_permission`
 
-Update an existing Drive permission using structured permission fields.
+Compatibility alias of `update_permission_patch`; Google Drive v3 uses PATCH semantics.
 
 - **Service**: `googledrive`
 - **Action**: `update_permission`

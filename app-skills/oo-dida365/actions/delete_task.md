@@ -1,6 +1,6 @@
 # Dida365 · `delete_task`
 
-Delete a Dida365 task by project ID and task ID. The connector treats a missing task as already deleted.
+Delete a Dida365 (滴答清单) task by project ID and task ID. The connector treats a missing task as already deleted.
 
 - **Service**: `dida365`
 - **Action**: `delete_task`

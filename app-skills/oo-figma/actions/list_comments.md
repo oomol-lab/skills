@@ -5,7 +5,7 @@ List comments on a Figma file or branch.
 - **Service**: `figma`
 - **Action**: `list_comments`
 - **Action id**: `figma.list_comments`
-- **Required scopes**: file_comments:read
+- **Required scopes**: figma.file.comments.read
 
 ## Inspect the schema
 

@@ -1,6 +1,6 @@
 # Dida365 · `get_habit`
 
-Get a Dida365 habit by its habit ID.
+Get a Dida365 (滴答清单) habit by its habit ID.
 
 - **Service**: `dida365`
 - **Action**: `get_habit`

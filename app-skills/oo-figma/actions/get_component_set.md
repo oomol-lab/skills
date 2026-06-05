@@ -5,7 +5,7 @@ Get metadata for a published Figma component set by key.
 - **Service**: `figma`
 - **Action**: `get_component_set`
 - **Action id**: `figma.get_component_set`
-- **Required scopes**: library_assets:read
+- **Required scopes**: figma.library.assets.read
 
 ## Inspect the schema
 

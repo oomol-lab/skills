@@ -1,6 +1,6 @@
 # Dida365 · `get_project_with_data`
 
-Get a Dida365 project together with its undone tasks and columns by project ID.
+Get a Dida365 (滴答清单) project together with its undone tasks and columns by project ID.
 
 - **Service**: `dida365`
 - **Action**: `get_project_with_data`

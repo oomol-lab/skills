@@ -5,7 +5,7 @@ Post a comment on a Figma file or branch.
 - **Service**: `figma`
 - **Action**: `post_comment`
 - **Action id**: `figma.post_comment`
-- **Required scopes**: file_comments:write
+- **Required scopes**: figma.file.comments.write
 
 ## Inspect the schema
 

@@ -5,7 +5,7 @@ Render selected Figma file nodes and return temporary image URLs.
 - **Service**: `figma`
 - **Action**: `render_images`
 - **Action id**: `figma.render_images`
-- **Required scopes**: file_content:read
+- **Required scopes**: figma.file.content.read
 
 ## Inspect the schema
 

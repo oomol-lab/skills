@@ -1,6 +1,6 @@
 # Dida365 · `get_task_by_project_and_id`
 
-Get a Dida365 task by project ID and task ID.
+Get a Dida365 (滴答清单) task by project ID and task ID.
 
 - **Service**: `dida365`
 - **Action**: `get_task_by_project_and_id`

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Drive"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "googledrive"
   categories: "Storage, Productivity"
   homepage: "https://workspace.google.com/products/drive/"
@@ -16,7 +16,7 @@ metadata:
 
 Operate **Google Drive** through your OOMOL-connected account. This skill calls the `googledrive` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: Storage, Productivity. Exposes 66 action(s).
+Category: Storage, Productivity. Exposes 67 action(s).
 
 ## Running an action
 
@@ -99,10 +99,11 @@ Each action below links to a reference file with its purpose and exact commands.
 - [`untrash_file`](actions/untrash_file.md) — Restore a Drive file or folder from trash.
 - [`update_comment`](actions/update_comment.md) — Update the content of an existing Drive file comment.
 - [`update_drive`](actions/update_drive.md) — Update metadata or restrictions on a shared drive.
+- [`update_file`](actions/update_file.md) — Patch a Drive file with metadata and optional uploaded content.
 - [`update_file_metadata_patch`](actions/update_file_metadata_patch.md) — Update Drive file metadata fields with patch semantics.
-- [`update_file_put`](actions/update_file_put.md) — Update a Drive file with metadata and optional uploaded content.
 - [`update_file_revision_metadata`](actions/update_file_revision_metadata.md) — Update revision metadata flags such as publish or keep-forever on a specific Drive file revision.
-- [`update_permission`](actions/update_permission.md) — Update an existing Drive permission using structured permission fields.
+- [`update_permission`](actions/update_permission.md) — Compatibility alias of `update_permission_patch`; Google Drive v3 uses PATCH semantics.
+- [`update_permission_patch`](actions/update_permission_patch.md) — Patch an existing Drive permission using structured permission fields.
 - [`update_reply`](actions/update_reply.md) — Update the content of an existing reply on a Drive file comment.
 - [`update_team_drive`](actions/update_team_drive.md) — Legacy compatibility alias of `update_drive` for Team Drives.
 - [`upload_file`](actions/upload_file.md) — Upload a new Drive file with binary or text content and optional metadata.

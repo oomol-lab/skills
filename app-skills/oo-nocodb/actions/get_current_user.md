@@ -1,0 +1,23 @@
+# NocoDB · `get_current_user`
+
+Get the NocoDB user associated with the connected API token.
+
+- **Service**: `nocodb`
+- **Action**: `get_current_user`
+- **Action id**: `nocodb.get_current_user`
+
+## Inspect the schema
+
+Always fetch the authoritative input/output schema before building a payload — fields and defaults can change upstream:
+
+```bash
+oo connector schema "nocodb" --action "get_current_user"
+```
+
+## Run
+
+```bash
+oo connector run "nocodb" --action "get_current_user" --data '{}' --json
+```
+
+Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.

@@ -1,6 +1,6 @@
 # Dida365 · `update_task`
 
-Update a Dida365 task by task ID and project ID, including checklist items and recurrence fields.
+Update a Dida365 (滴答清单) task by task ID and project ID, including checklist items and recurrence fields.
 
 - **Service**: `dida365`
 - **Action**: `update_task`

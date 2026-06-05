@@ -1,6 +1,6 @@
 # Dida365 · `create_task`
 
-Create a Dida365 task under a project with optional schedule, reminders, recurrence, and checklist items.
+Create a Dida365 (滴答清单) task under a project with optional schedule, reminders, recurrence, and checklist items.
 
 - **Service**: `dida365`
 - **Action**: `create_task`

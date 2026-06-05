@@ -5,7 +5,7 @@ Delete an emoji reaction created by the authenticated user.
 - **Service**: `figma`
 - **Action**: `delete_comment_reaction`
 - **Action id**: `figma.delete_comment_reaction`
-- **Required scopes**: file_comments:write
+- **Required scopes**: figma.file.comments.write
 
 ## Inspect the schema
 

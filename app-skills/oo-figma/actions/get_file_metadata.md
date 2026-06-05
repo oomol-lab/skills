@@ -5,7 +5,7 @@ Get lightweight metadata for a Figma file without fetching its full document.
 - **Service**: `figma`
 - **Action**: `get_file_metadata`
 - **Action id**: `figma.get_file_metadata`
-- **Required scopes**: file_metadata:read
+- **Required scopes**: figma.file.metadata.read
 
 ## Inspect the schema
 
