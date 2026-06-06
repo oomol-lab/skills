@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_r2v_video_result`
+# OOMOL Fusion API · `wanx_r2v_video_result`
 
 Query reference-to-video task result
 

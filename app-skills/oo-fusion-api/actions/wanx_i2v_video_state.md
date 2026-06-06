@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_i2v_video_state`
+# OOMOL Fusion API · `wanx_i2v_video_state`
 
 Get wanx-i2v-video task state
 

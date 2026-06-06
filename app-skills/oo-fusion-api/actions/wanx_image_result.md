@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_image_result`
+# OOMOL Fusion API · `wanx_image_result`
 
 Get wanx-image task result
 

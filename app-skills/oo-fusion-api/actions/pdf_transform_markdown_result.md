@@ -1,4 +1,4 @@
-# Oomol Fusion API · `pdf_transform_markdown_result`
+# OOMOL Fusion API · `pdf_transform_markdown_result`
 
 Get pdf-transform-markdown task result
 

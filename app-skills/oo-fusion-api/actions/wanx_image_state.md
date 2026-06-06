@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_image_state`
+# OOMOL Fusion API · `wanx_image_state`
 
 Get wanx-image task state
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_mt_image_state`
+# OOMOL Fusion API · `qwen_mt_image_state`
 
 Get qwen-mt-image task state
 

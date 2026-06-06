@@ -1,4 +1,4 @@
-# Oomol Fusion API · `doubao_text_to_image_seedream_generate`
+# OOMOL Fusion API · `doubao_text_to_image_seedream_generate`
 
 Generate images from text with Doubao Seedream
 

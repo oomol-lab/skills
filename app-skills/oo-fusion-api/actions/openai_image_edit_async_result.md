@@ -1,4 +1,4 @@
-# Oomol Fusion API · `openai_image_edit_async_result`
+# OOMOL Fusion API · `openai_image_edit_async_result`
 
 Get asynchronous OpenAI image edit result
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "openai_image_edit_async_result" --data '
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Write action.** This changes Oomol Fusion API state. Confirm the exact payload and intended effect with the user before running.
+> **Write action.** This changes OOMOL Fusion API state. Confirm the exact payload and intended effect with the user before running.

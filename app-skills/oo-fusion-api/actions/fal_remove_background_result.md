@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_remove_background_result`
+# OOMOL Fusion API · `fal_remove_background_result`
 
 Image with background removed
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "fal_remove_background_result" --data '{}
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Destructive action.** This removes or overwrites Oomol Fusion API data. Always confirm the target and get explicit user approval before running.
+> **Destructive action.** This removes or overwrites OOMOL Fusion API data. Always confirm the target and get explicit user approval before running.

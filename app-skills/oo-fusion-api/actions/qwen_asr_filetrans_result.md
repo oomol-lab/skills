@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_asr_filetrans_result`
+# OOMOL Fusion API · `qwen_asr_filetrans_result`
 
 Get Qwen ASR file transcription task result
 

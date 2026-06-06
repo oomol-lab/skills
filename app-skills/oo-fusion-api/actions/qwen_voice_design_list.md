@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_voice_design_list`
+# OOMOL Fusion API · `qwen_voice_design_list`
 
 List Qwen voice design voices.
 

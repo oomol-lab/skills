@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_nano_banana_2_result`
+# OOMOL Fusion API · `fal_nano_banana_2_result`
 
 Get fal-nano-banana-2 task result
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `jina_reader_read`
+# OOMOL Fusion API · `jina_reader_read`
 
 Read and extract URL content
 

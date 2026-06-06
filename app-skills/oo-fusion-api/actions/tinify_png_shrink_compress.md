@@ -1,4 +1,4 @@
-# Oomol Fusion API · `tinify_png_shrink_compress`
+# OOMOL Fusion API · `tinify_png_shrink_compress`
 
 Compress PNG images with the Tinify API
 

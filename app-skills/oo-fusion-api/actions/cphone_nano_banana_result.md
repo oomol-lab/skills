@@ -1,4 +1,4 @@
-# Oomol Fusion API · `cphone_nano_banana_result`
+# OOMOL Fusion API · `cphone_nano_banana_result`
 
 Get cphone-nano-banana task result
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_remove_background_state`
+# OOMOL Fusion API · `fal_remove_background_state`
 
 Get fal-remove-background task state
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "fal_remove_background_state" --data '{}'
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Destructive action.** This removes or overwrites Oomol Fusion API data. Always confirm the target and get explicit user approval before running.
+> **Destructive action.** This removes or overwrites OOMOL Fusion API data. Always confirm the target and get explicit user approval before running.

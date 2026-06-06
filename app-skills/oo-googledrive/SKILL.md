@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Drive"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   service: "googledrive"
   categories: "Storage, Productivity"
   homepage: "https://workspace.google.com/products/drive/"
@@ -16,7 +16,7 @@ metadata:
 
 Operate **Google Drive** through your OOMOL-connected account. This skill calls the `googledrive` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: Storage, Productivity. Exposes 67 action(s).
+Category: Storage, Productivity. Exposes 43 action(s).
 
 ## Running an action
 
@@ -41,73 +41,49 @@ Each action below links to a reference file with its purpose and exact commands.
 
 ## Available actions
 
-- [`copy_file`](actions/copy_file.md) — Legacy compatibility alias of `copy_file_advanced` with a simplified input shape.
-- [`copy_file_advanced`](actions/copy_file_advanced.md) — Copy a Drive file and optionally override metadata such as name, parents, description, or properties.
-- [`create_comment`](actions/create_comment.md) — Create a comment on a Drive file, optionally with anchor or quoted file content.
-- [`create_drive`](actions/create_drive.md) — Create a new shared drive.
-- [`create_file`](actions/create_file.md) — Create a Google Drive file with metadata only. Use a Google Workspace mime type to create an empty native file shell.
-- [`create_file_from_text`](actions/create_file_from_text.md) — Create a new Drive file from text content and optional metadata.
-- [`create_folder`](actions/create_folder.md) — Create a Google Drive folder, optionally under one or more parent folders.
-- [`create_permission`](actions/create_permission.md) — Create a permission on a Drive file or shared drive to share it with users, groups, domains, or anyone.
-- [`create_reply`](actions/create_reply.md) — Create a reply under an existing Drive file comment, or use an action payload such as resolve or reopen.
-- [`create_team_drive`](actions/create_team_drive.md) — Legacy compatibility alias of `create_drive` for Team Drives.
-- [`delete_comment`](actions/delete_comment.md) — Permanently delete a comment thread from a Drive file.
-- [`delete_drive`](actions/delete_drive.md) — Permanently delete a shared drive.
-- [`delete_file`](actions/delete_file.md) — Legacy compatibility alias for permanently deleting a Drive file by ID.
-- [`delete_permission`](actions/delete_permission.md) — Delete a permission from a Drive file or shared drive.
-- [`delete_reply`](actions/delete_reply.md) — Permanently delete a specific reply from a Drive file comment thread.
-- [`delete_revision`](actions/delete_revision.md) — Permanently delete a specific revision from a Drive file.
-- [`delete_team_drive`](actions/delete_team_drive.md) — Legacy compatibility alias of `delete_drive` for Team Drives.
-- [`download_file`](actions/download_file.md) — Download a Drive file by ID, or export a Google Workspace file when `mimeType` is provided. Returns a transit URL for the downloaded content.
-- [`download_file_operation`](actions/download_file_operation.md) — Compatibility alias of `download_file`.
-- [`download_file2`](actions/download_file2.md) — Compatibility alias of `download_file`.
-- [`edit_file`](actions/edit_file.md) — Overwrite an existing Drive file with text content and optional metadata changes.
-- [`empty_trash`](actions/empty_trash.md) — Permanently empty the user's trash or a shared drive's trash.
-- [`export_google_workspace_file`](actions/export_google_workspace_file.md) — Export a Google Workspace file to the requested MIME type and return a transit URL for the exported content.
-- [`find_file`](actions/find_file.md) — Search Google Drive files and folders with query, date, starred, trash, and shared-drive filters.
-- [`find_folder`](actions/find_folder.md) — Search Google Drive folders only, with the same query and pagination controls as `find_file`.
-- [`generate_ids`](actions/generate_ids.md) — Generate one or more Drive file IDs for later create or copy requests.
-- [`get_about`](actions/get_about.md) — Get Drive account information such as user details, quota, and supported capabilities.
-- [`get_app`](actions/get_app.md) — Get metadata for a specific Google Drive app by app ID.
-- [`get_changes_start_page_token`](actions/get_changes_start_page_token.md) — Get the page token for monitoring future Drive changes.
-- [`get_comment`](actions/get_comment.md) — Get a specific comment on a Drive file by comment ID.
-- [`get_drive`](actions/get_drive.md) — Get a shared drive by drive ID.
-- [`get_file_metadata`](actions/get_file_metadata.md) — Get metadata for a Drive file by ID, including mime type, parents, ownership, and trash state.
-- [`get_permission`](actions/get_permission.md) — Get a specific permission on a Drive file or shared drive by permission ID.
-- [`get_permission_id_for_email`](actions/get_permission_id_for_email.md) — Look up the Drive permission ID for an email address.
-- [`get_reply`](actions/get_reply.md) — Get a specific reply under a Drive file comment.
-- [`get_revision`](actions/get_revision.md) — Get metadata for a specific Drive file revision.
-- [`get_team_drive`](actions/get_team_drive.md) — Legacy compatibility alias of `get_drive` for Team Drives.
-- [`google_drive_delete_folder_or_file_action`](actions/google_drive_delete_folder_or_file_action.md) — Permanently delete a Drive file or folder by ID.
-- [`hide_drive`](actions/hide_drive.md) — Hide a shared drive from the default Drive view.
-- [`list_access_proposals`](actions/list_access_proposals.md) — List pending access proposals for a specific Drive file.
-- [`list_approvals`](actions/list_approvals.md) — List approvals associated with a specific Drive file.
-- [`list_changes`](actions/list_changes.md) — List file and drive changes for incremental sync workflows.
-- [`list_comments`](actions/list_comments.md) — List comments on a Drive file with pagination.
-- [`list_file_labels`](actions/list_file_labels.md) — List the Drive labels currently applied to a file.
-- [`list_permissions`](actions/list_permissions.md) — List permissions on a Drive file or shared drive.
-- [`list_replies`](actions/list_replies.md) — List replies under a Drive file comment with pagination.
-- [`list_revisions`](actions/list_revisions.md) — List revision metadata for a Drive file.
-- [`list_shared_drives`](actions/list_shared_drives.md) — List shared drives accessible to the connected account.
-- [`list_team_drives`](actions/list_team_drives.md) — Legacy compatibility alias of `list_shared_drives` for Team Drives.
-- [`modify_file_labels`](actions/modify_file_labels.md) — Add, update, or remove Drive labels on a file.
-- [`move_file`](actions/move_file.md) — Move or rename a Drive file by updating parents and/or name.
-- [`parse_file`](actions/parse_file.md) — Compatibility alias of `download_file`, including export behavior when `mimeType` is provided.
-- [`patch_permission`](actions/patch_permission.md) — Patch specific fields on an existing Drive permission.
-- [`trash_file`](actions/trash_file.md) — Move a Drive file or folder to trash without permanently deleting it.
-- [`unhide_drive`](actions/unhide_drive.md) — Unhide a shared drive and restore it to the default Drive view.
-- [`untrash_file`](actions/untrash_file.md) — Restore a Drive file or folder from trash.
-- [`update_comment`](actions/update_comment.md) — Update the content of an existing Drive file comment.
-- [`update_drive`](actions/update_drive.md) — Update metadata or restrictions on a shared drive.
-- [`update_file`](actions/update_file.md) — Patch a Drive file with metadata and optional uploaded content.
-- [`update_file_metadata_patch`](actions/update_file_metadata_patch.md) — Update Drive file metadata fields with patch semantics.
-- [`update_file_revision_metadata`](actions/update_file_revision_metadata.md) — Update revision metadata flags such as publish or keep-forever on a specific Drive file revision.
-- [`update_permission`](actions/update_permission.md) — Compatibility alias of `update_permission_patch`; Google Drive v3 uses PATCH semantics.
-- [`update_permission_patch`](actions/update_permission_patch.md) — Patch an existing Drive permission using structured permission fields.
-- [`update_reply`](actions/update_reply.md) — Update the content of an existing reply on a Drive file comment.
-- [`update_team_drive`](actions/update_team_drive.md) — Legacy compatibility alias of `update_drive` for Team Drives.
-- [`upload_file`](actions/upload_file.md) — Upload a new Drive file with binary or text content and optional metadata.
-- [`upload_update_file`](actions/upload_update_file.md) — Replace the content of an existing Drive file and optionally update metadata.
+- [`about.get`](actions/about-get.md) — Get Drive account information such as user details, quota, and supported capabilities.
+- [`accessproposals.list`](actions/accessproposals-list.md) — List pending access proposals for a specific Drive file.
+- [`approvals.list`](actions/approvals-list.md) — List approvals associated with a specific Drive file.
+- [`apps.get`](actions/apps-get.md) — Get metadata for a specific Google Drive app by app ID.
+- [`changes.getStartPageToken`](actions/changes-getstartpagetoken.md) — Get the page token for monitoring future Drive changes.
+- [`changes.list`](actions/changes-list.md) — List file and drive changes for incremental sync workflows.
+- [`comments.create`](actions/comments-create.md) — Create a comment on a Drive file, optionally with anchor or quoted file content.
+- [`comments.delete`](actions/comments-delete.md) — Permanently delete a comment thread from a Drive file.
+- [`comments.get`](actions/comments-get.md) — Get a specific comment on a Drive file by comment ID.
+- [`comments.list`](actions/comments-list.md) — List comments on a Drive file with pagination.
+- [`comments.update`](actions/comments-update.md) — Update the content of an existing Drive file comment.
+- [`drives.create`](actions/drives-create.md) — Create a new shared drive.
+- [`drives.delete`](actions/drives-delete.md) — Permanently delete a shared drive.
+- [`drives.get`](actions/drives-get.md) — Get a shared drive by drive ID.
+- [`drives.hide`](actions/drives-hide.md) — Hide a shared drive from the default Drive view.
+- [`drives.list`](actions/drives-list.md) — List shared drives accessible to the connected account.
+- [`drives.unhide`](actions/drives-unhide.md) — Unhide a shared drive and restore it to the default Drive view.
+- [`drives.update`](actions/drives-update.md) — Update metadata or restrictions on a shared drive.
+- [`files.copy`](actions/files-copy.md) — Copy a Drive file and optionally override official File metadata.
+- [`files.create`](actions/files-create.md) — Create a Drive file with official File metadata and optional connector media upload content.
+- [`files.delete`](actions/files-delete.md) — Permanently delete a Drive file or folder by ID.
+- [`files.emptyTrash`](actions/files-emptytrash.md) — Permanently empty the user's trash or a shared drive's trash.
+- [`files.export`](actions/files-export.md) — Export a Google Workspace file to the requested MIME type and return a transit URL for the exported content.
+- [`files.generateIds`](actions/files-generateids.md) — Generate one or more Drive file IDs for later create or copy requests.
+- [`files.get`](actions/files-get.md) — Get metadata for a Drive file by ID.
+- [`files.list`](actions/files-list.md) — List Google Drive files using the official Drive query and pagination parameters.
+- [`files.listLabels`](actions/files-listlabels.md) — List the Drive labels currently applied to a file.
+- [`files.modifyLabels`](actions/files-modifylabels.md) — Add, update, or remove Drive labels on a file.
+- [`files.update`](actions/files-update.md) — Patch a Drive file with official metadata, parent query parameters, and optional connector media upload content.
+- [`permissions.create`](actions/permissions-create.md) — Create a permission on a Drive file or shared drive.
+- [`permissions.delete`](actions/permissions-delete.md) — Delete a permission from a Drive file or shared drive.
+- [`permissions.get`](actions/permissions-get.md) — Get a specific permission on a Drive file or shared drive by permission ID.
+- [`permissions.list`](actions/permissions-list.md) — List permissions on a Drive file or shared drive.
+- [`permissions.update`](actions/permissions-update.md) — Update an existing Drive permission using Google Drive v3 patch semantics.
+- [`replies.create`](actions/replies-create.md) — Create a reply under an existing Drive file comment.
+- [`replies.delete`](actions/replies-delete.md) — Permanently delete a specific reply from a Drive file comment thread.
+- [`replies.get`](actions/replies-get.md) — Get a specific reply under a Drive file comment.
+- [`replies.list`](actions/replies-list.md) — List replies under a Drive file comment with pagination.
+- [`replies.update`](actions/replies-update.md) — Update the content of an existing reply on a Drive file comment.
+- [`revisions.delete`](actions/revisions-delete.md) — Permanently delete a specific revision from a Drive file.
+- [`revisions.get`](actions/revisions-get.md) — Get metadata for a specific Drive file revision.
+- [`revisions.list`](actions/revisions-list.md) — List revision metadata for a Drive file.
+- [`revisions.update`](actions/revisions-update.md) — Update revision metadata flags on a specific Drive file revision.
 
 ## Safety
 

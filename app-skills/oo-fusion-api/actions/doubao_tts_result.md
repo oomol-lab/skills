@@ -1,4 +1,4 @@
-# Oomol Fusion API · `doubao_tts_result`
+# OOMOL Fusion API · `doubao_tts_result`
 
 Get doubao-tts task result
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "cloudflare_r2"
   categories: "Storage, Developer Tools"
   homepage: "https://www.cloudflare.com"
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare R2 is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare R2 is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential, OAuth2) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=cloudflare_r2

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_mt_image_result`
+# OOMOL Fusion API · `qwen_mt_image_result`
 
 Get qwen-mt-image task result
 

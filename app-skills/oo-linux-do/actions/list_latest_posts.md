@@ -1,6 +1,6 @@
 # Linux DO · `list_latest_posts`
 
-List the latest public posts across Linux DO topics.
+List the latest public posts across Linux DO. RSS endpoint: GET https://linux.do/posts.rss. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
 
 - **Service**: `linux_do`
 - **Action**: `list_latest_posts`

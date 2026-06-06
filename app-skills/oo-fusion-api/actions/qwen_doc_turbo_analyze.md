@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_doc_turbo_analyze`
+# OOMOL Fusion API · `qwen_doc_turbo_analyze`
 
 Analyze documents with Tongyi Qianwen
 
