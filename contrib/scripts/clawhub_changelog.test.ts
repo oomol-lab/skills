@@ -220,6 +220,22 @@ describe("runGenerate", () => {
         expect(recorder.logs.some(l => l.includes("No changelogs to pre-generate"))).toBe(true);
     });
 
+    test("excludes a listed skill so codex never runs for it", async () => {
+        const recorder: Recorder = { spawned: [], written: [], logs: [] };
+        const code = await runGenerate(baseCfg({ exclude: ["oo-foo"] }), makeDeps({ recorder }));
+        expect(code).toBe(0);
+        expect(recorder.spawned.length).toBe(0);
+        expect(recorder.written).toEqual([]);
+        expect(recorder.logs.some(l => l.includes("Excluding 1 skill(s)") && l.includes("oo-foo"))).toBe(true);
+    });
+
+    test("a non-matching exclude entry leaves generation untouched", async () => {
+        const recorder: Recorder = { spawned: [], written: [], logs: [] };
+        const code = await runGenerate(baseCfg({ exclude: ["oo-other"] }), makeDeps({ recorder }));
+        expect(code).toBe(0);
+        expect(recorder.spawned.length).toBe(1);
+    });
+
     test("skips a target whose metadata.version was not bumped (action !== publish)", async () => {
         const recorder: Recorder = { spawned: [], written: [], logs: [] };
         const deps = makeDeps({ recorder });

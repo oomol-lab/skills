@@ -28,6 +28,9 @@ name: Publish Skills to ClawHub
 #   dry-run         Preview the plan + per-account distribution. No upload.
 #   publish-single  Publish one folder, e.g. app-skills/<slug>.
 #   publish-catalog Publish every new/changed skill under app-skills/, spread across the accounts.
+#
+# exclude_skills (optional) skips specific skills for this run only — a comma-separated list of
+# slugs (e.g. "oo-ably,oo-github"). It applies to every mode and never edits any SKILL.md.
 
 on:
   workflow_dispatch:
@@ -43,6 +46,11 @@ on:
           - publish-catalog
       skill_path:
         description: Skill folder for publish-single, for example app-skills/<slug>.
+        type: string
+        required: false
+        default: ""
+      exclude_skills:
+        description: Skills to skip this run (comma-separated slugs, e.g. oo-ably,oo-github). Applies to every mode.
         type: string
         required: false
         default: ""
@@ -188,6 +196,7 @@ jobs:
         env:
           MODE: ${{ inputs.mode }}
           SKILL_PATH: ${{ inputs.skill_path }}
+          EXCLUDE_SKILLS: ${{ inputs.exclude_skills }}
           SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
           CHANGELOG_CACHE_DIR: ${{ runner.temp }}/changelog-cache
           CHANGELOG_CONCURRENCY: "10"
@@ -214,6 +223,7 @@ jobs:
         env:
           MODE: ${{ inputs.mode }}
           SKILL_PATH: ${{ inputs.skill_path }}
+          EXCLUDE_SKILLS: ${{ inputs.exclude_skills }}
           MAX_NEW_PER_ACCOUNT: ${{ inputs.max_per_account }}
           SYNC_JSON: ${{ runner.temp }}/clawhub-sync.json
           CLAWHUB_BIN: clawhub

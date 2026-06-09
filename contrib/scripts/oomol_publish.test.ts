@@ -408,6 +408,31 @@ describe("run", () => {
         expect(h.publishCalls).toEqual([]);
     });
 
+    test("exclude drops listed skills before querying the registry", async () => {
+        const h = harness({
+            slugs: ["oo-a", "oo-b"],
+            manifests: { "oo-a": NO_ICON_SKILL, "oo-b": ABLY_SKILL },
+            published: {}, // both unpublished -> would publish if not excluded
+        });
+        const code = await run({ ...CFG, exclude: ["oo-a"] }, h.deps);
+        expect(code).toBe(0);
+        expect(h.publishCalls.map(c => c.stageDir)).toEqual(["/stage/oo-b"]);
+        expect(h.logs.some(l => l.includes("Excluding 1 skill(s)") && l.includes("oo-a"))).toBe(true);
+    });
+
+    test("excluding every skill -> nothing published, zero totals, exit 0", async () => {
+        const h = harness({
+            slugs: ["oo-a", "oo-b"],
+            manifests: { "oo-a": NO_ICON_SKILL, "oo-b": ABLY_SKILL },
+            published: {},
+        });
+        const code = await run({ ...CFG, exclude: ["oo-a", "oo-b"] }, h.deps);
+        expect(code).toBe(0);
+        expect(h.publishCalls).toEqual([]);
+        expect(h.reportCalls).toEqual([{ published: 0, skipped: 0, failed: 0, total: 0 }]);
+        expect(h.logs.some(l => l.includes("No skills left to publish after exclusions"))).toBe(true);
+    });
+
     test("a version-conflict publish failure is treated as an idempotent success", async () => {
         const h = harness({
             slugs: ["oo-b"],
@@ -503,7 +528,7 @@ describe("run", () => {
 describe("readRunConfig", () => {
     test("applies defaults", () => {
         const cfg = readRunConfig(() => undefined);
-        expect(cfg).toEqual({ mode: "dry-run", skillPath: "", root: "app-skills", registry: "https://registry.oomol.com", concurrency: 10 });
+        expect(cfg).toEqual({ mode: "dry-run", skillPath: "", root: "app-skills", registry: "https://registry.oomol.com", concurrency: 10, exclude: [] });
     });
     test("reads overrides and trims trailing slashes", () => {
         const map: Record<string, string> = {
@@ -514,9 +539,12 @@ describe("readRunConfig", () => {
             PUBLISH_CONCURRENCY: "4",
         };
         const cfg = readRunConfig(n => map[n]);
-        expect(cfg).toEqual({ mode: "publish-catalog", skillPath: "app-skills/oo-x", root: "app-skills", registry: "https://r.example.com", concurrency: 4 });
+        expect(cfg).toEqual({ mode: "publish-catalog", skillPath: "app-skills/oo-x", root: "app-skills", registry: "https://r.example.com", concurrency: 4, exclude: [] });
     });
     test("falls back to 10 for a non-positive concurrency", () => {
         expect(readRunConfig(n => (n === "PUBLISH_CONCURRENCY" ? "0" : undefined)).concurrency).toBe(10);
+    });
+    test("parses EXCLUDE_SKILLS into normalized slugs", () => {
+        expect(readRunConfig(n => (n === "EXCLUDE_SKILLS" ? " oo-a , app-skills/oo-b ," : undefined)).exclude).toEqual(["oo-a", "oo-b"]);
     });
 });

@@ -255,6 +255,50 @@ export function selectCandidates(
 }
 
 // ----------------------------------------------------------------------------
+// per-run skill exclusions (EXCLUDE_SKILLS = "slug,slug,…")
+// ----------------------------------------------------------------------------
+/**
+ * Parse the comma-separated EXCLUDE_SKILLS input into a set of normalized slugs. Each
+ * entry is trimmed and reduced to its basename, so an operator can write either a bare
+ * slug (`oo-ably`) or a path (`app-skills/oo-ably`) and both match the skill's slug.
+ * Empty entries (e.g. a trailing comma) are dropped. Never throws.
+ */
+export function parseExcludeSlugs(raw: string): Set<string> {
+    const set = new Set<string>();
+    for (const entry of (raw ?? "").split(",")) {
+        const slug = basename(entry.trim());
+        if (slug)
+            set.add(slug);
+    }
+    return set;
+}
+
+/**
+ * Drop the candidates whose slug (folder basename) is in `exclude`, so an operator can
+ * skip specific skills for one run without touching their SKILL.md. Returns the kept
+ * candidates plus the slugs actually excluded (sorted, de-duplicated) for the caller to
+ * report. With an empty exclude set this is a pass-through. Shared by the publish step and
+ * the changelog pre-generate step so both act on the exact same set.
+ */
+export function applyExclusions(
+    candidates: readonly Candidate[],
+    exclude: ReadonlySet<string>,
+): { kept: Candidate[]; excluded: string[] } {
+    if (exclude.size === 0)
+        return { kept: [...candidates], excluded: [] };
+    const kept: Candidate[] = [];
+    const hit = new Set<string>();
+    for (const c of candidates) {
+        const slug = c.slug || basename(c.folder);
+        if (exclude.has(slug))
+            hit.add(slug);
+        else
+            kept.push(c);
+    }
+    return { kept, excluded: [...hit].sort((a, b) => a.localeCompare(b)) };
+}
+
+// ----------------------------------------------------------------------------
 // changelog
 // ----------------------------------------------------------------------------
 export function buildSourceLine(repo: string, sha: string): string {
@@ -706,6 +750,12 @@ export interface RunConfig {
      * never capped here because ClawHub does not rate-limit version updates of existing skills.
      */
     maxNewPerAccount: number;
+    /**
+     * Slugs to skip for this run (from the EXCLUDE_SKILLS input). A candidate whose slug is
+     * listed is dropped before classification — neither published nor changelogged. Omitted
+     * or empty means "exclude nothing".
+     */
+    exclude?: readonly string[];
 }
 
 export interface RunDeps {
@@ -743,7 +793,11 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
         return sel.done.code;
     }
 
-    const targets = sel.candidates
+    const { kept, excluded } = applyExclusions(sel.candidates, new Set(cfg.exclude ?? []));
+    if (excluded.length)
+        deps.log(`Excluding ${excluded.length} skill(s) from this run by request: ${excluded.join(", ")}.`);
+
+    const targets = kept
         .map(c => classify(c, cfg.root, deps.readVersion))
         .map(t => ({ ...t, displayName: deps.readTitle(t.folder) }));
 
@@ -873,6 +927,7 @@ export function readRunConfig(getenv: Getenv): RunConfig {
         sha: env(getenv, "GITHUB_SHA"),
         // garbage -> default 5; negative -> 0 (no cap).
         maxNewPerAccount: Number.isNaN(cap) ? 5 : Math.max(0, cap),
+        exclude: [...parseExcludeSlugs(env(getenv, "EXCLUDE_SKILLS"))],
     };
 }
 
