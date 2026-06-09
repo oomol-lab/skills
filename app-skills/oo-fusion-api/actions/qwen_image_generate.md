@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_image_generate`
+# OOMOL Fusion API · `qwen_image_generate`
 
 Generate images with Tongyi Qianwen
 

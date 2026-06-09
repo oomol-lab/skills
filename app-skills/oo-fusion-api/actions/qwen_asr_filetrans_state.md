@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_asr_filetrans_state`
+# OOMOL Fusion API · `qwen_asr_filetrans_state`
 
 Get Qwen ASR file transcription task state
 

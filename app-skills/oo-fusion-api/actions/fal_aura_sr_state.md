@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_aura_sr_state`
+# OOMOL Fusion API · `fal_aura_sr_state`
 
 Get fal-aura-sr task state
 

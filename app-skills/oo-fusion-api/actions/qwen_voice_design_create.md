@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_voice_design_create`
+# OOMOL Fusion API · `qwen_voice_design_create`
 
 Create a Qwen voice design voice and return preview audio.
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "qwen_voice_design_create" --data '{}' --
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Write action.** This changes Oomol Fusion API state. Confirm the exact payload and intended effect with the user before running.
+> **Write action.** This changes OOMOL Fusion API state. Confirm the exact payload and intended effect with the user before running.

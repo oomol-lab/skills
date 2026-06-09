@@ -5,17 +5,18 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Linux DO"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "linux_do"
   categories: "Social, Developer Tools"
   homepage: "https://linux.do"
+  icon: "https://static.oomol.com/logo/third-party/linux_do.svg"
 ---
 
 # Linux DO
 
 Operate **Linux DO** through your OOMOL-connected account. This skill calls the `linux_do` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: Social, Developer Tools. Exposes 5 action(s).
+Category: Social, Developer Tools. Exposes 13 action(s).
 
 ## Running an action
 
@@ -40,11 +41,19 @@ Each action below links to a reference file with its purpose and exact commands.
 
 ## Available actions
 
-- [`list_categories`](actions/list_categories.md) — List public Linux DO categories.
-- [`list_latest_posts`](actions/list_latest_posts.md) — List the latest public posts across Linux DO topics.
-- [`list_latest_topics`](actions/list_latest_topics.md) — List the latest public topics from Linux DO's Discourse forum.
-- [`list_tags`](actions/list_tags.md) — List public Linux DO tags.
-- [`list_top_topics`](actions/list_top_topics.md) — List public top topics from Linux DO for a time period.
+- [`list_badge_grants`](actions/list_badge_grants.md) — List recent grants of a Linux DO badge. RSS endpoint: GET https://linux.do/badges/{id}.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_category_tag_topics`](actions/list_category_tag_topics.md) — List topics with a tag inside a category. RSS endpoint: GET https://linux.do/tags/c/{slug}/{id}/{tag}.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_category_topics`](actions/list_category_topics.md) — List topics in a Linux DO category. RSS endpoint: GET https://linux.do/c/{slug}/{id}.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_group_mentions`](actions/list_group_mentions.md) — List posts mentioning a Linux DO group. RSS endpoint: GET https://linux.do/g/{name}/mentions.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_group_posts`](actions/list_group_posts.md) — List posts by members of a Linux DO group. RSS endpoint: GET https://linux.do/g/{name}/posts.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_hot_topics`](actions/list_hot_topics.md) — List public hot/trending topics from Linux DO. RSS endpoint: GET https://linux.do/hot.rss. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_latest_posts`](actions/list_latest_posts.md) — List the latest public posts across Linux DO. RSS endpoint: GET https://linux.do/posts.rss. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_latest_topics`](actions/list_latest_topics.md) — List the latest public topics from Linux DO. RSS endpoint: GET https://linux.do/latest.rss. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_tag_topics`](actions/list_tag_topics.md) — List topics with a Linux DO tag. RSS endpoint: GET https://linux.do/tag/{tag}.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_top_topics`](actions/list_top_topics.md) — List public top topics from Linux DO for a time period. RSS endpoint: GET https://linux.do/top.rss?period={period} (daily/weekly/monthly/quarterly/yearly/all). On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_topic_posts`](actions/list_topic_posts.md) — List posts within a Linux DO topic. RSS endpoint: GET https://linux.do/t/{slug}/{id}.rss (slug defaults to "topic"). Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_user_posts`](actions/list_user_posts.md) — List posts by a Linux DO user. RSS endpoint: GET https://linux.do/u/{username}/activity.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
+- [`list_user_topics`](actions/list_user_topics.md) — List topics created by a Linux DO user. RSS endpoint: GET https://linux.do/u/{username}/activity/topics.rss. Returns 404 when the target is private or not accessible anonymously; a 404 does not necessarily mean the resource does not exist. On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
 
 ## Safety
 

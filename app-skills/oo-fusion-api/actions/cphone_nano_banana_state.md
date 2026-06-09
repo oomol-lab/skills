@@ -1,4 +1,4 @@
-# Oomol Fusion API · `cphone_nano_banana_state`
+# OOMOL Fusion API · `cphone_nano_banana_state`
 
 Get cphone-nano-banana task state
 

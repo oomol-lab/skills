@@ -1,4 +1,4 @@
-# Oomol Fusion API · `oomol_tts_state`
+# OOMOL Fusion API · `oomol_tts_state`
 
 Get oomol-tts task state
 

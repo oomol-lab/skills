@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare DNS"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "cloudflare_dns"
   categories: "Developer Tools, Security & Identity"
   homepage: "https://www.cloudflare.com"
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare DNS is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare DNS is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key, OAuth2) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=cloudflare_dns

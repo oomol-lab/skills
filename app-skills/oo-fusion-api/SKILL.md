@@ -1,26 +1,26 @@
 ---
 name: oo-fusion-api
-description: "Oomol Fusion API (oomol.com). Use this skill for ANY Oomol Fusion API request — reading, creating, updating, and deleting data. Whenever a task involves Oomol Fusion API, use this skill instead of calling the API directly."
+description: "OOMOL Fusion API (oomol.com). Use this skill for ANY OOMOL Fusion API request — reading, creating, updating, and deleting data. Whenever a task involves OOMOL Fusion API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "Oomol Fusion API"
+  title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "fusion-api"
   categories: "AI, Developer Tools"
   homepage: "https://www.oomol.com"
   icon: "https://static.oomol.com/logo/logo.png"
 ---
 
-# Oomol Fusion API
+# OOMOL Fusion API
 
-Operate **Oomol Fusion API** through your OOMOL-connected account. This skill calls the `fusion-api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **OOMOL Fusion API** through your OOMOL-connected account. This skill calls the `fusion-api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 Category: AI, Developer Tools. Exposes 83 action(s).
 
 ## Running an action
 
-Oomol Fusion API needs no account connection. Assume the oo CLI is installed and signed in. **Do not run `oo auth login` proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails.
+OOMOL Fusion API needs no account connection. Assume the oo CLI is installed and signed in. **Do not run `oo auth login` proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -128,7 +128,7 @@ Each action below links to a reference file with its purpose and exact commands.
 ## Safety
 
 - Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Oomol Fusion API state — confirm the exact payload and effect with the user before running.**
+- **Create, update, send, or post actions change OOMOL Fusion API state — confirm the exact payload and effect with the user before running.**
 - **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -155,4 +155,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- Oomol Fusion API homepage: https://www.oomol.com
+- OOMOL Fusion API homepage: https://www.oomol.com

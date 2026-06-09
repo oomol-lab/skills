@@ -1,4 +1,4 @@
-# Oomol Fusion API · `seedance_video_result`
+# OOMOL Fusion API · `seedance_video_result`
 
 Query a Seedance video generation task result
 

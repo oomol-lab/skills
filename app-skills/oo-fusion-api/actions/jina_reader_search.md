@@ -1,4 +1,4 @@
-# Oomol Fusion API · `jina_reader_search`
+# OOMOL Fusion API · `jina_reader_search`
 
 Search web content
 

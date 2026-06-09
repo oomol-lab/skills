@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_image_submit`
+# OOMOL Fusion API · `wanx_image_submit`
 
 Generate and edit images with Tongyi Wanxiang AI
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "wanx_image_submit" --data '{}' --json
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Write action.** This changes Oomol Fusion API state. Confirm the exact payload and intended effect with the user before running.
+> **Write action.** This changes OOMOL Fusion API state. Confirm the exact payload and intended effect with the user before running.

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `openai_image_async_result`
+# OOMOL Fusion API · `openai_image_async_result`
 
 Get asynchronous OpenAI image generation result
 

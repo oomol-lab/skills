@@ -1,4 +1,4 @@
-# Oomol Fusion API · `oomol_tts_result`
+# OOMOL Fusion API · `oomol_tts_result`
 
 Get oomol-tts task result
 

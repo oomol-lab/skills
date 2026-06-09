@@ -1,4 +1,4 @@
-# Oomol Fusion API · `oomol_tts_ng_generate`
+# OOMOL Fusion API · `oomol_tts_ng_generate`
 
 Generate speech audio
 

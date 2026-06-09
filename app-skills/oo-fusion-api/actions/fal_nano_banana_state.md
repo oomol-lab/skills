@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_nano_banana_state`
+# OOMOL Fusion API · `fal_nano_banana_state`
 
 Get fal-nano-banana task state
 

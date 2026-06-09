@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_tts_generate`
+# OOMOL Fusion API · `qwen_tts_generate`
 
 Generate speech audio
 

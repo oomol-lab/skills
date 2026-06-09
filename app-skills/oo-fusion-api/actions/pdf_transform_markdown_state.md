@@ -1,4 +1,4 @@
-# Oomol Fusion API · `pdf_transform_markdown_state`
+# OOMOL Fusion API · `pdf_transform_markdown_state`
 
 Get pdf-transform-markdown task state
 

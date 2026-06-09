@@ -1,4 +1,4 @@
-# Oomol Fusion API · `pdf_transform_epub_result`
+# OOMOL Fusion API · `pdf_transform_epub_result`
 
 Get pdf-transform-epub task result
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `pdf_transform_epub_state`
+# OOMOL Fusion API · `pdf_transform_epub_state`
 
 Get pdf-transform-epub task state
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `text_to_epub_illustrate_generate`
+# OOMOL Fusion API · `text_to_epub_illustrate_generate`
 
 Generate illustrations for EPUB content
 

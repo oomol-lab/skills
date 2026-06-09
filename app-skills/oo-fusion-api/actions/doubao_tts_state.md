@@ -1,4 +1,4 @@
-# Oomol Fusion API · `doubao_tts_state`
+# OOMOL Fusion API · `doubao_tts_state`
 
 Get doubao-tts task state
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `doubao_stt_state`
+# OOMOL Fusion API · `doubao_stt_state`
 
 Get doubao-stt task state
 

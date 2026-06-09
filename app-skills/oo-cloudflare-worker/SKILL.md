@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Worker"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   service: "cloudflare_worker"
   categories: "Developer Tools"
   homepage: "https://workers.cloudflare.com"
@@ -86,7 +86,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare Worker is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare Worker is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential, OAuth2) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=cloudflare_worker

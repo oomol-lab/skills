@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_remove_background_submit`
+# OOMOL Fusion API · `fal_remove_background_submit`
 
 Remove image backgrounds with the Fal.ai BRIA model
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "fal_remove_background_submit" --data '{}
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Destructive action.** This removes or overwrites Oomol Fusion API data. Always confirm the target and get explicit user approval before running.
+> **Destructive action.** This removes or overwrites OOMOL Fusion API data. Always confirm the target and get explicit user approval before running.

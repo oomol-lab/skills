@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_i2v_video_result`
+# OOMOL Fusion API · `wanx_i2v_video_result`
 
 Query first-frame-to-video task result
 

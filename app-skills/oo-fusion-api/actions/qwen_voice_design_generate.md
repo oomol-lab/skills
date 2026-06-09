@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_voice_design_generate`
+# OOMOL Fusion API · `qwen_voice_design_generate`
 
 Generate speech audio using a Qwen voice design voice.
 

@@ -1,4 +1,4 @@
-# Oomol Fusion API · `doubao_stt_result`
+# OOMOL Fusion API · `doubao_stt_result`
 
 Get doubao-stt task result
 

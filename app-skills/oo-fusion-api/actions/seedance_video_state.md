@@ -1,4 +1,4 @@
-# Oomol Fusion API · `seedance_video_state`
+# OOMOL Fusion API · `seedance_video_state`
 
 Get a Seedance video generation task state
 

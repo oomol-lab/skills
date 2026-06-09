@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_nano_banana_submit`
+# OOMOL Fusion API · `fal_nano_banana_submit`
 
 Edit images with Nano Banana
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "fal_nano_banana_submit" --data '{}' --js
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Write action.** This changes Oomol Fusion API state. Confirm the exact payload and intended effect with the user before running.
+> **Write action.** This changes OOMOL Fusion API state. Confirm the exact payload and intended effect with the user before running.

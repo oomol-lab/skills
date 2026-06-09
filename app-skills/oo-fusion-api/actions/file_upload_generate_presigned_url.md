@@ -1,4 +1,4 @@
-# Oomol Fusion API · `file_upload_generate_presigned_url`
+# OOMOL Fusion API · `file_upload_generate_presigned_url`
 
 Generate a presigned URL for file upload
 
@@ -22,4 +22,4 @@ oo connector run "fusion-api" --action "file_upload_generate_presigned_url" --da
 
 Replace `{}` with a JSON object that matches the input schema. The response is `{ "data": ..., "meta": { "executionId": "..." } }`.
 
-> **Write action.** This changes Oomol Fusion API state. Confirm the exact payload and intended effect with the user before running.
+> **Write action.** This changes OOMOL Fusion API state. Confirm the exact payload and intended effect with the user before running.

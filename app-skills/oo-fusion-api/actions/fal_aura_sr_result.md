@@ -1,4 +1,4 @@
-# Oomol Fusion API · `fal_aura_sr_result`
+# OOMOL Fusion API · `fal_aura_sr_result`
 
 Get fal-aura-sr task result
 

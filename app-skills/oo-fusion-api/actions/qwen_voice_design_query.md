@@ -1,4 +1,4 @@
-# Oomol Fusion API · `qwen_voice_design_query`
+# OOMOL Fusion API · `qwen_voice_design_query`
 
 Get details for a Qwen voice design voice.
 

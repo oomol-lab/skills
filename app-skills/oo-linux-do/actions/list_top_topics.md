@@ -1,6 +1,6 @@
 # Linux DO · `list_top_topics`
 
-List public top topics from Linux DO for a time period.
+List public top topics from Linux DO for a time period. RSS endpoint: GET https://linux.do/top.rss?period={period} (daily/weekly/monthly/quarterly/yearly/all). On a 429/rate-limit error, retry later or fetch the endpoint URL directly from a local network.
 
 - **Service**: `linux_do`
 - **Action**: `list_top_topics`

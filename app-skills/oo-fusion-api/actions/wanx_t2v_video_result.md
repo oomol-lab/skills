@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_t2v_video_result`
+# OOMOL Fusion API · `wanx_t2v_video_result`
 
 Query text-to-video task result
 

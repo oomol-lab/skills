@@ -1,4 +1,4 @@
-# Oomol Fusion API · `cosyvoice_tts_generate`
+# OOMOL Fusion API · `cosyvoice_tts_generate`
 
 Generate speech audio with CosyVoice TTS.
 

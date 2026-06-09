@@ -1,4 +1,4 @@
-# Oomol Fusion API · `wanx_kf2v_video_result`
+# OOMOL Fusion API · `wanx_kf2v_video_result`
 
 Get wanx-kf2v-video task result
 
