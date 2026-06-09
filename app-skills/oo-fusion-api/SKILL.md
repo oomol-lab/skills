@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   service: "fusion-api"
   categories: "AI, Developer Tools"
   homepage: "https://www.oomol.com"
@@ -16,7 +16,7 @@ metadata:
 
 Operate **OOMOL Fusion API** through your OOMOL-connected account. This skill calls the `fusion-api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Category: AI, Developer Tools. Exposes 83 action(s).
+Category: AI, Developer Tools. Exposes 84 action(s).
 
 ## Running an action
 
@@ -45,6 +45,7 @@ Each action below links to a reference file with its purpose and exact commands.
 - [`cphone_nano_banana_result`](actions/cphone_nano_banana_result.md) — Get cphone-nano-banana task result
 - [`cphone_nano_banana_state`](actions/cphone_nano_banana_state.md) — Get cphone-nano-banana task state
 - [`cphone_nano_banana_submit`](actions/cphone_nano_banana_submit.md) — Edit images with Nano Banana
+- [`deepseek_ocr_recognize`](actions/deepseek_ocr_recognize.md) — Recognize text from a single image.
 - [`doubao_stt_result`](actions/doubao_stt_result.md) — Get doubao-stt task result
 - [`doubao_stt_state`](actions/doubao_stt_state.md) — Get doubao-stt task state
 - [`doubao_stt_submit`](actions/doubao_stt_submit.md) — Convert speech to text with Doubao
