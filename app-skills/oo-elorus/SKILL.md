@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Elorus"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "elorus"
-  categories: "Finance, Productivity"
-  homepage: "https://www.elorus.com/"
+  version: "1.0.1"
+  services: ["elorus"]
   icon: "https://static.oomol.com/logo/third-party/elorus.svg"
 ---
 
 # Elorus
 
 Operate **Elorus** through your OOMOL-connected account. This skill calls the `elorus` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Productivity. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "elorus" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_contact`](actions/create_contact.md) — Create one Elorus contact in the selected organization.
-- [`create_invoice`](actions/create_invoice.md) — Create one Elorus invoice in the selected organization.
-- [`create_product`](actions/create_product.md) — Create one Elorus product or service in the selected organization.
-- [`get_contact`](actions/get_contact.md) — Get one Elorus contact by ID.
-- [`get_invoice`](actions/get_invoice.md) — Get one Elorus invoice by ID.
-- [`get_product`](actions/get_product.md) — Get one Elorus product or service by ID.
-- [`list_contacts`](actions/list_contacts.md) — List Elorus contacts with optional search, filters, and pagination.
-- [`list_invoices`](actions/list_invoices.md) — List Elorus invoices with optional filters and pagination.
-- [`list_products`](actions/list_products.md) — List Elorus products or services with optional filters and pagination.
-- [`update_contact`](actions/update_contact.md) — Update one Elorus contact by ID.
-- [`update_invoice`](actions/update_invoice.md) — Update one Elorus invoice by ID using the official full-update endpoint.
-- [`update_product`](actions/update_product.md) — Update one Elorus product or service by ID.
+- `create_contact` — Create one Elorus contact in the selected organization. [write]
+- `create_invoice` — Create one Elorus invoice in the selected organization. [write]
+- `create_product` — Create one Elorus product or service in the selected organization. [write]
+- `get_contact` — Get one Elorus contact by ID.
+- `get_invoice` — Get one Elorus invoice by ID.
+- `get_product` — Get one Elorus product or service by ID.
+- `list_contacts` — List Elorus contacts with optional search, filters, and pagination.
+- `list_invoices` — List Elorus invoices with optional filters and pagination.
+- `list_products` — List Elorus products or services with optional filters and pagination.
+- `update_contact` — Update one Elorus contact by ID. [write]
+- `update_invoice` — Update one Elorus invoice by ID using the official full-update endpoint. [write]
+- `update_product` — Update one Elorus product or service by ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Elorus state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Elorus state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

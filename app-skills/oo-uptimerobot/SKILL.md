@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "UptimeRobot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "uptimerobot"
-  categories: "Developer Tools"
-  homepage: "https://uptimerobot.com"
+  version: "1.0.1"
+  services: ["uptimerobot"]
   icon: "https://static.oomol.com/logo/third-party/Uptimerobot.svg"
 ---
 
 # UptimeRobot
 
 Operate **UptimeRobot** through your OOMOL-connected account. This skill calls the `uptimerobot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "uptimerobot" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_monitor`](actions/create_monitor.md) — Create a new monitor in the connected UptimeRobot account.
-- [`delete_monitor`](actions/delete_monitor.md) — Delete a monitor from the connected UptimeRobot account.
-- [`get_account_details`](actions/get_account_details.md) — Get account-level monitor usage and profile details from the connected UptimeRobot account.
-- [`get_monitor`](actions/get_monitor.md) — Get the full configuration and current status of a single UptimeRobot monitor.
-- [`list_alert_contacts`](actions/list_alert_contacts.md) — List the alert contacts configured in the connected UptimeRobot account.
-- [`list_monitors`](actions/list_monitors.md) — List monitors available in the connected UptimeRobot account.
-- [`update_monitor`](actions/update_monitor.md) — Update an existing monitor in the connected UptimeRobot account.
+- `create_monitor` — Create a new monitor in the connected UptimeRobot account. [write]
+- `delete_monitor` — Delete a monitor from the connected UptimeRobot account. [destructive]
+- `get_account_details` — Get account-level monitor usage and profile details from the connected UptimeRobot account.
+- `get_monitor` — Get the full configuration and current status of a single UptimeRobot monitor.
+- `list_alert_contacts` — List the alert contacts configured in the connected UptimeRobot account.
+- `list_monitors` — List monitors available in the connected UptimeRobot account.
+- `update_monitor` — Update an existing monitor in the connected UptimeRobot account. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change UptimeRobot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change UptimeRobot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

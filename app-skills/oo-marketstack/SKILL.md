@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Marketstack"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "marketstack"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://marketstack.com"
+  version: "1.0.1"
+  services: ["marketstack"]
   icon: "https://static.oomol.com/logo/third-party/Marketstack.svg"
 ---
 
 # Marketstack
 
 Operate **Marketstack** through your OOMOL-connected account. This skill calls the `marketstack` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "marketstack" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_historical_eod`](actions/get_historical_eod.md) — Get historical end-of-day data from Marketstack for one or more comma-separated symbols.
-- [`get_latest_eod`](actions/get_latest_eod.md) — Get the latest available end-of-day data for a single Marketstack symbol.
-- [`get_ticker_info`](actions/get_ticker_info.md) — Get profile information for a single Marketstack ticker.
-- [`list_currencies`](actions/list_currencies.md) — List currencies available through Marketstack.
-- [`list_exchanges`](actions/list_exchanges.md) — List stock exchanges available through Marketstack.
-- [`list_tickers`](actions/list_tickers.md) — List Marketstack tickers with optional search, exchange, and pagination filters.
+- `get_historical_eod` — Get historical end-of-day data from Marketstack for one or more comma-separated symbols.
+- `get_latest_eod` — Get the latest available end-of-day data for a single Marketstack symbol.
+- `get_ticker_info` — Get profile information for a single Marketstack ticker.
+- `list_currencies` — List currencies available through Marketstack.
+- `list_exchanges` — List stock exchanges available through Marketstack.
+- `list_tickers` — List Marketstack tickers with optional search, exchange, and pagination filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Marketstack state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Marketstack state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

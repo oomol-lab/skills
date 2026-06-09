@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "VATlayer"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "vatlayer"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://vatlayer.com"
+  version: "1.0.1"
+  services: ["vatlayer"]
   icon: "https://static.oomol.com/logo/third-party/vatlayer.png"
 ---
 
 # VATlayer
 
 Operate **VATlayer** through your OOMOL-connected account. This skill calls the `vatlayer` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "vatlayer" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`calculate_price`](actions/calculate_price.md) — Calculate VAT-compliant inclusive and exclusive prices with vatlayer.
-- [`get_rate`](actions/get_rate.md) — Retrieve VAT rates for one country selected by country code, IP address, or client IP.
-- [`list_rates`](actions/list_rates.md) — Retrieve VAT rates for all EU member states from vatlayer.
-- [`list_types`](actions/list_types.md) — List vatlayer reduced VAT rate type identifiers for price calculations.
-- [`validate_vat_number`](actions/validate_vat_number.md) — Validate a VAT number and return company information when vatlayer finds it.
+- `calculate_price` — Calculate VAT-compliant inclusive and exclusive prices with vatlayer.
+- `get_rate` — Retrieve VAT rates for one country selected by country code, IP address, or client IP.
+- `list_rates` — Retrieve VAT rates for all EU member states from vatlayer.
+- `list_types` — List vatlayer reduced VAT rate type identifiers for price calculations.
+- `validate_vat_number` — Validate a VAT number and return company information when vatlayer finds it.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change VATlayer state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change VATlayer state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Parsera"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "parsera"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://parsera.org"
+  version: "1.0.1"
+  services: ["parsera"]
 ---
 
 # Parsera
 
 Operate **Parsera** through your OOMOL-connected account. This skill calls the `parsera` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 5 action(s).
 
 ## Running an action
 
@@ -36,21 +32,21 @@ oo connector run "parsera" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`extract`](actions/extract.md) — Extract structured data from a webpage URL with Parsera using a prompt, attributes, or both.
-- [`extract_markdown`](actions/extract_markdown.md) — Extract clean Markdown from a webpage URL with Parsera.
-- [`list_llm_specs`](actions/list_llm_specs.md) — List the LLM specifications available to Parsera requests.
-- [`list_proxy_countries`](actions/list_proxy_countries.md) — List proxy countries available to Parsera extraction requests.
-- [`parse`](actions/parse.md) — Parse structured attributes from raw HTML or text content already available to the caller.
+- `extract` — Extract structured data from a webpage URL with Parsera using a prompt, attributes, or both.
+- `extract_markdown` — Extract clean Markdown from a webpage URL with Parsera.
+- `list_llm_specs` — List the LLM specifications available to Parsera requests.
+- `list_proxy_countries` — List proxy countries available to Parsera extraction requests.
+- `parse` — Parse structured attributes from raw HTML or text content already available to the caller.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Parsera state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Parsera state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

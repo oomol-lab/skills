@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Finage"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "finage"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://finage.co.uk"
+  version: "1.0.1"
+  services: ["finage"]
   icon: "https://static.oomol.com/logo/third-party/Finage.svg"
 ---
 
 # Finage
 
 Operate **Finage** through your OOMOL-connected account. This skill calls the `finage` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "finage" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_aggregates`](actions/get_aggregates.md) — Get Finage OHLCV aggregate bars for a U.S. stock over a date range.
-- [`get_last_quote`](actions/get_last_quote.md) — Get the latest Finage quote for a single U.S. stock symbol.
-- [`get_last_trade`](actions/get_last_trade.md) — Get the latest Finage trade for a single U.S. stock symbol.
-- [`get_previous_close`](actions/get_previous_close.md) — Get the previous close aggregate bar for a single Finage U.S. stock symbol.
-- [`get_snapshot`](actions/get_snapshot.md) — Get a Finage stock snapshot for a bounded list of U.S. stock symbols, including quotes, trades, or both.
-- [`list_stock_symbols`](actions/list_stock_symbols.md) — List Finage U.S. stock symbols with optional page and search filters.
+- `get_aggregates` — Get Finage OHLCV aggregate bars for a U.S. stock over a date range.
+- `get_last_quote` — Get the latest Finage quote for a single U.S. stock symbol.
+- `get_last_trade` — Get the latest Finage trade for a single U.S. stock symbol.
+- `get_previous_close` — Get the previous close aggregate bar for a single Finage U.S. stock symbol. [write]
+- `get_snapshot` — Get a Finage stock snapshot for a bounded list of U.S. stock symbols, including quotes, trades, or both.
+- `list_stock_symbols` — List Finage U.S. stock symbols with optional page and search filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Finage state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Finage state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

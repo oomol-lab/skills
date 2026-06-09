@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Slides"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "googleslides"
-  categories: "Productivity, Design & Media"
-  homepage: "https://workspace.google.com/products/slides/"
+  version: "1.0.1"
+  services: ["googleslides"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Slides.svg"
 ---
 
 # Google Slides
 
 Operate **Google Slides** through your OOMOL-connected account. This skill calls the `googleslides` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "googleslides" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_presentation`](actions/create_presentation.md) — Create a blank Google Slides presentation. Optional locale, page size, and presentation ID values are forwarded when provided.
-- [`get_page_thumbnail2`](actions/get_page_thumbnail2.md) — Generate a thumbnail for a Google Slides page. Returns a temporary content URL plus thumbnail dimensions when Google provides them.
-- [`presentations_batch_update`](actions/presentations_batch_update.md) — Apply raw Google Slides batchUpdate requests to a presentation.
-- [`presentations_copy_from_template`](actions/presentations_copy_from_template.md) — Copy an existing Google Slides presentation through Google Drive so the new presentation preserves the original themes, masters, and layouts.
-- [`presentations_get`](actions/presentations_get.md) — Retrieve a Google Slides presentation by presentation ID, or search Google Drive by exact presentation title first and then fetch the presentation.
-- [`presentations_pages_get`](actions/presentations_pages_get.md) — Retrieve a specific page from a Google Slides presentation, including its page elements and page-specific properties.
-- [`presentations_pages_get_thumbnail`](actions/presentations_pages_get_thumbnail.md) — Compatibility alias for get_page_thumbnail2. Generates a thumbnail for a Google Slides page.
+- `create_presentation` — Create a blank Google Slides presentation. Optional locale, page size, and presentation ID values are forwarded when provided. [write]
+- `get_page_thumbnail2` — Generate a thumbnail for a Google Slides page. Returns a temporary content URL plus thumbnail dimensions when Google provides them.
+- `presentations_batch_update` — Apply raw Google Slides batchUpdate requests to a presentation. [write]
+- `presentations_copy_from_template` — Copy an existing Google Slides presentation through Google Drive so the new presentation preserves the original themes, masters, and layouts. [write]
+- `presentations_get` — Retrieve a Google Slides presentation by presentation ID, or search Google Drive by exact presentation title first and then fetch the presentation.
+- `presentations_pages_get` — Retrieve a specific page from a Google Slides presentation, including its page elements and page-specific properties.
+- `presentations_pages_get_thumbnail` — Compatibility alias for get_page_thumbnail2. Generates a thumbnail for a Google Slides page.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Google Slides state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Google Slides state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

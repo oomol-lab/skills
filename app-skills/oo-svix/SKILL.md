@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Svix"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "svix"
-  categories: "Developer Tools"
-  homepage: "https://www.svix.com"
+  version: "1.0.1"
+  services: ["svix"]
   icon: "https://static.oomol.com/logo/third-party/Svix.svg"
 ---
 
 # Svix
 
 Operate **Svix** through your OOMOL-connected account. This skill calls the `svix` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 16 action(s).
 
 ## Running an action
 
@@ -37,32 +33,32 @@ oo connector run "svix" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_application`](actions/create_application.md) — Create a Svix application.
-- [`create_endpoint`](actions/create_endpoint.md) — Create a new endpoint for a Svix application.
-- [`create_event_type`](actions/create_event_type.md) — Create or unarchive a Svix event type.
-- [`create_message`](actions/create_message.md) — Create and dispatch a Svix message to an application's endpoints.
-- [`delete_application`](actions/delete_application.md) — Delete a Svix application by ID or UID.
-- [`delete_endpoint`](actions/delete_endpoint.md) — Delete a Svix endpoint by application and endpoint identifier.
-- [`get_application`](actions/get_application.md) — Fetch one Svix application by ID or UID.
-- [`get_endpoint`](actions/get_endpoint.md) — Fetch one Svix endpoint by application and endpoint identifier.
-- [`get_event_type`](actions/get_event_type.md) — Fetch one Svix event type by name.
-- [`get_message`](actions/get_message.md) — Fetch one Svix message by application and message identifier.
-- [`list_applications`](actions/list_applications.md) — List Svix applications for the current account.
-- [`list_endpoints`](actions/list_endpoints.md) — List endpoints attached to a Svix application.
-- [`list_event_types`](actions/list_event_types.md) — List event types available to the current Svix account.
-- [`list_messages`](actions/list_messages.md) — List messages that belong to a Svix application.
-- [`update_application`](actions/update_application.md) — Partially update a Svix application by ID or UID.
-- [`update_endpoint`](actions/update_endpoint.md) — Partially update an existing Svix endpoint.
+- `create_application` — Create a Svix application. [write]
+- `create_endpoint` — Create a new endpoint for a Svix application. [write]
+- `create_event_type` — Create or unarchive a Svix event type. [write]
+- `create_message` — Create and dispatch a Svix message to an application's endpoints. [write]
+- `delete_application` — Delete a Svix application by ID or UID. [destructive]
+- `delete_endpoint` — Delete a Svix endpoint by application and endpoint identifier. [destructive]
+- `get_application` — Fetch one Svix application by ID or UID.
+- `get_endpoint` — Fetch one Svix endpoint by application and endpoint identifier.
+- `get_event_type` — Fetch one Svix event type by name.
+- `get_message` — Fetch one Svix message by application and message identifier.
+- `list_applications` — List Svix applications for the current account.
+- `list_endpoints` — List endpoints attached to a Svix application.
+- `list_event_types` — List event types available to the current Svix account.
+- `list_messages` — List messages that belong to a Svix application.
+- `update_application` — Partially update a Svix application by ID or UID. [write]
+- `update_endpoint` — Partially update an existing Svix endpoint. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Svix state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Svix state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

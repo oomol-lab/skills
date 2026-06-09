@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Prerender"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "prerender"
-  categories: "Marketing, Developer Tools"
-  homepage: "https://prerender.io"
+  version: "1.0.1"
+  services: ["prerender"]
   icon: "https://static.oomol.com/logo/third-party/prerender.svg"
 ---
 
 # Prerender
 
 Operate **Prerender** through your OOMOL-connected account. This skill calls the `prerender` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Developer Tools. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "prerender" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_sitemap`](actions/add_sitemap.md) — Submit a sitemap XML URL to Prerender so it can discover and cache new URLs from that sitemap.
-- [`clear_cache`](actions/clear_cache.md) — Queue a Prerender cache clear request for URLs matching a wildcard query pattern.
-- [`get_cache_clear_status`](actions/get_cache_clear_status.md) — Check whether a Prerender cache clear job is currently running for the authenticated account.
-- [`recache_urls`](actions/recache_urls.md) — Queue one or more URLs for first-time caching or recaching with the Prerender recache API.
+- `add_sitemap` — Submit a sitemap XML URL to Prerender so it can discover and cache new URLs from that sitemap. [write]
+- `clear_cache` — Queue a Prerender cache clear request for URLs matching a wildcard query pattern. [destructive]
+- `get_cache_clear_status` — Check whether a Prerender cache clear job is currently running for the authenticated account. [destructive]
+- `recache_urls` — Queue one or more URLs for first-time caching or recaching with the Prerender recache API.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Prerender state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Prerender state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

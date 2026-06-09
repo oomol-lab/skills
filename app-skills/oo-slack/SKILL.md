@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "slack"
-  categories: "Communication, Productivity"
-  homepage: "https://slack.com"
+  version: "1.0.1"
+  services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---
 
 # Slack
 
 Operate **Slack** through your OOMOL-connected account. This skill calls the `slack` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "slack" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_message`](actions/delete_message.md) — Delete a Slack message posted by the bot.
-- [`get_channel_messages`](actions/get_channel_messages.md) — Get messages from a Slack channel.
-- [`get_conversation`](actions/get_conversation.md) — Get metadata for a Slack conversation.
-- [`get_message_permalink`](actions/get_message_permalink.md) — Get a permalink for a Slack message.
-- [`get_thread`](actions/get_thread.md) — Get messages in a Slack thread.
-- [`get_user`](actions/get_user.md) — Get metadata for a Slack user.
-- [`list_channels`](actions/list_channels.md) — List Slack channels.
-- [`list_conversations`](actions/list_conversations.md) — List Slack conversations visible to the bot.
-- [`list_users`](actions/list_users.md) — List Slack users visible to the bot.
-- [`post_ephemeral_message`](actions/post_ephemeral_message.md) — Post an ephemeral message to a Slack conversation.
-- [`post_message`](actions/post_message.md) — Post a message to a Slack channel.
-- [`reply_message`](actions/reply_message.md) — Reply to a Slack thread.
-- [`schedule_message`](actions/schedule_message.md) — Schedule a Slack message to be posted later.
-- [`update_message`](actions/update_message.md) — Update a Slack message posted by the bot.
+- `delete_message` — Delete a Slack message posted by the bot. [destructive]
+- `get_channel_messages` — Get messages from a Slack channel.
+- `get_conversation` — Get metadata for a Slack conversation.
+- `get_message_permalink` — Get a permalink for a Slack message.
+- `get_thread` — Get messages in a Slack thread.
+- `get_user` — Get metadata for a Slack user.
+- `list_channels` — List Slack channels.
+- `list_conversations` — List Slack conversations visible to the bot.
+- `list_users` — List Slack users visible to the bot.
+- `post_ephemeral_message` — Post an ephemeral message to a Slack conversation. [write]
+- `post_message` — Post a message to a Slack channel. [write]
+- `reply_message` — Reply to a Slack thread. [write]
+- `schedule_message` — Schedule a Slack message to be posted later. [write]
+- `update_message` — Update a Slack message posted by the bot. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Slack state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Slack state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

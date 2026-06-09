@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Eventee"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "eventee"
-  categories: "Productivity, Communication"
-  homepage: "https://eventee.co"
+  version: "1.0.1"
+  services: ["eventee"]
   icon: "https://static.oomol.com/logo/third-party/eventee.png"
 ---
 
 # Eventee
 
 Operate **Eventee** through your OOMOL-connected account. This skill calls the `eventee` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "eventee" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_event_content`](actions/get_event_content.md) — Retrieve the event content export, including halls, sessions, pauses, speakers, and tracks.
-- [`list_groups`](actions/list_groups.md) — List all attendee groups configured for the current Eventee event.
-- [`list_participants`](actions/list_participants.md) — List all participants currently registered in the current Eventee event.
-- [`list_registrations`](actions/list_registrations.md) — List all pending or completed registrations for the current Eventee event.
-- [`list_reviews`](actions/list_reviews.md) — List all session reviews submitted by attendees for the current Eventee event.
+- `get_event_content` — Retrieve the event content export, including halls, sessions, pauses, speakers, and tracks.
+- `list_groups` — List all attendee groups configured for the current Eventee event.
+- `list_participants` — List all participants currently registered in the current Eventee event.
+- `list_registrations` — List all pending or completed registrations for the current Eventee event.
+- `list_reviews` — List all session reviews submitted by attendees for the current Eventee event.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Eventee state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Eventee state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

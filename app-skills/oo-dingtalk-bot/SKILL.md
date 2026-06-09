@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DingTalk Bot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "dingtalk_bot"
-  categories: "Communication"
-  homepage: "https://www.dingtalk.com"
+  version: "1.0.1"
+  services: ["dingtalk_bot"]
   icon: "https://static.oomol.com/logo/third-party/dingtalk_bot.png"
 ---
 
 # DingTalk Bot
 
 Operate **DingTalk Bot** through your OOMOL-connected account. This skill calls the `dingtalk_bot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "dingtalk_bot" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`send_action_card_message`](actions/send_action_card_message.md) — Send an actionCard message through the DingTalk custom bot webhook.
-- [`send_feed_card_message`](actions/send_feed_card_message.md) — Send a feedCard message through the DingTalk custom bot webhook.
-- [`send_link_message`](actions/send_link_message.md) — Send a link message through the DingTalk custom bot webhook.
-- [`send_markdown_message`](actions/send_markdown_message.md) — Send a markdown message through the DingTalk custom bot webhook.
-- [`send_text_message`](actions/send_text_message.md) — Send a text message through the DingTalk custom bot webhook.
+- `send_action_card_message` — Send an actionCard message through the DingTalk custom bot webhook. [write]
+- `send_feed_card_message` — Send a feedCard message through the DingTalk custom bot webhook. [write]
+- `send_link_message` — Send a link message through the DingTalk custom bot webhook. [write]
+- `send_markdown_message` — Send a markdown message through the DingTalk custom bot webhook. [write]
+- `send_text_message` — Send a text message through the DingTalk custom bot webhook. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change DingTalk Bot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change DingTalk Bot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CollegeFootballData"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "college_football_data"
-  categories: "Data & Analytics"
-  homepage: "https://collegefootballdata.com/"
+  version: "1.0.1"
+  services: ["college_football_data"]
   icon: "https://static.oomol.com/logo/third-party/college_football_data.svg"
 ---
 
 # CollegeFootballData
 
 Operate **CollegeFootballData** through your OOMOL-connected account. This skill calls the `college_football_data` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "college_football_data" --action "<action_name>" --data '<json>
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_info`](actions/get_info.md) — Get CollegeFootballData account information including patron level and remaining calls.
-- [`list_conferences`](actions/list_conferences.md) — List college football conferences from CollegeFootballData.
-- [`list_games`](actions/list_games.md) — List college football games and results from CollegeFootballData by year, game id, and optional filters.
-- [`list_teams`](actions/list_teams.md) — List college football teams from CollegeFootballData with optional year and conference filters.
-- [`list_venues`](actions/list_venues.md) — List college football venues from CollegeFootballData.
+- `get_info` — Get CollegeFootballData account information including patron level and remaining calls.
+- `list_conferences` — List college football conferences from CollegeFootballData.
+- `list_games` — List college football games and results from CollegeFootballData by year, game id, and optional filters.
+- `list_teams` — List college football teams from CollegeFootballData with optional year and conference filters.
+- `list_venues` — List college football venues from CollegeFootballData.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change CollegeFootballData state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change CollegeFootballData state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

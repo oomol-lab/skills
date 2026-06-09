@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Twelve Data"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "twelve_data"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://twelvedata.com"
+  version: "1.0.1"
+  services: ["twelve_data"]
   icon: "https://static.oomol.com/logo/third-party/Twelve%20Data.svg"
 ---
 
 # Twelve Data
 
 Operate **Twelve Data** through your OOMOL-connected account. This skill calls the `twelve_data` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "twelve_data" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`earliest_timestamp`](actions/earliest_timestamp.md) — Fetch the earliest available historical timestamp for an instrument at a given interval.
-- [`eod`](actions/eod.md) — Fetch the end-of-day close price for a specific instrument.
-- [`exchanges`](actions/exchanges.md) — List equity exchanges and their timezone and access metadata.
-- [`forex_pairs`](actions/forex_pairs.md) — List available forex pairs with base and quote currency metadata.
-- [`market_movers`](actions/market_movers.md) — Fetch the top gaining or losing instruments for a market family such as stocks, forex, or crypto.
-- [`market_state`](actions/market_state.md) — List the current open or closed state of exchanges together with timing data.
-- [`price`](actions/price.md) — Fetch the latest available market price for a specific instrument.
-- [`profile`](actions/profile.md) — Fetch the company profile for an instrument, including sector and contact fields.
-- [`quote`](actions/quote.md) — Fetch a real-time quote snapshot with price, change, volume, and 52-week range fields.
-- [`stocks`](actions/stocks.md) — List stock symbols and metadata from the Twelve Data stock catalog with optional filters.
-- [`symbol_search`](actions/symbol_search.md) — Search financial instruments by symbol or name and return the most relevant matches.
-- [`time_series`](actions/time_series.md) — Fetch historical OHLCV time-series data with metadata for a specific instrument and interval.
+- `earliest_timestamp` — Fetch the earliest available historical timestamp for an instrument at a given interval.
+- `eod` — Fetch the end-of-day close price for a specific instrument.
+- `exchanges` — List equity exchanges and their timezone and access metadata.
+- `forex_pairs` — List available forex pairs with base and quote currency metadata.
+- `market_movers` — Fetch the top gaining or losing instruments for a market family such as stocks, forex, or crypto.
+- `market_state` — List the current open or closed state of exchanges together with timing data.
+- `price` — Fetch the latest available market price for a specific instrument.
+- `profile` — Fetch the company profile for an instrument, including sector and contact fields.
+- `quote` — Fetch a real-time quote snapshot with price, change, volume, and 52-week range fields.
+- `stocks` — List stock symbols and metadata from the Twelve Data stock catalog with optional filters.
+- `symbol_search` — Search financial instruments by symbol or name and return the most relevant matches.
+- `time_series` — Fetch historical OHLCV time-series data with metadata for a specific instrument and interval.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Twelve Data state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Twelve Data state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

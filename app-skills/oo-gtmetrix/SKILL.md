@@ -1,22 +1,18 @@
 ---
 name: oo-gtmetrix
-description: "GTmetrix (gtmetrix.com). Use this skill for ANY GTmetrix request — searching and reading data. Whenever a task involves GTmetrix, use this skill instead of calling the API directly."
+description: "GTmetrix (gtmetrix.com). Use this skill for ANY GTmetrix request — reading, creating, and updating data. Whenever a task involves GTmetrix, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "GTmetrix"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gtmetrix"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://gtmetrix.com"
+  version: "1.0.1"
+  services: ["gtmetrix"]
   icon: "https://static.oomol.com/logo/third-party/GTmetrix.svg"
 ---
 
 # GTmetrix
 
 Operate **GTmetrix** through your OOMOL-connected account. This skill calls the `gtmetrix` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "gtmetrix" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_account_status`](actions/get_account_status.md) — Get the current GTmetrix account status, credits, and plan capabilities.
-- [`get_browser`](actions/get_browser.md) — Get a single GTmetrix browser by ID.
-- [`get_latest_page_report`](actions/get_latest_page_report.md) — Get the latest GTmetrix report associated with a page.
-- [`get_location`](actions/get_location.md) — Get a single GTmetrix test location by ID.
-- [`get_page`](actions/get_page.md) — Get a single GTmetrix page by slug.
-- [`get_report`](actions/get_report.md) — Get a single GTmetrix report by slug.
-- [`get_simulated_device`](actions/get_simulated_device.md) — Get a single GTmetrix simulated device by ID.
-- [`get_test`](actions/get_test.md) — Get the current state of a GTmetrix test and detect when it has completed.
-- [`list_browsers`](actions/list_browsers.md) — List GTmetrix browsers that can be used for tests.
-- [`list_locations`](actions/list_locations.md) — List GTmetrix test locations available to the connected account.
-- [`list_page_reports`](actions/list_page_reports.md) — List GTmetrix reports associated with a single page.
-- [`list_pages`](actions/list_pages.md) — List GTmetrix pages associated with the connected account.
-- [`list_simulated_devices`](actions/list_simulated_devices.md) — List GTmetrix simulated devices that can be used for tests.
-- [`list_tests`](actions/list_tests.md) — List GTmetrix tests for the connected account.
-- [`start_test`](actions/start_test.md) — Start a new GTmetrix performance test for a URL.
+- `get_account_status` — Get the current GTmetrix account status, credits, and plan capabilities.
+- `get_browser` — Get a single GTmetrix browser by ID.
+- `get_latest_page_report` — Get the latest GTmetrix report associated with a page.
+- `get_location` — Get a single GTmetrix test location by ID.
+- `get_page` — Get a single GTmetrix page by slug.
+- `get_report` — Get a single GTmetrix report by slug.
+- `get_simulated_device` — Get a single GTmetrix simulated device by ID.
+- `get_test` — Get the current state of a GTmetrix test and detect when it has completed.
+- `list_browsers` — List GTmetrix browsers that can be used for tests.
+- `list_locations` — List GTmetrix test locations available to the connected account.
+- `list_page_reports` — List GTmetrix reports associated with a single page.
+- `list_pages` — List GTmetrix pages associated with the connected account.
+- `list_simulated_devices` — List GTmetrix simulated devices that can be used for tests.
+- `list_tests` — List GTmetrix tests for the connected account.
+- `start_test` — Start a new GTmetrix performance test for a URL. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change GTmetrix state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change GTmetrix state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

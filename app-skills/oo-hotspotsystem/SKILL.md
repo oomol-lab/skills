@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HotspotSystem"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "hotspotsystem"
-  categories: "Productivity, Communication"
-  homepage: "https://www.hotspotsystem.com"
+  version: "1.0.1"
+  services: ["hotspotsystem"]
   icon: "https://static.oomol.com/logo/third-party/hotspotsystem.png"
 ---
 
 # HotspotSystem
 
 Operate **HotspotSystem** through your OOMOL-connected account. This skill calls the `hotspotsystem` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "hotspotsystem" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_owner`](actions/get_current_owner.md) — Verify the HotspotSystem API key and return the connected operator account.
-- [`list_customers`](actions/list_customers.md) — List HotspotSystem customers across all accessible locations.
-- [`list_location_customers`](actions/list_location_customers.md) — List HotspotSystem customers for one specific location.
-- [`list_location_options`](actions/list_location_options.md) — List HotspotSystem locations as lightweight id-name options.
-- [`list_location_subscribers`](actions/list_location_subscribers.md) — List HotspotSystem subscribers for one specific location.
-- [`list_locations`](actions/list_locations.md) — List HotspotSystem locations owned by the authenticated operator.
-- [`list_subscribers`](actions/list_subscribers.md) — List HotspotSystem subscribers across all accessible locations.
+- `get_current_owner` — Verify the HotspotSystem API key and return the connected operator account.
+- `list_customers` — List HotspotSystem customers across all accessible locations.
+- `list_location_customers` — List HotspotSystem customers for one specific location.
+- `list_location_options` — List HotspotSystem locations as lightweight id-name options.
+- `list_location_subscribers` — List HotspotSystem subscribers for one specific location.
+- `list_locations` — List HotspotSystem locations owned by the authenticated operator.
+- `list_subscribers` — List HotspotSystem subscribers across all accessible locations.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change HotspotSystem state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change HotspotSystem state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

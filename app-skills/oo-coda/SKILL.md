@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Coda"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "coda"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://coda.io"
+  version: "1.0.1"
+  services: ["coda"]
   icon: "https://static.oomol.com/logo/third-party/Coda.svg"
 ---
 
 # Coda
 
 Operate **Coda** through your OOMOL-connected account. This skill calls the `coda` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "coda" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_page`](actions/create_page.md) — Create a new page in a Coda doc, with optional subtitle, icon, image, parent page, and structured page content.
-- [`get_current_user`](actions/get_current_user.md) — Get the current Coda user associated with the authenticated API token.
-- [`get_doc`](actions/get_doc.md) — Get metadata for a specific Coda doc by doc ID.
-- [`get_mutation_status`](actions/get_mutation_status.md) — Get the completion status for an asynchronous Coda mutation using a previously returned request ID.
-- [`get_table`](actions/get_table.md) — Get details about a specific Coda table or view.
-- [`list_columns`](actions/list_columns.md) — List columns in a Coda table with pagination and optional visibility filtering.
-- [`list_docs`](actions/list_docs.md) — List Coda docs accessible to the authenticated user with optional ownership, publication, workspace, and pagination filters.
-- [`list_pages`](actions/list_pages.md) — List pages in a Coda doc with pagination.
-- [`list_rows`](actions/list_rows.md) — List rows in a Coda table with filtering, sorting, pagination, optional sync tokens, and configurable cell value formats.
-- [`list_tables`](actions/list_tables.md) — List tables in a Coda doc with pagination, optional sort order, and optional table-type filtering.
-- [`upsert_rows`](actions/upsert_rows.md) — Insert rows into a Coda table, optionally updating existing rows when key columns are provided.
+- `create_page` — Create a new page in a Coda doc, with optional subtitle, icon, image, parent page, and structured page content. [write]
+- `get_current_user` — Get the current Coda user associated with the authenticated API token.
+- `get_doc` — Get metadata for a specific Coda doc by doc ID.
+- `get_mutation_status` — Get the completion status for an asynchronous Coda mutation using a previously returned request ID.
+- `get_table` — Get details about a specific Coda table or view.
+- `list_columns` — List columns in a Coda table with pagination and optional visibility filtering.
+- `list_docs` — List Coda docs accessible to the authenticated user with optional ownership, publication, workspace, and pagination filters.
+- `list_pages` — List pages in a Coda doc with pagination.
+- `list_rows` — List rows in a Coda table with filtering, sorting, pagination, optional sync tokens, and configurable cell value formats.
+- `list_tables` — List tables in a Coda doc with pagination, optional sort order, and optional table-type filtering.
+- `upsert_rows` — Insert rows into a Coda table, optionally updating existing rows when key columns are provided. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Coda state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Coda state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

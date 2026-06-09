@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Certifier"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "certifier"
-  categories: "Productivity, Communication"
-  homepage: "https://certifier.io"
+  version: "1.0.1"
+  services: ["certifier"]
   icon: "https://static.oomol.com/logo/third-party/Certifier.svg"
 ---
 
 # Certifier
 
 Operate **Certifier** through your OOMOL-connected account. This skill calls the `certifier` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "certifier" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_issue_send_credential`](actions/create_issue_send_credential.md) — Create, issue, and send one Certifier credential in a single request using a group, recipient, and optional custom attributes.
-- [`list_credential_interactions`](actions/list_credential_interactions.md) — List Certifier credential interaction events with optional credential filtering and cursor pagination.
-- [`list_credentials`](actions/list_credentials.md) — List Certifier credentials with cursor pagination.
-- [`list_designs`](actions/list_designs.md) — List Certifier certificate and badge designs with cursor pagination.
-- [`list_groups`](actions/list_groups.md) — List Certifier groups with cursor pagination.
-- [`search_credentials`](actions/search_credentials.md) — Search Certifier credentials with structured filter, sorting, and cursor pagination.
+- `create_issue_send_credential` — Create, issue, and send one Certifier credential in a single request using a group, recipient, and optional custom attributes. [write]
+- `list_credential_interactions` — List Certifier credential interaction events with optional credential filtering and cursor pagination.
+- `list_credentials` — List Certifier credentials with cursor pagination.
+- `list_designs` — List Certifier certificate and badge designs with cursor pagination.
+- `list_groups` — List Certifier groups with cursor pagination.
+- `search_credentials` — Search Certifier credentials with structured filter, sorting, and cursor pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Certifier state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Certifier state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

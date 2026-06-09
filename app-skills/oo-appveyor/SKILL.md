@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AppVeyor"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "appveyor"
-  categories: "Developer Tools"
-  homepage: "https://www.appveyor.com"
+  version: "1.0.1"
+  services: ["appveyor"]
   icon: "https://static.oomol.com/logo/third-party/appveyor.svg"
 ---
 
 # AppVeyor
 
 Operate **AppVeyor** through your OOMOL-connected account. This skill calls the `appveyor` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "appveyor" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_build_artifacts`](actions/get_build_artifacts.md) — List artifacts produced by one AppVeyor build job.
-- [`get_environments`](actions/get_environments.md) — List AppVeyor deployment environments accessible to the connected API token.
-- [`get_projects`](actions/get_projects.md) — List AppVeyor projects accessible to the connected API token.
-- [`get_role`](actions/get_role.md) — Retrieve one AppVeyor team role by ID.
-- [`get_roles`](actions/get_roles.md) — List AppVeyor team roles accessible to the connected API token.
-- [`get_users`](actions/get_users.md) — List AppVeyor team users accessible to the connected API token.
+- `get_build_artifacts` — List artifacts produced by one AppVeyor build job.
+- `get_environments` — List AppVeyor deployment environments accessible to the connected API token.
+- `get_projects` — List AppVeyor projects accessible to the connected API token.
+- `get_role` — Retrieve one AppVeyor team role by ID.
+- `get_roles` — List AppVeyor team roles accessible to the connected API token.
+- `get_users` — List AppVeyor team users accessible to the connected API token.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change AppVeyor state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change AppVeyor state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

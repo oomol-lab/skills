@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "IP2Proxy"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ip2proxy"
-  categories: "Security & Identity, Maps & Location, Data & Analytics"
-  homepage: "https://www.ip2location.com/web-service/ip2proxy"
+  version: "1.0.1"
+  services: ["ip2proxy"]
   icon: "https://static.oomol.com/logo/third-party/Ip2Proxy.svg"
 ---
 
 # IP2Proxy
 
 Operate **IP2Proxy** through your OOMOL-connected account. This skill calls the `ip2proxy` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Maps & Location, Data & Analytics. Exposes 1 action(s).
 
 ## Running an action
 
@@ -37,17 +33,17 @@ oo connector run "ip2proxy" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`lookup_ip`](actions/lookup_ip.md) — Detect whether one IPv4 or IPv6 address is a proxy and return the official IP2Proxy lookup payload.
+- `lookup_ip` — Detect whether one IPv4 or IPv6 address is a proxy and return the official IP2Proxy lookup payload.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change IP2Proxy state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change IP2Proxy state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

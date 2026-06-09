@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TelTel"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "teltel"
-  categories: "Communication"
-  homepage: "https://www.teltel.io"
+  version: "1.0.1"
+  services: ["teltel"]
   icon: "https://static.oomol.com/logo/third-party/teltel.svg"
 ---
 
 # TelTel
 
 Operate **TelTel** through your OOMOL-connected account. This skill calls the `teltel` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "teltel" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_account_balance`](actions/get_account_balance.md) — Get the current TelTel account balance, credit, and credit limit.
-- [`get_sms_report`](actions/get_sms_report.md) — Get the delivery report for one outbound TelTel SMS message.
-- [`list_sms_reports`](actions/list_sms_reports.md) — List outbound TelTel SMS delivery reports with optional paging and filter parameters.
-- [`send_sms`](actions/send_sms.md) — Send a single outbound SMS message through the TelTel SMS outbox API.
+- `get_account_balance` — Get the current TelTel account balance, credit, and credit limit.
+- `get_sms_report` — Get the delivery report for one outbound TelTel SMS message.
+- `list_sms_reports` — List outbound TelTel SMS delivery reports with optional paging and filter parameters.
+- `send_sms` — Send a single outbound SMS message through the TelTel SMS outbox API. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change TelTel state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change TelTel state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

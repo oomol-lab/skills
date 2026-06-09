@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Calendar"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "googlecalendar"
-  categories: "Productivity, Communication"
-  homepage: "https://workspace.google.com/products/calendar/"
+  version: "1.0.1"
+  services: ["googlecalendar"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Calendar.svg"
 ---
 
 # Google Calendar
 
 Operate **Google Calendar** through your OOMOL-connected account. This skill calls the `googlecalendar` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 37 action(s).
 
 ## Running an action
 
@@ -37,53 +33,53 @@ oo connector run "googlecalendar" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_calendar_to_list`](actions/add_calendar_to_list.md) — Add a calendar to the current user's Google Calendar list.
-- [`clear_calendar`](actions/clear_calendar.md) — Clear all events from a Google Calendar.
-- [`create_acl_rule`](actions/create_acl_rule.md) — Create an ACL rule on a Google Calendar.
-- [`create_calendar`](actions/create_calendar.md) — Create a Google Calendar.
-- [`create_event`](actions/create_event.md) — Create a Google Calendar event.
-- [`delete_acl_rule`](actions/delete_acl_rule.md) — Delete an ACL rule from a Google Calendar.
-- [`delete_calendar`](actions/delete_calendar.md) — Delete a Google Calendar.
-- [`delete_event`](actions/delete_event.md) — Delete a Google Calendar event.
-- [`find_event`](actions/find_event.md) — Search events in a Google Calendar using a query string.
-- [`find_free_slots`](actions/find_free_slots.md) — Derive free slots from Google Calendar freeBusy data.
-- [`free_busy_query`](actions/free_busy_query.md) — Query busy intervals for calendars and groups.
-- [`get_acl_rule`](actions/get_acl_rule.md) — Fetch one ACL rule from a Google Calendar.
-- [`get_calendar`](actions/get_calendar.md) — Fetch one Google Calendar resource by ID.
-- [`get_calendar_list_entry`](actions/get_calendar_list_entry.md) — Fetch one Google Calendar list entry by calendar ID.
-- [`get_colors`](actions/get_colors.md) — Fetch the Google Calendar colors resource.
-- [`get_event`](actions/get_event.md) — Fetch one Google Calendar event.
-- [`get_setting`](actions/get_setting.md) — Fetch one Google Calendar setting.
-- [`import_event`](actions/import_event.md) — Import an event into Google Calendar without conferenceData or attachments.
-- [`list_acl`](actions/list_acl.md) — List ACL rules for a Google Calendar.
-- [`list_calendars`](actions/list_calendars.md) — List the current user's Google Calendar list entries.
-- [`list_event_instances`](actions/list_event_instances.md) — List instances of a recurring Google Calendar event.
-- [`list_events`](actions/list_events.md) — List events from a Google Calendar.
-- [`list_events_all_calendars`](actions/list_events_all_calendars.md) — List events across multiple Google Calendars and aggregate the result.
-- [`list_settings`](actions/list_settings.md) — List Google Calendar settings.
-- [`move_event`](actions/move_event.md) — Move a Google Calendar event to another calendar.
-- [`patch_acl_rule`](actions/patch_acl_rule.md) — Patch writable fields on a Google Calendar ACL rule.
-- [`patch_calendar`](actions/patch_calendar.md) — Patch writable fields on a Google Calendar resource.
-- [`patch_calendar_list_entry`](actions/patch_calendar_list_entry.md) — Patch writable fields on a Google Calendar list entry.
-- [`patch_event`](actions/patch_event.md) — Patch writable fields on a Google Calendar event.
-- [`quick_add_event`](actions/quick_add_event.md) — Create a Google Calendar event with natural language text.
-- [`remove_attendee`](actions/remove_attendee.md) — Remove one attendee email from a Google Calendar event.
-- [`remove_calendar_from_list`](actions/remove_calendar_from_list.md) — Remove a calendar from the current user's Calendar list.
-- [`sync_events`](actions/sync_events.md) — Incrementally sync events from a Google Calendar.
-- [`update_acl_rule`](actions/update_acl_rule.md) — Replace writable fields on a Google Calendar ACL rule.
-- [`update_calendar`](actions/update_calendar.md) — Replace writable fields on a Google Calendar resource.
-- [`update_calendar_list_entry`](actions/update_calendar_list_entry.md) — Replace writable fields on a Google Calendar list entry.
-- [`update_event`](actions/update_event.md) — Replace writable fields on a Google Calendar event.
+- `add_calendar_to_list` — Add a calendar to the current user's Google Calendar list. [write]
+- `clear_calendar` — Clear all events from a Google Calendar. [destructive]
+- `create_acl_rule` — Create an ACL rule on a Google Calendar. [write]
+- `create_calendar` — Create a Google Calendar. [write]
+- `create_event` — Create a Google Calendar event. [write]
+- `delete_acl_rule` — Delete an ACL rule from a Google Calendar. [destructive]
+- `delete_calendar` — Delete a Google Calendar. [destructive]
+- `delete_event` — Delete a Google Calendar event. [destructive]
+- `find_event` — Search events in a Google Calendar using a query string.
+- `find_free_slots` — Derive free slots from Google Calendar freeBusy data.
+- `free_busy_query` — Query busy intervals for calendars and groups.
+- `get_acl_rule` — Fetch one ACL rule from a Google Calendar.
+- `get_calendar` — Fetch one Google Calendar resource by ID.
+- `get_calendar_list_entry` — Fetch one Google Calendar list entry by calendar ID.
+- `get_colors` — Fetch the Google Calendar colors resource.
+- `get_event` — Fetch one Google Calendar event.
+- `get_setting` — Fetch one Google Calendar setting.
+- `import_event` — Import an event into Google Calendar without conferenceData or attachments. [write]
+- `list_acl` — List ACL rules for a Google Calendar.
+- `list_calendars` — List the current user's Google Calendar list entries.
+- `list_event_instances` — List instances of a recurring Google Calendar event.
+- `list_events` — List events from a Google Calendar.
+- `list_events_all_calendars` — List events across multiple Google Calendars and aggregate the result.
+- `list_settings` — List Google Calendar settings.
+- `move_event` — Move a Google Calendar event to another calendar. [write]
+- `patch_acl_rule` — Patch writable fields on a Google Calendar ACL rule. [write]
+- `patch_calendar` — Patch writable fields on a Google Calendar resource. [write]
+- `patch_calendar_list_entry` — Patch writable fields on a Google Calendar list entry. [write]
+- `patch_event` — Patch writable fields on a Google Calendar event. [write]
+- `quick_add_event` — Create a Google Calendar event with natural language text. [write]
+- `remove_attendee` — Remove one attendee email from a Google Calendar event. [destructive]
+- `remove_calendar_from_list` — Remove a calendar from the current user's Calendar list. [destructive]
+- `sync_events` — Incrementally sync events from a Google Calendar. [write]
+- `update_acl_rule` — Replace writable fields on a Google Calendar ACL rule. [write]
+- `update_calendar` — Replace writable fields on a Google Calendar resource. [write]
+- `update_calendar_list_entry` — Replace writable fields on a Google Calendar list entry. [write]
+- `update_event` — Replace writable fields on a Google Calendar event. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Google Calendar state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Google Calendar state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

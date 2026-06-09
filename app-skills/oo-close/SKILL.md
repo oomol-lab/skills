@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Close"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "close"
-  categories: "Productivity, Marketing"
-  homepage: "https://www.close.com"
+  version: "1.0.1"
+  services: ["close"]
   icon: "https://static.oomol.com/logo/third-party/Close.svg"
 ---
 
 # Close
 
 Operate **Close** through your OOMOL-connected account. This skill calls the `close` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Marketing. Exposes 16 action(s).
 
 ## Running an action
 
@@ -37,32 +33,32 @@ oo connector run "close" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_contact`](actions/create_contact.md) — Create a Close contact under a specific lead.
-- [`create_lead`](actions/create_lead.md) — Create a Close lead with optional nested contacts and addresses.
-- [`create_opportunity`](actions/create_opportunity.md) — Create a Close opportunity for an existing lead.
-- [`create_task`](actions/create_task.md) — Create a lead-scoped Close task.
-- [`get_contact`](actions/get_contact.md) — Fetch a single Close contact by ID.
-- [`get_lead`](actions/get_lead.md) — Fetch a single Close lead by ID.
-- [`get_opportunity`](actions/get_opportunity.md) — Fetch a single Close opportunity by ID.
-- [`get_task`](actions/get_task.md) — Fetch a single Close task by ID.
-- [`list_contacts`](actions/list_contacts.md) — List Close contacts with optional lead filtering and pagination.
-- [`list_leads`](actions/list_leads.md) — List Close leads with optional pagination and field selection.
-- [`list_opportunities`](actions/list_opportunities.md) — List Close opportunities with stable workflow filters and pagination.
-- [`list_tasks`](actions/list_tasks.md) — List Close tasks with lead, assignee, completion, and view filters.
-- [`update_contact`](actions/update_contact.md) — Update writable fields on an existing Close contact.
-- [`update_lead`](actions/update_lead.md) — Update writable fields on an existing Close lead.
-- [`update_opportunity`](actions/update_opportunity.md) — Update writable fields on an existing Close opportunity.
-- [`update_task`](actions/update_task.md) — Update writable fields on an existing Close task.
+- `create_contact` — Create a Close contact under a specific lead. [write]
+- `create_lead` — Create a Close lead with optional nested contacts and addresses. [write]
+- `create_opportunity` — Create a Close opportunity for an existing lead. [write]
+- `create_task` — Create a lead-scoped Close task. [write]
+- `get_contact` — Fetch a single Close contact by ID.
+- `get_lead` — Fetch a single Close lead by ID.
+- `get_opportunity` — Fetch a single Close opportunity by ID.
+- `get_task` — Fetch a single Close task by ID.
+- `list_contacts` — List Close contacts with optional lead filtering and pagination.
+- `list_leads` — List Close leads with optional pagination and field selection.
+- `list_opportunities` — List Close opportunities with stable workflow filters and pagination.
+- `list_tasks` — List Close tasks with lead, assignee, completion, and view filters.
+- `update_contact` — Update writable fields on an existing Close contact. [write]
+- `update_lead` — Update writable fields on an existing Close lead. [write]
+- `update_opportunity` — Update writable fields on an existing Close opportunity. [write]
+- `update_task` — Update writable fields on an existing Close task. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Close state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Close state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sendbird"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "sendbird"
-  categories: "Communication"
-  homepage: "https://sendbird.com"
+  version: "1.0.1"
+  services: ["sendbird"]
   icon: "https://static.oomol.com/logo/third-party/Sendbird.svg"
 ---
 
 # Sendbird
 
 Operate **Sendbird** through your OOMOL-connected account. This skill calls the `sendbird` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 28 action(s).
 
 ## Running an action
 
@@ -37,44 +33,44 @@ oo connector run "sendbird" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_members_group_channel`](actions/add_members_group_channel.md) — Invite members into an existing Sendbird group channel.
-- [`ban_user_from_group_channel`](actions/ban_user_from_group_channel.md) — Ban a user from a Sendbird group channel.
-- [`create_channel`](actions/create_channel.md) — Create a Sendbird group channel with common JSON body fields.
-- [`create_user`](actions/create_user.md) — Create a Sendbird user with common profile and metadata fields.
-- [`delete_channel`](actions/delete_channel.md) — Delete a Sendbird group channel.
-- [`delete_message`](actions/delete_message.md) — Delete a Sendbird group channel message.
-- [`delete_user`](actions/delete_user.md) — Delete a Sendbird user.
-- [`get_number_of_channels_by_join_status`](actions/get_number_of_channels_by_join_status.md) — Get Sendbird group channel counts grouped by join status.
-- [`get_number_of_unread_items`](actions/get_number_of_unread_items.md) — Get unread message, mention, and invitation counts for a Sendbird user.
-- [`issue_session_token`](actions/issue_session_token.md) — Issue a Sendbird session token for a user.
-- [`leave_group_channels`](actions/leave_group_channels.md) — Make a Sendbird user leave one or more joined group channels.
-- [`list_banned_members`](actions/list_banned_members.md) — List banned users from a Sendbird group channel.
-- [`list_group_channel_messages`](actions/list_group_channel_messages.md) — List messages from a Sendbird group channel around a timestamp or message anchor.
-- [`list_group_channels`](actions/list_group_channels.md) — List Sendbird group channels in the application with common filtering controls.
-- [`list_members_group_channel`](actions/list_members_group_channel.md) — List members of a Sendbird group channel.
-- [`list_users`](actions/list_users.md) — List Sendbird users with common pagination and filtering controls.
-- [`mark_all_user_messages_as_read`](actions/mark_all_user_messages_as_read.md) — Mark all messages as read for a Sendbird user.
-- [`mute_user`](actions/mute_user.md) — Mute a user in a Sendbird group channel.
-- [`revoke_all_session_tokens`](actions/revoke_all_session_tokens.md) — Revoke all Sendbird session tokens for a user.
-- [`send_message`](actions/send_message.md) — Send a message into a Sendbird group channel.
-- [`unban_user`](actions/unban_user.md) — Unban a user from a Sendbird group channel.
-- [`unmute_user`](actions/unmute_user.md) — Unmute a user in a Sendbird group channel.
-- [`update_group_channel`](actions/update_group_channel.md) — Update a Sendbird group channel with common JSON body fields.
-- [`update_message`](actions/update_message.md) — Update an existing Sendbird group channel message.
-- [`update_user`](actions/update_user.md) — Update a Sendbird user's profile, metadata, or activation settings.
-- [`view_group_channel`](actions/view_group_channel.md) — Get a Sendbird group channel by channel URL.
-- [`view_message`](actions/view_message.md) — Get a single Sendbird group channel message by message ID.
-- [`view_user`](actions/view_user.md) — Get a single Sendbird user by user ID.
+- `add_members_group_channel` — Invite members into an existing Sendbird group channel. [write]
+- `ban_user_from_group_channel` — Ban a user from a Sendbird group channel. [destructive]
+- `create_channel` — Create a Sendbird group channel with common JSON body fields. [write]
+- `create_user` — Create a Sendbird user with common profile and metadata fields. [write]
+- `delete_channel` — Delete a Sendbird group channel. [destructive]
+- `delete_message` — Delete a Sendbird group channel message. [destructive]
+- `delete_user` — Delete a Sendbird user. [destructive]
+- `get_number_of_channels_by_join_status` — Get Sendbird group channel counts grouped by join status. [write]
+- `get_number_of_unread_items` — Get unread message, mention, and invitation counts for a Sendbird user.
+- `issue_session_token` — Issue a Sendbird session token for a user.
+- `leave_group_channels` — Make a Sendbird user leave one or more joined group channels. [write]
+- `list_banned_members` — List banned users from a Sendbird group channel.
+- `list_group_channel_messages` — List messages from a Sendbird group channel around a timestamp or message anchor.
+- `list_group_channels` — List Sendbird group channels in the application with common filtering controls.
+- `list_members_group_channel` — List members of a Sendbird group channel.
+- `list_users` — List Sendbird users with common pagination and filtering controls.
+- `mark_all_user_messages_as_read` — Mark all messages as read for a Sendbird user. [write]
+- `mute_user` — Mute a user in a Sendbird group channel. [write]
+- `revoke_all_session_tokens` — Revoke all Sendbird session tokens for a user. [destructive]
+- `send_message` — Send a message into a Sendbird group channel. [write]
+- `unban_user` — Unban a user from a Sendbird group channel.
+- `unmute_user` — Unmute a user in a Sendbird group channel. [write]
+- `update_group_channel` — Update a Sendbird group channel with common JSON body fields. [write]
+- `update_message` — Update an existing Sendbird group channel message. [write]
+- `update_user` — Update a Sendbird user's profile, metadata, or activation settings. [write]
+- `view_group_channel` — Get a Sendbird group channel by channel URL.
+- `view_message` — Get a single Sendbird group channel message by message ID.
+- `view_user` — Get a single Sendbird user by user ID.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Sendbird state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Sendbird state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

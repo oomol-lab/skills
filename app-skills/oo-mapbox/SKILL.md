@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mapbox"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mapbox"
-  categories: "Maps & Location, Developer Tools"
-  homepage: "https://www.mapbox.com"
+  version: "1.0.1"
+  services: ["mapbox"]
   icon: "https://static.oomol.com/logo/third-party/Mapbox.svg"
 ---
 
 # Mapbox
 
 Operate **Mapbox** through your OOMOL-connected account. This skill calls the `mapbox` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Developer Tools. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "mapbox" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`batch_geocode`](actions/batch_geocode.md) — Submit multiple forward or reverse geocoding queries in one Mapbox batch request.
-- [`forward_geocode`](actions/forward_geocode.md) — Convert free-form text into geographic features with Mapbox Geocoding v6.
-- [`get_directions`](actions/get_directions.md) — Compute a route between multiple coordinates with the Mapbox Directions API.
-- [`get_matrix`](actions/get_matrix.md) — Compute a travel time or distance matrix with the Mapbox Matrix API.
-- [`reverse_geocode`](actions/reverse_geocode.md) — Convert a coordinate pair into place features with Mapbox Geocoding v6.
+- `batch_geocode` — Submit multiple forward or reverse geocoding queries in one Mapbox batch request.
+- `forward_geocode` — Convert free-form text into geographic features with Mapbox Geocoding v6. [write]
+- `get_directions` — Compute a route between multiple coordinates with the Mapbox Directions API.
+- `get_matrix` — Compute a travel time or distance matrix with the Mapbox Matrix API.
+- `reverse_geocode` — Convert a coordinate pair into place features with Mapbox Geocoding v6.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Mapbox state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Mapbox state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

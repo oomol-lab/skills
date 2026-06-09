@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shipday"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "shipday"
-  categories: "Productivity, Maps & Location"
-  homepage: "https://www.shipday.com/"
+  version: "1.0.1"
+  services: ["shipday"]
 ---
 
 # Shipday
 
 Operate **Shipday** through your OOMOL-connected account. This skill calls the `shipday` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Maps & Location. Exposes 7 action(s).
 
 ## Running an action
 
@@ -36,23 +32,23 @@ oo connector run "shipday" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_order`](actions/create_order.md) — Insert a Shipday delivery order.
-- [`delete_order`](actions/delete_order.md) — Delete a Shipday delivery order by order ID.
-- [`edit_order`](actions/edit_order.md) — Edit an existing Shipday delivery order.
-- [`get_order`](actions/get_order.md) — Retrieve one Shipday delivery order by order number.
-- [`get_order_progress`](actions/get_order_progress.md) — Retrieve real-time delivery progress and ETA for a Shipday order.
-- [`list_active_orders`](actions/list_active_orders.md) — Retrieve active delivery orders from Shipday.
-- [`list_carriers`](actions/list_carriers.md) — Retrieve carriers configured in Shipday.
+- `create_order` — Insert a Shipday delivery order. [write]
+- `delete_order` — Delete a Shipday delivery order by order ID. [destructive]
+- `edit_order` — Edit an existing Shipday delivery order. [write]
+- `get_order` — Retrieve one Shipday delivery order by order number. [write]
+- `get_order_progress` — Retrieve real-time delivery progress and ETA for a Shipday order. [write]
+- `list_active_orders` — Retrieve active delivery orders from Shipday.
+- `list_carriers` — Retrieve carriers configured in Shipday.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Shipday state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Shipday state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Turso"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "turso"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://turso.tech"
+  version: "1.0.1"
+  services: ["turso"]
   icon: "https://static.oomol.com/logo/third-party/turso.svg"
 ---
 
 # Turso
 
 Operate **Turso** through your OOMOL-connected account. This skill calls the `turso` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "turso" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_database`](actions/create_database.md) — Create a Turso database in one organization and group.
-- [`create_group`](actions/create_group.md) — Create a Turso group in one organization with a primary location.
-- [`delete_database`](actions/delete_database.md) — Delete a Turso database from one organization.
-- [`get_database`](actions/get_database.md) — Retrieve one Turso database by name within an organization.
-- [`get_group`](actions/get_group.md) — Retrieve one Turso group by name within an organization.
-- [`get_organization`](actions/get_organization.md) — Retrieve one Turso organization by slug.
-- [`list_databases`](actions/list_databases.md) — List Turso databases for one organization.
-- [`list_groups`](actions/list_groups.md) — List Turso groups for one organization.
-- [`list_locations`](actions/list_locations.md) — List available Turso locations that can host groups.
-- [`list_organizations`](actions/list_organizations.md) — List organizations visible to the current Turso Platform API token.
+- `create_database` — Create a Turso database in one organization and group. [write]
+- `create_group` — Create a Turso group in one organization with a primary location. [write]
+- `delete_database` — Delete a Turso database from one organization. [destructive]
+- `get_database` — Retrieve one Turso database by name within an organization.
+- `get_group` — Retrieve one Turso group by name within an organization.
+- `get_organization` — Retrieve one Turso organization by slug.
+- `list_databases` — List Turso databases for one organization.
+- `list_groups` — List Turso groups for one organization.
+- `list_locations` — List available Turso locations that can host groups.
+- `list_organizations` — List organizations visible to the current Turso Platform API token.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Turso state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Turso state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

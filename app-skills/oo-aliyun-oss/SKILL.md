@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alibaba Cloud OSS"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "aliyun_oss"
-  categories: "Storage, Developer Tools"
-  homepage: "https://www.alibabacloud.com"
+  version: "1.0.1"
+  services: ["aliyun_oss"]
   icon: "https://static.oomol.com/logo/third-party/alibabacloud.svg"
 ---
 
 # Alibaba Cloud OSS
 
 Operate **Alibaba Cloud OSS** through your OOMOL-connected account. This skill calls the `aliyun_oss` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Storage, Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "aliyun_oss" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_object`](actions/delete_object.md) — Delete one OSS object.
-- [`generate_presigned_url`](actions/generate_presigned_url.md) — Generate a pre-signed OSS URL for reading, uploading, or deleting one object.
-- [`head_object`](actions/head_object.md) — Fetch structured metadata for one OSS object.
-- [`list_buckets`](actions/list_buckets.md) — List OSS buckets visible to the connected Alibaba Cloud credential.
-- [`list_objects`](actions/list_objects.md) — List objects in an OSS bucket with the ListObjectsV2 API.
-- [`put_object`](actions/put_object.md) — Upload one object to OSS from a public URL, plain text, or base64-encoded content.
+- `delete_object` — Delete one OSS object. [destructive]
+- `generate_presigned_url` — Generate a pre-signed OSS URL for reading, uploading, or deleting one object.
+- `head_object` — Fetch structured metadata for one OSS object.
+- `list_buckets` — List OSS buckets visible to the connected Alibaba Cloud credential.
+- `list_objects` — List objects in an OSS bucket with the ListObjectsV2 API.
+- `put_object` — Upload one object to OSS from a public URL, plain text, or base64-encoded content. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Alibaba Cloud OSS state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Alibaba Cloud OSS state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

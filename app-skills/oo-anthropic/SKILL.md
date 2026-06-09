@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Anthropic"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "anthropic"
-  categories: "AI"
-  homepage: "https://www.anthropic.com"
+  version: "1.0.1"
+  services: ["anthropic"]
 ---
 
 # Anthropic
 
 Operate **Anthropic** through your OOMOL-connected account. This skill calls the `anthropic` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI. Exposes 4 action(s).
 
 ## Running an action
 
@@ -36,20 +32,20 @@ oo connector run "anthropic" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`count_message_tokens`](actions/count_message_tokens.md) — Count input tokens for an Anthropic message request.
-- [`create_message`](actions/create_message.md) — Create a non-streaming Anthropic message.
-- [`get_model`](actions/get_model.md) — Fetch metadata for one Anthropic model.
-- [`list_models`](actions/list_models.md) — List Anthropic models available to the current API key.
+- `count_message_tokens` — Count input tokens for an Anthropic message request.
+- `create_message` — Create a non-streaming Anthropic message. [write]
+- `get_model` — Fetch metadata for one Anthropic model.
+- `list_models` — List Anthropic models available to the current API key.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Anthropic state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Anthropic state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

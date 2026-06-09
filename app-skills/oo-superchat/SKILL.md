@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Superchat"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "superchat"
-  categories: "Communication, Marketing"
-  homepage: "https://www.superchat.com"
+  version: "1.0.1"
+  services: ["superchat"]
   icon: "https://static.oomol.com/logo/third-party/superchat.png"
 ---
 
 # Superchat
 
 Operate **Superchat** through your OOMOL-connected account. This skill calls the `superchat` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "superchat" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_contact`](actions/create_contact.md) — Create one Superchat contact with handles and optional custom attributes.
-- [`get_channel`](actions/get_channel.md) — Get one Superchat channel by channel_id.
-- [`get_contact`](actions/get_contact.md) — Get one Superchat contact by contact_id.
-- [`get_me`](actions/get_me.md) — Retrieve the authenticated Superchat user and workspace summary.
-- [`list_channels`](actions/list_channels.md) — List Superchat channels in the current workspace.
-- [`list_contacts`](actions/list_contacts.md) — List Superchat contacts in the current workspace.
-- [`search_contacts`](actions/search_contacts.md) — Search Superchat contacts by phone, email, or one selected custom attribute field.
-- [`send_email_message`](actions/send_email_message.md) — Send one Superchat email message through a selected email channel.
-- [`send_text_message`](actions/send_text_message.md) — Send one Superchat text message through a selected channel.
-- [`send_whatsapp_template_message`](actions/send_whatsapp_template_message.md) — Send one Superchat WhatsApp template message through a selected channel.
-- [`update_contact`](actions/update_contact.md) — Update one Superchat contact by contact_id.
+- `create_contact` — Create one Superchat contact with handles and optional custom attributes. [write]
+- `get_channel` — Get one Superchat channel by channel_id.
+- `get_contact` — Get one Superchat contact by contact_id.
+- `get_me` — Retrieve the authenticated Superchat user and workspace summary.
+- `list_channels` — List Superchat channels in the current workspace.
+- `list_contacts` — List Superchat contacts in the current workspace.
+- `search_contacts` — Search Superchat contacts by phone, email, or one selected custom attribute field.
+- `send_email_message` — Send one Superchat email message through a selected email channel. [write]
+- `send_text_message` — Send one Superchat text message through a selected channel. [write]
+- `send_whatsapp_template_message` — Send one Superchat WhatsApp template message through a selected channel. [write]
+- `update_contact` — Update one Superchat contact by contact_id. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Superchat state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Superchat state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

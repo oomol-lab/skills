@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HTML/CSS to Image"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "htmlcsstoimage"
-  categories: "Developer Tools, Design & Media"
-  homepage: "https://htmlcsstoimage.com"
+  version: "1.0.1"
+  services: ["htmlcsstoimage"]
   icon: "https://static.oomol.com/logo/third-party/htmlcsstoimage.svg"
 ---
 
 # HTML/CSS to Image
 
 Operate **HTML/CSS to Image** through your OOMOL-connected account. This skill calls the `htmlcsstoimage` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Design & Media. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "htmlcsstoimage" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_batch_images`](actions/create_batch_images.md) — Create up to 25 HTML/CSS to Image images in one batch using shared default options and per-image variations.
-- [`create_image`](actions/create_image.md) — Create an image from either raw HTML/CSS or a public webpage URL with HTML/CSS to Image.
-- [`delete_batch_images`](actions/delete_batch_images.md) — Delete multiple generated images from HTML/CSS to Image in one request.
-- [`delete_image`](actions/delete_image.md) — Delete one generated image from HTML/CSS to Image and clear its CDN cache.
-- [`get_usage`](actions/get_usage.md) — Retrieve HTML/CSS to Image usage counts by hour, day, month, and billing period.
+- `create_batch_images` — Create up to 25 HTML/CSS to Image images in one batch using shared default options and per-image variations. [write]
+- `create_image` — Create an image from either raw HTML/CSS or a public webpage URL with HTML/CSS to Image. [write]
+- `delete_batch_images` — Delete multiple generated images from HTML/CSS to Image in one request. [destructive]
+- `delete_image` — Delete one generated image from HTML/CSS to Image and clear its CDN cache. [destructive]
+- `get_usage` — Retrieve HTML/CSS to Image usage counts by hour, day, month, and billing period.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change HTML/CSS to Image state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change HTML/CSS to Image state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

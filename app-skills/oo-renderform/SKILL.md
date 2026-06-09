@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RenderForm"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "renderform"
-  categories: "Design & Media, Developer Tools"
-  homepage: "https://renderform.io"
+  version: "1.0.1"
+  services: ["renderform"]
   icon: "https://static.oomol.com/logo/third-party/renderform.svg"
 ---
 
 # RenderForm
 
 Operate **RenderForm** through your OOMOL-connected account. This skill calls the `renderform` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "renderform" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_template`](actions/get_template.md) — Get one RenderForm template by identifier and return its normalized template details.
-- [`get_usage`](actions/get_usage.md) — Get current RenderForm credit usage for the API key and return a normalized usage summary.
-- [`list_results`](actions/list_results.md) — List RenderForm generated results with pagination and optional template or batch filters.
-- [`list_templates`](actions/list_templates.md) — List RenderForm templates with optional pagination and filters for name, tags, and source template ID.
-- [`render_image`](actions/render_image.md) — Render one RenderForm image or PDF from a template and return the request identifier, file URL, and echoed request.
-- [`take_screenshot`](actions/take_screenshot.md) — Capture one website screenshot with RenderForm and return the request identifier, file URL, and echoed request.
+- `get_template` — Get one RenderForm template by identifier and return its normalized template details.
+- `get_usage` — Get current RenderForm credit usage for the API key and return a normalized usage summary.
+- `list_results` — List RenderForm generated results with pagination and optional template or batch filters.
+- `list_templates` — List RenderForm templates with optional pagination and filters for name, tags, and source template ID.
+- `render_image` — Render one RenderForm image or PDF from a template and return the request identifier, file URL, and echoed request.
+- `take_screenshot` — Capture one website screenshot with RenderForm and return the request identifier, file URL, and echoed request.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change RenderForm state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change RenderForm state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pexels"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "pexels"
-  categories: "Design & Media"
-  homepage: "https://www.pexels.com"
+  version: "1.0.1"
+  services: ["pexels"]
   icon: "https://static.oomol.com/logo/third-party/Pexels.svg"
 ---
 
 # Pexels
 
 Operate **Pexels** through your OOMOL-connected account. This skill calls the `pexels` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "pexels" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`collection_media`](actions/collection_media.md) — Retrieve the photo and video items inside a Pexels collection, with optional type and sort filters.
-- [`curated_photos`](actions/curated_photos.md) — Retrieve the current curated photo feed from Pexels with pagination controls.
-- [`featured_collections`](actions/featured_collections.md) — Retrieve featured Pexels collections with pagination controls.
-- [`get_photo`](actions/get_photo.md) — Retrieve the full metadata for a single Pexels photo by photo id.
-- [`get_video`](actions/get_video.md) — Retrieve the full metadata for a single Pexels video by video id.
-- [`my_collections`](actions/my_collections.md) — Retrieve collections owned by the authenticated Pexels account.
-- [`popular_videos`](actions/popular_videos.md) — Retrieve the current popular Pexels videos with pagination and optional dimension or duration filters.
-- [`search_photos`](actions/search_photos.md) — Search Pexels photos by keyword with optional orientation, size, color, locale, and pagination filters.
-- [`search_videos`](actions/search_videos.md) — Search Pexels videos by keyword with optional orientation, size, and pagination filters.
+- `collection_media` — Retrieve the photo and video items inside a Pexels collection, with optional type and sort filters.
+- `curated_photos` — Retrieve the current curated photo feed from Pexels with pagination controls.
+- `featured_collections` — Retrieve featured Pexels collections with pagination controls.
+- `get_photo` — Retrieve the full metadata for a single Pexels photo by photo id.
+- `get_video` — Retrieve the full metadata for a single Pexels video by video id.
+- `my_collections` — Retrieve collections owned by the authenticated Pexels account.
+- `popular_videos` — Retrieve the current popular Pexels videos with pagination and optional dimension or duration filters.
+- `search_photos` — Search Pexels photos by keyword with optional orientation, size, color, locale, and pagination filters.
+- `search_videos` — Search Pexels videos by keyword with optional orientation, size, and pagination filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Pexels state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Pexels state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

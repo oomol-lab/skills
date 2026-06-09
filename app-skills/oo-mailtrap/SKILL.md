@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mailtrap"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mailtrap"
-  categories: "Communication, Developer Tools"
-  homepage: "https://mailtrap.io/"
+  version: "1.0.1"
+  services: ["mailtrap"]
   icon: "https://static.oomol.com/logo/third-party/Mailtrap.svg"
 ---
 
 # Mailtrap
 
 Operate **Mailtrap** through your OOMOL-connected account. This skill calls the `mailtrap` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Developer Tools. Exposes 50 action(s).
 
 ## Running an action
 
@@ -37,66 +33,66 @@ oo connector run "mailtrap" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`clean_inbox`](actions/clean_inbox.md) — Delete all messages from one Mailtrap inbox.
-- [`create_contact`](actions/create_contact.md) — Create one Mailtrap contact.
-- [`create_contact_event`](actions/create_contact_event.md) — Create one custom Mailtrap contact event.
-- [`create_contact_export`](actions/create_contact_export.md) — Create one Mailtrap contact export job.
-- [`create_contact_field`](actions/create_contact_field.md) — Create one Mailtrap contact field.
-- [`create_contact_list`](actions/create_contact_list.md) — Create one Mailtrap contact list.
-- [`create_email_template`](actions/create_email_template.md) — Create one Mailtrap email template.
-- [`create_sending_domain`](actions/create_sending_domain.md) — Create one Mailtrap sending domain.
-- [`delete_contact`](actions/delete_contact.md) — Delete one Mailtrap contact by UUID or email.
-- [`delete_contact_field`](actions/delete_contact_field.md) — Delete one Mailtrap contact field.
-- [`delete_contact_list`](actions/delete_contact_list.md) — Delete one Mailtrap contact list.
-- [`delete_email_template`](actions/delete_email_template.md) — Delete one Mailtrap email template.
-- [`delete_project`](actions/delete_project.md) — Delete one Mailtrap project.
-- [`delete_sending_domain`](actions/delete_sending_domain.md) — Delete one Mailtrap sending domain.
-- [`get_billing_usage`](actions/get_billing_usage.md) — Get current Mailtrap billing cycle usage.
-- [`get_contact`](actions/get_contact.md) — Get one Mailtrap contact by UUID or email.
-- [`get_contact_export`](actions/get_contact_export.md) — Get one Mailtrap contact export job by ID.
-- [`get_contact_field`](actions/get_contact_field.md) — Get one Mailtrap contact field by ID.
-- [`get_contact_import`](actions/get_contact_import.md) — Get one Mailtrap contact import job by ID.
-- [`get_contact_list`](actions/get_contact_list.md) — Get one Mailtrap contact list by ID.
-- [`get_email_template`](actions/get_email_template.md) — Get one Mailtrap email template by ID.
-- [`get_inbox`](actions/get_inbox.md) — Get one Mailtrap inbox by ID.
-- [`get_message`](actions/get_message.md) — Get one Mailtrap inbox message by ID.
-- [`get_message_html_source`](actions/get_message_html_source.md) — Get the raw HTML source of one Mailtrap inbox message.
-- [`get_permission_resources`](actions/get_permission_resources.md) — Get Mailtrap permission resources accessible to the token.
-- [`get_project`](actions/get_project.md) — Get one Mailtrap project by ID.
-- [`get_sending_domain`](actions/get_sending_domain.md) — Get one Mailtrap sending domain by ID.
-- [`get_sending_stats`](actions/get_sending_stats.md) — Get Mailtrap sending stats for one account.
-- [`get_sending_stats_by_categories`](actions/get_sending_stats_by_categories.md) — Get Mailtrap sending stats grouped by category.
-- [`get_sending_stats_by_date`](actions/get_sending_stats_by_date.md) — Get Mailtrap sending stats grouped by date.
-- [`get_sending_stats_by_domains`](actions/get_sending_stats_by_domains.md) — Get Mailtrap sending stats grouped by sending domain.
-- [`get_sending_stats_by_esp`](actions/get_sending_stats_by_esp.md) — Get Mailtrap sending stats grouped by email service provider.
-- [`import_contacts`](actions/import_contacts.md) — Create one Mailtrap contact import job.
-- [`list_accounts`](actions/list_accounts.md) — List Mailtrap accounts accessible with the current API token.
-- [`list_contact_fields`](actions/list_contact_fields.md) — List Mailtrap contact fields.
-- [`list_contact_lists`](actions/list_contact_lists.md) — List Mailtrap contact lists.
-- [`list_email_templates`](actions/list_email_templates.md) — List Mailtrap email templates.
-- [`list_inboxes`](actions/list_inboxes.md) — List Mailtrap inboxes under one account.
-- [`list_messages`](actions/list_messages.md) — List messages captured in one Mailtrap inbox.
-- [`list_projects`](actions/list_projects.md) — List Mailtrap projects under one account.
-- [`list_sending_domains`](actions/list_sending_domains.md) — List Mailtrap sending domains.
-- [`list_suppressions`](actions/list_suppressions.md) — List Mailtrap suppressions.
-- [`mark_inbox_as_read`](actions/mark_inbox_as_read.md) — Mark all messages in one Mailtrap inbox as read.
-- [`reset_inbox_credentials`](actions/reset_inbox_credentials.md) — Reset SMTP credentials for one Mailtrap inbox.
-- [`update_contact`](actions/update_contact.md) — Update one Mailtrap contact by UUID or email.
-- [`update_contact_field`](actions/update_contact_field.md) — Update one Mailtrap contact field.
-- [`update_contact_list`](actions/update_contact_list.md) — Update one Mailtrap contact list.
-- [`update_email_template`](actions/update_email_template.md) — Update one Mailtrap email template.
-- [`update_inbox`](actions/update_inbox.md) — Update one Mailtrap inbox.
-- [`update_project`](actions/update_project.md) — Update one Mailtrap project.
+- `clean_inbox` — Delete all messages from one Mailtrap inbox.
+- `create_contact` — Create one Mailtrap contact. [write]
+- `create_contact_event` — Create one custom Mailtrap contact event. [write]
+- `create_contact_export` — Create one Mailtrap contact export job. [write]
+- `create_contact_field` — Create one Mailtrap contact field. [write]
+- `create_contact_list` — Create one Mailtrap contact list. [write]
+- `create_email_template` — Create one Mailtrap email template. [write]
+- `create_sending_domain` — Create one Mailtrap sending domain. [write]
+- `delete_contact` — Delete one Mailtrap contact by UUID or email. [destructive]
+- `delete_contact_field` — Delete one Mailtrap contact field. [destructive]
+- `delete_contact_list` — Delete one Mailtrap contact list. [destructive]
+- `delete_email_template` — Delete one Mailtrap email template. [destructive]
+- `delete_project` — Delete one Mailtrap project. [destructive]
+- `delete_sending_domain` — Delete one Mailtrap sending domain. [destructive]
+- `get_billing_usage` — Get current Mailtrap billing cycle usage.
+- `get_contact` — Get one Mailtrap contact by UUID or email.
+- `get_contact_export` — Get one Mailtrap contact export job by ID.
+- `get_contact_field` — Get one Mailtrap contact field by ID.
+- `get_contact_import` — Get one Mailtrap contact import job by ID. [write]
+- `get_contact_list` — Get one Mailtrap contact list by ID.
+- `get_email_template` — Get one Mailtrap email template by ID.
+- `get_inbox` — Get one Mailtrap inbox by ID.
+- `get_message` — Get one Mailtrap inbox message by ID.
+- `get_message_html_source` — Get the raw HTML source of one Mailtrap inbox message.
+- `get_permission_resources` — Get Mailtrap permission resources accessible to the token.
+- `get_project` — Get one Mailtrap project by ID.
+- `get_sending_domain` — Get one Mailtrap sending domain by ID.
+- `get_sending_stats` — Get Mailtrap sending stats for one account.
+- `get_sending_stats_by_categories` — Get Mailtrap sending stats grouped by category.
+- `get_sending_stats_by_date` — Get Mailtrap sending stats grouped by date.
+- `get_sending_stats_by_domains` — Get Mailtrap sending stats grouped by sending domain.
+- `get_sending_stats_by_esp` — Get Mailtrap sending stats grouped by email service provider.
+- `import_contacts` — Create one Mailtrap contact import job. [write]
+- `list_accounts` — List Mailtrap accounts accessible with the current API token.
+- `list_contact_fields` — List Mailtrap contact fields.
+- `list_contact_lists` — List Mailtrap contact lists.
+- `list_email_templates` — List Mailtrap email templates.
+- `list_inboxes` — List Mailtrap inboxes under one account.
+- `list_messages` — List messages captured in one Mailtrap inbox.
+- `list_projects` — List Mailtrap projects under one account.
+- `list_sending_domains` — List Mailtrap sending domains.
+- `list_suppressions` — List Mailtrap suppressions.
+- `mark_inbox_as_read` — Mark all messages in one Mailtrap inbox as read. [write]
+- `reset_inbox_credentials` — Reset SMTP credentials for one Mailtrap inbox. [destructive]
+- `update_contact` — Update one Mailtrap contact by UUID or email. [write]
+- `update_contact_field` — Update one Mailtrap contact field. [write]
+- `update_contact_list` — Update one Mailtrap contact list. [write]
+- `update_email_template` — Update one Mailtrap email template. [write]
+- `update_inbox` — Update one Mailtrap inbox. [write]
+- `update_project` — Update one Mailtrap project. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Mailtrap state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Mailtrap state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

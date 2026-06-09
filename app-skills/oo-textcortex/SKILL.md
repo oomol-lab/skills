@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TextCortex"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "textcortex"
-  categories: "AI"
-  homepage: "https://textcortex.com/"
+  version: "1.0.1"
+  services: ["textcortex"]
 ---
 
 # TextCortex
 
 Operate **TextCortex** through your OOMOL-connected account. This skill calls the `textcortex` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI. Exposes 3 action(s).
 
 ## Running an action
 
@@ -36,19 +32,19 @@ oo connector run "textcortex" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_chat_completion`](actions/create_chat_completion.md) — Create a non-streaming OpenAI-compatible chat completion with TextCortex.
-- [`list_models`](actions/list_models.md) — List TextCortex models available to the API key.
-- [`retrieve_model`](actions/retrieve_model.md) — Retrieve metadata for one TextCortex model by model id.
+- `create_chat_completion` — Create a non-streaming OpenAI-compatible chat completion with TextCortex. [write]
+- `list_models` — List TextCortex models available to the API key.
+- `retrieve_model` — Retrieve metadata for one TextCortex model by model id.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change TextCortex state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change TextCortex state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

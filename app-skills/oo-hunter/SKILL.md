@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hunter"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "hunter"
-  categories: "Communication, Marketing"
-  homepage: "https://hunter.io"
+  version: "1.0.1"
+  services: ["hunter"]
   icon: "https://static.oomol.com/logo/third-party/hunter.png"
 ---
 
 # Hunter
 
 Operate **Hunter** through your OOMOL-connected account. This skill calls the `hunter` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "hunter" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`account_information`](actions/account_information.md) — Retrieve information about the authenticated Hunter account.
-- [`combined_enrichment`](actions/combined_enrichment.md) — Retrieve combined person and company enrichment data from Hunter.
-- [`company_enrichment`](actions/company_enrichment.md) — Retrieve company enrichment data for a domain from Hunter.
-- [`discover_companies`](actions/discover_companies.md) — Discover companies in Hunter using a natural-language query or filters.
-- [`domain_search`](actions/domain_search.md) — Search public email addresses for a company domain in Hunter.
-- [`email_finder`](actions/email_finder.md) — Find the most likely professional email address for a person in Hunter.
-- [`email_verifier`](actions/email_verifier.md) — Verify the deliverability of an email address in Hunter.
-- [`people_enrichment`](actions/people_enrichment.md) — Retrieve person enrichment data from Hunter by email address or LinkedIn handle.
+- `account_information` — Retrieve information about the authenticated Hunter account.
+- `combined_enrichment` — Retrieve combined person and company enrichment data from Hunter.
+- `company_enrichment` — Retrieve company enrichment data for a domain from Hunter.
+- `discover_companies` — Discover companies in Hunter using a natural-language query or filters.
+- `domain_search` — Search public email addresses for a company domain in Hunter.
+- `email_finder` — Find the most likely professional email address for a person in Hunter.
+- `email_verifier` — Verify the deliverability of an email address in Hunter.
+- `people_enrichment` — Retrieve person enrichment data from Hunter by email address or LinkedIn handle.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Hunter state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Hunter state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

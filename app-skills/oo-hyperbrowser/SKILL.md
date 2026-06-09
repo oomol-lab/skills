@@ -1,22 +1,18 @@
 ---
 name: oo-hyperbrowser
-description: "Hyperbrowser (hyperbrowser.ai). Use this skill for ANY Hyperbrowser request — searching and reading data. Whenever a task involves Hyperbrowser, use this skill instead of calling the API directly."
+description: "Hyperbrowser (hyperbrowser.ai). Use this skill for ANY Hyperbrowser request — reading, creating, and updating data. Whenever a task involves Hyperbrowser, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hyperbrowser"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "hyperbrowser"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://www.hyperbrowser.ai"
+  version: "1.0.1"
+  services: ["hyperbrowser"]
   icon: "https://static.oomol.com/logo/third-party/hyperbrowser.svg"
 ---
 
 # Hyperbrowser
 
 Operate **Hyperbrowser** through your OOMOL-connected account. This skill calls the `hyperbrowser` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "hyperbrowser" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`fetch_page`](actions/fetch_page.md) — Fetch a web page with Hyperbrowser and return the requested data formats.
-- [`get_web_crawl_results`](actions/get_web_crawl_results.md) — Get paginated results for a Hyperbrowser crawl job.
-- [`get_web_crawl_status`](actions/get_web_crawl_status.md) — Get the current status of a Hyperbrowser crawl job.
-- [`search_web`](actions/search_web.md) — Search the web with Hyperbrowser and return structured search results.
-- [`start_web_crawl`](actions/start_web_crawl.md) — Start an asynchronous Hyperbrowser crawl job from a URL.
+- `fetch_page` — Fetch a web page with Hyperbrowser and return the requested data formats.
+- `get_web_crawl_results` — Get paginated results for a Hyperbrowser crawl job.
+- `get_web_crawl_status` — Get the current status of a Hyperbrowser crawl job.
+- `search_web` — Search the web with Hyperbrowser and return structured search results.
+- `start_web_crawl` — Start an asynchronous Hyperbrowser crawl job from a URL. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Hyperbrowser state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Hyperbrowser state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

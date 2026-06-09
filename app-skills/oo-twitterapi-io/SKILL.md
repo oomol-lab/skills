@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TwitterAPI.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "twitterapi_io"
-  categories: "Social, Data & Analytics"
-  homepage: "https://twitterapi.io"
+  version: "1.0.1"
+  services: ["twitterapi_io"]
   icon: "https://static.oomol.com/logo/third-party/twitterapi_io.svg"
 ---
 
 # TwitterAPI.io
 
 Operate **TwitterAPI.io** through your OOMOL-connected account. This skill calls the `twitterapi_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Social, Data & Analytics. Exposes 39 action(s).
 
 ## Running an action
 
@@ -37,55 +33,55 @@ oo connector run "twitterapi_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_monitored_tweet_user`](actions/add_monitored_tweet_user.md) — Add an X user to real-time Tweet monitoring.
-- [`add_tweet_filter_rule`](actions/add_tweet_filter_rule.md) — Add a Webhook/WebSocket tweet filter rule.
-- [`advanced_search_tweets`](actions/advanced_search_tweets.md) — Run an advanced Twitter search query.
-- [`batch_get_users`](actions/batch_get_users.md) — Retrieve multiple X user profiles by user ID.
-- [`check_follow_relationship`](actions/check_follow_relationship.md) — Check whether one X user follows or is followed by another user.
-- [`delete_tweet_filter_rule`](actions/delete_tweet_filter_rule.md) — Delete a Webhook/WebSocket tweet filter rule.
-- [`get_account_info`](actions/get_account_info.md) — Retrieve twitterapi.io account credit information for the API key.
-- [`get_article`](actions/get_article.md) — Retrieve an X article by Tweet ID.
-- [`get_community_info`](actions/get_community_info.md) — Retrieve information about an X Community.
-- [`get_community_members`](actions/get_community_members.md) — Retrieve members of an X Community.
-- [`get_community_moderators`](actions/get_community_moderators.md) — Retrieve moderators of an X Community.
-- [`get_community_tweets`](actions/get_community_tweets.md) — Retrieve Tweets from an X Community.
-- [`get_list_followers`](actions/get_list_followers.md) — Retrieve followers of an X List.
-- [`get_list_members`](actions/get_list_members.md) — Retrieve members of an X List.
-- [`get_list_timeline`](actions/get_list_timeline.md) — Retrieve timeline Tweets from an X List.
-- [`get_list_tweets`](actions/get_list_tweets.md) — Retrieve Tweets from an X List.
-- [`get_space`](actions/get_space.md) — Retrieve details for an X Space.
-- [`get_trends`](actions/get_trends.md) — Retrieve X trends for a WOEID location.
-- [`get_tweet_quotes`](actions/get_tweet_quotes.md) — Retrieve quote Tweets for a Tweet.
-- [`get_tweet_replies`](actions/get_tweet_replies.md) — Retrieve replies to a Tweet with twitterapi.io V2 sorting.
-- [`get_tweet_replies_legacy`](actions/get_tweet_replies_legacy.md) — Retrieve replies to an original Tweet with the legacy replies endpoint.
-- [`get_tweet_retweeters`](actions/get_tweet_retweeters.md) — Retrieve users who retweeted a Tweet.
-- [`get_tweet_thread_context`](actions/get_tweet_thread_context.md) — Retrieve the conversation context around a Tweet.
-- [`get_tweets`](actions/get_tweets.md) — Retrieve Tweets by Tweet IDs.
-- [`get_user`](actions/get_user.md) — Retrieve an X user profile by screen name.
-- [`get_user_about`](actions/get_user_about.md) — Retrieve the X About profile information for a screen name.
-- [`get_user_follower_ids`](actions/get_user_follower_ids.md) — Retrieve follower IDs for a user by user ID or screen name.
-- [`get_user_followers`](actions/get_user_followers.md) — Retrieve followers for a user by screen name.
-- [`get_user_followings`](actions/get_user_followings.md) — Retrieve users followed by a screen name.
-- [`get_user_last_tweets`](actions/get_user_last_tweets.md) — Retrieve the latest Tweets from a user by user ID or screen name.
-- [`get_user_mentions`](actions/get_user_mentions.md) — Retrieve Tweets mentioning a user.
-- [`get_user_timeline`](actions/get_user_timeline.md) — Retrieve a user's profile timeline by user ID.
-- [`get_user_verified_followers`](actions/get_user_verified_followers.md) — Retrieve verified followers for a user by user ID.
-- [`list_monitored_tweet_users`](actions/list_monitored_tweet_users.md) — List X users monitored for real-time Tweets.
-- [`list_tweet_filter_rules`](actions/list_tweet_filter_rules.md) — List Webhook/WebSocket tweet filter rules configured for the API key.
-- [`remove_monitored_tweet_user`](actions/remove_monitored_tweet_user.md) — Remove an X user from real-time Tweet monitoring.
-- [`search_all_community_tweets`](actions/search_all_community_tweets.md) — Search Tweets from all X Communities by keyword.
-- [`search_users`](actions/search_users.md) — Search X users by keyword.
-- [`update_tweet_filter_rule`](actions/update_tweet_filter_rule.md) — Update a Webhook/WebSocket tweet filter rule.
+- `add_monitored_tweet_user` — Add an X user to real-time Tweet monitoring. [write]
+- `add_tweet_filter_rule` — Add a Webhook/WebSocket tweet filter rule. [write]
+- `advanced_search_tweets` — Run an advanced Twitter search query.
+- `batch_get_users` — Retrieve multiple X user profiles by user ID.
+- `check_follow_relationship` — Check whether one X user follows or is followed by another user. [write]
+- `delete_tweet_filter_rule` — Delete a Webhook/WebSocket tweet filter rule. [destructive]
+- `get_account_info` — Retrieve twitterapi.io account credit information for the API key.
+- `get_article` — Retrieve an X article by Tweet ID.
+- `get_community_info` — Retrieve information about an X Community.
+- `get_community_members` — Retrieve members of an X Community.
+- `get_community_moderators` — Retrieve moderators of an X Community.
+- `get_community_tweets` — Retrieve Tweets from an X Community.
+- `get_list_followers` — Retrieve followers of an X List.
+- `get_list_members` — Retrieve members of an X List.
+- `get_list_timeline` — Retrieve timeline Tweets from an X List.
+- `get_list_tweets` — Retrieve Tweets from an X List.
+- `get_space` — Retrieve details for an X Space.
+- `get_trends` — Retrieve X trends for a WOEID location.
+- `get_tweet_quotes` — Retrieve quote Tweets for a Tweet.
+- `get_tweet_replies` — Retrieve replies to a Tweet with twitterapi.io V2 sorting.
+- `get_tweet_replies_legacy` — Retrieve replies to an original Tweet with the legacy replies endpoint.
+- `get_tweet_retweeters` — Retrieve users who retweeted a Tweet.
+- `get_tweet_thread_context` — Retrieve the conversation context around a Tweet.
+- `get_tweets` — Retrieve Tweets by Tweet IDs.
+- `get_user` — Retrieve an X user profile by screen name.
+- `get_user_about` — Retrieve the X About profile information for a screen name.
+- `get_user_follower_ids` — Retrieve follower IDs for a user by user ID or screen name.
+- `get_user_followers` — Retrieve followers for a user by screen name.
+- `get_user_followings` — Retrieve users followed by a screen name.
+- `get_user_last_tweets` — Retrieve the latest Tweets from a user by user ID or screen name.
+- `get_user_mentions` — Retrieve Tweets mentioning a user.
+- `get_user_timeline` — Retrieve a user's profile timeline by user ID.
+- `get_user_verified_followers` — Retrieve verified followers for a user by user ID.
+- `list_monitored_tweet_users` — List X users monitored for real-time Tweets.
+- `list_tweet_filter_rules` — List Webhook/WebSocket tweet filter rules configured for the API key.
+- `remove_monitored_tweet_user` — Remove an X user from real-time Tweet monitoring. [destructive]
+- `search_all_community_tweets` — Search Tweets from all X Communities by keyword.
+- `search_users` — Search X users by keyword.
+- `update_tweet_filter_rule` — Update a Webhook/WebSocket tweet filter rule. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change TwitterAPI.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change TwitterAPI.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

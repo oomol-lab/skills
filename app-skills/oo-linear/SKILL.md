@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Linear"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "linear"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://linear.app"
+  version: "1.0.1"
+  services: ["linear"]
   icon: "https://static.oomol.com/logo/third-party/Linear.svg"
 ---
 
 # Linear
 
 Operate **Linear** through your OOMOL-connected account. This skill calls the `linear` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 34 action(s).
 
 ## Running an action
 
@@ -37,50 +33,50 @@ oo connector run "linear" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_attachment`](actions/create_attachment.md) — Create or update an attachment for the specified Linear issue.
-- [`create_comment_reaction`](actions/create_comment_reaction.md) — Creates an emoji reaction for the specified Linear comment.
-- [`create_linear_comment`](actions/create_linear_comment.md) — Creates a comment for the specified Linear issue.
-- [`create_linear_issue`](actions/create_linear_issue.md) — Create a new Linear issue in the specified team and support fields such as project, person in charge, status, label, etc.
-- [`create_linear_issue_relation`](actions/create_linear_issue_relation.md) — Create a relationship between two Linear issues, such as blocks, related, or duplicate.
-- [`create_linear_label`](actions/create_linear_label.md) — Creates a new Linear issue label in the specified team.
-- [`create_linear_project`](actions/create_linear_project.md) — Create a new Linear project and associate one or more teams.
-- [`create_project_milestone`](actions/create_project_milestone.md) — Creates a project milestone for the specified Linear project.
-- [`create_project_update`](actions/create_project_update.md) — Creates a project progress update for the specified Linear project.
-- [`delete_linear_issue`](actions/delete_linear_issue.md) — Delete the specified Linear issue.
-- [`get_all_linear_teams`](actions/get_all_linear_teams.md) — Lists all Linear team basic information accessible with the current credentials.
-- [`get_attachment`](actions/get_attachment.md) — Retrieve a Linear attachment based on the issue and attachment ID or file name.
-- [`get_current_user`](actions/get_current_user.md) — Get the currently authenticated Linear user profile.
-- [`get_cycles_by_team_id`](actions/get_cycles_by_team_id.md) — Get all cycle information under the specified team.
-- [`get_issue_defaults`](actions/get_issue_defaults.md) — Gets the default status and default estimate used when the specified team creates an issue.
-- [`get_linear_issue`](actions/get_linear_issue.md) — Get details of a Linear issue, including comments, attachments, subscribers, and underlying relationship fields.
-- [`get_linear_project`](actions/get_linear_project.md) — Get the details of a Linear project, complete with team, members, and initiatives on demand.
-- [`list_issue_drafts`](actions/list_issue_drafts.md) — Lists issue drafts visible to the current user in Linear.
-- [`list_issues_by_team_id`](actions/list_issues_by_team_id.md) — List Linear issues by team, and support cursor paging and whether to include archived issues.
-- [`list_linear_cycles`](actions/list_linear_cycles.md) — Lists the Linear periods accessible by the current credential.
-- [`list_linear_issues`](actions/list_linear_issues.md) — Lists Linear issues accessible with current credentials, and supports filtering by project and person in charge.
-- [`list_linear_labels`](actions/list_linear_labels.md) — Lists Linear labels for a specified team or entire workspace.
-- [`list_linear_projects`](actions/list_linear_projects.md) — Lists Linear projects accessible with the current credentials.
-- [`list_linear_states`](actions/list_linear_states.md) — Lists all workflow statuses for the specified team.
-- [`list_linear_teams`](actions/list_linear_teams.md) — Lists Linear teams accessible with current credentials, along with a list of members and projects.
-- [`list_linear_users`](actions/list_linear_users.md) — List Linear users in the current workspace and support cursor paging.
-- [`remove_issue_label`](actions/remove_issue_label.md) — Removes a label from the specified Linear issue.
-- [`remove_reaction`](actions/remove_reaction.md) — Delete an existing Linear reaction.
-- [`run_mutation`](actions/run_mutation.md) — Perform a mutation directly on the Linear GraphQL API.
-- [`run_query`](actions/run_query.md) — Execute a read-only query directly against the Linear GraphQL API.
-- [`search_issues`](actions/search_issues.md) — Retrieve issues through Linear's full-text search capabilities.
-- [`update_issue`](actions/update_issue.md) — Update an existing Linear issue and support fields such as title, description, status, project, label, etc.
-- [`update_linear_comment`](actions/update_linear_comment.md) — Update the text of an existing Linear comment.
-- [`update_linear_project`](actions/update_linear_project.md) — Update an existing Linear project.
+- `create_attachment` — Create or update an attachment for the specified Linear issue. [write]
+- `create_comment_reaction` — Creates an emoji reaction for the specified Linear comment. [write]
+- `create_linear_comment` — Creates a comment for the specified Linear issue. [write]
+- `create_linear_issue` — Create a new Linear issue in the specified team and support fields such as project, person in charge, status, label, etc. [write]
+- `create_linear_issue_relation` — Create a relationship between two Linear issues, such as blocks, related, or duplicate. [write]
+- `create_linear_label` — Creates a new Linear issue label in the specified team. [write]
+- `create_linear_project` — Create a new Linear project and associate one or more teams. [write]
+- `create_project_milestone` — Creates a project milestone for the specified Linear project. [write]
+- `create_project_update` — Creates a project progress update for the specified Linear project. [write]
+- `delete_linear_issue` — Delete the specified Linear issue. [destructive]
+- `get_all_linear_teams` — Lists all Linear team basic information accessible with the current credentials.
+- `get_attachment` — Retrieve a Linear attachment based on the issue and attachment ID or file name.
+- `get_current_user` — Get the currently authenticated Linear user profile.
+- `get_cycles_by_team_id` — Get all cycle information under the specified team.
+- `get_issue_defaults` — Gets the default status and default estimate used when the specified team creates an issue.
+- `get_linear_issue` — Get details of a Linear issue, including comments, attachments, subscribers, and underlying relationship fields.
+- `get_linear_project` — Get the details of a Linear project, complete with team, members, and initiatives on demand.
+- `list_issue_drafts` — Lists issue drafts visible to the current user in Linear.
+- `list_issues_by_team_id` — List Linear issues by team, and support cursor paging and whether to include archived issues.
+- `list_linear_cycles` — Lists the Linear periods accessible by the current credential.
+- `list_linear_issues` — Lists Linear issues accessible with current credentials, and supports filtering by project and person in charge.
+- `list_linear_labels` — Lists Linear labels for a specified team or entire workspace.
+- `list_linear_projects` — Lists Linear projects accessible with the current credentials.
+- `list_linear_states` — Lists all workflow statuses for the specified team.
+- `list_linear_teams` — Lists Linear teams accessible with current credentials, along with a list of members and projects.
+- `list_linear_users` — List Linear users in the current workspace and support cursor paging.
+- `remove_issue_label` — Removes a label from the specified Linear issue. [destructive]
+- `remove_reaction` — Delete an existing Linear reaction. [destructive]
+- `run_mutation` — Perform a mutation directly on the Linear GraphQL API. [write]
+- `run_query` — Execute a read-only query directly against the Linear GraphQL API.
+- `search_issues` — Retrieve issues through Linear's full-text search capabilities.
+- `update_issue` — Update an existing Linear issue and support fields such as title, description, status, project, label, etc. [write]
+- `update_linear_comment` — Update the text of an existing Linear comment. [write]
+- `update_linear_project` — Update an existing Linear project. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Linear state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Linear state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

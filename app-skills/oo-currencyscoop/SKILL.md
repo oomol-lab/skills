@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CurrencyBeacon"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "currencyscoop"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://currencybeacon.com"
+  version: "1.0.1"
+  services: ["currencyscoop"]
   icon: "https://static.oomol.com/logo/third-party/CurrencyScoop.svg"
 ---
 
 # CurrencyBeacon
 
 Operate **CurrencyBeacon** through your OOMOL-connected account. This skill calls the `currencyscoop` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "currencyscoop" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`convert_currency`](actions/convert_currency.md) — Convert an amount between two currencies using CurrencyBeacon exchange rates.
-- [`get_currencies`](actions/get_currencies.md) — Retrieve the supported currencies exposed by CurrencyBeacon.
-- [`get_historical_rates`](actions/get_historical_rates.md) — Retrieve historical exchange rates for a specific date from CurrencyBeacon.
-- [`get_latest_rates`](actions/get_latest_rates.md) — Retrieve the latest exchange rates for a base currency from CurrencyBeacon.
-- [`get_timeseries_rates`](actions/get_timeseries_rates.md) — Retrieve exchange rates across a date range from CurrencyBeacon.
+- `convert_currency` — Convert an amount between two currencies using CurrencyBeacon exchange rates.
+- `get_currencies` — Retrieve the supported currencies exposed by CurrencyBeacon.
+- `get_historical_rates` — Retrieve historical exchange rates for a specific date from CurrencyBeacon.
+- `get_latest_rates` — Retrieve the latest exchange rates for a base currency from CurrencyBeacon.
+- `get_timeseries_rates` — Retrieve exchange rates across a date range from CurrencyBeacon.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change CurrencyBeacon state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change CurrencyBeacon state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

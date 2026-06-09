@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Brevo"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "brevo"
-  categories: "Communication, Marketing"
-  homepage: "https://www.brevo.com"
+  version: "1.0.1"
+  services: ["brevo"]
   icon: "https://static.oomol.com/logo/third-party/Brevo.svg"
 ---
 
 # Brevo
 
 Operate **Brevo** through your OOMOL-connected account. This skill calls the `brevo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "brevo" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_contacts_to_list`](actions/add_contacts_to_list.md) — Add contacts to one Brevo contact list using exactly one official selector.
-- [`create_contact`](actions/create_contact.md) — Create one Brevo contact with the official contact creation payload.
-- [`create_contact_list`](actions/create_contact_list.md) — Create one Brevo contact list inside the specified Brevo folder.
-- [`delete_contact`](actions/delete_contact.md) — Delete one Brevo contact by identifier and optional identifier type.
-- [`get_account`](actions/get_account.md) — Retrieve the current Brevo account profile and plan information.
-- [`get_contact`](actions/get_contact.md) — Retrieve one Brevo contact by identifier and optional identifier type.
-- [`list_contact_folders`](actions/list_contact_folders.md) — List Brevo contact folders with the official pagination parameters.
-- [`list_contact_lists`](actions/list_contact_lists.md) — List Brevo contact lists with the official pagination parameters.
-- [`list_contacts`](actions/list_contacts.md) — List Brevo contacts with pagination and timestamp filters.
-- [`list_contacts_in_list`](actions/list_contacts_in_list.md) — List the Brevo contacts currently linked to one Brevo contact list.
-- [`remove_contacts_from_list`](actions/remove_contacts_from_list.md) — Remove contacts from one Brevo contact list using exactly one official selector.
-- [`update_contact_list`](actions/update_contact_list.md) — Update one Brevo contact list by ID.
+- `add_contacts_to_list` — Add contacts to one Brevo contact list using exactly one official selector. [write]
+- `create_contact` — Create one Brevo contact with the official contact creation payload. [write]
+- `create_contact_list` — Create one Brevo contact list inside the specified Brevo folder. [write]
+- `delete_contact` — Delete one Brevo contact by identifier and optional identifier type. [destructive]
+- `get_account` — Retrieve the current Brevo account profile and plan information.
+- `get_contact` — Retrieve one Brevo contact by identifier and optional identifier type.
+- `list_contact_folders` — List Brevo contact folders with the official pagination parameters.
+- `list_contact_lists` — List Brevo contact lists with the official pagination parameters.
+- `list_contacts` — List Brevo contacts with pagination and timestamp filters.
+- `list_contacts_in_list` — List the Brevo contacts currently linked to one Brevo contact list.
+- `remove_contacts_from_list` — Remove contacts from one Brevo contact list using exactly one official selector. [destructive]
+- `update_contact_list` — Update one Brevo contact list by ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Brevo state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Brevo state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Listen Notes"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "listennotes"
-  categories: "Data & Analytics"
-  homepage: "https://www.listennotes.com"
+  version: "1.0.1"
+  services: ["listennotes"]
   icon: "https://static.oomol.com/logo/third-party/Listen%20Notes.svg"
 ---
 
 # Listen Notes
 
 Operate **Listen Notes** through your OOMOL-connected account. This skill calls the `listennotes` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "listennotes" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_best_podcasts`](actions/get_best_podcasts.md) — Get ranked best podcasts from Listen Notes with optional directory filters.
-- [`get_episode`](actions/get_episode.md) — Get Listen Notes episode details by episode ID.
-- [`get_genres`](actions/get_genres.md) — Get the supported Listen Notes podcast genres.
-- [`get_languages`](actions/get_languages.md) — Get the supported Listen Notes podcast languages.
-- [`get_podcast`](actions/get_podcast.md) — Get Listen Notes podcast details and one page of episodes by podcast ID.
-- [`get_regions`](actions/get_regions.md) — Get the supported Listen Notes regions used by best podcasts.
-- [`get_related_podcasts`](actions/get_related_podcasts.md) — Get related podcast recommendations from Listen Notes by podcast ID.
-- [`search`](actions/search.md) — Search Listen Notes podcasts or episodes by keyword.
-- [`typeahead`](actions/typeahead.md) — Get Listen Notes typeahead suggestions for terms, genres, and podcasts.
+- `get_best_podcasts` — Get ranked best podcasts from Listen Notes with optional directory filters.
+- `get_episode` — Get Listen Notes episode details by episode ID.
+- `get_genres` — Get the supported Listen Notes podcast genres.
+- `get_languages` — Get the supported Listen Notes podcast languages.
+- `get_podcast` — Get Listen Notes podcast details and one page of episodes by podcast ID.
+- `get_regions` — Get the supported Listen Notes regions used by best podcasts.
+- `get_related_podcasts` — Get related podcast recommendations from Listen Notes by podcast ID.
+- `search` — Search Listen Notes podcasts or episodes by keyword.
+- `typeahead` — Get Listen Notes typeahead suggestions for terms, genres, and podcasts.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Listen Notes state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Listen Notes state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

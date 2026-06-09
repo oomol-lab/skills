@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenRouter"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "openrouter"
-  categories: "AI, Developer Tools"
-  homepage: "https://openrouter.ai"
+  version: "1.0.1"
+  services: ["openrouter"]
   icon: "https://static.oomol.com/logo/third-party/Openrouter.svg"
 ---
 
 # OpenRouter
 
 Operate **OpenRouter** through your OOMOL-connected account. This skill calls the `openrouter` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Developer Tools. Exposes 13 action(s).
 
 ## Running an action
 
@@ -37,29 +33,29 @@ oo connector run "openrouter" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_chat_completion`](actions/create_chat_completion.md) — Create an OpenRouter chat completion through the OpenAI-compatible `/chat/completions` endpoint.
-- [`create_coinbase_charge`](actions/create_coinbase_charge.md) — Call OpenRouter's deprecated Coinbase charge endpoint for credits purchases. The upstream endpoint is currently deprecated and may return 410 Gone.
-- [`create_message`](actions/create_message.md) — Create an OpenRouter Anthropic-format message through the `/messages` endpoint.
-- [`get_credits`](actions/get_credits.md) — Get the authenticated OpenRouter credit balance summary.
-- [`get_current_key`](actions/get_current_key.md) — Get metadata for the currently authenticated OpenRouter API key.
-- [`get_generation`](actions/get_generation.md) — Get request and usage metadata for a specific OpenRouter generation.
-- [`get_models_count`](actions/get_models_count.md) — Get the total number of OpenRouter models, optionally filtered by output modalities.
-- [`list_available_models`](actions/list_available_models.md) — List the available OpenRouter models, or return the RSS feed when requested.
-- [`list_embedding_models`](actions/list_embedding_models.md) — List the embedding models available through OpenRouter.
-- [`list_model_endpoints`](actions/list_model_endpoints.md) — List the currently available endpoints for a specific OpenRouter model.
-- [`list_providers`](actions/list_providers.md) — List the model providers currently available through OpenRouter.
-- [`list_user_models`](actions/list_user_models.md) — List models filtered by the current user's OpenRouter routing preferences, privacy settings, and guardrails.
-- [`list_zdr_endpoints`](actions/list_zdr_endpoints.md) — Preview the OpenRouter endpoints that remain available under Zero Data Retention.
+- `create_chat_completion` — Create an OpenRouter chat completion through the OpenAI-compatible `/chat/completions` endpoint. [write]
+- `create_coinbase_charge` — Call OpenRouter's deprecated Coinbase charge endpoint for credits purchases. The upstream endpoint is currently deprecated and may return 410 Gone. [write]
+- `create_message` — Create an OpenRouter Anthropic-format message through the `/messages` endpoint. [write]
+- `get_credits` — Get the authenticated OpenRouter credit balance summary.
+- `get_current_key` — Get metadata for the currently authenticated OpenRouter API key.
+- `get_generation` — Get request and usage metadata for a specific OpenRouter generation.
+- `get_models_count` — Get the total number of OpenRouter models, optionally filtered by output modalities.
+- `list_available_models` — List the available OpenRouter models, or return the RSS feed when requested.
+- `list_embedding_models` — List the embedding models available through OpenRouter.
+- `list_model_endpoints` — List the currently available endpoints for a specific OpenRouter model.
+- `list_providers` — List the model providers currently available through OpenRouter.
+- `list_user_models` — List models filtered by the current user's OpenRouter routing preferences, privacy settings, and guardrails.
+- `list_zdr_endpoints` — Preview the OpenRouter endpoints that remain available under Zero Data Retention.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change OpenRouter state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change OpenRouter state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

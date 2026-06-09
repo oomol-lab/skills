@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jimeng AI"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "jimeng_ai"
-  categories: "AI, Design & Media"
-  homepage: "https://www.volcengine.com/product/jimeng"
+  version: "1.0.1"
+  services: ["jimeng_ai"]
   icon: "https://static.oomol.com/logo/third-party/jimeng_ai.png"
 ---
 
 # Jimeng AI
 
 Operate **Jimeng AI** through your OOMOL-connected account. This skill calls the `jimeng_ai` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Design & Media. Exposes 28 action(s).
 
 ## Running an action
 
@@ -37,44 +33,44 @@ oo connector run "jimeng_ai" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_image_generation_4_0_result`](actions/get_image_generation_4_0_result.md) — Get the result of a Jimeng AI Image Generation 4.0 async task.
-- [`get_image_generation_4_6_result`](actions/get_image_generation_4_6_result.md) — Get the result of a Jimeng AI Image Generation 4.6 async task.
-- [`get_marketing_video_agent_result`](actions/get_marketing_video_agent_result.md) — Get the result of a Lilinque Marketing Video Agent async task.
-- [`get_smart_upscale_result`](actions/get_smart_upscale_result.md) — Get the result of a Jimeng AI Smart Upscale async task.
-- [`get_smart_video_agent_1_0_result`](actions/get_smart_video_agent_1_0_result.md) — Get the result of a Lilinque Smart Video Agent 1.0 async task.
-- [`get_smart_video_agent_2_0_with_reference_result`](actions/get_smart_video_agent_2_0_with_reference_result.md) — Get the result of a Lilinque Smart Video Agent 2.0 async task with reference videos.
-- [`get_smart_video_agent_2_0_without_reference_result`](actions/get_smart_video_agent_2_0_without_reference_result.md) — Get the result of a Lilinque Smart Video Agent 2.0 async task without reference videos.
-- [`get_text_to_image_3_0_result`](actions/get_text_to_image_3_0_result.md) — Get the result of a Jimeng Text-to-Image 3.0 async task.
-- [`get_text_to_image_3_1_result`](actions/get_text_to_image_3_1_result.md) — Get the result of a Jimeng Text-to-Image 3.1 async task.
-- [`get_video_generation_3_0_1080p_result`](actions/get_video_generation_3_0_1080p_result.md) — Get the result of a Jimeng AI Video Generation 3.0 1080P async task.
-- [`get_video_generation_3_0_720p_result`](actions/get_video_generation_3_0_720p_result.md) — Get the result of a Jimeng AI Video Generation 3.0 720P async task.
-- [`get_video_generation_3_0_pro_result`](actions/get_video_generation_3_0_pro_result.md) — Get the result of a Jimeng AI Video Generation 3.0 Pro async task.
-- [`submit_image_generation_4_0`](actions/submit_image_generation_4_0.md) — Submit a Jimeng AI Image Generation 4.0 async task.
-- [`submit_image_generation_4_6`](actions/submit_image_generation_4_6.md) — Submit a Jimeng AI Image Generation 4.6 async task.
-- [`submit_image_to_video_first_frame_3_0_1080p`](actions/submit_image_to_video_first_frame_3_0_1080p.md) — Submit a Jimeng AI Video Generation 3.0 1080P image-to-video first-frame async task.
-- [`submit_image_to_video_first_frame_3_0_720p`](actions/submit_image_to_video_first_frame_3_0_720p.md) — Submit a Jimeng AI Video Generation 3.0 720P image-to-video first-frame async task.
-- [`submit_image_to_video_first_tail_frame_3_0_1080p`](actions/submit_image_to_video_first_tail_frame_3_0_1080p.md) — Submit a Jimeng AI Video Generation 3.0 1080P image-to-video first-and-last-frame async task.
-- [`submit_image_to_video_first_tail_frame_3_0_720p`](actions/submit_image_to_video_first_tail_frame_3_0_720p.md) — Submit a Jimeng AI Video Generation 3.0 720P image-to-video first-and-last-frame async task.
-- [`submit_marketing_video_agent`](actions/submit_marketing_video_agent.md) — Submit a Lilinque Marketing Video Agent async task.
-- [`submit_smart_upscale`](actions/submit_smart_upscale.md) — Submit a Jimeng AI Smart Upscale async task.
-- [`submit_smart_video_agent_1_0`](actions/submit_smart_video_agent_1_0.md) — Submit a Lilinque Smart Video Agent 1.0 async task.
-- [`submit_smart_video_agent_2_0_with_reference`](actions/submit_smart_video_agent_2_0_with_reference.md) — Submit a Lilinque Smart Video Agent 2.0 async task with reference videos.
-- [`submit_smart_video_agent_2_0_without_reference`](actions/submit_smart_video_agent_2_0_without_reference.md) — Submit a Lilinque Smart Video Agent 2.0 async task without reference videos.
-- [`submit_text_to_image_3_0`](actions/submit_text_to_image_3_0.md) — Submit a Jimeng Text-to-Image 3.0 async task.
-- [`submit_text_to_image_3_1`](actions/submit_text_to_image_3_1.md) — Submit a Jimeng Text-to-Image 3.1 async task.
-- [`submit_video_generation_3_0_1080p`](actions/submit_video_generation_3_0_1080p.md) — Submit a Jimeng AI Video Generation 3.0 1080P async task.
-- [`submit_video_generation_3_0_720p`](actions/submit_video_generation_3_0_720p.md) — Submit a Jimeng AI Video Generation 3.0 720P async task.
-- [`submit_video_generation_3_0_pro`](actions/submit_video_generation_3_0_pro.md) — Submit a Jimeng AI Video Generation 3.0 Pro async task.
+- `get_image_generation_4_0_result` — Get the result of a Jimeng AI Image Generation 4.0 async task.
+- `get_image_generation_4_6_result` — Get the result of a Jimeng AI Image Generation 4.6 async task.
+- `get_marketing_video_agent_result` — Get the result of a Lilinque Marketing Video Agent async task.
+- `get_smart_upscale_result` — Get the result of a Jimeng AI Smart Upscale async task.
+- `get_smart_video_agent_1_0_result` — Get the result of a Lilinque Smart Video Agent 1.0 async task.
+- `get_smart_video_agent_2_0_with_reference_result` — Get the result of a Lilinque Smart Video Agent 2.0 async task with reference videos.
+- `get_smart_video_agent_2_0_without_reference_result` — Get the result of a Lilinque Smart Video Agent 2.0 async task without reference videos.
+- `get_text_to_image_3_0_result` — Get the result of a Jimeng Text-to-Image 3.0 async task.
+- `get_text_to_image_3_1_result` — Get the result of a Jimeng Text-to-Image 3.1 async task.
+- `get_video_generation_3_0_1080p_result` — Get the result of a Jimeng AI Video Generation 3.0 1080P async task.
+- `get_video_generation_3_0_720p_result` — Get the result of a Jimeng AI Video Generation 3.0 720P async task.
+- `get_video_generation_3_0_pro_result` — Get the result of a Jimeng AI Video Generation 3.0 Pro async task.
+- `submit_image_generation_4_0` — Submit a Jimeng AI Image Generation 4.0 async task. [write]
+- `submit_image_generation_4_6` — Submit a Jimeng AI Image Generation 4.6 async task. [write]
+- `submit_image_to_video_first_frame_3_0_1080p` — Submit a Jimeng AI Video Generation 3.0 1080P image-to-video first-frame async task. [write]
+- `submit_image_to_video_first_frame_3_0_720p` — Submit a Jimeng AI Video Generation 3.0 720P image-to-video first-frame async task. [write]
+- `submit_image_to_video_first_tail_frame_3_0_1080p` — Submit a Jimeng AI Video Generation 3.0 1080P image-to-video first-and-last-frame async task. [write]
+- `submit_image_to_video_first_tail_frame_3_0_720p` — Submit a Jimeng AI Video Generation 3.0 720P image-to-video first-and-last-frame async task. [write]
+- `submit_marketing_video_agent` — Submit a Lilinque Marketing Video Agent async task. [write]
+- `submit_smart_upscale` — Submit a Jimeng AI Smart Upscale async task. [write]
+- `submit_smart_video_agent_1_0` — Submit a Lilinque Smart Video Agent 1.0 async task. [write]
+- `submit_smart_video_agent_2_0_with_reference` — Submit a Lilinque Smart Video Agent 2.0 async task with reference videos. [write]
+- `submit_smart_video_agent_2_0_without_reference` — Submit a Lilinque Smart Video Agent 2.0 async task without reference videos. [write]
+- `submit_text_to_image_3_0` — Submit a Jimeng Text-to-Image 3.0 async task. [write]
+- `submit_text_to_image_3_1` — Submit a Jimeng Text-to-Image 3.1 async task. [write]
+- `submit_video_generation_3_0_1080p` — Submit a Jimeng AI Video Generation 3.0 1080P async task. [write]
+- `submit_video_generation_3_0_720p` — Submit a Jimeng AI Video Generation 3.0 720P async task. [write]
+- `submit_video_generation_3_0_pro` — Submit a Jimeng AI Video Generation 3.0 Pro async task. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Jimeng AI state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Jimeng AI state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

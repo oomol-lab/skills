@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tomba"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "tomba"
-  categories: "Marketing, Data & Analytics"
-  homepage: "https://tomba.io"
+  version: "1.0.1"
+  services: ["tomba"]
 ---
 
 # Tomba
 
 Operate **Tomba** through your OOMOL-connected account. This skill calls the `tomba` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Data & Analytics. Exposes 10 action(s).
 
 ## Running an action
 
@@ -36,26 +32,26 @@ oo connector run "tomba" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`domain_search`](actions/domain_search.md) — Search for email addresses and company intelligence for a domain.
-- [`email_count`](actions/email_count.md) — Count known email addresses and related breakdowns for a domain.
-- [`email_finder`](actions/email_finder.md) — Find the most likely professional email address for a person at a domain.
-- [`email_sources`](actions/email_sources.md) — Retrieve public source URLs where Tomba found an email address.
-- [`email_verifier`](actions/email_verifier.md) — Verify deliverability and metadata for an email address.
-- [`enrich`](actions/enrich.md) — Enrich a known email address with person and company attributes.
-- [`get_account`](actions/get_account.md) — Retrieve information about the authenticated Tomba account.
-- [`linkedin`](actions/linkedin.md) — Find contact data associated with a public LinkedIn profile URL.
-- [`search_companies`](actions/search_companies.md) — Search companies with Tomba Reveal using a natural-language query or filters.
-- [`technology`](actions/technology.md) — Detect technologies and tools used by a company domain.
+- `domain_search` — Search for email addresses and company intelligence for a domain.
+- `email_count` — Count known email addresses and related breakdowns for a domain.
+- `email_finder` — Find the most likely professional email address for a person at a domain.
+- `email_sources` — Retrieve public source URLs where Tomba found an email address.
+- `email_verifier` — Verify deliverability and metadata for an email address.
+- `enrich` — Enrich a known email address with person and company attributes.
+- `get_account` — Retrieve information about the authenticated Tomba account.
+- `linkedin` — Find contact data associated with a public LinkedIn profile URL.
+- `search_companies` — Search companies with Tomba Reveal using a natural-language query or filters.
+- `technology` — Detect technologies and tools used by a company domain.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Tomba state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Tomba state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

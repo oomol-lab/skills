@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OKSign"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "oksign"
-  categories: "Productivity, Security & Identity"
-  homepage: "https://www.oksign.be/en/"
+  version: "1.0.1"
+  services: ["oksign"]
   icon: "https://static.oomol.com/logo/third-party/oksign.png"
 ---
 
 # OKSign
 
 Operate **OKSign** through your OOMOL-connected account. This skill calls the `oksign` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Security & Identity. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "oksign" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_credits`](actions/get_credits.md) — Get OKSign credits balance, expiry, and account storage details.
-- [`get_document_metadata`](actions/get_document_metadata.md) — Get OKSign metadata v2 for a signed document by signed_docid.
-- [`get_linked_document`](actions/get_linked_document.md) — Resolve the corresponding source_docid and signed_docid pair for an OKSign document identifier.
-- [`list_active_documents`](actions/list_active_documents.md) — List active OKSign documents visible in the current account.
-- [`list_users`](actions/list_users.md) — List the users configured in the current OKSign account.
+- `get_credits` — Get OKSign credits balance, expiry, and account storage details.
+- `get_document_metadata` — Get OKSign metadata v2 for a signed document by signed_docid.
+- `get_linked_document` — Resolve the corresponding source_docid and signed_docid pair for an OKSign document identifier.
+- `list_active_documents` — List active OKSign documents visible in the current account.
+- `list_users` — List the users configured in the current OKSign account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change OKSign state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change OKSign state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mailgun"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mailgun"
-  categories: "Communication, Marketing"
-  homepage: "https://www.mailgun.com"
+  version: "1.0.1"
+  services: ["mailgun"]
   icon: "https://static.oomol.com/logo/third-party/mailgun.svg"
 ---
 
 # Mailgun
 
 Operate **Mailgun** through your OOMOL-connected account. This skill calls the `mailgun` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 17 action(s).
 
 ## Running an action
 
@@ -37,33 +33,33 @@ oo connector run "mailgun" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_suppression`](actions/add_suppression.md) — Add one Mailgun suppression or allowlist record.
-- [`create_template`](actions/create_template.md) — Create a Mailgun template and optionally its initial active version.
-- [`create_template_version`](actions/create_template_version.md) — Create a new version for a Mailgun template.
-- [`delete_suppression`](actions/delete_suppression.md) — Remove one Mailgun suppression or allowlist record.
-- [`get_domain`](actions/get_domain.md) — Get Mailgun domain details including DNS records and sending state.
-- [`get_domain_tracking_settings`](actions/get_domain_tracking_settings.md) — Get open, click, unsubscribe, and web scheme tracking settings for a domain.
-- [`get_suppression`](actions/get_suppression.md) — Get one Mailgun suppression or allowlist record.
-- [`get_template`](actions/get_template.md) — Get metadata for one Mailgun template and optionally its active version.
-- [`get_template_version`](actions/get_template_version.md) — Get content and metadata for one Mailgun template version.
-- [`list_domains`](actions/list_domains.md) — List Mailgun domains available to the current API key.
-- [`list_events`](actions/list_events.md) — List delivery, engagement, and failure events for a Mailgun domain.
-- [`list_suppressions`](actions/list_suppressions.md) — List records from a Mailgun suppression or allowlist table.
-- [`list_template_versions`](actions/list_template_versions.md) — List versions for a Mailgun template.
-- [`list_templates`](actions/list_templates.md) — List templates stored for a Mailgun domain.
-- [`send_email`](actions/send_email.md) — Send an email through Mailgun using a stored domain.
-- [`update_domain_tracking_settings`](actions/update_domain_tracking_settings.md) — Update open, click, or unsubscribe tracking settings for a Mailgun domain.
-- [`verify_domain`](actions/verify_domain.md) — Ask Mailgun to verify DNS records for a sending domain.
+- `add_suppression` — Add one Mailgun suppression or allowlist record. [write]
+- `create_template` — Create a Mailgun template and optionally its initial active version. [write]
+- `create_template_version` — Create a new version for a Mailgun template. [write]
+- `delete_suppression` — Remove one Mailgun suppression or allowlist record. [destructive]
+- `get_domain` — Get Mailgun domain details including DNS records and sending state.
+- `get_domain_tracking_settings` — Get open, click, unsubscribe, and web scheme tracking settings for a domain.
+- `get_suppression` — Get one Mailgun suppression or allowlist record.
+- `get_template` — Get metadata for one Mailgun template and optionally its active version.
+- `get_template_version` — Get content and metadata for one Mailgun template version.
+- `list_domains` — List Mailgun domains available to the current API key.
+- `list_events` — List delivery, engagement, and failure events for a Mailgun domain.
+- `list_suppressions` — List records from a Mailgun suppression or allowlist table.
+- `list_template_versions` — List versions for a Mailgun template.
+- `list_templates` — List templates stored for a Mailgun domain.
+- `send_email` — Send an email through Mailgun using a stored domain. [write]
+- `update_domain_tracking_settings` — Update open, click, or unsubscribe tracking settings for a Mailgun domain. [write]
+- `verify_domain` — Ask Mailgun to verify DNS records for a sending domain.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Mailgun state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Mailgun state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Brandfetch"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "brandfetch"
-  categories: "Design & Media, Marketing"
-  homepage: "https://brandfetch.com"
+  version: "1.0.1"
+  services: ["brandfetch"]
   icon: "https://static.oomol.com/logo/third-party/Brandfetch.svg"
 ---
 
 # Brandfetch
 
 Operate **Brandfetch** through your OOMOL-connected account. This skill calls the `brandfetch` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Marketing. Exposes 2 action(s).
 
 ## Running an action
 
@@ -37,18 +33,18 @@ oo connector run "brandfetch" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_brand`](actions/get_brand.md) — Fetch a Brandfetch brand profile from a domain, Brand ID, ISIN, or stock ticker identifier.
-- [`get_transaction_info`](actions/get_transaction_info.md) — Resolve a raw transaction label into the corresponding Brandfetch merchant brand profile.
+- `get_brand` — Fetch a Brandfetch brand profile from a domain, Brand ID, ISIN, or stock ticker identifier.
+- `get_transaction_info` — Resolve a raw transaction label into the corresponding Brandfetch merchant brand profile.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Brandfetch state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Brandfetch state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Docmosis"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "docmosis"
-  categories: "Productivity, Design & Media"
-  homepage: "https://www.docmosis.com"
+  version: "1.0.1"
+  services: ["docmosis"]
   icon: "https://static.oomol.com/logo/third-party/docmosis.png"
 ---
 
 # Docmosis
 
 Operate **Docmosis** through your OOMOL-connected account. This skill calls the `docmosis` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "docmosis" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_environment_ready`](actions/check_environment_ready.md) — Check whether the selected Docmosis environment is currently ready to service render requests.
-- [`get_environment_summary`](actions/get_environment_summary.md) — Get Docmosis environment plan, quota, and readiness information for the selected processing location.
-- [`get_template_details`](actions/get_template_details.md) — Get the stored metadata for one uploaded Docmosis template without downloading the template file.
-- [`get_template_structure`](actions/get_template_structure.md) — Get the Docmosis template structure tree that describes fields, repeats, conditions, and other data references.
-- [`list_templates`](actions/list_templates.md) — List Docmosis templates available in the selected processing location with optional folder and paging controls.
-- [`render_document`](actions/render_document.md) — Render one Docmosis template with JSON data and return JSON-safe delivery metadata or an explicit base64 result file.
+- `check_environment_ready` — Check whether the selected Docmosis environment is currently ready to service render requests.
+- `get_environment_summary` — Get Docmosis environment plan, quota, and readiness information for the selected processing location.
+- `get_template_details` — Get the stored metadata for one uploaded Docmosis template without downloading the template file.
+- `get_template_structure` — Get the Docmosis template structure tree that describes fields, repeats, conditions, and other data references.
+- `list_templates` — List Docmosis templates available in the selected processing location with optional folder and paging controls.
+- `render_document` — Render one Docmosis template with JSON data and return JSON-safe delivery metadata or an explicit base64 result file.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Docmosis state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Docmosis state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

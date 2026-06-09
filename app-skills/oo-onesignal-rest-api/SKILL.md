@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OneSignal"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "onesignal_rest_api"
-  categories: "Communication, Marketing"
-  homepage: "https://onesignal.com"
+  version: "1.0.1"
+  services: ["onesignal_rest_api"]
   icon: "https://static.oomol.com/logo/third-party/onesignal_rest_api.svg"
 ---
 
 # OneSignal
 
 Operate **OneSignal** through your OOMOL-connected account. This skill calls the `onesignal_rest_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "onesignal_rest_api" --action "<action_name>" --data '<json>' -
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`cancel_message`](actions/cancel_message.md) — Cancel one scheduled OneSignal message by id.
-- [`create_push_notification`](actions/create_push_notification.md) — Create a push notification for the connected OneSignal app using one official targeting method.
-- [`get_message`](actions/get_message.md) — Retrieve one OneSignal message by id from the connected app.
-- [`list_messages`](actions/list_messages.md) — List messages from the connected OneSignal app.
+- `cancel_message` — Cancel one scheduled OneSignal message by id. [write]
+- `create_push_notification` — Create a push notification for the connected OneSignal app using one official targeting method. [write]
+- `get_message` — Retrieve one OneSignal message by id from the connected app.
+- `list_messages` — List messages from the connected OneSignal app.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change OneSignal state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change OneSignal state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -1,22 +1,18 @@
 ---
 name: oo-wiza
-description: "Wiza (wiza.co). Use this skill for ANY Wiza request — searching and reading data. Whenever a task involves Wiza, use this skill instead of calling the API directly."
+description: "Wiza (wiza.co). Use this skill for ANY Wiza request — reading, creating, and updating data. Whenever a task involves Wiza, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Wiza"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "wiza"
-  categories: "Marketing, Data & Analytics"
-  homepage: "https://wiza.co"
+  version: "1.0.1"
+  services: ["wiza"]
   icon: "https://static.oomol.com/logo/third-party/wiza.png"
 ---
 
 # Wiza
 
 Operate **Wiza** through your OOMOL-connected account. This skill calls the `wiza` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "wiza" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_credits`](actions/get_credits.md) — Get the remaining Wiza API credit balances for the connected account, matching the WIZA_GET_CREDITS Composio tool.
-- [`get_individual_reveal`](actions/get_individual_reveal.md) — Get the status and results of a Wiza individual reveal by ID, matching the WIZA_GET_INDIVIDUAL_REVEAL Composio tool.
-- [`get_list`](actions/get_list.md) — Get the status and details of a Wiza list by ID, matching the WIZA_GET_LIST Composio tool.
-- [`prospect_search`](actions/prospect_search.md) — Search Wiza prospects with a filters object, matching the WIZA_PROSPECT_SEARCH Composio tool.
-- [`start_individual_reveal`](actions/start_individual_reveal.md) — Start a Wiza individual reveal for real-time single contact enrichment, matching the WIZA_START_INDIVIDUAL_REVEAL Composio tool.
+- `get_credits` — Get the remaining Wiza API credit balances for the connected account, matching the WIZA_GET_CREDITS Composio tool.
+- `get_individual_reveal` — Get the status and results of a Wiza individual reveal by ID, matching the WIZA_GET_INDIVIDUAL_REVEAL Composio tool.
+- `get_list` — Get the status and details of a Wiza list by ID, matching the WIZA_GET_LIST Composio tool.
+- `prospect_search` — Search Wiza prospects with a filters object, matching the WIZA_PROSPECT_SEARCH Composio tool.
+- `start_individual_reveal` — Start a Wiza individual reveal for real-time single contact enrichment, matching the WIZA_START_INDIVIDUAL_REVEAL Composio tool. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Wiza state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Wiza state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

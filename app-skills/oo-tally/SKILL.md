@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tally"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "tally"
-  categories: "Productivity, Marketing"
-  homepage: "https://tally.so"
+  version: "1.0.1"
+  services: ["tally"]
 ---
 
 # Tally
 
 Operate **Tally** through your OOMOL-connected account. This skill calls the `tally` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Marketing. Exposes 4 action(s).
 
 ## Running an action
 
@@ -36,20 +32,20 @@ oo connector run "tally" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_form`](actions/get_form.md) — Fetch a single Tally form by ID with its blocks and settings.
-- [`get_submission`](actions/get_submission.md) — Fetch a single Tally form submission by ID with its responses and questions.
-- [`list_forms`](actions/list_forms.md) — List Tally forms with optional pagination and workspace filters.
-- [`list_submissions`](actions/list_submissions.md) — List submissions for a Tally form with pagination and documented completion/date filters.
+- `get_form` — Fetch a single Tally form by ID with its blocks and settings.
+- `get_submission` — Fetch a single Tally form submission by ID with its responses and questions.
+- `list_forms` — List Tally forms with optional pagination and workspace filters.
+- `list_submissions` — List submissions for a Tally form with pagination and documented completion/date filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Tally state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Tally state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

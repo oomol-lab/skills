@@ -1,21 +1,17 @@
 ---
 name: oo-goody
-description: "Goody (ongoody.com). Use this skill for ANY Goody request — searching and reading data. Whenever a task involves Goody, use this skill instead of calling the API directly."
+description: "Goody (ongoody.com). Use this skill for ANY Goody request — reading, creating, and updating data. Whenever a task involves Goody, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Goody"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "goody"
-  categories: "Productivity"
-  homepage: "https://www.ongoody.com"
+  version: "1.0.1"
+  services: ["goody"]
 ---
 
 # Goody
 
 Operate **Goody** through your OOMOL-connected account. This skill calls the `goody` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 7 action(s).
 
 ## Running an action
 
@@ -36,23 +32,23 @@ oo connector run "goody" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user`](actions/get_current_user.md) — Retrieve the current Goody API user.
-- [`get_order`](actions/get_order.md) — Retrieve a Goody order by ID.
-- [`get_product`](actions/get_product.md) — Retrieve a Goody product by ID.
-- [`list_orders`](actions/list_orders.md) — List Goody orders, optionally filtered by creation timestamp.
-- [`list_payment_methods`](actions/list_payment_methods.md) — List Goody payment methods available to the current account.
-- [`list_products`](actions/list_products.md) — List active products in the Goody catalog.
-- [`list_workspaces`](actions/list_workspaces.md) — List Goody workspaces available to the current account.
+- `get_current_user` — Retrieve the current Goody API user.
+- `get_order` — Retrieve a Goody order by ID. [write]
+- `get_product` — Retrieve a Goody product by ID.
+- `list_orders` — List Goody orders, optionally filtered by creation timestamp.
+- `list_payment_methods` — List Goody payment methods available to the current account.
+- `list_products` — List active products in the Goody catalog.
+- `list_workspaces` — List Goody workspaces available to the current account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Goody state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Goody state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fireflies"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "fireflies"
-  categories: "AI, Productivity, Communication"
-  homepage: "https://www.fireflies.ai"
+  version: "1.0.1"
+  services: ["fireflies"]
   icon: "https://static.oomol.com/logo/third-party/Fireflies.svg"
 ---
 
 # Fireflies
 
 Operate **Fireflies** through your OOMOL-connected account. This skill calls the `fireflies` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Productivity, Communication. Exposes 22 action(s).
 
 ## Running an action
 
@@ -37,38 +33,38 @@ oo connector run "fireflies" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`continue_askfred_thread`](actions/continue_askfred_thread.md) — Continue a Fireflies AskFred thread with a follow-up question.
-- [`create_askfred_thread`](actions/create_askfred_thread.md) — Create a Fireflies AskFred thread from a meeting question.
-- [`create_bite`](actions/create_bite.md) — Create a Fireflies bite from a transcript time range.
-- [`delete_askfred_thread`](actions/delete_askfred_thread.md) — Delete a Fireflies AskFred thread by thread ID.
-- [`delete_transcript`](actions/delete_transcript.md) — Delete a Fireflies transcript by transcript ID.
-- [`execute_graphql_query`](actions/execute_graphql_query.md) — Execute a raw read-only Fireflies GraphQL query and return the raw response.
-- [`get_askfred_thread`](actions/get_askfred_thread.md) — Get a Fireflies AskFred thread by thread ID.
-- [`get_bite`](actions/get_bite.md) — Get a Fireflies bite by bite ID.
-- [`get_current_user`](actions/get_current_user.md) — Get the authenticated Fireflies user for the current API key.
-- [`get_transcript`](actions/get_transcript.md) — Get a Fireflies transcript by transcript ID.
-- [`get_user`](actions/get_user.md) — Get a Fireflies user by user ID.
-- [`list_ai_app_outputs`](actions/list_ai_app_outputs.md) — List Fireflies AI app outputs for transcripts or app IDs.
-- [`list_askfred_threads`](actions/list_askfred_threads.md) — List Fireflies AskFred conversation threads.
-- [`list_bites`](actions/list_bites.md) — List Fireflies bites using the available bite filters.
-- [`list_channels`](actions/list_channels.md) — List Fireflies channels visible to the current API key.
-- [`list_transcripts`](actions/list_transcripts.md) — List Fireflies transcripts with official filters and include flags.
-- [`list_user_groups`](actions/list_user_groups.md) — List Fireflies user groups visible to the current API key.
-- [`list_users`](actions/list_users.md) — List Fireflies users visible to the current API key.
-- [`set_user_role`](actions/set_user_role.md) — Set a Fireflies user's role to admin or user.
-- [`update_meeting_channel`](actions/update_meeting_channel.md) — Update the Fireflies channel assignments for one or more meetings.
-- [`update_meeting_privacy`](actions/update_meeting_privacy.md) — Update the privacy value for a Fireflies meeting.
-- [`update_meeting_title`](actions/update_meeting_title.md) — Update the title for a Fireflies meeting.
+- `continue_askfred_thread` — Continue a Fireflies AskFred thread with a follow-up question.
+- `create_askfred_thread` — Create a Fireflies AskFred thread from a meeting question. [write]
+- `create_bite` — Create a Fireflies bite from a transcript time range. [write]
+- `delete_askfred_thread` — Delete a Fireflies AskFred thread by thread ID. [destructive]
+- `delete_transcript` — Delete a Fireflies transcript by transcript ID. [destructive]
+- `execute_graphql_query` — Execute a raw read-only Fireflies GraphQL query and return the raw response.
+- `get_askfred_thread` — Get a Fireflies AskFred thread by thread ID.
+- `get_bite` — Get a Fireflies bite by bite ID.
+- `get_current_user` — Get the authenticated Fireflies user for the current API key.
+- `get_transcript` — Get a Fireflies transcript by transcript ID.
+- `get_user` — Get a Fireflies user by user ID.
+- `list_ai_app_outputs` — List Fireflies AI app outputs for transcripts or app IDs.
+- `list_askfred_threads` — List Fireflies AskFred conversation threads.
+- `list_bites` — List Fireflies bites using the available bite filters.
+- `list_channels` — List Fireflies channels visible to the current API key.
+- `list_transcripts` — List Fireflies transcripts with official filters and include flags.
+- `list_user_groups` — List Fireflies user groups visible to the current API key.
+- `list_users` — List Fireflies users visible to the current API key.
+- `set_user_role` — Set a Fireflies user's role to admin or user. [write]
+- `update_meeting_channel` — Update the Fireflies channel assignments for one or more meetings. [write]
+- `update_meeting_privacy` — Update the privacy value for a Fireflies meeting. [write]
+- `update_meeting_title` — Update the title for a Fireflies meeting. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Fireflies state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Fireflies state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

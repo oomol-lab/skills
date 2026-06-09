@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jira"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "jira"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://www.atlassian.com/software/jira"
+  version: "1.0.1"
+  services: ["jira"]
   icon: "https://static.oomol.com/logo/third-party/Jira.svg"
 ---
 
 # Jira
 
 Operate **Jira** through your OOMOL-connected account. This skill calls the `jira` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "jira" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_comment`](actions/add_comment.md) — Add a comment to one Jira issue.
-- [`create_issue`](actions/create_issue.md) — Create a Jira issue and return the normalized issue detail.
-- [`get_issue`](actions/get_issue.md) — Get one Jira issue by issue ID or key.
-- [`get_project`](actions/get_project.md) — Get one Jira project by project ID or key.
-- [`list_issue_comments`](actions/list_issue_comments.md) — List comments for one Jira issue.
-- [`list_projects`](actions/list_projects.md) — List Jira projects available to the connected Jira site.
-- [`search_issues`](actions/search_issues.md) — Search Jira issues with JQL on the connected Jira site.
+- `add_comment` — Add a comment to one Jira issue. [write]
+- `create_issue` — Create a Jira issue and return the normalized issue detail. [write]
+- `get_issue` — Get one Jira issue by issue ID or key.
+- `get_project` — Get one Jira project by project ID or key.
+- `list_issue_comments` — List comments for one Jira issue.
+- `list_projects` — List Jira projects available to the connected Jira site.
+- `search_issues` — Search Jira issues with JQL on the connected Jira site.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Jira state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Jira state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

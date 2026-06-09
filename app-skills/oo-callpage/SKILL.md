@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CallPage"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "callpage"
-  categories: "Communication, Productivity"
-  homepage: "https://www.callpage.io"
+  version: "1.0.1"
+  services: ["callpage"]
   icon: "https://static.oomol.com/logo/third-party/callpage.svg"
 ---
 
 # CallPage
 
 Operate **CallPage** through your OOMOL-connected account. This skill calls the `callpage` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "callpage" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_widget_call`](actions/create_widget_call.md) — Create a CallPage callback request for one widget and phone number.
-- [`get_call`](actions/get_call.md) — Get one CallPage call by identifier.
-- [`get_user`](actions/get_user.md) — Get one CallPage user by identifier or email address.
-- [`get_widget`](actions/get_widget.md) — Get one CallPage widget by identifier.
-- [`list_calls`](actions/list_calls.md) — List CallPage calls with optional filters such as widget, user, status, phone number, and time range.
-- [`list_users`](actions/list_users.md) — List CallPage users with pagination.
-- [`list_widgets`](actions/list_widgets.md) — List CallPage widgets with pagination.
+- `create_widget_call` — Create a CallPage callback request for one widget and phone number. [write]
+- `get_call` — Get one CallPage call by identifier.
+- `get_user` — Get one CallPage user by identifier or email address.
+- `get_widget` — Get one CallPage widget by identifier.
+- `list_calls` — List CallPage calls with optional filters such as widget, user, status, phone number, and time range.
+- `list_users` — List CallPage users with pagination.
+- `list_widgets` — List CallPage widgets with pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change CallPage state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change CallPage state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

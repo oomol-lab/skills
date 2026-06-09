@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Celigo"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "celigo"
-  categories: "Developer Tools"
-  homepage: "https://www.celigo.com"
+  version: "1.0.1"
+  services: ["celigo"]
   icon: "https://static.oomol.com/logo/third-party/Celigo.svg"
 ---
 
 # Celigo
 
 Operate **Celigo** through your OOMOL-connected account. This skill calls the `celigo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "celigo" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_connection`](actions/get_connection.md) — Get one Celigo connection by connection ID.
-- [`get_export`](actions/get_export.md) — Get one Celigo export by export ID.
-- [`get_flow`](actions/get_flow.md) — Get one Celigo flow by flow ID.
-- [`get_import`](actions/get_import.md) — Get one Celigo import by import ID.
-- [`get_token_info`](actions/get_token_info.md) — Get metadata for the current Celigo API token.
-- [`list_exports`](actions/list_exports.md) — List exports available in the current Celigo account.
-- [`list_flows`](actions/list_flows.md) — List flows available in the current Celigo account.
-- [`list_imports`](actions/list_imports.md) — List imports available in the current Celigo account.
+- `get_connection` — Get one Celigo connection by connection ID.
+- `get_export` — Get one Celigo export by export ID.
+- `get_flow` — Get one Celigo flow by flow ID.
+- `get_import` — Get one Celigo import by import ID. [write]
+- `get_token_info` — Get metadata for the current Celigo API token.
+- `list_exports` — List exports available in the current Celigo account.
+- `list_flows` — List flows available in the current Celigo account.
+- `list_imports` — List imports available in the current Celigo account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Celigo state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Celigo state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

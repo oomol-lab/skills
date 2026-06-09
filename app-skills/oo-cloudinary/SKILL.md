@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudinary"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "cloudinary"
-  categories: "Design & Media, Storage"
-  homepage: "https://cloudinary.com"
+  version: "1.0.1"
+  services: ["cloudinary"]
   icon: "https://static.oomol.com/logo/third-party/Cloudinary.svg"
 ---
 
 # Cloudinary
 
 Operate **Cloudinary** through your OOMOL-connected account. This skill calls the `cloudinary` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Storage. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "cloudinary" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_asset`](actions/get_asset.md) — Fetch one Cloudinary asset by immutable asset ID and return the normalized asset record.
-- [`list_assets`](actions/list_assets.md) — List uploaded Cloudinary assets of one resource type with optional prefix filtering and cursor pagination.
-- [`rename_asset`](actions/rename_asset.md) — Rename one uploaded Cloudinary asset by changing its public ID and return the normalized asset record.
-- [`update_asset`](actions/update_asset.md) — Update selected mutable fields of one uploaded Cloudinary asset by public ID using the explicit API.
-- [`upload_asset`](actions/upload_asset.md) — Upload one asset to Cloudinary from a remote URL or Data URI and return the normalized uploaded asset record.
+- `get_asset` — Fetch one Cloudinary asset by immutable asset ID and return the normalized asset record.
+- `list_assets` — List uploaded Cloudinary assets of one resource type with optional prefix filtering and cursor pagination.
+- `rename_asset` — Rename one uploaded Cloudinary asset by changing its public ID and return the normalized asset record. [write]
+- `update_asset` — Update selected mutable fields of one uploaded Cloudinary asset by public ID using the explicit API. [write]
+- `upload_asset` — Upload one asset to Cloudinary from a remote URL or Data URI and return the normalized uploaded asset record. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Cloudinary state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Cloudinary state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

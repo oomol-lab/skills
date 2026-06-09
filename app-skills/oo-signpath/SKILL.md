@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SignPath"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "signpath"
-  categories: "Developer Tools, Security & Identity"
-  homepage: "https://signpath.io/"
+  version: "1.0.1"
+  services: ["signpath"]
   icon: "https://static.oomol.com/logo/third-party/signpath.svg"
 ---
 
 # SignPath
 
 Operate **SignPath** through your OOMOL-connected account. This skill calls the `signpath` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Security & Identity. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "signpath" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`fast_sign_hash`](actions/fast_sign_hash.md) — Submit a fast SignPath hash-signing request using the REST API payload.json contract and return the signature result immediately.
-- [`get_signing_request`](actions/get_signing_request.md) — Get the current status and metadata for a SignPath signing request so callers can poll for completion.
-- [`list_signing_policies`](actions/list_signing_policies.md) — List SignPath signing policies visible to the API token, optionally filtered by project and policy slug.
+- `fast_sign_hash` — Submit a fast SignPath hash-signing request using the REST API payload.json contract and return the signature result immediately.
+- `get_signing_request` — Get the current status and metadata for a SignPath signing request so callers can poll for completion.
+- `list_signing_policies` — List SignPath signing policies visible to the API token, optionally filtered by project and policy slug.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change SignPath state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change SignPath state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

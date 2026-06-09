@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Streamtime"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "streamtime"
-  categories: "Productivity, Finance"
-  homepage: "https://www.streamtime.net"
+  version: "1.0.1"
+  services: ["streamtime"]
   icon: "https://static.oomol.com/logo/third-party/streamtime.svg"
 ---
 
 # Streamtime
 
 Operate **Streamtime** through your OOMOL-connected account. This skill calls the `streamtime` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Finance. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "streamtime" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_company`](actions/create_company.md) — Create a company in Streamtime for the authenticated organisation.
-- [`create_company_contact`](actions/create_company_contact.md) — Create a contact under a Streamtime company.
-- [`create_job`](actions/create_job.md) — Create a Streamtime job linked to a company, rate card, and optional contact.
-- [`get_company`](actions/get_company.md) — Get a Streamtime company by ID.
-- [`get_contact`](actions/get_contact.md) — Get a Streamtime contact by ID.
-- [`get_job`](actions/get_job.md) — Get a Streamtime job by ID.
-- [`get_organisation`](actions/get_organisation.md) — Get the authenticated Streamtime organisation details.
-- [`list_branches`](actions/list_branches.md) — List the Streamtime branches available to the authenticated organisation.
-- [`list_company_contacts`](actions/list_company_contacts.md) — List the contacts that belong to a Streamtime company.
-- [`list_rate_cards`](actions/list_rate_cards.md) — List the Streamtime rate cards available to the authenticated organisation.
-- [`list_users`](actions/list_users.md) — List the Streamtime users available to the authenticated organisation.
-- [`update_company`](actions/update_company.md) — Update a Streamtime company by ID.
-- [`update_contact`](actions/update_contact.md) — Update a Streamtime contact by ID.
-- [`update_job`](actions/update_job.md) — Update a Streamtime job by ID.
+- `create_company` — Create a company in Streamtime for the authenticated organisation. [write]
+- `create_company_contact` — Create a contact under a Streamtime company. [write]
+- `create_job` — Create a Streamtime job linked to a company, rate card, and optional contact. [write]
+- `get_company` — Get a Streamtime company by ID.
+- `get_contact` — Get a Streamtime contact by ID.
+- `get_job` — Get a Streamtime job by ID.
+- `get_organisation` — Get the authenticated Streamtime organisation details.
+- `list_branches` — List the Streamtime branches available to the authenticated organisation.
+- `list_company_contacts` — List the contacts that belong to a Streamtime company.
+- `list_rate_cards` — List the Streamtime rate cards available to the authenticated organisation.
+- `list_users` — List the Streamtime users available to the authenticated organisation.
+- `update_company` — Update a Streamtime company by ID. [write]
+- `update_contact` — Update a Streamtime contact by ID. [write]
+- `update_job` — Update a Streamtime job by ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Streamtime state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Streamtime state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

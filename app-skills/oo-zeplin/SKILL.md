@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zeplin"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "zeplin"
-  categories: "Design & Media, Productivity"
-  homepage: "https://zeplin.io"
+  version: "1.0.1"
+  services: ["zeplin"]
   icon: "https://static.oomol.com/logo/third-party/zeplin.svg"
 ---
 
 # Zeplin
 
 Operate **Zeplin** through your OOMOL-connected account. This skill calls the `zeplin` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Productivity. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "zeplin" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user`](actions/get_current_user.md) — Get the current authenticated Zeplin user profile.
-- [`get_project`](actions/get_project.md) — Get a Zeplin project by project ID.
-- [`list_personal_projects`](actions/list_personal_projects.md) — List projects in the current user's Zeplin personal workspace.
-- [`list_project_colors`](actions/list_project_colors.md) — List color tokens defined for a Zeplin project.
-- [`list_project_text_styles`](actions/list_project_text_styles.md) — List text styles defined for a Zeplin project.
-- [`list_screen_versions`](actions/list_screen_versions.md) — List versions of a Zeplin screen. Unlike the upstream toolkit, this action requires both projectId and screenId to match the official endpoint.
+- `get_current_user` — Get the current authenticated Zeplin user profile.
+- `get_project` — Get a Zeplin project by project ID.
+- `list_personal_projects` — List projects in the current user's Zeplin personal workspace.
+- `list_project_colors` — List color tokens defined for a Zeplin project.
+- `list_project_text_styles` — List text styles defined for a Zeplin project.
+- `list_screen_versions` — List versions of a Zeplin screen. Unlike the upstream toolkit, this action requires both projectId and screenId to match the official endpoint.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Zeplin state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Zeplin state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

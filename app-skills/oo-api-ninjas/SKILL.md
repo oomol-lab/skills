@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "API Ninjas"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "api_ninjas"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://api-ninjas.com"
+  version: "1.0.1"
+  services: ["api_ninjas"]
   icon: "https://static.oomol.com/logo/third-party/API%20Ninjas.svg"
 ---
 
 # API Ninjas
 
 Operate **API Ninjas** through your OOMOL-connected account. This skill calls the `api_ninjas` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "api_ninjas" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`air_quality`](actions/air_quality.md) — Fetch current air quality metrics for coordinates or a city-based lookup.
-- [`geocode`](actions/geocode.md) — Convert a city name into geographic coordinates and country information.
-- [`reverse_geocode`](actions/reverse_geocode.md) — Resolve latitude and longitude coordinates into place metadata.
-- [`timezone`](actions/timezone.md) — Fetch timezone metadata by timezone name or premium location lookup fields.
-- [`weather`](actions/weather.md) — Fetch the current weather conditions for a set of coordinates.
-- [`weather_forecast`](actions/weather_forecast.md) — Fetch forecast weather readings for a set of coordinates.
+- `air_quality` — Fetch current air quality metrics for coordinates or a city-based lookup.
+- `geocode` — Convert a city name into geographic coordinates and country information.
+- `reverse_geocode` — Resolve latitude and longitude coordinates into place metadata.
+- `timezone` — Fetch timezone metadata by timezone name or premium location lookup fields.
+- `weather` — Fetch the current weather conditions for a set of coordinates.
+- `weather_forecast` — Fetch forecast weather readings for a set of coordinates.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change API Ninjas state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change API Ninjas state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

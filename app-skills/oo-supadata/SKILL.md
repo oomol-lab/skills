@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Supadata"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "supadata"
-  categories: "AI, Data & Analytics"
-  homepage: "https://supadata.ai/"
+  version: "1.0.1"
+  services: ["supadata"]
 ---
 
 # Supadata
 
 Operate **Supadata** through your OOMOL-connected account. This skill calls the `supadata` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics. Exposes 10 action(s).
 
 ## Running an action
 
@@ -36,26 +32,26 @@ oo connector run "supadata" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_account`](actions/get_account.md) — Retrieve Supadata organization, plan, and credit usage details.
-- [`get_youtube_channel`](actions/get_youtube_channel.md) — Get metadata for a YouTube channel by URL, handle, or ID.
-- [`get_youtube_playlist`](actions/get_youtube_playlist.md) — Get metadata for a YouTube playlist by URL or ID.
-- [`get_youtube_transcript`](actions/get_youtube_transcript.md) — Get a YouTube transcript by video URL or ID.
-- [`get_youtube_video`](actions/get_youtube_video.md) — Get metadata for a YouTube video by URL or ID.
-- [`list_youtube_channel_videos`](actions/list_youtube_channel_videos.md) — List video IDs from a YouTube channel.
-- [`list_youtube_playlist_videos`](actions/list_youtube_playlist_videos.md) — List video IDs from a YouTube playlist.
-- [`map_web_links`](actions/map_web_links.md) — Extract links found on a website.
-- [`scrape_web_page`](actions/scrape_web_page.md) — Extract Markdown content from a web page.
-- [`search_youtube`](actions/search_youtube.md) — Search YouTube videos, channels, and playlists through Supadata.
+- `get_account` — Retrieve Supadata organization, plan, and credit usage details.
+- `get_youtube_channel` — Get metadata for a YouTube channel by URL, handle, or ID.
+- `get_youtube_playlist` — Get metadata for a YouTube playlist by URL or ID.
+- `get_youtube_transcript` — Get a YouTube transcript by video URL or ID.
+- `get_youtube_video` — Get metadata for a YouTube video by URL or ID.
+- `list_youtube_channel_videos` — List video IDs from a YouTube channel.
+- `list_youtube_playlist_videos` — List video IDs from a YouTube playlist.
+- `map_web_links` — Extract links found on a website.
+- `scrape_web_page` — Extract Markdown content from a web page.
+- `search_youtube` — Search YouTube videos, channels, and playlists through Supadata.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Supadata state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Supadata state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "API2PDF"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "api2pdf"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://www.api2pdf.com"
+  version: "1.0.1"
+  services: ["api2pdf"]
   icon: "https://static.oomol.com/logo/third-party/api2pdf.jpg"
 ---
 
 # API2PDF
 
 Operate **API2PDF** through your OOMOL-connected account. This skill calls the `api2pdf` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 1 action(s).
 
 ## Running an action
 
@@ -37,17 +33,17 @@ oo connector run "api2pdf" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`markdown_to_pdf`](actions/markdown_to_pdf.md) — Convert raw Markdown to PDF with API2PDF and return the generated PDF URL plus conversion metadata.
+- `markdown_to_pdf` — Convert raw Markdown to PDF with API2PDF and return the generated PDF URL plus conversion metadata.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change API2PDF state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change API2PDF state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

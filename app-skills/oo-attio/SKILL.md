@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Attio"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "attio"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://attio.com"
+  version: "1.0.1"
+  services: ["attio"]
 ---
 
 # Attio
 
 Operate **Attio** through your OOMOL-connected account. This skill calls the `attio` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 10 action(s).
 
 ## Running an action
 
@@ -36,26 +32,26 @@ oo connector run "attio" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_record`](actions/create_record.md) — Create a record for an Attio object using documented attribute value shapes.
-- [`delete_record`](actions/delete_record.md) — Delete a single Attio record by object and record ID.
-- [`get_object`](actions/get_object.md) — Get one Attio object by object ID or API slug.
-- [`get_record`](actions/get_record.md) — Get a single Attio record by object and record ID.
-- [`identify`](actions/identify.md) — Identify the current Attio access token, its workspace, and the scopes attached to it.
-- [`list_attributes`](actions/list_attributes.md) — List attributes defined on an Attio object or list.
-- [`list_objects`](actions/list_objects.md) — List all system-defined and user-defined objects in an Attio workspace.
-- [`list_records`](actions/list_records.md) — List Attio records for an object with optional filtering, view filtering, sorting, limit, and offset.
-- [`update_record`](actions/update_record.md) — Update an Attio record by appending or overwriting multiselect values according to Attio's PATCH and PUT semantics.
-- [`upsert_record`](actions/upsert_record.md) — Create or update an Attio record for an object using a unique matching attribute.
+- `create_record` — Create a record for an Attio object using documented attribute value shapes. [write]
+- `delete_record` — Delete a single Attio record by object and record ID. [destructive]
+- `get_object` — Get one Attio object by object ID or API slug.
+- `get_record` — Get a single Attio record by object and record ID.
+- `identify` — Identify the current Attio access token, its workspace, and the scopes attached to it.
+- `list_attributes` — List attributes defined on an Attio object or list.
+- `list_objects` — List all system-defined and user-defined objects in an Attio workspace.
+- `list_records` — List Attio records for an object with optional filtering, view filtering, sorting, limit, and offset.
+- `update_record` — Update an Attio record by appending or overwriting multiselect values according to Attio's PATCH and PUT semantics. [write]
+- `upsert_record` — Create or update an Attio record for an object using a unique matching attribute. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Attio state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Attio state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Semantic Scholar"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "semantic_scholar"
-  categories: "AI, Data & Analytics"
-  homepage: "https://www.semanticscholar.org/"
+  version: "1.0.1"
+  services: ["semantic_scholar"]
   icon: "https://static.oomol.com/logo/third-party/semantic_scholar.svg"
 ---
 
 # Semantic Scholar
 
 Operate **Semantic Scholar** through your OOMOL-connected account. This skill calls the `semantic_scholar` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics. Exposes 16 action(s).
 
 ## Running an action
 
@@ -37,32 +33,32 @@ oo connector run "semantic_scholar" --action "<action_name>" --data '<json>' --j
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`autocomplete_papers`](actions/autocomplete_papers.md) — Suggest Semantic Scholar paper query completions.
-- [`bulk_search_papers`](actions/bulk_search_papers.md) — Bulk-search Semantic Scholar papers and page through large result sets with tokens.
-- [`get_author`](actions/get_author.md) — Get details for a Semantic Scholar author.
-- [`get_author_papers`](actions/get_author_papers.md) — List papers written by a Semantic Scholar author.
-- [`get_authors`](actions/get_authors.md) — Get details for multiple Semantic Scholar authors at once.
-- [`get_paper`](actions/get_paper.md) — Get details for a Semantic Scholar paper by paper ID or external identifier.
-- [`get_paper_authors`](actions/get_paper_authors.md) — List authors for a Semantic Scholar paper.
-- [`get_paper_citations`](actions/get_paper_citations.md) — List papers that cite a Semantic Scholar paper.
-- [`get_paper_references`](actions/get_paper_references.md) — List papers referenced by a Semantic Scholar paper.
-- [`get_papers`](actions/get_papers.md) — Get details for multiple Semantic Scholar papers at once.
-- [`match_paper_title`](actions/match_paper_title.md) — Find the best Semantic Scholar paper match for a paper title.
-- [`recommend_for_paper`](actions/recommend_for_paper.md) — Get recommended Semantic Scholar papers for one positive example paper.
-- [`recommend_papers`](actions/recommend_papers.md) — Get recommended Semantic Scholar papers from positive and optional negative examples.
-- [`search_authors`](actions/search_authors.md) — Search Semantic Scholar authors by name.
-- [`search_papers`](actions/search_papers.md) — Search Semantic Scholar papers by relevance with optional publication filters.
-- [`search_snippets`](actions/search_snippets.md) — Search text snippets in Semantic Scholar papers.
+- `autocomplete_papers` — Suggest Semantic Scholar paper query completions.
+- `bulk_search_papers` — Bulk-search Semantic Scholar papers and page through large result sets with tokens.
+- `get_author` — Get details for a Semantic Scholar author.
+- `get_author_papers` — List papers written by a Semantic Scholar author.
+- `get_authors` — Get details for multiple Semantic Scholar authors at once.
+- `get_paper` — Get details for a Semantic Scholar paper by paper ID or external identifier.
+- `get_paper_authors` — List authors for a Semantic Scholar paper.
+- `get_paper_citations` — List papers that cite a Semantic Scholar paper.
+- `get_paper_references` — List papers referenced by a Semantic Scholar paper.
+- `get_papers` — Get details for multiple Semantic Scholar papers at once.
+- `match_paper_title` — Find the best Semantic Scholar paper match for a paper title.
+- `recommend_for_paper` — Get recommended Semantic Scholar papers for one positive example paper.
+- `recommend_papers` — Get recommended Semantic Scholar papers from positive and optional negative examples.
+- `search_authors` — Search Semantic Scholar authors by name.
+- `search_papers` — Search Semantic Scholar papers by relevance with optional publication filters.
+- `search_snippets` — Search text snippets in Semantic Scholar papers.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Semantic Scholar state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Semantic Scholar state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

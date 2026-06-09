@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "EmailListVerify"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "emaillistverify"
-  categories: "Communication, Marketing"
-  homepage: "https://emaillistverify.com/"
+  version: "1.0.1"
+  services: ["emaillistverify"]
   icon: "https://static.oomol.com/logo/third-party/Emaillistverify.svg"
 ---
 
 # EmailListVerify
 
 Operate **EmailListVerify** through your OOMOL-connected account. This skill calls the `emaillistverify` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "emaillistverify" --action "<action_name>" --data '<json>' --js
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_disposable`](actions/check_disposable.md) — Check whether one email domain is disposable with EmailListVerify.
-- [`delete_email_list`](actions/delete_email_list.md) — Delete one finished EmailListVerify email list.
-- [`download_email_list`](actions/download_email_list.md) — Download one finished EmailListVerify email list as base64 content.
-- [`get_credits`](actions/get_credits.md) — Retrieve the available EmailListVerify on-demand and subscription credits.
-- [`get_email_list_progress`](actions/get_email_list_progress.md) — Get the current progress of one uploaded EmailListVerify email list.
-- [`upload_email_list`](actions/upload_email_list.md) — Upload one email list file to EmailListVerify for batch verification.
-- [`verify_email`](actions/verify_email.md) — Verify a single email address with EmailListVerify's real-time API.
-- [`verify_email_detailed`](actions/verify_email_detailed.md) — Verify and enrich a single email address with EmailListVerify's detailed API.
+- `check_disposable` — Check whether one email domain is disposable with EmailListVerify.
+- `delete_email_list` — Delete one finished EmailListVerify email list. [destructive]
+- `download_email_list` — Download one finished EmailListVerify email list as base64 content.
+- `get_credits` — Retrieve the available EmailListVerify on-demand and subscription credits.
+- `get_email_list_progress` — Get the current progress of one uploaded EmailListVerify email list.
+- `upload_email_list` — Upload one email list file to EmailListVerify for batch verification. [write]
+- `verify_email` — Verify a single email address with EmailListVerify's real-time API.
+- `verify_email_detailed` — Verify and enrich a single email address with EmailListVerify's detailed API.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change EmailListVerify state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change EmailListVerify state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Interzoid"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "interzoid"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://www.interzoid.com/"
+  version: "1.0.1"
+  services: ["interzoid"]
   icon: "https://static.oomol.com/logo/third-party/interzoid.svg"
 ---
 
 # Interzoid
 
 Operate **Interzoid** through your OOMOL-connected account. This skill calls the `interzoid` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "interzoid" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_company_match_key`](actions/get_company_match_key.md) — Generate an Interzoid similarity key for a company or organization name.
-- [`get_email_info`](actions/get_email_info.md) — Validate and enrich an email address with Interzoid.
-- [`get_full_name_match_key`](actions/get_full_name_match_key.md) — Generate an Interzoid similarity key for a person's full name.
-- [`get_full_name_match_score`](actions/get_full_name_match_score.md) — Score how closely two full names match according to Interzoid.
-- [`get_ip_profile`](actions/get_ip_profile.md) — Retrieve Interzoid profile and reputation information for an IP address.
-- [`get_remaining_credits`](actions/get_remaining_credits.md) — Return the remaining credits for the connected Interzoid API license key.
-- [`standardize_organization_name`](actions/standardize_organization_name.md) — Standardize an organization name using Interzoid.
+- `get_company_match_key` — Generate an Interzoid similarity key for a company or organization name.
+- `get_email_info` — Validate and enrich an email address with Interzoid.
+- `get_full_name_match_key` — Generate an Interzoid similarity key for a person's full name.
+- `get_full_name_match_score` — Score how closely two full names match according to Interzoid.
+- `get_ip_profile` — Retrieve Interzoid profile and reputation information for an IP address.
+- `get_remaining_credits` — Return the remaining credits for the connected Interzoid API license key.
+- `standardize_organization_name` — Standardize an organization name using Interzoid.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Interzoid state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Interzoid state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

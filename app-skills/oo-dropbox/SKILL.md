@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dropbox"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "dropbox"
-  categories: "Storage, Productivity"
-  homepage: "https://www.dropbox.com"
+  version: "1.0.1"
+  services: ["dropbox"]
   icon: "https://static.oomol.com/logo/third-party/Dropbox.svg"
 ---
 
 # Dropbox
 
 Operate **Dropbox** through your OOMOL-connected account. This skill calls the `dropbox` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Storage, Productivity. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "dropbox" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`copy`](actions/copy.md) — Copy one file or folder to another Dropbox path.
-- [`create_folder`](actions/create_folder.md) — Create one folder in Dropbox.
-- [`create_shared_link`](actions/create_shared_link.md) — Create one Dropbox shared link with optional custom settings.
-- [`delete`](actions/delete.md) — Delete one file or folder from Dropbox.
-- [`download_file`](actions/download_file.md) — Download one Dropbox file and upload it to transit storage.
-- [`get_current_account`](actions/get_current_account.md) — Get basic profile information for the current Dropbox account.
-- [`get_metadata`](actions/get_metadata.md) — Get Dropbox metadata for one file or folder.
-- [`list_folder`](actions/list_folder.md) — List files and folders inside one Dropbox folder.
-- [`list_folder_continue`](actions/list_folder_continue.md) — Continue a previous Dropbox folder listing with a cursor.
-- [`list_shared_links`](actions/list_shared_links.md) — List Dropbox shared links for the current user or a specific path.
-- [`move`](actions/move.md) — Move one file or folder to another Dropbox path.
-- [`upload_file`](actions/upload_file.md) — Upload one file to Dropbox from inline text or base64 content.
+- `copy` — Copy one file or folder to another Dropbox path. [write]
+- `create_folder` — Create one folder in Dropbox. [write]
+- `create_shared_link` — Create one Dropbox shared link with optional custom settings. [write]
+- `delete` — Delete one file or folder from Dropbox. [destructive]
+- `download_file` — Download one Dropbox file and upload it to transit storage.
+- `get_current_account` — Get basic profile information for the current Dropbox account.
+- `get_metadata` — Get Dropbox metadata for one file or folder.
+- `list_folder` — List files and folders inside one Dropbox folder.
+- `list_folder_continue` — Continue a previous Dropbox folder listing with a cursor.
+- `list_shared_links` — List Dropbox shared links for the current user or a specific path.
+- `move` — Move one file or folder to another Dropbox path. [write]
+- `upload_file` — Upload one file to Dropbox from inline text or base64 content. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Dropbox state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Dropbox state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

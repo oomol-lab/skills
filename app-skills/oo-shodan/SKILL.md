@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shodan"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "shodan"
-  categories: "Security & Identity, Data & Analytics"
-  homepage: "https://www.shodan.io"
+  version: "1.0.1"
+  services: ["shodan"]
   icon: "https://static.oomol.com/logo/third-party/shodan.png"
 ---
 
 # Shodan
 
 Operate **Shodan** through your OOMOL-connected account. This skill calls the `shodan` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "shodan" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`count_search_results`](actions/count_search_results.md) — Count Shodan hosts matching a query and optionally return facet aggregations.
-- [`get_api_info`](actions/get_api_info.md) — Get API account information and remaining credits from Shodan.
-- [`get_domain_info`](actions/get_domain_info.md) — Get DNS domain information and known subdomains from Shodan.
-- [`get_host`](actions/get_host.md) — Get Shodan host details for one IP address.
-- [`resolve_hostnames`](actions/resolve_hostnames.md) — Resolve hostnames to IP addresses with the Shodan DNS resolve endpoint.
-- [`reverse_dns_lookup`](actions/reverse_dns_lookup.md) — Reverse-resolve IP addresses to hostnames with the Shodan DNS reverse endpoint.
-- [`search_hosts`](actions/search_hosts.md) — Search Shodan hosts with a query string and optional facet aggregation.
+- `count_search_results` — Count Shodan hosts matching a query and optionally return facet aggregations.
+- `get_api_info` — Get API account information and remaining credits from Shodan.
+- `get_domain_info` — Get DNS domain information and known subdomains from Shodan.
+- `get_host` — Get Shodan host details for one IP address.
+- `resolve_hostnames` — Resolve hostnames to IP addresses with the Shodan DNS resolve endpoint.
+- `reverse_dns_lookup` — Reverse-resolve IP addresses to hostnames with the Shodan DNS reverse endpoint.
+- `search_hosts` — Search Shodan hosts with a query string and optional facet aggregation.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Shodan state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Shodan state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

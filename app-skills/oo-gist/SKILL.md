@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gist"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gist"
-  categories: "Developer Tools"
-  homepage: "https://gist.github.com"
+  version: "1.0.1"
+  services: ["gist"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
 
 # Gist
 
 Operate **Gist** through your OOMOL-connected account. This skill calls the `gist` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 20 action(s).
 
 ## Running an action
 
@@ -37,36 +33,36 @@ oo connector run "gist" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_gist_starred`](actions/check_gist_starred.md) — Check whether the authenticated GitHub user has starred a gist.
-- [`create_gist`](actions/create_gist.md) — Create a new GitHub gist.
-- [`create_gist_comment`](actions/create_gist_comment.md) — Create a comment on a GitHub gist.
-- [`delete_gist`](actions/delete_gist.md) — Delete a GitHub gist.
-- [`delete_gist_comment`](actions/delete_gist_comment.md) — Delete a GitHub gist comment.
-- [`fork_gist`](actions/fork_gist.md) — Fork a GitHub gist.
-- [`get_gist`](actions/get_gist.md) — Get a GitHub gist by id.
-- [`get_gist_comment`](actions/get_gist_comment.md) — Get a GitHub gist comment by id.
-- [`get_gist_revision`](actions/get_gist_revision.md) — Get a specific revision of a GitHub gist.
-- [`list_gist_comments`](actions/list_gist_comments.md) — List comments for a GitHub gist.
-- [`list_gist_commits`](actions/list_gist_commits.md) — List commit history for a GitHub gist.
-- [`list_gist_forks`](actions/list_gist_forks.md) — List forks for a GitHub gist.
-- [`list_my_gists`](actions/list_my_gists.md) — List gists visible to the authenticated GitHub user.
-- [`list_public_gists`](actions/list_public_gists.md) — List recent public GitHub gists.
-- [`list_starred_gists`](actions/list_starred_gists.md) — List gists starred by the authenticated GitHub user.
-- [`list_user_gists`](actions/list_user_gists.md) — List public gists for a GitHub user.
-- [`star_gist`](actions/star_gist.md) — Star a GitHub gist.
-- [`unstar_gist`](actions/unstar_gist.md) — Unstar a GitHub gist.
-- [`update_gist`](actions/update_gist.md) — Update a GitHub gist description or files.
-- [`update_gist_comment`](actions/update_gist_comment.md) — Update a GitHub gist comment.
+- `check_gist_starred` — Check whether the authenticated GitHub user has starred a gist.
+- `create_gist` — Create a new GitHub gist. [write]
+- `create_gist_comment` — Create a comment on a GitHub gist. [write]
+- `delete_gist` — Delete a GitHub gist. [destructive]
+- `delete_gist_comment` — Delete a GitHub gist comment. [destructive]
+- `fork_gist` — Fork a GitHub gist.
+- `get_gist` — Get a GitHub gist by id.
+- `get_gist_comment` — Get a GitHub gist comment by id. [write]
+- `get_gist_revision` — Get a specific revision of a GitHub gist.
+- `list_gist_comments` — List comments for a GitHub gist.
+- `list_gist_commits` — List commit history for a GitHub gist.
+- `list_gist_forks` — List forks for a GitHub gist.
+- `list_my_gists` — List gists visible to the authenticated GitHub user.
+- `list_public_gists` — List recent public GitHub gists.
+- `list_starred_gists` — List gists starred by the authenticated GitHub user.
+- `list_user_gists` — List public gists for a GitHub user.
+- `star_gist` — Star a GitHub gist. [write]
+- `unstar_gist` — Unstar a GitHub gist. [write]
+- `update_gist` — Update a GitHub gist description or files. [write]
+- `update_gist_comment` — Update a GitHub gist comment. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Gist state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Gist state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bark"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "bark"
-  categories: "Communication"
-  homepage: "https://bark.day.app"
+  version: "1.0.1"
+  services: ["bark"]
   icon: "https://static.oomol.com/logo/third-party/bark.png"
 ---
 
 # Bark
 
 Operate **Bark** through your OOMOL-connected account. This skill calls the `bark` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "bark" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_server_info`](actions/get_server_info.md) — Fetch raw server information from the connected Bark server.
-- [`send_batch_notifications`](actions/send_batch_notifications.md) — Send the same notification to multiple explicit Bark device keys through the REST push endpoint.
-- [`send_encrypted_notification`](actions/send_encrypted_notification.md) — Send a pre-encrypted Bark notification ciphertext to the connected Bark device.
-- [`send_notification`](actions/send_notification.md) — Send a notification to the connected Bark device through the REST push endpoint.
+- `get_server_info` — Fetch raw server information from the connected Bark server.
+- `send_batch_notifications` — Send the same notification to multiple explicit Bark device keys through the REST push endpoint. [write]
+- `send_encrypted_notification` — Send a pre-encrypted Bark notification ciphertext to the connected Bark device. [write]
+- `send_notification` — Send a notification to the connected Bark device through the REST push endpoint. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Bark state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Bark state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

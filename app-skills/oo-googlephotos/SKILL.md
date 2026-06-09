@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Photos"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "googlephotos"
-  categories: "Storage, Design & Media"
-  homepage: "https://www.google.com/photos/about/"
+  version: "1.0.1"
+  services: ["googlephotos"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Photos.svg"
 ---
 
 # Google Photos
 
 Operate **Google Photos** through your OOMOL-connected account. This skill calls the `googlephotos` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Storage, Design & Media. Exposes 18 action(s).
 
 ## Running an action
 
@@ -37,34 +33,34 @@ oo connector run "googlephotos" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_enrichment`](actions/add_enrichment.md) — Add an enrichment item to a Google Photos album.
-- [`batch_add_media_items`](actions/batch_add_media_items.md) — Add existing Google Photos media items to an album.
-- [`batch_create_media_items`](actions/batch_create_media_items.md) — Batch create Google Photos media items from URLs or base64 payloads.
-- [`batch_get_media_items`](actions/batch_get_media_items.md) — Fetch multiple Google Photos media items by ID.
-- [`create_album`](actions/create_album.md) — Create a Google Photos album.
-- [`create_picker_session`](actions/create_picker_session.md) — Create a Google Photos Picker session for selecting items from the user's library.
-- [`delete_picker_session`](actions/delete_picker_session.md) — Delete a Google Photos Picker session.
-- [`get_album`](actions/get_album.md) — Fetch one Google Photos album by ID.
-- [`get_media_item_download`](actions/get_media_item_download.md) — Download a Google Photos Library API media item created by this application through connector file transit.
-- [`get_picked_media_item_download`](actions/get_picked_media_item_download.md) — Download a picked Google Photos media item through connector file transit using its trusted temporary base URL.
-- [`get_picker_session`](actions/get_picker_session.md) — Get the current state of a Google Photos Picker session.
-- [`list_albums`](actions/list_albums.md) — List Google Photos albums visible to the current application connection. If you need the user to choose from their existing Google Photos library, use the Picker actions instead.
-- [`list_media_items`](actions/list_media_items.md) — List Google Photos Library API media items created by this application.
-- [`list_picked_media_items`](actions/list_picked_media_items.md) — List media items selected from the user's Google Photos library in a picker session.
-- [`search_media_items`](actions/search_media_items.md) — Search Google Photos Library API media items created by this application.
-- [`update_album`](actions/update_album.md) — Update a Google Photos album title or cover photo.
-- [`update_media_item`](actions/update_media_item.md) — Update a Google Photos media item description.
-- [`upload_media`](actions/upload_media.md) — Upload one media item into Google Photos from a URL or base64 payload.
+- `add_enrichment` — Add an enrichment item to a Google Photos album. [write]
+- `batch_add_media_items` — Add existing Google Photos media items to an album. [write]
+- `batch_create_media_items` — Batch create Google Photos media items from URLs or base64 payloads. [write]
+- `batch_get_media_items` — Fetch multiple Google Photos media items by ID.
+- `create_album` — Create a Google Photos album. [write]
+- `create_picker_session` — Create a Google Photos Picker session for selecting items from the user's library. [write]
+- `delete_picker_session` — Delete a Google Photos Picker session. [destructive]
+- `get_album` — Fetch one Google Photos album by ID.
+- `get_media_item_download` — Download a Google Photos Library API media item created by this application through connector file transit.
+- `get_picked_media_item_download` — Download a picked Google Photos media item through connector file transit using its trusted temporary base URL.
+- `get_picker_session` — Get the current state of a Google Photos Picker session.
+- `list_albums` — List Google Photos albums visible to the current application connection. If you need the user to choose from their existing Google Photos library, use the Picker actions instead.
+- `list_media_items` — List Google Photos Library API media items created by this application.
+- `list_picked_media_items` — List media items selected from the user's Google Photos library in a picker session.
+- `search_media_items` — Search Google Photos Library API media items created by this application.
+- `update_album` — Update a Google Photos album title or cover photo. [write]
+- `update_media_item` — Update a Google Photos media item description. [write]
+- `upload_media` — Upload one media item into Google Photos from a URL or base64 payload. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Google Photos state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Google Photos state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "U301"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "u301"
-  categories: "Marketing, Productivity"
-  homepage: "https://u301.com"
+  version: "1.0.1"
+  services: ["u301"]
   icon: "https://static.oomol.com/logo/third-party/u301.svg"
 ---
 
 # U301
 
 Operate **U301** through your OOMOL-connected account. This skill calls the `u301` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Productivity. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "u301" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_link`](actions/delete_link.md) — Delete one U301 short link by its domain/slug identifier.
-- [`list_domains`](actions/list_domains.md) — List the U301 short-link domains available in the connected workspace.
-- [`shorten_link`](actions/shorten_link.md) — Create one U301 short link for a destination URL.
+- `delete_link` — Delete one U301 short link by its domain/slug identifier. [destructive]
+- `list_domains` — List the U301 short-link domains available in the connected workspace.
+- `shorten_link` — Create one U301 short link for a destination URL.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change U301 state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change U301 state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Foursquare"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "foursquare"
-  categories: "Maps & Location, Data & Analytics"
-  homepage: "https://foursquare.com"
+  version: "1.0.1"
+  services: ["foursquare"]
   icon: "https://static.oomol.com/logo/third-party/Foursquare.svg"
 ---
 
 # Foursquare
 
 Operate **Foursquare** through your OOMOL-connected account. This skill calls the `foursquare` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "foursquare" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_nearby_places`](actions/get_nearby_places.md) — Retrieve nearby places around a latitude and longitude with Foursquare.
-- [`get_place`](actions/get_place.md) — Retrieve one place by Foursquare place ID.
-- [`get_place_photos`](actions/get_place_photos.md) — Retrieve photos for one Foursquare place.
-- [`get_place_tips`](actions/get_place_tips.md) — Retrieve tips for one Foursquare place.
-- [`search_places`](actions/search_places.md) — Search for places with the Foursquare Places Search endpoint.
+- `get_nearby_places` — Retrieve nearby places around a latitude and longitude with Foursquare.
+- `get_place` — Retrieve one place by Foursquare place ID.
+- `get_place_photos` — Retrieve photos for one Foursquare place.
+- `get_place_tips` — Retrieve tips for one Foursquare place.
+- `search_places` — Search for places with the Foursquare Places Search endpoint.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Foursquare state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Foursquare state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "timelink"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "timelink"
-  categories: "Productivity"
-  homepage: "https://timelink.io"
+  version: "1.0.1"
+  services: ["timelink"]
   icon: "https://static.oomol.com/logo/third-party/timelink.svg"
 ---
 
 # timelink
 
 Operate **timelink** through your OOMOL-connected account. This skill calls the `timelink` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "timelink" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_client`](actions/get_client.md) — Fetch one Timelink client by its identifier.
-- [`get_company`](actions/get_company.md) — Fetch the current Timelink company details for the authenticated token.
-- [`get_current_token`](actions/get_current_token.md) — Inspect the current Timelink API token metadata.
-- [`get_project`](actions/get_project.md) — Fetch one Timelink project by its identifier.
-- [`get_service`](actions/get_service.md) — Fetch one Timelink service by its identifier.
-- [`get_time_entry`](actions/get_time_entry.md) — Fetch one Timelink time entry by its identifier.
-- [`get_user`](actions/get_user.md) — Fetch one Timelink user by its identifier.
-- [`list_active_time_entries`](actions/list_active_time_entries.md) — List currently active Timelink time entries.
-- [`list_clients`](actions/list_clients.md) — List Timelink clients with optional filtering and pagination parameters.
-- [`list_projects`](actions/list_projects.md) — List Timelink projects with optional filtering and pagination parameters.
-- [`list_services`](actions/list_services.md) — List Timelink services with optional filtering and pagination parameters.
-- [`list_time_entries`](actions/list_time_entries.md) — List Timelink time entries with optional filtering and pagination parameters.
-- [`list_time_entry_required_fields`](actions/list_time_entry_required_fields.md) — List the Timelink field names that are required for time entries.
-- [`list_users`](actions/list_users.md) — List Timelink users with optional filtering and pagination parameters.
+- `get_client` — Fetch one Timelink client by its identifier.
+- `get_company` — Fetch the current Timelink company details for the authenticated token.
+- `get_current_token` — Inspect the current Timelink API token metadata.
+- `get_project` — Fetch one Timelink project by its identifier.
+- `get_service` — Fetch one Timelink service by its identifier.
+- `get_time_entry` — Fetch one Timelink time entry by its identifier.
+- `get_user` — Fetch one Timelink user by its identifier.
+- `list_active_time_entries` — List currently active Timelink time entries.
+- `list_clients` — List Timelink clients with optional filtering and pagination parameters.
+- `list_projects` — List Timelink projects with optional filtering and pagination parameters.
+- `list_services` — List Timelink services with optional filtering and pagination parameters.
+- `list_time_entries` — List Timelink time entries with optional filtering and pagination parameters.
+- `list_time_entry_required_fields` — List the Timelink field names that are required for time entries.
+- `list_users` — List Timelink users with optional filtering and pagination parameters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change timelink state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change timelink state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

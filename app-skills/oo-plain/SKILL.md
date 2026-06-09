@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Plain"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "plain"
-  categories: "Communication, Productivity"
-  homepage: "https://www.plain.com"
+  version: "1.0.1"
+  services: ["plain"]
   icon: "https://static.oomol.com/logo/third-party/plain.svg"
 ---
 
 # Plain
 
 Operate **Plain** through your OOMOL-connected account. This skill calls the `plain` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "plain" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_customer_by_email`](actions/get_customer_by_email.md) — Fetch one Plain customer by exact email address.
-- [`get_customer_by_external_id`](actions/get_customer_by_external_id.md) — Fetch one Plain customer by exact external ID.
-- [`search_customers`](actions/search_customers.md) — Search Plain customers with one human-oriented term across full name, short name, email, and external ID.
-- [`upsert_customer`](actions/upsert_customer.md) — Create or update one Plain customer using exactly one identifier plus create and update payloads.
+- `get_customer_by_email` — Fetch one Plain customer by exact email address.
+- `get_customer_by_external_id` — Fetch one Plain customer by exact external ID.
+- `search_customers` — Search Plain customers with one human-oriented term across full name, short name, email, and external ID.
+- `upsert_customer` — Create or update one Plain customer using exactly one identifier plus create and update payloads. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Plain state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Plain state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "noCRM.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "nocrm_io"
-  categories: "Marketing, Productivity"
-  homepage: "https://www.nocrm.io"
+  version: "1.0.1"
+  services: ["nocrm_io"]
   icon: "https://static.oomol.com/logo/third-party/NoCRM.io.svg"
 ---
 
 # noCRM.io
 
 Operate **noCRM.io** through your OOMOL-connected account. This skill calls the `nocrm_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Productivity. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "nocrm_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_tag_to_lead`](actions/add_tag_to_lead.md) — Add one or more tags to a noCRM.io lead.
-- [`append_to_lead_description`](actions/append_to_lead_description.md) — Append text to the description of a noCRM.io lead.
-- [`assign_lead_to_user`](actions/assign_lead_to_user.md) — Assign a noCRM.io lead to a specific user.
-- [`change_lead_status_to_cancelled`](actions/change_lead_status_to_cancelled.md) — Change a noCRM.io lead status to cancelled.
-- [`change_lead_status_to_standby`](actions/change_lead_status_to_standby.md) — Change a noCRM.io lead to standby and schedule its next reminder.
-- [`create_lead`](actions/create_lead.md) — Create a lead in noCRM.io with the provided title and description.
-- [`delete_lead`](actions/delete_lead.md) — Delete a noCRM.io lead.
-- [`duplicate_lead`](actions/duplicate_lead.md) — Duplicate an existing noCRM.io lead into another step.
-- [`list_teams`](actions/list_teams.md) — List the teams available in the connected noCRM.io account.
+- `add_tag_to_lead` — Add one or more tags to a noCRM.io lead. [write]
+- `append_to_lead_description` — Append text to the description of a noCRM.io lead.
+- `assign_lead_to_user` — Assign a noCRM.io lead to a specific user. [write]
+- `change_lead_status_to_cancelled` — Change a noCRM.io lead status to cancelled.
+- `change_lead_status_to_standby` — Change a noCRM.io lead to standby and schedule its next reminder.
+- `create_lead` — Create a lead in noCRM.io with the provided title and description. [write]
+- `delete_lead` — Delete a noCRM.io lead. [destructive]
+- `duplicate_lead` — Duplicate an existing noCRM.io lead into another step. [write]
+- `list_teams` — List the teams available in the connected noCRM.io account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change noCRM.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change noCRM.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

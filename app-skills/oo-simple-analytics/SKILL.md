@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Simple Analytics"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "simple_analytics"
-  categories: "Data & Analytics, Marketing"
-  homepage: "https://simpleanalytics.com"
+  version: "1.0.1"
+  services: ["simple_analytics"]
   icon: "https://static.oomol.com/logo/third-party/SimpleAnalytics.svg"
 ---
 
 # Simple Analytics
 
 Operate **Simple Analytics** through your OOMOL-connected account. This skill calls the `simple_analytics` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Marketing. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "simple_analytics" --action "<action_name>" --data '<json>' --j
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`export_data_points`](actions/export_data_points.md) — Export raw datapoints from the Simple Analytics Export API.
-- [`get_aggregated_stats`](actions/get_aggregated_stats.md) — Get aggregated website statistics from the Simple Analytics Stats API.
-- [`list_websites`](actions/list_websites.md) — List websites available to the authenticated Simple Analytics account.
-- [`send_event`](actions/send_event.md) — Send a server-side event or pageview to Simple Analytics.
+- `export_data_points` — Export raw datapoints from the Simple Analytics Export API.
+- `get_aggregated_stats` — Get aggregated website statistics from the Simple Analytics Stats API.
+- `list_websites` — List websites available to the authenticated Simple Analytics account.
+- `send_event` — Send a server-side event or pageview to Simple Analytics. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Simple Analytics state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Simple Analytics state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

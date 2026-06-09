@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vercel"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "vercel"
-  categories: "Developer Tools"
-  homepage: "https://vercel.com"
+  version: "1.0.1"
+  services: ["vercel"]
   icon: "https://static.oomol.com/logo/third-party/Vercel.svg"
 ---
 
 # Vercel
 
 Operate **Vercel** through your OOMOL-connected account. This skill calls the `vercel` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 23 action(s).
 
 ## Running an action
 
@@ -37,39 +33,39 @@ oo connector run "vercel" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_project_domain`](actions/add_project_domain.md) — Add a domain to a Vercel project.
-- [`create_project`](actions/create_project.md) — Create a Vercel project.
-- [`create_project_env`](actions/create_project_env.md) — Create a Vercel project environment variable.
-- [`create_webhook`](actions/create_webhook.md) — Create a Vercel webhook.
-- [`delete_project_env`](actions/delete_project_env.md) — Delete a Vercel project environment variable.
-- [`get_auth_user`](actions/get_auth_user.md) — Get the authenticated Vercel user.
-- [`get_deployment`](actions/get_deployment.md) — Get a Vercel deployment.
-- [`get_deployment_events`](actions/get_deployment_events.md) — Get Vercel deployment events.
-- [`get_domain_config`](actions/get_domain_config.md) — Get domain configuration guidance from Vercel.
-- [`get_project`](actions/get_project.md) — Get a Vercel project.
-- [`get_project_domain`](actions/get_project_domain.md) — Get a Vercel project domain.
-- [`get_runtime_logs`](actions/get_runtime_logs.md) — Get runtime logs for a Vercel deployment.
-- [`get_team`](actions/get_team.md) — Get a Vercel team by id or slug.
-- [`get_webhook`](actions/get_webhook.md) — Get a Vercel webhook.
-- [`list_deployments`](actions/list_deployments.md) — List Vercel deployments.
-- [`list_project_domains`](actions/list_project_domains.md) — List domains for a Vercel project.
-- [`list_project_envs`](actions/list_project_envs.md) — List environment variables for a Vercel project.
-- [`list_projects`](actions/list_projects.md) — List Vercel projects.
-- [`list_teams`](actions/list_teams.md) — List Vercel teams available to the authenticated user.
-- [`list_webhooks`](actions/list_webhooks.md) — List Vercel webhooks.
-- [`update_project`](actions/update_project.md) — Update a Vercel project.
-- [`update_project_env`](actions/update_project_env.md) — Update a Vercel project environment variable.
-- [`verify_project_domain`](actions/verify_project_domain.md) — Verify a Vercel project domain.
+- `add_project_domain` — Add a domain to a Vercel project. [write]
+- `create_project` — Create a Vercel project. [write]
+- `create_project_env` — Create a Vercel project environment variable. [write]
+- `create_webhook` — Create a Vercel webhook. [write]
+- `delete_project_env` — Delete a Vercel project environment variable. [destructive]
+- `get_auth_user` — Get the authenticated Vercel user.
+- `get_deployment` — Get a Vercel deployment.
+- `get_deployment_events` — Get Vercel deployment events.
+- `get_domain_config` — Get domain configuration guidance from Vercel.
+- `get_project` — Get a Vercel project.
+- `get_project_domain` — Get a Vercel project domain.
+- `get_runtime_logs` — Get runtime logs for a Vercel deployment.
+- `get_team` — Get a Vercel team by id or slug.
+- `get_webhook` — Get a Vercel webhook.
+- `list_deployments` — List Vercel deployments.
+- `list_project_domains` — List domains for a Vercel project.
+- `list_project_envs` — List environment variables for a Vercel project.
+- `list_projects` — List Vercel projects.
+- `list_teams` — List Vercel teams available to the authenticated user.
+- `list_webhooks` — List Vercel webhooks.
+- `update_project` — Update a Vercel project. [write]
+- `update_project_env` — Update a Vercel project environment variable. [write]
+- `verify_project_domain` — Verify a Vercel project domain.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Vercel state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Vercel state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

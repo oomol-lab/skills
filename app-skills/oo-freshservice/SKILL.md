@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Freshservice"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "freshservice"
-  categories: "Communication, Productivity"
-  homepage: "https://www.freshworks.com/freshservice/"
+  version: "1.0.1"
+  services: ["freshservice"]
   icon: "https://static.oomol.com/logo/third-party/freshservice.svg"
 ---
 
 # Freshservice
 
 Operate **Freshservice** through your OOMOL-connected account. This skill calls the `freshservice` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "freshservice" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_service_request`](actions/create_service_request.md) — Create a Freshservice service request for one service catalog item.
-- [`create_ticket`](actions/create_ticket.md) — Create a Freshservice ticket for an incident or service request workflow.
-- [`get_ticket`](actions/get_ticket.md) — Get one Freshservice ticket by identifier with optional include expansions.
-- [`list_locations`](actions/list_locations.md) — List Freshservice locations to help callers resolve account-level location metadata.
-- [`list_service_catalog_items`](actions/list_service_catalog_items.md) — List Freshservice service catalog items so callers can discover item display IDs before placing requests.
-- [`list_tickets`](actions/list_tickets.md) — List Freshservice tickets with optional filters, pagination, and include expansions.
+- `create_service_request` — Create a Freshservice service request for one service catalog item. [write]
+- `create_ticket` — Create a Freshservice ticket for an incident or service request workflow. [write]
+- `get_ticket` — Get one Freshservice ticket by identifier with optional include expansions.
+- `list_locations` — List Freshservice locations to help callers resolve account-level location metadata.
+- `list_service_catalog_items` — List Freshservice service catalog items so callers can discover item display IDs before placing requests.
+- `list_tickets` — List Freshservice tickets with optional filters, pagination, and include expansions.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Freshservice state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Freshservice state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

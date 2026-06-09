@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RocketReach"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "rocket_reach"
-  categories: "Communication, Marketing, Data & Analytics"
-  homepage: "https://rocketreach.co"
+  version: "1.0.1"
+  services: ["rocket_reach"]
   icon: "https://static.oomol.com/logo/third-party/RocketReach.svg"
 ---
 
 # RocketReach
 
 Operate **RocketReach** through your OOMOL-connected account. This skill calls the `rocket_reach` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing, Data & Analytics. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "rocket_reach" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_person_status`](actions/check_person_status.md) — Check the current status of one or more RocketReach person lookups.
-- [`get_account`](actions/get_account.md) — Retrieve the authenticated RocketReach account profile.
-- [`get_company_funding`](actions/get_company_funding.md) — Retrieve the revenue and funding-investor data exposed on a RocketReach company profile by looking up the target company first.
-- [`get_company_industries`](actions/get_company_industries.md) — Retrieve the industry and industry-keyword data exposed on a RocketReach company profile by looking up the target company first.
-- [`get_company_size`](actions/get_company_size.md) — Retrieve the employee-count data exposed on a RocketReach company profile by looking up the target company first.
-- [`lookup_company`](actions/lookup_company.md) — Look up a RocketReach company profile by id, name, or domain.
-- [`lookup_person`](actions/lookup_person.md) — Look up a RocketReach person profile by id, email, name, or LinkedIn URL through the official lookup endpoint.
-- [`lookup_person_and_company`](actions/lookup_person_and_company.md) — Look up a RocketReach person profile and return any company profile embedded in the official lookup response.
-- [`search_companies`](actions/search_companies.md) — Look up a company by exact name, domain, or id and return it as a single-item company list for search-style compatibility.
-- [`search_people`](actions/search_people.md) — Search RocketReach people with the official structured query object and pagination controls.
+- `check_person_status` — Check the current status of one or more RocketReach person lookups.
+- `get_account` — Retrieve the authenticated RocketReach account profile.
+- `get_company_funding` — Retrieve the revenue and funding-investor data exposed on a RocketReach company profile by looking up the target company first.
+- `get_company_industries` — Retrieve the industry and industry-keyword data exposed on a RocketReach company profile by looking up the target company first.
+- `get_company_size` — Retrieve the employee-count data exposed on a RocketReach company profile by looking up the target company first.
+- `lookup_company` — Look up a RocketReach company profile by id, name, or domain.
+- `lookup_person` — Look up a RocketReach person profile by id, email, name, or LinkedIn URL through the official lookup endpoint.
+- `lookup_person_and_company` — Look up a RocketReach person profile and return any company profile embedded in the official lookup response.
+- `search_companies` — Look up a company by exact name, domain, or id and return it as a single-item company list for search-style compatibility.
+- `search_people` — Search RocketReach people with the official structured query object and pagination controls.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change RocketReach state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change RocketReach state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

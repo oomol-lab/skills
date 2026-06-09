@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Needle"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "needle"
-  categories: "AI, Data & Analytics"
-  homepage: "https://needle.app"
+  version: "1.0.1"
+  services: ["needle"]
   icon: "https://static.oomol.com/logo/third-party/Needle.svg"
 ---
 
 # Needle
 
 Operate **Needle** through your OOMOL-connected account. This skill calls the `needle` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "needle" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_files_to_collection`](actions/add_files_to_collection.md) — Import one or more URL-backed files into a Needle collection for indexing.
-- [`create_collection`](actions/create_collection.md) — Create a Needle collection and optionally attach existing Needle file IDs.
-- [`get_collection`](actions/get_collection.md) — Get the details of a single Needle collection.
-- [`get_collection_stats`](actions/get_collection_stats.md) — Get indexing and storage statistics for a Needle collection.
-- [`list_collection_files`](actions/list_collection_files.md) — List the files currently attached to a Needle collection.
-- [`list_collections`](actions/list_collections.md) — List the Needle collections that the API key can access.
-- [`search_collection`](actions/search_collection.md) — Search a Needle collection for the most relevant retrieved content.
+- `add_files_to_collection` — Import one or more URL-backed files into a Needle collection for indexing. [write]
+- `create_collection` — Create a Needle collection and optionally attach existing Needle file IDs. [write]
+- `get_collection` — Get the details of a single Needle collection.
+- `get_collection_stats` — Get indexing and storage statistics for a Needle collection.
+- `list_collection_files` — List the files currently attached to a Needle collection.
+- `list_collections` — List the Needle collections that the API key can access.
+- `search_collection` — Search a Needle collection for the most relevant retrieved content.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Needle state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Needle state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

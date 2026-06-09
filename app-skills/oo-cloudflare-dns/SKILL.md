@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare DNS"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "cloudflare_dns"
-  categories: "Developer Tools, Security & Identity"
-  homepage: "https://www.cloudflare.com"
+  version: "1.0.2"
+  services: ["cloudflare_dns"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
 
 # Cloudflare DNS
 
 Operate **Cloudflare DNS** through your OOMOL-connected account. This skill calls the `cloudflare_dns` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Security & Identity. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "cloudflare_dns" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_dns_record`](actions/create_dns_record.md) — Create a DNS record inside a Cloudflare zone.
-- [`delete_dns_record`](actions/delete_dns_record.md) — Delete one DNS record from a Cloudflare zone.
-- [`get_dns_record`](actions/get_dns_record.md) — Get one DNS record from a Cloudflare zone.
-- [`get_zone`](actions/get_zone.md) — Get one Cloudflare zone by zone ID.
-- [`list_dns_records`](actions/list_dns_records.md) — List DNS records inside one Cloudflare zone.
-- [`list_zones`](actions/list_zones.md) — List the Cloudflare zones visible to the current API token.
-- [`update_dns_record`](actions/update_dns_record.md) — Patch one DNS record inside a Cloudflare zone.
+- `create_dns_record` — Create a DNS record inside a Cloudflare zone. [write]
+- `delete_dns_record` — Delete one DNS record from a Cloudflare zone. [destructive]
+- `get_dns_record` — Get one DNS record from a Cloudflare zone.
+- `get_zone` — Get one Cloudflare zone by zone ID.
+- `list_dns_records` — List DNS records inside one Cloudflare zone.
+- `list_zones` — List the Cloudflare zones visible to the current API token.
+- `update_dns_record` — Patch one DNS record inside a Cloudflare zone. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Cloudflare DNS state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Cloudflare DNS state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

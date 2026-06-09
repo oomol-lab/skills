@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slite"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "slite"
-  categories: "Productivity"
-  homepage: "https://slite.com"
+  version: "1.0.1"
+  services: ["slite"]
   icon: "https://static.oomol.com/logo/third-party/slite.png"
 ---
 
 # Slite
 
 Operate **Slite** through your OOMOL-connected account. This skill calls the `slite` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "slite" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_note`](actions/create_note.md) — Create a Slite note with markdown or HTML content and optional collection attributes.
-- [`delete_note`](actions/delete_note.md) — Delete a Slite note and its children by note identifier.
-- [`get_group`](actions/get_group.md) — Read one Slite group by identifier.
-- [`get_note`](actions/get_note.md) — Read one Slite note and return its content in Markdown, HTML, or SliteML.
-- [`list_notes`](actions/list_notes.md) — List Slite notes with optional owner, parent, ordering, and pagination filters.
-- [`search_groups`](actions/search_groups.md) — Search Slite groups by name and return cursor-based pagination metadata.
-- [`search_notes`](actions/search_notes.md) — Search Slite notes by query string and optional review, depth, archive, and date filters.
-- [`update_note`](actions/update_note.md) — Update a Slite note title, body content, or collection attributes.
+- `create_note` — Create a Slite note with markdown or HTML content and optional collection attributes. [write]
+- `delete_note` — Delete a Slite note and its children by note identifier. [destructive]
+- `get_group` — Read one Slite group by identifier.
+- `get_note` — Read one Slite note and return its content in Markdown, HTML, or SliteML.
+- `list_notes` — List Slite notes with optional owner, parent, ordering, and pagination filters.
+- `search_groups` — Search Slite groups by name and return cursor-based pagination metadata.
+- `search_notes` — Search Slite notes by query string and optional review, depth, archive, and date filters.
+- `update_note` — Update a Slite note title, body content, or collection attributes. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Slite state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Slite state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

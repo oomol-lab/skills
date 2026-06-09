@@ -5,17 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MxToolbox"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mx_toolbox"
-  categories: "Communication, Developer Tools"
+  version: "1.0.1"
+  services: ["mx_toolbox"]
   icon: "https://static.oomol.com/logo/third-party/mx_toolbox.svg"
 ---
 
 # MxToolbox
 
 Operate **MxToolbox** through your OOMOL-connected account. This skill calls the `mx_toolbox` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Developer Tools. Exposes 13 action(s).
 
 ## Running an action
 
@@ -36,29 +33,29 @@ oo connector run "mx_toolbox" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`lookup_bimi_record`](actions/lookup_bimi_record.md) — Look up the BIMI record for a domain and return the official MxToolbox response payload.
-- [`lookup_blacklist`](actions/lookup_blacklist.md) — Check whether a domain or IP is listed on blacklists and return the official MxToolbox response payload.
-- [`lookup_dkim`](actions/lookup_dkim.md) — Look up one DKIM record and return the official MxToolbox response payload.
-- [`lookup_dmarc`](actions/lookup_dmarc.md) — Look up the DMARC record for a domain and return the official MxToolbox response payload.
-- [`lookup_dns`](actions/lookup_dns.md) — Perform a comprehensive DNS lookup for a domain and return the official MxToolbox response payload.
-- [`lookup_http`](actions/lookup_http.md) — Run an HTTP lookup for a domain and return the official MxToolbox response payload.
-- [`lookup_mta_sts_record`](actions/lookup_mta_sts_record.md) — Look up the MTA-STS record for a domain and return the official MxToolbox response payload.
-- [`lookup_mx`](actions/lookup_mx.md) — Look up MX records for a domain and return the official MxToolbox response payload.
-- [`lookup_ping`](actions/lookup_ping.md) — Ping a domain or IP and return the official MxToolbox response payload.
-- [`lookup_smtp`](actions/lookup_smtp.md) — Run an SMTP lookup for a domain and return the official MxToolbox response payload.
-- [`lookup_spf`](actions/lookup_spf.md) — Look up the SPF record for a domain and return the official MxToolbox response payload.
-- [`monitor_status`](actions/monitor_status.md) — Retrieve the current status of all monitors in the authenticated MxToolbox account.
-- [`usage_check`](actions/usage_check.md) — Retrieve API usage statistics for DNS and network lookups from MxToolbox.
+- `lookup_bimi_record` — Look up the BIMI record for a domain and return the official MxToolbox response payload.
+- `lookup_blacklist` — Check whether a domain or IP is listed on blacklists and return the official MxToolbox response payload.
+- `lookup_dkim` — Look up one DKIM record and return the official MxToolbox response payload.
+- `lookup_dmarc` — Look up the DMARC record for a domain and return the official MxToolbox response payload.
+- `lookup_dns` — Perform a comprehensive DNS lookup for a domain and return the official MxToolbox response payload.
+- `lookup_http` — Run an HTTP lookup for a domain and return the official MxToolbox response payload.
+- `lookup_mta_sts_record` — Look up the MTA-STS record for a domain and return the official MxToolbox response payload.
+- `lookup_mx` — Look up MX records for a domain and return the official MxToolbox response payload.
+- `lookup_ping` — Ping a domain or IP and return the official MxToolbox response payload.
+- `lookup_smtp` — Run an SMTP lookup for a domain and return the official MxToolbox response payload.
+- `lookup_spf` — Look up the SPF record for a domain and return the official MxToolbox response payload.
+- `monitor_status` — Retrieve the current status of all monitors in the authenticated MxToolbox account.
+- `usage_check` — Retrieve API usage statistics for DNS and network lookups from MxToolbox.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change MxToolbox state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change MxToolbox state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

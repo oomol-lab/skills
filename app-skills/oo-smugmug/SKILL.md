@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SmugMug"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "smugmug"
-  categories: "Design & Media, Storage"
-  homepage: "https://www.smugmug.com"
+  version: "1.0.1"
+  services: ["smugmug"]
   icon: "https://static.oomol.com/logo/third-party/SmugMug.svg"
 ---
 
 # SmugMug
 
 Operate **SmugMug** through your OOMOL-connected account. This skill calls the `smugmug` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Storage. Exposes 23 action(s).
 
 ## Running an action
 
@@ -37,39 +33,39 @@ oo connector run "smugmug" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_album`](actions/get_album.md) — Retrieve a SmugMug album by album key.
-- [`get_album_highlight_image`](actions/get_album_highlight_image.md) — Retrieve the highlight image for a SmugMug album.
-- [`get_album_image`](actions/get_album_image.md) — Retrieve a specific image within a SmugMug album context.
-- [`get_album_images`](actions/get_album_images.md) — List the images contained in a SmugMug album.
-- [`get_folder_albums`](actions/get_folder_albums.md) — List the direct albums under a SmugMug folder path.
-- [`get_folder_by_user_path`](actions/get_folder_by_user_path.md) — Retrieve a SmugMug folder by user nickname and folder path.
-- [`get_folder_details`](actions/get_folder_details.md) — Retrieve folder details for a SmugMug folder node by node ID.
-- [`get_folder_subfolders`](actions/get_folder_subfolders.md) — List the direct subfolders under a SmugMug folder path.
-- [`get_image`](actions/get_image.md) — Retrieve a SmugMug image by image key.
-- [`get_image_metadata`](actions/get_image_metadata.md) — Retrieve the metadata extracted from a SmugMug image file.
-- [`get_image_size_details`](actions/get_image_size_details.md) — Retrieve the full SmugMug image size details payload for an image.
-- [`get_image_sizes`](actions/get_image_sizes.md) — Summarize the usable image sizes for a SmugMug image from the official image size details payload.
-- [`get_node_highlight_image`](actions/get_node_highlight_image.md) — Retrieve the highlight image for a SmugMug node.
-- [`get_node_parent`](actions/get_node_parent.md) — Retrieve the direct parent node of a SmugMug node.
-- [`get_node_parents`](actions/get_node_parents.md) — Retrieve the breadcrumb trail of parent nodes for a SmugMug node.
-- [`get_user`](actions/get_user.md) — Retrieve a SmugMug user by nickname.
-- [`get_user_bio_image`](actions/get_user_bio_image.md) — Retrieve the bio image for a SmugMug user.
-- [`get_user_featured_albums`](actions/get_user_featured_albums.md) — Retrieve the featured albums for a SmugMug user.
-- [`get_user_features`](actions/get_user_features.md) — Retrieve the feature and entitlement map for a SmugMug user.
-- [`get_user_profile`](actions/get_user_profile.md) — Retrieve the public profile for a SmugMug user.
-- [`get_user_root_node`](actions/get_user_root_node.md) — Retrieve the root node for a SmugMug user.
-- [`list_child_nodes`](actions/list_child_nodes.md) — List the immediate child nodes under a SmugMug node.
-- [`search_user_content`](actions/search_user_content.md) — Search a SmugMug user's images by query text, with optional ordering and pagination.
+- `get_album` — Retrieve a SmugMug album by album key.
+- `get_album_highlight_image` — Retrieve the highlight image for a SmugMug album.
+- `get_album_image` — Retrieve a specific image within a SmugMug album context.
+- `get_album_images` — List the images contained in a SmugMug album.
+- `get_folder_albums` — List the direct albums under a SmugMug folder path.
+- `get_folder_by_user_path` — Retrieve a SmugMug folder by user nickname and folder path.
+- `get_folder_details` — Retrieve folder details for a SmugMug folder node by node ID.
+- `get_folder_subfolders` — List the direct subfolders under a SmugMug folder path.
+- `get_image` — Retrieve a SmugMug image by image key.
+- `get_image_metadata` — Retrieve the metadata extracted from a SmugMug image file.
+- `get_image_size_details` — Retrieve the full SmugMug image size details payload for an image.
+- `get_image_sizes` — Summarize the usable image sizes for a SmugMug image from the official image size details payload.
+- `get_node_highlight_image` — Retrieve the highlight image for a SmugMug node.
+- `get_node_parent` — Retrieve the direct parent node of a SmugMug node.
+- `get_node_parents` — Retrieve the breadcrumb trail of parent nodes for a SmugMug node.
+- `get_user` — Retrieve a SmugMug user by nickname.
+- `get_user_bio_image` — Retrieve the bio image for a SmugMug user.
+- `get_user_featured_albums` — Retrieve the featured albums for a SmugMug user.
+- `get_user_features` — Retrieve the feature and entitlement map for a SmugMug user.
+- `get_user_profile` — Retrieve the public profile for a SmugMug user.
+- `get_user_root_node` — Retrieve the root node for a SmugMug user.
+- `list_child_nodes` — List the immediate child nodes under a SmugMug node.
+- `search_user_content` — Search a SmugMug user's images by query text, with optional ordering and pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change SmugMug state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change SmugMug state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

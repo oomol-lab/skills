@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Contentful"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "contentful"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://www.contentful.com"
+  version: "1.0.1"
+  services: ["contentful"]
   icon: "https://static.oomol.com/logo/third-party/Contentful.svg"
 ---
 
 # Contentful
 
 Operate **Contentful** through your OOMOL-connected account. This skill calls the `contentful` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "contentful" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_entry`](actions/create_entry.md) — Create a Contentful entry in a specific environment.
-- [`get_current_user`](actions/get_current_user.md) — Get the authenticated Contentful user profile for the current personal access token.
-- [`get_entry`](actions/get_entry.md) — Get a single Contentful entry by identifier.
-- [`list_content_types`](actions/list_content_types.md) — List Contentful content types available in a specific environment.
-- [`list_entries`](actions/list_entries.md) — List Contentful entries with common filtering, pagination, and include options.
-- [`list_environments`](actions/list_environments.md) — List Contentful environments inside a specific space.
-- [`list_spaces`](actions/list_spaces.md) — List Contentful spaces accessible to the current personal access token.
-- [`update_entry`](actions/update_entry.md) — Update a Contentful entry using optimistic locking.
+- `create_entry` — Create a Contentful entry in a specific environment. [write]
+- `get_current_user` — Get the authenticated Contentful user profile for the current personal access token.
+- `get_entry` — Get a single Contentful entry by identifier.
+- `list_content_types` — List Contentful content types available in a specific environment.
+- `list_entries` — List Contentful entries with common filtering, pagination, and include options.
+- `list_environments` — List Contentful environments inside a specific space.
+- `list_spaces` — List Contentful spaces accessible to the current personal access token.
+- `update_entry` — Update a Contentful entry using optimistic locking. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Contentful state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Contentful state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

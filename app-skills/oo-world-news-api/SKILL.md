@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "World News API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "world_news_api"
-  categories: "Data & Analytics, Social"
-  homepage: "https://worldnewsapi.com"
+  version: "1.0.1"
+  services: ["world_news_api"]
   icon: "https://static.oomol.com/logo/third-party/world_news_api.svg"
 ---
 
 # World News API
 
 Operate **World News API** through your OOMOL-connected account. This skill calls the `world_news_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Social. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "world_news_api" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_geo_coordinates`](actions/get_geo_coordinates.md) — Resolve a location string to latitude and longitude with World News API.
-- [`get_top_news`](actions/get_top_news.md) — Retrieve top-news clusters for one source country and optional language or date filters.
-- [`retrieve_news`](actions/retrieve_news.md) — Retrieve one or more articles by identifier from World News API.
-- [`search_news`](actions/search_news.md) — Search news articles with World News API using the first-pass filtering subset.
-- [`search_news_sources`](actions/search_news_sources.md) — Search World News API sources by name, language, or source country.
+- `get_geo_coordinates` — Resolve a location string to latitude and longitude with World News API.
+- `get_top_news` — Retrieve top-news clusters for one source country and optional language or date filters.
+- `retrieve_news` — Retrieve one or more articles by identifier from World News API.
+- `search_news` — Search news articles with World News API using the first-pass filtering subset.
+- `search_news_sources` — Search World News API sources by name, language, or source country.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change World News API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change World News API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

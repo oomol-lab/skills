@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Telegram Bot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "telegram"
-  categories: "Communication, Social"
-  homepage: "https://core.telegram.org/bots"
+  version: "1.0.1"
+  services: ["telegram"]
   icon: "https://static.oomol.com/logo/third-party/Telegram.svg"
 ---
 
 # Telegram Bot
 
 Operate **Telegram Bot** through your OOMOL-connected account. This skill calls the `telegram` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Social. Exposes 21 action(s).
 
 ## Running an action
 
@@ -37,37 +33,37 @@ oo connector run "telegram" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`answer_callback_query`](actions/answer_callback_query.md) — Answer an inline keyboard callback query.
-- [`create_chat_invite_link`](actions/create_chat_invite_link.md) — Export a new primary invite link for a chat. This maps to Telegram Bot API exportChatInviteLink.
-- [`delete_message`](actions/delete_message.md) — Delete a message from a chat.
-- [`delete_webhook`](actions/delete_webhook.md) — Delete the configured webhook and optionally drop pending updates.
-- [`edit_message_text`](actions/edit_message_text.md) — Edit the text of a previously sent message or an inline message.
-- [`forward_message`](actions/forward_message.md) — Forward a message from one chat to another.
-- [`get_chat`](actions/get_chat.md) — Return metadata for a chat the bot can access.
-- [`get_chat_administrators`](actions/get_chat_administrators.md) — Return the chat administrators visible to the bot.
-- [`get_chat_history`](actions/get_chat_history.md) — Get chat history by polling getUpdates, filtering to one chat, and returning message-bearing updates only. This helper requires webhook delivery to be disabled.
-- [`get_chat_member`](actions/get_chat_member.md) — Return information about one chat member.
-- [`get_chat_members_count`](actions/get_chat_members_count.md) — Return the number of members in a chat.
-- [`get_me`](actions/get_me.md) — Validate the bot token and return the bot profile from Telegram Bot API.
-- [`get_updates`](actions/get_updates.md) — Poll pending updates for the bot. Use this only when webhook delivery is disabled or for debugging.
-- [`get_webhook_info`](actions/get_webhook_info.md) — Return the webhook status configured for the bot.
-- [`send_document`](actions/send_document.md) — Send a document by URL or existing Telegram file_id. Multipart uploads are intentionally out of scope for this provider pass.
-- [`send_location`](actions/send_location.md) — Send a map location to a chat.
-- [`send_message`](actions/send_message.md) — Send a text message to a chat, group, supergroup, channel, or forum topic.
-- [`send_photo`](actions/send_photo.md) — Send a photo by URL or existing Telegram file_id. Multipart uploads are intentionally out of scope for this first pass.
-- [`send_poll`](actions/send_poll.md) — Send a native Telegram poll to a chat.
-- [`set_my_commands`](actions/set_my_commands.md) — Set the bot command list exposed in Telegram clients.
-- [`set_webhook`](actions/set_webhook.md) — Configure a webhook endpoint for update delivery.
+- `answer_callback_query` — Answer an inline keyboard callback query.
+- `create_chat_invite_link` — Export a new primary invite link for a chat. This maps to Telegram Bot API exportChatInviteLink. [write]
+- `delete_message` — Delete a message from a chat. [destructive]
+- `delete_webhook` — Delete the configured webhook and optionally drop pending updates. [destructive]
+- `edit_message_text` — Edit the text of a previously sent message or an inline message. [write]
+- `forward_message` — Forward a message from one chat to another. [write]
+- `get_chat` — Return metadata for a chat the bot can access.
+- `get_chat_administrators` — Return the chat administrators visible to the bot.
+- `get_chat_history` — Get chat history by polling getUpdates, filtering to one chat, and returning message-bearing updates only. This helper requires webhook delivery to be disabled.
+- `get_chat_member` — Return information about one chat member.
+- `get_chat_members_count` — Return the number of members in a chat.
+- `get_me` — Validate the bot token and return the bot profile from Telegram Bot API.
+- `get_updates` — Poll pending updates for the bot. Use this only when webhook delivery is disabled or for debugging.
+- `get_webhook_info` — Return the webhook status configured for the bot.
+- `send_document` — Send a document by URL or existing Telegram file_id. Multipart uploads are intentionally out of scope for this provider pass. [write]
+- `send_location` — Send a map location to a chat. [write]
+- `send_message` — Send a text message to a chat, group, supergroup, channel, or forum topic. [write]
+- `send_photo` — Send a photo by URL or existing Telegram file_id. Multipart uploads are intentionally out of scope for this first pass. [write]
+- `send_poll` — Send a native Telegram poll to a chat. [write]
+- `set_my_commands` — Set the bot command list exposed in Telegram clients. [write]
+- `set_webhook` — Configure a webhook endpoint for update delivery. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Telegram Bot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Telegram Bot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

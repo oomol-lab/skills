@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shortcut"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "shortcut"
-  categories: "Productivity"
-  homepage: "https://www.shortcut.com"
+  version: "1.0.1"
+  services: ["shortcut"]
   icon: "https://static.oomol.com/logo/third-party/shortcut.svg"
 ---
 
 # Shortcut
 
 Operate **Shortcut** through your OOMOL-connected account. This skill calls the `shortcut` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "shortcut" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_epic`](actions/create_epic.md) — Create one Shortcut epic with the first-pass supported fields.
-- [`create_story`](actions/create_story.md) — Create one Shortcut story with the first-pass supported fields.
-- [`get_epic`](actions/get_epic.md) — Get one Shortcut epic by epic ID.
-- [`get_member`](actions/get_member.md) — Get one Shortcut member by member UUID.
-- [`get_project`](actions/get_project.md) — Get one Shortcut project by project ID.
-- [`get_story`](actions/get_story.md) — Get one Shortcut story by story ID.
-- [`get_workflow`](actions/get_workflow.md) — Get one Shortcut workflow by workflow ID.
-- [`list_epics`](actions/list_epics.md) — List the epics available in the connected Shortcut workspace.
-- [`list_members`](actions/list_members.md) — List the members available in the connected Shortcut workspace.
-- [`list_projects`](actions/list_projects.md) — List the projects available in the connected Shortcut workspace.
-- [`list_stories`](actions/list_stories.md) — List the stories in one Shortcut project.
-- [`list_workflows`](actions/list_workflows.md) — List the workflows available in the connected Shortcut workspace.
-- [`search_stories`](actions/search_stories.md) — Search Shortcut stories with the official search endpoint and stable pagination.
-- [`update_epic`](actions/update_epic.md) — Update one Shortcut epic with the first-pass supported fields.
-- [`update_story`](actions/update_story.md) — Update one Shortcut story with the first-pass supported fields.
+- `create_epic` — Create one Shortcut epic with the first-pass supported fields. [write]
+- `create_story` — Create one Shortcut story with the first-pass supported fields. [write]
+- `get_epic` — Get one Shortcut epic by epic ID.
+- `get_member` — Get one Shortcut member by member UUID.
+- `get_project` — Get one Shortcut project by project ID.
+- `get_story` — Get one Shortcut story by story ID.
+- `get_workflow` — Get one Shortcut workflow by workflow ID.
+- `list_epics` — List the epics available in the connected Shortcut workspace.
+- `list_members` — List the members available in the connected Shortcut workspace.
+- `list_projects` — List the projects available in the connected Shortcut workspace.
+- `list_stories` — List the stories in one Shortcut project.
+- `list_workflows` — List the workflows available in the connected Shortcut workspace.
+- `search_stories` — Search Shortcut stories with the official search endpoint and stable pagination.
+- `update_epic` — Update one Shortcut epic with the first-pass supported fields. [write]
+- `update_story` — Update one Shortcut story with the first-pass supported fields. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Shortcut state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Shortcut state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Klangio"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "klangio"
-  categories: "AI, Design & Media"
-  homepage: "https://klang.io"
+  version: "1.0.1"
+  services: ["klangio"]
   icon: "https://static.oomol.com/logo/third-party/klangio.svg"
 ---
 
 # Klangio
 
 Operate **Klangio** through your OOMOL-connected account. This skill calls the `klangio` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Design & Media. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "klangio" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_beat_tracking_job`](actions/create_beat_tracking_job.md) — Create a Klangio beat and downbeat tracking job from a URL or Base64 audio file.
-- [`create_chord_recognition_extended_job`](actions/create_chord_recognition_extended_job.md) — Create a Klangio chord recognition job with extended key detection from a URL or Base64 audio file.
-- [`create_chord_recognition_job`](actions/create_chord_recognition_job.md) — Create a Klangio chord recognition job from a URL or Base64 audio file.
-- [`create_source_separation_job`](actions/create_source_separation_job.md) — Create a Klangio source separation job from a URL or Base64 audio file.
-- [`create_strum_recognition_job`](actions/create_strum_recognition_job.md) — Create a Klangio guitar strum recognition job from a URL or Base64 audio file.
-- [`create_transcription_job`](actions/create_transcription_job.md) — Create a Klangio transcription job from a URL or Base64 audio file and requested score outputs.
-- [`download_job_result`](actions/download_job_result.md) — Download a generated Klangio job result file and upload it to OOMOL OSS transit storage.
-- [`download_source_separation_audio`](actions/download_source_separation_audio.md) — Download a Klangio source separation stem audio file and upload it to OOMOL OSS transit storage.
-- [`get_job_status`](actions/get_job_status.md) — Fetch the current processing status for a Klangio job.
+- `create_beat_tracking_job` — Create a Klangio beat and downbeat tracking job from a URL or Base64 audio file. [write]
+- `create_chord_recognition_extended_job` — Create a Klangio chord recognition job with extended key detection from a URL or Base64 audio file. [write]
+- `create_chord_recognition_job` — Create a Klangio chord recognition job from a URL or Base64 audio file. [write]
+- `create_source_separation_job` — Create a Klangio source separation job from a URL or Base64 audio file. [write]
+- `create_strum_recognition_job` — Create a Klangio guitar strum recognition job from a URL or Base64 audio file. [write]
+- `create_transcription_job` — Create a Klangio transcription job from a URL or Base64 audio file and requested score outputs. [write]
+- `download_job_result` — Download a generated Klangio job result file and upload it to OOMOL OSS transit storage.
+- `download_source_separation_audio` — Download a Klangio source separation stem audio file and upload it to OOMOL OSS transit storage.
+- `get_job_status` — Fetch the current processing status for a Klangio job.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Klangio state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Klangio state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

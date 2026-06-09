@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Weatherbit"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "weatherbit"
-  categories: "Maps & Location, Data & Analytics"
-  homepage: "https://www.weatherbit.io"
+  version: "1.0.1"
+  services: ["weatherbit"]
   icon: "https://static.oomol.com/logo/third-party/weatherbit.svg"
 ---
 
 # Weatherbit
 
 Operate **Weatherbit** through your OOMOL-connected account. This skill calls the `weatherbit` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Data & Analytics. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "weatherbit" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_weather`](actions/get_current_weather.md) — Get current weather observations from Weatherbit for a location.
-- [`get_daily_forecast`](actions/get_daily_forecast.md) — Get daily weather forecasts from Weatherbit for a location.
-- [`get_hourly_forecast`](actions/get_hourly_forecast.md) — Get hourly weather forecasts from Weatherbit for a location.
+- `get_current_weather` — Get current weather observations from Weatherbit for a location.
+- `get_daily_forecast` — Get daily weather forecasts from Weatherbit for a location.
+- `get_hourly_forecast` — Get hourly weather forecasts from Weatherbit for a location.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Weatherbit state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Weatherbit state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

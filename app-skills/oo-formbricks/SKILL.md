@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Formbricks"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "formbricks"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://formbricks.com"
+  version: "1.0.1"
+  services: ["formbricks"]
   icon: "https://static.oomol.com/logo/third-party/formbricks.svg"
 ---
 
 # Formbricks
 
 Operate **Formbricks** through your OOMOL-connected account. This skill calls the `formbricks` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "formbricks" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_contact`](actions/create_contact.md) — Create one Formbricks contact with a workspace-scoped attributes object.
-- [`create_contact_attribute_key`](actions/create_contact_attribute_key.md) — Create one Formbricks contact attribute key inside a workspace.
-- [`delete_contact_attribute_key`](actions/delete_contact_attribute_key.md) — Delete one Formbricks contact attribute key by its identifier.
-- [`get_contact_attribute_key`](actions/get_contact_attribute_key.md) — Get one Formbricks contact attribute key by its identifier.
-- [`get_me`](actions/get_me.md) — Get the Formbricks organization and workspace context associated with the current API key.
-- [`list_contact_attribute_keys`](actions/list_contact_attribute_keys.md) — List Formbricks contact attribute keys with optional pagination, sorting, date filters, and workspace scoping.
-- [`update_contact_attribute_key`](actions/update_contact_attribute_key.md) — Update one existing Formbricks contact attribute key.
+- `create_contact` — Create one Formbricks contact with a workspace-scoped attributes object. [write]
+- `create_contact_attribute_key` — Create one Formbricks contact attribute key inside a workspace. [write]
+- `delete_contact_attribute_key` — Delete one Formbricks contact attribute key by its identifier. [destructive]
+- `get_contact_attribute_key` — Get one Formbricks contact attribute key by its identifier.
+- `get_me` — Get the Formbricks organization and workspace context associated with the current API key.
+- `list_contact_attribute_keys` — List Formbricks contact attribute keys with optional pagination, sorting, date filters, and workspace scoping.
+- `update_contact_attribute_key` — Update one existing Formbricks contact attribute key. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Formbricks state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Formbricks state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

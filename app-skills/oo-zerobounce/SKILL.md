@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ZeroBounce"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "zerobounce"
-  categories: "Communication, Marketing"
-  homepage: "https://www.zerobounce.net"
+  version: "1.0.1"
+  services: ["zerobounce"]
   icon: "https://static.oomol.com/logo/third-party/zerobounce.svg"
 ---
 
 # ZeroBounce
 
 Operate **ZeroBounce** through your OOMOL-connected account. This skill calls the `zerobounce` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "zerobounce" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_filter_rule`](actions/create_filter_rule.md) — Create or update one ZeroBounce custom allow/block filter rule.
-- [`get_activity_data`](actions/get_activity_data.md) — Get ZeroBounce email activity data for one email address.
-- [`get_api_usage`](actions/get_api_usage.md) — Get ZeroBounce API usage metrics for a date range.
-- [`get_credit_balance`](actions/get_credit_balance.md) — Get the current ZeroBounce credit balance.
-- [`list_filter_rules`](actions/list_filter_rules.md) — List the current ZeroBounce custom allow/block filter rules.
-- [`validate_email`](actions/validate_email.md) — Validate a single email address with ZeroBounce in real time.
+- `create_filter_rule` — Create or update one ZeroBounce custom allow/block filter rule. [write]
+- `get_activity_data` — Get ZeroBounce email activity data for one email address.
+- `get_api_usage` — Get ZeroBounce API usage metrics for a date range.
+- `get_credit_balance` — Get the current ZeroBounce credit balance.
+- `list_filter_rules` — List the current ZeroBounce custom allow/block filter rules.
+- `validate_email` — Validate a single email address with ZeroBounce in real time.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ZeroBounce state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ZeroBounce state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

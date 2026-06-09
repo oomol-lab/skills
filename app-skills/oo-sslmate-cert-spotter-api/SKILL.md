@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cert Spotter"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "sslmate_cert_spotter_api"
-  categories: "Security & Identity, Data & Analytics"
-  homepage: "https://sslmate.com/certspotter/"
+  version: "1.0.1"
+  services: ["sslmate_cert_spotter_api"]
   icon: "https://static.oomol.com/logo/third-party/SSLMate%20Cert%20Spotter%20API.svg"
 ---
 
 # Cert Spotter
 
 Operate **Cert Spotter** through your OOMOL-connected account. This skill calls the `sslmate_cert_spotter_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "sslmate_cert_spotter_api" --action "<action_name>" --data '<js
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_monitored_domain`](actions/delete_monitored_domain.md) — Delete one monitored domain configuration from the connected Cert Spotter account.
-- [`get_monitored_domain`](actions/get_monitored_domain.md) — Get one monitored domain configuration from the connected Cert Spotter account.
-- [`list_certificate_issuances`](actions/list_certificate_issuances.md) — List certificate issuances for one domain from the Cert Spotter CT Search API.
-- [`list_monitored_domains`](actions/list_monitored_domains.md) — List monitored domains configured in the connected Cert Spotter account.
-- [`upsert_monitored_domain`](actions/upsert_monitored_domain.md) — Create or update one monitored domain configuration in the connected Cert Spotter account.
+- `delete_monitored_domain` — Delete one monitored domain configuration from the connected Cert Spotter account. [destructive]
+- `get_monitored_domain` — Get one monitored domain configuration from the connected Cert Spotter account.
+- `list_certificate_issuances` — List certificate issuances for one domain from the Cert Spotter CT Search API.
+- `list_monitored_domains` — List monitored domains configured in the connected Cert Spotter account.
+- `upsert_monitored_domain` — Create or update one monitored domain configuration in the connected Cert Spotter account. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Cert Spotter state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Cert Spotter state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

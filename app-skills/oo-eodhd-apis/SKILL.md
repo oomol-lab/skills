@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "EODHD APIs"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "eodhd_apis"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://eodhd.com"
+  version: "1.0.1"
+  services: ["eodhd_apis"]
   icon: "https://static.oomol.com/logo/third-party/eodhd_apis.svg"
 ---
 
 # EODHD APIs
 
 Operate **EODHD APIs** through your OOMOL-connected account. This skill calls the `eodhd_apis` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "eodhd_apis" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_eod`](actions/get_eod.md) — Get historical end-of-day price data for an EODHD ticker.
-- [`get_id_mapping`](actions/get_id_mapping.md) — Map between EODHD ticker symbols and security identifiers.
-- [`get_macro_indicators`](actions/get_macro_indicators.md) — Get macroeconomic indicator time series for a country from EODHD.
-- [`get_real_time_quote`](actions/get_real_time_quote.md) — Get delayed real-time quote data for one or more EODHD symbols.
-- [`get_user_info`](actions/get_user_info.md) — Get EODHD account details and API usage for the authenticated user.
-- [`get_ust_yield_rates`](actions/get_ust_yield_rates.md) — Get US Treasury yield curve rates from EODHD.
-- [`list_exchanges`](actions/list_exchanges.md) — List exchanges supported by EODHD.
-- [`search_instruments`](actions/search_instruments.md) — Search EODHD instruments by ticker, company name, or ISIN.
+- `get_eod` — Get historical end-of-day price data for an EODHD ticker.
+- `get_id_mapping` — Map between EODHD ticker symbols and security identifiers.
+- `get_macro_indicators` — Get macroeconomic indicator time series for a country from EODHD.
+- `get_real_time_quote` — Get delayed real-time quote data for one or more EODHD symbols.
+- `get_user_info` — Get EODHD account details and API usage for the authenticated user.
+- `get_ust_yield_rates` — Get US Treasury yield curve rates from EODHD.
+- `list_exchanges` — List exchanges supported by EODHD.
+- `search_instruments` — Search EODHD instruments by ticker, company name, or ISIN.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change EODHD APIs state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change EODHD APIs state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ReadMe"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "readme"
-  categories: "Developer Tools, Productivity"
-  homepage: "https://readme.com"
+  version: "1.0.1"
+  services: ["readme"]
   icon: "https://static.oomol.com/logo/third-party/readme.svg"
 ---
 
 # ReadMe
 
 Operate **ReadMe** through your OOMOL-connected account. This skill calls the `readme` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Productivity. Exposes 33 action(s).
 
 ## Running an action
 
@@ -37,49 +33,49 @@ oo connector run "readme" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`ask_owlbot`](actions/ask_owlbot.md) — Ask ReadMe Owlbot a non-streaming question and return its answer with sources.
-- [`create_category`](actions/create_category.md) — Create a ReadMe guide or reference category.
-- [`create_changelog`](actions/create_changelog.md) — Create a ReadMe changelog entry.
-- [`create_custom_page`](actions/create_custom_page.md) — Create a ReadMe custom page.
-- [`create_doc`](actions/create_doc.md) — Create a ReadMe doc page using a category ID or category slug.
-- [`create_version`](actions/create_version.md) — Create a new ReadMe project version from an existing base version.
-- [`delete_api_specification`](actions/delete_api_specification.md) — Delete one ReadMe API specification by ID.
-- [`delete_category`](actions/delete_category.md) — Delete one ReadMe category by slug.
-- [`delete_changelog`](actions/delete_changelog.md) — Delete one ReadMe changelog entry by slug.
-- [`delete_custom_page`](actions/delete_custom_page.md) — Delete one ReadMe custom page by slug.
-- [`delete_doc`](actions/delete_doc.md) — Delete one ReadMe doc page by slug.
-- [`delete_version`](actions/delete_version.md) — Delete one ReadMe project version by semver identifier.
-- [`get_api_registry`](actions/get_api_registry.md) — Retrieve one ReadMe API Registry entry by UUID.
-- [`get_category`](actions/get_category.md) — Get one ReadMe category by slug.
-- [`get_changelog`](actions/get_changelog.md) — Get one ReadMe changelog entry by slug.
-- [`get_custom_page`](actions/get_custom_page.md) — Get one ReadMe custom page by slug.
-- [`get_doc`](actions/get_doc.md) — Get one ReadMe doc by slug, optionally requesting the production doc version.
-- [`get_openapi_schema`](actions/get_openapi_schema.md) — Get the OpenAPI definition for the ReadMe project.
-- [`get_project`](actions/get_project.md) — Get metadata for the ReadMe project associated with the API key.
-- [`get_version`](actions/get_version.md) — Get one ReadMe project version by semver identifier.
-- [`list_api_specifications`](actions/list_api_specifications.md) — List ReadMe API specification metadata with optional version and pagination.
-- [`list_categories`](actions/list_categories.md) — List ReadMe guide and reference categories with optional version and pagination.
-- [`list_category_docs`](actions/list_category_docs.md) — List the ReadMe docs that belong to a category slug.
-- [`list_changelogs`](actions/list_changelogs.md) — List ReadMe changelog entries with optional pagination.
-- [`list_custom_pages`](actions/list_custom_pages.md) — List ReadMe custom pages with optional pagination.
-- [`list_outbound_ips`](actions/list_outbound_ips.md) — List ReadMe outbound IP addresses used for webhook and Try It proxy requests.
-- [`list_versions`](actions/list_versions.md) — List the versions configured for the ReadMe project.
-- [`search_docs`](actions/search_docs.md) — Search ReadMe docs by text query.
-- [`update_category`](actions/update_category.md) — Update one ReadMe category by slug.
-- [`update_changelog`](actions/update_changelog.md) — Update one ReadMe changelog entry by slug.
-- [`update_custom_page`](actions/update_custom_page.md) — Update one ReadMe custom page by slug.
-- [`update_doc`](actions/update_doc.md) — Update one ReadMe doc page by slug.
-- [`update_version`](actions/update_version.md) — Update one ReadMe project version by semver identifier.
+- `ask_owlbot` — Ask ReadMe Owlbot a non-streaming question and return its answer with sources.
+- `create_category` — Create a ReadMe guide or reference category. [write]
+- `create_changelog` — Create a ReadMe changelog entry. [write]
+- `create_custom_page` — Create a ReadMe custom page. [write]
+- `create_doc` — Create a ReadMe doc page using a category ID or category slug. [write]
+- `create_version` — Create a new ReadMe project version from an existing base version. [write]
+- `delete_api_specification` — Delete one ReadMe API specification by ID. [destructive]
+- `delete_category` — Delete one ReadMe category by slug. [destructive]
+- `delete_changelog` — Delete one ReadMe changelog entry by slug. [destructive]
+- `delete_custom_page` — Delete one ReadMe custom page by slug. [destructive]
+- `delete_doc` — Delete one ReadMe doc page by slug. [destructive]
+- `delete_version` — Delete one ReadMe project version by semver identifier. [destructive]
+- `get_api_registry` — Retrieve one ReadMe API Registry entry by UUID.
+- `get_category` — Get one ReadMe category by slug.
+- `get_changelog` — Get one ReadMe changelog entry by slug.
+- `get_custom_page` — Get one ReadMe custom page by slug.
+- `get_doc` — Get one ReadMe doc by slug, optionally requesting the production doc version.
+- `get_openapi_schema` — Get the OpenAPI definition for the ReadMe project.
+- `get_project` — Get metadata for the ReadMe project associated with the API key.
+- `get_version` — Get one ReadMe project version by semver identifier.
+- `list_api_specifications` — List ReadMe API specification metadata with optional version and pagination.
+- `list_categories` — List ReadMe guide and reference categories with optional version and pagination.
+- `list_category_docs` — List the ReadMe docs that belong to a category slug.
+- `list_changelogs` — List ReadMe changelog entries with optional pagination.
+- `list_custom_pages` — List ReadMe custom pages with optional pagination.
+- `list_outbound_ips` — List ReadMe outbound IP addresses used for webhook and Try It proxy requests.
+- `list_versions` — List the versions configured for the ReadMe project.
+- `search_docs` — Search ReadMe docs by text query.
+- `update_category` — Update one ReadMe category by slug. [write]
+- `update_changelog` — Update one ReadMe changelog entry by slug. [write]
+- `update_custom_page` — Update one ReadMe custom page by slug. [write]
+- `update_doc` — Update one ReadMe doc page by slug. [write]
+- `update_version` — Update one ReadMe project version by semver identifier. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ReadMe state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ReadMe state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

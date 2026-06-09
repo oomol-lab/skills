@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "VirusTotal"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "virustotal"
-  categories: "Security & Identity, Data & Analytics"
-  homepage: "https://www.virustotal.com"
+  version: "1.0.1"
+  services: ["virustotal"]
   icon: "https://static.oomol.com/logo/third-party/Virustotal.webp"
 ---
 
 # VirusTotal
 
 Operate **VirusTotal** through your OOMOL-connected account. This skill calls the `virustotal` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Data & Analytics. Exposes 16 action(s).
 
 ## Running an action
 
@@ -37,32 +33,32 @@ oo connector run "virustotal" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_comment`](actions/add_comment.md) — Add a community comment to a file, URL, domain, or IP address in VirusTotal.
-- [`add_vote`](actions/add_vote.md) — Submit a harmless or malicious vote for a VirusTotal file, URL, domain, or IP.
-- [`get_analysis`](actions/get_analysis.md) — Retrieve a VirusTotal analysis object by analysis ID.
-- [`get_comments`](actions/get_comments.md) — Retrieve community comments for a file, URL, domain, or IP address in VirusTotal.
-- [`get_domain_relationships`](actions/get_domain_relationships.md) — Retrieve related VirusTotal objects for a domain, with an option to request descriptors only.
-- [`get_domain_report`](actions/get_domain_report.md) — Retrieve the latest VirusTotal report for a domain.
-- [`get_file_report`](actions/get_file_report.md) — Retrieve the latest VirusTotal report for a file identifier.
-- [`get_ip_address_relationships`](actions/get_ip_address_relationships.md) — Retrieve related VirusTotal objects for an IP address, with an option to request descriptors only.
-- [`get_ip_address_report`](actions/get_ip_address_report.md) — Retrieve the latest VirusTotal report for an IP address.
-- [`get_metadata`](actions/get_metadata.md) — Retrieve VirusTotal metadata, including available privileges, engines, and relationship names.
-- [`get_url_report`](actions/get_url_report.md) — Retrieve the latest VirusTotal report for a URL using either a raw URL or a VirusTotal URL identifier.
-- [`get_votes`](actions/get_votes.md) — Retrieve community votes for a file, URL, domain, or IP address in VirusTotal.
-- [`rescan_file`](actions/rescan_file.md) — Request a fresh VirusTotal analysis for a previously submitted file.
-- [`scan_url`](actions/scan_url.md) — Submit a URL to VirusTotal for analysis.
-- [`search`](actions/search.md) — Search files, URLs, domains, IPs, and other objects in VirusTotal.
-- [`upload_file`](actions/upload_file.md) — Upload a file to VirusTotal for analysis, automatically using the large-file upload URL when needed.
+- `add_comment` — Add a community comment to a file, URL, domain, or IP address in VirusTotal. [write]
+- `add_vote` — Submit a harmless or malicious vote for a VirusTotal file, URL, domain, or IP. [write]
+- `get_analysis` — Retrieve a VirusTotal analysis object by analysis ID.
+- `get_comments` — Retrieve community comments for a file, URL, domain, or IP address in VirusTotal.
+- `get_domain_relationships` — Retrieve related VirusTotal objects for a domain, with an option to request descriptors only.
+- `get_domain_report` — Retrieve the latest VirusTotal report for a domain.
+- `get_file_report` — Retrieve the latest VirusTotal report for a file identifier.
+- `get_ip_address_relationships` — Retrieve related VirusTotal objects for an IP address, with an option to request descriptors only.
+- `get_ip_address_report` — Retrieve the latest VirusTotal report for an IP address.
+- `get_metadata` — Retrieve VirusTotal metadata, including available privileges, engines, and relationship names.
+- `get_url_report` — Retrieve the latest VirusTotal report for a URL using either a raw URL or a VirusTotal URL identifier.
+- `get_votes` — Retrieve community votes for a file, URL, domain, or IP address in VirusTotal.
+- `rescan_file` — Request a fresh VirusTotal analysis for a previously submitted file.
+- `scan_url` — Submit a URL to VirusTotal for analysis.
+- `search` — Search files, URLs, domains, IPs, and other objects in VirusTotal.
+- `upload_file` — Upload a file to VirusTotal for analysis, automatically using the large-file upload URL when needed. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change VirusTotal state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change VirusTotal state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

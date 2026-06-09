@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SignWell"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "signwell"
-  categories: "Productivity, Communication"
-  homepage: "https://www.signwell.com"
+  version: "1.0.1"
+  services: ["signwell"]
   icon: "https://static.oomol.com/logo/third-party/signwell.svg"
 ---
 
 # SignWell
 
 Operate **SignWell** through your OOMOL-connected account. This skill calls the `signwell` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "signwell" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_document_from_template`](actions/create_document_from_template.md) — Create a SignWell document from one or more existing templates with recipients and optional prefilled template field values.
-- [`get_document`](actions/get_document.md) — Get a SignWell document and all associated document data by document ID.
-- [`get_me`](actions/get_me.md) — Get the SignWell account information associated with the current API key.
-- [`get_template`](actions/get_template.md) — Get a SignWell template and all associated template data by template ID.
-- [`send_document`](actions/send_document.md) — Send a draft SignWell document for signing, with optional final subject, message, reminder, and redirect updates.
-- [`send_document_reminder`](actions/send_document_reminder.md) — Send a SignWell reminder email to all unsigned recipients or to a targeted subset on a document.
+- `create_document_from_template` — Create a SignWell document from one or more existing templates with recipients and optional prefilled template field values. [write]
+- `get_document` — Get a SignWell document and all associated document data by document ID.
+- `get_me` — Get the SignWell account information associated with the current API key.
+- `get_template` — Get a SignWell template and all associated template data by template ID.
+- `send_document` — Send a draft SignWell document for signing, with optional final subject, message, reminder, and redirect updates. [write]
+- `send_document_reminder` — Send a SignWell reminder email to all unsigned recipients or to a targeted subset on a document. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change SignWell state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change SignWell state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dailybot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "dailybot"
-  categories: "Communication, Productivity"
-  homepage: "https://www.dailybot.com"
+  version: "1.0.1"
+  services: ["dailybot"]
   icon: "https://static.oomol.com/logo/third-party/dailybot.svg"
 ---
 
 # Dailybot
 
 Operate **Dailybot** through your OOMOL-connected account. This skill calls the `dailybot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "dailybot" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_me`](actions/get_me.md) — Get the authenticated Dailybot user context and linked organization.
-- [`get_organization`](actions/get_organization.md) — Get the Dailybot organization details for the authenticated API key.
-- [`get_team`](actions/get_team.md) — Get a specific team from the authenticated Dailybot organization.
-- [`get_user`](actions/get_user.md) — Get a specific user from the authenticated Dailybot organization.
-- [`list_team_members`](actions/list_team_members.md) — List members of a specific Dailybot team.
-- [`list_teams`](actions/list_teams.md) — List teams in the authenticated Dailybot organization.
-- [`list_users`](actions/list_users.md) — List users in the authenticated Dailybot organization.
-- [`open_conversation`](actions/open_conversation.md) — Open a direct Dailybot conversation with a user.
-- [`send_email`](actions/send_email.md) — Send an email notification through Dailybot.
-- [`send_message`](actions/send_message.md) — Send a chat message to a Dailybot user, team, or channel.
+- `get_me` — Get the authenticated Dailybot user context and linked organization.
+- `get_organization` — Get the Dailybot organization details for the authenticated API key.
+- `get_team` — Get a specific team from the authenticated Dailybot organization.
+- `get_user` — Get a specific user from the authenticated Dailybot organization.
+- `list_team_members` — List members of a specific Dailybot team.
+- `list_teams` — List teams in the authenticated Dailybot organization.
+- `list_users` — List users in the authenticated Dailybot organization.
+- `open_conversation` — Open a direct Dailybot conversation with a user.
+- `send_email` — Send an email notification through Dailybot. [write]
+- `send_message` — Send a chat message to a Dailybot user, team, or channel. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Dailybot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Dailybot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

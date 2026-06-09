@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Owl Protocol"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "owl_protocol"
-  categories: "Developer Tools, Finance"
-  homepage: "https://owlprotocol.xyz"
+  version: "1.0.1"
+  services: ["owl_protocol"]
   icon: "https://static.oomol.com/logo/third-party/owl_protocol.png"
 ---
 
 # Owl Protocol
 
 Operate **Owl Protocol** through your OOMOL-connected account. This skill calls the `owl_protocol` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Finance. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "owl_protocol" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_project_info`](actions/get_project_info.md) — Read the connected Owl Protocol project's summary information.
-- [`get_project_token`](actions/get_project_token.md) — Read one Owl Protocol token metadata record by chain, contract address, and token id.
-- [`patch_project_token`](actions/patch_project_token.md) — Patch one Owl Protocol token metadata record with a JSON metadata object only.
+- `get_project_info` — Read the connected Owl Protocol project's summary information.
+- `get_project_token` — Read one Owl Protocol token metadata record by chain, contract address, and token id.
+- `patch_project_token` — Patch one Owl Protocol token metadata record with a JSON metadata object only. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Owl Protocol state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Owl Protocol state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

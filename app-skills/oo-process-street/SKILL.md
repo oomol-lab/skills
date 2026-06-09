@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Process Street"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "process_street"
-  categories: "Productivity"
-  homepage: "https://www.process.st/"
+  version: "1.0.1"
+  services: ["process_street"]
   icon: "https://static.oomol.com/logo/third-party/process_street.png"
 ---
 
 # Process Street
 
 Operate **Process Street** through your OOMOL-connected account. This skill calls the `process_street` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "process_street" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_workflow_run`](actions/create_workflow_run.md) — Create one Process Street workflow run from an existing workflow.
-- [`get_workflow`](actions/get_workflow.md) — Get one Process Street workflow by workflow ID.
-- [`get_workflow_run`](actions/get_workflow_run.md) — Get one Process Street workflow run by workflow run ID.
-- [`list_workflow_form_fields`](actions/list_workflow_form_fields.md) — List Process Street workflow form field definitions for one workflow.
-- [`list_workflow_run_form_fields`](actions/list_workflow_run_form_fields.md) — List Process Street workflow run form field values for one workflow run.
-- [`list_workflow_runs`](actions/list_workflow_runs.md) — List Process Street workflow runs with optional workflow, status, and cursor filters.
-- [`list_workflow_tasks`](actions/list_workflow_tasks.md) — List Process Street tasks for one workflow run.
-- [`list_workflows`](actions/list_workflows.md) — List Process Street workflows with optional name filtering and cursor pagination.
-- [`update_workflow_run_form_fields`](actions/update_workflow_run_form_fields.md) — Batch update Process Street workflow run form field values for one workflow run.
-- [`update_workflow_task`](actions/update_workflow_task.md) — Update one Process Street workflow task status and optional due date by workflow run ID and task ID.
+- `create_workflow_run` — Create one Process Street workflow run from an existing workflow. [write]
+- `get_workflow` — Get one Process Street workflow by workflow ID.
+- `get_workflow_run` — Get one Process Street workflow run by workflow run ID.
+- `list_workflow_form_fields` — List Process Street workflow form field definitions for one workflow.
+- `list_workflow_run_form_fields` — List Process Street workflow run form field values for one workflow run.
+- `list_workflow_runs` — List Process Street workflow runs with optional workflow, status, and cursor filters.
+- `list_workflow_tasks` — List Process Street tasks for one workflow run.
+- `list_workflows` — List Process Street workflows with optional name filtering and cursor pagination.
+- `update_workflow_run_form_fields` — Batch update Process Street workflow run form field values for one workflow run. [write]
+- `update_workflow_task` — Update one Process Street workflow task status and optional due date by workflow run ID and task ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Process Street state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Process Street state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

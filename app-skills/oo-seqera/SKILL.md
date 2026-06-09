@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Seqera"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "seqera"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://seqera.io"
+  version: "1.0.1"
+  services: ["seqera"]
   icon: "https://static.oomol.com/logo/third-party/Seqera.svg"
 ---
 
 # Seqera
 
 Operate **Seqera** through your OOMOL-connected account. This skill calls the `seqera` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "seqera" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user`](actions/get_current_user.md) — Retrieve the current Seqera user profile and default workspace information.
-- [`get_pipeline`](actions/get_pipeline.md) — Retrieve one Seqera pipeline by pipeline ID.
-- [`get_workflow`](actions/get_workflow.md) — Retrieve one Seqera workflow run by workflow ID.
-- [`get_workspace`](actions/get_workspace.md) — Retrieve one Seqera workspace by organization ID and workspace ID.
-- [`launch_workflow`](actions/launch_workflow.md) — Launch a Seqera workflow from a pipeline repository or registered pipeline.
-- [`list_pipelines`](actions/list_pipelines.md) — List Seqera pipelines in the current user context or a specific workspace.
-- [`list_user_workspaces`](actions/list_user_workspaces.md) — List the workspaces and organizations visible to the current Seqera user.
-- [`list_workflows`](actions/list_workflows.md) — List Seqera workflow runs in the current user context or a specific workspace.
+- `get_current_user` — Retrieve the current Seqera user profile and default workspace information.
+- `get_pipeline` — Retrieve one Seqera pipeline by pipeline ID.
+- `get_workflow` — Retrieve one Seqera workflow run by workflow ID.
+- `get_workspace` — Retrieve one Seqera workspace by organization ID and workspace ID.
+- `launch_workflow` — Launch a Seqera workflow from a pipeline repository or registered pipeline.
+- `list_pipelines` — List Seqera pipelines in the current user context or a specific workspace.
+- `list_user_workspaces` — List the workspaces and organizations visible to the current Seqera user.
+- `list_workflows` — List Seqera workflow runs in the current user context or a specific workspace.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Seqera state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Seqera state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

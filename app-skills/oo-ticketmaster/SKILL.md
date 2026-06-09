@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ticketmaster"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ticketmaster"
-  categories: "Social, Data & Analytics"
-  homepage: "https://www.ticketmaster.com"
+  version: "1.0.1"
+  services: ["ticketmaster"]
   icon: "https://static.oomol.com/logo/third-party/Ticketmaster.png"
 ---
 
 # Ticketmaster
 
 Operate **Ticketmaster** through your OOMOL-connected account. This skill calls the `ticketmaster` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Social, Data & Analytics. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "ticketmaster" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`execute_season_ticketing_command`](actions/execute_season_ticketing_command.md) — Execute a Ticketmaster Season Ticketing command and optionally poll until the command finishes.
-- [`get_attraction_details`](actions/get_attraction_details.md) — Get the details for a specific Ticketmaster attraction by ID.
-- [`get_attractions`](actions/get_attractions.md) — Search Discovery API attractions for artists, teams, performers, and other attraction entities.
-- [`get_classification_details`](actions/get_classification_details.md) — Get the details for a specific Ticketmaster classification by ID.
-- [`get_classifications`](actions/get_classifications.md) — List Discovery API classifications for segments, genres, and sub-genres.
-- [`get_event_details`](actions/get_event_details.md) — Get the details for a specific Ticketmaster event by ID.
-- [`get_event_images`](actions/get_event_images.md) — Get the image set for a specific Ticketmaster event.
-- [`get_events`](actions/get_events.md) — Search Discovery API events with Ticketmaster filters for keyword, location, date, and taxonomy fields.
-- [`get_genre_details`](actions/get_genre_details.md) — Get the details for a specific Ticketmaster genre by ID.
-- [`get_section_map_image`](actions/get_section_map_image.md) — Get a section-map image for a Ticketmaster event through the Partner Availability API.
-- [`get_segment_details`](actions/get_segment_details.md) — Get the details for a specific Ticketmaster segment by ID.
-- [`get_subgenre_details`](actions/get_subgenre_details.md) — Get the details for a specific Ticketmaster sub-genre by ID.
-- [`get_suggestions`](actions/get_suggestions.md) — Get Discovery API search suggestions across events, venues, and attractions.
-- [`get_venue_details`](actions/get_venue_details.md) — Get the details for a specific Ticketmaster venue by ID.
-- [`get_venues`](actions/get_venues.md) — Search Discovery API venues by ID, keyword, and location filters.
+- `execute_season_ticketing_command` — Execute a Ticketmaster Season Ticketing command and optionally poll until the command finishes.
+- `get_attraction_details` — Get the details for a specific Ticketmaster attraction by ID.
+- `get_attractions` — Search Discovery API attractions for artists, teams, performers, and other attraction entities.
+- `get_classification_details` — Get the details for a specific Ticketmaster classification by ID.
+- `get_classifications` — List Discovery API classifications for segments, genres, and sub-genres.
+- `get_event_details` — Get the details for a specific Ticketmaster event by ID.
+- `get_event_images` — Get the image set for a specific Ticketmaster event.
+- `get_events` — Search Discovery API events with Ticketmaster filters for keyword, location, date, and taxonomy fields.
+- `get_genre_details` — Get the details for a specific Ticketmaster genre by ID.
+- `get_section_map_image` — Get a section-map image for a Ticketmaster event through the Partner Availability API.
+- `get_segment_details` — Get the details for a specific Ticketmaster segment by ID.
+- `get_subgenre_details` — Get the details for a specific Ticketmaster sub-genre by ID.
+- `get_suggestions` — Get Discovery API search suggestions across events, venues, and attractions.
+- `get_venue_details` — Get the details for a specific Ticketmaster venue by ID.
+- `get_venues` — Search Discovery API venues by ID, keyword, and location filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Ticketmaster state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Ticketmaster state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

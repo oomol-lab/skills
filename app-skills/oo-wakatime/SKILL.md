@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WakaTime"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "wakatime"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://wakatime.com"
+  version: "1.0.1"
+  services: ["wakatime"]
   icon: "https://static.oomol.com/logo/third-party/WakaTime.svg"
 ---
 
 # WakaTime
 
 Operate **WakaTime** through your OOMOL-connected account. This skill calls the `wakatime` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "wakatime" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_all_time_since_today`](actions/get_all_time_since_today.md) — Get the total WakaTime coding time logged since the account was created.
-- [`get_current_user`](actions/get_current_user.md) — Get the currently authenticated WakaTime user.
-- [`get_stats`](actions/get_stats.md) — Get WakaTime coding stats for the authenticated user.
-- [`get_status_bar_today`](actions/get_status_bar_today.md) — Get today's cached WakaTime status bar summary for the authenticated user.
-- [`get_summaries`](actions/get_summaries.md) — Get WakaTime daily summaries for the authenticated user.
-- [`list_projects`](actions/list_projects.md) — List WakaTime projects for the authenticated user.
+- `get_all_time_since_today` — Get the total WakaTime coding time logged since the account was created.
+- `get_current_user` — Get the currently authenticated WakaTime user.
+- `get_stats` — Get WakaTime coding stats for the authenticated user.
+- `get_status_bar_today` — Get today's cached WakaTime status bar summary for the authenticated user.
+- `get_summaries` — Get WakaTime daily summaries for the authenticated user.
+- `list_projects` — List WakaTime projects for the authenticated user.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change WakaTime state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change WakaTime state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tisane"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "tisane"
-  categories: "AI, Security & Identity"
-  homepage: "https://tisane.ai"
+  version: "1.0.1"
+  services: ["tisane"]
   icon: "https://static.oomol.com/logo/third-party/tisane.svg"
 ---
 
 # Tisane
 
 Operate **Tisane** through your OOMOL-connected account. This skill calls the `tisane` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Security & Identity. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "tisane" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`analyze_text`](actions/analyze_text.md) — Analyze text with Tisane for problematic content, sentiment, entities, topics, and other linguistic features.
-- [`calculate_similarity`](actions/calculate_similarity.md) — Calculate the semantic similarity between two text fragments, either in one language or across languages.
-- [`compare_entities`](actions/compare_entities.md) — Compare two compound person entities with Tisane and return whether they are the same or different.
-- [`detect_language`](actions/detect_language.md) — Detect the language segments used in a text fragment with optional language hints and delimiter settings.
-- [`extract_text`](actions/extract_text.md) — Remove markup such as HTML, CSS, JavaScript, or JSON from UTF-8 text and return plain decoded text.
-- [`list_supported_languages`](actions/list_supported_languages.md) — List the languages currently supported by Tisane.
-- [`transform_text`](actions/transform_text.md) — Translate text between languages with Tisane, or paraphrase text when source and target languages match.
+- `analyze_text` — Analyze text with Tisane for problematic content, sentiment, entities, topics, and other linguistic features.
+- `calculate_similarity` — Calculate the semantic similarity between two text fragments, either in one language or across languages.
+- `compare_entities` — Compare two compound person entities with Tisane and return whether they are the same or different.
+- `detect_language` — Detect the language segments used in a text fragment with optional language hints and delimiter settings.
+- `extract_text` — Remove markup such as HTML, CSS, JavaScript, or JSON from UTF-8 text and return plain decoded text.
+- `list_supported_languages` — List the languages currently supported by Tisane.
+- `transform_text` — Translate text between languages with Tisane, or paraphrase text when source and target languages match.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Tisane state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Tisane state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

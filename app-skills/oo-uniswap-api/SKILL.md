@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Uniswap API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "uniswap_api"
-  categories: "Finance, Developer Tools"
-  homepage: "https://uniswap.org"
+  version: "1.0.1"
+  services: ["uniswap_api"]
   icon: "https://static.oomol.com/logo/third-party/uniswap_api.svg"
 ---
 
 # Uniswap API
 
 Operate **Uniswap API** through your OOMOL-connected account. This skill calls the `uniswap_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Developer Tools. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "uniswap_api" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_approval`](actions/check_approval.md) — Check whether the swapper wallet needs an ERC-20 approval transaction before swapping.
-- [`create_swap`](actions/create_swap.md) — Create the transaction calldata for a Uniswap swap from a prior quote and optional permit signature.
-- [`get_quote`](actions/get_quote.md) — Request a Uniswap trade quote for one wallet, token pair, and amount.
+- `check_approval` — Check whether the swapper wallet needs an ERC-20 approval transaction before swapping.
+- `create_swap` — Create the transaction calldata for a Uniswap swap from a prior quote and optional permit signature. [write]
+- `get_quote` — Request a Uniswap trade quote for one wallet, token pair, and amount.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Uniswap API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Uniswap API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

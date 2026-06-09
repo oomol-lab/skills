@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "cloudflare_r2"
-  categories: "Storage, Developer Tools"
-  homepage: "https://www.cloudflare.com"
+  version: "1.0.2"
+  services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
 
 # Cloudflare R2
 
 Operate **Cloudflare R2** through your OOMOL-connected account. This skill calls the `cloudflare_r2` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Storage, Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "cloudflare_r2" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_bucket`](actions/create_bucket.md) — Create an R2 bucket in a Cloudflare account.
-- [`delete_bucket`](actions/delete_bucket.md) — Delete an R2 bucket by name.
-- [`delete_bucket_cors_policy`](actions/delete_bucket_cors_policy.md) — Delete the bucket-level CORS policy for an R2 bucket.
-- [`get_bucket`](actions/get_bucket.md) — Get one R2 bucket by name.
-- [`get_bucket_cors_policy`](actions/get_bucket_cors_policy.md) — Fetch the bucket-level CORS policy for an R2 bucket.
-- [`list_buckets`](actions/list_buckets.md) — List the R2 buckets in a Cloudflare account.
-- [`update_bucket`](actions/update_bucket.md) — Update mutable R2 bucket properties such as default storage class or jurisdiction.
-- [`update_bucket_cors_policy`](actions/update_bucket_cors_policy.md) — Replace the bucket-level CORS policy for an R2 bucket.
+- `create_bucket` — Create an R2 bucket in a Cloudflare account. [write]
+- `delete_bucket` — Delete an R2 bucket by name. [destructive]
+- `delete_bucket_cors_policy` — Delete the bucket-level CORS policy for an R2 bucket. [destructive]
+- `get_bucket` — Get one R2 bucket by name.
+- `get_bucket_cors_policy` — Fetch the bucket-level CORS policy for an R2 bucket.
+- `list_buckets` — List the R2 buckets in a Cloudflare account.
+- `update_bucket` — Update mutable R2 bucket properties such as default storage class or jurisdiction. [write]
+- `update_bucket_cors_policy` — Replace the bucket-level CORS policy for an R2 bucket. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Cloudflare R2 state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Cloudflare R2 state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

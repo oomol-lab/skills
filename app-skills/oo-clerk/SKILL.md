@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Clerk"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "clerk"
-  categories: "Security & Identity, Developer Tools"
-  homepage: "https://clerk.com"
+  version: "1.0.1"
+  services: ["clerk"]
 ---
 
 # Clerk
 
 Operate **Clerk** through your OOMOL-connected account. This skill calls the `clerk` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Developer Tools. Exposes 11 action(s).
 
 ## Running an action
 
@@ -36,27 +32,27 @@ oo connector run "clerk" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`ban_user`](actions/ban_user.md) — Ban a Clerk user.
-- [`count_users`](actions/count_users.md) — Count Clerk users with optional filters.
-- [`create_user`](actions/create_user.md) — Create a Clerk user.
-- [`delete_user`](actions/delete_user.md) — Delete a Clerk user.
-- [`get_user`](actions/get_user.md) — Retrieve a Clerk user by ID.
-- [`list_users`](actions/list_users.md) — List Clerk users with optional filtering and pagination.
-- [`lock_user`](actions/lock_user.md) — Lock a Clerk user.
-- [`unban_user`](actions/unban_user.md) — Unban a Clerk user.
-- [`unlock_user`](actions/unlock_user.md) — Unlock a Clerk user.
-- [`update_user`](actions/update_user.md) — Update a Clerk user.
-- [`update_user_metadata`](actions/update_user_metadata.md) — Deep merge metadata for a Clerk user.
+- `ban_user` — Ban a Clerk user. [destructive]
+- `count_users` — Count Clerk users with optional filters.
+- `create_user` — Create a Clerk user. [write]
+- `delete_user` — Delete a Clerk user. [destructive]
+- `get_user` — Retrieve a Clerk user by ID.
+- `list_users` — List Clerk users with optional filtering and pagination.
+- `lock_user` — Lock a Clerk user. [write]
+- `unban_user` — Unban a Clerk user.
+- `unlock_user` — Unlock a Clerk user. [write]
+- `update_user` — Update a Clerk user. [write]
+- `update_user_metadata` — Deep merge metadata for a Clerk user. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Clerk state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Clerk state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -1,21 +1,17 @@
 ---
 name: oo-newsdata-io
-description: "NewsData.io (newsdata.io). Use this skill for ANY NewsData.io request — searching and reading data. Whenever a task involves NewsData.io, use this skill instead of calling the API directly."
+description: "NewsData.io (newsdata.io). Use this skill for ANY NewsData.io request — reading, creating, and updating data. Whenever a task involves NewsData.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "NewsData.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "newsdata_io"
-  categories: "Data & Analytics, Social"
-  homepage: "https://newsdata.io"
+  version: "1.0.1"
+  services: ["newsdata_io"]
 ---
 
 # NewsData.io
 
 Operate **NewsData.io** through your OOMOL-connected account. This skill calls the `newsdata_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Social. Exposes 4 action(s).
 
 ## Running an action
 
@@ -36,20 +32,20 @@ oo connector run "newsdata_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_latest_news`](actions/get_latest_news.md) — Retrieve the latest and breaking news from NewsData.io with optional filters.
-- [`list_crypto_news`](actions/list_crypto_news.md) — Retrieve cryptocurrency-related news articles from NewsData.io.
-- [`list_news_sources`](actions/list_news_sources.md) — List NewsData.io source domains with optional country, category, and language filters.
-- [`search_news_archive`](actions/search_news_archive.md) — Search historical NewsData.io archive articles with keyword, taxonomy, and date filters.
+- `get_latest_news` — Retrieve the latest and breaking news from NewsData.io with optional filters.
+- `list_crypto_news` — Retrieve cryptocurrency-related news articles from NewsData.io.
+- `list_news_sources` — List NewsData.io source domains with optional country, category, and language filters.
+- `search_news_archive` — Search historical NewsData.io archive articles with keyword, taxonomy, and date filters. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change NewsData.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change NewsData.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

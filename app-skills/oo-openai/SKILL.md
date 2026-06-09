@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenAI"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "openai"
-  categories: "AI, Developer Tools"
-  homepage: "https://openai.com/api/"
+  version: "1.0.1"
+  services: ["openai"]
   icon: "https://static.oomol.com/logo/third-party/OpenAI.svg"
 ---
 
 # OpenAI
 
 Operate **OpenAI** through your OOMOL-connected account. This skill calls the `openai` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Developer Tools. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "openai" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`cancel_batch`](actions/cancel_batch.md) — Cancel one OpenAI batch job by its identifier.
-- [`create_audio_transcription`](actions/create_audio_transcription.md) — Transcribe one uploaded audio file with the OpenAI audio transcription API.
-- [`create_audio_translation`](actions/create_audio_translation.md) — Translate one uploaded audio file into English with the OpenAI audio translation API.
-- [`create_batch`](actions/create_batch.md) — Create an OpenAI batch job from an uploaded input file.
-- [`create_embeddings`](actions/create_embeddings.md) — Create embeddings with an OpenAI embedding model.
-- [`create_image`](actions/create_image.md) — Generate images with the OpenAI image generation API.
-- [`create_moderation`](actions/create_moderation.md) — Classify text or image inputs with the OpenAI Moderations API.
-- [`create_response`](actions/create_response.md) — Create a non-streaming OpenAI response through the Responses API.
-- [`create_speech`](actions/create_speech.md) — Synthesize speech audio from text with the OpenAI audio speech API.
-- [`get_batch`](actions/get_batch.md) — Fetch one OpenAI batch job by its identifier.
-- [`get_input_token_counts`](actions/get_input_token_counts.md) — Count how many input tokens a Responses-style OpenAI request would consume.
-- [`get_model`](actions/get_model.md) — Retrieve the metadata for a single OpenAI model by ID.
-- [`get_response`](actions/get_response.md) — Retrieve one stored OpenAI response by its identifier.
-- [`list_input_items`](actions/list_input_items.md) — List the stored input items for one OpenAI response.
-- [`list_models`](actions/list_models.md) — List the OpenAI models available to the current API key.
+- `cancel_batch` — Cancel one OpenAI batch job by its identifier. [write]
+- `create_audio_transcription` — Transcribe one uploaded audio file with the OpenAI audio transcription API. [write]
+- `create_audio_translation` — Translate one uploaded audio file into English with the OpenAI audio translation API. [write]
+- `create_batch` — Create an OpenAI batch job from an uploaded input file. [write]
+- `create_embeddings` — Create embeddings with an OpenAI embedding model. [write]
+- `create_image` — Generate images with the OpenAI image generation API. [write]
+- `create_moderation` — Classify text or image inputs with the OpenAI Moderations API. [write]
+- `create_response` — Create a non-streaming OpenAI response through the Responses API. [write]
+- `create_speech` — Synthesize speech audio from text with the OpenAI audio speech API. [write]
+- `get_batch` — Fetch one OpenAI batch job by its identifier.
+- `get_input_token_counts` — Count how many input tokens a Responses-style OpenAI request would consume.
+- `get_model` — Retrieve the metadata for a single OpenAI model by ID.
+- `get_response` — Retrieve one stored OpenAI response by its identifier.
+- `list_input_items` — List the stored input items for one OpenAI response.
+- `list_models` — List the OpenAI models available to the current API key.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change OpenAI state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change OpenAI state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

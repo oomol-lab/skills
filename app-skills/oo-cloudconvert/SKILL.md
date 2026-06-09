@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CloudConvert"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "cloudconvert"
-  categories: "Productivity, Design & Media"
-  homepage: "https://cloudconvert.com"
+  version: "1.0.1"
+  services: ["cloudconvert"]
   icon: "https://static.oomol.com/logo/third-party/CloudConvert.svg"
 ---
 
 # CloudConvert
 
 Operate **CloudConvert** through your OOMOL-connected account. This skill calls the `cloudconvert` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "cloudconvert" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`cancel_task`](actions/cancel_task.md) — Cancel a CloudConvert task that is still waiting or processing.
-- [`create_url_conversion_job`](actions/create_url_conversion_job.md) — Create a CloudConvert job that imports a remote file URL, converts it, and exports the result via `export/url`.
-- [`create_url_conversion_job_and_wait`](actions/create_url_conversion_job_and_wait.md) — Create a URL-based CloudConvert conversion job and wait synchronously until the job finishes.
-- [`delete_job`](actions/delete_job.md) — Delete a CloudConvert job, including all tasks and related data.
-- [`delete_task`](actions/delete_task.md) — Delete a CloudConvert task, including all related data.
-- [`get_current_user`](actions/get_current_user.md) — Get the current CloudConvert user and remaining credits for the API token.
-- [`get_job`](actions/get_job.md) — Get a single CloudConvert job and include its tasks.
-- [`get_task`](actions/get_task.md) — Get a single CloudConvert task by ID.
-- [`list_conversion_types`](actions/list_conversion_types.md) — List possible CloudConvert conversion types for the requested input and output formats.
-- [`list_jobs`](actions/list_jobs.md) — List CloudConvert jobs for the current account.
-- [`list_tasks`](actions/list_tasks.md) — List CloudConvert tasks for the current account.
-- [`retry_task`](actions/retry_task.md) — Retry a CloudConvert task by creating a new task from the original payload.
-- [`wait_for_job`](actions/wait_for_job.md) — Wait synchronously for a CloudConvert job to finish and return the finished or failed job with tasks.
-- [`wait_for_task`](actions/wait_for_task.md) — Wait synchronously for a CloudConvert task to finish and return the finished or failed task.
+- `cancel_task` — Cancel a CloudConvert task that is still waiting or processing. [write]
+- `create_url_conversion_job` — Create a CloudConvert job that imports a remote file URL, converts it, and exports the result via `export/url`. [write]
+- `create_url_conversion_job_and_wait` — Create a URL-based CloudConvert conversion job and wait synchronously until the job finishes. [write]
+- `delete_job` — Delete a CloudConvert job, including all tasks and related data. [destructive]
+- `delete_task` — Delete a CloudConvert task, including all related data. [destructive]
+- `get_current_user` — Get the current CloudConvert user and remaining credits for the API token.
+- `get_job` — Get a single CloudConvert job and include its tasks.
+- `get_task` — Get a single CloudConvert task by ID.
+- `list_conversion_types` — List possible CloudConvert conversion types for the requested input and output formats.
+- `list_jobs` — List CloudConvert jobs for the current account.
+- `list_tasks` — List CloudConvert tasks for the current account.
+- `retry_task` — Retry a CloudConvert task by creating a new task from the original payload. [write]
+- `wait_for_job` — Wait synchronously for a CloudConvert job to finish and return the finished or failed job with tasks.
+- `wait_for_task` — Wait synchronously for a CloudConvert task to finish and return the finished or failed task.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change CloudConvert state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change CloudConvert state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

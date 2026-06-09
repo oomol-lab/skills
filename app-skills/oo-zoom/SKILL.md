@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zoom"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "zoom"
-  categories: "Communication, Productivity"
-  homepage: "https://www.zoom.com"
+  version: "1.0.2"
+  services: ["zoom"]
   icon: "https://static.oomol.com/logo/third-party/zoom.svg"
 ---
 
 # Zoom
 
 Operate **Zoom** through your OOMOL-connected account. This skill calls the `zoom` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "zoom" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_meeting`](actions/create_meeting.md) — Create a Zoom meeting for a user with the core official scheduling fields and first-pass settings.
-- [`get_user`](actions/get_user.md) — Fetch one Zoom user by user ID, email address, or me when supported by the app.
-- [`list_meetings`](actions/list_meetings.md) — List scheduled, live, upcoming, or previous meetings for a Zoom user using official pagination.
-- [`update_meeting`](actions/update_meeting.md) — Update a Zoom meeting by meeting ID with the core official scheduling fields and first-pass settings.
+- `create_meeting` — Create a Zoom meeting for a user with the core official scheduling fields and first-pass settings. [write]
+- `get_user` — Fetch one Zoom user by user ID, email address, or me when supported by the app. [write]
+- `list_meetings` — List scheduled, live, upcoming, or previous meetings for a Zoom user using official pagination. [write]
+- `update_meeting` — Update a Zoom meeting by meeting ID with the core official scheduling fields and first-pass settings. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Zoom state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Zoom state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "You.com"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "you"
-  categories: "AI, Data & Analytics"
-  homepage: "https://you.com/"
+  version: "1.0.1"
+  services: ["you"]
 ---
 
 # You.com
 
 Operate **You.com** through your OOMOL-connected account. This skill calls the `you` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -36,21 +32,21 @@ oo connector run "you" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`fetch_contents`](actions/fetch_contents.md) — Fetch HTML, Markdown, or metadata for one or more webpages with You.com.
-- [`finance_research`](actions/finance_research.md) — Generate a cited finance-grade answer with the You.com Finance Research API.
-- [`get_account_balance`](actions/get_account_balance.md) — Get the remaining You.com credit balance for the API key account.
-- [`research`](actions/research.md) — Generate a cited research answer with the You.com Research API.
-- [`search`](actions/search.md) — Search web and news sources with the You.com Search API.
+- `fetch_contents` — Fetch HTML, Markdown, or metadata for one or more webpages with You.com.
+- `finance_research` — Generate a cited finance-grade answer with the You.com Finance Research API.
+- `get_account_balance` — Get the remaining You.com credit balance for the API key account.
+- `research` — Generate a cited research answer with the You.com Research API.
+- `search` — Search web and news sources with the You.com Search API.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change You.com state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change You.com state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

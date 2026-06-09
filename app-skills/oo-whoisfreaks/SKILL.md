@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WhoisFreaks"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "whoisfreaks"
-  categories: "Security & Identity, Data & Analytics"
-  homepage: "https://whoisfreaks.com"
+  version: "1.0.1"
+  services: ["whoisfreaks"]
   icon: "https://static.oomol.com/logo/third-party/Whoisfreaks.svg"
 ---
 
 # WhoisFreaks
 
 Operate **WhoisFreaks** through your OOMOL-connected account. This skill calls the `whoisfreaks` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "whoisfreaks" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_domain_availability`](actions/check_domain_availability.md) — Check whether one domain is available for registration and optionally request suggestions.
-- [`get_asn_whois`](actions/get_asn_whois.md) — Retrieve the ASN WHOIS record for one autonomous system number.
-- [`get_domain_whois`](actions/get_domain_whois.md) — Retrieve the live WHOIS record for one domain.
-- [`get_ip_whois`](actions/get_ip_whois.md) — Retrieve the IP WHOIS record for one IP address.
-- [`list_subdomains`](actions/list_subdomains.md) — List known subdomains for one domain with optional paging and status filters.
+- `check_domain_availability` — Check whether one domain is available for registration and optionally request suggestions.
+- `get_asn_whois` — Retrieve the ASN WHOIS record for one autonomous system number.
+- `get_domain_whois` — Retrieve the live WHOIS record for one domain.
+- `get_ip_whois` — Retrieve the IP WHOIS record for one IP address.
+- `list_subdomains` — List known subdomains for one domain with optional paging and status filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change WhoisFreaks state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change WhoisFreaks state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

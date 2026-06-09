@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenGraph.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "opengraph_io"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://www.opengraph.io"
+  version: "1.0.1"
+  services: ["opengraph_io"]
   icon: "https://static.oomol.com/logo/third-party/OpenGraph.io.svg"
 ---
 
 # OpenGraph.io
 
 Operate **OpenGraph.io** through your OOMOL-connected account. This skill calls the `opengraph_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "opengraph_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`capture_screenshot`](actions/capture_screenshot.md) — Capture a webpage screenshot through the OpenGraph.io Screenshot endpoint with configurable viewport, delay, and element selection.
-- [`extract_site`](actions/extract_site.md) — Extract Open Graph, Twitter Card, oEmbed, and inferred metadata for a site through the OpenGraph.io Site endpoint.
-- [`scrape_site`](actions/scrape_site.md) — Retrieve a site's metadata through the OpenGraph.io Site endpoint with cache, proxy, render, and retry controls.
-- [`scrape_url`](actions/scrape_url.md) — Fetch the raw HTML for a page through the OpenGraph.io Scrape endpoint with optional render and proxy controls.
+- `capture_screenshot` — Capture a webpage screenshot through the OpenGraph.io Screenshot endpoint with configurable viewport, delay, and element selection.
+- `extract_site` — Extract Open Graph, Twitter Card, oEmbed, and inferred metadata for a site through the OpenGraph.io Site endpoint.
+- `scrape_site` — Retrieve a site's metadata through the OpenGraph.io Site endpoint with cache, proxy, render, and retry controls.
+- `scrape_url` — Fetch the raw HTML for a page through the OpenGraph.io Scrape endpoint with optional render and proxy controls.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change OpenGraph.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change OpenGraph.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Eventzilla"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "eventzilla"
-  categories: "Productivity, Marketing"
-  homepage: "https://www.eventzilla.net"
+  version: "1.0.1"
+  services: ["eventzilla"]
   icon: "https://static.oomol.com/logo/third-party/eventzilla.svg"
 ---
 
 # Eventzilla
 
 Operate **Eventzilla** through your OOMOL-connected account. This skill calls the `eventzilla` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Marketing. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "eventzilla" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_attendee`](actions/get_attendee.md) — Get one Eventzilla attendee by attendee identifier.
-- [`get_event`](actions/get_event.md) — Get one Eventzilla event by its event identifier.
-- [`get_transaction`](actions/get_transaction.md) — Get one Eventzilla transaction by checkout ID or order reference number.
-- [`get_user`](actions/get_user.md) — Get one Eventzilla organizer or sub-organizer by user identifier.
-- [`list_event_attendees`](actions/list_event_attendees.md) — List Eventzilla attendees for one event.
-- [`list_event_tickets`](actions/list_event_tickets.md) — List Eventzilla ticket categories and donation entries for one event.
-- [`list_event_transactions`](actions/list_event_transactions.md) — List Eventzilla transactions for one event.
-- [`list_events`](actions/list_events.md) — List Eventzilla events visible to the authenticated organizer account with optional status or category filtering.
-- [`list_users`](actions/list_users.md) — List Eventzilla organizers and sub-organizers visible to the authenticated account.
+- `get_attendee` — Get one Eventzilla attendee by attendee identifier.
+- `get_event` — Get one Eventzilla event by its event identifier.
+- `get_transaction` — Get one Eventzilla transaction by checkout ID or order reference number.
+- `get_user` — Get one Eventzilla organizer or sub-organizer by user identifier.
+- `list_event_attendees` — List Eventzilla attendees for one event.
+- `list_event_tickets` — List Eventzilla ticket categories and donation entries for one event.
+- `list_event_transactions` — List Eventzilla transactions for one event.
+- `list_events` — List Eventzilla events visible to the authenticated organizer account with optional status or category filtering.
+- `list_users` — List Eventzilla organizers and sub-organizers visible to the authenticated account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Eventzilla state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Eventzilla state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Truvera"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "truvera"
-  categories: "Security & Identity, Developer Tools"
-  homepage: "https://truvera.io"
+  version: "1.0.1"
+  services: ["truvera"]
   icon: "https://static.oomol.com/logo/third-party/truvera.svg"
 ---
 
 # Truvera
 
 Operate **Truvera** through your OOMOL-connected account. This skill calls the `truvera` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Developer Tools. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "truvera" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_credential_schema`](actions/create_credential_schema.md) — Create a credential schema in Truvera and return the background job handle for polling blockchain completion.
-- [`create_did`](actions/create_did.md) — Create a new Truvera DID and return the background job handle for polling blockchain completion.
-- [`delete_credential_schema`](actions/delete_credential_schema.md) — Delete a Truvera credential schema and return the background job handle for polling completion.
-- [`delete_did`](actions/delete_did.md) — Delete a Truvera DID and return the background job handle for polling blockchain completion.
-- [`get_credential_schema`](actions/get_credential_schema.md) — Get one Truvera credential schema by schema identifier.
-- [`get_did`](actions/get_did.md) — Get one DID document from Truvera by DID value.
-- [`get_job`](actions/get_job.md) — Get the latest status and result payload for a Truvera background job.
-- [`get_profile`](actions/get_profile.md) — Get the authenticated Truvera account profile for the configured API key.
-- [`list_credential_schemas`](actions/list_credential_schemas.md) — List credential schemas created by the authenticated Truvera account.
-- [`list_dids`](actions/list_dids.md) — List the DIDs controlled by the authenticated Truvera account.
+- `create_credential_schema` — Create a credential schema in Truvera and return the background job handle for polling blockchain completion. [write]
+- `create_did` — Create a new Truvera DID and return the background job handle for polling blockchain completion. [write]
+- `delete_credential_schema` — Delete a Truvera credential schema and return the background job handle for polling completion. [destructive]
+- `delete_did` — Delete a Truvera DID and return the background job handle for polling blockchain completion. [destructive]
+- `get_credential_schema` — Get one Truvera credential schema by schema identifier.
+- `get_did` — Get one DID document from Truvera by DID value.
+- `get_job` — Get the latest status and result payload for a Truvera background job.
+- `get_profile` — Get the authenticated Truvera account profile for the configured API key.
+- `list_credential_schemas` — List credential schemas created by the authenticated Truvera account.
+- `list_dids` — List the DIDs controlled by the authenticated Truvera account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Truvera state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Truvera state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

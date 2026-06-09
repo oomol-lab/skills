@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GoDial"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "godial"
-  categories: "Communication, Productivity"
-  homepage: "https://godial.cc"
+  version: "1.0.1"
+  services: ["godial"]
   icon: "https://static.oomol.com/logo/third-party/godial.png"
 ---
 
 # GoDial
 
 Operate **GoDial** through your OOMOL-connected account. This skill calls the `godial` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "godial" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_contact`](actions/create_contact.md) — Create one GoDial contact in a target list using the official external API form fields.
-- [`get_contact`](actions/get_contact.md) — Fetch one GoDial contact by contact ID.
-- [`list_accounts`](actions/list_accounts.md) — List GoDial accounts in the current company.
-- [`list_contacts_in_list`](actions/list_contacts_in_list.md) — List all contacts currently stored in one GoDial list.
-- [`list_lists`](actions/list_lists.md) — List GoDial lists in the current company.
+- `create_contact` — Create one GoDial contact in a target list using the official external API form fields. [write]
+- `get_contact` — Fetch one GoDial contact by contact ID.
+- `list_accounts` — List GoDial accounts in the current company.
+- `list_contacts_in_list` — List all contacts currently stored in one GoDial list.
+- `list_lists` — List GoDial lists in the current company.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change GoDial state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change GoDial state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

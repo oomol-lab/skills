@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Doppler"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "doppler"
-  categories: "Developer Tools, Security & Identity"
-  homepage: "https://www.doppler.com"
+  version: "1.0.1"
+  services: ["doppler"]
   icon: "https://static.oomol.com/logo/third-party/Doppler.svg"
 ---
 
 # Doppler
 
 Operate **Doppler** through your OOMOL-connected account. This skill calls the `doppler` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Security & Identity. Exposes 44 action(s).
 
 ## Running an action
 
@@ -37,60 +33,60 @@ oo connector run "doppler" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`clone_config`](actions/clone_config.md) — Clone a Doppler branch config and its secrets.
-- [`create_change_request`](actions/create_change_request.md) — Create a Doppler change request with one or more units.
-- [`create_config`](actions/create_config.md) — Create a branch config under a Doppler project and environment.
-- [`create_environment`](actions/create_environment.md) — Create an environment under a Doppler project.
-- [`create_project`](actions/create_project.md) — Create a Doppler project in the current workplace.
-- [`create_service_token`](actions/create_service_token.md) — Create a new service token for a specific project and config.
-- [`create_sync`](actions/create_sync.md) — Create a Doppler secrets sync for a project config.
-- [`delete_config`](actions/delete_config.md) — Delete a Doppler config.
-- [`delete_environment`](actions/delete_environment.md) — Delete an environment from a Doppler project.
-- [`delete_project`](actions/delete_project.md) — Delete a Doppler project from the current workplace.
-- [`delete_secret`](actions/delete_secret.md) — Delete a single secret for a specific project and config.
-- [`delete_service_token`](actions/delete_service_token.md) — Delete a service token for a specific project and config.
-- [`delete_sync`](actions/delete_sync.md) — Delete a Doppler secrets sync.
-- [`download_secrets`](actions/download_secrets.md) — Export secrets from a Doppler config in a specific format.
-- [`get_auth_me`](actions/get_auth_me.md) — Get identity, principal, and workplace summary information for the current Doppler token.
-- [`get_change_request`](actions/get_change_request.md) — Get the details of a Doppler change request.
-- [`get_config`](actions/get_config.md) — Get the details of a single Doppler config.
-- [`get_config_log`](actions/get_config_log.md) — Get the details of a specific config change log entry.
-- [`get_environment`](actions/get_environment.md) — Get the details of a single Doppler environment.
-- [`get_integration`](actions/get_integration.md) — Get the details of a Doppler integration.
-- [`get_project`](actions/get_project.md) — Get the details of a single Doppler project.
-- [`get_secret`](actions/get_secret.md) — Get the value and metadata of a single secret for a specific project and config.
-- [`get_sync`](actions/get_sync.md) — Get the details of a Doppler secrets sync.
-- [`issue_dynamic_secret_lease`](actions/issue_dynamic_secret_lease.md) — Issue a short-lived lease for a Doppler dynamic secret.
-- [`list_change_requests`](actions/list_change_requests.md) — List Doppler workplace change requests.
-- [`list_config_logs`](actions/list_config_logs.md) — List config change logs for a specific project and config.
-- [`list_configs`](actions/list_configs.md) — List configs under a specific Doppler project.
-- [`list_environments`](actions/list_environments.md) — List environments under a Doppler project.
-- [`list_integrations`](actions/list_integrations.md) — List Doppler integrations available in the workplace.
-- [`list_projects`](actions/list_projects.md) — List the projects visible in the current Doppler workspace.
-- [`list_secret_names`](actions/list_secret_names.md) — List only the secret names for a Doppler project and config.
-- [`list_secrets`](actions/list_secrets.md) — List all secrets and their metadata for a specific project and config.
-- [`list_service_tokens`](actions/list_service_tokens.md) — List service tokens for a specific project and config.
-- [`review_change_request_unit`](actions/review_change_request_unit.md) — Submit an approving review for one Doppler change request unit.
-- [`revoke_dynamic_secret_lease`](actions/revoke_dynamic_secret_lease.md) — Revoke a lease issued for a Doppler dynamic secret.
-- [`set_config_inheritable`](actions/set_config_inheritable.md) — Update whether a Doppler config can be inherited by other configs.
-- [`update_change_request`](actions/update_change_request.md) — Update a Doppler change request's metadata or units.
-- [`update_change_request_assignees`](actions/update_change_request_assignees.md) — Replace the reviewers assigned to a Doppler change request.
-- [`update_change_request_unit_status`](actions/update_change_request_unit_status.md) — Update the status of one Doppler change request unit.
-- [`update_config`](actions/update_config.md) — Rename a Doppler config.
-- [`update_environment`](actions/update_environment.md) — Rename a Doppler environment or update personal config settings.
-- [`update_project`](actions/update_project.md) — Update a Doppler project's name or description.
-- [`update_secret_note`](actions/update_secret_note.md) — Update the note for a specific secret.
-- [`update_secrets`](actions/update_secrets.md) — Create or update secrets in bulk for a specific project and config.
+- `clone_config` — Clone a Doppler branch config and its secrets.
+- `create_change_request` — Create a Doppler change request with one or more units. [write]
+- `create_config` — Create a branch config under a Doppler project and environment. [write]
+- `create_environment` — Create an environment under a Doppler project. [write]
+- `create_project` — Create a Doppler project in the current workplace. [write]
+- `create_service_token` — Create a new service token for a specific project and config. [write]
+- `create_sync` — Create a Doppler secrets sync for a project config. [write]
+- `delete_config` — Delete a Doppler config. [destructive]
+- `delete_environment` — Delete an environment from a Doppler project. [destructive]
+- `delete_project` — Delete a Doppler project from the current workplace. [destructive]
+- `delete_secret` — Delete a single secret for a specific project and config. [destructive]
+- `delete_service_token` — Delete a service token for a specific project and config. [destructive]
+- `delete_sync` — Delete a Doppler secrets sync. [destructive]
+- `download_secrets` — Export secrets from a Doppler config in a specific format.
+- `get_auth_me` — Get identity, principal, and workplace summary information for the current Doppler token.
+- `get_change_request` — Get the details of a Doppler change request.
+- `get_config` — Get the details of a single Doppler config.
+- `get_config_log` — Get the details of a specific config change log entry.
+- `get_environment` — Get the details of a single Doppler environment.
+- `get_integration` — Get the details of a Doppler integration.
+- `get_project` — Get the details of a single Doppler project.
+- `get_secret` — Get the value and metadata of a single secret for a specific project and config.
+- `get_sync` — Get the details of a Doppler secrets sync. [write]
+- `issue_dynamic_secret_lease` — Issue a short-lived lease for a Doppler dynamic secret.
+- `list_change_requests` — List Doppler workplace change requests.
+- `list_config_logs` — List config change logs for a specific project and config.
+- `list_configs` — List configs under a specific Doppler project.
+- `list_environments` — List environments under a Doppler project.
+- `list_integrations` — List Doppler integrations available in the workplace.
+- `list_projects` — List the projects visible in the current Doppler workspace.
+- `list_secret_names` — List only the secret names for a Doppler project and config.
+- `list_secrets` — List all secrets and their metadata for a specific project and config.
+- `list_service_tokens` — List service tokens for a specific project and config.
+- `review_change_request_unit` — Submit an approving review for one Doppler change request unit.
+- `revoke_dynamic_secret_lease` — Revoke a lease issued for a Doppler dynamic secret. [destructive]
+- `set_config_inheritable` — Update whether a Doppler config can be inherited by other configs. [write]
+- `update_change_request` — Update a Doppler change request's metadata or units. [write]
+- `update_change_request_assignees` — Replace the reviewers assigned to a Doppler change request. [write]
+- `update_change_request_unit_status` — Update the status of one Doppler change request unit. [write]
+- `update_config` — Rename a Doppler config. [write]
+- `update_environment` — Rename a Doppler environment or update personal config settings. [write]
+- `update_project` — Update a Doppler project's name or description. [write]
+- `update_secret_note` — Update the note for a specific secret. [write]
+- `update_secrets` — Create or update secrets in bulk for a specific project and config. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Doppler state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Doppler state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

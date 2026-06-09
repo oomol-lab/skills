@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Neon"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "neon"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://neon.com"
+  version: "1.0.1"
+  services: ["neon"]
   icon: "https://static.oomol.com/logo/third-party/Neon.svg"
 ---
 
 # Neon
 
 Operate **Neon** through your OOMOL-connected account. This skill calls the `neon` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 18 action(s).
 
 ## Running an action
 
@@ -37,34 +33,34 @@ oo connector run "neon" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_branch`](actions/create_branch.md) — Create a branch in a Neon project.
-- [`create_database`](actions/create_database.md) — Create a database in a Neon branch.
-- [`create_project`](actions/create_project.md) — Create a Neon project with an optional default branch configuration.
-- [`delete_branch`](actions/delete_branch.md) — Delete a branch from a Neon project.
-- [`delete_database`](actions/delete_database.md) — Delete a database from a Neon branch.
-- [`delete_project`](actions/delete_project.md) — Delete a Neon project.
-- [`get_branch`](actions/get_branch.md) — Get detailed metadata for a Neon branch.
-- [`get_current_user`](actions/get_current_user.md) — Get the currently authenticated Neon user profile.
-- [`get_database`](actions/get_database.md) — Get detailed metadata for a Neon database.
-- [`get_operation`](actions/get_operation.md) — Get detailed metadata for a Neon operation.
-- [`get_project`](actions/get_project.md) — Get detailed metadata for a Neon project.
-- [`list_branches`](actions/list_branches.md) — List branches for a Neon project.
-- [`list_databases`](actions/list_databases.md) — List databases for a Neon branch.
-- [`list_operations`](actions/list_operations.md) — List operations for a Neon project.
-- [`list_projects`](actions/list_projects.md) — List Neon projects available to the authenticated account.
-- [`update_branch`](actions/update_branch.md) — Update a Neon branch name or protection status.
-- [`update_database`](actions/update_database.md) — Update a Neon database name or owner.
-- [`update_project`](actions/update_project.md) — Update a Neon project name or history retention period.
+- `create_branch` — Create a branch in a Neon project. [write]
+- `create_database` — Create a database in a Neon branch. [write]
+- `create_project` — Create a Neon project with an optional default branch configuration. [write]
+- `delete_branch` — Delete a branch from a Neon project. [destructive]
+- `delete_database` — Delete a database from a Neon branch. [destructive]
+- `delete_project` — Delete a Neon project. [destructive]
+- `get_branch` — Get detailed metadata for a Neon branch.
+- `get_current_user` — Get the currently authenticated Neon user profile.
+- `get_database` — Get detailed metadata for a Neon database.
+- `get_operation` — Get detailed metadata for a Neon operation.
+- `get_project` — Get detailed metadata for a Neon project.
+- `list_branches` — List branches for a Neon project.
+- `list_databases` — List databases for a Neon branch.
+- `list_operations` — List operations for a Neon project.
+- `list_projects` — List Neon projects available to the authenticated account.
+- `update_branch` — Update a Neon branch name or protection status. [write]
+- `update_database` — Update a Neon database name or owner. [write]
+- `update_project` — Update a Neon project name or history retention period. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Neon state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Neon state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

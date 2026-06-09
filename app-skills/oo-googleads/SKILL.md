@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Ads"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "googleads"
-  categories: "Marketing, Data & Analytics"
-  homepage: "https://ads.google.com"
+  version: "1.0.1"
+  services: ["googleads"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Ads.svg"
 ---
 
 # Google Ads
 
 Operate **Google Ads** through your OOMOL-connected account. This skill calls the `googleads` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Data & Analytics. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "googleads" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_or_remove_to_customer_list`](actions/add_or_remove_to_customer_list.md) — Submit Customer Match user identifiers to add users to or remove users from a Google Ads customer list.
-- [`create_customer_list`](actions/create_customer_list.md) — Create a new Google Ads CRM-based customer list for Customer Match uploads.
-- [`get_campaign_by_id`](actions/get_campaign_by_id.md) — Retrieve one Google Ads campaign by its campaign ID.
-- [`get_campaign_by_name`](actions/get_campaign_by_name.md) — Retrieve all Google Ads campaigns that exactly match a campaign name.
-- [`list_accessible_customers`](actions/list_accessible_customers.md) — List Google Ads customer resource names accessible to the current OAuth credential.
-- [`list_customer_lists`](actions/list_customer_lists.md) — List Google Ads customer lists available under the specified customer account.
-- [`mutate_ad_groups`](actions/mutate_ad_groups.md) — Create, update, or remove Google Ads ad groups in a single mutate request.
-- [`mutate_campaigns`](actions/mutate_campaigns.md) — Create, update, or remove Google Ads campaigns in a single mutate request.
-- [`search_stream_gaql`](actions/search_stream_gaql.md) — Execute a GAQL streaming query and return the aggregated result rows in one response.
+- `add_or_remove_to_customer_list` — Submit Customer Match user identifiers to add users to or remove users from a Google Ads customer list. [destructive]
+- `create_customer_list` — Create a new Google Ads CRM-based customer list for Customer Match uploads. [write]
+- `get_campaign_by_id` — Retrieve one Google Ads campaign by its campaign ID.
+- `get_campaign_by_name` — Retrieve all Google Ads campaigns that exactly match a campaign name.
+- `list_accessible_customers` — List Google Ads customer resource names accessible to the current OAuth credential.
+- `list_customer_lists` — List Google Ads customer lists available under the specified customer account.
+- `mutate_ad_groups` — Create, update, or remove Google Ads ad groups in a single mutate request. [write]
+- `mutate_campaigns` — Create, update, or remove Google Ads campaigns in a single mutate request. [write]
+- `search_stream_gaql` — Execute a GAQL streaming query and return the aggregated result rows in one response.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Google Ads state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Google Ads state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

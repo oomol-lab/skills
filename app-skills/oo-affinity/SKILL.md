@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Affinity"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "affinity"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://www.affinity.co"
+  version: "1.0.1"
+  services: ["affinity"]
   icon: "https://static.oomol.com/logo/third-party/affinity.svg"
 ---
 
 # Affinity
 
 Operate **Affinity** through your OOMOL-connected account. This skill calls the `affinity` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 20 action(s).
 
 ## Running an action
 
@@ -37,36 +33,36 @@ oo connector run "affinity" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_company`](actions/get_company.md) — Get one Affinity company by ID with optional field selectors.
-- [`get_current_user`](actions/get_current_user.md) — Get the authenticated Affinity user, tenant, and API grant summary.
-- [`get_list`](actions/get_list.md) — Get one Affinity list by ID.
-- [`get_opportunity`](actions/get_opportunity.md) — Get one Affinity opportunity by ID.
-- [`get_person`](actions/get_person.md) — Get one Affinity person by ID with optional field selectors.
-- [`get_saved_view`](actions/get_saved_view.md) — Get one Affinity saved view by list ID and saved view ID.
-- [`list_companies`](actions/list_companies.md) — List Affinity companies with optional ID and field selectors.
-- [`list_company_fields`](actions/list_company_fields.md) — List non-list-specific Affinity company field metadata.
-- [`list_company_list_entries`](actions/list_company_list_entries.md) — List all Affinity list entries for one company across lists.
-- [`list_company_lists`](actions/list_company_lists.md) — List the Affinity lists that contain one company.
-- [`list_list_entries`](actions/list_list_entries.md) — List the Affinity list entries for one list with optional field selectors.
-- [`list_list_fields`](actions/list_list_fields.md) — List the field metadata for one Affinity list.
-- [`list_lists`](actions/list_lists.md) — List the Affinity lists visible to the authenticated user.
-- [`list_opportunities`](actions/list_opportunities.md) — List Affinity opportunities with optional ID filtering.
-- [`list_person_fields`](actions/list_person_fields.md) — List non-list-specific Affinity person field metadata.
-- [`list_person_list_entries`](actions/list_person_list_entries.md) — List all Affinity list entries for one person across lists.
-- [`list_person_lists`](actions/list_person_lists.md) — List the Affinity lists that contain one person.
-- [`list_persons`](actions/list_persons.md) — List Affinity persons with optional ID and field selectors.
-- [`list_saved_view_list_entries`](actions/list_saved_view_list_entries.md) — List the Affinity list entries returned by one saved view.
-- [`list_saved_views`](actions/list_saved_views.md) — List the saved views configured on one Affinity list.
+- `get_company` — Get one Affinity company by ID with optional field selectors.
+- `get_current_user` — Get the authenticated Affinity user, tenant, and API grant summary.
+- `get_list` — Get one Affinity list by ID.
+- `get_opportunity` — Get one Affinity opportunity by ID.
+- `get_person` — Get one Affinity person by ID with optional field selectors.
+- `get_saved_view` — Get one Affinity saved view by list ID and saved view ID.
+- `list_companies` — List Affinity companies with optional ID and field selectors.
+- `list_company_fields` — List non-list-specific Affinity company field metadata.
+- `list_company_list_entries` — List all Affinity list entries for one company across lists.
+- `list_company_lists` — List the Affinity lists that contain one company.
+- `list_list_entries` — List the Affinity list entries for one list with optional field selectors.
+- `list_list_fields` — List the field metadata for one Affinity list.
+- `list_lists` — List the Affinity lists visible to the authenticated user.
+- `list_opportunities` — List Affinity opportunities with optional ID filtering.
+- `list_person_fields` — List non-list-specific Affinity person field metadata.
+- `list_person_list_entries` — List all Affinity list entries for one person across lists.
+- `list_person_lists` — List the Affinity lists that contain one person.
+- `list_persons` — List Affinity persons with optional ID and field selectors.
+- `list_saved_view_list_entries` — List the Affinity list entries returned by one saved view.
+- `list_saved_views` — List the saved views configured on one Affinity list.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Affinity state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Affinity state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 
