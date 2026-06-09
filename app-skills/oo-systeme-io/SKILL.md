@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Systeme.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "systeme_io"
-  categories: "Marketing, Productivity"
-  homepage: "https://systeme.io"
+  version: "1.0.1"
+  services: ["systeme_io"]
   icon: "https://static.oomol.com/logo/third-party/systeme_io.svg"
 ---
 
 # Systeme.io
 
 Operate **Systeme.io** through your OOMOL-connected account. This skill calls the `systeme_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Productivity. Exposes 24 action(s).
 
 ## Running an action
 
@@ -37,40 +33,40 @@ oo connector run "systeme_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`attach_contact_tag`](actions/attach_contact_tag.md) — Attach a tag to a contact in Systeme.io.
-- [`cancel_subscription`](actions/cancel_subscription.md) — Cancel a subscription in Systeme.io.
-- [`create_contact`](actions/create_contact.md) — Create a new contact in Systeme.io.
-- [`create_enrollment`](actions/create_enrollment.md) — Enroll a contact in a course in Systeme.io.
-- [`create_tag`](actions/create_tag.md) — Create a new tag in Systeme.io.
-- [`create_webhook`](actions/create_webhook.md) — Create a new webhook in Systeme.io.
-- [`delete_contact`](actions/delete_contact.md) — Delete a contact from Systeme.io.
-- [`delete_enrollment`](actions/delete_enrollment.md) — Remove a contact enrollment from a course in Systeme.io.
-- [`delete_tag`](actions/delete_tag.md) — Delete a tag from Systeme.io.
-- [`delete_webhook`](actions/delete_webhook.md) — Delete a webhook from Systeme.io.
-- [`detach_contact_tag`](actions/detach_contact_tag.md) — Detach a tag from a contact in Systeme.io.
-- [`get_contact`](actions/get_contact.md) — Get a single contact from Systeme.io by ID.
-- [`get_tag`](actions/get_tag.md) — Get a single tag from Systeme.io by ID.
-- [`get_webhook`](actions/get_webhook.md) — Get a single webhook from Systeme.io by ID.
-- [`list_contact_fields`](actions/list_contact_fields.md) — List custom contact fields from Systeme.io.
-- [`list_contacts`](actions/list_contacts.md) — List contacts from Systeme.io with optional pagination.
-- [`list_courses`](actions/list_courses.md) — List courses from Systeme.io with optional pagination.
-- [`list_enrollments`](actions/list_enrollments.md) — List enrollments for a specific course in Systeme.io.
-- [`list_subscriptions`](actions/list_subscriptions.md) — List subscriptions from Systeme.io with optional pagination.
-- [`list_tags`](actions/list_tags.md) — List tags from Systeme.io with optional pagination.
-- [`list_webhooks`](actions/list_webhooks.md) — List webhooks from Systeme.io with optional pagination.
-- [`update_contact`](actions/update_contact.md) — Update an existing contact in Systeme.io.
-- [`update_tag`](actions/update_tag.md) — Update an existing tag in Systeme.io.
-- [`update_webhook`](actions/update_webhook.md) — Update an existing webhook in Systeme.io.
+- `attach_contact_tag` — Attach a tag to a contact in Systeme.io.
+- `cancel_subscription` — Cancel a subscription in Systeme.io. [write]
+- `create_contact` — Create a new contact in Systeme.io. [write]
+- `create_enrollment` — Enroll a contact in a course in Systeme.io. [write]
+- `create_tag` — Create a new tag in Systeme.io. [write]
+- `create_webhook` — Create a new webhook in Systeme.io. [write]
+- `delete_contact` — Delete a contact from Systeme.io. [destructive]
+- `delete_enrollment` — Remove a contact enrollment from a course in Systeme.io. [destructive]
+- `delete_tag` — Delete a tag from Systeme.io. [destructive]
+- `delete_webhook` — Delete a webhook from Systeme.io. [destructive]
+- `detach_contact_tag` — Detach a tag from a contact in Systeme.io.
+- `get_contact` — Get a single contact from Systeme.io by ID.
+- `get_tag` — Get a single tag from Systeme.io by ID.
+- `get_webhook` — Get a single webhook from Systeme.io by ID.
+- `list_contact_fields` — List custom contact fields from Systeme.io.
+- `list_contacts` — List contacts from Systeme.io with optional pagination.
+- `list_courses` — List courses from Systeme.io with optional pagination.
+- `list_enrollments` — List enrollments for a specific course in Systeme.io.
+- `list_subscriptions` — List subscriptions from Systeme.io with optional pagination.
+- `list_tags` — List tags from Systeme.io with optional pagination.
+- `list_webhooks` — List webhooks from Systeme.io with optional pagination.
+- `update_contact` — Update an existing contact in Systeme.io. [write]
+- `update_tag` — Update an existing tag in Systeme.io. [write]
+- `update_webhook` — Update an existing webhook in Systeme.io. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Systeme.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Systeme.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

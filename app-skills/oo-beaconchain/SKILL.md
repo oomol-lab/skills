@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Beaconcha.in"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "beaconchain"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://beaconcha.in"
+  version: "1.0.1"
+  services: ["beaconchain"]
   icon: "https://static.oomol.com/logo/third-party/beaconchain.svg"
 ---
 
 # Beaconcha.in
 
 Operate **Beaconcha.in** through your OOMOL-connected account. This skill calls the `beaconchain` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "beaconchain" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_network_performance`](actions/get_network_performance.md) — Get aggregated Beaconcha.in network performance metrics for a fixed evaluation window.
-- [`get_staking_queues`](actions/get_staking_queues.md) — Get the current staking queue metrics for the requested Beaconcha.in chain.
-- [`get_validator`](actions/get_validator.md) — Get the current validator snapshot for a single validator identifier.
-- [`get_validator_consensus_rewards`](actions/get_validator_consensus_rewards.md) — Get per-validator reward breakdowns for a finalized Beaconcha.in epoch.
-- [`list_validators`](actions/list_validators.md) — List the current validator snapshots for one or more validator identifiers.
+- `get_network_performance` — Get aggregated Beaconcha.in network performance metrics for a fixed evaluation window.
+- `get_staking_queues` — Get the current staking queue metrics for the requested Beaconcha.in chain.
+- `get_validator` — Get the current validator snapshot for a single validator identifier.
+- `get_validator_consensus_rewards` — Get per-validator reward breakdowns for a finalized Beaconcha.in epoch.
+- `list_validators` — List the current validator snapshots for one or more validator identifiers.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Beaconcha.in state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Beaconcha.in state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

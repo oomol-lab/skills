@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gigasheet"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gigasheet"
-  categories: "Data & Analytics, Productivity"
-  homepage: "https://www.gigasheet.com"
+  version: "1.0.1"
+  services: ["gigasheet"]
   icon: "https://static.oomol.com/logo/third-party/Gigasheet.svg"
 ---
 
 # Gigasheet
 
 Operate **Gigasheet** through your OOMOL-connected account. This skill calls the `gigasheet` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Productivity. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "gigasheet" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`describe_dataset`](actions/describe_dataset.md) — Describe one Gigasheet dataset, including status and file metadata.
-- [`get_enrichment_credits`](actions/get_enrichment_credits.md) — Get the current enrichment credit usage for the authenticated Gigasheet user.
-- [`get_library_path`](actions/get_library_path.md) — Return the parent directory chain for one Gigasheet file or folder handle.
-- [`get_space_used`](actions/get_space_used.md) — Get the current storage usage reported for the authenticated Gigasheet user.
-- [`list_exports`](actions/list_exports.md) — List exports owned by the current Gigasheet user across all locations.
-- [`list_home_files`](actions/list_home_files.md) — List the suggested recent files shown on the Gigasheet home page.
-- [`search_library`](actions/search_library.md) — Search Gigasheet library metadata without reading file contents.
+- `describe_dataset` — Describe one Gigasheet dataset, including status and file metadata.
+- `get_enrichment_credits` — Get the current enrichment credit usage for the authenticated Gigasheet user.
+- `get_library_path` — Return the parent directory chain for one Gigasheet file or folder handle.
+- `get_space_used` — Get the current storage usage reported for the authenticated Gigasheet user.
+- `list_exports` — List exports owned by the current Gigasheet user across all locations.
+- `list_home_files` — List the suggested recent files shown on the Gigasheet home page.
+- `search_library` — Search Gigasheet library metadata without reading file contents.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Gigasheet state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Gigasheet state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

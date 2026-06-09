@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "IP2Location.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ip2location"
-  categories: "Maps & Location, Security & Identity, Data & Analytics"
-  homepage: "https://www.ip2location.io"
+  version: "1.0.1"
+  services: ["ip2location"]
   icon: "https://static.oomol.com/logo/third-party/ip2location.png"
 ---
 
 # IP2Location.io
 
 Operate **IP2Location.io** through your OOMOL-connected account. This skill calls the `ip2location` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Security & Identity, Data & Analytics. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "ip2location" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_domain_whois`](actions/get_domain_whois.md) — Retrieve WHOIS registration details for one domain.
-- [`get_ip_geolocation`](actions/get_ip_geolocation.md) — Retrieve geolocation and network metadata for one IPv4 or IPv6 address.
-- [`list_hosted_domains`](actions/list_hosted_domains.md) — List the hosted domains associated with one IPv4 or IPv6 address.
+- `get_domain_whois` — Retrieve WHOIS registration details for one domain.
+- `get_ip_geolocation` — Retrieve geolocation and network metadata for one IPv4 or IPv6 address.
+- `list_hosted_domains` — List the hosted domains associated with one IPv4 or IPv6 address.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change IP2Location.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change IP2Location.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

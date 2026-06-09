@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "API.Bible"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "api_bible"
-  categories: "Data & Analytics"
-  homepage: "https://scripture.api.bible/"
+  version: "1.0.1"
+  services: ["api_bible"]
   icon: "https://static.oomol.com/logo/third-party/api_bible.svg"
 ---
 
 # API.Bible
 
 Operate **API.Bible** through your OOMOL-connected account. This skill calls the `api_bible` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "api_bible" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_chapter`](actions/get_chapter.md) — Retrieve one chapter with configurable display options from API.Bible.
-- [`get_passage`](actions/get_passage.md) — Retrieve one passage with configurable display options from API.Bible.
-- [`get_verse`](actions/get_verse.md) — Retrieve one verse with configurable display options from API.Bible.
-- [`list_bibles`](actions/list_bibles.md) — List Bible versions from API.Bible with optional language, abbreviation, or name filters.
-- [`list_books`](actions/list_books.md) — List books for one Bible version from API.Bible.
-- [`list_chapters`](actions/list_chapters.md) — List chapters for one book in one Bible version from API.Bible.
-- [`list_verses`](actions/list_verses.md) — List verses for one chapter in one Bible version from API.Bible.
-- [`search_scripture`](actions/search_scripture.md) — Search scripture within one Bible version from API.Bible and preserve whether the result is verse-based or passage-based.
+- `get_chapter` — Retrieve one chapter with configurable display options from API.Bible.
+- `get_passage` — Retrieve one passage with configurable display options from API.Bible.
+- `get_verse` — Retrieve one verse with configurable display options from API.Bible.
+- `list_bibles` — List Bible versions from API.Bible with optional language, abbreviation, or name filters.
+- `list_books` — List books for one Bible version from API.Bible.
+- `list_chapters` — List chapters for one book in one Bible version from API.Bible.
+- `list_verses` — List verses for one chapter in one Bible version from API.Bible.
+- `search_scripture` — Search scripture within one Bible version from API.Bible and preserve whether the result is verse-based or passage-based.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change API.Bible state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change API.Bible state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

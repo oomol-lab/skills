@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MailboxValidator"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mailbox_validator"
-  categories: "Communication, Marketing"
-  homepage: "https://www.mailboxvalidator.com"
+  version: "1.0.1"
+  services: ["mailbox_validator"]
 ---
 
 # MailboxValidator
 
 Operate **MailboxValidator** through your OOMOL-connected account. This skill calls the `mailbox_validator` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 3 action(s).
 
 ## Running an action
 
@@ -36,19 +32,19 @@ oo connector run "mailbox_validator" --action "<action_name>" --data '<json>' --
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_disposable_email`](actions/check_disposable_email.md) — Check whether an email address belongs to a disposable email provider.
-- [`check_free_email`](actions/check_free_email.md) — Check whether an email address belongs to a free email provider.
-- [`validate_email`](actions/validate_email.md) — Validate a single email address and return MailboxValidator deliverability signals.
+- `check_disposable_email` — Check whether an email address belongs to a disposable email provider.
+- `check_free_email` — Check whether an email address belongs to a free email provider.
+- `validate_email` — Validate a single email address and return MailboxValidator deliverability signals.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change MailboxValidator state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change MailboxValidator state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

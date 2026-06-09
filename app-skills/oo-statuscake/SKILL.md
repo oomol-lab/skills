@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "StatusCake"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "statuscake"
-  categories: "Developer Tools"
-  homepage: "https://www.statuscake.com"
+  version: "1.0.1"
+  services: ["statuscake"]
   icon: "https://static.oomol.com/logo/third-party/Statuscake.svg"
 ---
 
 # StatusCake
 
 Operate **StatusCake** through your OOMOL-connected account. This skill calls the `statuscake` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "statuscake" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_uptime_test`](actions/create_uptime_test.md) — Create a new StatusCake uptime test.
-- [`delete_uptime_test`](actions/delete_uptime_test.md) — Delete a StatusCake uptime test.
-- [`get_uptime_test`](actions/get_uptime_test.md) — Get the full configuration and status of a single StatusCake uptime test.
-- [`list_uptime_locations`](actions/list_uptime_locations.md) — List available monitoring locations for StatusCake uptime tests.
-- [`list_uptime_test_alerts`](actions/list_uptime_test_alerts.md) — List alerts triggered for a StatusCake uptime test.
-- [`list_uptime_test_history`](actions/list_uptime_test_history.md) — List historical probe results for a StatusCake uptime test.
-- [`list_uptime_test_periods`](actions/list_uptime_test_periods.md) — List uptime or downtime periods recorded for a StatusCake uptime test.
-- [`list_uptime_tests`](actions/list_uptime_tests.md) — List uptime tests available in the connected StatusCake account.
-- [`update_uptime_test`](actions/update_uptime_test.md) — Update an existing StatusCake uptime test.
+- `create_uptime_test` — Create a new StatusCake uptime test. [write]
+- `delete_uptime_test` — Delete a StatusCake uptime test. [destructive]
+- `get_uptime_test` — Get the full configuration and status of a single StatusCake uptime test.
+- `list_uptime_locations` — List available monitoring locations for StatusCake uptime tests.
+- `list_uptime_test_alerts` — List alerts triggered for a StatusCake uptime test.
+- `list_uptime_test_history` — List historical probe results for a StatusCake uptime test.
+- `list_uptime_test_periods` — List uptime or downtime periods recorded for a StatusCake uptime test.
+- `list_uptime_tests` — List uptime tests available in the connected StatusCake account.
+- `update_uptime_test` — Update an existing StatusCake uptime test. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change StatusCake state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change StatusCake state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

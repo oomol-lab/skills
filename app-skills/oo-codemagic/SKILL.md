@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Codemagic"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "codemagic"
-  categories: "Developer Tools"
-  homepage: "https://codemagic.io"
+  version: "1.0.1"
+  services: ["codemagic"]
   icon: "https://static.oomol.com/logo/third-party/Codemagic.svg"
 ---
 
 # Codemagic
 
 Operate **Codemagic** through your OOMOL-connected account. This skill calls the `codemagic` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "codemagic" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`cancel_build`](actions/cancel_build.md) — Cancel a Codemagic build by its build ID.
-- [`create_build`](actions/create_build.md) — Start a new Codemagic build for the specified app and workflow.
-- [`get_build`](actions/get_build.md) — Get detailed information about a single Codemagic build.
-- [`get_current_user`](actions/get_current_user.md) — Get the authenticated Codemagic user and their available team permissions.
-- [`list_team_apps`](actions/list_team_apps.md) — List the applications that belong to a specific Codemagic team.
-- [`list_team_builds`](actions/list_team_builds.md) — List builds for a specific Codemagic team with optional filters.
-- [`list_user_apps`](actions/list_user_apps.md) — List the Codemagic applications accessible to the authenticated user.
-- [`list_user_teams`](actions/list_user_teams.md) — List the Codemagic teams accessible to the authenticated user.
+- `cancel_build` — Cancel a Codemagic build by its build ID. [write]
+- `create_build` — Start a new Codemagic build for the specified app and workflow. [write]
+- `get_build` — Get detailed information about a single Codemagic build.
+- `get_current_user` — Get the authenticated Codemagic user and their available team permissions.
+- `list_team_apps` — List the applications that belong to a specific Codemagic team.
+- `list_team_builds` — List builds for a specific Codemagic team with optional filters.
+- `list_user_apps` — List the Codemagic applications accessible to the authenticated user.
+- `list_user_teams` — List the Codemagic teams accessible to the authenticated user.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Codemagic state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Codemagic state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

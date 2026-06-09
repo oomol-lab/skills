@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AgentMail"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "agent_mail"
-  categories: "Communication, Productivity"
-  homepage: "https://agentmail.to"
+  version: "1.0.2"
+  services: ["agent_mail"]
   icon: "https://static.oomol.com/logo/third-party/agent_mail.svg"
 ---
 
 # AgentMail
 
 Operate **AgentMail** through your OOMOL-connected account. This skill calls the `agent_mail` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 103 action(s).
 
 ## Running an action
 
@@ -37,119 +33,118 @@ oo connector run "agent_mail" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`batch_get_messages`](actions/batch_get_messages.md) — Fetch multiple messages from a specific AgentMail inbox by message ID.
-- [`create_api_key`](actions/create_api_key.md) — Create an AgentMail API key.
-- [`create_domain`](actions/create_domain.md) — Create an AgentMail domain.
-- [`create_draft`](actions/create_draft.md) — Create a draft in a specific AgentMail inbox.
-- [`create_inbox`](actions/create_inbox.md) — Create a new AgentMail inbox.
-- [`create_inbox_api_key`](actions/create_inbox_api_key.md) — Create an API key scoped to a specific AgentMail inbox.
-- [`create_inbox_list_entry`](actions/create_inbox_list_entry.md) — Create an allow or block list entry scoped to a specific AgentMail inbox.
-- [`create_list_entry`](actions/create_list_entry.md) — Create a global AgentMail allow or block list entry.
-- [`create_pod`](actions/create_pod.md) — Create an AgentMail pod.
-- [`create_pod_api_key`](actions/create_pod_api_key.md) — Create an API key scoped to a specific AgentMail pod.
-- [`create_pod_domain`](actions/create_pod_domain.md) — Create an AgentMail domain scoped to a pod.
-- [`create_pod_inbox`](actions/create_pod_inbox.md) — Create an AgentMail inbox scoped to a pod.
-- [`create_pod_list_entry`](actions/create_pod_list_entry.md) — Create an AgentMail allow or block list entry scoped to a pod.
-- [`create_webhook`](actions/create_webhook.md) — Create an AgentMail webhook.
-- [`delete_api_key`](actions/delete_api_key.md) — Delete an AgentMail API key.
-- [`delete_domain`](actions/delete_domain.md) — Delete an AgentMail domain.
-- [`delete_draft`](actions/delete_draft.md) — Delete a draft from a specific AgentMail inbox.
-- [`delete_inbox`](actions/delete_inbox.md) — Delete an AgentMail inbox.
-- [`delete_inbox_api_key`](actions/delete_inbox_api_key.md) — Delete an API key scoped to a specific AgentMail inbox.
-- [`delete_inbox_list_entry`](actions/delete_inbox_list_entry.md) — Delete an allow or block list entry scoped to a specific AgentMail inbox.
-- [`delete_inbox_thread`](actions/delete_inbox_thread.md) — Delete a thread from a specific AgentMail inbox.
-- [`delete_list_entry`](actions/delete_list_entry.md) — Delete a global AgentMail allow or block list entry.
-- [`delete_message`](actions/delete_message.md) — Delete a message from a specific AgentMail inbox.
-- [`delete_pod`](actions/delete_pod.md) — Delete an AgentMail pod.
-- [`delete_pod_api_key`](actions/delete_pod_api_key.md) — Delete an API key scoped to a specific AgentMail pod.
-- [`delete_pod_domain`](actions/delete_pod_domain.md) — Delete an AgentMail domain scoped to a pod.
-- [`delete_pod_inbox`](actions/delete_pod_inbox.md) — Delete an AgentMail inbox scoped to a pod.
-- [`delete_pod_list_entry`](actions/delete_pod_list_entry.md) — Delete an AgentMail allow or block list entry scoped to a pod.
-- [`delete_pod_thread`](actions/delete_pod_thread.md) — Delete an AgentMail thread scoped to a pod.
-- [`delete_thread`](actions/delete_thread.md) — Delete an AgentMail thread.
-- [`delete_webhook`](actions/delete_webhook.md) — Delete an AgentMail webhook.
-- [`forward_message`](actions/forward_message.md) — Forward a specific AgentMail message.
-- [`get_domain`](actions/get_domain.md) — Get a single AgentMail domain.
-- [`get_domain_zone_file`](actions/get_domain_zone_file.md) — Get the DNS zone file records needed for an AgentMail domain.
-- [`get_draft`](actions/get_draft.md) — Get a draft from a specific AgentMail inbox.
-- [`get_draft_attachment`](actions/get_draft_attachment.md) — Get metadata and download URL for an attachment on a specific AgentMail draft.
-- [`get_global_draft`](actions/get_global_draft.md) — Get a single AgentMail draft across accessible inboxes.
-- [`get_global_draft_attachment`](actions/get_global_draft_attachment.md) — Get metadata and download URL for an attachment on an AgentMail draft.
-- [`get_inbox`](actions/get_inbox.md) — Get a single AgentMail inbox.
-- [`get_inbox_list_entry`](actions/get_inbox_list_entry.md) — Get an allow or block list entry scoped to a specific AgentMail inbox.
-- [`get_inbox_thread`](actions/get_inbox_thread.md) — Get a single thread from a specific AgentMail inbox.
-- [`get_inbox_thread_attachment`](actions/get_inbox_thread_attachment.md) — Get metadata and download URL for an attachment in an AgentMail inbox thread.
-- [`get_list_entry`](actions/get_list_entry.md) — Get a global AgentMail allow or block list entry.
-- [`get_message`](actions/get_message.md) — Get a single message from a specific AgentMail inbox.
-- [`get_message_attachment`](actions/get_message_attachment.md) — Get metadata and download URL for an attachment on a specific AgentMail message.
-- [`get_organization`](actions/get_organization.md) — Get the AgentMail organization available to the current API key.
-- [`get_pod`](actions/get_pod.md) — Get a single AgentMail pod.
-- [`get_pod_domain`](actions/get_pod_domain.md) — Get a single AgentMail domain scoped to a pod.
-- [`get_pod_domain_zone_file`](actions/get_pod_domain_zone_file.md) — Get the DNS zone file records needed for an AgentMail pod domain.
-- [`get_pod_draft`](actions/get_pod_draft.md) — Get a single AgentMail draft scoped to a pod.
-- [`get_pod_draft_attachment`](actions/get_pod_draft_attachment.md) — Get metadata and download URL for an attachment on an AgentMail pod draft.
-- [`get_pod_inbox`](actions/get_pod_inbox.md) — Get a single AgentMail inbox scoped to a pod.
-- [`get_pod_list_entry`](actions/get_pod_list_entry.md) — Get an AgentMail allow or block list entry scoped to a pod.
-- [`get_pod_thread`](actions/get_pod_thread.md) — Get a single AgentMail thread scoped to a pod.
-- [`get_pod_thread_attachment`](actions/get_pod_thread_attachment.md) — Get metadata and download URL for an attachment in an AgentMail pod thread.
-- [`get_raw_message`](actions/get_raw_message.md) — Get a presigned download URL for the raw EML version of an AgentMail message.
-- [`get_thread`](actions/get_thread.md) — Get a single AgentMail thread.
-- [`get_thread_attachment`](actions/get_thread_attachment.md) — Get metadata and download URL for an attachment in an AgentMail thread.
-- [`get_webhook`](actions/get_webhook.md) — Get a single AgentMail webhook.
-- [`list_api_keys`](actions/list_api_keys.md) — List AgentMail API keys.
-- [`list_domains`](actions/list_domains.md) — List AgentMail domains.
-- [`list_drafts`](actions/list_drafts.md) — List drafts from a specific AgentMail inbox.
-- [`list_global_drafts`](actions/list_global_drafts.md) — List AgentMail drafts across accessible inboxes.
-- [`list_inbox_api_keys`](actions/list_inbox_api_keys.md) — List API keys scoped to a specific AgentMail inbox.
-- [`list_inbox_events`](actions/list_inbox_events.md) — List events scoped to a specific AgentMail inbox.
-- [`list_inbox_list_entries`](actions/list_inbox_list_entries.md) — List allow or block entries scoped to a specific AgentMail inbox.
-- [`list_inbox_threads`](actions/list_inbox_threads.md) — List threads in a specific AgentMail inbox.
-- [`list_inboxes`](actions/list_inboxes.md) — List inboxes available to the current AgentMail API key.
-- [`list_list_entries`](actions/list_list_entries.md) — List global AgentMail allow or block entries.
-- [`list_messages`](actions/list_messages.md) — List messages from a specific AgentMail inbox.
-- [`list_pod_api_keys`](actions/list_pod_api_keys.md) — List AgentMail API keys scoped to a pod.
-- [`list_pod_domains`](actions/list_pod_domains.md) — List AgentMail domains scoped to a pod.
-- [`list_pod_drafts`](actions/list_pod_drafts.md) — List AgentMail drafts scoped to a pod.
-- [`list_pod_inboxes`](actions/list_pod_inboxes.md) — List AgentMail inboxes scoped to a pod.
-- [`list_pod_list_entries`](actions/list_pod_list_entries.md) — List AgentMail allow or block entries scoped to a pod.
-- [`list_pod_threads`](actions/list_pod_threads.md) — List AgentMail threads scoped to a pod.
-- [`list_pods`](actions/list_pods.md) — List AgentMail pods.
-- [`list_threads`](actions/list_threads.md) — List AgentMail threads across accessible inboxes.
-- [`list_webhooks`](actions/list_webhooks.md) — List AgentMail webhooks.
-- [`query_inbox_metrics`](actions/query_inbox_metrics.md) — Query AgentMail metrics scoped to a specific inbox.
-- [`query_metrics`](actions/query_metrics.md) — Query AgentMail metrics across accessible resources.
-- [`query_pod_metrics`](actions/query_pod_metrics.md) — Query AgentMail metrics scoped to a pod.
-- [`reply_all_message`](actions/reply_all_message.md) — Reply to all recipients of a specific AgentMail message.
-- [`reply_to_message`](actions/reply_to_message.md) — Reply to a specific AgentMail message.
-- [`search_inbox_threads`](actions/search_inbox_threads.md) — Search threads in a specific AgentMail inbox.
-- [`search_messages`](actions/search_messages.md) — Search messages in a specific AgentMail inbox.
-- [`search_pod_threads`](actions/search_pod_threads.md) — Search AgentMail threads scoped to a pod.
-- [`search_threads`](actions/search_threads.md) — Search AgentMail threads across accessible inboxes.
-- [`send_draft`](actions/send_draft.md) — Send a specific AgentMail draft.
-- [`send_message`](actions/send_message.md) — Send a message from a specific AgentMail inbox.
-- [`update_domain`](actions/update_domain.md) — Update an AgentMail domain.
-- [`update_draft`](actions/update_draft.md) — Update a draft in a specific AgentMail inbox.
-- [`update_inbox`](actions/update_inbox.md) — Update an AgentMail inbox display name or metadata.
-- [`update_inbox_thread`](actions/update_inbox_thread.md) — Update labels on a thread in a specific AgentMail inbox.
-- [`update_message`](actions/update_message.md) — Update labels on a message in a specific AgentMail inbox.
-- [`update_pod_domain`](actions/update_pod_domain.md) — Update an AgentMail domain scoped to a pod.
-- [`update_pod_inbox`](actions/update_pod_inbox.md) — Update an AgentMail inbox scoped to a pod.
-- [`update_pod_thread`](actions/update_pod_thread.md) — Update labels on an AgentMail thread scoped to a pod.
-- [`update_thread`](actions/update_thread.md) — Update labels on an AgentMail thread.
-- [`update_webhook`](actions/update_webhook.md) — Update an AgentMail webhook.
-- [`verify_domain`](actions/verify_domain.md) — Ask AgentMail to verify a domain's DNS records.
-- [`verify_pod_domain`](actions/verify_pod_domain.md) — Ask AgentMail to verify a pod domain's DNS records.
-- [`who_am_i`](actions/who_am_i.md) — Get AgentMail identity information for the current API key.
+- `batch_get_messages` — Fetch multiple messages from a specific AgentMail inbox by message ID.
+- `create_api_key` — Create an AgentMail API key. [write]
+- `create_domain` — Create an AgentMail domain. [write]
+- `create_draft` — Create a draft in a specific AgentMail inbox. [write]
+- `create_inbox` — Create a new AgentMail inbox. [write]
+- `create_inbox_api_key` — Create an API key scoped to a specific AgentMail inbox. [write]
+- `create_inbox_list_entry` — Create an allow or block list entry scoped to a specific AgentMail inbox. [write]
+- `create_list_entry` — Create a global AgentMail allow or block list entry. [write]
+- `create_pod` — Create an AgentMail pod. [write]
+- `create_pod_api_key` — Create an API key scoped to a specific AgentMail pod. [write]
+- `create_pod_domain` — Create an AgentMail domain scoped to a pod. [write]
+- `create_pod_inbox` — Create an AgentMail inbox scoped to a pod. [write]
+- `create_pod_list_entry` — Create an AgentMail allow or block list entry scoped to a pod. [write]
+- `create_webhook` — Create an AgentMail webhook. [write]
+- `delete_api_key` — Delete an AgentMail API key. [destructive]
+- `delete_domain` — Delete an AgentMail domain. [destructive]
+- `delete_draft` — Delete a draft from a specific AgentMail inbox. [destructive]
+- `delete_inbox` — Delete an AgentMail inbox. [destructive]
+- `delete_inbox_api_key` — Delete an API key scoped to a specific AgentMail inbox. [destructive]
+- `delete_inbox_list_entry` — Delete an allow or block list entry scoped to a specific AgentMail inbox. [destructive]
+- `delete_inbox_thread` — Delete a thread from a specific AgentMail inbox. [destructive]
+- `delete_list_entry` — Delete a global AgentMail allow or block list entry. [destructive]
+- `delete_pod` — Delete an AgentMail pod. [destructive]
+- `delete_pod_api_key` — Delete an API key scoped to a specific AgentMail pod. [destructive]
+- `delete_pod_domain` — Delete an AgentMail domain scoped to a pod. [destructive]
+- `delete_pod_inbox` — Delete an AgentMail inbox scoped to a pod. [destructive]
+- `delete_pod_list_entry` — Delete an AgentMail allow or block list entry scoped to a pod. [destructive]
+- `delete_pod_thread` — Delete an AgentMail thread scoped to a pod. [destructive]
+- `delete_thread` — Delete an AgentMail thread. [destructive]
+- `delete_webhook` — Delete an AgentMail webhook. [destructive]
+- `forward_message` — Forward a specific AgentMail message. [write]
+- `get_domain` — Get a single AgentMail domain.
+- `get_domain_zone_file` — Get the DNS zone file records needed for an AgentMail domain.
+- `get_draft` — Get a draft from a specific AgentMail inbox.
+- `get_draft_attachment` — Get metadata and download URL for an attachment on a specific AgentMail draft.
+- `get_global_draft` — Get a single AgentMail draft across accessible inboxes.
+- `get_global_draft_attachment` — Get metadata and download URL for an attachment on an AgentMail draft.
+- `get_inbox` — Get a single AgentMail inbox.
+- `get_inbox_list_entry` — Get an allow or block list entry scoped to a specific AgentMail inbox.
+- `get_inbox_thread` — Get a single thread from a specific AgentMail inbox.
+- `get_inbox_thread_attachment` — Get metadata and download URL for an attachment in an AgentMail inbox thread.
+- `get_list_entry` — Get a global AgentMail allow or block list entry.
+- `get_message` — Get a single message from a specific AgentMail inbox.
+- `get_message_attachment` — Get metadata and download URL for an attachment on a specific AgentMail message.
+- `get_organization` — Get the AgentMail organization available to the current API key.
+- `get_pod` — Get a single AgentMail pod.
+- `get_pod_domain` — Get a single AgentMail domain scoped to a pod.
+- `get_pod_domain_zone_file` — Get the DNS zone file records needed for an AgentMail pod domain.
+- `get_pod_draft` — Get a single AgentMail draft scoped to a pod.
+- `get_pod_draft_attachment` — Get metadata and download URL for an attachment on an AgentMail pod draft.
+- `get_pod_inbox` — Get a single AgentMail inbox scoped to a pod.
+- `get_pod_list_entry` — Get an AgentMail allow or block list entry scoped to a pod.
+- `get_pod_thread` — Get a single AgentMail thread scoped to a pod.
+- `get_pod_thread_attachment` — Get metadata and download URL for an attachment in an AgentMail pod thread.
+- `get_raw_message` — Get a presigned download URL for the raw EML version of an AgentMail message.
+- `get_thread` — Get a single AgentMail thread.
+- `get_thread_attachment` — Get metadata and download URL for an attachment in an AgentMail thread.
+- `get_webhook` — Get a single AgentMail webhook.
+- `list_api_keys` — List AgentMail API keys.
+- `list_domains` — List AgentMail domains.
+- `list_drafts` — List drafts from a specific AgentMail inbox.
+- `list_global_drafts` — List AgentMail drafts across accessible inboxes.
+- `list_inbox_api_keys` — List API keys scoped to a specific AgentMail inbox.
+- `list_inbox_events` — List events scoped to a specific AgentMail inbox.
+- `list_inbox_list_entries` — List allow or block entries scoped to a specific AgentMail inbox.
+- `list_inbox_threads` — List threads in a specific AgentMail inbox.
+- `list_inboxes` — List inboxes available to the current AgentMail API key.
+- `list_list_entries` — List global AgentMail allow or block entries.
+- `list_messages` — List messages from a specific AgentMail inbox.
+- `list_pod_api_keys` — List AgentMail API keys scoped to a pod.
+- `list_pod_domains` — List AgentMail domains scoped to a pod.
+- `list_pod_drafts` — List AgentMail drafts scoped to a pod.
+- `list_pod_inboxes` — List AgentMail inboxes scoped to a pod.
+- `list_pod_list_entries` — List AgentMail allow or block entries scoped to a pod.
+- `list_pod_threads` — List AgentMail threads scoped to a pod.
+- `list_pods` — List AgentMail pods.
+- `list_threads` — List AgentMail threads across accessible inboxes.
+- `list_webhooks` — List AgentMail webhooks.
+- `query_inbox_metrics` — Query AgentMail metrics scoped to a specific inbox.
+- `query_metrics` — Query AgentMail metrics across accessible resources.
+- `query_pod_metrics` — Query AgentMail metrics scoped to a pod.
+- `reply_all_message` — Reply to all recipients of a specific AgentMail message. [write]
+- `reply_to_message` — Reply to a specific AgentMail message. [write]
+- `search_inbox_threads` — Search threads in a specific AgentMail inbox.
+- `search_messages` — Search messages in a specific AgentMail inbox.
+- `search_pod_threads` — Search AgentMail threads scoped to a pod.
+- `search_threads` — Search AgentMail threads across accessible inboxes.
+- `send_draft` — Send a specific AgentMail draft. [write]
+- `send_message` — Send a message from a specific AgentMail inbox. [write]
+- `update_domain` — Update an AgentMail domain. [write]
+- `update_draft` — Update a draft in a specific AgentMail inbox. [write]
+- `update_inbox` — Update an AgentMail inbox display name or metadata. [write]
+- `update_inbox_thread` — Update labels on a thread in a specific AgentMail inbox. [write]
+- `update_message` — Update labels on a message in a specific AgentMail inbox. [write]
+- `update_pod_domain` — Update an AgentMail domain scoped to a pod. [write]
+- `update_pod_inbox` — Update an AgentMail inbox scoped to a pod. [write]
+- `update_pod_thread` — Update labels on an AgentMail thread scoped to a pod. [write]
+- `update_thread` — Update labels on an AgentMail thread. [write]
+- `update_webhook` — Update an AgentMail webhook. [write]
+- `verify_domain` — Ask AgentMail to verify a domain's DNS records.
+- `verify_pod_domain` — Ask AgentMail to verify a pod domain's DNS records.
+- `who_am_i` — Get AgentMail identity information for the current API key.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change AgentMail state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change AgentMail state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

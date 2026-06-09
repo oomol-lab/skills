@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Razorpay"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "razorpay"
-  categories: "Finance, Productivity"
-  homepage: "https://razorpay.com"
+  version: "1.0.1"
+  services: ["razorpay"]
   icon: "https://static.oomol.com/logo/third-party/razorpay.png"
 ---
 
 # Razorpay
 
 Operate **Razorpay** through your OOMOL-connected account. This skill calls the `razorpay` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Productivity. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "razorpay" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_order`](actions/create_order.md) — Create a Razorpay order for an amount, currency, and optional receipt metadata.
-- [`create_refund`](actions/create_refund.md) — Create a Razorpay refund for a payment, with optional amount, speed, and notes.
-- [`get_order`](actions/get_order.md) — Fetch one Razorpay order by its order identifier.
-- [`get_payment`](actions/get_payment.md) — Fetch one Razorpay payment by its payment identifier.
-- [`list_orders`](actions/list_orders.md) — List Razorpay orders with optional receipt, status-window, and expansion filters.
-- [`list_payments`](actions/list_payments.md) — List Razorpay payments within an optional time window and pagination range.
+- `create_order` — Create a Razorpay order for an amount, currency, and optional receipt metadata. [write]
+- `create_refund` — Create a Razorpay refund for a payment, with optional amount, speed, and notes. [write]
+- `get_order` — Fetch one Razorpay order by its order identifier. [write]
+- `get_payment` — Fetch one Razorpay payment by its payment identifier.
+- `list_orders` — List Razorpay orders with optional receipt, status-window, and expansion filters.
+- `list_payments` — List Razorpay payments within an optional time window and pagination range.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Razorpay state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Razorpay state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

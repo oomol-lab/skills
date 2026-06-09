@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AltText.ai"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "alt_text_ai"
-  categories: "AI, Design & Media"
-  homepage: "https://alttext.ai"
+  version: "1.0.1"
+  services: ["alt_text_ai"]
 ---
 
 # AltText.ai
 
 Operate **AltText.ai** through your OOMOL-connected account. This skill calls the `alt_text_ai` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Design & Media. Exposes 7 action(s).
 
 ## Running an action
 
@@ -36,23 +32,23 @@ oo connector run "alt_text_ai" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_image`](actions/create_image.md) — Add a publicly accessible image URL to AltText.ai and generate alt text.
-- [`delete_image`](actions/delete_image.md) — Delete an image from the AltText.ai library by asset ID.
-- [`get_account`](actions/get_account.md) — Retrieve AltText.ai account settings and usage details for the API key.
-- [`get_image`](actions/get_image.md) — Retrieve a single AltText.ai image record by asset ID.
-- [`list_images`](actions/list_images.md) — List image records in the AltText.ai library with optional URL filtering.
-- [`scrape_page`](actions/scrape_page.md) — Scrape a web page or raw HTML document and queue discovered images for alt text generation.
-- [`search_images`](actions/search_images.md) — Search the AltText.ai image library by URL, asset ID, or alt text content.
+- `create_image` — Add a publicly accessible image URL to AltText.ai and generate alt text. [write]
+- `delete_image` — Delete an image from the AltText.ai library by asset ID. [destructive]
+- `get_account` — Retrieve AltText.ai account settings and usage details for the API key.
+- `get_image` — Retrieve a single AltText.ai image record by asset ID.
+- `list_images` — List image records in the AltText.ai library with optional URL filtering.
+- `scrape_page` — Scrape a web page or raw HTML document and queue discovered images for alt text generation.
+- `search_images` — Search the AltText.ai image library by URL, asset ID, or alt text content.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change AltText.ai state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change AltText.ai state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

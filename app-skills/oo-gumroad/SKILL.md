@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gumroad"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gumroad"
-  categories: "Finance, Marketing"
-  homepage: "https://gumroad.com"
+  version: "1.0.1"
+  services: ["gumroad"]
 ---
 
 # Gumroad
 
 Operate **Gumroad** through your OOMOL-connected account. This skill calls the `gumroad` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Marketing. Exposes 9 action(s).
 
 ## Running an action
 
@@ -36,25 +32,25 @@ oo connector run "gumroad" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user`](actions/get_current_user.md) — Retrieve the authenticated Gumroad user.
-- [`get_product`](actions/get_product.md) — Retrieve one Gumroad product by ID.
-- [`get_sale`](actions/get_sale.md) — Retrieve one Gumroad sale by ID.
-- [`list_product_subscribers`](actions/list_product_subscribers.md) — List active subscribers for one Gumroad product.
-- [`list_products`](actions/list_products.md) — List products owned by the authenticated Gumroad user.
-- [`list_sales`](actions/list_sales.md) — List successful Gumroad sales with optional filters and pagination.
-- [`mark_sale_as_shipped`](actions/mark_sale_as_shipped.md) — Mark a Gumroad sale as shipped, optionally including a tracking URL.
-- [`refund_sale`](actions/refund_sale.md) — Refund a Gumroad sale, optionally as a partial refund in cents.
-- [`resend_sale_receipt`](actions/resend_sale_receipt.md) — Resend a Gumroad sale receipt to the buyer.
+- `get_current_user` — Retrieve the authenticated Gumroad user.
+- `get_product` — Retrieve one Gumroad product by ID.
+- `get_sale` — Retrieve one Gumroad sale by ID.
+- `list_product_subscribers` — List active subscribers for one Gumroad product.
+- `list_products` — List products owned by the authenticated Gumroad user.
+- `list_sales` — List successful Gumroad sales with optional filters and pagination.
+- `mark_sale_as_shipped` — Mark a Gumroad sale as shipped, optionally including a tracking URL. [write]
+- `refund_sale` — Refund a Gumroad sale, optionally as a partial refund in cents.
+- `resend_sale_receipt` — Resend a Gumroad sale receipt to the buyer.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Gumroad state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Gumroad state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

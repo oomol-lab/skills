@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Userflow"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "userflow"
-  categories: "Data & Analytics, Marketing"
-  homepage: "https://userflow.com"
+  version: "1.0.1"
+  services: ["userflow"]
 ---
 
 # Userflow
 
 Operate **Userflow** through your OOMOL-connected account. This skill calls the `userflow` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Marketing. Exposes 8 action(s).
 
 ## Running an action
 
@@ -36,24 +32,24 @@ oo connector run "userflow" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_group`](actions/delete_group.md) — Delete one Userflow group by ID.
-- [`delete_user`](actions/delete_user.md) — Delete one Userflow user by ID.
-- [`get_group`](actions/get_group.md) — Fetch one Userflow group by ID.
-- [`get_user`](actions/get_user.md) — Fetch one Userflow user by ID.
-- [`list_users`](actions/list_users.md) — List Userflow users with optional cursor pagination and filters.
-- [`track_event`](actions/track_event.md) — Track one Userflow event for a user.
-- [`upsert_group`](actions/upsert_group.md) — Create or update one Userflow group.
-- [`upsert_user`](actions/upsert_user.md) — Create or update one Userflow user.
+- `delete_group` — Delete one Userflow group by ID. [destructive]
+- `delete_user` — Delete one Userflow user by ID. [destructive]
+- `get_group` — Fetch one Userflow group by ID.
+- `get_user` — Fetch one Userflow user by ID.
+- `list_users` — List Userflow users with optional cursor pagination and filters.
+- `track_event` — Track one Userflow event for a user.
+- `upsert_group` — Create or update one Userflow group. [write]
+- `upsert_user` — Create or update one Userflow user. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Userflow state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Userflow state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

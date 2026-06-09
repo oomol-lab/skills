@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Outlook"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "outlook"
-  categories: "Communication, Productivity"
-  homepage: "https://www.microsoft.com/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook"
+  version: "1.0.1"
+  services: ["outlook"]
   icon: "https://static.oomol.com/logo/third-party/Outlook.webp"
 ---
 
 # Outlook
 
 Operate **Outlook** through your OOMOL-connected account. This skill calls the `outlook` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "outlook" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_draft`](actions/create_draft.md) — Create a new Outlook draft message with subject, body, recipients, and other writable message properties.
-- [`get_mailbox_settings`](actions/get_mailbox_settings.md) — Get the current Outlook mailbox settings, including automatic replies, locale, time zone, and working hours.
-- [`get_message`](actions/get_message.md) — Get a single Outlook message by message ID, including message metadata and optional body formatting.
-- [`get_profile`](actions/get_profile.md) — Get the current Outlook account profile from Microsoft Graph so you can identify the connected mailbox.
-- [`list_mail_folders`](actions/list_mail_folders.md) — List the root-level Outlook mail folders for the connected mailbox, with optional hidden folders and field selection.
-- [`list_messages`](actions/list_messages.md) — List Outlook messages from the mailbox or from a specific mail folder, with support for OData filters, sorting, field selection, and pagination.
-- [`reply_email`](actions/reply_email.md) — Reply to an existing Outlook message with either a comment or a replacement body, and optionally add more recipients to the reply.
-- [`send_draft`](actions/send_draft.md) — Send an existing Outlook draft message by message ID.
-- [`send_email`](actions/send_email.md) — Send a new Outlook email in a single operation, without creating a standalone draft first.
-- [`update_draft`](actions/update_draft.md) — Update an existing Outlook draft message. Use this to revise the subject, body, recipients, or other draft-only properties before sending.
-- [`update_mailbox_settings`](actions/update_mailbox_settings.md) — Update Outlook mailbox settings such as automatic replies, locale, time zone, working hours, and date or time formatting.
+- `create_draft` — Create a new Outlook draft message with subject, body, recipients, and other writable message properties. [write]
+- `get_mailbox_settings` — Get the current Outlook mailbox settings, including automatic replies, locale, time zone, and working hours.
+- `get_message` — Get a single Outlook message by message ID, including message metadata and optional body formatting.
+- `get_profile` — Get the current Outlook account profile from Microsoft Graph so you can identify the connected mailbox.
+- `list_mail_folders` — List the root-level Outlook mail folders for the connected mailbox, with optional hidden folders and field selection.
+- `list_messages` — List Outlook messages from the mailbox or from a specific mail folder, with support for OData filters, sorting, field selection, and pagination.
+- `reply_email` — Reply to an existing Outlook message with either a comment or a replacement body, and optionally add more recipients to the reply. [write]
+- `send_draft` — Send an existing Outlook draft message by message ID. [write]
+- `send_email` — Send a new Outlook email in a single operation, without creating a standalone draft first. [write]
+- `update_draft` — Update an existing Outlook draft message. Use this to revise the subject, body, recipients, or other draft-only properties before sending. [write]
+- `update_mailbox_settings` — Update Outlook mailbox settings such as automatic replies, locale, time zone, working hours, and date or time formatting. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Outlook state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Outlook state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

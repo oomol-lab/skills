@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Docker Hub"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "docker_hub"
-  categories: "Developer Tools"
-  homepage: "https://hub.docker.com"
+  version: "1.0.1"
+  services: ["docker_hub"]
   icon: "https://static.oomol.com/logo/third-party/Docker%20Hub.svg"
 ---
 
 # Docker Hub
 
 Operate **Docker Hub** through your OOMOL-connected account. This skill calls the `docker_hub` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "docker_hub" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_org_member`](actions/add_org_member.md) — Invite a Docker ID or email address to join a Docker Hub organization by using the documented bulk invite endpoint with a single invitee.
-- [`create_repository`](actions/create_repository.md) — Create a Docker Hub repository inside a namespace.
-- [`delete_team`](actions/delete_team.md) — Delete a Docker Hub team within an organization.
-- [`get_image`](actions/get_image.md) — Find a Docker Hub image variant by digest by scanning the repository's published tags. This is a repo-level helper built on the official tag listing responses.
-- [`get_repository`](actions/get_repository.md) — Get detailed metadata for a Docker Hub repository within a namespace.
-- [`get_tag`](actions/get_tag.md) — Get metadata and image variants for a specific Docker Hub repository tag.
-- [`get_team`](actions/get_team.md) — Get a Docker Hub team within an organization.
-- [`list_org_access_tokens`](actions/list_org_access_tokens.md) — List Docker Hub organization access tokens for an organization.
-- [`list_org_members`](actions/list_org_members.md) — List Docker Hub organization members with optional filtering and pagination.
-- [`list_repositories`](actions/list_repositories.md) — List Docker Hub repositories in a namespace with optional name filtering and ordering.
-- [`list_team_members`](actions/list_team_members.md) — List members of a Docker Hub team within an organization.
-- [`list_teams`](actions/list_teams.md) — List Docker Hub teams for an organization.
-- [`remove_org_member`](actions/remove_org_member.md) — Remove a member from a Docker Hub organization.
-- [`remove_team_member`](actions/remove_team_member.md) — Remove a user from a Docker Hub team within an organization.
+- `add_org_member` — Invite a Docker ID or email address to join a Docker Hub organization by using the documented bulk invite endpoint with a single invitee. [write]
+- `create_repository` — Create a Docker Hub repository inside a namespace. [write]
+- `delete_team` — Delete a Docker Hub team within an organization. [destructive]
+- `get_image` — Find a Docker Hub image variant by digest by scanning the repository's published tags. This is a repo-level helper built on the official tag listing responses.
+- `get_repository` — Get detailed metadata for a Docker Hub repository within a namespace.
+- `get_tag` — Get metadata and image variants for a specific Docker Hub repository tag.
+- `get_team` — Get a Docker Hub team within an organization.
+- `list_org_access_tokens` — List Docker Hub organization access tokens for an organization.
+- `list_org_members` — List Docker Hub organization members with optional filtering and pagination.
+- `list_repositories` — List Docker Hub repositories in a namespace with optional name filtering and ordering.
+- `list_team_members` — List members of a Docker Hub team within an organization.
+- `list_teams` — List Docker Hub teams for an organization.
+- `remove_org_member` — Remove a member from a Docker Hub organization. [destructive]
+- `remove_team_member` — Remove a user from a Docker Hub team within an organization. [destructive]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Docker Hub state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Docker Hub state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Supabase"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "supabase"
-  categories: "Developer Tools, Data & Analytics, Storage"
-  homepage: "https://supabase.com"
+  version: "1.0.1"
+  services: ["supabase"]
   icon: "https://static.oomol.com/logo/third-party/Supabase.svg"
 ---
 
 # Supabase
 
 Operate **Supabase** through your OOMOL-connected account. This skill calls the `supabase` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics, Storage. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "supabase" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_project_api_key`](actions/create_project_api_key.md) — Create a publishable or secret API key for a Supabase project.
-- [`get_project`](actions/get_project.md) — Get detailed metadata for a Supabase project by project ref.
-- [`get_project_api_key`](actions/get_project_api_key.md) — Get one API key record from a Supabase project.
-- [`list_organizations`](actions/list_organizations.md) — List the organizations available to the authenticated Supabase account.
-- [`list_project_api_keys`](actions/list_project_api_keys.md) — List API keys for a Supabase project.
-- [`list_projects`](actions/list_projects.md) — List Supabase projects visible to the authenticated account.
+- `create_project_api_key` — Create a publishable or secret API key for a Supabase project. [write]
+- `get_project` — Get detailed metadata for a Supabase project by project ref.
+- `get_project_api_key` — Get one API key record from a Supabase project.
+- `list_organizations` — List the organizations available to the authenticated Supabase account.
+- `list_project_api_keys` — List API keys for a Supabase project.
+- `list_projects` — List Supabase projects visible to the authenticated account.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Supabase state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Supabase state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

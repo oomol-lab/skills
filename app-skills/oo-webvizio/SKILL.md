@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Webvizio"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "webvizio"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://webvizio.com"
+  version: "1.0.1"
+  services: ["webvizio"]
   icon: "https://static.oomol.com/logo/third-party/webvizio.png"
 ---
 
 # Webvizio
 
 Operate **Webvizio** through your OOMOL-connected account. This skill calls the `webvizio` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 2 action(s).
 
 ## Running an action
 
@@ -37,18 +33,18 @@ oo connector run "webvizio" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_rest_hook_subscription`](actions/create_rest_hook_subscription.md) — Subscribe a callback URL to one Webvizio REST Hook event so Webvizio can send outbound event notifications to your service.
-- [`delete_rest_hook_subscription`](actions/delete_rest_hook_subscription.md) — Unsubscribe one Webvizio REST Hook event subscription by its Webvizio webhook ID.
+- `create_rest_hook_subscription` — Subscribe a callback URL to one Webvizio REST Hook event so Webvizio can send outbound event notifications to your service. [write]
+- `delete_rest_hook_subscription` — Unsubscribe one Webvizio REST Hook event subscription by its Webvizio webhook ID. [destructive]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Webvizio state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Webvizio state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

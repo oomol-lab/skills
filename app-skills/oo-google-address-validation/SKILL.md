@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Address Validation"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "google_address_validation"
-  categories: "Maps & Location, Data & Analytics"
-  homepage: "https://developers.google.com/maps/documentation/address-validation"
+  version: "1.0.1"
+  services: ["google_address_validation"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Address%20Validation.svg"
 ---
 
 # Google Address Validation
 
 Operate **Google Address Validation** through your OOMOL-connected account. This skill calls the `google_address_validation` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Data & Analytics. Exposes 2 action(s).
 
 ## Running an action
 
@@ -37,18 +33,18 @@ oo connector run "google_address_validation" --action "<action_name>" --data '<j
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`provide_validation_feedback`](actions/provide_validation_feedback.md) — Send the final outcome of a completed Google address validation sequence using the first responseId from that sequence.
-- [`validate_address`](actions/validate_address.md) — Validate and standardize a postal address with Google Address Validation and return verdict, parsed address, and geocode details.
+- `provide_validation_feedback` — Send the final outcome of a completed Google address validation sequence using the first responseId from that sequence.
+- `validate_address` — Validate and standardize a postal address with Google Address Validation and return verdict, parsed address, and geocode details.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Google Address Validation state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Google Address Validation state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

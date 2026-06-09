@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BetterContact"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "bettercontact"
-  categories: "Marketing, Data & Analytics"
-  homepage: "https://bettercontact.rocks"
+  version: "1.0.1"
+  services: ["bettercontact"]
   icon: "https://static.oomol.com/logo/third-party/bettercontact.svg"
 ---
 
 # BetterContact
 
 Operate **BetterContact** through your OOMOL-connected account. This skill calls the `bettercontact` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Data & Analytics. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "bettercontact" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_account_balance`](actions/get_account_balance.md) — Get BetterContact credits for the connected account email or an optional email override.
-- [`get_enrichment_result`](actions/get_enrichment_result.md) — Get the current BetterContact enrichment result for a submitted request ID.
-- [`submit_enrichment`](actions/submit_enrichment.md) — Submit one or more leads to BetterContact waterfall enrichment and return the request handle.
+- `get_account_balance` — Get BetterContact credits for the connected account email or an optional email override.
+- `get_enrichment_result` — Get the current BetterContact enrichment result for a submitted request ID.
+- `submit_enrichment` — Submit one or more leads to BetterContact waterfall enrichment and return the request handle. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change BetterContact state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change BetterContact state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Enigma"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "enigma"
-  categories: "Data & Analytics"
-  homepage: "https://www.enigma.com"
+  version: "1.0.1"
+  services: ["enigma"]
   icon: "https://static.oomol.com/logo/third-party/Enigma.svg"
 ---
 
 # Enigma
 
 Operate **Enigma** through your OOMOL-connected account. This skill calls the `enigma` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "enigma" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_list`](actions/create_list.md) — Create a user-managed Enigma list from a search definition or input file, with optional aliases, column ordering, and column mapping.
-- [`create_suggestion`](actions/create_suggestion.md) — Submit a suggestion to Enigma for data correction or enrichment feedback using the official GraphQL suggestion mutation.
-- [`delete_list`](actions/delete_list.md) — Delete a user-managed Enigma list by ID.
-- [`get_account`](actions/get_account.md) — Retrieve the current Enigma account metadata available to the connected API key, including customer, billing, and auto-recharge details.
-- [`get_aggregate_counts`](actions/get_aggregate_counts.md) — Run the official Enigma GraphQL `aggregate` query to count matching entities or related entities for a search request.
-- [`get_background_task`](actions/get_background_task.md) — Retrieve the latest status for an Enigma background task created by an asynchronous GraphQL search or export workflow.
-- [`get_business`](actions/get_business.md) — Retrieve a single Enigma entity by GraphQL entity ID and entity type, returning a normalized summary plus the raw enriched entity payload.
-- [`get_graphql_schema_extended`](actions/get_graphql_schema_extended.md) — Retrieve Enigma's extended GraphQL schema metadata, including types, projections, and data-asset descriptors.
-- [`get_list_materialization`](actions/get_list_materialization.md) — Retrieve an Enigma list materialization by ID, including progress, generated resource URI, metrics, and billing details.
-- [`search_graphql`](actions/search_graphql.md) — Search Enigma entities through the official GraphQL `search` query, supporting direct lookups, structured filters, natural-language prompts, and asynchronous output generation.
-- [`search_lists`](actions/search_lists.md) — Query user-created Enigma lists with optional name or ID filters and Relay-style pagination controls.
-- [`verify_business_v2`](actions/verify_business_v2.md) — Verify a business with Enigma's KYB v2 API, returning a normalized risk summary and the raw verification payload.
+- `create_list` — Create a user-managed Enigma list from a search definition or input file, with optional aliases, column ordering, and column mapping. [write]
+- `create_suggestion` — Submit a suggestion to Enigma for data correction or enrichment feedback using the official GraphQL suggestion mutation. [write]
+- `delete_list` — Delete a user-managed Enigma list by ID. [destructive]
+- `get_account` — Retrieve the current Enigma account metadata available to the connected API key, including customer, billing, and auto-recharge details.
+- `get_aggregate_counts` — Run the official Enigma GraphQL `aggregate` query to count matching entities or related entities for a search request.
+- `get_background_task` — Retrieve the latest status for an Enigma background task created by an asynchronous GraphQL search or export workflow.
+- `get_business` — Retrieve a single Enigma entity by GraphQL entity ID and entity type, returning a normalized summary plus the raw enriched entity payload.
+- `get_graphql_schema_extended` — Retrieve Enigma's extended GraphQL schema metadata, including types, projections, and data-asset descriptors.
+- `get_list_materialization` — Retrieve an Enigma list materialization by ID, including progress, generated resource URI, metrics, and billing details.
+- `search_graphql` — Search Enigma entities through the official GraphQL `search` query, supporting direct lookups, structured filters, natural-language prompts, and asynchronous output generation.
+- `search_lists` — Query user-created Enigma lists with optional name or ID filters and Relay-style pagination controls.
+- `verify_business_v2` — Verify a business with Enigma's KYB v2 API, returning a normalized risk summary and the raw verification payload.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Enigma state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Enigma state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

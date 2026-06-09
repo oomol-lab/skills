@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Beamer"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "beamer"
-  categories: "Communication, Productivity"
-  homepage: "https://www.getbeamer.com"
+  version: "1.0.1"
+  services: ["beamer"]
   icon: "https://static.oomol.com/logo/third-party/Beamer.svg"
 ---
 
 # Beamer
 
 Operate **Beamer** through your OOMOL-connected account. This skill calls the `beamer` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "beamer" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`count_unread_posts`](actions/count_unread_posts.md) — Count unread Beamer posts for one end-user context.
-- [`create_post`](actions/create_post.md) — Create a new Beamer changelog post with one or more translations.
-- [`get_feed_url`](actions/get_feed_url.md) — Retrieve the standalone Beamer feed URL with optional language and segmentation filters.
-- [`list_posts`](actions/list_posts.md) — List existing Beamer posts with optional changelog, audience, and analytics filters.
+- `count_unread_posts` — Count unread Beamer posts for one end-user context.
+- `create_post` — Create a new Beamer changelog post with one or more translations. [write]
+- `get_feed_url` — Retrieve the standalone Beamer feed URL with optional language and segmentation filters.
+- `list_posts` — List existing Beamer posts with optional changelog, audience, and analytics filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Beamer state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Beamer state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

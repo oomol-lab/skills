@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sentry"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "sentry"
-  categories: "Developer Tools, Security & Identity"
-  homepage: "https://sentry.io"
+  version: "1.0.1"
+  services: ["sentry"]
   icon: "https://static.oomol.com/logo/third-party/Sentry.svg"
 ---
 
 # Sentry
 
 Operate **Sentry** through your OOMOL-connected account. This skill calls the `sentry` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Security & Identity. Exposes 19 action(s).
 
 ## Running an action
 
@@ -37,35 +33,35 @@ oo connector run "sentry" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_alert`](actions/get_alert.md) — Get one alert workflow in a Sentry organization by workflow id.
-- [`get_issue`](actions/get_issue.md) — Get one issue in a Sentry organization by numeric id or short id.
-- [`get_issue_event`](actions/get_issue_event.md) — Get one event for a Sentry issue by event id, or use latest, oldest, or recommended selectors.
-- [`get_organization_integration`](actions/get_organization_integration.md) — Get one installed Sentry organization integration by its integration id.
-- [`get_organization_integration_config`](actions/get_organization_integration_config.md) — List available integration provider configs for a Sentry organization, optionally filtered by provider key.
-- [`get_organization_release`](actions/get_organization_release.md) — Get one release in a Sentry organization, with optional health and summary statistics included.
-- [`get_project`](actions/get_project.md) — Get one Sentry project by organization and project slug or id.
-- [`get_release_health_stats`](actions/get_release_health_stats.md) — Retrieve release health session statistics for one Sentry release by querying the sessions endpoint with that release version.
-- [`get_replay`](actions/get_replay.md) — Get one replay instance in a Sentry organization by replay id.
-- [`get_sentry_app`](actions/get_sentry_app.md) — Get one Sentry App by id or slug, including integration metadata and OAuth client settings.
-- [`list_alerts`](actions/list_alerts.md) — List alert workflows for a Sentry organization, with optional id, project, and search filters.
-- [`list_issue_events`](actions/list_issue_events.md) — List events that belong to one Sentry issue, with optional event query filters.
-- [`list_organization_integrations`](actions/list_organization_integrations.md) — List installed integrations for a Sentry organization, with optional provider and feature filters.
-- [`list_organization_issues`](actions/list_organization_issues.md) — List issues for a Sentry organization with optional search, project, and environment filters.
-- [`list_organization_projects`](actions/list_organization_projects.md) — List projects that belong to a Sentry organization.
-- [`list_organization_releases`](actions/list_organization_releases.md) — List releases that belong to a Sentry organization, optionally filtered by version prefix.
-- [`list_organization_replays`](actions/list_organization_replays.md) — List session replays for a Sentry organization, with optional project and environment filters.
-- [`list_organization_sentry_apps`](actions/list_organization_sentry_apps.md) — List the custom Sentry Apps created by a Sentry organization.
-- [`update_issue`](actions/update_issue.md) — Update mutable attributes on one Sentry issue, such as status, assignment, or bookmarks.
+- `get_alert` — Get one alert workflow in a Sentry organization by workflow id.
+- `get_issue` — Get one issue in a Sentry organization by numeric id or short id.
+- `get_issue_event` — Get one event for a Sentry issue by event id, or use latest, oldest, or recommended selectors.
+- `get_organization_integration` — Get one installed Sentry organization integration by its integration id.
+- `get_organization_integration_config` — List available integration provider configs for a Sentry organization, optionally filtered by provider key.
+- `get_organization_release` — Get one release in a Sentry organization, with optional health and summary statistics included.
+- `get_project` — Get one Sentry project by organization and project slug or id.
+- `get_release_health_stats` — Retrieve release health session statistics for one Sentry release by querying the sessions endpoint with that release version.
+- `get_replay` — Get one replay instance in a Sentry organization by replay id.
+- `get_sentry_app` — Get one Sentry App by id or slug, including integration metadata and OAuth client settings.
+- `list_alerts` — List alert workflows for a Sentry organization, with optional id, project, and search filters.
+- `list_issue_events` — List events that belong to one Sentry issue, with optional event query filters.
+- `list_organization_integrations` — List installed integrations for a Sentry organization, with optional provider and feature filters.
+- `list_organization_issues` — List issues for a Sentry organization with optional search, project, and environment filters.
+- `list_organization_projects` — List projects that belong to a Sentry organization.
+- `list_organization_releases` — List releases that belong to a Sentry organization, optionally filtered by version prefix.
+- `list_organization_replays` — List session replays for a Sentry organization, with optional project and environment filters.
+- `list_organization_sentry_apps` — List the custom Sentry Apps created by a Sentry organization.
+- `update_issue` — Update mutable attributes on one Sentry issue, such as status, assignment, or bookmarks. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Sentry state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Sentry state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

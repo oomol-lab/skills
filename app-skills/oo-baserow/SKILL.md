@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baserow"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "baserow"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://baserow.io"
+  version: "1.0.1"
+  services: ["baserow"]
   icon: "https://static.oomol.com/logo/third-party/baserow.svg"
 ---
 
 # Baserow
 
 Operate **Baserow** through your OOMOL-connected account. This skill calls the `baserow` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "baserow" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_table_row`](actions/create_table_row.md) — Create one row in a Baserow table.
-- [`delete_table_row`](actions/delete_table_row.md) — Delete one Baserow row by row ID.
-- [`get_table_row`](actions/get_table_row.md) — Read one Baserow row by table ID and row ID.
-- [`list_table_fields`](actions/list_table_fields.md) — List the field definitions for one Baserow table.
-- [`list_table_rows`](actions/list_table_rows.md) — List rows from one Baserow table with optional search, ordering, filters, and pagination.
-- [`list_tables`](actions/list_tables.md) — List the Baserow tables accessible to the authenticated database token.
-- [`update_table_row`](actions/update_table_row.md) — Update one existing Baserow row.
+- `create_table_row` — Create one row in a Baserow table. [write]
+- `delete_table_row` — Delete one Baserow row by row ID. [destructive]
+- `get_table_row` — Read one Baserow row by table ID and row ID.
+- `list_table_fields` — List the field definitions for one Baserow table.
+- `list_table_rows` — List rows from one Baserow table with optional search, ordering, filters, and pagination.
+- `list_tables` — List the Baserow tables accessible to the authenticated database token.
+- `update_table_row` — Update one existing Baserow row. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Baserow state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Baserow state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

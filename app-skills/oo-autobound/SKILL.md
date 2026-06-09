@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Autobound"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "autobound"
-  categories: "Data & Analytics, Marketing"
-  homepage: "https://www.autobound.ai"
+  version: "1.0.1"
+  services: ["autobound"]
   icon: "https://static.oomol.com/logo/third-party/autobound.png"
 ---
 
 # Autobound
 
 Operate **Autobound** through your OOMOL-connected account. This skill calls the `autobound` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Marketing. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "autobound" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`enrich_company`](actions/enrich_company.md) — Enrich one company with Autobound company-level signals.
-- [`enrich_contact`](actions/enrich_contact.md) — Enrich one contact with Autobound contact-level signals and employer context.
-- [`get_account`](actions/get_account.md) — Get the authenticated Autobound Signals account details and current credit balance.
-- [`list_signal_types`](actions/list_signal_types.md) — List Autobound signal types and optionally include live counts and refresh cadence metadata.
-- [`search_companies`](actions/search_companies.md) — Search companies that match Autobound company-level signal filters.
-- [`search_contacts`](actions/search_contacts.md) — Search contacts that match Autobound contact-level signal filters.
+- `enrich_company` — Enrich one company with Autobound company-level signals.
+- `enrich_contact` — Enrich one contact with Autobound contact-level signals and employer context.
+- `get_account` — Get the authenticated Autobound Signals account details and current credit balance.
+- `list_signal_types` — List Autobound signal types and optionally include live counts and refresh cadence metadata.
+- `search_companies` — Search companies that match Autobound company-level signal filters.
+- `search_contacts` — Search contacts that match Autobound contact-level signal filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Autobound state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Autobound state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

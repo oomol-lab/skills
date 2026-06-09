@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vimeo"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "vimeo"
-  categories: "Design & Media, Social"
-  homepage: "https://vimeo.com"
+  version: "1.0.1"
+  services: ["vimeo"]
   icon: "https://static.oomol.com/logo/third-party/vimeo.svg"
 ---
 
 # Vimeo
 
 Operate **Vimeo** through your OOMOL-connected account. This skill calls the `vimeo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Social. Exposes 25 action(s).
 
 ## Running an action
 
@@ -37,41 +33,41 @@ oo connector run "vimeo" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_video_tags`](actions/add_video_tags.md) — Add one or more tags to a Vimeo video.
-- [`add_video_to_folder`](actions/add_video_to_folder.md) — Add a Vimeo video to a folder.
-- [`add_video_to_showcase`](actions/add_video_to_showcase.md) — Add a Vimeo video to a showcase.
-- [`create_folder`](actions/create_folder.md) — Create a Vimeo folder for the authenticated user or a specified Vimeo user.
-- [`delete_folder`](actions/delete_folder.md) — Delete a Vimeo folder, optionally deleting the videos inside it.
-- [`delete_video`](actions/delete_video.md) — Delete a Vimeo video by ID.
-- [`delete_video_tag`](actions/delete_video_tag.md) — Remove a tag from a Vimeo video.
-- [`download_video_file`](actions/download_video_file.md) — Download one Vimeo video file link and store it in connector transit storage.
-- [`get_current_user`](actions/get_current_user.md) — Get the authenticated Vimeo user profile.
-- [`get_folder`](actions/get_folder.md) — Get metadata for a Vimeo folder.
-- [`get_showcase`](actions/get_showcase.md) — Get metadata for a specific Vimeo showcase.
-- [`get_video`](actions/get_video.md) — Get metadata for a specific Vimeo video.
-- [`get_video_download_links`](actions/get_video_download_links.md) — Get temporary downloadable file links for a Vimeo video when Vimeo exposes them.
-- [`list_folder_videos`](actions/list_folder_videos.md) — List videos in a Vimeo folder.
-- [`list_folders`](actions/list_folders.md) — List folders that belong to the authenticated user or to a specified Vimeo user.
-- [`list_showcase_videos`](actions/list_showcase_videos.md) — List videos in a Vimeo showcase.
-- [`list_showcases`](actions/list_showcases.md) — List showcases that belong to the authenticated user or to a specified Vimeo user.
-- [`list_user_videos`](actions/list_user_videos.md) — List videos uploaded by the authenticated user or by a specified Vimeo user.
-- [`list_video_tags`](actions/list_video_tags.md) — List tags attached to a Vimeo video.
-- [`remove_video_from_folder`](actions/remove_video_from_folder.md) — Remove a Vimeo video from a folder without deleting the video.
-- [`remove_video_from_showcase`](actions/remove_video_from_showcase.md) — Remove a Vimeo video from a showcase.
-- [`replace_video_from_url`](actions/replace_video_from_url.md) — Add a new version to an existing Vimeo video by asking Vimeo to pull the replacement media from a URL.
-- [`update_folder`](actions/update_folder.md) — Update a Vimeo folder name.
-- [`update_video`](actions/update_video.md) — Update basic metadata for a Vimeo video without uploading or replacing media.
-- [`upload_video_from_url`](actions/upload_video_from_url.md) — Upload a new Vimeo video by asking Vimeo to pull the media from an HTTP or HTTPS URL.
+- `add_video_tags` — Add one or more tags to a Vimeo video. [write]
+- `add_video_to_folder` — Add a Vimeo video to a folder. [write]
+- `add_video_to_showcase` — Add a Vimeo video to a showcase. [write]
+- `create_folder` — Create a Vimeo folder for the authenticated user or a specified Vimeo user. [write]
+- `delete_folder` — Delete a Vimeo folder, optionally deleting the videos inside it. [destructive]
+- `delete_video` — Delete a Vimeo video by ID. [destructive]
+- `delete_video_tag` — Remove a tag from a Vimeo video. [destructive]
+- `download_video_file` — Download one Vimeo video file link and store it in connector transit storage.
+- `get_current_user` — Get the authenticated Vimeo user profile.
+- `get_folder` — Get metadata for a Vimeo folder.
+- `get_showcase` — Get metadata for a specific Vimeo showcase.
+- `get_video` — Get metadata for a specific Vimeo video.
+- `get_video_download_links` — Get temporary downloadable file links for a Vimeo video when Vimeo exposes them.
+- `list_folder_videos` — List videos in a Vimeo folder.
+- `list_folders` — List folders that belong to the authenticated user or to a specified Vimeo user.
+- `list_showcase_videos` — List videos in a Vimeo showcase.
+- `list_showcases` — List showcases that belong to the authenticated user or to a specified Vimeo user.
+- `list_user_videos` — List videos uploaded by the authenticated user or by a specified Vimeo user.
+- `list_video_tags` — List tags attached to a Vimeo video.
+- `remove_video_from_folder` — Remove a Vimeo video from a folder without deleting the video. [destructive]
+- `remove_video_from_showcase` — Remove a Vimeo video from a showcase. [destructive]
+- `replace_video_from_url` — Add a new version to an existing Vimeo video by asking Vimeo to pull the replacement media from a URL. [write]
+- `update_folder` — Update a Vimeo folder name. [write]
+- `update_video` — Update basic metadata for a Vimeo video without uploading or replacing media. [write]
+- `upload_video_from_url` — Upload a new Vimeo video by asking Vimeo to pull the media from an HTTP or HTTPS URL. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Vimeo state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Vimeo state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

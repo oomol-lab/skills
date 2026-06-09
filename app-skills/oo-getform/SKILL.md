@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Getform"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "getform"
-  categories: "Productivity, Marketing"
-  homepage: "https://forminit.com"
+  version: "1.0.1"
+  services: ["getform"]
   icon: "https://static.oomol.com/logo/third-party/getform.png"
 ---
 
 # Getform
 
 Operate **Getform** through your OOMOL-connected account. This skill calls the `getform` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Marketing. Exposes 2 action(s).
 
 ## Running an action
 
@@ -37,18 +33,18 @@ oo connector run "getform" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`list_submissions`](actions/list_submissions.md) — List submissions from one protected Forminit form with pagination, keyword search, optional file metadata, and timezone formatting.
-- [`submit_form`](actions/submit_form.md) — Submit a protected Forminit form with JSON blocks using the documented sender, tracking, and field block types.
+- `list_submissions` — List submissions from one protected Forminit form with pagination, keyword search, optional file metadata, and timezone formatting.
+- `submit_form` — Submit a protected Forminit form with JSON blocks using the documented sender, tracking, and field block types. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Getform state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Getform state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

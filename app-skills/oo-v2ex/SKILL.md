@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "V2EX"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "v2ex"
-  categories: "Social, Developer Tools"
-  homepage: "https://www.v2ex.com"
+  version: "1.0.1"
+  services: ["v2ex"]
   icon: "https://static.oomol.com/logo/third-party/v2ex.png"
 ---
 
 # V2EX
 
 Operate **V2EX** through your OOMOL-connected account. This skill calls the `v2ex` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Social, Developer Tools. Exposes 13 action(s).
 
 ## Running an action
 
@@ -37,29 +33,29 @@ oo connector run "v2ex" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`boost_topic`](actions/boost_topic.md) — Boost one of the authenticated member's V2EX topics to the homepage.
-- [`create_token`](actions/create_token.md) — Create a new V2EX Personal Access Token from an existing token.
-- [`delete_notification`](actions/delete_notification.md) — Delete one V2EX notification by its numeric identifier.
-- [`get_current_member`](actions/get_current_member.md) — Fetch the authenticated V2EX member profile.
-- [`get_current_token`](actions/get_current_token.md) — Fetch metadata for the V2EX Personal Access Token used by this connection.
-- [`get_node`](actions/get_node.md) — Fetch a V2EX node by node name.
-- [`get_topic`](actions/get_topic.md) — Fetch a V2EX topic by numeric identifier.
-- [`list_hot_topics`](actions/list_hot_topics.md) — Fetch public hot topics from the V2EX legacy JSON API. Responses may be served from V2EX or CDN cache.
-- [`list_latest_topics`](actions/list_latest_topics.md) — Fetch public latest topics from the V2EX legacy JSON API. Responses may be served from V2EX or CDN cache.
-- [`list_node_topics`](actions/list_node_topics.md) — Fetch topics from a V2EX node.
-- [`list_notifications`](actions/list_notifications.md) — Fetch the latest V2EX notifications for the authenticated member.
-- [`list_topic_replies`](actions/list_topic_replies.md) — Fetch replies for a V2EX topic.
-- [`set_topic_sticky`](actions/set_topic_sticky.md) — Set one of the authenticated member's V2EX topics as sticky.
+- `boost_topic` — Boost one of the authenticated member's V2EX topics to the homepage.
+- `create_token` — Create a new V2EX Personal Access Token from an existing token. [write]
+- `delete_notification` — Delete one V2EX notification by its numeric identifier. [destructive]
+- `get_current_member` — Fetch the authenticated V2EX member profile.
+- `get_current_token` — Fetch metadata for the V2EX Personal Access Token used by this connection.
+- `get_node` — Fetch a V2EX node by node name.
+- `get_topic` — Fetch a V2EX topic by numeric identifier.
+- `list_hot_topics` — Fetch public hot topics from the V2EX legacy JSON API. Responses may be served from V2EX or CDN cache.
+- `list_latest_topics` — Fetch public latest topics from the V2EX legacy JSON API. Responses may be served from V2EX or CDN cache.
+- `list_node_topics` — Fetch topics from a V2EX node.
+- `list_notifications` — Fetch the latest V2EX notifications for the authenticated member.
+- `list_topic_replies` — Fetch replies for a V2EX topic.
+- `set_topic_sticky` — Set one of the authenticated member's V2EX topics as sticky. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change V2EX state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change V2EX state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

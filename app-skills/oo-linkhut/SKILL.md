@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Linkhut"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "linkhut"
-  categories: "Productivity"
-  homepage: "https://ln.ht"
+  version: "1.0.1"
+  services: ["linkhut"]
   icon: "https://static.oomol.com/logo/third-party/Linkhut.svg"
 ---
 
 # Linkhut
 
 Operate **Linkhut** through your OOMOL-connected account. This skill calls the `linkhut` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "linkhut" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_bookmark`](actions/add_bookmark.md) — Create a new bookmark in Linkhut without replacing an existing bookmark.
-- [`delete_bookmark`](actions/delete_bookmark.md) — Delete a Linkhut bookmark by URL.
-- [`get_all_tags`](actions/get_all_tags.md) — List all Linkhut tags with their bookmark counts.
-- [`get_bookmarks`](actions/get_bookmarks.md) — List Linkhut bookmarks using the official bookmark filters.
-- [`update_bookmark`](actions/update_bookmark.md) — Update an existing Linkhut bookmark by URL.
+- `add_bookmark` — Create a new bookmark in Linkhut without replacing an existing bookmark. [write]
+- `delete_bookmark` — Delete a Linkhut bookmark by URL. [destructive]
+- `get_all_tags` — List all Linkhut tags with their bookmark counts.
+- `get_bookmarks` — List Linkhut bookmarks using the official bookmark filters.
+- `update_bookmark` — Update an existing Linkhut bookmark by URL. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Linkhut state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Linkhut state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

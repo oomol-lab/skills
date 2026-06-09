@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Codacy"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "codacy"
-  categories: "Developer Tools"
-  homepage: "https://www.codacy.com"
+  version: "1.0.1"
+  services: ["codacy"]
   icon: "https://static.oomol.com/logo/third-party/codacy.png"
 ---
 
 # Codacy
 
 Operate **Codacy** through your OOMOL-connected account. This skill calls the `codacy` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "codacy" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user`](actions/get_current_user.md) — Retrieve the Codacy user associated with the connected API token.
-- [`get_repository_analysis`](actions/get_repository_analysis.md) — Retrieve one Codacy repository analysis summary.
-- [`get_tool_pattern`](actions/get_tool_pattern.md) — Retrieve one code pattern for a Codacy analysis tool.
-- [`list_languages`](actions/list_languages.md) — List programming languages supported by Codacy analysis tools.
-- [`list_repository_analyses`](actions/list_repository_analyses.md) — List repository analysis summaries for a Codacy organization on a Git provider.
-- [`list_tool_patterns`](actions/list_tool_patterns.md) — List code patterns available for a Codacy analysis tool.
-- [`list_tools`](actions/list_tools.md) — List Codacy code analysis tools.
-- [`list_user_organizations`](actions/list_user_organizations.md) — List Codacy organizations accessible to the connected API token, optionally scoped to one Git provider.
+- `get_current_user` — Retrieve the Codacy user associated with the connected API token.
+- `get_repository_analysis` — Retrieve one Codacy repository analysis summary.
+- `get_tool_pattern` — Retrieve one code pattern for a Codacy analysis tool.
+- `list_languages` — List programming languages supported by Codacy analysis tools.
+- `list_repository_analyses` — List repository analysis summaries for a Codacy organization on a Git provider.
+- `list_tool_patterns` — List code patterns available for a Codacy analysis tool.
+- `list_tools` — List Codacy code analysis tools.
+- `list_user_organizations` — List Codacy organizations accessible to the connected API token, optionally scoped to one Git provider.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Codacy state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Codacy state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

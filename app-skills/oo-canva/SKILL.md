@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Canva"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "canva"
-  categories: "Design & Media, Productivity"
-  homepage: "https://www.canva.com"
+  version: "1.0.1"
+  services: ["canva"]
   icon: "https://static.oomol.com/logo/third-party/canva.png"
 ---
 
 # Canva
 
 Operate **Canva** through your OOMOL-connected account. This skill calls the `canva` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Productivity. Exposes 13 action(s).
 
 ## Running an action
 
@@ -37,29 +33,29 @@ oo connector run "canva" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_design`](actions/create_design.md) — Create a new Canva design from a preset type, custom dimensions, an optional image asset, an existing design, or a brand template.
-- [`create_design_export_job`](actions/create_design_export_job.md) — Start an asynchronous Canva export job for a design and return the job handle for polling.
-- [`create_folder`](actions/create_folder.md) — Create a Canva folder at the top level, in uploads, or inside another folder.
-- [`create_url_asset_upload_job`](actions/create_url_asset_upload_job.md) — Start an asynchronous Canva asset upload job from a publicly accessible URL and return the job handle for polling.
-- [`get_asset`](actions/get_asset.md) — Get metadata for a Canva asset, including owner, thumbnail, and type-specific metadata.
-- [`get_current_user`](actions/get_current_user.md) — Get the Canva user and profile associated with the current OAuth token.
-- [`get_design`](actions/get_design.md) — Get metadata for a Canva design, including owner, URLs, and thumbnail details.
-- [`get_design_export_formats`](actions/get_design_export_formats.md) — List the file formats currently available for exporting a Canva design.
-- [`get_design_export_job`](actions/get_design_export_job.md) — Get the current status and result URLs for a Canva design export job created by create_design_export_job.
-- [`get_url_asset_upload_job`](actions/get_url_asset_upload_job.md) — Get the current status and uploaded asset metadata for a Canva URL asset upload job.
-- [`list_designs`](actions/list_designs.md) — List metadata for the current Canva user's designs, with optional search, ownership, sorting, and pagination filters.
-- [`list_folder_items`](actions/list_folder_items.md) — List Canva folder contents, including folders, designs, and image assets, with pagination and filtering options.
-- [`move_folder_item`](actions/move_folder_item.md) — Move a Canva folder item to another Canva folder.
+- `create_design` — Create a new Canva design from a preset type, custom dimensions, an optional image asset, an existing design, or a brand template. [write]
+- `create_design_export_job` — Start an asynchronous Canva export job for a design and return the job handle for polling. [write]
+- `create_folder` — Create a Canva folder at the top level, in uploads, or inside another folder. [write]
+- `create_url_asset_upload_job` — Start an asynchronous Canva asset upload job from a publicly accessible URL and return the job handle for polling. [write]
+- `get_asset` — Get metadata for a Canva asset, including owner, thumbnail, and type-specific metadata.
+- `get_current_user` — Get the Canva user and profile associated with the current OAuth token.
+- `get_design` — Get metadata for a Canva design, including owner, URLs, and thumbnail details.
+- `get_design_export_formats` — List the file formats currently available for exporting a Canva design.
+- `get_design_export_job` — Get the current status and result URLs for a Canva design export job created by create_design_export_job.
+- `get_url_asset_upload_job` — Get the current status and uploaded asset metadata for a Canva URL asset upload job. [write]
+- `list_designs` — List metadata for the current Canva user's designs, with optional search, ownership, sorting, and pagination filters.
+- `list_folder_items` — List Canva folder contents, including folders, designs, and image assets, with pagination and filtering options.
+- `move_folder_item` — Move a Canva folder item to another Canva folder. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Canva state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Canva state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

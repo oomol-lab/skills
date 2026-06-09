@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HubSpot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "hubspot"
-  categories: "Marketing, Productivity"
-  homepage: "https://www.hubspot.com"
+  version: "1.0.1"
+  services: ["hubspot"]
   icon: "https://static.oomol.com/logo/third-party/HubSpot.svg"
 ---
 
 # HubSpot
 
 Operate **HubSpot** through your OOMOL-connected account. This skill calls the `hubspot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Productivity. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "hubspot" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_company`](actions/create_company.md) — Create a HubSpot company with the provided properties and optional associations.
-- [`create_contact`](actions/create_contact.md) — Create a HubSpot contact with the provided properties and optional associations.
-- [`create_deal`](actions/create_deal.md) — Create a HubSpot deal with the provided properties and optional associations.
-- [`get_company`](actions/get_company.md) — Get a HubSpot company by record ID or by a custom idProperty value.
-- [`get_contact`](actions/get_contact.md) — Get a HubSpot contact by record ID or by a custom idProperty value.
-- [`get_deal`](actions/get_deal.md) — Get a HubSpot deal by record ID or by a custom idProperty value.
-- [`get_property`](actions/get_property.md) — Get a single HubSpot property definition for contacts, companies, or deals.
-- [`list_properties`](actions/list_properties.md) — List HubSpot property definitions for contacts, companies, or deals.
-- [`search_companies`](actions/search_companies.md) — Search HubSpot companies with optional filters, sorting, and selected properties.
-- [`search_contacts`](actions/search_contacts.md) — Search HubSpot contacts with optional filters, sorting, and selected properties.
-- [`search_deals`](actions/search_deals.md) — Search HubSpot deals with optional filters, sorting, and selected properties.
-- [`update_company`](actions/update_company.md) — Update a HubSpot company by record ID or by a custom idProperty value.
-- [`update_contact`](actions/update_contact.md) — Update a HubSpot contact by record ID or by a custom idProperty value.
-- [`update_deal`](actions/update_deal.md) — Update a HubSpot deal by record ID or by a custom idProperty value.
+- `create_company` — Create a HubSpot company with the provided properties and optional associations. [write]
+- `create_contact` — Create a HubSpot contact with the provided properties and optional associations. [write]
+- `create_deal` — Create a HubSpot deal with the provided properties and optional associations. [write]
+- `get_company` — Get a HubSpot company by record ID or by a custom idProperty value.
+- `get_contact` — Get a HubSpot contact by record ID or by a custom idProperty value.
+- `get_deal` — Get a HubSpot deal by record ID or by a custom idProperty value.
+- `get_property` — Get a single HubSpot property definition for contacts, companies, or deals.
+- `list_properties` — List HubSpot property definitions for contacts, companies, or deals.
+- `search_companies` — Search HubSpot companies with optional filters, sorting, and selected properties.
+- `search_contacts` — Search HubSpot contacts with optional filters, sorting, and selected properties.
+- `search_deals` — Search HubSpot deals with optional filters, sorting, and selected properties.
+- `update_company` — Update a HubSpot company by record ID or by a custom idProperty value. [write]
+- `update_contact` — Update a HubSpot contact by record ID or by a custom idProperty value. [write]
+- `update_deal` — Update a HubSpot deal by record ID or by a custom idProperty value. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change HubSpot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change HubSpot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

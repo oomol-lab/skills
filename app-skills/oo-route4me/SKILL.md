@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Route4Me"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "route4me"
-  categories: "Maps & Location, Productivity"
-  homepage: "https://route4me.com"
+  version: "1.0.1"
+  services: ["route4me"]
   icon: "https://static.oomol.com/logo/third-party/route4me.svg"
 ---
 
 # Route4Me
 
 Operate **Route4Me** through your OOMOL-connected account. This skill calls the `route4me` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Productivity. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "route4me" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_optimization`](actions/create_optimization.md) — Create a Route4Me optimization problem from parameters and destination addresses.
-- [`delete_optimizations`](actions/delete_optimizations.md) — Delete one or more Route4Me optimization problems by ID.
-- [`list_optimizations`](actions/list_optimizations.md) — List Route4Me optimization problems, or fetch one optimization by its ID.
+- `create_optimization` — Create a Route4Me optimization problem from parameters and destination addresses. [write]
+- `delete_optimizations` — Delete one or more Route4Me optimization problems by ID. [destructive]
+- `list_optimizations` — List Route4Me optimization problems, or fetch one optimization by its ID.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Route4Me state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Route4Me state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

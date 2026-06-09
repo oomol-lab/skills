@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PDFMonkey"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "pdfmonkey"
-  categories: "Productivity, Design & Media"
-  homepage: "https://pdfmonkey.io"
+  version: "1.0.1"
+  services: ["pdfmonkey"]
   icon: "https://static.oomol.com/logo/third-party/pdfmonkey.svg"
 ---
 
 # PDFMonkey
 
 Operate **PDFMonkey** through your OOMOL-connected account. This skill calls the `pdfmonkey` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "pdfmonkey" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_document`](actions/create_document.md) — Create a PDFMonkey document and optionally queue generation immediately by setting status to pending.
-- [`get_current_user`](actions/get_current_user.md) — Get the current PDFMonkey account resolved by the provided API key.
-- [`get_document`](actions/get_document.md) — Get one full PDFMonkey document including its payload and generation logs.
-- [`get_document_card`](actions/get_document_card.md) — Get one PDFMonkey document card for lightweight status polling without the full payload.
-- [`get_document_template`](actions/get_document_template.md) — Get one full PDFMonkey document template including draft and published fields.
-- [`list_document_cards`](actions/list_document_cards.md) — List PDFMonkey document cards with optional filters for template, status, workspace, update time, and search text.
-- [`list_document_template_cards`](actions/list_document_template_cards.md) — List PDFMonkey document template cards for one workspace with optional folder, page, and sort filters.
+- `create_document` — Create a PDFMonkey document and optionally queue generation immediately by setting status to pending. [write]
+- `get_current_user` — Get the current PDFMonkey account resolved by the provided API key.
+- `get_document` — Get one full PDFMonkey document including its payload and generation logs.
+- `get_document_card` — Get one PDFMonkey document card for lightweight status polling without the full payload.
+- `get_document_template` — Get one full PDFMonkey document template including draft and published fields.
+- `list_document_cards` — List PDFMonkey document cards with optional filters for template, status, workspace, update time, and search text.
+- `list_document_template_cards` — List PDFMonkey document template cards for one workspace with optional folder, page, and sort filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change PDFMonkey state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change PDFMonkey state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "FFHub"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ffhub"
-  categories: "Design & Media, Developer Tools"
-  homepage: "https://ffhub.io"
+  version: "1.0.1"
+  services: ["ffhub"]
   icon: "https://static.oomol.com/logo/third-party/ffhub.png"
 ---
 
 # FFHub
 
 Operate **FFHub** through your OOMOL-connected account. This skill calls the `ffhub` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Developer Tools. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "ffhub" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_ffmpeg_task`](actions/create_ffmpeg_task.md) — Create a new FFHub FFmpeg transcoding task from a full FFmpeg command or argument-only command string.
-- [`get_ffmpeg_task`](actions/get_ffmpeg_task.md) — Get the current status, timing, error, and output files for one FFHub FFmpeg task.
-- [`list_ffmpeg_tasks`](actions/list_ffmpeg_tasks.md) — List FFHub FFmpeg tasks with optional customer, status, limit, and offset filters.
+- `create_ffmpeg_task` — Create a new FFHub FFmpeg transcoding task from a full FFmpeg command or argument-only command string. [write]
+- `get_ffmpeg_task` — Get the current status, timing, error, and output files for one FFHub FFmpeg task.
+- `list_ffmpeg_tasks` — List FFHub FFmpeg tasks with optional customer, status, limit, and offset filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change FFHub state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change FFHub state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

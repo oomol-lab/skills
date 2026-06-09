@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gemini"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gemini"
-  categories: "AI"
-  homepage: "https://ai.google.dev/gemini-api"
+  version: "1.0.1"
+  services: ["gemini"]
   icon: "https://static.oomol.com/logo/third-party/Gemini.svg"
 ---
 
 # Gemini
 
 Operate **Gemini** through your OOMOL-connected account. This skill calls the `gemini` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "gemini" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`count_tokens`](actions/count_tokens.md) — Count the Gemini token usage for input text.
-- [`embed_content`](actions/embed_content.md) — Generate Gemini embeddings for text content.
-- [`generate_content`](actions/generate_content.md) — Generate text or speech audio with Gemini models.
-- [`generate_image`](actions/generate_image.md) — Generate an image with Gemini and return a transit URL.
-- [`generate_videos`](actions/generate_videos.md) — Start a Gemini Veo video generation operation.
-- [`get_videos_operation`](actions/get_videos_operation.md) — Fetch the current status for a Gemini Veo operation.
-- [`list_models`](actions/list_models.md) — List the available Gemini and Veo models.
-- [`wait_for_video`](actions/wait_for_video.md) — Poll a Gemini Veo operation and return the finished video via transit URL.
+- `count_tokens` — Count the Gemini token usage for input text.
+- `embed_content` — Generate Gemini embeddings for text content.
+- `generate_content` — Generate text or speech audio with Gemini models.
+- `generate_image` — Generate an image with Gemini and return a transit URL.
+- `generate_videos` — Start a Gemini Veo video generation operation.
+- `get_videos_operation` — Fetch the current status for a Gemini Veo operation.
+- `list_models` — List the available Gemini and Veo models.
+- `wait_for_video` — Poll a Gemini Veo operation and return the finished video via transit URL.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Gemini state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Gemini state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Clockify"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "clockify"
-  categories: "Productivity"
-  homepage: "https://clockify.me"
+  version: "1.0.1"
+  services: ["clockify"]
   icon: "https://static.oomol.com/logo/third-party/clockify.svg"
 ---
 
 # Clockify
 
 Operate **Clockify** through your OOMOL-connected account. This skill calls the `clockify` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "clockify" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_project`](actions/create_project.md) — Create a new Clockify project in a workspace.
-- [`create_task`](actions/create_task.md) — Create a new Clockify task inside a project.
-- [`create_time_entry`](actions/create_time_entry.md) — Create a new Clockify time entry for a user.
-- [`delete_project`](actions/delete_project.md) — Delete a Clockify project by ID.
-- [`get_current_user`](actions/get_current_user.md) — Get the currently authenticated Clockify user.
-- [`get_project`](actions/get_project.md) — Get a single Clockify project by ID.
-- [`get_workspace`](actions/get_workspace.md) — Get a single Clockify workspace by ID.
-- [`list_projects`](actions/list_projects.md) — List Clockify projects in a workspace.
-- [`list_tasks`](actions/list_tasks.md) — List Clockify tasks for a project.
-- [`list_time_entries`](actions/list_time_entries.md) — List Clockify time entries for a user in a workspace.
-- [`list_workspaces`](actions/list_workspaces.md) — List the Clockify workspaces available to the authenticated user.
-- [`update_project`](actions/update_project.md) — Update an existing Clockify project.
+- `create_project` — Create a new Clockify project in a workspace. [write]
+- `create_task` — Create a new Clockify task inside a project. [write]
+- `create_time_entry` — Create a new Clockify time entry for a user. [write]
+- `delete_project` — Delete a Clockify project by ID. [destructive]
+- `get_current_user` — Get the currently authenticated Clockify user.
+- `get_project` — Get a single Clockify project by ID.
+- `get_workspace` — Get a single Clockify workspace by ID.
+- `list_projects` — List Clockify projects in a workspace.
+- `list_tasks` — List Clockify tasks for a project.
+- `list_time_entries` — List Clockify time entries for a user in a workspace.
+- `list_workspaces` — List the Clockify workspaces available to the authenticated user.
+- `update_project` — Update an existing Clockify project. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Clockify state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Clockify state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

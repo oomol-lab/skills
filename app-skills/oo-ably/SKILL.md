@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ably"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ably"
-  categories: "Developer Tools"
-  homepage: "https://ably.com"
+  version: "1.0.1"
+  services: ["ably"]
   icon: "https://static.oomol.com/logo/third-party/ably.svg"
 ---
 
 # Ably
 
 Operate **Ably** through your OOMOL-connected account. This skill calls the `ably` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "ably" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`batch_presence`](actions/batch_presence.md) — Query current presence for multiple Ably channels.
-- [`batch_presence_history`](actions/batch_presence_history.md) — Query presence history for multiple Ably channels.
-- [`create_channel`](actions/create_channel.md) — Activate an Ably channel by retrieving its metadata.
-- [`delete_channel_subscription`](actions/delete_channel_subscription.md) — Delete an Ably push notification subscription for a channel, device, or client.
-- [`get_channel_details`](actions/get_channel_details.md) — Retrieve Ably metadata and occupancy details for one channel.
-- [`get_channel_history`](actions/get_channel_history.md) — Retrieve message history for one Ably channel.
-- [`get_presence_history`](actions/get_presence_history.md) — Retrieve presence history for one Ably channel.
-- [`get_service_time`](actions/get_service_time.md) — Retrieve Ably service time in milliseconds since the Unix epoch.
-- [`get_stats`](actions/get_stats.md) — Retrieve Ably application usage statistics.
-- [`list_push_channel_subscriptions`](actions/list_push_channel_subscriptions.md) — List Ably push notification channel subscriptions.
-- [`publish_message_to_channel`](actions/publish_message_to_channel.md) — Publish one message to an Ably channel.
+- `batch_presence` — Query current presence for multiple Ably channels.
+- `batch_presence_history` — Query presence history for multiple Ably channels.
+- `create_channel` — Activate an Ably channel by retrieving its metadata. [write]
+- `delete_channel_subscription` — Delete an Ably push notification subscription for a channel, device, or client. [destructive]
+- `get_channel_details` — Retrieve Ably metadata and occupancy details for one channel.
+- `get_channel_history` — Retrieve message history for one Ably channel.
+- `get_presence_history` — Retrieve presence history for one Ably channel.
+- `get_service_time` — Retrieve Ably service time in milliseconds since the Unix epoch.
+- `get_stats` — Retrieve Ably application usage statistics.
+- `list_push_channel_subscriptions` — List Ably push notification channel subscriptions.
+- `publish_message_to_channel` — Publish one message to an Ably channel. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Ably state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Ably state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BugBug"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "bugbug"
-  categories: "Developer Tools"
-  homepage: "https://bugbug.io"
+  version: "1.0.1"
+  services: ["bugbug"]
   icon: "https://static.oomol.com/logo/third-party/Bugbug.png"
 ---
 
 # BugBug
 
 Operate **BugBug** through your OOMOL-connected account. This skill calls the `bugbug` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "bugbug" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_suite`](actions/get_suite.md) — Retrieve details for a specific BugBug suite by ID.
-- [`get_test`](actions/get_test.md) — Retrieve details for a specific BugBug test by ID.
-- [`get_test_run_status`](actions/get_test_run_status.md) — Retrieve the current status of a BugBug test run by ID.
-- [`list_profiles`](actions/list_profiles.md) — List run profiles available for executing BugBug tests.
-- [`list_suites`](actions/list_suites.md) — List suites available in the connected BugBug workspace.
-- [`list_test_runs`](actions/list_test_runs.md) — List historical BugBug test runs with optional filters.
-- [`list_tests`](actions/list_tests.md) — List tests available in the connected BugBug workspace.
-- [`run_test`](actions/run_test.md) — Execute a BugBug test using the official RunTest request contract.
+- `get_suite` — Retrieve details for a specific BugBug suite by ID.
+- `get_test` — Retrieve details for a specific BugBug test by ID.
+- `get_test_run_status` — Retrieve the current status of a BugBug test run by ID.
+- `list_profiles` — List run profiles available for executing BugBug tests.
+- `list_suites` — List suites available in the connected BugBug workspace.
+- `list_test_runs` — List historical BugBug test runs with optional filters.
+- `list_tests` — List tests available in the connected BugBug workspace.
+- `run_test` — Execute a BugBug test using the official RunTest request contract.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change BugBug state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change BugBug state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

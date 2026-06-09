@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Táve"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "tave"
-  categories: "Productivity, Communication"
-  homepage: "https://www.vsco.co/workspace"
+  version: "1.0.1"
+  services: ["tave"]
   icon: "https://static.oomol.com/logo/third-party/tave.png"
 ---
 
 # Táve
 
 Operate **Táve** through your OOMOL-connected account. This skill calls the `tave` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "tave" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_contact`](actions/get_contact.md) — Fetch one Táve contact by its official ULID identifier.
-- [`get_my_studio`](actions/get_my_studio.md) — Fetch the current Táve studio profile for the connected API key.
-- [`list_contacts`](actions/list_contacts.md) — List contacts in the current Táve studio with official pagination, hidden, email, and sort filters.
+- `get_contact` — Fetch one Táve contact by its official ULID identifier.
+- `get_my_studio` — Fetch the current Táve studio profile for the connected API key.
+- `list_contacts` — List contacts in the current Táve studio with official pagination, hidden, email, and sort filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Táve state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Táve state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

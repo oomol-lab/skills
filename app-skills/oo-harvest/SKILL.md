@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Harvest"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "harvest"
-  categories: "Productivity"
-  homepage: "https://www.getharvest.com"
+  version: "1.0.1"
+  services: ["harvest"]
   icon: "https://static.oomol.com/logo/third-party/Harvest.svg"
 ---
 
 # Harvest
 
 Operate **Harvest** through your OOMOL-connected account. This skill calls the `harvest` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "harvest" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_time_entry`](actions/create_time_entry.md) — Create a new Harvest time entry.
-- [`delete_time_entry`](actions/delete_time_entry.md) — Delete a Harvest time entry by ID.
-- [`get_client`](actions/get_client.md) — Get a single Harvest client by ID.
-- [`get_current_user`](actions/get_current_user.md) — Get the current authenticated Harvest user.
-- [`get_project`](actions/get_project.md) — Get a single Harvest project by ID.
-- [`get_task`](actions/get_task.md) — Get a single Harvest task by ID.
-- [`get_time_entry`](actions/get_time_entry.md) — Get a single Harvest time entry by ID.
-- [`list_clients`](actions/list_clients.md) — List clients available in the connected Harvest account.
-- [`list_project_task_assignments`](actions/list_project_task_assignments.md) — List task assignments for a specific Harvest project.
-- [`list_projects`](actions/list_projects.md) — List projects available in the connected Harvest account.
-- [`list_tasks`](actions/list_tasks.md) — List tasks available in the connected Harvest account.
-- [`list_time_entries`](actions/list_time_entries.md) — List Harvest time entries with optional resource and date filters.
-- [`restart_time_entry`](actions/restart_time_entry.md) — Restart a stopped Harvest time entry.
-- [`stop_time_entry`](actions/stop_time_entry.md) — Stop a running Harvest time entry.
-- [`update_time_entry`](actions/update_time_entry.md) — Update an existing Harvest time entry.
+- `create_time_entry` — Create a new Harvest time entry. [write]
+- `delete_time_entry` — Delete a Harvest time entry by ID. [destructive]
+- `get_client` — Get a single Harvest client by ID.
+- `get_current_user` — Get the current authenticated Harvest user.
+- `get_project` — Get a single Harvest project by ID.
+- `get_task` — Get a single Harvest task by ID.
+- `get_time_entry` — Get a single Harvest time entry by ID.
+- `list_clients` — List clients available in the connected Harvest account.
+- `list_project_task_assignments` — List task assignments for a specific Harvest project.
+- `list_projects` — List projects available in the connected Harvest account.
+- `list_tasks` — List tasks available in the connected Harvest account.
+- `list_time_entries` — List Harvest time entries with optional resource and date filters.
+- `restart_time_entry` — Restart a stopped Harvest time entry. [write]
+- `stop_time_entry` — Stop a running Harvest time entry. [write]
+- `update_time_entry` — Update an existing Harvest time entry. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Harvest state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Harvest state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

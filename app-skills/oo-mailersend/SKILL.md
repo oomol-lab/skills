@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MailerSend"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mailersend"
-  categories: "Communication, Marketing"
-  homepage: "https://www.mailersend.com"
+  version: "1.0.1"
+  services: ["mailersend"]
   icon: "https://static.oomol.com/logo/third-party/MailerSend.svg"
 ---
 
 # MailerSend
 
 Operate **MailerSend** through your OOMOL-connected account. This skill calls the `mailersend` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 12 action(s).
 
 ## Running an action
 
@@ -37,28 +33,28 @@ oo connector run "mailersend" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_domain`](actions/get_domain.md) — Get a single MailerSend domain by ID.
-- [`get_domain_dns_records`](actions/get_domain_dns_records.md) — Get DNS records required for a MailerSend domain.
-- [`get_domain_verification_status`](actions/get_domain_verification_status.md) — Get the verification status for a MailerSend domain.
-- [`get_message`](actions/get_message.md) — Get a single MailerSend message by ID.
-- [`get_sender_identity`](actions/get_sender_identity.md) — Get a single MailerSend sender identity by ID.
-- [`get_template`](actions/get_template.md) — Get a single MailerSend template by ID.
-- [`list_domain_recipients`](actions/list_domain_recipients.md) — List recipients associated with a MailerSend domain.
-- [`list_domains`](actions/list_domains.md) — List MailerSend domains available to the current API token.
-- [`list_messages`](actions/list_messages.md) — List messages available to the current MailerSend API token.
-- [`list_sender_identities`](actions/list_sender_identities.md) — List MailerSend sender identities available to the current API token.
-- [`list_templates`](actions/list_templates.md) — List MailerSend templates available to the current API token.
-- [`send_email`](actions/send_email.md) — Send a transactional email through MailerSend.
+- `get_domain` — Get a single MailerSend domain by ID.
+- `get_domain_dns_records` — Get DNS records required for a MailerSend domain.
+- `get_domain_verification_status` — Get the verification status for a MailerSend domain.
+- `get_message` — Get a single MailerSend message by ID.
+- `get_sender_identity` — Get a single MailerSend sender identity by ID.
+- `get_template` — Get a single MailerSend template by ID.
+- `list_domain_recipients` — List recipients associated with a MailerSend domain.
+- `list_domains` — List MailerSend domains available to the current API token.
+- `list_messages` — List messages available to the current MailerSend API token.
+- `list_sender_identities` — List MailerSend sender identities available to the current API token.
+- `list_templates` — List MailerSend templates available to the current API token.
+- `send_email` — Send a transactional email through MailerSend. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change MailerSend state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change MailerSend state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "NocoDB"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "nocodb"
-  categories: "Data & Analytics, Productivity"
-  homepage: "https://nocodb.com"
+  version: "1.0.1"
+  services: ["nocodb"]
 ---
 
 # NocoDB
 
 Operate **NocoDB** through your OOMOL-connected account. This skill calls the `nocodb` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Productivity. Exposes 24 action(s).
 
 ## Running an action
 
@@ -36,40 +32,40 @@ oo connector run "nocodb" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`count_records`](actions/count_records.md) — Count records in one NocoDB table, optionally filtered by a where expression.
-- [`count_table_records`](actions/count_table_records.md) — Count records in one NocoDB table using the v3 data API.
-- [`create_records`](actions/create_records.md) — Create one or more records in a NocoDB table.
-- [`create_table`](actions/create_table.md) — Create a table in a NocoDB base using the v3 metadata API.
-- [`create_table_field`](actions/create_table_field.md) — Create a field in a NocoDB table using the v3 metadata API.
-- [`create_table_records`](actions/create_table_records.md) — Create one or more records in a NocoDB table using the v3 data API.
-- [`create_table_view`](actions/create_table_view.md) — Create a view for a NocoDB table using the v3 metadata API.
-- [`delete_records`](actions/delete_records.md) — Delete one or more records from a NocoDB table.
-- [`delete_table`](actions/delete_table.md) — Delete a NocoDB table using the v3 metadata API.
-- [`delete_table_records`](actions/delete_table_records.md) — Delete one or more records from a NocoDB table using the v3 data API.
-- [`get_base_schema`](actions/get_base_schema.md) — Get schema metadata for one NocoDB base.
-- [`get_current_user`](actions/get_current_user.md) — Get the NocoDB user associated with the connected API token.
-- [`get_table_metadata`](actions/get_table_metadata.md) — Get metadata for one NocoDB table, including columns and views when available.
-- [`list_bases`](actions/list_bases.md) — List bases visible to the connected NocoDB API token.
-- [`list_records`](actions/list_records.md) — List records from one NocoDB table with optional where, sort, field, limit, and offset query parameters.
-- [`list_table_records`](actions/list_table_records.md) — List records from one NocoDB table using the v3 data API with optional field, sort, filter, page, and view parameters.
-- [`list_table_views`](actions/list_table_views.md) — List views for a NocoDB table using the v3 metadata API.
-- [`list_tables`](actions/list_tables.md) — List tables in a NocoDB base or in a specific base source.
-- [`read_record`](actions/read_record.md) — Read one record from a NocoDB table by record ID.
-- [`read_table_record`](actions/read_table_record.md) — Read one record from a NocoDB table using the v3 data API.
-- [`update_records`](actions/update_records.md) — Update one or more records in a NocoDB table.
-- [`update_table`](actions/update_table.md) — Update a NocoDB table title, description, display field, or metadata using the v3 metadata API.
-- [`update_table_records`](actions/update_table_records.md) — Update one or more records in a NocoDB table using the v3 data API.
-- [`upsert_table_records`](actions/upsert_table_records.md) — Create or update records in a NocoDB table by matching up to three fields using the v3 data API.
+- `count_records` — Count records in one NocoDB table, optionally filtered by a where expression.
+- `count_table_records` — Count records in one NocoDB table using the v3 data API.
+- `create_records` — Create one or more records in a NocoDB table. [write]
+- `create_table` — Create a table in a NocoDB base using the v3 metadata API. [write]
+- `create_table_field` — Create a field in a NocoDB table using the v3 metadata API. [write]
+- `create_table_records` — Create one or more records in a NocoDB table using the v3 data API. [write]
+- `create_table_view` — Create a view for a NocoDB table using the v3 metadata API. [write]
+- `delete_records` — Delete one or more records from a NocoDB table. [destructive]
+- `delete_table` — Delete a NocoDB table using the v3 metadata API. [destructive]
+- `delete_table_records` — Delete one or more records from a NocoDB table using the v3 data API. [destructive]
+- `get_base_schema` — Get schema metadata for one NocoDB base.
+- `get_current_user` — Get the NocoDB user associated with the connected API token.
+- `get_table_metadata` — Get metadata for one NocoDB table, including columns and views when available.
+- `list_bases` — List bases visible to the connected NocoDB API token.
+- `list_records` — List records from one NocoDB table with optional where, sort, field, limit, and offset query parameters.
+- `list_table_records` — List records from one NocoDB table using the v3 data API with optional field, sort, filter, page, and view parameters.
+- `list_table_views` — List views for a NocoDB table using the v3 metadata API.
+- `list_tables` — List tables in a NocoDB base or in a specific base source.
+- `read_record` — Read one record from a NocoDB table by record ID.
+- `read_table_record` — Read one record from a NocoDB table using the v3 data API.
+- `update_records` — Update one or more records in a NocoDB table. [write]
+- `update_table` — Update a NocoDB table title, description, display field, or metadata using the v3 metadata API. [write]
+- `update_table_records` — Update one or more records in a NocoDB table using the v3 data API. [write]
+- `upsert_table_records` — Create or update records in a NocoDB table by matching up to three fields using the v3 data API. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change NocoDB state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change NocoDB state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

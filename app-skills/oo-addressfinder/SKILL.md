@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Addressfinder"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "addressfinder"
-  categories: "Maps & Location, Data & Analytics"
-  homepage: "https://addressfinder.com/au"
+  version: "1.0.1"
+  services: ["addressfinder"]
   icon: "https://static.oomol.com/logo/third-party/addressfinder.svg"
 ---
 
 # Addressfinder
 
 Operate **Addressfinder** through your OOMOL-connected account. This skill calls the `addressfinder` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Data & Analytics. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "addressfinder" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`find_au_addresses`](actions/find_au_addresses.md) — Search Australian addresses with Addressfinder autocomplete and return matching address completions.
-- [`find_nz_addresses`](actions/find_nz_addresses.md) — Search New Zealand addresses with Addressfinder autocomplete and return matching address completions.
-- [`get_au_address_metadata`](actions/get_au_address_metadata.md) — Retrieve full metadata for an Australian address selected from Addressfinder autocomplete.
-- [`get_nz_address_metadata`](actions/get_nz_address_metadata.md) — Retrieve full metadata for a New Zealand address selected from Addressfinder autocomplete.
-- [`verify_au_address`](actions/verify_au_address.md) — Verify and enrich an Australian address with Addressfinder address verification.
-- [`verify_nz_address`](actions/verify_nz_address.md) — Verify and enrich a New Zealand address with Addressfinder address verification.
+- `find_au_addresses` — Search Australian addresses with Addressfinder autocomplete and return matching address completions.
+- `find_nz_addresses` — Search New Zealand addresses with Addressfinder autocomplete and return matching address completions.
+- `get_au_address_metadata` — Retrieve full metadata for an Australian address selected from Addressfinder autocomplete.
+- `get_nz_address_metadata` — Retrieve full metadata for a New Zealand address selected from Addressfinder autocomplete.
+- `verify_au_address` — Verify and enrich an Australian address with Addressfinder address verification.
+- `verify_nz_address` — Verify and enrich a New Zealand address with Addressfinder address verification.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Addressfinder state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Addressfinder state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

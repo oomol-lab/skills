@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Cat API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "the_cat_api"
-  categories: "Design & Media, Data & Analytics"
-  homepage: "https://thecatapi.com/"
+  version: "1.0.1"
+  services: ["the_cat_api"]
 ---
 
 # The Cat API
 
 Operate **The Cat API** through your OOMOL-connected account. This skill calls the `the_cat_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Data & Analytics. Exposes 5 action(s).
 
 ## Running an action
 
@@ -36,21 +32,21 @@ oo connector run "the_cat_api" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_breed`](actions/get_breed.md) — Get one cat breed by its The Cat API breed identifier.
-- [`get_image`](actions/get_image.md) — Get one cat image by its The Cat API image identifier.
-- [`list_breeds`](actions/list_breeds.md) — List cat breeds supported by The Cat API.
-- [`search_breeds`](actions/search_breeds.md) — Search cat breeds by breed name.
-- [`search_images`](actions/search_images.md) — Search for cat images with optional breed, category, type, size, and paging filters.
+- `get_breed` — Get one cat breed by its The Cat API breed identifier.
+- `get_image` — Get one cat image by its The Cat API image identifier.
+- `list_breeds` — List cat breeds supported by The Cat API.
+- `search_breeds` — Search cat breeds by breed name.
+- `search_images` — Search for cat images with optional breed, category, type, size, and paging filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change The Cat API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change The Cat API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "apaleo"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "apaleo"
-  categories: "Productivity, Finance"
-  homepage: "https://apaleo.com"
+  version: "1.0.1"
+  services: ["apaleo"]
   icon: "https://static.oomol.com/logo/third-party/Apaleo.svg"
 ---
 
 # apaleo
 
 Operate **apaleo** through your OOMOL-connected account. This skill calls the `apaleo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Finance. Exposes 29 action(s).
 
 ## Running an action
 
@@ -37,45 +33,45 @@ oo connector run "apaleo" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`archive_property`](actions/archive_property.md) — Archive a live property by ID.
-- [`check_property_exists`](actions/check_property_exists.md) — Check whether a property exists by ID.
-- [`check_unit_attribute_exists`](actions/check_unit_attribute_exists.md) — Check whether a unit attribute definition exists by ID.
-- [`check_unit_exists`](actions/check_unit_exists.md) — Check whether a unit exists by ID.
-- [`check_unit_group_exists`](actions/check_unit_group_exists.md) — Check whether a unit group exists by ID.
-- [`clone_property`](actions/clone_property.md) — Clone an existing property into a new property with inventory and rate plans.
-- [`count_properties`](actions/count_properties.md) — Return the total number of properties accessible to the connected apaleo account.
-- [`count_unit_groups`](actions/count_unit_groups.md) — Return the total number of unit groups matching the provided filters.
-- [`count_units`](actions/count_units.md) — Return the total number of units matching the provided filters.
-- [`create_multiple_units`](actions/create_multiple_units.md) — Create multiple units in a single bulk request.
-- [`create_property`](actions/create_property.md) — Create a new property in apaleo.
-- [`create_unit`](actions/create_unit.md) — Create a new unit.
-- [`create_unit_attribute`](actions/create_unit_attribute.md) — Create a new unit attribute definition.
-- [`create_unit_group`](actions/create_unit_group.md) — Create a new unit group.
-- [`delete_unit`](actions/delete_unit.md) — Delete a unit by ID.
-- [`delete_unit_attribute`](actions/delete_unit_attribute.md) — Delete a unit attribute definition by ID.
-- [`delete_unit_group`](actions/delete_unit_group.md) — Delete a unit group by ID.
-- [`get_property`](actions/get_property.md) — Get one property by ID, including optional localized fields and expanded actions.
-- [`get_unit`](actions/get_unit.md) — Get one unit by ID, including optional localized fields and expansions.
-- [`get_unit_attribute`](actions/get_unit_attribute.md) — Get one unit attribute definition by ID.
-- [`get_unit_group`](actions/get_unit_group.md) — Get one unit group by ID, including optional localized fields and expansions.
-- [`list_properties`](actions/list_properties.md) — List properties accessible to the connected apaleo account, with optional status, archive, country, and expansion filters.
-- [`list_supported_countries`](actions/list_supported_countries.md) — List ISO country codes supported by apaleo property creation.
-- [`list_unit_attributes`](actions/list_unit_attributes.md) — List unit attribute definitions for the current account.
-- [`list_unit_groups`](actions/list_unit_groups.md) — List unit groups with filters for property, unit group type, pagination, and embedded resources.
-- [`list_units`](actions/list_units.md) — List units with filters for property, unit group, attributes, occupancy, maintenance state, archive state, and expansions.
-- [`move_property_to_live`](actions/move_property_to_live.md) — Move a test property to live status.
-- [`replace_unit_group`](actions/replace_unit_group.md) — Completely replace the mutable fields of an existing unit group.
-- [`reset_property_data`](actions/reset_property_data.md) — Delete all transactional data for a test property.
+- `archive_property` — Archive a live property by ID. [write]
+- `check_property_exists` — Check whether a property exists by ID.
+- `check_unit_attribute_exists` — Check whether a unit attribute definition exists by ID.
+- `check_unit_exists` — Check whether a unit exists by ID.
+- `check_unit_group_exists` — Check whether a unit group exists by ID.
+- `clone_property` — Clone an existing property into a new property with inventory and rate plans.
+- `count_properties` — Return the total number of properties accessible to the connected apaleo account.
+- `count_unit_groups` — Return the total number of unit groups matching the provided filters.
+- `count_units` — Return the total number of units matching the provided filters.
+- `create_multiple_units` — Create multiple units in a single bulk request. [write]
+- `create_property` — Create a new property in apaleo. [write]
+- `create_unit` — Create a new unit. [write]
+- `create_unit_attribute` — Create a new unit attribute definition. [write]
+- `create_unit_group` — Create a new unit group. [write]
+- `delete_unit` — Delete a unit by ID. [destructive]
+- `delete_unit_attribute` — Delete a unit attribute definition by ID. [destructive]
+- `delete_unit_group` — Delete a unit group by ID. [destructive]
+- `get_property` — Get one property by ID, including optional localized fields and expanded actions.
+- `get_unit` — Get one unit by ID, including optional localized fields and expansions.
+- `get_unit_attribute` — Get one unit attribute definition by ID.
+- `get_unit_group` — Get one unit group by ID, including optional localized fields and expansions.
+- `list_properties` — List properties accessible to the connected apaleo account, with optional status, archive, country, and expansion filters.
+- `list_supported_countries` — List ISO country codes supported by apaleo property creation.
+- `list_unit_attributes` — List unit attribute definitions for the current account.
+- `list_unit_groups` — List unit groups with filters for property, unit group type, pagination, and embedded resources.
+- `list_units` — List units with filters for property, unit group, attributes, occupancy, maintenance state, archive state, and expansions.
+- `move_property_to_live` — Move a test property to live status. [write]
+- `replace_unit_group` — Completely replace the mutable fields of an existing unit group. [write]
+- `reset_property_data` — Delete all transactional data for a test property. [destructive]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change apaleo state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change apaleo state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

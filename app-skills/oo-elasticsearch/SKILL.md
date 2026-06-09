@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Elasticsearch"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "elasticsearch"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://www.elastic.co/elasticsearch"
+  version: "1.0.2"
+  services: ["elasticsearch"]
   icon: "https://static.oomol.com/logo/third-party/Elasticsearch.svg"
 ---
 
 # Elasticsearch
 
 Operate **Elasticsearch** through your OOMOL-connected account. This skill calls the `elasticsearch` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "elasticsearch" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_index_schema`](actions/get_index_schema.md) — Get mappings, settings, aliases, and field statistics for one Elasticsearch index.
-- [`list_indices`](actions/list_indices.md) — List Elasticsearch indices visible to the connected user.
-- [`ping_cluster`](actions/ping_cluster.md) — Check whether the Elasticsearch cluster is reachable and return its health status.
-- [`query_index`](actions/query_index.md) — Search an Elasticsearch index with text queries, filters, pagination, and sorting.
+- `get_index_schema` — Get mappings, settings, aliases, and field statistics for one Elasticsearch index.
+- `list_indices` — List Elasticsearch indices visible to the connected user.
+- `ping_cluster` — Check whether the Elasticsearch cluster is reachable and return its health status.
+- `query_index` — Search an Elasticsearch index with text queries, filters, pagination, and sorting.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Elasticsearch state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Elasticsearch state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

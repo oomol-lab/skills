@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Better Proposals"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "better_proposals"
-  categories: "Productivity, Communication"
-  homepage: "https://betterproposals.io"
+  version: "1.0.1"
+  services: ["better_proposals"]
   icon: "https://static.oomol.com/logo/third-party/better_proposals.svg"
 ---
 
 # Better Proposals
 
 Operate **Better Proposals** through your OOMOL-connected account. This skill calls the `better_proposals` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 20 action(s).
 
 ## Running an action
 
@@ -37,36 +33,36 @@ oo connector run "better_proposals" --action "<action_name>" --data '<json>' --j
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_brand_settings`](actions/get_brand_settings.md) — Get default Better Proposals brand settings such as brand name and tax defaults.
-- [`get_company`](actions/get_company.md) — Get details for a single Better Proposals company by ID.
-- [`get_currency`](actions/get_currency.md) — Get details for a single Better Proposals currency by ID.
-- [`get_proposal`](actions/get_proposal.md) — Get details for a single Better Proposals proposal by ID.
-- [`get_proposal_count`](actions/get_proposal_count.md) — Get the total Better Proposals proposal count for the connected account.
-- [`get_quote`](actions/get_quote.md) — Get details for a single Better Proposals quote by ID.
-- [`get_settings`](actions/get_settings.md) — Get current Better Proposals account settings such as tax and timezone defaults.
-- [`get_template`](actions/get_template.md) — Get details for a single Better Proposals template by ID.
-- [`list_companies`](actions/list_companies.md) — List Better Proposals companies with optional pagination.
-- [`list_currencies`](actions/list_currencies.md) — List Better Proposals currencies with optional pagination.
-- [`list_document_types`](actions/list_document_types.md) — List Better Proposals document types with optional pagination.
-- [`list_merge_tags`](actions/list_merge_tags.md) — List Better Proposals custom merge tags with optional pagination.
-- [`list_new_proposals`](actions/list_new_proposals.md) — List Better Proposals proposals that are currently in the new proposal lifecycle state.
-- [`list_opened_proposals`](actions/list_opened_proposals.md) — List Better Proposals proposals that have been opened by recipients.
-- [`list_paid_proposals`](actions/list_paid_proposals.md) — List Better Proposals proposals that have been paid.
-- [`list_proposals`](actions/list_proposals.md) — List Better Proposals proposals with optional pagination and document type filtering.
-- [`list_quotes`](actions/list_quotes.md) — List Better Proposals quotes with optional pagination.
-- [`list_sent_proposals`](actions/list_sent_proposals.md) — List Better Proposals proposals that have been sent to recipients.
-- [`list_signed_proposals`](actions/list_signed_proposals.md) — List Better Proposals proposals that have been signed by recipients.
-- [`list_templates`](actions/list_templates.md) — List Better Proposals templates with optional pagination.
+- `get_brand_settings` — Get default Better Proposals brand settings such as brand name and tax defaults.
+- `get_company` — Get details for a single Better Proposals company by ID.
+- `get_currency` — Get details for a single Better Proposals currency by ID.
+- `get_proposal` — Get details for a single Better Proposals proposal by ID.
+- `get_proposal_count` — Get the total Better Proposals proposal count for the connected account.
+- `get_quote` — Get details for a single Better Proposals quote by ID.
+- `get_settings` — Get current Better Proposals account settings such as tax and timezone defaults.
+- `get_template` — Get details for a single Better Proposals template by ID.
+- `list_companies` — List Better Proposals companies with optional pagination.
+- `list_currencies` — List Better Proposals currencies with optional pagination.
+- `list_document_types` — List Better Proposals document types with optional pagination.
+- `list_merge_tags` — List Better Proposals custom merge tags with optional pagination. [write]
+- `list_new_proposals` — List Better Proposals proposals that are currently in the new proposal lifecycle state.
+- `list_opened_proposals` — List Better Proposals proposals that have been opened by recipients.
+- `list_paid_proposals` — List Better Proposals proposals that have been paid.
+- `list_proposals` — List Better Proposals proposals with optional pagination and document type filtering.
+- `list_quotes` — List Better Proposals quotes with optional pagination.
+- `list_sent_proposals` — List Better Proposals proposals that have been sent to recipients.
+- `list_signed_proposals` — List Better Proposals proposals that have been signed by recipients.
+- `list_templates` — List Better Proposals templates with optional pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Better Proposals state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Better Proposals state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Financial Modeling Prep"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "financial_modeling_prep"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://financialmodelingprep.com"
+  version: "1.0.1"
+  services: ["financial_modeling_prep"]
 ---
 
 # Financial Modeling Prep
 
 Operate **Financial Modeling Prep** through your OOMOL-connected account. This skill calls the `financial_modeling_prep` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 37 action(s).
 
 ## Running an action
 
@@ -36,53 +32,53 @@ oo connector run "financial_modeling_prep" --action "<action_name>" --data '<jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_analyst_estimates`](actions/get_analyst_estimates.md) — Retrieve analyst estimate rows for one stock symbol.
-- [`get_asset_quote`](actions/get_asset_quote.md) — Retrieve the latest quote for a commodity, cryptocurrency, forex pair, or index.
-- [`get_balance_sheet_statement`](actions/get_balance_sheet_statement.md) — Retrieve balance sheet statement rows for one stock symbol from Financial Modeling Prep.
-- [`get_calendar`](actions/get_calendar.md) — Retrieve Financial Modeling Prep market calendar rows.
-- [`get_cash_flow_statement`](actions/get_cash_flow_statement.md) — Retrieve cash flow statement rows for one stock symbol from Financial Modeling Prep.
-- [`get_company_executives`](actions/get_company_executives.md) — Retrieve company executive rows for one stock symbol.
-- [`get_company_notes`](actions/get_company_notes.md) — Retrieve company note rows for one stock symbol.
-- [`get_company_peers`](actions/get_company_peers.md) — Retrieve peer companies for one stock symbol.
-- [`get_company_profile`](actions/get_company_profile.md) — Retrieve the company profile for one stock symbol from Financial Modeling Prep.
-- [`get_company_profile_by_cik`](actions/get_company_profile_by_cik.md) — Retrieve company profile rows by CIK from Financial Modeling Prep.
-- [`get_congressional_trades`](actions/get_congressional_trades.md) — Retrieve senate or house trading disclosure rows.
-- [`get_dcf`](actions/get_dcf.md) — Retrieve discounted cash flow valuation rows for one stock symbol.
-- [`get_economic_indicators`](actions/get_economic_indicators.md) — Retrieve economic indicator rows such as GDP, CPI, or unemployment.
-- [`get_enterprise_values`](actions/get_enterprise_values.md) — Retrieve enterprise value rows for one stock symbol.
-- [`get_etf_holdings`](actions/get_etf_holdings.md) — Retrieve ETF holding rows for one ETF symbol.
-- [`get_financial_ratios`](actions/get_financial_ratios.md) — Retrieve financial ratios for one stock symbol.
-- [`get_financial_scores`](actions/get_financial_scores.md) — Retrieve financial score rows for one stock symbol.
-- [`get_financial_statement_growth`](actions/get_financial_statement_growth.md) — Retrieve financial statement growth rows for income, balance sheet, cash flow, or combined financial statements.
-- [`get_historical_prices`](actions/get_historical_prices.md) — Retrieve historical daily OHLCV prices for one stock symbol from Financial Modeling Prep.
-- [`get_income_statement`](actions/get_income_statement.md) — Retrieve income statement rows for one stock symbol from Financial Modeling Prep.
-- [`get_insider_trades`](actions/get_insider_trades.md) — Retrieve latest or searched insider trading disclosure rows.
-- [`get_intraday_prices`](actions/get_intraday_prices.md) — Retrieve intraday OHLCV prices for one stock symbol.
-- [`get_key_metrics`](actions/get_key_metrics.md) — Retrieve key financial metrics for one stock symbol.
-- [`get_market_cap`](actions/get_market_cap.md) — Retrieve latest market capitalization rows for one stock symbol.
-- [`get_market_movers`](actions/get_market_movers.md) — Retrieve the current biggest gainers, losers, or most active stocks from Financial Modeling Prep.
-- [`get_market_performance`](actions/get_market_performance.md) — Retrieve sector or industry market performance snapshot rows.
-- [`get_news`](actions/get_news.md) — Retrieve latest or symbol-filtered Financial Modeling Prep news.
-- [`get_quote`](actions/get_quote.md) — Retrieve the latest quote for one stock symbol from Financial Modeling Prep.
-- [`get_quote_short`](actions/get_quote_short.md) — Retrieve the latest compact quote for one stock symbol.
-- [`get_ratings`](actions/get_ratings.md) — Retrieve rating snapshot, historical rating, or historical grade rows.
-- [`get_sec_filings`](actions/get_sec_filings.md) — Search SEC filing rows by symbol, CIK, or form type.
-- [`get_shares_float`](actions/get_shares_float.md) — Retrieve shares float rows for one stock symbol.
-- [`get_technical_indicator`](actions/get_technical_indicator.md) — Retrieve technical indicator rows for one symbol.
-- [`list_directory`](actions/list_directory.md) — List Financial Modeling Prep directory rows such as stocks, ETFs, and exchanges.
-- [`search_company_screener`](actions/search_company_screener.md) — Search companies with Financial Modeling Prep screener filters.
-- [`search_names`](actions/search_names.md) — Search Financial Modeling Prep securities by company or security name.
-- [`search_symbols`](actions/search_symbols.md) — Search Financial Modeling Prep stock symbols by ticker fragment or company name.
+- `get_analyst_estimates` — Retrieve analyst estimate rows for one stock symbol.
+- `get_asset_quote` — Retrieve the latest quote for a commodity, cryptocurrency, forex pair, or index.
+- `get_balance_sheet_statement` — Retrieve balance sheet statement rows for one stock symbol from Financial Modeling Prep.
+- `get_calendar` — Retrieve Financial Modeling Prep market calendar rows.
+- `get_cash_flow_statement` — Retrieve cash flow statement rows for one stock symbol from Financial Modeling Prep.
+- `get_company_executives` — Retrieve company executive rows for one stock symbol.
+- `get_company_notes` — Retrieve company note rows for one stock symbol.
+- `get_company_peers` — Retrieve peer companies for one stock symbol.
+- `get_company_profile` — Retrieve the company profile for one stock symbol from Financial Modeling Prep.
+- `get_company_profile_by_cik` — Retrieve company profile rows by CIK from Financial Modeling Prep.
+- `get_congressional_trades` — Retrieve senate or house trading disclosure rows.
+- `get_dcf` — Retrieve discounted cash flow valuation rows for one stock symbol.
+- `get_economic_indicators` — Retrieve economic indicator rows such as GDP, CPI, or unemployment.
+- `get_enterprise_values` — Retrieve enterprise value rows for one stock symbol.
+- `get_etf_holdings` — Retrieve ETF holding rows for one ETF symbol.
+- `get_financial_ratios` — Retrieve financial ratios for one stock symbol.
+- `get_financial_scores` — Retrieve financial score rows for one stock symbol.
+- `get_financial_statement_growth` — Retrieve financial statement growth rows for income, balance sheet, cash flow, or combined financial statements.
+- `get_historical_prices` — Retrieve historical daily OHLCV prices for one stock symbol from Financial Modeling Prep.
+- `get_income_statement` — Retrieve income statement rows for one stock symbol from Financial Modeling Prep.
+- `get_insider_trades` — Retrieve latest or searched insider trading disclosure rows.
+- `get_intraday_prices` — Retrieve intraday OHLCV prices for one stock symbol.
+- `get_key_metrics` — Retrieve key financial metrics for one stock symbol.
+- `get_market_cap` — Retrieve latest market capitalization rows for one stock symbol.
+- `get_market_movers` — Retrieve the current biggest gainers, losers, or most active stocks from Financial Modeling Prep.
+- `get_market_performance` — Retrieve sector or industry market performance snapshot rows.
+- `get_news` — Retrieve latest or symbol-filtered Financial Modeling Prep news.
+- `get_quote` — Retrieve the latest quote for one stock symbol from Financial Modeling Prep.
+- `get_quote_short` — Retrieve the latest compact quote for one stock symbol.
+- `get_ratings` — Retrieve rating snapshot, historical rating, or historical grade rows.
+- `get_sec_filings` — Search SEC filing rows by symbol, CIK, or form type.
+- `get_shares_float` — Retrieve shares float rows for one stock symbol.
+- `get_technical_indicator` — Retrieve technical indicator rows for one symbol.
+- `list_directory` — List Financial Modeling Prep directory rows such as stocks, ETFs, and exchanges.
+- `search_company_screener` — Search companies with Financial Modeling Prep screener filters.
+- `search_names` — Search Financial Modeling Prep securities by company or security name.
+- `search_symbols` — Search Financial Modeling Prep stock symbols by ticker fragment or company name.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Financial Modeling Prep state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Financial Modeling Prep state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

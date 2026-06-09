@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Abyssale"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "abyssale"
-  categories: "Design & Media, Marketing"
-  homepage: "https://www.abyssale.com/"
+  version: "1.0.1"
+  services: ["abyssale"]
 ---
 
 # Abyssale
 
 Operate **Abyssale** through your OOMOL-connected account. This skill calls the `abyssale` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Marketing. Exposes 9 action(s).
 
 ## Running an action
 
@@ -36,25 +32,25 @@ oo connector run "abyssale" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_dynamic_image_url`](actions/create_dynamic_image_url.md) — Create or retrieve the dynamic image URL for an Abyssale design.
-- [`create_project`](actions/create_project.md) — Create an Abyssale project to organize templates and generated images.
-- [`generate_banner`](actions/generate_banner.md) — Generate one Abyssale image from a design using JSON element overrides and return the generated file metadata.
-- [`get_banner`](actions/get_banner.md) — Retrieve metadata for an Abyssale generated file.
-- [`get_design`](actions/get_design.md) — Retrieve Abyssale design details including formats, elements, and variables.
-- [`get_design_format`](actions/get_design_format.md) — Retrieve detailed information for one Abyssale design format.
-- [`list_designs`](actions/list_designs.md) — List Abyssale designs available to the API key.
-- [`list_fonts`](actions/list_fonts.md) — List custom and Google fonts available in Abyssale.
-- [`list_projects`](actions/list_projects.md) — List Abyssale projects available to the API key.
+- `create_dynamic_image_url` — Create or retrieve the dynamic image URL for an Abyssale design. [write]
+- `create_project` — Create an Abyssale project to organize templates and generated images. [write]
+- `generate_banner` — Generate one Abyssale image from a design using JSON element overrides and return the generated file metadata.
+- `get_banner` — Retrieve metadata for an Abyssale generated file.
+- `get_design` — Retrieve Abyssale design details including formats, elements, and variables.
+- `get_design_format` — Retrieve detailed information for one Abyssale design format.
+- `list_designs` — List Abyssale designs available to the API key.
+- `list_fonts` — List custom and Google fonts available in Abyssale.
+- `list_projects` — List Abyssale projects available to the API key.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Abyssale state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Abyssale state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

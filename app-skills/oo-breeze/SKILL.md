@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Breeze"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "breeze"
-  categories: "Productivity, Communication"
-  homepage: "https://www.breezechms.com"
+  version: "1.0.1"
+  services: ["breeze"]
   icon: "https://static.oomol.com/logo/third-party/breeze.png"
 ---
 
 # Breeze
 
 Operate **Breeze** through your OOMOL-connected account. This skill calls the `breeze` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "breeze" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_person`](actions/get_person.md) — Get one Breeze person by Breeze person ID.
-- [`list_people`](actions/list_people.md) — List people from Breeze with optional details, pagination, and filter_json criteria.
-- [`list_profile_fields`](actions/list_profile_fields.md) — List Breeze profile sections and fields used to construct Breeze people filters.
-- [`list_tag_folders`](actions/list_tag_folders.md) — List Breeze tag folders.
-- [`list_tags`](actions/list_tags.md) — List Breeze tags, optionally narrowed to one Breeze tag folder.
+- `get_person` — Get one Breeze person by Breeze person ID.
+- `list_people` — List people from Breeze with optional details, pagination, and filter_json criteria.
+- `list_profile_fields` — List Breeze profile sections and fields used to construct Breeze people filters.
+- `list_tag_folders` — List Breeze tag folders.
+- `list_tags` — List Breeze tags, optionally narrowed to one Breeze tag folder.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Breeze state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Breeze state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

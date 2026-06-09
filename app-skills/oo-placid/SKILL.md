@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Placid"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "placid"
-  categories: "Design & Media, Developer Tools"
-  homepage: "https://placid.app"
+  version: "1.0.1"
+  services: ["placid"]
   icon: "https://static.oomol.com/logo/third-party/placid.png"
 ---
 
 # Placid
 
 Operate **Placid** through your OOMOL-connected account. This skill calls the `placid` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Developer Tools. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "placid" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_image`](actions/create_image.md) — Queue one Placid image generation request from a template UUID and dynamic layer payload, then return the image handle for polling.
-- [`delete_image`](actions/delete_image.md) — Delete one Placid image request by identifier and return whether the delete succeeded.
-- [`get_image`](actions/get_image.md) — Get the current Placid image generation status for one image identifier and return the finished image URL when available.
-- [`get_template`](actions/get_template.md) — Get one Placid template by UUID and return its dynamic layer metadata for downstream image generation.
-- [`list_templates`](actions/list_templates.md) — List Placid templates for the connected project with optional collection, title, tag, ordering, or next-page URL filters.
+- `create_image` — Queue one Placid image generation request from a template UUID and dynamic layer payload, then return the image handle for polling. [write]
+- `delete_image` — Delete one Placid image request by identifier and return whether the delete succeeded. [destructive]
+- `get_image` — Get the current Placid image generation status for one image identifier and return the finished image URL when available.
+- `get_template` — Get one Placid template by UUID and return its dynamic layer metadata for downstream image generation.
+- `list_templates` — List Placid templates for the connected project with optional collection, title, tag, ordering, or next-page URL filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Placid state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Placid state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

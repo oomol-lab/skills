@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TiDB Cloud"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "tidb"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://www.pingcap.com/tidb/cloud/"
+  version: "1.0.1"
+  services: ["tidb"]
   icon: "https://static.oomol.com/logo/third-party/tidb.svg"
 ---
 
 # TiDB Cloud
 
 Operate **TiDB Cloud** through your OOMOL-connected account. This skill calls the `tidb` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 17 action(s).
 
 ## Running an action
 
@@ -37,33 +33,33 @@ oo connector run "tidb" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_api_key`](actions/get_api_key.md) — Fetch one TiDB Cloud API key by access key.
-- [`get_branch`](actions/get_branch.md) — Fetch one TiDB Cloud Starter or Essential branch by branch ID.
-- [`get_cluster`](actions/get_cluster.md) — Fetch one TiDB Cloud Starter, Essential, or Dedicated cluster by ID.
-- [`get_export`](actions/get_export.md) — Fetch one TiDB Cloud Starter or Essential export task.
-- [`get_import`](actions/get_import.md) — Fetch one TiDB Cloud Starter, Essential, or Dedicated import task.
-- [`get_node_spec`](actions/get_node_spec.md) — Fetch one TiDB Cloud Dedicated node spec by region, component type, and key.
-- [`get_region`](actions/get_region.md) — Fetch one TiDB Cloud Dedicated region by region ID.
-- [`list_api_keys`](actions/list_api_keys.md) — List TiDB Cloud API keys visible to the connected organization API key.
-- [`list_audit_logs`](actions/list_audit_logs.md) — List TiDB Cloud console audit logs for security and change tracking.
-- [`list_branches`](actions/list_branches.md) — List TiDB Cloud Starter or Essential branches for a cluster.
-- [`list_clusters`](actions/list_clusters.md) — List TiDB Cloud Starter, Essential, or Dedicated clusters.
-- [`list_exports`](actions/list_exports.md) — List TiDB Cloud Starter or Essential export tasks.
-- [`list_imports`](actions/list_imports.md) — List TiDB Cloud Starter, Essential, or Dedicated import tasks.
-- [`list_node_specs`](actions/list_node_specs.md) — List TiDB Cloud Dedicated node specs available in a region.
-- [`list_regions`](actions/list_regions.md) — List TiDB Cloud regions available to the connected organization API key.
-- [`show_cloud_providers`](actions/show_cloud_providers.md) — List cloud providers available for TiDB Cloud Dedicated clusters.
-- [`show_node_quota`](actions/show_node_quota.md) — List TiDB Cloud Dedicated node quotas for the organization.
+- `get_api_key` — Fetch one TiDB Cloud API key by access key.
+- `get_branch` — Fetch one TiDB Cloud Starter or Essential branch by branch ID.
+- `get_cluster` — Fetch one TiDB Cloud Starter, Essential, or Dedicated cluster by ID.
+- `get_export` — Fetch one TiDB Cloud Starter or Essential export task.
+- `get_import` — Fetch one TiDB Cloud Starter, Essential, or Dedicated import task. [write]
+- `get_node_spec` — Fetch one TiDB Cloud Dedicated node spec by region, component type, and key.
+- `get_region` — Fetch one TiDB Cloud Dedicated region by region ID.
+- `list_api_keys` — List TiDB Cloud API keys visible to the connected organization API key.
+- `list_audit_logs` — List TiDB Cloud console audit logs for security and change tracking.
+- `list_branches` — List TiDB Cloud Starter or Essential branches for a cluster.
+- `list_clusters` — List TiDB Cloud Starter, Essential, or Dedicated clusters.
+- `list_exports` — List TiDB Cloud Starter or Essential export tasks.
+- `list_imports` — List TiDB Cloud Starter, Essential, or Dedicated import tasks.
+- `list_node_specs` — List TiDB Cloud Dedicated node specs available in a region.
+- `list_regions` — List TiDB Cloud regions available to the connected organization API key.
+- `show_cloud_providers` — List cloud providers available for TiDB Cloud Dedicated clusters.
+- `show_node_quota` — List TiDB Cloud Dedicated node quotas for the organization.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change TiDB Cloud state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change TiDB Cloud state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

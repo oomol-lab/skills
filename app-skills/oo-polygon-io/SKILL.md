@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Massive (Polygon.io)"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "polygon_io"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://massive.com/"
+  version: "1.0.1"
+  services: ["polygon_io"]
   icon: "https://static.oomol.com/logo/third-party/polygon_io.svg"
 ---
 
 # Massive (Polygon.io)
 
 Operate **Massive (Polygon.io)** through your OOMOL-connected account. This skill calls the `polygon_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "polygon_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_aggregate_bars`](actions/get_aggregate_bars.md) — Get historical OHLC aggregate bars for a stock ticker over a custom range.
-- [`get_market_status`](actions/get_market_status.md) — Get the current Polygon.io market status for stocks, currencies, and indices.
-- [`get_previous_day_bar`](actions/get_previous_day_bar.md) — Get the previous trading day's OHLC aggregate bar for a stock ticker.
-- [`get_ticker_details`](actions/get_ticker_details.md) — Get comprehensive details for a single Polygon.io ticker.
-- [`list_exchanges`](actions/list_exchanges.md) — List known exchanges available through Polygon.io.
-- [`list_ticker_types`](actions/list_ticker_types.md) — List ticker type codes supported by Polygon.io.
-- [`list_tickers`](actions/list_tickers.md) — List ticker symbols supported by Polygon.io with optional filters.
+- `get_aggregate_bars` — Get historical OHLC aggregate bars for a stock ticker over a custom range.
+- `get_market_status` — Get the current Polygon.io market status for stocks, currencies, and indices.
+- `get_previous_day_bar` — Get the previous trading day's OHLC aggregate bar for a stock ticker.
+- `get_ticker_details` — Get comprehensive details for a single Polygon.io ticker.
+- `list_exchanges` — List known exchanges available through Polygon.io.
+- `list_ticker_types` — List ticker type codes supported by Polygon.io.
+- `list_tickers` — List ticker symbols supported by Polygon.io with optional filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Massive (Polygon.io) state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Massive (Polygon.io) state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

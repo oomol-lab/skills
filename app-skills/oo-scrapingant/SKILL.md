@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ScrapingAnt"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "scrapingant"
-  categories: "AI, Data & Analytics, Developer Tools"
-  homepage: "https://scrapingant.com"
+  version: "1.0.1"
+  services: ["scrapingant"]
   icon: "https://static.oomol.com/logo/third-party/scrapingant.png"
 ---
 
 # ScrapingAnt
 
 Operate **ScrapingAnt** through your OOMOL-connected account. This skill calls the `scrapingant` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics, Developer Tools. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "scrapingant" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`extract_content_as_markdown`](actions/extract_content_as_markdown.md) — Convert a page into Markdown through ScrapingAnt's Markdown transformation endpoint.
-- [`extract_data_with_ai`](actions/extract_data_with_ai.md) — Extract structured top-level JSON fields from a page through ScrapingAnt's AI extraction endpoint.
-- [`get_api_credits_usage`](actions/get_api_credits_usage.md) — Read the current ScrapingAnt subscription status and remaining API credits.
-- [`scrape_with_extended_json_output`](actions/scrape_with_extended_json_output.md) — Scrape a page through ScrapingAnt's v2 extended endpoint and return HTML, text, cookies, headers, XHRs, and iframes.
+- `extract_content_as_markdown` — Convert a page into Markdown through ScrapingAnt's Markdown transformation endpoint.
+- `extract_data_with_ai` — Extract structured top-level JSON fields from a page through ScrapingAnt's AI extraction endpoint.
+- `get_api_credits_usage` — Read the current ScrapingAnt subscription status and remaining API credits.
+- `scrape_with_extended_json_output` — Scrape a page through ScrapingAnt's v2 extended endpoint and return HTML, text, cookies, headers, XHRs, and iframes.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ScrapingAnt state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ScrapingAnt state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

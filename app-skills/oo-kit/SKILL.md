@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kit"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "kit"
-  categories: "Marketing, Communication"
-  homepage: "https://kit.com/"
+  version: "1.0.1"
+  services: ["kit"]
   icon: "https://static.oomol.com/logo/third-party/kit.svg"
 ---
 
 # Kit
 
 Operate **Kit** through your OOMOL-connected account. This skill calls the `kit` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Communication. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "kit" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_subscriber`](actions/create_subscriber.md) — Create a Kit subscriber, or update the existing subscriber with the same email address.
-- [`get_current_account`](actions/get_current_account.md) — Get the current Kit account and authenticated user details.
-- [`get_subscriber`](actions/get_subscriber.md) — Get one Kit subscriber by ID.
-- [`list_form_subscribers`](actions/list_form_subscribers.md) — List Kit subscribers who joined through a specific form.
-- [`list_forms`](actions/list_forms.md) — List Kit forms and landing pages with optional filters and pagination.
-- [`list_subscribers`](actions/list_subscribers.md) — List Kit subscribers with optional filtering, sorting, and pagination.
-- [`list_tag_subscribers`](actions/list_tag_subscribers.md) — List Kit subscribers who have a specific tag.
-- [`list_tags`](actions/list_tags.md) — List Kit tags with optional pagination.
-- [`update_subscriber`](actions/update_subscriber.md) — Update a Kit subscriber's email address, first name, and custom fields.
+- `create_subscriber` — Create a Kit subscriber, or update the existing subscriber with the same email address. [write]
+- `get_current_account` — Get the current Kit account and authenticated user details.
+- `get_subscriber` — Get one Kit subscriber by ID.
+- `list_form_subscribers` — List Kit subscribers who joined through a specific form.
+- `list_forms` — List Kit forms and landing pages with optional filters and pagination.
+- `list_subscribers` — List Kit subscribers with optional filtering, sorting, and pagination.
+- `list_tag_subscribers` — List Kit subscribers who have a specific tag.
+- `list_tags` — List Kit tags with optional pagination.
+- `update_subscriber` — Update a Kit subscriber's email address, first name, and custom fields. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Kit state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Kit state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

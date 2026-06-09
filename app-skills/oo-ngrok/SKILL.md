@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ngrok"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ngrok"
-  categories: "Developer Tools"
-  homepage: "https://ngrok.com"
+  version: "1.0.1"
+  services: ["ngrok"]
   icon: "https://static.oomol.com/logo/third-party/Ngrok.svg"
 ---
 
 # ngrok
 
 Operate **ngrok** through your OOMOL-connected account. This skill calls the `ngrok` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "ngrok" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_endpoint`](actions/get_endpoint.md) — Fetch one ngrok endpoint by ID and return the upstream endpoint object.
-- [`get_reserved_domain`](actions/get_reserved_domain.md) — Fetch one ngrok reserved domain by ID and return the upstream domain object.
-- [`list_endpoints`](actions/list_endpoints.md) — List active ngrok endpoints for the current account, with optional pagination and CEL filtering.
-- [`list_reserved_domains`](actions/list_reserved_domains.md) — List reserved ngrok domains for the current account with pagination and CEL filtering.
-- [`list_tunnel_sessions`](actions/list_tunnel_sessions.md) — List online ngrok tunnel sessions for the current account with pagination and CEL filtering.
-- [`list_tunnels`](actions/list_tunnels.md) — List online ngrok tunnels for the current account with pagination support.
+- `get_endpoint` — Fetch one ngrok endpoint by ID and return the upstream endpoint object.
+- `get_reserved_domain` — Fetch one ngrok reserved domain by ID and return the upstream domain object.
+- `list_endpoints` — List active ngrok endpoints for the current account, with optional pagination and CEL filtering.
+- `list_reserved_domains` — List reserved ngrok domains for the current account with pagination and CEL filtering.
+- `list_tunnel_sessions` — List online ngrok tunnel sessions for the current account with pagination and CEL filtering.
+- `list_tunnels` — List online ngrok tunnels for the current account with pagination support.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ngrok state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ngrok state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Canny"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "canny"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://canny.io"
+  version: "1.0.1"
+  services: ["canny"]
   icon: "https://static.oomol.com/logo/third-party/Canny.svg"
 ---
 
 # Canny
 
 Operate **Canny** through your OOMOL-connected account. This skill calls the `canny` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "canny" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_comment`](actions/create_comment.md) — Create a new Canny comment on a post or as a reply to a comment.
-- [`create_or_update_user`](actions/create_or_update_user.md) — Create a new Canny user or update an existing one by id, userID, or email.
-- [`create_post`](actions/create_post.md) — Create a new Canny post on a board for a specific author.
-- [`list_boards`](actions/list_boards.md) — List all Canny boards available to the authenticated workspace.
-- [`list_comments`](actions/list_comments.md) — List Canny comments with optional filtering and pagination.
-- [`list_posts`](actions/list_posts.md) — List Canny posts with optional filtering, search, sorting, and pagination.
-- [`list_users`](actions/list_users.md) — List Canny users with cursor-based pagination.
-- [`retrieve_board`](actions/retrieve_board.md) — Retrieve a single Canny board by board ID.
-- [`retrieve_post`](actions/retrieve_post.md) — Retrieve a single Canny post by post ID.
-- [`retrieve_user`](actions/retrieve_user.md) — Retrieve a single Canny user by id, userID, or email.
-- [`update_post`](actions/update_post.md) — Update mutable fields on an existing Canny post.
+- `create_comment` — Create a new Canny comment on a post or as a reply to a comment. [write]
+- `create_or_update_user` — Create a new Canny user or update an existing one by id, userID, or email. [write]
+- `create_post` — Create a new Canny post on a board for a specific author. [write]
+- `list_boards` — List all Canny boards available to the authenticated workspace.
+- `list_comments` — List Canny comments with optional filtering and pagination.
+- `list_posts` — List Canny posts with optional filtering, search, sorting, and pagination.
+- `list_users` — List Canny users with cursor-based pagination.
+- `retrieve_board` — Retrieve a single Canny board by board ID.
+- `retrieve_post` — Retrieve a single Canny post by post ID. [write]
+- `retrieve_user` — Retrieve a single Canny user by id, userID, or email.
+- `update_post` — Update mutable fields on an existing Canny post. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Canny state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Canny state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

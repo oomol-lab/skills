@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cincopa"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "cincopa"
-  categories: "Design & Media, Storage"
-  homepage: "https://www.cincopa.com/"
+  version: "1.0.1"
+  services: ["cincopa"]
   icon: "https://static.oomol.com/logo/third-party/cincopa.svg"
 ---
 
 # Cincopa
 
 Operate **Cincopa** through your OOMOL-connected account. This skill calls the `cincopa` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Storage. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "cincopa" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`list_asset_tags`](actions/list_asset_tags.md) — List the asset tag cloud available in a Cincopa account.
-- [`list_assets`](actions/list_assets.md) — List assets from a Cincopa account with optional metadata filters.
-- [`list_galleries`](actions/list_galleries.md) — List galleries from a Cincopa account with optional search and tag filters.
-- [`list_gallery_items`](actions/list_gallery_items.md) — List items from one Cincopa gallery by FID.
+- `list_asset_tags` — List the asset tag cloud available in a Cincopa account.
+- `list_assets` — List assets from a Cincopa account with optional metadata filters.
+- `list_galleries` — List galleries from a Cincopa account with optional search and tag filters.
+- `list_gallery_items` — List items from one Cincopa gallery by FID.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Cincopa state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Cincopa state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

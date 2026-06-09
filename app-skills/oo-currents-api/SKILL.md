@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Currents API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "currents_api"
-  categories: "Data & Analytics, Social"
-  homepage: "https://currentsapi.services"
+  version: "1.0.1"
+  services: ["currents_api"]
   icon: "https://static.oomol.com/logo/third-party/Currents%20API.svg"
 ---
 
 # Currents API
 
 Operate **Currents API** through your OOMOL-connected account. This skill calls the `currents_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Social. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "currents_api" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_latest_news`](actions/get_latest_news.md) — Retrieve the latest Currents news feed with optional language and region filters.
-- [`list_available_categories`](actions/list_available_categories.md) — List the news categories currently supported by Currents.
-- [`list_available_languages`](actions/list_available_languages.md) — List the language codes currently supported by Currents.
-- [`list_available_regions`](actions/list_available_regions.md) — List the region codes currently supported by Currents.
-- [`search_news`](actions/search_news.md) — Search Currents news articles with keyword, taxonomy, and time-range filters.
+- `get_latest_news` — Retrieve the latest Currents news feed with optional language and region filters.
+- `list_available_categories` — List the news categories currently supported by Currents.
+- `list_available_languages` — List the language codes currently supported by Currents.
+- `list_available_regions` — List the region codes currently supported by Currents.
+- `search_news` — Search Currents news articles with keyword, taxonomy, and time-range filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Currents API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Currents API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

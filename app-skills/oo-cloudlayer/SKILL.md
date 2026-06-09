@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "cloudlayer.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "cloudlayer"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://cloudlayer.io"
+  version: "1.0.1"
+  services: ["cloudlayer"]
   icon: "https://static.oomol.com/logo/third-party/cloudlayer.svg"
 ---
 
 # cloudlayer.io
 
 Operate **cloudlayer.io** through your OOMOL-connected account. This skill calls the `cloudlayer` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "cloudlayer" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_html_pdf_job`](actions/create_html_pdf_job.md) — Create an asynchronous cloudlayer.io HTML-to-PDF job from base64-encoded HTML and return the new job status.
-- [`create_template_pdf_job`](actions/create_template_pdf_job.md) — Create an asynchronous cloudlayer.io template-to-PDF job from a base64-encoded template and JSON data.
-- [`create_url_pdf_job`](actions/create_url_pdf_job.md) — Create an asynchronous cloudlayer.io URL-to-PDF job for one public webpage and return the new job status.
-- [`get_account`](actions/get_account.md) — Get the current cloudlayer.io account usage, limits, and job totals for the API key.
-- [`get_asset`](actions/get_asset.md) — Get one generated cloudlayer.io asset by asset ID, including its direct download URL.
-- [`get_job`](actions/get_job.md) — Get one cloudlayer.io job by job ID to inspect status, timing, and request metadata.
-- [`list_assets`](actions/list_assets.md) — List recent generated cloudlayer.io assets for the current account with optional cursor pagination.
-- [`list_jobs`](actions/list_jobs.md) — List recent cloudlayer.io jobs for the current account with optional cursor pagination.
+- `create_html_pdf_job` — Create an asynchronous cloudlayer.io HTML-to-PDF job from base64-encoded HTML and return the new job status. [write]
+- `create_template_pdf_job` — Create an asynchronous cloudlayer.io template-to-PDF job from a base64-encoded template and JSON data. [write]
+- `create_url_pdf_job` — Create an asynchronous cloudlayer.io URL-to-PDF job for one public webpage and return the new job status. [write]
+- `get_account` — Get the current cloudlayer.io account usage, limits, and job totals for the API key.
+- `get_asset` — Get one generated cloudlayer.io asset by asset ID, including its direct download URL.
+- `get_job` — Get one cloudlayer.io job by job ID to inspect status, timing, and request metadata.
+- `list_assets` — List recent generated cloudlayer.io assets for the current account with optional cursor pagination.
+- `list_jobs` — List recent cloudlayer.io jobs for the current account with optional cursor pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change cloudlayer.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change cloudlayer.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

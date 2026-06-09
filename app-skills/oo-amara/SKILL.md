@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Amara"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "amara"
-  categories: "Design & Media, Productivity"
-  homepage: "https://amara.org"
+  version: "1.0.1"
+  services: ["amara"]
   icon: "https://static.oomol.com/logo/third-party/Amara.svg"
 ---
 
 # Amara
 
 Operate **Amara** through your OOMOL-connected account. This skill calls the `amara` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Productivity. Exposes 33 action(s).
 
 ## Running an action
 
@@ -37,49 +33,49 @@ oo connector run "amara" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_subtitle_note`](actions/add_subtitle_note.md) — Add a subtitle note for a specific video and subtitle language.
-- [`add_video_url`](actions/add_video_url.md) — Add a new source URL to an existing Amara video.
-- [`create_subtitle_language`](actions/create_subtitle_language.md) — Create a new subtitle language track for an Amara video.
-- [`create_subtitles`](actions/create_subtitles.md) — Create a new subtitle version for a specific video and language.
-- [`create_video`](actions/create_video.md) — Create a new Amara video from a source URL and title, with optional metadata.
-- [`delete_video_url`](actions/delete_video_url.md) — Delete a source URL from an existing Amara video.
-- [`fetch_subtitles_data`](actions/fetch_subtitles_data.md) — Fetch subtitle data for a specific video and language in JSON, SRT, or VTT format.
-- [`get_activity`](actions/get_activity.md) — Fetch a single Amara activity item by activity ID.
-- [`get_subtitle_language_details`](actions/get_subtitle_language_details.md) — Fetch a single subtitle language track for an Amara video.
-- [`get_team_details`](actions/get_team_details.md) — Fetch a single Amara team by team slug.
-- [`get_team_languages`](actions/get_team_languages.md) — Fetch preferred and blacklisted language codes for a single Amara team.
-- [`get_user`](actions/get_user.md) — Fetch a single Amara user by username or user ID.
-- [`get_user_activity`](actions/get_user_activity.md) — List activity items for a specific Amara user.
-- [`get_user_data`](actions/get_user_data.md) — Fetch a single Amara user by username, `me`, or user ID.
-- [`get_video`](actions/get_video.md) — Fetch a single Amara video by video ID.
-- [`get_video_url`](actions/get_video_url.md) — Fetch a single Amara video URL entry by video ID and URL ID.
-- [`get_video_url_details`](actions/get_video_url_details.md) — Look up Amara metadata for a public or embeddable video URL.
-- [`list_activity`](actions/list_activity.md) — List Amara activity items with optional team, video, language, and date filters.
-- [`list_available_languages`](actions/list_available_languages.md) — List the languages supported by the Amara API.
-- [`list_languages`](actions/list_languages.md) — List the languages supported by the Amara API.
-- [`list_subtitle_actions`](actions/list_subtitle_actions.md) — List the subtitle workflow actions available for a specific video and language.
-- [`list_subtitle_languages`](actions/list_subtitle_languages.md) — List all subtitle language tracks for a single Amara video.
-- [`list_subtitle_notes`](actions/list_subtitle_notes.md) — List all subtitle notes for a specific video and subtitle language.
-- [`list_teams`](actions/list_teams.md) — List the Amara teams accessible to the current API key with pagination controls.
-- [`list_video_activity`](actions/list_video_activity.md) — List activity items for a single Amara video with pagination controls.
-- [`list_video_urls`](actions/list_video_urls.md) — List all source URLs associated with a single Amara video.
-- [`list_videos`](actions/list_videos.md) — List Amara videos with optional filters, sorting, and pagination controls.
-- [`make_video_url_primary`](actions/make_video_url_primary.md) — Update a video URL entry and mark it as the primary URL when requested.
-- [`perform_subtitle_action`](actions/perform_subtitle_action.md) — Perform a subtitle workflow action such as publish, approve, or reject.
-- [`send_message`](actions/send_message.md) — Send a message to an Amara user or team recipient.
-- [`update_subtitle_language`](actions/update_subtitle_language.md) — Update subtitle language settings such as completion flags and soft limits.
-- [`update_video`](actions/update_video.md) — Update an existing Amara video's metadata, assignment, or language settings.
-- [`view_video_details`](actions/view_video_details.md) — Fetch a single Amara video by video ID.
+- `add_subtitle_note` — Add a subtitle note for a specific video and subtitle language. [write]
+- `add_video_url` — Add a new source URL to an existing Amara video. [write]
+- `create_subtitle_language` — Create a new subtitle language track for an Amara video. [write]
+- `create_subtitles` — Create a new subtitle version for a specific video and language. [write]
+- `create_video` — Create a new Amara video from a source URL and title, with optional metadata. [write]
+- `delete_video_url` — Delete a source URL from an existing Amara video. [destructive]
+- `fetch_subtitles_data` — Fetch subtitle data for a specific video and language in JSON, SRT, or VTT format.
+- `get_activity` — Fetch a single Amara activity item by activity ID.
+- `get_subtitle_language_details` — Fetch a single subtitle language track for an Amara video.
+- `get_team_details` — Fetch a single Amara team by team slug.
+- `get_team_languages` — Fetch preferred and blacklisted language codes for a single Amara team.
+- `get_user` — Fetch a single Amara user by username or user ID.
+- `get_user_activity` — List activity items for a specific Amara user.
+- `get_user_data` — Fetch a single Amara user by username, `me`, or user ID.
+- `get_video` — Fetch a single Amara video by video ID.
+- `get_video_url` — Fetch a single Amara video URL entry by video ID and URL ID.
+- `get_video_url_details` — Look up Amara metadata for a public or embeddable video URL.
+- `list_activity` — List Amara activity items with optional team, video, language, and date filters.
+- `list_available_languages` — List the languages supported by the Amara API.
+- `list_languages` — List the languages supported by the Amara API.
+- `list_subtitle_actions` — List the subtitle workflow actions available for a specific video and language.
+- `list_subtitle_languages` — List all subtitle language tracks for a single Amara video.
+- `list_subtitle_notes` — List all subtitle notes for a specific video and subtitle language.
+- `list_teams` — List the Amara teams accessible to the current API key with pagination controls.
+- `list_video_activity` — List activity items for a single Amara video with pagination controls.
+- `list_video_urls` — List all source URLs associated with a single Amara video.
+- `list_videos` — List Amara videos with optional filters, sorting, and pagination controls.
+- `make_video_url_primary` — Update a video URL entry and mark it as the primary URL when requested.
+- `perform_subtitle_action` — Perform a subtitle workflow action such as publish, approve, or reject.
+- `send_message` — Send a message to an Amara user or team recipient. [write]
+- `update_subtitle_language` — Update subtitle language settings such as completion flags and soft limits. [write]
+- `update_video` — Update an existing Amara video's metadata, assignment, or language settings. [write]
+- `view_video_details` — Fetch a single Amara video by video ID.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Amara state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Amara state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

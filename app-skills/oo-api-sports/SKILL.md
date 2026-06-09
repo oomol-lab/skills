@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "API-SPORTS"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "api_sports"
-  categories: "Data & Analytics"
-  homepage: "https://api-sports.io"
+  version: "1.0.1"
+  services: ["api_sports"]
   icon: "https://static.oomol.com/logo/third-party/API-Sports.svg"
 ---
 
 # API-SPORTS
 
 Operate **API-SPORTS** through your OOMOL-connected account. This skill calls the `api_sports` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "api_sports" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`football_get_fixture_events`](actions/football_get_fixture_events.md) — Query the event stream for a specified football match, such as goals, red and yellow cards, substitutions, and VAR.
-- [`football_get_fixture_lineups`](actions/football_get_fixture_lineups.md) — Query the lineup, formation, starting lineup, substitutes and coaching information for a specified football game.
-- [`football_get_fixture_statistics`](actions/football_get_fixture_statistics.md) — Query the technical statistics of the specified football match, optionally returning the statistics of the first and second halves.
-- [`football_get_predictions`](actions/football_get_predictions.md) — Check official predictions and recommendations for selected football matches.
-- [`football_get_standings`](actions/football_get_standings.md) — Query the football standings for a specified season, and the results can be converged by league or team.
-- [`football_get_team_statistics`](actions/football_get_team_statistics.md) — Query the overall statistical performance of a specified team in a certain league season.
-- [`football_list_fixtures`](actions/football_list_fixtures.md) — Check football schedules and scores by game, league, team, date, live status or time range.
-- [`football_list_injuries`](actions/football_list_injuries.md) — Check football injury information by game, league, team, player or date.
-- [`football_list_leagues`](actions/football_list_leagues.md) — Query football leagues by league, country, season or search keyword and return the current available data coverage capabilities.
-- [`football_list_players_profiles`](actions/football_list_players_profiles.md) — Search football player profiles by player ID, search keyword or pagination page number.
-- [`football_list_players_statistics`](actions/football_list_players_statistics.md) — Query player season statistics by player, team or league, support paging and search.
-- [`football_list_team_squad`](actions/football_list_team_squad.md) — Query the current lineup of the specified team.
-- [`football_list_teams`](actions/football_list_teams.md) — Search football teams by league, season, country, stadium or search keyword.
-- [`football_list_top_scorers`](actions/football_list_top_scorers.md) — Query the scorer list of the specified league season.
+- `football_get_fixture_events` — Query the event stream for a specified football match, such as goals, red and yellow cards, substitutions, and VAR.
+- `football_get_fixture_lineups` — Query the lineup, formation, starting lineup, substitutes and coaching information for a specified football game.
+- `football_get_fixture_statistics` — Query the technical statistics of the specified football match, optionally returning the statistics of the first and second halves.
+- `football_get_predictions` — Check official predictions and recommendations for selected football matches.
+- `football_get_standings` — Query the football standings for a specified season, and the results can be converged by league or team.
+- `football_get_team_statistics` — Query the overall statistical performance of a specified team in a certain league season.
+- `football_list_fixtures` — Check football schedules and scores by game, league, team, date, live status or time range.
+- `football_list_injuries` — Check football injury information by game, league, team, player or date.
+- `football_list_leagues` — Query football leagues by league, country, season or search keyword and return the current available data coverage capabilities.
+- `football_list_players_profiles` — Search football player profiles by player ID, search keyword or pagination page number.
+- `football_list_players_statistics` — Query player season statistics by player, team or league, support paging and search.
+- `football_list_team_squad` — Query the current lineup of the specified team.
+- `football_list_teams` — Search football teams by league, season, country, stadium or search keyword.
+- `football_list_top_scorers` — Query the scorer list of the specified league season.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change API-SPORTS state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change API-SPORTS state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

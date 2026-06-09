@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Recall.ai"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "recallai"
-  categories: "Communication, AI"
-  homepage: "https://www.recall.ai"
+  version: "1.0.1"
+  services: ["recallai"]
   icon: "https://static.oomol.com/logo/third-party/Recall.ai.svg"
 ---
 
 # Recall.ai
 
 Operate **Recall.ai** through your OOMOL-connected account. This skill calls the `recallai` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, AI. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "recallai" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_bot`](actions/create_bot.md) — Create a Recall.ai bot with the core scheduling, recording, automatic-leave, and metadata fields needed for a first-pass meeting bot workflow.
-- [`delete_bot_media`](actions/delete_bot_media.md) — Delete the Recall.ai media artifacts stored for a completed bot after downstream processing is finished.
-- [`get_bot`](actions/get_bot.md) — Retrieve one Recall.ai bot by bot ID, including its current status changes, recordings, and metadata.
-- [`list_bots`](actions/list_bots.md) — List Recall.ai bots with optional filters for scheduled date window, meeting URL, platform, status, metadata, and pagination.
-- [`remove_bot_from_call`](actions/remove_bot_from_call.md) — Remove a Recall.ai bot from the meeting immediately when it is already active in the call.
+- `create_bot` — Create a Recall.ai bot with the core scheduling, recording, automatic-leave, and metadata fields needed for a first-pass meeting bot workflow. [write]
+- `delete_bot_media` — Delete the Recall.ai media artifacts stored for a completed bot after downstream processing is finished. [destructive]
+- `get_bot` — Retrieve one Recall.ai bot by bot ID, including its current status changes, recordings, and metadata.
+- `list_bots` — List Recall.ai bots with optional filters for scheduled date window, meeting URL, platform, status, metadata, and pagination.
+- `remove_bot_from_call` — Remove a Recall.ai bot from the meeting immediately when it is already active in the call. [destructive]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Recall.ai state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Recall.ai state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

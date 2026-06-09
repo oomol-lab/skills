@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "YNAB"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ynab"
-  categories: "Finance"
-  homepage: "https://www.ynab.com"
+  version: "1.0.1"
+  services: ["ynab"]
 ---
 
 # YNAB
 
 Operate **YNAB** through your OOMOL-connected account. This skill calls the `ynab` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance. Exposes 15 action(s).
 
 ## Running an action
 
@@ -36,31 +32,31 @@ oo connector run "ynab" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_account`](actions/get_account.md) — Retrieve a single YNAB account.
-- [`get_category`](actions/get_category.md) — Retrieve a single YNAB category.
-- [`get_month`](actions/get_month.md) — Retrieve a single YNAB plan month.
-- [`get_month_category`](actions/get_month_category.md) — Retrieve a YNAB category for a specific plan month.
-- [`get_payee`](actions/get_payee.md) — Retrieve a single YNAB payee.
-- [`get_plan`](actions/get_plan.md) — Retrieve a single YNAB plan with related entities.
-- [`get_plan_settings`](actions/get_plan_settings.md) — Retrieve settings for a YNAB plan.
-- [`get_transaction`](actions/get_transaction.md) — Retrieve a single YNAB transaction.
-- [`get_user`](actions/get_user.md) — Retrieve the authenticated YNAB user.
-- [`list_accounts`](actions/list_accounts.md) — List accounts for a YNAB plan.
-- [`list_categories`](actions/list_categories.md) — List categories grouped by category group for a YNAB plan.
-- [`list_months`](actions/list_months.md) — List months for a YNAB plan.
-- [`list_payees`](actions/list_payees.md) — List payees for a YNAB plan.
-- [`list_plans`](actions/list_plans.md) — List YNAB plans with summary information.
-- [`list_transactions`](actions/list_transactions.md) — List YNAB plan transactions.
+- `get_account` — Retrieve a single YNAB account.
+- `get_category` — Retrieve a single YNAB category.
+- `get_month` — Retrieve a single YNAB plan month.
+- `get_month_category` — Retrieve a YNAB category for a specific plan month.
+- `get_payee` — Retrieve a single YNAB payee.
+- `get_plan` — Retrieve a single YNAB plan with related entities.
+- `get_plan_settings` — Retrieve settings for a YNAB plan.
+- `get_transaction` — Retrieve a single YNAB transaction.
+- `get_user` — Retrieve the authenticated YNAB user.
+- `list_accounts` — List accounts for a YNAB plan.
+- `list_categories` — List categories grouped by category group for a YNAB plan.
+- `list_months` — List months for a YNAB plan.
+- `list_payees` — List payees for a YNAB plan.
+- `list_plans` — List YNAB plans with summary information.
+- `list_transactions` — List YNAB plan transactions.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change YNAB state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change YNAB state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

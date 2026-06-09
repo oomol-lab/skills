@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GenderAPI.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "genderapi_io"
-  categories: "Data & Analytics"
-  homepage: "https://www.genderapi.io"
+  version: "1.0.1"
+  services: ["genderapi_io"]
   icon: "https://static.oomol.com/logo/third-party/genderapi_io.png"
 ---
 
 # GenderAPI.io
 
 Operate **GenderAPI.io** through your OOMOL-connected account. This skill calls the `genderapi_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 3 action(s).
 
 ## Running an action
 
@@ -37,19 +33,19 @@ oo connector run "genderapi_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_gender_by_email_address`](actions/get_gender_by_email_address.md) — Infer the likely gender for one email address after GenderAPI.io extracts a name from it.
-- [`get_gender_by_first_name`](actions/get_gender_by_first_name.md) — Infer the likely gender for one first name with optional country and AI fallback hints.
-- [`get_gender_by_username`](actions/get_gender_by_username.md) — Infer the likely gender for one username or nickname with optional country and AI fallback hints.
+- `get_gender_by_email_address` — Infer the likely gender for one email address after GenderAPI.io extracts a name from it.
+- `get_gender_by_first_name` — Infer the likely gender for one first name with optional country and AI fallback hints.
+- `get_gender_by_username` — Infer the likely gender for one username or nickname with optional country and AI fallback hints.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change GenderAPI.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change GenderAPI.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ASIN Data API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "asin_data_api"
-  categories: "Data & Analytics, Marketing"
-  homepage: "https://www.asindataapi.com"
+  version: "1.0.1"
+  services: ["asin_data_api"]
   icon: "https://static.oomol.com/logo/third-party/asin_data_api.png"
 ---
 
 # ASIN Data API
 
 Operate **ASIN Data API** through your OOMOL-connected account. This skill calls the `asin_data_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Marketing. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "asin_data_api" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`clear_collection_requests`](actions/clear_collection_requests.md) — Delete multiple requests from a collection by their request IDs in ASIN Data API.
-- [`delete_destination`](actions/delete_destination.md) — Delete a destination from the ASIN Data API account.
-- [`get_collection`](actions/get_collection.md) — Get details of a specific ASIN Data API collection including status and request counts.
-- [`list_collection_requests`](actions/list_collection_requests.md) — List requests in an ASIN Data API collection by page.
-- [`list_destinations`](actions/list_destinations.md) — List destinations configured on the ASIN Data API account with optional filtering and sorting.
-- [`update_destination`](actions/update_destination.md) — Update an existing ASIN Data API destination configuration. Only include fields you want to update.
+- `clear_collection_requests` — Delete multiple requests from a collection by their request IDs in ASIN Data API. [destructive]
+- `delete_destination` — Delete a destination from the ASIN Data API account. [destructive]
+- `get_collection` — Get details of a specific ASIN Data API collection including status and request counts.
+- `list_collection_requests` — List requests in an ASIN Data API collection by page.
+- `list_destinations` — List destinations configured on the ASIN Data API account with optional filtering and sorting.
+- `update_destination` — Update an existing ASIN Data API destination configuration. Only include fields you want to update. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ASIN Data API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ASIN Data API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

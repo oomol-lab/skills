@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DocuSeal"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "docuseal"
-  categories: "Productivity, Communication"
-  homepage: "https://www.docuseal.com"
+  version: "1.0.1"
+  services: ["docuseal"]
 ---
 
 # DocuSeal
 
 Operate **DocuSeal** through your OOMOL-connected account. This skill calls the `docuseal` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 3 action(s).
 
 ## Running an action
 
@@ -36,19 +32,19 @@ oo connector run "docuseal" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_submission`](actions/create_submission.md) — Create a DocuSeal signature request from an existing template and return the created submitters.
-- [`get_template`](actions/get_template.md) — Retrieve one DocuSeal template by ID and return compact metadata with the raw template payload.
-- [`list_templates`](actions/list_templates.md) — List DocuSeal document templates with optional filters and ID-based pagination.
+- `create_submission` — Create a DocuSeal signature request from an existing template and return the created submitters. [write]
+- `get_template` — Retrieve one DocuSeal template by ID and return compact metadata with the raw template payload.
+- `list_templates` — List DocuSeal document templates with optional filters and ID-based pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change DocuSeal state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change DocuSeal state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

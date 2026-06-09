@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Brave Search"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "brave_search"
-  categories: "Data & Analytics"
-  homepage: "https://search.brave.com/"
+  version: "1.0.1"
+  services: ["brave_search"]
   icon: "https://static.oomol.com/logo/third-party/brave_search.svg"
 ---
 
 # Brave Search
 
 Operate **Brave Search** through your OOMOL-connected account. This skill calls the `brave_search` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "brave_search" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`image_search`](actions/image_search.md) — Search Brave's image index for images related to a query.
-- [`news_search`](actions/news_search.md) — Search Brave's news index for recent articles related to a query.
-- [`video_search`](actions/video_search.md) — Search Brave's video index for videos related to a query.
-- [`web_search`](actions/web_search.md) — Search the Brave Search web index and return the selected result families.
+- `image_search` — Search Brave's image index for images related to a query.
+- `news_search` — Search Brave's news index for recent articles related to a query.
+- `video_search` — Search Brave's video index for videos related to a query.
+- `web_search` — Search the Brave Search web index and return the selected result families.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Brave Search state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Brave Search state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

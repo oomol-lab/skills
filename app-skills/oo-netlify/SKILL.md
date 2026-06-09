@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Netlify"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "netlify"
-  categories: "Developer Tools"
-  homepage: "https://www.netlify.com"
+  version: "1.0.1"
+  services: ["netlify"]
   icon: "https://static.oomol.com/logo/third-party/netlify.svg"
 ---
 
 # Netlify
 
 Operate **Netlify** through your OOMOL-connected account. This skill calls the `netlify` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 19 action(s).
 
 ## Running an action
 
@@ -37,35 +33,35 @@ oo connector run "netlify" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`cancel_deploy`](actions/cancel_deploy.md) — Cancel one Netlify deploy by deploy ID.
-- [`create_site_build`](actions/create_site_build.md) — Start a Netlify build for one site without uploading binary files.
-- [`create_site_deploy_from_zip_url`](actions/create_site_deploy_from_zip_url.md) — Create a Netlify site deploy by downloading a public zip file URL and uploading it to Netlify.
-- [`delete_submission`](actions/delete_submission.md) — Delete one Netlify form submission by submission ID.
-- [`get_account`](actions/get_account.md) — Retrieve one Netlify account membership, including billing and capability fields returned by Netlify.
-- [`get_build`](actions/get_build.md) — Retrieve one Netlify build by build ID.
-- [`get_current_user`](actions/get_current_user.md) — Retrieve the Netlify user associated with the connected credential.
-- [`get_deploy`](actions/get_deploy.md) — Retrieve one Netlify deploy by deploy ID.
-- [`get_site`](actions/get_site.md) — Retrieve one Netlify site by site ID or name.
-- [`list_accounts`](actions/list_accounts.md) — List Netlify accounts accessible to the connected credential.
-- [`list_site_deploys`](actions/list_site_deploys.md) — List deploys for one Netlify site.
-- [`list_site_forms`](actions/list_site_forms.md) — List forms detected for one Netlify site.
-- [`list_sites`](actions/list_sites.md) — List Netlify sites accessible to the connected credential.
-- [`list_submissions`](actions/list_submissions.md) — List Netlify form submissions by site or by form.
-- [`lock_deploy`](actions/lock_deploy.md) — Lock one Netlify deploy by deploy ID.
-- [`notify_build_start`](actions/notify_build_start.md) — Notify Netlify that one build has started.
-- [`unlock_deploy`](actions/unlock_deploy.md) — Unlock one Netlify deploy by deploy ID.
-- [`upload_deploy_file_from_url`](actions/upload_deploy_file_from_url.md) — Upload one file into an existing Netlify deploy by downloading a public file URL first.
-- [`upload_deploy_function_from_zip_url`](actions/upload_deploy_function_from_zip_url.md) — Upload one Netlify function bundle into an existing deploy by downloading a public zip file URL first.
+- `cancel_deploy` — Cancel one Netlify deploy by deploy ID. [write]
+- `create_site_build` — Start a Netlify build for one site without uploading binary files. [write]
+- `create_site_deploy_from_zip_url` — Create a Netlify site deploy by downloading a public zip file URL and uploading it to Netlify. [write]
+- `delete_submission` — Delete one Netlify form submission by submission ID. [destructive]
+- `get_account` — Retrieve one Netlify account membership, including billing and capability fields returned by Netlify.
+- `get_build` — Retrieve one Netlify build by build ID.
+- `get_current_user` — Retrieve the Netlify user associated with the connected credential.
+- `get_deploy` — Retrieve one Netlify deploy by deploy ID. [write]
+- `get_site` — Retrieve one Netlify site by site ID or name.
+- `list_accounts` — List Netlify accounts accessible to the connected credential.
+- `list_site_deploys` — List deploys for one Netlify site.
+- `list_site_forms` — List forms detected for one Netlify site.
+- `list_sites` — List Netlify sites accessible to the connected credential.
+- `list_submissions` — List Netlify form submissions by site or by form.
+- `lock_deploy` — Lock one Netlify deploy by deploy ID. [write]
+- `notify_build_start` — Notify Netlify that one build has started. [write]
+- `unlock_deploy` — Unlock one Netlify deploy by deploy ID. [write]
+- `upload_deploy_file_from_url` — Upload one file into an existing Netlify deploy by downloading a public file URL first. [write]
+- `upload_deploy_function_from_zip_url` — Upload one Netlify function bundle into an existing deploy by downloading a public zip file URL first. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Netlify state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Netlify state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

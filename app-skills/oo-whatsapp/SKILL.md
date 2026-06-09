@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WhatsApp"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "whatsapp"
-  categories: "Communication"
-  homepage: "https://www.whatsapp.com"
+  version: "1.0.1"
+  services: ["whatsapp"]
   icon: "https://static.oomol.com/logo/third-party/whatsapp.svg"
 ---
 
 # WhatsApp
 
 Operate **WhatsApp** through your OOMOL-connected account. This skill calls the `whatsapp` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 17 action(s).
 
 ## Running an action
 
@@ -37,33 +33,33 @@ oo connector run "whatsapp" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_message_template`](actions/create_message_template.md) — Create a new WhatsApp message template for a WABA.
-- [`delete_message_template`](actions/delete_message_template.md) — Delete all message template variants that share the same name.
-- [`get_business_profile`](actions/get_business_profile.md) — Get the business profile configured for a WhatsApp Business phone number.
-- [`get_media_info`](actions/get_media_info.md) — Get metadata and a short-lived download URL for uploaded media.
-- [`get_message_templates`](actions/get_message_templates.md) — List message templates for a WhatsApp Business Account.
-- [`get_phone_number`](actions/get_phone_number.md) — Get metadata for a specific WhatsApp Business phone number.
-- [`get_phone_numbers`](actions/get_phone_numbers.md) — List phone numbers for a WhatsApp Business Account.
-- [`get_template_status`](actions/get_template_status.md) — Get status details for a specific message template.
-- [`send_contacts`](actions/send_contacts.md) — Send one or more contacts to a WhatsApp user.
-- [`send_interactive_buttons`](actions/send_interactive_buttons.md) — Send an interactive reply-button message.
-- [`send_interactive_list`](actions/send_interactive_list.md) — Send an interactive list message with sections and rows.
-- [`send_location`](actions/send_location.md) — Send a location message to a WhatsApp user.
-- [`send_media`](actions/send_media.md) — Send a media message by public URL.
-- [`send_media_by_id`](actions/send_media_by_id.md) — Send previously uploaded media by Meta media ID.
-- [`send_message`](actions/send_message.md) — Send a text message to a WhatsApp user.
-- [`send_template_message`](actions/send_template_message.md) — Send an approved WhatsApp template message.
-- [`upload_media`](actions/upload_media.md) — Upload media to Meta and return the resulting media record.
+- `create_message_template` — Create a new WhatsApp message template for a WABA. [write]
+- `delete_message_template` — Delete all message template variants that share the same name. [destructive]
+- `get_business_profile` — Get the business profile configured for a WhatsApp Business phone number.
+- `get_media_info` — Get metadata and a short-lived download URL for uploaded media.
+- `get_message_templates` — List message templates for a WhatsApp Business Account.
+- `get_phone_number` — Get metadata for a specific WhatsApp Business phone number.
+- `get_phone_numbers` — List phone numbers for a WhatsApp Business Account.
+- `get_template_status` — Get status details for a specific message template.
+- `send_contacts` — Send one or more contacts to a WhatsApp user. [write]
+- `send_interactive_buttons` — Send an interactive reply-button message. [write]
+- `send_interactive_list` — Send an interactive list message with sections and rows. [write]
+- `send_location` — Send a location message to a WhatsApp user. [write]
+- `send_media` — Send a media message by public URL. [write]
+- `send_media_by_id` — Send previously uploaded media by Meta media ID. [write]
+- `send_message` — Send a text message to a WhatsApp user. [write]
+- `send_template_message` — Send an approved WhatsApp template message. [write]
+- `upload_media` — Upload media to Meta and return the resulting media record. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change WhatsApp state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change WhatsApp state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

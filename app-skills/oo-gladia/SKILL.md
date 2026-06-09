@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gladia"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gladia"
-  categories: "AI, Design & Media"
-  homepage: "https://app.gladia.io/"
+  version: "1.0.1"
+  services: ["gladia"]
   icon: "https://static.oomol.com/logo/third-party/gladia.svg"
 ---
 
 # Gladia
 
 Operate **Gladia** through your OOMOL-connected account. This skill calls the `gladia` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Design & Media. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "gladia" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_transcription`](actions/delete_transcription.md) — Delete a Gladia pre-recorded transcription job and its associated data.
-- [`download_transcription_audio`](actions/download_transcription_audio.md) — Download the original audio file for a Gladia pre-recorded transcription and store it in connector transit storage.
-- [`get_transcription`](actions/get_transcription.md) — Retrieve a Gladia pre-recorded transcription job by ID, including results when done.
-- [`list_transcriptions`](actions/list_transcriptions.md) — List Gladia pre-recorded transcription jobs with optional pagination, date, status, and metadata filters.
-- [`start_transcription`](actions/start_transcription.md) — Start an asynchronous Gladia pre-recorded transcription job from a public audio or video URL.
-- [`upload_file`](actions/upload_file.md) — Upload an audio or video file up to 100 MiB to Gladia from a local file path, connector transit file, base64 content, or public URL.
+- `delete_transcription` — Delete a Gladia pre-recorded transcription job and its associated data. [destructive]
+- `download_transcription_audio` — Download the original audio file for a Gladia pre-recorded transcription and store it in connector transit storage.
+- `get_transcription` — Retrieve a Gladia pre-recorded transcription job by ID, including results when done.
+- `list_transcriptions` — List Gladia pre-recorded transcription jobs with optional pagination, date, status, and metadata filters.
+- `start_transcription` — Start an asynchronous Gladia pre-recorded transcription job from a public audio or video URL. [write]
+- `upload_file` — Upload an audio or video file up to 100 MiB to Gladia from a local file path, connector transit file, base64 content, or public URL. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Gladia state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Gladia state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

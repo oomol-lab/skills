@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "feishu_app_bot"
-  categories: "Communication"
-  homepage: "https://open.feishu.cn"
+  version: "1.0.1"
+  services: ["feishu_app_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_custom_bot.svg"
 ---
 
 # Feishu App Bot
 
 Operate **Feishu App Bot** through your OOMOL-connected account. This skill calls the `feishu_app_bot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 20 action(s).
 
 ## Running an action
 
@@ -37,36 +33,36 @@ oo connector run "feishu_app_bot" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_message_reaction`](actions/add_message_reaction.md) — Add one emoji reaction to a Feishu/Lark message.
-- [`download_file`](actions/download_file.md) — Download one Feishu/Lark file by file key and upload it to transit storage.
-- [`download_image`](actions/download_image.md) — Download one Feishu/Lark image by image key and upload it to transit storage.
-- [`edit_message`](actions/edit_message.md) — Edit a Feishu/Lark text or post message sent by the app bot.
-- [`get_chat`](actions/get_chat.md) — Fetch one Feishu/Lark chat by `chat_id`.
-- [`get_message`](actions/get_message.md) — Fetch one Feishu/Lark message by `message_id`.
-- [`list_chat_members`](actions/list_chat_members.md) — List visible members in one Feishu/Lark chat.
-- [`list_chats`](actions/list_chats.md) — List chats that the Feishu/Lark app bot currently belongs to.
-- [`list_message_reactions`](actions/list_message_reactions.md) — List emoji reactions on one Feishu/Lark message.
-- [`list_messages`](actions/list_messages.md) — List Feishu/Lark history messages from a chat or thread.
-- [`list_pins`](actions/list_pins.md) — List pin records in one Feishu/Lark chat and time window.
-- [`pin_message`](actions/pin_message.md) — Pin one Feishu/Lark message inside its chat.
-- [`recall_message`](actions/recall_message.md) — Recall one Feishu/Lark message that the app bot sent.
-- [`remove_message_reaction`](actions/remove_message_reaction.md) — Remove one Feishu/Lark message reaction by `reaction_id`.
-- [`remove_pin`](actions/remove_pin.md) — Remove the pin state from one Feishu/Lark message.
-- [`reply_message`](actions/reply_message.md) — Reply to an existing Feishu/Lark message as the app bot.
-- [`search_chats`](actions/search_chats.md) — Search chats visible to the Feishu/Lark app bot by keyword.
-- [`send_message`](actions/send_message.md) — Send a Feishu/Lark app bot message to a user or chat.
-- [`upload_file`](actions/upload_file.md) — Upload one public file URL to Feishu/Lark and return the file key for message sending.
-- [`upload_image`](actions/upload_image.md) — Upload one public image URL to Feishu/Lark and return the image key for message sending.
+- `add_message_reaction` — Add one emoji reaction to a Feishu/Lark message. [write]
+- `download_file` — Download one Feishu/Lark file by file key and upload it to transit storage.
+- `download_image` — Download one Feishu/Lark image by image key and upload it to transit storage.
+- `edit_message` — Edit a Feishu/Lark text or post message sent by the app bot. [write]
+- `get_chat` — Fetch one Feishu/Lark chat by `chat_id`.
+- `get_message` — Fetch one Feishu/Lark message by `message_id`.
+- `list_chat_members` — List visible members in one Feishu/Lark chat.
+- `list_chats` — List chats that the Feishu/Lark app bot currently belongs to.
+- `list_message_reactions` — List emoji reactions on one Feishu/Lark message.
+- `list_messages` — List Feishu/Lark history messages from a chat or thread.
+- `list_pins` — List pin records in one Feishu/Lark chat and time window.
+- `pin_message` — Pin one Feishu/Lark message inside its chat.
+- `recall_message` — Recall one Feishu/Lark message that the app bot sent.
+- `remove_message_reaction` — Remove one Feishu/Lark message reaction by `reaction_id`. [destructive]
+- `remove_pin` — Remove the pin state from one Feishu/Lark message. [destructive]
+- `reply_message` — Reply to an existing Feishu/Lark message as the app bot. [write]
+- `search_chats` — Search chats visible to the Feishu/Lark app bot by keyword.
+- `send_message` — Send a Feishu/Lark app bot message to a user or chat. [write]
+- `upload_file` — Upload one public file URL to Feishu/Lark and return the file key for message sending. [write]
+- `upload_image` — Upload one public image URL to Feishu/Lark and return the image key for message sending. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Feishu App Bot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Feishu App Bot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

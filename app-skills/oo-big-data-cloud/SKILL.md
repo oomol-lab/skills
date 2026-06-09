@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BigDataCloud"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "big_data_cloud"
-  categories: "Maps & Location, Security & Identity, Data & Analytics"
-  homepage: "https://www.bigdatacloud.com"
+  version: "1.0.1"
+  services: ["big_data_cloud"]
   icon: "https://static.oomol.com/logo/third-party/BigDataCloud.svg"
 ---
 
 # BigDataCloud
 
 Operate **BigDataCloud** through your OOMOL-connected account. This skill calls the `big_data_cloud` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Security & Identity, Data & Analytics. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "big_data_cloud" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_country_by_ip`](actions/get_country_by_ip.md) — Get country-level BigDataCloud geolocation data for an IP address.
-- [`get_network_by_ip`](actions/get_network_by_ip.md) — Get BigDataCloud network and ASN details for an IP address.
-- [`get_timezone_by_ip`](actions/get_timezone_by_ip.md) — Get BigDataCloud timezone data for an IP address.
-- [`reverse_geocode_with_timezone`](actions/reverse_geocode_with_timezone.md) — Reverse geocode coordinates and return timezone data from BigDataCloud.
+- `get_country_by_ip` — Get country-level BigDataCloud geolocation data for an IP address.
+- `get_network_by_ip` — Get BigDataCloud network and ASN details for an IP address.
+- `get_timezone_by_ip` — Get BigDataCloud timezone data for an IP address.
+- `reverse_geocode_with_timezone` — Reverse geocode coordinates and return timezone data from BigDataCloud.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change BigDataCloud state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change BigDataCloud state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

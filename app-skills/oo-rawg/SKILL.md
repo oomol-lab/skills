@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RAWG"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "rawg"
-  categories: "Data & Analytics"
-  homepage: "https://rawg.io"
+  version: "1.0.1"
+  services: ["rawg"]
   icon: "https://static.oomol.com/logo/third-party/RAWG%20Video%20Games%20Database.svg"
 ---
 
 # RAWG
 
 Operate **RAWG** through your OOMOL-connected account. This skill calls the `rawg` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics. Exposes 21 action(s).
 
 ## Running an action
 
@@ -37,37 +33,37 @@ oo connector run "rawg" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_developer`](actions/get_developer.md) — Get detailed information for one developer from RAWG.
-- [`get_game`](actions/get_game.md) — Get detailed information for one game from RAWG.
-- [`get_genre`](actions/get_genre.md) — Get detailed information for one genre from RAWG.
-- [`get_platform`](actions/get_platform.md) — Get detailed information for one platform from RAWG.
-- [`get_publisher`](actions/get_publisher.md) — Get detailed information for one publisher from RAWG.
-- [`get_store`](actions/get_store.md) — Get detailed information for one store from RAWG.
-- [`get_tag`](actions/get_tag.md) — Get detailed information for one tag from RAWG.
-- [`list_developers`](actions/list_developers.md) — List game developers from RAWG.
-- [`list_game_additions`](actions/list_game_additions.md) — List additions for one RAWG game.
-- [`list_game_movies`](actions/list_game_movies.md) — Get the RAWG movie payload for one game.
-- [`list_game_reddit_posts`](actions/list_game_reddit_posts.md) — Get the RAWG Reddit post payload for one game.
-- [`list_game_screenshots`](actions/list_game_screenshots.md) — List screenshots for one RAWG game.
-- [`list_game_series`](actions/list_game_series.md) — List series games related to one RAWG game.
-- [`list_game_stores`](actions/list_game_stores.md) — List stores for one RAWG game.
-- [`list_games`](actions/list_games.md) — List games from RAWG with optional search, filtering, sorting, and pagination.
-- [`list_genres`](actions/list_genres.md) — List game genres from RAWG.
-- [`list_parent_platforms`](actions/list_parent_platforms.md) — List parent platforms from RAWG.
-- [`list_platforms`](actions/list_platforms.md) — List gaming platforms from RAWG.
-- [`list_publishers`](actions/list_publishers.md) — List game publishers from RAWG.
-- [`list_stores`](actions/list_stores.md) — List video game stores from RAWG.
-- [`list_tags`](actions/list_tags.md) — List game tags from RAWG.
+- `get_developer` — Get detailed information for one developer from RAWG.
+- `get_game` — Get detailed information for one game from RAWG.
+- `get_genre` — Get detailed information for one genre from RAWG.
+- `get_platform` — Get detailed information for one platform from RAWG.
+- `get_publisher` — Get detailed information for one publisher from RAWG.
+- `get_store` — Get detailed information for one store from RAWG.
+- `get_tag` — Get detailed information for one tag from RAWG.
+- `list_developers` — List game developers from RAWG.
+- `list_game_additions` — List additions for one RAWG game.
+- `list_game_movies` — Get the RAWG movie payload for one game.
+- `list_game_reddit_posts` — Get the RAWG Reddit post payload for one game.
+- `list_game_screenshots` — List screenshots for one RAWG game.
+- `list_game_series` — List series games related to one RAWG game.
+- `list_game_stores` — List stores for one RAWG game.
+- `list_games` — List games from RAWG with optional search, filtering, sorting, and pagination.
+- `list_genres` — List game genres from RAWG.
+- `list_parent_platforms` — List parent platforms from RAWG.
+- `list_platforms` — List gaming platforms from RAWG.
+- `list_publishers` — List game publishers from RAWG.
+- `list_stores` — List video game stores from RAWG.
+- `list_tags` — List game tags from RAWG.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change RAWG state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change RAWG state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

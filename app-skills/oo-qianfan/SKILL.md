@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baidu Qianfan"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "qianfan"
-  categories: "AI"
-  homepage: "https://qianfan.cloud.baidu.com"
+  version: "1.0.1"
+  services: ["qianfan"]
   icon: "https://static.oomol.com/logo/third-party/Qianfan.png"
 ---
 
 # Baidu Qianfan
 
 Operate **Baidu Qianfan** through your OOMOL-connected account. This skill calls the `qianfan` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI. Exposes 25 action(s).
 
 ## Running an action
 
@@ -37,41 +33,41 @@ oo connector run "qianfan" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`cancel_batch`](actions/cancel_batch.md) — Cancel a Baidu Qianfan batch prediction job by its identifier.
-- [`cancel_video_generation_task`](actions/cancel_video_generation_task.md) — Cancel a Baidu Qianfan video generation task by its task identifier.
-- [`create_ai_search_completion`](actions/create_ai_search_completion.md) — Create a non-streaming AI search chat completion with Baidu Qianfan.
-- [`create_air_image_generation`](actions/create_air_image_generation.md) — Generate images with the Baidu Qianfan MuseSteamer Air image endpoint.
-- [`create_batch`](actions/create_batch.md) — Create a Baidu Qianfan batch prediction job from an uploaded input file.
-- [`create_chat_completion`](actions/create_chat_completion.md) — Create a non-streaming OpenAI-compatible chat completion with Baidu Qianfan.
-- [`create_completion`](actions/create_completion.md) — Create a non-streaming fill-in-the-middle completion with Baidu Qianfan.
-- [`create_embeddings`](actions/create_embeddings.md) — Generate embedding vectors for one or more input strings with Baidu Qianfan.
-- [`create_image_generation`](actions/create_image_generation.md) — Generate images with the Baidu Qianfan general image generation endpoint.
-- [`create_response`](actions/create_response.md) — Create a non-streaming stored response with the Baidu Qianfan responses API.
-- [`create_video_generation_task`](actions/create_video_generation_task.md) — Create a Baidu Qianfan video generation task.
-- [`delete_response`](actions/delete_response.md) — Delete a previously stored Baidu Qianfan response by its identifier.
-- [`get_batch`](actions/get_batch.md) — Fetch a Baidu Qianfan batch prediction job by its identifier.
-- [`get_file_content`](actions/get_file_content.md) — Fetch the raw content of a Baidu Qianfan file by its identifier.
-- [`get_response`](actions/get_response.md) — Fetch a previously stored Baidu Qianfan response by its identifier.
-- [`get_video_generation_task`](actions/get_video_generation_task.md) — Fetch a Baidu Qianfan video generation task by its task identifier.
-- [`list_batches`](actions/list_batches.md) — List Baidu Qianfan batch prediction jobs with optional pagination.
-- [`list_files`](actions/list_files.md) — List files stored in Baidu Qianfan with optional filters.
-- [`list_models`](actions/list_models.md) — List the models available to the current Baidu Qianfan API key.
-- [`list_response_input_items`](actions/list_response_input_items.md) — List the stored context items for a previously created Baidu Qianfan response.
-- [`list_video_generation_tasks`](actions/list_video_generation_tasks.md) — List Baidu Qianfan video generation tasks with optional filters.
-- [`rerank`](actions/rerank.md) — Score and rank candidate documents against a query with a Baidu Qianfan rerank model.
-- [`run_paddleocr_vl`](actions/run_paddleocr_vl.md) — Run the Baidu Qianfan PaddleOCR-VL endpoint on a document or image.
-- [`run_pp_structure_v3`](actions/run_pp_structure_v3.md) — Run the Baidu Qianfan PP-StructureV3 OCR endpoint on a document or image.
-- [`upload_file`](actions/upload_file.md) — Upload a file to Baidu Qianfan for batch or other file-based APIs.
+- `cancel_batch` — Cancel a Baidu Qianfan batch prediction job by its identifier. [write]
+- `cancel_video_generation_task` — Cancel a Baidu Qianfan video generation task by its task identifier. [write]
+- `create_ai_search_completion` — Create a non-streaming AI search chat completion with Baidu Qianfan. [write]
+- `create_air_image_generation` — Generate images with the Baidu Qianfan MuseSteamer Air image endpoint. [write]
+- `create_batch` — Create a Baidu Qianfan batch prediction job from an uploaded input file. [write]
+- `create_chat_completion` — Create a non-streaming OpenAI-compatible chat completion with Baidu Qianfan. [write]
+- `create_completion` — Create a non-streaming fill-in-the-middle completion with Baidu Qianfan. [write]
+- `create_embeddings` — Generate embedding vectors for one or more input strings with Baidu Qianfan. [write]
+- `create_image_generation` — Generate images with the Baidu Qianfan general image generation endpoint. [write]
+- `create_response` — Create a non-streaming stored response with the Baidu Qianfan responses API. [write]
+- `create_video_generation_task` — Create a Baidu Qianfan video generation task. [write]
+- `delete_response` — Delete a previously stored Baidu Qianfan response by its identifier. [destructive]
+- `get_batch` — Fetch a Baidu Qianfan batch prediction job by its identifier.
+- `get_file_content` — Fetch the raw content of a Baidu Qianfan file by its identifier.
+- `get_response` — Fetch a previously stored Baidu Qianfan response by its identifier.
+- `get_video_generation_task` — Fetch a Baidu Qianfan video generation task by its task identifier.
+- `list_batches` — List Baidu Qianfan batch prediction jobs with optional pagination.
+- `list_files` — List files stored in Baidu Qianfan with optional filters.
+- `list_models` — List the models available to the current Baidu Qianfan API key.
+- `list_response_input_items` — List the stored context items for a previously created Baidu Qianfan response.
+- `list_video_generation_tasks` — List Baidu Qianfan video generation tasks with optional filters.
+- `rerank` — Score and rank candidate documents against a query with a Baidu Qianfan rerank model.
+- `run_paddleocr_vl` — Run the Baidu Qianfan PaddleOCR-VL endpoint on a document or image.
+- `run_pp_structure_v3` — Run the Baidu Qianfan PP-StructureV3 OCR endpoint on a document or image.
+- `upload_file` — Upload a file to Baidu Qianfan for batch or other file-based APIs. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Baidu Qianfan state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Baidu Qianfan state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

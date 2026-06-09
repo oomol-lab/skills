@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "New Relic"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "new_relic"
-  categories: "Developer Tools"
-  homepage: "https://newrelic.com"
+  version: "1.0.1"
+  services: ["new_relic"]
   icon: "https://static.oomol.com/logo/third-party/New%20Relic.svg"
 ---
 
 # New Relic
 
 Operate **New Relic** through your OOMOL-connected account. This skill calls the `new_relic` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 28 action(s).
 
 ## Running an action
 
@@ -37,44 +33,44 @@ oo connector run "new_relic" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_alert_policy`](actions/create_alert_policy.md) — Create a New Relic alert policy using the REST alerts API.
-- [`create_dashboard`](actions/create_dashboard.md) — Create a New Relic dashboard with pages and widgets using NerdGraph.
-- [`create_dashboard_snapshot_url`](actions/create_dashboard_snapshot_url.md) — Generate a snapshot URL for a New Relic dashboard page GUID.
-- [`create_deployment_marker`](actions/create_deployment_marker.md) — Create a New Relic change-tracking deployment marker for an entity GUID using NerdGraph.
-- [`create_nrql_condition`](actions/create_nrql_condition.md) — Create a static or baseline NRQL alert condition for a policy using the REST alerts API.
-- [`create_secure_credential`](actions/create_secure_credential.md) — Create a New Relic synthetic secure credential using NerdGraph.
-- [`create_synthetics_simple_monitor`](actions/create_synthetics_simple_monitor.md) — Create a New Relic ping monitor by using the syntheticsCreateSimpleMonitor mutation.
-- [`delete_alert_policy`](actions/delete_alert_policy.md) — Delete a New Relic alert policy using the REST alerts API.
-- [`delete_dashboard`](actions/delete_dashboard.md) — Delete a New Relic dashboard by its entity GUID.
-- [`delete_nrql_condition`](actions/delete_nrql_condition.md) — Delete a New Relic NRQL alert condition using the REST alerts API.
-- [`delete_secure_credential`](actions/delete_secure_credential.md) — Delete a New Relic synthetic secure credential using NerdGraph.
-- [`delete_synthetics_monitor`](actions/delete_synthetics_monitor.md) — Delete a synthetic monitor by GUID using the syntheticsDeleteMonitor mutation.
-- [`execute_nrql_query`](actions/execute_nrql_query.md) — Execute an NRQL query against a specific New Relic account and return the query results and metadata.
-- [`get_alert_policies`](actions/get_alert_policies.md) — List New Relic alert policies with optional name, incident preference, and pagination filters using the REST alerts API.
-- [`get_current_user`](actions/get_current_user.md) — Validate the connected New Relic user key and return the current user profile from NerdGraph.
-- [`get_dashboard_entity`](actions/get_dashboard_entity.md) — Read a New Relic dashboard entity, including its pages and widgets, by GUID.
-- [`get_secure_credential`](actions/get_secure_credential.md) — Get a synthetic secure credential by key using NerdGraph entity search metadata only.
-- [`get_synth_monitor`](actions/get_synth_monitor.md) — Get a synthetic monitor by its legacy monitor ID or entity GUID using NerdGraph entity search.
-- [`list_deployments`](actions/list_deployments.md) — List deployment markers for a legacy APM application by using the REST v2 deployments API.
-- [`list_monitors`](actions/list_monitors.md) — List synthetic monitors by using NerdGraph entity search over the SYNTH MONITOR entity type.
-- [`list_nrql_conditions`](actions/list_nrql_conditions.md) — List NRQL alert conditions for a specific alert policy using the REST alerts API.
-- [`list_secure_credentials`](actions/list_secure_credentials.md) — List synthetic secure credentials by using NerdGraph entity search over the SYNTH SECURE_CRED entity type.
-- [`search_entities`](actions/search_entities.md) — Search New Relic entities with either the raw entity search language or a structured query builder.
-- [`update_alert_policy`](actions/update_alert_policy.md) — Update a New Relic alert policy name or incident preference using the REST alerts API.
-- [`update_dashboard`](actions/update_dashboard.md) — Update a New Relic dashboard by GUID, replacing the dashboard configuration with the supplied pages and widgets.
-- [`update_nrql_condition`](actions/update_nrql_condition.md) — Update a static or baseline NRQL alert condition using the REST alerts API.
-- [`update_secure_credential`](actions/update_secure_credential.md) — Update a New Relic synthetic secure credential value or description using NerdGraph.
-- [`update_synthetics_simple_monitor`](actions/update_synthetics_simple_monitor.md) — Update a New Relic ping monitor by GUID using the syntheticsUpdateSimpleMonitor mutation.
+- `create_alert_policy` — Create a New Relic alert policy using the REST alerts API. [write]
+- `create_dashboard` — Create a New Relic dashboard with pages and widgets using NerdGraph. [write]
+- `create_dashboard_snapshot_url` — Generate a snapshot URL for a New Relic dashboard page GUID. [write]
+- `create_deployment_marker` — Create a New Relic change-tracking deployment marker for an entity GUID using NerdGraph. [write]
+- `create_nrql_condition` — Create a static or baseline NRQL alert condition for a policy using the REST alerts API. [write]
+- `create_secure_credential` — Create a New Relic synthetic secure credential using NerdGraph. [write]
+- `create_synthetics_simple_monitor` — Create a New Relic ping monitor by using the syntheticsCreateSimpleMonitor mutation. [write]
+- `delete_alert_policy` — Delete a New Relic alert policy using the REST alerts API. [destructive]
+- `delete_dashboard` — Delete a New Relic dashboard by its entity GUID. [destructive]
+- `delete_nrql_condition` — Delete a New Relic NRQL alert condition using the REST alerts API. [destructive]
+- `delete_secure_credential` — Delete a New Relic synthetic secure credential using NerdGraph. [destructive]
+- `delete_synthetics_monitor` — Delete a synthetic monitor by GUID using the syntheticsDeleteMonitor mutation. [destructive]
+- `execute_nrql_query` — Execute an NRQL query against a specific New Relic account and return the query results and metadata.
+- `get_alert_policies` — List New Relic alert policies with optional name, incident preference, and pagination filters using the REST alerts API.
+- `get_current_user` — Validate the connected New Relic user key and return the current user profile from NerdGraph.
+- `get_dashboard_entity` — Read a New Relic dashboard entity, including its pages and widgets, by GUID.
+- `get_secure_credential` — Get a synthetic secure credential by key using NerdGraph entity search metadata only.
+- `get_synth_monitor` — Get a synthetic monitor by its legacy monitor ID or entity GUID using NerdGraph entity search.
+- `list_deployments` — List deployment markers for a legacy APM application by using the REST v2 deployments API.
+- `list_monitors` — List synthetic monitors by using NerdGraph entity search over the SYNTH MONITOR entity type.
+- `list_nrql_conditions` — List NRQL alert conditions for a specific alert policy using the REST alerts API.
+- `list_secure_credentials` — List synthetic secure credentials by using NerdGraph entity search over the SYNTH SECURE_CRED entity type.
+- `search_entities` — Search New Relic entities with either the raw entity search language or a structured query builder.
+- `update_alert_policy` — Update a New Relic alert policy name or incident preference using the REST alerts API. [write]
+- `update_dashboard` — Update a New Relic dashboard by GUID, replacing the dashboard configuration with the supplied pages and widgets. [write]
+- `update_nrql_condition` — Update a static or baseline NRQL alert condition using the REST alerts API. [write]
+- `update_secure_credential` — Update a New Relic synthetic secure credential value or description using NerdGraph. [write]
+- `update_synthetics_simple_monitor` — Update a New Relic ping monitor by GUID using the syntheticsUpdateSimpleMonitor mutation. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change New Relic state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change New Relic state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

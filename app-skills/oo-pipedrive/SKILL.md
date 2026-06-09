@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pipedrive"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "pipedrive"
-  categories: "Productivity, Marketing"
-  homepage: "https://www.pipedrive.com"
+  version: "1.0.1"
+  services: ["pipedrive"]
   icon: "https://static.oomol.com/logo/third-party/Pipedrive.svg"
 ---
 
 # Pipedrive
 
 Operate **Pipedrive** through your OOMOL-connected account. This skill calls the `pipedrive` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Marketing. Exposes 27 action(s).
 
 ## Running an action
 
@@ -37,43 +33,43 @@ oo connector run "pipedrive" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_activity`](actions/create_activity.md) — Create a Pipedrive activity with subject, due date, linked records, participants, attendees, and notes.
-- [`create_deal`](actions/create_deal.md) — Create a Pipedrive deal with title, contact links, pipeline placement, labels, and optional custom fields.
-- [`create_organization`](actions/create_organization.md) — Create a Pipedrive organization with optional labels, address, and custom fields.
-- [`create_person`](actions/create_person.md) — Create a Pipedrive person with emails, phones, labels, and optional custom fields.
-- [`delete_activity`](actions/delete_activity.md) — Delete one Pipedrive activity by activity ID.
-- [`delete_deal`](actions/delete_deal.md) — Delete one Pipedrive deal by deal ID.
-- [`delete_organization`](actions/delete_organization.md) — Delete one Pipedrive organization by organization ID.
-- [`delete_person`](actions/delete_person.md) — Delete one Pipedrive person by person ID.
-- [`get_activity`](actions/get_activity.md) — Get one Pipedrive activity by activity ID.
-- [`get_deal`](actions/get_deal.md) — Get one Pipedrive deal by deal ID.
-- [`get_organization`](actions/get_organization.md) — Get one Pipedrive organization by organization ID.
-- [`get_person`](actions/get_person.md) — Get one Pipedrive person by person ID.
-- [`get_pipeline`](actions/get_pipeline.md) — Get one Pipedrive pipeline by pipeline ID.
-- [`get_stage`](actions/get_stage.md) — Get one Pipedrive stage by stage ID.
-- [`list_activities`](actions/list_activities.md) — List Pipedrive activities with optional owner, contact, deal, completion, and pagination filters.
-- [`list_deals`](actions/list_deals.md) — List Pipedrive deals with optional owner, contact, pipeline, stage, status, and pagination filters.
-- [`list_organizations`](actions/list_organizations.md) — List Pipedrive organizations with optional owner, custom field, and pagination filters.
-- [`list_persons`](actions/list_persons.md) — List Pipedrive persons with optional owner, organization, deal, custom field, and pagination filters.
-- [`list_pipelines`](actions/list_pipelines.md) — List Pipedrive pipelines with optional sorting and pagination.
-- [`list_stages`](actions/list_stages.md) — List Pipedrive stages with optional pipeline, sorting, and pagination filters.
-- [`search_deals`](actions/search_deals.md) — Search Pipedrive deals by title, notes, or custom fields.
-- [`search_organizations`](actions/search_organizations.md) — Search Pipedrive organizations by name, address, notes, or custom fields.
-- [`search_persons`](actions/search_persons.md) — Search Pipedrive persons by name, email, phone, notes, or custom fields.
-- [`update_activity`](actions/update_activity.md) — Update one Pipedrive activity by activity ID.
-- [`update_deal`](actions/update_deal.md) — Update one Pipedrive deal by deal ID.
-- [`update_organization`](actions/update_organization.md) — Update one Pipedrive organization by organization ID.
-- [`update_person`](actions/update_person.md) — Update one Pipedrive person by person ID.
+- `create_activity` — Create a Pipedrive activity with subject, due date, linked records, participants, attendees, and notes. [write]
+- `create_deal` — Create a Pipedrive deal with title, contact links, pipeline placement, labels, and optional custom fields. [write]
+- `create_organization` — Create a Pipedrive organization with optional labels, address, and custom fields. [write]
+- `create_person` — Create a Pipedrive person with emails, phones, labels, and optional custom fields. [write]
+- `delete_activity` — Delete one Pipedrive activity by activity ID. [destructive]
+- `delete_deal` — Delete one Pipedrive deal by deal ID. [destructive]
+- `delete_organization` — Delete one Pipedrive organization by organization ID. [destructive]
+- `delete_person` — Delete one Pipedrive person by person ID. [destructive]
+- `get_activity` — Get one Pipedrive activity by activity ID.
+- `get_deal` — Get one Pipedrive deal by deal ID.
+- `get_organization` — Get one Pipedrive organization by organization ID.
+- `get_person` — Get one Pipedrive person by person ID.
+- `get_pipeline` — Get one Pipedrive pipeline by pipeline ID.
+- `get_stage` — Get one Pipedrive stage by stage ID.
+- `list_activities` — List Pipedrive activities with optional owner, contact, deal, completion, and pagination filters.
+- `list_deals` — List Pipedrive deals with optional owner, contact, pipeline, stage, status, and pagination filters.
+- `list_organizations` — List Pipedrive organizations with optional owner, custom field, and pagination filters.
+- `list_persons` — List Pipedrive persons with optional owner, organization, deal, custom field, and pagination filters.
+- `list_pipelines` — List Pipedrive pipelines with optional sorting and pagination.
+- `list_stages` — List Pipedrive stages with optional pipeline, sorting, and pagination filters.
+- `search_deals` — Search Pipedrive deals by title, notes, or custom fields.
+- `search_organizations` — Search Pipedrive organizations by name, address, notes, or custom fields.
+- `search_persons` — Search Pipedrive persons by name, email, phone, notes, or custom fields.
+- `update_activity` — Update one Pipedrive activity by activity ID. [write]
+- `update_deal` — Update one Pipedrive deal by deal ID. [write]
+- `update_organization` — Update one Pipedrive organization by organization ID. [write]
+- `update_person` — Update one Pipedrive person by person ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Pipedrive state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Pipedrive state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

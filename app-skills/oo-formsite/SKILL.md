@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Formsite"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "formsite"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://www.formsite.com"
+  version: "1.0.1"
+  services: ["formsite"]
   icon: "https://static.oomol.com/logo/third-party/formsite.svg"
 ---
 
 # Formsite
 
 Operate **Formsite** through your OOMOL-connected account. This skill calls the `formsite` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "formsite" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_webhook`](actions/delete_webhook.md) — Delete one Formsite webhook from a form by its destination URL.
-- [`get_form`](actions/get_form.md) — Get one Formsite form by its form directory identifier.
-- [`get_form_items`](actions/get_form_items.md) — List the item definitions for one Formsite form.
-- [`get_form_results`](actions/get_form_results.md) — List results for one Formsite form with pagination, date windows, result ID windows, and upstream search filters.
-- [`list_forms`](actions/list_forms.md) — List all forms available in the connected Formsite account user directory.
-- [`list_webhooks`](actions/list_webhooks.md) — List all webhooks configured for one Formsite form.
-- [`upsert_webhook`](actions/upsert_webhook.md) — Create a new Formsite webhook, or update the existing webhook that matches the same URL.
+- `delete_webhook` — Delete one Formsite webhook from a form by its destination URL. [destructive]
+- `get_form` — Get one Formsite form by its form directory identifier.
+- `get_form_items` — List the item definitions for one Formsite form.
+- `get_form_results` — List results for one Formsite form with pagination, date windows, result ID windows, and upstream search filters.
+- `list_forms` — List all forms available in the connected Formsite account user directory.
+- `list_webhooks` — List all webhooks configured for one Formsite form.
+- `upsert_webhook` — Create a new Formsite webhook, or update the existing webhook that matches the same URL. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Formsite state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Formsite state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

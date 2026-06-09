@@ -1,22 +1,18 @@
 ---
 name: oo-render
-description: "Render (render.com). Use this skill for ANY Render request — reading, creating, and updating data. Whenever a task involves Render, use this skill instead of calling the API directly."
+description: "Render (render.com). Use this skill for ANY Render request — reading, creating, updating, and deleting data. Whenever a task involves Render, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Render"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "render"
-  categories: "Developer Tools"
-  homepage: "https://render.com"
+  version: "1.0.1"
+  services: ["render"]
   icon: "https://static.oomol.com/logo/third-party/Render.svg"
 ---
 
 # Render
 
 Operate **Render** through your OOMOL-connected account. This skill calls the `render` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "render" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user`](actions/get_current_user.md) — Get the currently authenticated Render user profile.
-- [`get_service`](actions/get_service.md) — Get Render service details by service ID.
-- [`list_deploys`](actions/list_deploys.md) — List recent Render deploys for a service.
-- [`list_services`](actions/list_services.md) — List Render services with optional workspace, type, and suspension filters.
-- [`list_workspaces`](actions/list_workspaces.md) — List Render workspaces available to the authenticated API key.
-- [`restart_service`](actions/restart_service.md) — Restart a Render service.
-- [`resume_service`](actions/resume_service.md) — Resume a suspended Render service.
-- [`rollback_deploy`](actions/rollback_deploy.md) — Trigger a rollback to a previous deploy for a Render service.
-- [`suspend_service`](actions/suspend_service.md) — Suspend a Render service.
-- [`trigger_deploy`](actions/trigger_deploy.md) — Trigger a new deploy for a Render service.
+- `get_current_user` — Get the currently authenticated Render user profile.
+- `get_service` — Get Render service details by service ID.
+- `list_deploys` — List recent Render deploys for a service.
+- `list_services` — List Render services with optional workspace, type, and suspension filters.
+- `list_workspaces` — List Render workspaces available to the authenticated API key.
+- `restart_service` — Restart a Render service. [write]
+- `resume_service` — Resume a suspended Render service. [write]
+- `rollback_deploy` — Trigger a rollback to a previous deploy for a Render service. [destructive]
+- `suspend_service` — Suspend a Render service.
+- `trigger_deploy` — Trigger a new deploy for a Render service. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Render state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Render state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Leiga"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "leiga"
-  categories: "Productivity, Developer Tools"
-  homepage: "https://www.leiga.com/"
+  version: "1.0.1"
+  services: ["leiga"]
   icon: "https://static.oomol.com/logo/third-party/leiga.png"
 ---
 
 # Leiga
 
 Operate **Leiga** through your OOMOL-connected account. This skill calls the `leiga` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "leiga" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_issue_by_number`](actions/get_issue_by_number.md) — Fetch one Leiga issue by its official issueNo identifier.
-- [`get_issue_schema`](actions/get_issue_schema.md) — Fetch the Leiga issue field schema for one project.
-- [`get_project`](actions/get_project.md) — Fetch one Leiga project by its official numeric projectId.
-- [`get_project_by_key`](actions/get_project_by_key.md) — Fetch one Leiga project by its official project key.
-- [`list_issues`](actions/list_issues.md) — List Leiga issues for one project using the official issue query body.
-- [`list_projects`](actions/list_projects.md) — List Leiga projects using the official project list filters.
+- `get_issue_by_number` — Fetch one Leiga issue by its official issueNo identifier.
+- `get_issue_schema` — Fetch the Leiga issue field schema for one project.
+- `get_project` — Fetch one Leiga project by its official numeric projectId.
+- `get_project_by_key` — Fetch one Leiga project by its official project key.
+- `list_issues` — List Leiga issues for one project using the official issue query body.
+- `list_projects` — List Leiga projects using the official project list filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Leiga state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Leiga state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

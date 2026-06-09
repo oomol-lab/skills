@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Algolia"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "algolia"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://www.algolia.com"
+  version: "1.0.1"
+  services: ["algolia"]
   icon: "https://static.oomol.com/logo/third-party/Algolia.svg"
 ---
 
 # Algolia
 
 Operate **Algolia** through your OOMOL-connected account. This skill calls the `algolia` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "algolia" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_or_replace_record`](actions/add_or_replace_record.md) — Add a new record or replace an existing Algolia record using its objectID.
-- [`browse_index`](actions/browse_index.md) — Browse records from a single Algolia index, optionally continuing with a cursor.
-- [`delete_records_by_filter`](actions/delete_records_by_filter.md) — Delete Algolia records that match a filter expression.
-- [`get_record`](actions/get_record.md) — Retrieve a single record from an Algolia index by objectID.
-- [`list_indices`](actions/list_indices.md) — List Algolia indices accessible to the current API key.
-- [`save_rule`](actions/save_rule.md) — Save a single Algolia rule by objectID.
-- [`save_synonym`](actions/save_synonym.md) — Save a single Algolia synonym by objectID.
-- [`search_index`](actions/search_index.md) — Search a single Algolia index with the most common search parameters.
-- [`update_record_partially`](actions/update_record_partially.md) — Partially update an existing Algolia record by objectID.
+- `add_or_replace_record` — Add a new record or replace an existing Algolia record using its objectID. [write]
+- `browse_index` — Browse records from a single Algolia index, optionally continuing with a cursor.
+- `delete_records_by_filter` — Delete Algolia records that match a filter expression. [destructive]
+- `get_record` — Retrieve a single record from an Algolia index by objectID.
+- `list_indices` — List Algolia indices accessible to the current API key.
+- `save_rule` — Save a single Algolia rule by objectID. [write]
+- `save_synonym` — Save a single Algolia synonym by objectID. [write]
+- `search_index` — Search a single Algolia index with the most common search parameters.
+- `update_record_partially` — Partially update an existing Algolia record by objectID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Algolia state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Algolia state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

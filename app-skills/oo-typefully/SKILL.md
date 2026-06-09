@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Typefully"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "typefully"
-  categories: "Social, Marketing"
-  homepage: "https://typefully.com"
+  version: "1.0.1"
+  services: ["typefully"]
 ---
 
 # Typefully
 
 Operate **Typefully** through your OOMOL-connected account. This skill calls the `typefully` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Social, Marketing. Exposes 8 action(s).
 
 ## Running an action
 
@@ -36,24 +32,24 @@ oo connector run "typefully" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_draft`](actions/create_draft.md) — Create a Typefully draft for a social set.
-- [`delete_draft`](actions/delete_draft.md) — Delete a Typefully draft by ID.
-- [`get_current_user`](actions/get_current_user.md) — Retrieve the Typefully user associated with the current API key.
-- [`get_draft`](actions/get_draft.md) — Retrieve a Typefully draft by ID.
-- [`get_social_set`](actions/get_social_set.md) — Retrieve details for a Typefully social set.
-- [`list_drafts`](actions/list_drafts.md) — List Typefully drafts for a social set with optional filters.
-- [`list_social_sets`](actions/list_social_sets.md) — List Typefully social sets available to the current API key.
-- [`update_draft`](actions/update_draft.md) — Update a Typefully draft by ID.
+- `create_draft` — Create a Typefully draft for a social set. [write]
+- `delete_draft` — Delete a Typefully draft by ID. [destructive]
+- `get_current_user` — Retrieve the Typefully user associated with the current API key.
+- `get_draft` — Retrieve a Typefully draft by ID.
+- `get_social_set` — Retrieve details for a Typefully social set. [write]
+- `list_drafts` — List Typefully drafts for a social set with optional filters.
+- `list_social_sets` — List Typefully social sets available to the current API key.
+- `update_draft` — Update a Typefully draft by ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Typefully state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Typefully state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

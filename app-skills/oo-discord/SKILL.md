@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Discord"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "discord"
-  categories: "Communication, Social"
-  homepage: "https://discord.com"
+  version: "1.0.1"
+  services: ["discord"]
   icon: "https://static.oomol.com/logo/third-party/Discord.svg"
 ---
 
 # Discord
 
 Operate **Discord** through your OOMOL-connected account. This skill calls the `discord` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Social. Exposes 16 action(s).
 
 ## Running an action
 
@@ -37,32 +33,32 @@ oo connector run "discord" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_current_user_application_entitlements`](actions/get_current_user_application_entitlements.md) — Get entitlements for the current OAuth user under a Discord application.
-- [`get_gateway`](actions/get_gateway.md) — Get a Discord Gateway URL.
-- [`get_guild_template`](actions/get_guild_template.md) — Get a Discord guild template by code.
-- [`get_guild_widget`](actions/get_guild_widget.md) — Get a Discord guild widget as JSON.
-- [`get_guild_widget_png`](actions/get_guild_widget_png.md) — Get a Discord guild widget PNG.
-- [`get_invite`](actions/get_invite.md) — Get a Discord invite by code or URL.
-- [`get_my_guild_member`](actions/get_my_guild_member.md) — Get the current OAuth user's member record in a guild.
-- [`get_my_oauth2_authorization`](actions/get_my_oauth2_authorization.md) — Get the current OAuth2 authorization information.
-- [`get_my_user`](actions/get_my_user.md) — Get the current OAuth user profile.
-- [`get_openid_connect_userinfo`](actions/get_openid_connect_userinfo.md) — Get OpenID Connect userinfo for the current OAuth user.
-- [`get_public_keys`](actions/get_public_keys.md) — Get Discord OAuth2 public keys as JWKS.
-- [`get_user`](actions/get_user.md) — Get a Discord user. OAuth mode only supports @me in this provider.
-- [`list_my_connections`](actions/list_my_connections.md) — List the current OAuth user's linked connections.
-- [`list_my_guilds`](actions/list_my_guilds.md) — List the current OAuth user's guilds.
-- [`list_sticker_packs`](actions/list_sticker_packs.md) — List Discord Nitro sticker packs.
-- [`resolve_invite`](actions/resolve_invite.md) — Resolve a Discord invite by code.
+- `get_current_user_application_entitlements` — Get entitlements for the current OAuth user under a Discord application.
+- `get_gateway` — Get a Discord Gateway URL.
+- `get_guild_template` — Get a Discord guild template by code.
+- `get_guild_widget` — Get a Discord guild widget as JSON.
+- `get_guild_widget_png` — Get a Discord guild widget PNG.
+- `get_invite` — Get a Discord invite by code or URL. [write]
+- `get_my_guild_member` — Get the current OAuth user's member record in a guild.
+- `get_my_oauth2_authorization` — Get the current OAuth2 authorization information.
+- `get_my_user` — Get the current OAuth user profile.
+- `get_openid_connect_userinfo` — Get OpenID Connect userinfo for the current OAuth user.
+- `get_public_keys` — Get Discord OAuth2 public keys as JWKS.
+- `get_user` — Get a Discord user. OAuth mode only supports @me in this provider.
+- `list_my_connections` — List the current OAuth user's linked connections.
+- `list_my_guilds` — List the current OAuth user's guilds.
+- `list_sticker_packs` — List Discord Nitro sticker packs.
+- `resolve_invite` — Resolve a Discord invite by code. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Discord state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Discord state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

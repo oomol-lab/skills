@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Placekey"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "placekey"
-  categories: "Maps & Location, Data & Analytics"
-  homepage: "https://www.placekey.io"
+  version: "1.0.1"
+  services: ["placekey"]
   icon: "https://static.oomol.com/logo/third-party/Placekey.svg"
 ---
 
 # Placekey
 
 Operate **Placekey** through your OOMOL-connected account. This skill calls the `placekey` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location, Data & Analytics. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "placekey" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_geocode_from_address`](actions/get_geocode_from_address.md) — Resolve a postal address with Placekey and return the matched geocode response for the location.
-- [`get_placekey`](actions/get_placekey.md) — Look up a single location with Placekey and return its Placekey identifier plus optional enrichment fields.
-- [`get_placekey_from_address`](actions/get_placekey_from_address.md) — Resolve a postal address into a Placekey identifier using the Placekey single-lookup API.
-- [`get_placekeys_bulk`](actions/get_placekeys_bulk.md) — Look up up to 100 locations in one Placekey bulk request and return the result for each query item.
+- `get_geocode_from_address` — Resolve a postal address with Placekey and return the matched geocode response for the location.
+- `get_placekey` — Look up a single location with Placekey and return its Placekey identifier plus optional enrichment fields.
+- `get_placekey_from_address` — Resolve a postal address into a Placekey identifier using the Placekey single-lookup API.
+- `get_placekeys_bulk` — Look up up to 100 locations in one Placekey bulk request and return the result for each query item.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Placekey state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Placekey state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

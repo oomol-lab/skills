@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TaxJar"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "taxjar"
-  categories: "Finance, Data & Analytics"
-  homepage: "https://www.taxjar.com/"
+  version: "1.0.1"
+  services: ["taxjar"]
   icon: "https://static.oomol.com/logo/third-party/Taxjar.svg"
 ---
 
 # TaxJar
 
 Operate **TaxJar** through your OOMOL-connected account. This skill calls the `taxjar` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Data & Analytics. Exposes 21 action(s).
 
 ## Running an action
 
@@ -37,37 +33,37 @@ oo connector run "taxjar" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`calculate_sales_tax_for_order`](actions/calculate_sales_tax_for_order.md) — Calculate TaxJar sales tax for an order.
-- [`create_customer`](actions/create_customer.md) — Create a TaxJar customer for exemption management.
-- [`create_order_transaction`](actions/create_order_transaction.md) — Create a TaxJar order transaction for reporting and filing.
-- [`create_refund_transaction`](actions/create_refund_transaction.md) — Create a TaxJar refund transaction.
-- [`delete_customer`](actions/delete_customer.md) — Delete a TaxJar customer by identifier.
-- [`delete_order_transaction`](actions/delete_order_transaction.md) — Delete a TaxJar order transaction by identifier.
-- [`delete_refund_transaction`](actions/delete_refund_transaction.md) — Delete a TaxJar refund transaction by identifier.
-- [`list_customers`](actions/list_customers.md) — List TaxJar customer identifiers.
-- [`list_nexus_regions`](actions/list_nexus_regions.md) — List TaxJar nexus regions for the account.
-- [`list_order_transactions`](actions/list_order_transactions.md) — List TaxJar order transaction identifiers within a date range.
-- [`list_refund_transactions`](actions/list_refund_transactions.md) — List TaxJar refund transaction identifiers within a date range.
-- [`list_tax_categories`](actions/list_tax_categories.md) — List TaxJar product tax categories and codes.
-- [`show_customer`](actions/show_customer.md) — Retrieve a TaxJar customer by identifier.
-- [`show_order_transaction`](actions/show_order_transaction.md) — Retrieve a TaxJar order transaction by identifier.
-- [`show_refund_transaction`](actions/show_refund_transaction.md) — Retrieve a TaxJar refund transaction by identifier.
-- [`show_tax_rates_for_location`](actions/show_tax_rates_for_location.md) — Retrieve TaxJar sales tax rates for a location.
-- [`summarize_tax_rates_for_all_regions`](actions/summarize_tax_rates_for_all_regions.md) — Retrieve TaxJar minimum and average sales tax rates by region.
-- [`update_customer`](actions/update_customer.md) — Update an existing TaxJar customer.
-- [`update_order_transaction`](actions/update_order_transaction.md) — Update an existing TaxJar order transaction.
-- [`update_refund_transaction`](actions/update_refund_transaction.md) — Update an existing TaxJar refund transaction.
-- [`validate_vat_number`](actions/validate_vat_number.md) — Validate a VAT identification number with TaxJar.
+- `calculate_sales_tax_for_order` — Calculate TaxJar sales tax for an order. [write]
+- `create_customer` — Create a TaxJar customer for exemption management. [write]
+- `create_order_transaction` — Create a TaxJar order transaction for reporting and filing. [write]
+- `create_refund_transaction` — Create a TaxJar refund transaction. [write]
+- `delete_customer` — Delete a TaxJar customer by identifier. [destructive]
+- `delete_order_transaction` — Delete a TaxJar order transaction by identifier. [destructive]
+- `delete_refund_transaction` — Delete a TaxJar refund transaction by identifier. [destructive]
+- `list_customers` — List TaxJar customer identifiers.
+- `list_nexus_regions` — List TaxJar nexus regions for the account.
+- `list_order_transactions` — List TaxJar order transaction identifiers within a date range. [write]
+- `list_refund_transactions` — List TaxJar refund transaction identifiers within a date range.
+- `list_tax_categories` — List TaxJar product tax categories and codes.
+- `show_customer` — Retrieve a TaxJar customer by identifier.
+- `show_order_transaction` — Retrieve a TaxJar order transaction by identifier. [write]
+- `show_refund_transaction` — Retrieve a TaxJar refund transaction by identifier.
+- `show_tax_rates_for_location` — Retrieve TaxJar sales tax rates for a location.
+- `summarize_tax_rates_for_all_regions` — Retrieve TaxJar minimum and average sales tax rates by region.
+- `update_customer` — Update an existing TaxJar customer. [write]
+- `update_order_transaction` — Update an existing TaxJar order transaction. [write]
+- `update_refund_transaction` — Update an existing TaxJar refund transaction. [write]
+- `validate_vat_number` — Validate a VAT identification number with TaxJar.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change TaxJar state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change TaxJar state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

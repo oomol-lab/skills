@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Habitica"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "habitica"
-  categories: "Productivity"
-  homepage: "https://habitica.com"
+  version: "1.0.1"
+  services: ["habitica"]
   icon: "https://static.oomol.com/logo/third-party/habitica.png"
 ---
 
 # Habitica
 
 Operate **Habitica** through your OOMOL-connected account. This skill calls the `habitica` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "habitica" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_tag`](actions/create_tag.md) — Create one new Habitica tag.
-- [`create_task`](actions/create_task.md) — Create one new personal Habitica task from a single JSON task object.
-- [`delete_tag`](actions/delete_tag.md) — Delete one Habitica tag by tag ID.
-- [`delete_task`](actions/delete_task.md) — Delete one Habitica task by task ID or alias.
-- [`get_task`](actions/get_task.md) — Get one Habitica task by task ID or alias.
-- [`get_user_profile`](actions/get_user_profile.md) — Get the authenticated Habitica user's profile with optional userFields filtering.
-- [`list_my_tasks`](actions/list_my_tasks.md) — List the authenticated Habitica user's tasks with optional type and dueDate filters.
-- [`list_tags`](actions/list_tags.md) — List the authenticated Habitica user's tags.
-- [`score_task`](actions/score_task.md) — Score one Habitica task in the up or down direction.
-- [`update_tag`](actions/update_tag.md) — Update one Habitica tag by tag ID.
-- [`update_task`](actions/update_task.md) — Update one Habitica task by task ID or alias.
+- `create_tag` — Create one new Habitica tag. [write]
+- `create_task` — Create one new personal Habitica task from a single JSON task object. [write]
+- `delete_tag` — Delete one Habitica tag by tag ID. [destructive]
+- `delete_task` — Delete one Habitica task by task ID or alias. [destructive]
+- `get_task` — Get one Habitica task by task ID or alias.
+- `get_user_profile` — Get the authenticated Habitica user's profile with optional userFields filtering.
+- `list_my_tasks` — List the authenticated Habitica user's tasks with optional type and dueDate filters.
+- `list_tags` — List the authenticated Habitica user's tags.
+- `score_task` — Score one Habitica task in the up or down direction.
+- `update_tag` — Update one Habitica tag by tag ID. [write]
+- `update_task` — Update one Habitica task by task ID or alias. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Habitica state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Habitica state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ShortPixel"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "shortpixel"
-  categories: "Design & Media, Developer Tools"
-  homepage: "https://shortpixel.com"
+  version: "1.0.1"
+  services: ["shortpixel"]
   icon: "https://static.oomol.com/logo/third-party/shortpixel.png"
 ---
 
 # ShortPixel
 
 Operate **ShortPixel** through your OOMOL-connected account. This skill calls the `shortpixel` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Developer Tools. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "shortpixel" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_domain`](actions/add_domain.md) — Add and associate a domain with the current ShortPixel account.
-- [`get_domain_cdn_usage`](actions/get_domain_cdn_usage.md) — Read CDN usage and quota details for one ShortPixel-associated domain.
-- [`purge_domain_cache`](actions/purge_domain_cache.md) — Purge the ShortPixel CDN cache for one associated domain.
-- [`purge_domain_storage`](actions/purge_domain_storage.md) — Purge ShortPixel stored optimized variants for one associated domain.
-- [`revoke_domain`](actions/revoke_domain.md) — Remove the current ShortPixel account association from a domain.
-- [`set_domain`](actions/set_domain.md) — Associate an existing domain with the current ShortPixel account.
+- `add_domain` — Add and associate a domain with the current ShortPixel account. [write]
+- `get_domain_cdn_usage` — Read CDN usage and quota details for one ShortPixel-associated domain.
+- `purge_domain_cache` — Purge the ShortPixel CDN cache for one associated domain. [destructive]
+- `purge_domain_storage` — Purge ShortPixel stored optimized variants for one associated domain. [destructive]
+- `revoke_domain` — Remove the current ShortPixel account association from a domain. [destructive]
+- `set_domain` — Associate an existing domain with the current ShortPixel account. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ShortPixel state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ShortPixel state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Runpod"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "runpod"
-  categories: "AI, Developer Tools"
-  homepage: "https://www.runpod.io"
+  version: "1.0.1"
+  services: ["runpod"]
   icon: "https://static.oomol.com/logo/third-party/RunPod.svg"
 ---
 
 # Runpod
 
 Operate **Runpod** through your OOMOL-connected account. This skill calls the `runpod` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Developer Tools. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "runpod" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_pod`](actions/delete_pod.md) — Delete a Runpod Pod.
-- [`get_pod`](actions/get_pod.md) — Get one Runpod Pod by ID.
-- [`list_pods`](actions/list_pods.md) — List Runpod Pods with optional official filter parameters.
-- [`reset_pod`](actions/reset_pod.md) — Reset a Runpod Pod.
-- [`restart_pod`](actions/restart_pod.md) — Restart a Runpod Pod.
-- [`start_pod`](actions/start_pod.md) — Start or resume a Runpod Pod.
-- [`stop_pod`](actions/stop_pod.md) — Stop a Runpod Pod.
+- `delete_pod` — Delete a Runpod Pod. [destructive]
+- `get_pod` — Get one Runpod Pod by ID.
+- `list_pods` — List Runpod Pods with optional official filter parameters.
+- `reset_pod` — Reset a Runpod Pod. [destructive]
+- `restart_pod` — Restart a Runpod Pod. [write]
+- `start_pod` — Start or resume a Runpod Pod. [write]
+- `stop_pod` — Stop a Runpod Pod. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Runpod state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Runpod state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

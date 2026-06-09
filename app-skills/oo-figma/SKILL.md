@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Figma"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "figma"
-  categories: "Design & Media, Productivity"
-  homepage: "https://www.figma.com"
+  version: "1.0.2"
+  services: ["figma"]
   icon: "https://static.oomol.com/logo/third-party/figma.svg"
 ---
 
 # Figma
 
 Operate **Figma** through your OOMOL-connected account. This skill calls the `figma` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Productivity. Exposes 26 action(s).
 
 ## Running an action
 
@@ -37,42 +33,42 @@ oo connector run "figma" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_dev_resources`](actions/create_dev_resources.md) — Create dev resources and attach them to Figma file nodes.
-- [`delete_comment`](actions/delete_comment.md) — Delete a Figma comment created by the authenticated user.
-- [`delete_comment_reaction`](actions/delete_comment_reaction.md) — Delete an emoji reaction created by the authenticated user.
-- [`delete_dev_resource`](actions/delete_dev_resource.md) — Delete a Figma dev resource from a main file.
-- [`get_component`](actions/get_component.md) — Get metadata for a published Figma component by key.
-- [`get_component_set`](actions/get_component_set.md) — Get metadata for a published Figma component set by key.
-- [`get_current_user`](actions/get_current_user.md) — Get the current Figma user associated with the API key.
-- [`get_dev_resources`](actions/get_dev_resources.md) — Get dev resources attached to a Figma main file.
-- [`get_file`](actions/get_file.md) — Get the JSON document for a Figma file or branch.
-- [`get_file_metadata`](actions/get_file_metadata.md) — Get lightweight metadata for a Figma file without fetching its full document.
-- [`get_file_nodes`](actions/get_file_nodes.md) — Get JSON for selected node IDs from a Figma file or branch.
-- [`get_image_fills`](actions/get_image_fills.md) — Get temporary download URLs for image fills used in a Figma file.
-- [`get_project_metadata`](actions/get_project_metadata.md) — Get metadata for a Figma project.
-- [`get_style`](actions/get_style.md) — Get metadata for a published Figma style by key.
-- [`list_comment_reactions`](actions/list_comment_reactions.md) — List emoji reactions on a Figma file comment.
-- [`list_comments`](actions/list_comments.md) — List comments on a Figma file or branch.
-- [`list_file_component_sets`](actions/list_file_component_sets.md) — List published component sets in a Figma main file library.
-- [`list_file_components`](actions/list_file_components.md) — List published components in a Figma main file library.
-- [`list_file_styles`](actions/list_file_styles.md) — List published styles in a Figma main file library.
-- [`list_file_versions`](actions/list_file_versions.md) — List version history records for a Figma file.
-- [`list_project_files`](actions/list_project_files.md) — List files in a Figma project.
-- [`list_team_projects`](actions/list_team_projects.md) — List projects visible to the authenticated user in a Figma team.
-- [`post_comment`](actions/post_comment.md) — Post a comment on a Figma file or branch.
-- [`post_comment_reaction`](actions/post_comment_reaction.md) — Add an emoji reaction to a Figma file comment.
-- [`render_images`](actions/render_images.md) — Render selected Figma file nodes and return temporary image URLs.
-- [`update_dev_resources`](actions/update_dev_resources.md) — Update existing Figma dev resources.
+- `create_dev_resources` — Create dev resources and attach them to Figma file nodes. [write]
+- `delete_comment` — Delete a Figma comment created by the authenticated user. [destructive]
+- `delete_comment_reaction` — Delete an emoji reaction created by the authenticated user. [destructive]
+- `delete_dev_resource` — Delete a Figma dev resource from a main file. [destructive]
+- `get_component` — Get metadata for a published Figma component by key.
+- `get_component_set` — Get metadata for a published Figma component set by key. [write]
+- `get_current_user` — Get the current Figma user associated with the API key.
+- `get_dev_resources` — Get dev resources attached to a Figma main file.
+- `get_file` — Get the JSON document for a Figma file or branch.
+- `get_file_metadata` — Get lightweight metadata for a Figma file without fetching its full document.
+- `get_file_nodes` — Get JSON for selected node IDs from a Figma file or branch.
+- `get_image_fills` — Get temporary download URLs for image fills used in a Figma file.
+- `get_project_metadata` — Get metadata for a Figma project.
+- `get_style` — Get metadata for a published Figma style by key.
+- `list_comment_reactions` — List emoji reactions on a Figma file comment. [write]
+- `list_comments` — List comments on a Figma file or branch.
+- `list_file_component_sets` — List published component sets in a Figma main file library.
+- `list_file_components` — List published components in a Figma main file library.
+- `list_file_styles` — List published styles in a Figma main file library.
+- `list_file_versions` — List version history records for a Figma file.
+- `list_project_files` — List files in a Figma project.
+- `list_team_projects` — List projects visible to the authenticated user in a Figma team.
+- `post_comment` — Post a comment on a Figma file or branch. [write]
+- `post_comment_reaction` — Add an emoji reaction to a Figma file comment. [write]
+- `render_images` — Render selected Figma file nodes and return temporary image URLs.
+- `update_dev_resources` — Update existing Figma dev resources. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Figma state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Figma state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

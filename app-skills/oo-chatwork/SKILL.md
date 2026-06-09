@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Chatwork"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "chatwork"
-  categories: "Communication, Productivity"
-  homepage: "https://go.chatwork.com"
+  version: "1.0.1"
+  services: ["chatwork"]
   icon: "https://static.oomol.com/logo/third-party/Chatwork.svg"
 ---
 
 # Chatwork
 
 Operate **Chatwork** through your OOMOL-connected account. This skill calls the `chatwork` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Productivity. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "chatwork" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_task`](actions/create_task.md) — Create a task in a Chatwork room.
-- [`delete_message`](actions/delete_message.md) — Delete one message in a Chatwork room.
-- [`get_contacts`](actions/get_contacts.md) — List Chatwork contacts visible to the authenticated account.
-- [`get_me`](actions/get_me.md) — Get the authenticated Chatwork profile.
-- [`get_message`](actions/get_message.md) — Get one message from a Chatwork room.
-- [`get_room`](actions/get_room.md) — Get metadata for one Chatwork room.
-- [`get_task`](actions/get_task.md) — Get one task from a Chatwork room.
-- [`list_my_tasks`](actions/list_my_tasks.md) — List Chatwork tasks assigned to the authenticated account.
-- [`list_room_members`](actions/list_room_members.md) — List all members in one Chatwork room.
-- [`list_room_messages`](actions/list_room_messages.md) — List messages in one Chatwork room.
-- [`list_room_tasks`](actions/list_room_tasks.md) — List tasks in one Chatwork room.
-- [`list_rooms`](actions/list_rooms.md) — List Chatwork rooms visible to the authenticated account.
-- [`post_message`](actions/post_message.md) — Post a message to a Chatwork room.
-- [`update_message`](actions/update_message.md) — Update one message in a Chatwork room.
-- [`update_task_status`](actions/update_task_status.md) — Update the completion status of one Chatwork task.
+- `create_task` — Create a task in a Chatwork room. [write]
+- `delete_message` — Delete one message in a Chatwork room. [destructive]
+- `get_contacts` — List Chatwork contacts visible to the authenticated account.
+- `get_me` — Get the authenticated Chatwork profile.
+- `get_message` — Get one message from a Chatwork room.
+- `get_room` — Get metadata for one Chatwork room.
+- `get_task` — Get one task from a Chatwork room.
+- `list_my_tasks` — List Chatwork tasks assigned to the authenticated account.
+- `list_room_members` — List all members in one Chatwork room.
+- `list_room_messages` — List messages in one Chatwork room.
+- `list_room_tasks` — List tasks in one Chatwork room.
+- `list_rooms` — List Chatwork rooms visible to the authenticated account.
+- `post_message` — Post a message to a Chatwork room. [write]
+- `update_message` — Update one message in a Chatwork room. [write]
+- `update_task_status` — Update the completion status of one Chatwork task. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Chatwork state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Chatwork state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

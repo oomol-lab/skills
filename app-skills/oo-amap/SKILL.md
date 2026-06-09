@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AMap"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "amap"
-  categories: "Maps & Location"
-  homepage: "https://www.amap.com"
+  version: "1.0.1"
+  services: ["amap"]
   icon: "https://static.oomol.com/logo/third-party/amap.svg"
 ---
 
 # AMap
 
 Operate **AMap** through your OOMOL-connected account. This skill calls the `amap` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "amap" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`district_search`](actions/district_search.md) — Search administrative districts.
-- [`geocode`](actions/geocode.md) — Convert an address to coordinates.
-- [`get_place_detail`](actions/get_place_detail.md) — Get place details by id.
-- [`input_tips`](actions/input_tips.md) — Get input tips by keywords.
-- [`ip_locate`](actions/ip_locate.md) — Locate by IP address.
-- [`reverse_geocode`](actions/reverse_geocode.md) — Convert coordinates to an address.
-- [`route_bicycling`](actions/route_bicycling.md) — Plan a bicycling route.
-- [`route_driving`](actions/route_driving.md) — Plan a driving route.
-- [`route_electrobike`](actions/route_electrobike.md) — Plan an electric bike route.
-- [`route_transit`](actions/route_transit.md) — Plan a transit route.
-- [`route_walking`](actions/route_walking.md) — Plan a walking route.
-- [`search_places`](actions/search_places.md) — Search places by keyword.
-- [`search_places_around`](actions/search_places_around.md) — Search places around a location.
-- [`search_places_polygon`](actions/search_places_polygon.md) — Search places inside a polygon.
-- [`weather`](actions/weather.md) — Get weather information.
+- `district_search` — Search administrative districts.
+- `geocode` — Convert an address to coordinates.
+- `get_place_detail` — Get place details by id.
+- `input_tips` — Get input tips by keywords.
+- `ip_locate` — Locate by IP address.
+- `reverse_geocode` — Convert coordinates to an address.
+- `route_bicycling` — Plan a bicycling route.
+- `route_driving` — Plan a driving route.
+- `route_electrobike` — Plan an electric bike route.
+- `route_transit` — Plan a transit route.
+- `route_walking` — Plan a walking route.
+- `search_places` — Search places by keyword.
+- `search_places_around` — Search places around a location.
+- `search_places_polygon` — Search places inside a polygon.
+- `weather` — Get weather information.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change AMap state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change AMap state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

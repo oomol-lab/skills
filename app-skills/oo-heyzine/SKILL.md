@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Heyzine"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "heyzine"
-  categories: "Design & Media, Productivity"
-  homepage: "https://heyzine.com"
+  version: "1.0.1"
+  services: ["heyzine"]
   icon: "https://static.oomol.com/logo/third-party/heyzine.svg"
 ---
 
 # Heyzine
 
 Operate **Heyzine** through your OOMOL-connected account. This skill calls the `heyzine` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Productivity. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "heyzine" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_flipbook_to_bookshelf`](actions/add_flipbook_to_bookshelf.md) — Add a flipbook to a specific Heyzine bookshelf.
-- [`delete_flipbook`](actions/delete_flipbook.md) — Delete a specific Heyzine flipbook.
-- [`get_flipbook`](actions/get_flipbook.md) — Get the details and oEmbed metadata for a specific Heyzine flipbook.
-- [`list_bookshelf_flipbooks`](actions/list_bookshelf_flipbooks.md) — List the flipbooks assigned to a specific Heyzine bookshelf.
-- [`list_bookshelves`](actions/list_bookshelves.md) — List the bookshelves accessible with the current Heyzine API key.
-- [`list_flipbooks`](actions/list_flipbooks.md) — List the flipbooks accessible with the current Heyzine API key.
-- [`remove_flipbook_from_bookshelf`](actions/remove_flipbook_from_bookshelf.md) — Remove a flipbook from a specific Heyzine bookshelf.
-- [`set_bookshelf_social_data`](actions/set_bookshelf_social_data.md) — Set the social sharing metadata for a specific Heyzine bookshelf.
-- [`set_flipbook_social_data`](actions/set_flipbook_social_data.md) — Set the social sharing metadata for a specific Heyzine flipbook.
+- `add_flipbook_to_bookshelf` — Add a flipbook to a specific Heyzine bookshelf. [write]
+- `delete_flipbook` — Delete a specific Heyzine flipbook. [destructive]
+- `get_flipbook` — Get the details and oEmbed metadata for a specific Heyzine flipbook.
+- `list_bookshelf_flipbooks` — List the flipbooks assigned to a specific Heyzine bookshelf.
+- `list_bookshelves` — List the bookshelves accessible with the current Heyzine API key.
+- `list_flipbooks` — List the flipbooks accessible with the current Heyzine API key.
+- `remove_flipbook_from_bookshelf` — Remove a flipbook from a specific Heyzine bookshelf. [destructive]
+- `set_bookshelf_social_data` — Set the social sharing metadata for a specific Heyzine bookshelf. [write]
+- `set_flipbook_social_data` — Set the social sharing metadata for a specific Heyzine flipbook. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Heyzine state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Heyzine state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

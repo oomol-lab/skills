@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Evenium"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "evenium"
-  categories: "Productivity, Communication"
-  homepage: "https://corp.evenium.com"
+  version: "1.0.1"
+  services: ["evenium"]
   icon: "https://static.oomol.com/logo/third-party/evenium.svg"
 ---
 
 # Evenium
 
 Operate **Evenium** through your OOMOL-connected account. This skill calls the `evenium` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "evenium" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_event`](actions/get_event.md) — Get one Evenium event by event ID or external event ID.
-- [`get_guest`](actions/get_guest.md) — Get one Evenium guest by contact ID or guest code for a given event.
-- [`get_guest_post_status`](actions/get_guest_post_status.md) — Get the current post-event attendance status for one Evenium guest.
-- [`get_guest_status`](actions/get_guest_status.md) — Get the current RSVP status for one Evenium guest.
-- [`list_events`](actions/list_events.md) — List Evenium events with optional title, status, date filters, and pagination.
-- [`list_guests`](actions/list_guests.md) — List guests for one Evenium event with optional attendee filters, expansions, and pagination.
+- `get_event` — Get one Evenium event by event ID or external event ID.
+- `get_guest` — Get one Evenium guest by contact ID or guest code for a given event.
+- `get_guest_post_status` — Get the current post-event attendance status for one Evenium guest. [write]
+- `get_guest_status` — Get the current RSVP status for one Evenium guest.
+- `list_events` — List Evenium events with optional title, status, date filters, and pagination.
+- `list_guests` — List guests for one Evenium event with optional attendee filters, expansions, and pagination.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Evenium state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Evenium state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MailerLite"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mailerlite"
-  categories: "Communication, Marketing"
-  homepage: "https://www.mailerlite.com"
+  version: "1.0.1"
+  services: ["mailerlite"]
   icon: "https://static.oomol.com/logo/third-party/MailerLite.svg"
 ---
 
 # MailerLite
 
 Operate **MailerLite** through your OOMOL-connected account. This skill calls the `mailerlite` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 13 action(s).
 
 ## Running an action
 
@@ -37,29 +33,29 @@ oo connector run "mailerlite" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_subscriber_to_group`](actions/add_subscriber_to_group.md) — Assign an existing MailerLite subscriber to a MailerLite group.
-- [`create_group`](actions/create_group.md) — Create a new MailerLite group.
-- [`delete_group`](actions/delete_group.md) — Delete a MailerLite group by ID.
-- [`delete_subscriber`](actions/delete_subscriber.md) — Delete a subscriber from the current MailerLite account.
-- [`get_subscriber`](actions/get_subscriber.md) — Fetch a single MailerLite subscriber by ID or email.
-- [`list_fields`](actions/list_fields.md) — List fields available to the current MailerLite API key.
-- [`list_group_subscribers`](actions/list_group_subscribers.md) — List subscribers that belong to a MailerLite group.
-- [`list_groups`](actions/list_groups.md) — List groups available to the current MailerLite API key.
-- [`list_subscribers`](actions/list_subscribers.md) — List subscribers available to the current MailerLite API key.
-- [`remove_subscriber_from_group`](actions/remove_subscriber_from_group.md) — Unassign an existing MailerLite subscriber from a MailerLite group.
-- [`update_group`](actions/update_group.md) — Update an existing MailerLite group by ID.
-- [`update_subscriber`](actions/update_subscriber.md) — Update an existing MailerLite subscriber by ID.
-- [`upsert_subscriber`](actions/upsert_subscriber.md) — Create or update a MailerLite subscriber using the official upsert endpoint.
+- `add_subscriber_to_group` — Assign an existing MailerLite subscriber to a MailerLite group. [write]
+- `create_group` — Create a new MailerLite group. [write]
+- `delete_group` — Delete a MailerLite group by ID. [destructive]
+- `delete_subscriber` — Delete a subscriber from the current MailerLite account. [destructive]
+- `get_subscriber` — Fetch a single MailerLite subscriber by ID or email.
+- `list_fields` — List fields available to the current MailerLite API key.
+- `list_group_subscribers` — List subscribers that belong to a MailerLite group.
+- `list_groups` — List groups available to the current MailerLite API key.
+- `list_subscribers` — List subscribers available to the current MailerLite API key.
+- `remove_subscriber_from_group` — Unassign an existing MailerLite subscriber from a MailerLite group. [destructive]
+- `update_group` — Update an existing MailerLite group by ID. [write]
+- `update_subscriber` — Update an existing MailerLite subscriber by ID. [write]
+- `upsert_subscriber` — Create or update a MailerLite subscriber using the official upsert endpoint. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change MailerLite state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change MailerLite state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

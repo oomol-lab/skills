@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Campaign Cleaner"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "campaign_cleaner"
-  categories: "Communication, Marketing"
-  homepage: "https://campaigncleaner.com"
+  version: "1.0.1"
+  services: ["campaign_cleaner"]
   icon: "https://static.oomol.com/logo/third-party/campaign_cleaner.png"
 ---
 
 # Campaign Cleaner
 
 Operate **Campaign Cleaner** through your OOMOL-connected account. This skill calls the `campaign_cleaner` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication, Marketing. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "campaign_cleaner" --action "<action_name>" --data '<json>' --j
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_campaign`](actions/delete_campaign.md) — Delete one saved Campaign Cleaner campaign by campaign ID.
-- [`get_campaign`](actions/get_campaign.md) — Retrieve the full Campaign Cleaner analysis payload for one saved campaign.
-- [`get_campaign_pdf_analysis`](actions/get_campaign_pdf_analysis.md) — Download a Campaign Cleaner PDF analysis report and return it as a transit file.
-- [`get_campaign_status`](actions/get_campaign_status.md) — Fetch the current processing status of one submitted Campaign Cleaner campaign.
-- [`get_credits`](actions/get_credits.md) — Get the remaining Campaign Cleaner credits available to the current API key.
-- [`list_campaigns`](actions/list_campaigns.md) — List saved Campaign Cleaner campaigns together with their current processing status.
-- [`send_campaign`](actions/send_campaign.md) — Submit an email campaign HTML payload for Campaign Cleaner analysis and processing.
+- `delete_campaign` — Delete one saved Campaign Cleaner campaign by campaign ID. [destructive]
+- `get_campaign` — Retrieve the full Campaign Cleaner analysis payload for one saved campaign.
+- `get_campaign_pdf_analysis` — Download a Campaign Cleaner PDF analysis report and return it as a transit file.
+- `get_campaign_status` — Fetch the current processing status of one submitted Campaign Cleaner campaign.
+- `get_credits` — Get the remaining Campaign Cleaner credits available to the current API key.
+- `list_campaigns` — List saved Campaign Cleaner campaigns together with their current processing status.
+- `send_campaign` — Submit an email campaign HTML payload for Campaign Cleaner analysis and processing. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Campaign Cleaner state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Campaign Cleaner state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

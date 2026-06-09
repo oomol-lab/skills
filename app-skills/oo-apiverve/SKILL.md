@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "APIVerve"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "apiverve"
-  categories: "Developer Tools, Data & Analytics"
-  homepage: "https://apiverve.com/"
+  version: "1.0.1"
+  services: ["apiverve"]
   icon: "https://static.oomol.com/logo/third-party/Apiverve.svg"
 ---
 
 # APIVerve
 
 Operate **APIVerve** through your OOMOL-connected account. This skill calls the `apiverve` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Data & Analytics. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "apiverve" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`calculate_age`](actions/calculate_age.md) — Calculate age details from a date of birth using APIVerve Age Calculator.
-- [`convert_currency`](actions/convert_currency.md) — Convert an amount between currencies using APIVerve Currency Converter.
-- [`find_antonyms`](actions/find_antonyms.md) — Find antonyms for a word using APIVerve Antonym Finder.
-- [`generate_advice`](actions/generate_advice.md) — Generate a random piece of advice using APIVerve Advice Generator.
-- [`get_air_quality`](actions/get_air_quality.md) — Get current air quality by city or ZIP code using APIVerve Air Quality.
-- [`get_airport_distance`](actions/get_airport_distance.md) — Get distance and flight estimates between two airports using IATA codes.
-- [`get_word_definition`](actions/get_word_definition.md) — Get definitions for a word using APIVerve Dictionary.
-- [`lookup_airlines`](actions/lookup_airlines.md) — Look up airlines by name or IATA code using APIVerve Airline Lookup.
-- [`lookup_airport`](actions/lookup_airport.md) — Look up airport information by IATA code using APIVerve Airports Lookup.
+- `calculate_age` — Calculate age details from a date of birth using APIVerve Age Calculator.
+- `convert_currency` — Convert an amount between currencies using APIVerve Currency Converter.
+- `find_antonyms` — Find antonyms for a word using APIVerve Antonym Finder.
+- `generate_advice` — Generate a random piece of advice using APIVerve Advice Generator.
+- `get_air_quality` — Get current air quality by city or ZIP code using APIVerve Air Quality.
+- `get_airport_distance` — Get distance and flight estimates between two airports using IATA codes.
+- `get_word_definition` — Get definitions for a word using APIVerve Dictionary.
+- `lookup_airlines` — Look up airlines by name or IATA code using APIVerve Airline Lookup.
+- `lookup_airport` — Look up airport information by IATA code using APIVerve Airports Lookup.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change APIVerve state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change APIVerve state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

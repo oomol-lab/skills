@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Have I Been Pwned"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "haveibeenpwned"
-  categories: "Security & Identity, Data & Analytics"
-  homepage: "https://haveibeenpwned.com/"
+  version: "1.0.1"
+  services: ["haveibeenpwned"]
   icon: "https://static.oomol.com/logo/third-party/haveibeenpwned.svg"
 ---
 
 # Have I Been Pwned
 
 Operate **Have I Been Pwned** through your OOMOL-connected account. This skill calls the `haveibeenpwned` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Data & Analytics. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "haveibeenpwned" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_breach`](actions/get_breach.md) — Get one breach by its stable HIBP Name value.
-- [`get_latest_breach`](actions/get_latest_breach.md) — Get the most recently added breach in Have I Been Pwned.
-- [`get_subscription_status`](actions/get_subscription_status.md) — Get the current subscription details for the connected HIBP API key.
-- [`list_breaches`](actions/list_breaches.md) — List breaches in Have I Been Pwned and optionally filter by domain or spam-list flag.
-- [`list_data_classes`](actions/list_data_classes.md) — List all data classes currently used by breaches in Have I Been Pwned.
-- [`list_pastes_for_account`](actions/list_pastes_for_account.md) — List paste exposures for an email address from Have I Been Pwned.
-- [`search_breached_account`](actions/search_breached_account.md) — Search full HIBP breach models for an email address, with optional domain and unverified-breach filters.
+- `get_breach` — Get one breach by its stable HIBP Name value.
+- `get_latest_breach` — Get the most recently added breach in Have I Been Pwned.
+- `get_subscription_status` — Get the current subscription details for the connected HIBP API key.
+- `list_breaches` — List breaches in Have I Been Pwned and optionally filter by domain or spam-list flag.
+- `list_data_classes` — List all data classes currently used by breaches in Have I Been Pwned.
+- `list_pastes_for_account` — List paste exposures for an email address from Have I Been Pwned.
+- `search_breached_account` — Search full HIBP breach models for an email address, with optional domain and unverified-breach filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Have I Been Pwned state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Have I Been Pwned state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tencent Maps"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "tencent_maps"
-  categories: "Maps & Location"
-  homepage: "https://lbs.qq.com"
+  version: "1.0.1"
+  services: ["tencent_maps"]
   icon: "https://static.oomol.com/logo/third-party/tencent_maps.png"
 ---
 
 # Tencent Maps
 
 Operate **Tencent Maps** through your OOMOL-connected account. This skill calls the `tencent_maps` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Maps & Location. Exposes 15 action(s).
 
 ## Running an action
 
@@ -37,31 +33,31 @@ oo connector run "tencent_maps" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`distance_matrix`](actions/distance_matrix.md) — Compute a Tencent Maps distance matrix for multiple origins and destinations.
-- [`district_search`](actions/district_search.md) — List, search, or fetch child Tencent Maps administrative districts.
-- [`geocode`](actions/geocode.md) — Convert an address into Tencent Maps coordinates and structured address parts.
-- [`get_place_detail`](actions/get_place_detail.md) — Fetch Tencent Maps place details by place id.
-- [`input_tips`](actions/input_tips.md) — Fetch Tencent Maps place suggestion tips for a partial keyword.
-- [`ip_locate`](actions/ip_locate.md) — Locate an IP address with Tencent Maps IP geolocation.
-- [`reverse_geocode`](actions/reverse_geocode.md) — Convert Tencent Maps coordinates into an address and nearby place context.
-- [`route_bicycling`](actions/route_bicycling.md) — Plan a Tencent Maps bicycling route.
-- [`route_driving`](actions/route_driving.md) — Plan a Tencent Maps driving route.
-- [`route_transit`](actions/route_transit.md) — Plan a Tencent Maps transit route.
-- [`route_walking`](actions/route_walking.md) — Plan a Tencent Maps walking route.
-- [`search_places`](actions/search_places.md) — Search Tencent Maps places within a region boundary.
-- [`search_places_around`](actions/search_places_around.md) — Search Tencent Maps places around a nearby center point.
-- [`search_places_polygon`](actions/search_places_polygon.md) — Search Tencent Maps places inside a polygon boundary.
-- [`weather`](actions/weather.md) — Fetch Tencent Maps realtime or forecast weather for an adcode or coordinate.
+- `distance_matrix` — Compute a Tencent Maps distance matrix for multiple origins and destinations.
+- `district_search` — List, search, or fetch child Tencent Maps administrative districts.
+- `geocode` — Convert an address into Tencent Maps coordinates and structured address parts.
+- `get_place_detail` — Fetch Tencent Maps place details by place id.
+- `input_tips` — Fetch Tencent Maps place suggestion tips for a partial keyword.
+- `ip_locate` — Locate an IP address with Tencent Maps IP geolocation.
+- `reverse_geocode` — Convert Tencent Maps coordinates into an address and nearby place context.
+- `route_bicycling` — Plan a Tencent Maps bicycling route.
+- `route_driving` — Plan a Tencent Maps driving route.
+- `route_transit` — Plan a Tencent Maps transit route.
+- `route_walking` — Plan a Tencent Maps walking route.
+- `search_places` — Search Tencent Maps places within a region boundary.
+- `search_places_around` — Search Tencent Maps places around a nearby center point.
+- `search_places_polygon` — Search Tencent Maps places inside a polygon boundary.
+- `weather` — Fetch Tencent Maps realtime or forecast weather for an adcode or coordinate.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Tencent Maps state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Tencent Maps state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

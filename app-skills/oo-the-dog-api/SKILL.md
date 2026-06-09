@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Dog API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "the_dog_api"
-  categories: "Design & Media, Data & Analytics"
-  homepage: "https://thedogapi.com/"
+  version: "1.0.1"
+  services: ["the_dog_api"]
 ---
 
 # The Dog API
 
 Operate **The Dog API** through your OOMOL-connected account. This skill calls the `the_dog_api` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Design & Media, Data & Analytics. Exposes 11 action(s).
 
 ## Running an action
 
@@ -36,27 +32,27 @@ oo connector run "the_dog_api" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_favourite`](actions/create_favourite.md) — Create one favourite dog image record.
-- [`create_vote`](actions/create_vote.md) — Create one dog image vote.
-- [`delete_favourite`](actions/delete_favourite.md) — Delete one favourite dog image record.
-- [`delete_vote`](actions/delete_vote.md) — Delete one dog image vote.
-- [`get_breed`](actions/get_breed.md) — Get one dog breed by its The Dog API breed identifier.
-- [`get_image`](actions/get_image.md) — Get one dog image by its The Dog API image identifier.
-- [`list_breeds`](actions/list_breeds.md) — List dog breeds supported by The Dog API.
-- [`list_favourites`](actions/list_favourites.md) — List favourite dog images for the connected The Dog API account.
-- [`list_votes`](actions/list_votes.md) — List dog image votes for the connected The Dog API account.
-- [`search_breeds`](actions/search_breeds.md) — Search dog breeds by breed name.
-- [`search_images`](actions/search_images.md) — Search for dog images with optional breed, category, type, size, and paging filters.
+- `create_favourite` — Create one favourite dog image record. [write]
+- `create_vote` — Create one dog image vote. [write]
+- `delete_favourite` — Delete one favourite dog image record. [destructive]
+- `delete_vote` — Delete one dog image vote. [destructive]
+- `get_breed` — Get one dog breed by its The Dog API breed identifier.
+- `get_image` — Get one dog image by its The Dog API image identifier.
+- `list_breeds` — List dog breeds supported by The Dog API.
+- `list_favourites` — List favourite dog images for the connected The Dog API account.
+- `list_votes` — List dog image votes for the connected The Dog API account.
+- `search_breeds` — Search dog breeds by breed name.
+- `search_images` — Search for dog images with optional breed, category, type, size, and paging filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change The Dog API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change The Dog API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

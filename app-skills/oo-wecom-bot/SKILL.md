@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeCom Bot"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "wecom_bot"
-  categories: "Communication"
-  homepage: "https://work.weixin.qq.com"
+  version: "1.0.1"
+  services: ["wecom_bot"]
   icon: "https://static.oomol.com/logo/third-party/wecom_bot.png"
 ---
 
 # WeCom Bot
 
 Operate **WeCom Bot** through your OOMOL-connected account. This skill calls the `wecom_bot` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Communication. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "wecom_bot" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`send_image_message`](actions/send_image_message.md) — Send an image message through the WeCom bot webhook.
-- [`send_markdown_message`](actions/send_markdown_message.md) — Send a markdown message through the WeCom bot webhook.
-- [`send_markdown_v2_message`](actions/send_markdown_v2_message.md) — Send a markdown_v2 message through the WeCom bot webhook.
-- [`send_news_message`](actions/send_news_message.md) — Send a news message through the WeCom bot webhook.
-- [`send_text_message`](actions/send_text_message.md) — Send a text message through the WeCom bot webhook.
+- `send_image_message` — Send an image message through the WeCom bot webhook. [write]
+- `send_markdown_message` — Send a markdown message through the WeCom bot webhook. [write]
+- `send_markdown_v2_message` — Send a markdown_v2 message through the WeCom bot webhook. [write]
+- `send_news_message` — Send a news message through the WeCom bot webhook. [write]
+- `send_text_message` — Send a text message through the WeCom bot webhook. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change WeCom Bot state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change WeCom Bot state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Control D"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "control_d"
-  categories: "Security & Identity, Developer Tools"
-  homepage: "https://controld.com"
+  version: "1.0.1"
+  services: ["control_d"]
   icon: "https://static.oomol.com/logo/third-party/Control%20D.svg"
 ---
 
 # Control D
 
 Operate **Control D** through your OOMOL-connected account. This skill calls the `control_d` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Security & Identity, Developer Tools. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "control_d" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`delete_profile_rule`](actions/delete_profile_rule.md) — Delete one root-folder custom DNS rule from a Control D profile.
-- [`get_current_ip`](actions/get_current_ip.md) — Return the current IP address and datacenter seen by the Control D API for troubleshooting API token allowed-IP issues.
-- [`get_profile`](actions/get_profile.md) — Fetch one Control D profile by primary key.
-- [`list_profile_rules`](actions/list_profile_rules.md) — List the root-folder custom DNS rules configured on a Control D profile.
-- [`list_profiles`](actions/list_profiles.md) — List the Control D profiles available to the authenticated API token.
-- [`list_service_categories`](actions/list_service_categories.md) — List the Control D service categories that can be used for service discovery.
-- [`list_services_by_category`](actions/list_services_by_category.md) — List the Control D services available in one service category.
-- [`upsert_profile_rule`](actions/upsert_profile_rule.md) — Create or replace root-folder custom DNS rules on a Control D profile for one or more hostname patterns.
+- `delete_profile_rule` — Delete one root-folder custom DNS rule from a Control D profile. [destructive]
+- `get_current_ip` — Return the current IP address and datacenter seen by the Control D API for troubleshooting API token allowed-IP issues.
+- `get_profile` — Fetch one Control D profile by primary key.
+- `list_profile_rules` — List the root-folder custom DNS rules configured on a Control D profile.
+- `list_profiles` — List the Control D profiles available to the authenticated API token.
+- `list_service_categories` — List the Control D service categories that can be used for service discovery.
+- `list_services_by_category` — List the Control D services available in one service category.
+- `upsert_profile_rule` — Create or replace root-folder custom DNS rules on a Control D profile for one or more hostname patterns. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Control D state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Control D state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

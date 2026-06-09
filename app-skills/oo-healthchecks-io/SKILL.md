@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Healthchecks.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "healthchecks_io"
-  categories: "Developer Tools"
-  homepage: "https://healthchecks.io"
+  version: "1.0.1"
+  services: ["healthchecks_io"]
   icon: "https://static.oomol.com/logo/third-party/healthchecks_io.svg"
 ---
 
 # Healthchecks.io
 
 Operate **Healthchecks.io** through your OOMOL-connected account. This skill calls the `healthchecks_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "healthchecks_io" --action "<action_name>" --data '<json>' --js
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_check`](actions/create_check.md) — Create a Healthchecks.io simple or cron check.
-- [`delete_check`](actions/delete_check.md) — Delete a Healthchecks.io check by UUID.
-- [`get_check`](actions/get_check.md) — Get a Healthchecks.io check by UUID or unique key.
-- [`list_badges`](actions/list_badges.md) — List badge metadata in the current Healthchecks.io project.
-- [`list_channels`](actions/list_channels.md) — List notification integrations in the current Healthchecks.io project.
-- [`list_checks`](actions/list_checks.md) — List Healthchecks.io checks in the current project.
-- [`list_flips`](actions/list_flips.md) — List Healthchecks.io status flips for a check by UUID or unique key.
-- [`list_pings`](actions/list_pings.md) — List recent Healthchecks.io pings for a check by UUID.
-- [`pause_check`](actions/pause_check.md) — Pause monitoring for a Healthchecks.io check by UUID.
-- [`resume_check`](actions/resume_check.md) — Resume monitoring for a Healthchecks.io check by UUID.
-- [`update_check`](actions/update_check.md) — Update a Healthchecks.io check by UUID.
+- `create_check` — Create a Healthchecks.io simple or cron check. [write]
+- `delete_check` — Delete a Healthchecks.io check by UUID. [destructive]
+- `get_check` — Get a Healthchecks.io check by UUID or unique key.
+- `list_badges` — List badge metadata in the current Healthchecks.io project.
+- `list_channels` — List notification integrations in the current Healthchecks.io project.
+- `list_checks` — List Healthchecks.io checks in the current project.
+- `list_flips` — List Healthchecks.io status flips for a check by UUID or unique key.
+- `list_pings` — List recent Healthchecks.io pings for a check by UUID.
+- `pause_check` — Pause monitoring for a Healthchecks.io check by UUID. [write]
+- `resume_check` — Resume monitoring for a Healthchecks.io check by UUID. [write]
+- `update_check` — Update a Healthchecks.io check by UUID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Healthchecks.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Healthchecks.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -1,22 +1,18 @@
 ---
 name: oo-encodian
-description: "Encodian (encodian.com). Use this skill for ANY Encodian request — searching and reading data. Whenever a task involves Encodian, use this skill instead of calling the API directly."
+description: "Encodian (encodian.com). Use this skill for ANY Encodian request — reading, creating, and updating data. Whenever a task involves Encodian, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Encodian"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "encodian"
-  categories: "Productivity, Design & Media"
-  homepage: "https://www.encodian.com"
+  version: "1.0.1"
+  services: ["encodian"]
   icon: "https://static.oomol.com/logo/third-party/Encodian.svg"
 ---
 
 # Encodian
 
 Operate **Encodian** through your OOMOL-connected account. This skill calls the `encodian` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "encodian" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`compress_pdf`](actions/compress_pdf.md) — Compress one PDF document with Encodian and return the optimized PDF file as base64 content.
-- [`extract_pdf_pages`](actions/extract_pdf_pages.md) — Extract selected pages from one PDF document and return the resulting PDF file as base64 content.
-- [`get_pdf_text_layer`](actions/get_pdf_text_layer.md) — Extract the text layer from one PDF document with optional page-range and encoding controls.
-- [`secure_pdf_document`](actions/secure_pdf_document.md) — Encrypt one PDF document with optional open and edit passwords, then return the protected PDF as base64 content.
-- [`unlock_pdf_document`](actions/unlock_pdf_document.md) — Remove password protection from one PDF document and return the unlocked PDF as base64 content.
+- `compress_pdf` — Compress one PDF document with Encodian and return the optimized PDF file as base64 content.
+- `extract_pdf_pages` — Extract selected pages from one PDF document and return the resulting PDF file as base64 content.
+- `get_pdf_text_layer` — Extract the text layer from one PDF document with optional page-range and encoding controls.
+- `secure_pdf_document` — Encrypt one PDF document with optional open and edit passwords, then return the protected PDF as base64 content.
+- `unlock_pdf_document` — Remove password protection from one PDF document and return the unlocked PDF as base64 content. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Encodian state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Encodian state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

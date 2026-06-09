@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DataScope"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "datascope"
-  categories: "Productivity, Data & Analytics"
-  homepage: "https://www.mydatascope.com"
+  version: "1.0.1"
+  services: ["datascope"]
   icon: "https://static.oomol.com/logo/third-party/Datascope.svg"
 ---
 
 # DataScope
 
 Operate **DataScope** through your OOMOL-connected account. This skill calls the `datascope` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Data & Analytics. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "datascope" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_list_element`](actions/create_list_element.md) — Create one DataScope metadata list element under a metadata list type.
-- [`create_location`](actions/create_location.md) — Create a DataScope location using the official locations endpoint.
-- [`get_list_element`](actions/get_list_element.md) — Get one DataScope metadata list element by metadata type and element ID.
-- [`list_answers`](actions/list_answers.md) — List DataScope answers from the v2 answers endpoint with stable top-level metadata and dynamic answer values grouped under answers.
-- [`list_answers_with_full_metadata`](actions/list_answers_with_full_metadata.md) — List DataScope answers from the metadata-rich answers endpoint and normalize each question item into a stable questions array.
-- [`list_list_elements`](actions/list_list_elements.md) — List all elements from one DataScope metadata list type.
-- [`list_locations`](actions/list_locations.md) — List DataScope locations available to the authenticated account.
-- [`update_list_element`](actions/update_list_element.md) — Update one DataScope metadata list element by element ID.
-- [`update_location`](actions/update_location.md) — Update one DataScope location by location ID.
+- `create_list_element` — Create one DataScope metadata list element under a metadata list type. [write]
+- `create_location` — Create a DataScope location using the official locations endpoint. [write]
+- `get_list_element` — Get one DataScope metadata list element by metadata type and element ID.
+- `list_answers` — List DataScope answers from the v2 answers endpoint with stable top-level metadata and dynamic answer values grouped under answers.
+- `list_answers_with_full_metadata` — List DataScope answers from the metadata-rich answers endpoint and normalize each question item into a stable questions array.
+- `list_list_elements` — List all elements from one DataScope metadata list type.
+- `list_locations` — List DataScope locations available to the authenticated account.
+- `update_list_element` — Update one DataScope metadata list element by element ID. [write]
+- `update_location` — Update one DataScope location by location ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change DataScope state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change DataScope state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

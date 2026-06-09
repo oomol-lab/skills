@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DataForSEO"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "dataforseo"
-  categories: "Data & Analytics, Marketing"
-  homepage: "https://dataforseo.com"
+  version: "1.0.1"
+  services: ["dataforseo"]
   icon: "https://static.oomol.com/logo/third-party/dataforseo.png"
 ---
 
 # DataForSEO
 
 Operate **DataForSEO** through your OOMOL-connected account. This skill calls the `dataforseo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Marketing. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "dataforseo" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`backlinks_anchors_live`](actions/backlinks_anchors_live.md) — Retrieve DataForSEO Backlinks anchor text metrics for a domain, subdomain, or page.
-- [`backlinks_list_live`](actions/backlinks_list_live.md) — Retrieve DataForSEO Backlinks records for a domain, subdomain, or page.
-- [`backlinks_referring_domains_live`](actions/backlinks_referring_domains_live.md) — Retrieve DataForSEO Backlinks referring domains for a domain, subdomain, or page.
-- [`backlinks_summary_live`](actions/backlinks_summary_live.md) — Retrieve DataForSEO Backlinks summary metrics for a domain, subdomain, or page.
-- [`get_user_data`](actions/get_user_data.md) — Retrieve DataForSEO account details, balance, rates, limits, and usage data.
-- [`google_ads_search_volume_live`](actions/google_ads_search_volume_live.md) — Retrieve Google Ads search volume metrics from DataForSEO for one batch of keywords.
-- [`google_domain_rank_overview_live`](actions/google_domain_rank_overview_live.md) — Retrieve DataForSEO Labs Google ranking and traffic overview for a domain.
-- [`google_keyword_ideas_live`](actions/google_keyword_ideas_live.md) — Retrieve DataForSEO Labs Google keyword ideas for seed keywords.
-- [`google_keyword_overview_live`](actions/google_keyword_overview_live.md) — Retrieve DataForSEO Labs Google keyword overview metrics for a batch of keywords.
-- [`google_keyword_suggestions_live`](actions/google_keyword_suggestions_live.md) — Retrieve DataForSEO Labs Google keyword suggestions for one seed keyword.
-- [`google_keywords_for_site_live`](actions/google_keywords_for_site_live.md) — Retrieve DataForSEO Labs Google keyword ideas relevant to a target domain.
-- [`google_organic_live_advanced`](actions/google_organic_live_advanced.md) — Run a DataForSEO Google Organic SERP Live Advanced request for one search keyword.
-- [`google_relevant_pages_live`](actions/google_relevant_pages_live.md) — Retrieve ranking and traffic metrics for the most relevant pages of a domain.
-- [`google_serp_competitors_live`](actions/google_serp_competitors_live.md) — Retrieve domains competing in Google SERPs for the specified keywords.
+- `backlinks_anchors_live` — Retrieve DataForSEO Backlinks anchor text metrics for a domain, subdomain, or page.
+- `backlinks_list_live` — Retrieve DataForSEO Backlinks records for a domain, subdomain, or page.
+- `backlinks_referring_domains_live` — Retrieve DataForSEO Backlinks referring domains for a domain, subdomain, or page.
+- `backlinks_summary_live` — Retrieve DataForSEO Backlinks summary metrics for a domain, subdomain, or page.
+- `get_user_data` — Retrieve DataForSEO account details, balance, rates, limits, and usage data.
+- `google_ads_search_volume_live` — Retrieve Google Ads search volume metrics from DataForSEO for one batch of keywords.
+- `google_domain_rank_overview_live` — Retrieve DataForSEO Labs Google ranking and traffic overview for a domain.
+- `google_keyword_ideas_live` — Retrieve DataForSEO Labs Google keyword ideas for seed keywords.
+- `google_keyword_overview_live` — Retrieve DataForSEO Labs Google keyword overview metrics for a batch of keywords.
+- `google_keyword_suggestions_live` — Retrieve DataForSEO Labs Google keyword suggestions for one seed keyword.
+- `google_keywords_for_site_live` — Retrieve DataForSEO Labs Google keyword ideas relevant to a target domain.
+- `google_organic_live_advanced` — Run a DataForSEO Google Organic SERP Live Advanced request for one search keyword.
+- `google_relevant_pages_live` — Retrieve ranking and traffic metrics for the most relevant pages of a domain.
+- `google_serp_competitors_live` — Retrieve domains competing in Google SERPs for the specified keywords.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change DataForSEO state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change DataForSEO state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DocsAutomator"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "docsautomator"
-  categories: "Productivity, Design & Media"
-  homepage: "https://www.docsautomator.co"
+  version: "1.0.1"
+  services: ["docsautomator"]
   icon: "https://static.oomol.com/logo/third-party/docsautomator.png"
 ---
 
 # DocsAutomator
 
 Operate **DocsAutomator** through your OOMOL-connected account. This skill calls the `docsautomator` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "docsautomator" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_document`](actions/create_document.md) — Generate one DocsAutomator document synchronously and return the resulting file URLs plus signing metadata when available.
-- [`create_document_async`](actions/create_document_async.md) — Queue one DocsAutomator document generation job and return the job handle for later polling.
-- [`get_automation`](actions/get_automation.md) — Get one DocsAutomator automation by automationId or docId and return its current generation-related settings.
-- [`get_document_job`](actions/get_document_job.md) — Get the current status of a DocsAutomator async document generation job and return the finished document result when available.
-- [`get_queue_stats`](actions/get_queue_stats.md) — Return current DocsAutomator queue statistics for the connected workspace.
-- [`list_automations`](actions/list_automations.md) — List DocsAutomator automations in the current workspace with the core fields needed for document generation setup.
-- [`list_template_placeholders`](actions/list_template_placeholders.md) — List the placeholder groups extracted from a DocsAutomator Google Doc template for one automation.
+- `create_document` — Generate one DocsAutomator document synchronously and return the resulting file URLs plus signing metadata when available. [write]
+- `create_document_async` — Queue one DocsAutomator document generation job and return the job handle for later polling. [write]
+- `get_automation` — Get one DocsAutomator automation by automationId or docId and return its current generation-related settings.
+- `get_document_job` — Get the current status of a DocsAutomator async document generation job and return the finished document result when available.
+- `get_queue_stats` — Return current DocsAutomator queue statistics for the connected workspace.
+- `list_automations` — List DocsAutomator automations in the current workspace with the core fields needed for document generation setup.
+- `list_template_placeholders` — List the placeholder groups extracted from a DocsAutomator Google Doc template for one automation.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change DocsAutomator state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change DocsAutomator state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

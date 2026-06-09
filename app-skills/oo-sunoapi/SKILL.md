@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SunoAPI"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "sunoapi"
-  categories: "AI, Design & Media"
-  homepage: "https://sunoapi.org"
+  version: "1.0.1"
+  services: ["sunoapi"]
   icon: "https://static.oomol.com/logo/third-party/sunoapi.png"
 ---
 
 # SunoAPI
 
 Operate **SunoAPI** through your OOMOL-connected account. This skill calls the `sunoapi` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Design & Media. Exposes 26 action(s).
 
 ## Running an action
 
@@ -37,42 +33,42 @@ oo connector run "sunoapi" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_instrumental`](actions/add_instrumental.md) — Submit a SunoAPI add instrumental task and return the task identifier.
-- [`add_vocals`](actions/add_vocals.md) — Submit a SunoAPI add vocals task and return the task identifier.
-- [`boost_music_style`](actions/boost_music_style.md) — Boost a SunoAPI style prompt and return the generated style text.
-- [`convert_to_wav_format`](actions/convert_to_wav_format.md) — Submit a SunoAPI WAV conversion task and return the task identifier.
-- [`create_music_video`](actions/create_music_video.md) — Submit a SunoAPI music video task and return the task identifier.
-- [`extend_music`](actions/extend_music.md) — Submit a SunoAPI music extension task and return the task identifier.
-- [`generate_lyrics`](actions/generate_lyrics.md) — Submit a SunoAPI lyrics generation task and return the task identifier.
-- [`generate_mashup`](actions/generate_mashup.md) — Submit a SunoAPI mashup task and return the task identifier.
-- [`generate_midi`](actions/generate_midi.md) — Submit a SunoAPI MIDI task and return the task identifier.
-- [`generate_music`](actions/generate_music.md) — Submit a SunoAPI music generation task and return the task identifier.
-- [`generate_music_cover`](actions/generate_music_cover.md) — Submit a SunoAPI music cover task and return the task identifier.
-- [`generate_persona`](actions/generate_persona.md) — Submit a SunoAPI persona generation task and return the generated persona details.
-- [`generate_sounds`](actions/generate_sounds.md) — Submit a SunoAPI sounds task and return the task identifier.
-- [`get_lyrics_generation_details`](actions/get_lyrics_generation_details.md) — Fetch SunoAPI lyrics generation details for a task.
-- [`get_midi_generation_details`](actions/get_midi_generation_details.md) — Fetch SunoAPI MIDI generation details for a task.
-- [`get_music_cover_details`](actions/get_music_cover_details.md) — Fetch SunoAPI music cover details for a task.
-- [`get_music_generation_details`](actions/get_music_generation_details.md) — Fetch SunoAPI music generation details for a task.
-- [`get_music_video_details`](actions/get_music_video_details.md) — Fetch SunoAPI music video details for a task.
-- [`get_remaining_credits`](actions/get_remaining_credits.md) — Fetch the remaining SunoAPI credits for the authenticated account.
-- [`get_timestamped_lyrics`](actions/get_timestamped_lyrics.md) — Fetch SunoAPI timestamped lyrics for a track.
-- [`get_vocal_separation_details`](actions/get_vocal_separation_details.md) — Fetch SunoAPI vocal separation details for a task.
-- [`get_wav_conversion_details`](actions/get_wav_conversion_details.md) — Fetch SunoAPI WAV conversion details for a task.
-- [`replace_music_section`](actions/replace_music_section.md) — Submit a SunoAPI section replacement task and return the task identifier.
-- [`separate_vocals_from_music`](actions/separate_vocals_from_music.md) — Separate vocals from music and return the submitted SunoAPI task identifier.
-- [`upload_and_cover_audio`](actions/upload_and_cover_audio.md) — Submit a SunoAPI upload and cover task and return the task identifier.
-- [`upload_and_extend_audio`](actions/upload_and_extend_audio.md) — Submit a SunoAPI upload and extend task and return the task identifier.
+- `add_instrumental` — Submit a SunoAPI add instrumental task and return the task identifier. [write]
+- `add_vocals` — Submit a SunoAPI add vocals task and return the task identifier. [write]
+- `boost_music_style` — Boost a SunoAPI style prompt and return the generated style text.
+- `convert_to_wav_format` — Submit a SunoAPI WAV conversion task and return the task identifier.
+- `create_music_video` — Submit a SunoAPI music video task and return the task identifier. [write]
+- `extend_music` — Submit a SunoAPI music extension task and return the task identifier.
+- `generate_lyrics` — Submit a SunoAPI lyrics generation task and return the task identifier.
+- `generate_mashup` — Submit a SunoAPI mashup task and return the task identifier.
+- `generate_midi` — Submit a SunoAPI MIDI task and return the task identifier.
+- `generate_music` — Submit a SunoAPI music generation task and return the task identifier.
+- `generate_music_cover` — Submit a SunoAPI music cover task and return the task identifier.
+- `generate_persona` — Submit a SunoAPI persona generation task and return the generated persona details.
+- `generate_sounds` — Submit a SunoAPI sounds task and return the task identifier.
+- `get_lyrics_generation_details` — Fetch SunoAPI lyrics generation details for a task.
+- `get_midi_generation_details` — Fetch SunoAPI MIDI generation details for a task.
+- `get_music_cover_details` — Fetch SunoAPI music cover details for a task.
+- `get_music_generation_details` — Fetch SunoAPI music generation details for a task.
+- `get_music_video_details` — Fetch SunoAPI music video details for a task.
+- `get_remaining_credits` — Fetch the remaining SunoAPI credits for the authenticated account.
+- `get_timestamped_lyrics` — Fetch SunoAPI timestamped lyrics for a track.
+- `get_vocal_separation_details` — Fetch SunoAPI vocal separation details for a task.
+- `get_wav_conversion_details` — Fetch SunoAPI WAV conversion details for a task.
+- `replace_music_section` — Submit a SunoAPI section replacement task and return the task identifier. [write]
+- `separate_vocals_from_music` — Separate vocals from music and return the submitted SunoAPI task identifier.
+- `upload_and_cover_audio` — Submit a SunoAPI upload and cover task and return the task identifier. [write]
+- `upload_and_extend_audio` — Submit a SunoAPI upload and extend task and return the task identifier. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change SunoAPI state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change SunoAPI state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

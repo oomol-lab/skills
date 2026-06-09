@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Crowdin"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "crowdin"
-  categories: "Productivity, Communication"
-  homepage: "https://crowdin.com"
+  version: "1.0.1"
+  services: ["crowdin"]
   icon: "https://static.oomol.com/logo/third-party/Crowdin.svg"
 ---
 
 # Crowdin
 
 Operate **Crowdin** through your OOMOL-connected account. This skill calls the `crowdin` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Communication. Exposes 7 action(s).
 
 ## Running an action
 
@@ -37,23 +33,23 @@ oo connector run "crowdin" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_branch`](actions/create_branch.md) — Create a Crowdin project branch.
-- [`create_directory`](actions/create_directory.md) — Create a Crowdin directory.
-- [`list_branches`](actions/list_branches.md) — List Crowdin project branches.
-- [`list_directories`](actions/list_directories.md) — List Crowdin directories.
-- [`list_files`](actions/list_files.md) — List Crowdin source files.
-- [`list_projects`](actions/list_projects.md) — List Crowdin projects.
-- [`upload_file`](actions/upload_file.md) — Upload a source file to Crowdin.
+- `create_branch` — Create a Crowdin project branch. [write]
+- `create_directory` — Create a Crowdin directory. [write]
+- `list_branches` — List Crowdin project branches.
+- `list_directories` — List Crowdin directories.
+- `list_files` — List Crowdin source files.
+- `list_projects` — List Crowdin projects.
+- `upload_file` — Upload a source file to Crowdin. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Crowdin state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Crowdin state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

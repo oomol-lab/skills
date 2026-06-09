@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Foxit Cloud API"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "fuxin"
-  categories: "Productivity, Design & Media"
-  homepage: "https://cloudapi.fuxinsoft.cn"
+  version: "1.0.1"
+  services: ["fuxin"]
   icon: "https://static.oomol.com/logo/third-party/fuxin.svg"
 ---
 
 # Foxit Cloud API
 
 Operate **Foxit Cloud API** through your OOMOL-connected account. This skill calls the `fuxin` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Design & Media. Exposes 22 action(s).
 
 ## Running an action
 
@@ -37,38 +33,38 @@ oo connector run "fuxin" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`check_pages_are_scanned`](actions/check_pages_are_scanned.md) — Submit one PDF for scanned-page detection in Foxit.
-- [`compare_documents`](actions/compare_documents.md) — Compare two PDF documents with Foxit and submit a diff task.
-- [`compress_document`](actions/compress_document.md) — Compress one PDF with a chosen Foxit compression level.
-- [`convert_document`](actions/convert_document.md) — Convert one PDF into Word, Excel, PowerPoint, image, or text with Foxit.
-- [`convert_office_document_to_images`](actions/convert_office_document_to_images.md) — Convert one Office document into a ZIP of page images with Foxit.
-- [`create_pdf_from_document`](actions/create_pdf_from_document.md) — Create a PDF from a Word, Excel, PowerPoint, image, or text source in Foxit.
-- [`create_pdf_from_html`](actions/create_pdf_from_html.md) — Create a PDF from HTML content, an HTML file, or a webpage URL in Foxit.
-- [`download_file`](actions/download_file.md) — Download one Foxit result document and upload it to connector transit storage.
-- [`extract_document`](actions/extract_document.md) — Extract text or embedded images from one PDF with Foxit.
-- [`flatten_document`](actions/flatten_document.md) — Flatten annotations and form fields into the page content of one PDF with Foxit.
-- [`get_pages_basic_info`](actions/get_pages_basic_info.md) — Submit one PDF for page-size and rotation analysis in Foxit.
-- [`get_task`](actions/get_task.md) — Fetch one Foxit task status and return the normalized task progress details.
-- [`get_user_stock`](actions/get_user_stock.md) — Fetch the remaining Foxit Services API and Embed API quota for the connected credential.
-- [`linearize_document`](actions/linearize_document.md) — Linearize one PDF to improve incremental web viewing in Foxit.
-- [`manipulate_document_pages`](actions/manipulate_document_pages.md) — Delete, rotate, or move PDF pages with Foxit.
-- [`merge_documents`](actions/merge_documents.md) — Merge multiple PDF documents into a single PDF with Foxit.
-- [`ocr_document`](actions/ocr_document.md) — Run OCR on one PDF or image document with Foxit.
-- [`protect_document`](actions/protect_document.md) — Protect one PDF with passwords and permissions in Foxit.
-- [`remove_password_from_document`](actions/remove_password_from_document.md) — Remove the password from one protected PDF with Foxit.
-- [`split_document`](actions/split_document.md) — Split one PDF into multiple smaller files with Foxit.
-- [`upload_file`](actions/upload_file.md) — Upload one source file to Foxit Cloud API and return the reusable Foxit document ID.
-- [`watermark_document`](actions/watermark_document.md) — Add a text or image watermark to one PDF with Foxit.
+- `check_pages_are_scanned` — Submit one PDF for scanned-page detection in Foxit.
+- `compare_documents` — Compare two PDF documents with Foxit and submit a diff task.
+- `compress_document` — Compress one PDF with a chosen Foxit compression level.
+- `convert_document` — Convert one PDF into Word, Excel, PowerPoint, image, or text with Foxit.
+- `convert_office_document_to_images` — Convert one Office document into a ZIP of page images with Foxit.
+- `create_pdf_from_document` — Create a PDF from a Word, Excel, PowerPoint, image, or text source in Foxit. [write]
+- `create_pdf_from_html` — Create a PDF from HTML content, an HTML file, or a webpage URL in Foxit. [write]
+- `download_file` — Download one Foxit result document and upload it to connector transit storage.
+- `extract_document` — Extract text or embedded images from one PDF with Foxit.
+- `flatten_document` — Flatten annotations and form fields into the page content of one PDF with Foxit.
+- `get_pages_basic_info` — Submit one PDF for page-size and rotation analysis in Foxit.
+- `get_task` — Fetch one Foxit task status and return the normalized task progress details.
+- `get_user_stock` — Fetch the remaining Foxit Services API and Embed API quota for the connected credential.
+- `linearize_document` — Linearize one PDF to improve incremental web viewing in Foxit.
+- `manipulate_document_pages` — Delete, rotate, or move PDF pages with Foxit.
+- `merge_documents` — Merge multiple PDF documents into a single PDF with Foxit. [write]
+- `ocr_document` — Run OCR on one PDF or image document with Foxit.
+- `protect_document` — Protect one PDF with passwords and permissions in Foxit.
+- `remove_password_from_document` — Remove the password from one protected PDF with Foxit. [destructive]
+- `split_document` — Split one PDF into multiple smaller files with Foxit.
+- `upload_file` — Upload one source file to Foxit Cloud API and return the reusable Foxit document ID. [write]
+- `watermark_document` — Add a text or image watermark to one PDF with Foxit.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Foxit Cloud API state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Foxit Cloud API state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

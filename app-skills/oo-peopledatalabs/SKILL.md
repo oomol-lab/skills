@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "People Data Labs"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "peopledatalabs"
-  categories: "Data & Analytics, Marketing"
-  homepage: "https://www.peopledatalabs.com"
+  version: "1.0.1"
+  services: ["peopledatalabs"]
   icon: "https://static.oomol.com/logo/third-party/peopledatalabs.png"
 ---
 
 # People Data Labs
 
 Operate **People Data Labs** through your OOMOL-connected account. This skill calls the `peopledatalabs` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Marketing. Exposes 4 action(s).
 
 ## Running an action
 
@@ -37,20 +33,20 @@ oo connector run "peopledatalabs" --action "<action_name>" --data '<json>' --jso
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`enrich_company`](actions/enrich_company.md) — Match a single company in People Data Labs and return the top matched company record.
-- [`enrich_person`](actions/enrich_person.md) — Match a single person in People Data Labs and return the top matched person record.
-- [`search_companies`](actions/search_companies.md) — Search the People Data Labs company dataset with either an Elasticsearch query or SQL query.
-- [`search_people`](actions/search_people.md) — Search the People Data Labs person dataset with either an Elasticsearch query or SQL query.
+- `enrich_company` — Match a single company in People Data Labs and return the top matched company record.
+- `enrich_person` — Match a single person in People Data Labs and return the top matched person record.
+- `search_companies` — Search the People Data Labs company dataset with either an Elasticsearch query or SQL query.
+- `search_people` — Search the People Data Labs person dataset with either an Elasticsearch query or SQL query.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change People Data Labs state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change People Data Labs state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

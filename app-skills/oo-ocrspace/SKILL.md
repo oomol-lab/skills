@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OCR.space"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "ocrspace"
-  categories: "AI, Productivity"
-  homepage: "https://ocr.space"
+  version: "1.0.1"
+  services: ["ocrspace"]
   icon: "https://static.oomol.com/logo/third-party/ocrspace.svg"
 ---
 
 # OCR.space
 
 Operate **OCR.space** through your OOMOL-connected account. This skill calls the `ocrspace` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Productivity. Exposes 2 action(s).
 
 ## Running an action
 
@@ -37,18 +33,18 @@ oo connector run "ocrspace" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`extract_text`](actions/extract_text.md) — Extract text from a public image or uploaded Base64 file by calling OCR.space and returning normalized page results.
-- [`get_conversion_stats`](actions/get_conversion_stats.md) — Fetch OCR.space conversion statistics for the current month or the previous month.
+- `extract_text` — Extract text from a public image or uploaded Base64 file by calling OCR.space and returning normalized page results.
+- `get_conversion_stats` — Fetch OCR.space conversion statistics for the current month or the previous month.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change OCR.space state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change OCR.space state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

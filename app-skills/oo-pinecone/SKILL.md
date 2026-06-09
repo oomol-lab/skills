@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pinecone"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "pinecone"
-  categories: "AI, Data & Analytics"
-  homepage: "https://www.pinecone.io/"
+  version: "1.0.1"
+  services: ["pinecone"]
 ---
 
 # Pinecone
 
 Operate **Pinecone** through your OOMOL-connected account. This skill calls the `pinecone` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics. Exposes 12 action(s).
 
 ## Running an action
 
@@ -36,28 +32,28 @@ oo connector run "pinecone" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`configure_index`](actions/configure_index.md) — Configure an existing Pinecone index.
-- [`create_index`](actions/create_index.md) — Create a Pinecone serverless index.
-- [`delete_index`](actions/delete_index.md) — Delete one Pinecone index by name.
-- [`delete_vectors`](actions/delete_vectors.md) — Delete vectors from a Pinecone index namespace by IDs, filter, or deleteAll.
-- [`describe_index`](actions/describe_index.md) — Describe one Pinecone index by name.
-- [`fetch_vectors`](actions/fetch_vectors.md) — Fetch Pinecone vectors by ID from one namespace.
-- [`get_index_stats`](actions/get_index_stats.md) — Get statistics for a Pinecone index.
-- [`list_indexes`](actions/list_indexes.md) — List Pinecone indexes in the authenticated project.
-- [`list_vector_ids`](actions/list_vector_ids.md) — List vector IDs in a Pinecone serverless index namespace.
-- [`query_vectors`](actions/query_vectors.md) — Search a Pinecone index namespace with a query vector.
-- [`update_vector`](actions/update_vector.md) — Update one Pinecone vector or metadata-matched records in a namespace.
-- [`upsert_vectors`](actions/upsert_vectors.md) — Upsert dense or sparse vectors into a Pinecone index namespace.
+- `configure_index` — Configure an existing Pinecone index.
+- `create_index` — Create a Pinecone serverless index. [write]
+- `delete_index` — Delete one Pinecone index by name. [destructive]
+- `delete_vectors` — Delete vectors from a Pinecone index namespace by IDs, filter, or deleteAll. [destructive]
+- `describe_index` — Describe one Pinecone index by name.
+- `fetch_vectors` — Fetch Pinecone vectors by ID from one namespace.
+- `get_index_stats` — Get statistics for a Pinecone index.
+- `list_indexes` — List Pinecone indexes in the authenticated project.
+- `list_vector_ids` — List vector IDs in a Pinecone serverless index namespace.
+- `query_vectors` — Search a Pinecone index namespace with a query vector.
+- `update_vector` — Update one Pinecone vector or metadata-matched records in a namespace. [write]
+- `upsert_vectors` — Upsert dense or sparse vectors into a Pinecone index namespace. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Pinecone state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Pinecone state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

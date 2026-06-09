@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ElevenLabs"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "elevenlabs"
-  categories: "AI, Design & Media"
-  homepage: "https://elevenlabs.io"
+  version: "1.0.1"
+  services: ["elevenlabs"]
   icon: "https://static.oomol.com/logo/third-party/ElevenLabs.svg"
 ---
 
 # ElevenLabs
 
 Operate **ElevenLabs** through your OOMOL-connected account. This skill calls the `elevenlabs` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Design & Media. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "elevenlabs" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_audio_from_history_item`](actions/get_audio_from_history_item.md) — Download the audio for one ElevenLabs history item and upload the binary result to connector transit storage.
-- [`get_generated_items`](actions/get_generated_items.md) — List generated ElevenLabs history items with pagination and optional voice filtering.
-- [`get_history_item_by_id`](actions/get_history_item_by_id.md) — Get one ElevenLabs history item by history item ID without downloading its audio.
-- [`get_models`](actions/get_models.md) — List the available ElevenLabs models and their text-to-speech capabilities.
-- [`get_user_info`](actions/get_user_info.md) — Get the current ElevenLabs user profile together with the embedded subscription snapshot.
-- [`get_user_subscription_info`](actions/get_user_subscription_info.md) — Get the current ElevenLabs subscription details for the authenticated user.
-- [`get_voice`](actions/get_voice.md) — Get one ElevenLabs voice by voice ID, with optional settings included.
-- [`get_voices`](actions/get_voices.md) — List the available ElevenLabs voices with their key metadata and settings.
-- [`text_to_speech`](actions/text_to_speech.md) — Generate speech audio from text by calling ElevenLabs text-to-speech and uploading the binary result to connector transit storage.
+- `get_audio_from_history_item` — Download the audio for one ElevenLabs history item and upload the binary result to connector transit storage.
+- `get_generated_items` — List generated ElevenLabs history items with pagination and optional voice filtering.
+- `get_history_item_by_id` — Get one ElevenLabs history item by history item ID without downloading its audio.
+- `get_models` — List the available ElevenLabs models and their text-to-speech capabilities.
+- `get_user_info` — Get the current ElevenLabs user profile together with the embedded subscription snapshot.
+- `get_user_subscription_info` — Get the current ElevenLabs subscription details for the authenticated user.
+- `get_voice` — Get one ElevenLabs voice by voice ID, with optional settings included.
+- `get_voices` — List the available ElevenLabs voices with their key metadata and settings.
+- `text_to_speech` — Generate speech audio from text by calling ElevenLabs text-to-speech and uploading the binary result to connector transit storage.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ElevenLabs state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ElevenLabs state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Stripe"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "stripe"
-  categories: "Finance, Developer Tools"
-  homepage: "https://stripe.com"
+  version: "1.0.1"
+  services: ["stripe"]
 ---
 
 # Stripe
 
 Operate **Stripe** through your OOMOL-connected account. This skill calls the `stripe` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Finance, Developer Tools. Exposes 18 action(s).
 
 ## Running an action
 
@@ -36,34 +32,34 @@ oo connector run "stripe" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_customer`](actions/create_customer.md) — Create a Stripe customer with common profile and metadata fields.
-- [`create_price`](actions/create_price.md) — Create a Stripe one-time or recurring price for an existing or inline product.
-- [`create_product`](actions/create_product.md) — Create a Stripe product with common catalog fields.
-- [`delete_customer`](actions/delete_customer.md) — Delete a Stripe customer by ID.
-- [`delete_product`](actions/delete_product.md) — Delete a Stripe product by ID.
-- [`get_customer`](actions/get_customer.md) — Retrieve a Stripe customer by ID.
-- [`get_price`](actions/get_price.md) — Retrieve a Stripe price by ID.
-- [`get_product`](actions/get_product.md) — Retrieve a Stripe product by ID.
-- [`identify_account`](actions/identify_account.md) — Retrieve the Stripe account associated with the current secret API key.
-- [`list_customers`](actions/list_customers.md) — List Stripe customers with optional email, created timestamp, and cursor filters.
-- [`list_prices`](actions/list_prices.md) — List Stripe prices with optional product, active, type, and cursor filters.
-- [`list_products`](actions/list_products.md) — List Stripe products with optional active and cursor filters.
-- [`search_customers`](actions/search_customers.md) — Search Stripe customers with Stripe's search query syntax.
-- [`search_prices`](actions/search_prices.md) — Search Stripe prices with Stripe's search query syntax.
-- [`search_products`](actions/search_products.md) — Search Stripe products with Stripe's search query syntax.
-- [`update_customer`](actions/update_customer.md) — Update a Stripe customer with common profile and metadata fields.
-- [`update_price`](actions/update_price.md) — Update mutable fields on a Stripe price.
-- [`update_product`](actions/update_product.md) — Update a Stripe product with common catalog fields.
+- `create_customer` — Create a Stripe customer with common profile and metadata fields. [write]
+- `create_price` — Create a Stripe one-time or recurring price for an existing or inline product. [write]
+- `create_product` — Create a Stripe product with common catalog fields. [write]
+- `delete_customer` — Delete a Stripe customer by ID. [destructive]
+- `delete_product` — Delete a Stripe product by ID. [destructive]
+- `get_customer` — Retrieve a Stripe customer by ID.
+- `get_price` — Retrieve a Stripe price by ID.
+- `get_product` — Retrieve a Stripe product by ID.
+- `identify_account` — Retrieve the Stripe account associated with the current secret API key.
+- `list_customers` — List Stripe customers with optional email, created timestamp, and cursor filters.
+- `list_prices` — List Stripe prices with optional product, active, type, and cursor filters.
+- `list_products` — List Stripe products with optional active and cursor filters.
+- `search_customers` — Search Stripe customers with Stripe's search query syntax.
+- `search_prices` — Search Stripe prices with Stripe's search query syntax.
+- `search_products` — Search Stripe products with Stripe's search query syntax.
+- `update_customer` — Update a Stripe customer with common profile and metadata fields. [write]
+- `update_price` — Update mutable fields on a Stripe price. [write]
+- `update_product` — Update a Stripe product with common catalog fields. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Stripe state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Stripe state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mem0"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "mem0"
-  categories: "AI, Data & Analytics"
-  homepage: "https://mem0.ai"
+  version: "1.0.1"
+  services: ["mem0"]
   icon: "https://static.oomol.com/logo/third-party/Mem0.svg"
 ---
 
 # Mem0
 
 Operate **Mem0** through your OOMOL-connected account. This skill calls the `mem0` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: AI, Data & Analytics. Exposes 10 action(s).
 
 ## Running an action
 
@@ -37,26 +33,26 @@ oo connector run "mem0" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`add_memories`](actions/add_memories.md) — Add new memories to Mem0 from messages or direct memory text.
-- [`delete_memory`](actions/delete_memory.md) — Delete a Mem0 memory by memory ID.
-- [`get_event`](actions/get_event.md) — Get a single Mem0 event by event ID.
-- [`get_events`](actions/get_events.md) — List Mem0 events for the current API key.
-- [`get_memories`](actions/get_memories.md) — List memories from Mem0 with v2 advanced filters.
-- [`get_memory`](actions/get_memory.md) — Get a single memory from Mem0 by memory ID.
-- [`get_memory_history`](actions/get_memory_history.md) — Get the change history of a Mem0 memory by memory ID.
-- [`get_users`](actions/get_users.md) — List user entities from Mem0, optionally scoped by org and project.
-- [`search_memories`](actions/search_memories.md) — Search memories in Mem0 with semantic query and optional filters.
-- [`update_memory`](actions/update_memory.md) — Update text or metadata of a Mem0 memory by memory ID.
+- `add_memories` — Add new memories to Mem0 from messages or direct memory text. [write]
+- `delete_memory` — Delete a Mem0 memory by memory ID. [destructive]
+- `get_event` — Get a single Mem0 event by event ID.
+- `get_events` — List Mem0 events for the current API key.
+- `get_memories` — List memories from Mem0 with v2 advanced filters.
+- `get_memory` — Get a single memory from Mem0 by memory ID.
+- `get_memory_history` — Get the change history of a Mem0 memory by memory ID.
+- `get_users` — List user entities from Mem0, optionally scoped by org and project.
+- `search_memories` — Search memories in Mem0 with semantic query and optional filters.
+- `update_memory` — Update text or metadata of a Mem0 memory by memory ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Mem0 state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Mem0 state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dub"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "dub"
-  categories: "Marketing, Developer Tools"
-  homepage: "https://dub.co"
+  version: "1.0.1"
+  services: ["dub"]
 ---
 
 # Dub
 
 Operate **Dub** through your OOMOL-connected account. This skill calls the `dub` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Developer Tools. Exposes 15 action(s).
 
 ## Running an action
 
@@ -36,31 +32,31 @@ oo connector run "dub" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`count_links`](actions/count_links.md) — Retrieve the number of matching links in the authenticated Dub workspace.
-- [`create_folder`](actions/create_folder.md) — Create a folder in the authenticated Dub workspace.
-- [`create_link`](actions/create_link.md) — Create a short link in the authenticated Dub workspace.
-- [`create_tag`](actions/create_tag.md) — Create a tag in the authenticated Dub workspace.
-- [`delete_folder`](actions/delete_folder.md) — Delete a folder from the authenticated Dub workspace.
-- [`delete_link`](actions/delete_link.md) — Delete a short link from the authenticated Dub workspace.
-- [`delete_tag`](actions/delete_tag.md) — Delete a tag from the authenticated Dub workspace.
-- [`list_folders`](actions/list_folders.md) — List folders in the authenticated Dub workspace.
-- [`list_links`](actions/list_links.md) — List short links in the authenticated Dub workspace.
-- [`list_tags`](actions/list_tags.md) — List tags in the authenticated Dub workspace.
-- [`retrieve_analytics`](actions/retrieve_analytics.md) — Retrieve analytics for a Dub link, domain, or workspace.
-- [`retrieve_link`](actions/retrieve_link.md) — Retrieve a Dub short link by ID or by supported lookup fields.
-- [`update_folder`](actions/update_folder.md) — Update a folder in the authenticated Dub workspace.
-- [`update_link`](actions/update_link.md) — Update a short link in the authenticated Dub workspace.
-- [`update_tag`](actions/update_tag.md) — Update a tag in the authenticated Dub workspace.
+- `count_links` — Retrieve the number of matching links in the authenticated Dub workspace.
+- `create_folder` — Create a folder in the authenticated Dub workspace. [write]
+- `create_link` — Create a short link in the authenticated Dub workspace. [write]
+- `create_tag` — Create a tag in the authenticated Dub workspace. [write]
+- `delete_folder` — Delete a folder from the authenticated Dub workspace. [destructive]
+- `delete_link` — Delete a short link from the authenticated Dub workspace. [destructive]
+- `delete_tag` — Delete a tag from the authenticated Dub workspace. [destructive]
+- `list_folders` — List folders in the authenticated Dub workspace.
+- `list_links` — List short links in the authenticated Dub workspace.
+- `list_tags` — List tags in the authenticated Dub workspace.
+- `retrieve_analytics` — Retrieve analytics for a Dub link, domain, or workspace.
+- `retrieve_link` — Retrieve a Dub short link by ID or by supported lookup fields.
+- `update_folder` — Update a folder in the authenticated Dub workspace. [write]
+- `update_link` — Update a short link in the authenticated Dub workspace. [write]
+- `update_tag` — Update a tag in the authenticated Dub workspace. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Dub state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Dub state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

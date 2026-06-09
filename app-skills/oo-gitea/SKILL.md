@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gitea"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "gitea"
-  categories: "Developer Tools"
-  homepage: "https://about.gitea.com/products/gitea/"
+  version: "1.0.1"
+  services: ["gitea"]
   icon: "https://static.oomol.com/logo/third-party/Gitea.svg"
 ---
 
 # Gitea
 
 Operate **Gitea** through your OOMOL-connected account. This skill calls the `gitea` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 9 action(s).
 
 ## Running an action
 
@@ -37,25 +33,25 @@ oo connector run "gitea" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_issue`](actions/create_issue.md) — Create an issue in a Gitea repository.
-- [`create_issue_comment`](actions/create_issue_comment.md) — Create a comment on a Gitea issue.
-- [`get_current_user`](actions/get_current_user.md) — Get the current authenticated Gitea user profile.
-- [`get_issue`](actions/get_issue.md) — Get a Gitea issue by repository and issue number.
-- [`get_repository`](actions/get_repository.md) — Get metadata for a Gitea repository by owner and name.
-- [`list_issue_comments`](actions/list_issue_comments.md) — List comments under a Gitea issue.
-- [`list_my_repositories`](actions/list_my_repositories.md) — List repositories owned by the authenticated Gitea user.
-- [`list_repository_issues`](actions/list_repository_issues.md) — List issues in a Gitea repository. Pull requests are filtered out.
-- [`search_repositories`](actions/search_repositories.md) — Search Gitea repositories by keyword with optional repository filters.
+- `create_issue` — Create an issue in a Gitea repository. [write]
+- `create_issue_comment` — Create a comment on a Gitea issue. [write]
+- `get_current_user` — Get the current authenticated Gitea user profile.
+- `get_issue` — Get a Gitea issue by repository and issue number.
+- `get_repository` — Get metadata for a Gitea repository by owner and name.
+- `list_issue_comments` — List comments under a Gitea issue.
+- `list_my_repositories` — List repositories owned by the authenticated Gitea user.
+- `list_repository_issues` — List issues in a Gitea repository. Pull requests are filtered out.
+- `search_repositories` — Search Gitea repositories by keyword with optional repository filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Gitea state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Gitea state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

@@ -1,22 +1,18 @@
 ---
 name: oo-rollbar
-description: "Rollbar (rollbar.com). Use this skill for ANY Rollbar request — searching and reading data. Whenever a task involves Rollbar, use this skill instead of calling the API directly."
+description: "Rollbar (rollbar.com). Use this skill for ANY Rollbar request — reading, creating, and updating data. Whenever a task involves Rollbar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Rollbar"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "rollbar"
-  categories: "Developer Tools, Security & Identity"
-  homepage: "https://rollbar.com"
+  version: "1.0.1"
+  services: ["rollbar"]
   icon: "https://static.oomol.com/logo/third-party/rollbar.svg"
 ---
 
 # Rollbar
 
 Operate **Rollbar** through your OOMOL-connected account. This skill calls the `rollbar` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools, Security & Identity. Exposes 8 action(s).
 
 ## Running an action
 
@@ -37,24 +33,24 @@ oo connector run "rollbar" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_deploy`](actions/get_deploy.md) — Get one Rollbar deploy by deploy ID.
-- [`get_item`](actions/get_item.md) — Get one Rollbar item by item ID.
-- [`get_occurrence`](actions/get_occurrence.md) — Get one Rollbar occurrence by occurrence ID.
-- [`get_project`](actions/get_project.md) — Get one Rollbar project by project ID.
-- [`list_deploys`](actions/list_deploys.md) — List deploys in the connected Rollbar project.
-- [`list_environments`](actions/list_environments.md) — List environments in the connected Rollbar project.
-- [`list_item_occurrences`](actions/list_item_occurrences.md) — List occurrences for one Rollbar item.
-- [`list_items`](actions/list_items.md) — List Rollbar items in the connected project with optional filters.
+- `get_deploy` — Get one Rollbar deploy by deploy ID. [write]
+- `get_item` — Get one Rollbar item by item ID.
+- `get_occurrence` — Get one Rollbar occurrence by occurrence ID.
+- `get_project` — Get one Rollbar project by project ID.
+- `list_deploys` — List deploys in the connected Rollbar project.
+- `list_environments` — List environments in the connected Rollbar project.
+- `list_item_occurrences` — List occurrences for one Rollbar item.
+- `list_items` — List Rollbar items in the connected project with optional filters.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Rollbar state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Rollbar state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

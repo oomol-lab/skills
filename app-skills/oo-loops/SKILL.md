@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Loops"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "loops"
-  categories: "Marketing, Communication"
-  homepage: "https://loops.so"
+  version: "1.0.1"
+  services: ["loops"]
 ---
 
 # Loops
 
 Operate **Loops** through your OOMOL-connected account. This skill calls the `loops` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Communication. Exposes 8 action(s).
 
 ## Running an action
 
@@ -36,24 +32,24 @@ oo connector run "loops" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_contact`](actions/create_contact.md) — Create a Loops contact with default and custom contact properties.
-- [`create_contact_property`](actions/create_contact_property.md) — Create a custom contact property in Loops.
-- [`delete_contact`](actions/delete_contact.md) — Delete a Loops contact by email or userId.
-- [`find_contact`](actions/find_contact.md) — Find Loops contacts by email or userId.
-- [`list_contact_properties`](actions/list_contact_properties.md) — List default or custom Loops contact properties.
-- [`list_mailing_lists`](actions/list_mailing_lists.md) — List Loops mailing lists available to the current API key.
-- [`send_event`](actions/send_event.md) — Send a Loops event to trigger workflows for a contact.
-- [`update_contact`](actions/update_contact.md) — Update or create a Loops contact by email or userId.
+- `create_contact` — Create a Loops contact with default and custom contact properties. [write]
+- `create_contact_property` — Create a custom contact property in Loops. [write]
+- `delete_contact` — Delete a Loops contact by email or userId. [destructive]
+- `find_contact` — Find Loops contacts by email or userId.
+- `list_contact_properties` — List default or custom Loops contact properties.
+- `list_mailing_lists` — List Loops mailing lists available to the current API key.
+- `send_event` — Send a Loops event to trigger workflows for a contact. [write]
+- `update_contact` — Update or create a Loops contact by email or userId. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Loops state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Loops state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

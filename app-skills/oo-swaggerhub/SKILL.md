@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SwaggerHub"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "swaggerhub"
-  categories: "Developer Tools"
-  homepage: "https://swagger.io/tools/swaggerhub/"
+  version: "1.0.1"
+  services: ["swaggerhub"]
   icon: "https://static.oomol.com/logo/third-party/Swaggerhub.svg"
 ---
 
 # SwaggerHub
 
 Operate **SwaggerHub** through your OOMOL-connected account. This skill calls the `swaggerhub` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 14 action(s).
 
 ## Running an action
 
@@ -37,30 +33,30 @@ oo connector run "swaggerhub" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_api_definition`](actions/get_api_definition.md) — Fetch a SwaggerHub API definition in JSON or YAML format, with optional resolved and flattened output.
-- [`get_domain_definition`](actions/get_domain_definition.md) — Fetch a SwaggerHub domain definition in JSON or YAML format.
-- [`get_project`](actions/get_project.md) — Fetch a single SwaggerHub project by owner and project identifier.
-- [`get_template_definition`](actions/get_template_definition.md) — Fetch a SwaggerHub template definition in JSON or YAML format, with optional flattening.
-- [`list_api_versions`](actions/list_api_versions.md) — List the versions available for a specific SwaggerHub API.
-- [`list_domain_versions`](actions/list_domain_versions.md) — List the versions available for a specific SwaggerHub domain.
-- [`list_owner_apis`](actions/list_owner_apis.md) — List SwaggerHub APIs that belong to a specific owner.
-- [`list_owner_domains`](actions/list_owner_domains.md) — List SwaggerHub domains that belong to a specific owner.
-- [`list_projects`](actions/list_projects.md) — List SwaggerHub projects for a specific owner.
-- [`list_template_versions`](actions/list_template_versions.md) — List the versions available for a specific SwaggerHub template.
-- [`list_templates`](actions/list_templates.md) — List SwaggerHub templates, optionally filtered by owner.
-- [`search_apis`](actions/search_apis.md) — Search SwaggerHub APIs using the registry search endpoint.
-- [`search_domains`](actions/search_domains.md) — Search SwaggerHub domains using the registry search endpoint.
-- [`search_registry_specs`](actions/search_registry_specs.md) — Search SwaggerHub registry items across APIs, domains, and templates using the unified /specs listing.
+- `get_api_definition` — Fetch a SwaggerHub API definition in JSON or YAML format, with optional resolved and flattened output.
+- `get_domain_definition` — Fetch a SwaggerHub domain definition in JSON or YAML format.
+- `get_project` — Fetch a single SwaggerHub project by owner and project identifier.
+- `get_template_definition` — Fetch a SwaggerHub template definition in JSON or YAML format, with optional flattening.
+- `list_api_versions` — List the versions available for a specific SwaggerHub API.
+- `list_domain_versions` — List the versions available for a specific SwaggerHub domain.
+- `list_owner_apis` — List SwaggerHub APIs that belong to a specific owner.
+- `list_owner_domains` — List SwaggerHub domains that belong to a specific owner.
+- `list_projects` — List SwaggerHub projects for a specific owner.
+- `list_template_versions` — List the versions available for a specific SwaggerHub template.
+- `list_templates` — List SwaggerHub templates, optionally filtered by owner.
+- `search_apis` — Search SwaggerHub APIs using the registry search endpoint.
+- `search_domains` — Search SwaggerHub domains using the registry search endpoint.
+- `search_registry_specs` — Search SwaggerHub registry items across APIs, domains, and templates using the unified /specs listing.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change SwaggerHub state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change SwaggerHub state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

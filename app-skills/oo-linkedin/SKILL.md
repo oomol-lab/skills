@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LinkedIn"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "linkedin"
-  categories: "Social, Marketing"
-  homepage: "https://www.linkedin.com"
+  version: "1.0.1"
+  services: ["linkedin"]
   icon: "https://static.oomol.com/logo/third-party/linkedin.png"
 ---
 
 # LinkedIn
 
 Operate **LinkedIn** through your OOMOL-connected account. This skill calls the `linkedin` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Social, Marketing. Exposes 5 action(s).
 
 ## Running an action
 
@@ -37,21 +33,21 @@ oo connector run "linkedin" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_article_post`](actions/create_article_post.md) — Create a LinkedIn article or link post with explicit source URL metadata using the Posts API.
-- [`create_reshare`](actions/create_reshare.md) — Create a LinkedIn reshare of an existing post using the Posts API.
-- [`create_text_post`](actions/create_text_post.md) — Create a text-only organic LinkedIn post for a member author.
-- [`delete_post`](actions/delete_post.md) — Delete a LinkedIn post by raw post URN using the Posts API.
-- [`get_current_member`](actions/get_current_member.md) — Retrieve the authenticated LinkedIn member's OpenID Connect profile.
+- `create_article_post` — Create a LinkedIn article or link post with explicit source URL metadata using the Posts API. [write]
+- `create_reshare` — Create a LinkedIn reshare of an existing post using the Posts API. [write]
+- `create_text_post` — Create a text-only organic LinkedIn post for a member author. [write]
+- `delete_post` — Delete a LinkedIn post by raw post URN using the Posts API. [destructive]
+- `get_current_member` — Retrieve the authenticated LinkedIn member's OpenID Connect profile.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change LinkedIn state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change LinkedIn state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

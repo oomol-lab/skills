@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Convex"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "convex"
-  categories: "Developer Tools"
-  homepage: "https://www.convex.dev"
+  version: "1.0.1"
+  services: ["convex"]
   icon: "https://static.oomol.com/logo/third-party/Convex.svg"
 ---
 
 # Convex
 
 Operate **Convex** through your OOMOL-connected account. This skill calls the `convex` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Developer Tools. Exposes 23 action(s).
 
 ## Running an action
 
@@ -37,39 +33,39 @@ oo connector run "convex" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_deploy_key`](actions/create_deploy_key.md) — Create a deploy key for a Convex deployment.
-- [`create_deployment`](actions/create_deployment.md) — Create a new deployment in a Convex project.
-- [`create_project`](actions/create_project.md) — Create a Convex project on a team, optionally provisioning an initial dev or prod deployment.
-- [`delete_custom_domain`](actions/delete_custom_domain.md) — Remove a custom domain from a Convex deployment.
-- [`delete_deploy_key`](actions/delete_deploy_key.md) — Delete a deploy key for a Convex deployment.
-- [`delete_deployment`](actions/delete_deployment.md) — Delete a Convex deployment and all of its data.
-- [`delete_project`](actions/delete_project.md) — Delete a Convex project and all of its deployments.
-- [`execute_query_batch`](actions/execute_query_batch.md) — Execute multiple Convex queries against a deployment and return results in the same order.
-- [`get_deployment`](actions/get_deployment.md) — Get a cloud deployment by deployment name.
-- [`get_project_by_id`](actions/get_project_by_id.md) — Get a Convex project by numeric project ID.
-- [`get_project_by_slug`](actions/get_project_by_slug.md) — Get a Convex project by team identifier or slug plus project slug.
-- [`get_token_details`](actions/get_token_details.md) — Return the current Convex token details so you can discover the authorized team or project context.
-- [`list_custom_domains`](actions/list_custom_domains.md) — List custom domains configured for a Convex deployment.
-- [`list_deploy_keys`](actions/list_deploy_keys.md) — List deploy keys for a Convex deployment.
-- [`list_deployment_classes`](actions/list_deployment_classes.md) — List available deployment classes for a Convex team.
-- [`list_deployment_regions`](actions/list_deployment_regions.md) — List available deployment regions for a Convex team.
-- [`list_deployments`](actions/list_deployments.md) — List deployments for a Convex project.
-- [`list_projects`](actions/list_projects.md) — List all Convex projects for a team.
-- [`run_action`](actions/run_action.md) — Execute a Convex action through the deployment HTTP API.
-- [`run_function`](actions/run_function.md) — Execute an arbitrary Convex function through `/api/run/{functionIdentifier}` using a slash-separated identifier.
-- [`run_mutation`](actions/run_mutation.md) — Execute a Convex mutation through the deployment HTTP API.
-- [`run_query`](actions/run_query.md) — Execute a Convex query through the deployment HTTP API.
-- [`update_deployment`](actions/update_deployment.md) — Update mutable Convex deployment properties.
+- `create_deploy_key` — Create a deploy key for a Convex deployment. [write]
+- `create_deployment` — Create a new deployment in a Convex project. [write]
+- `create_project` — Create a Convex project on a team, optionally provisioning an initial dev or prod deployment. [write]
+- `delete_custom_domain` — Remove a custom domain from a Convex deployment. [destructive]
+- `delete_deploy_key` — Delete a deploy key for a Convex deployment. [destructive]
+- `delete_deployment` — Delete a Convex deployment and all of its data. [destructive]
+- `delete_project` — Delete a Convex project and all of its deployments. [destructive]
+- `execute_query_batch` — Execute multiple Convex queries against a deployment and return results in the same order.
+- `get_deployment` — Get a cloud deployment by deployment name.
+- `get_project_by_id` — Get a Convex project by numeric project ID.
+- `get_project_by_slug` — Get a Convex project by team identifier or slug plus project slug.
+- `get_token_details` — Return the current Convex token details so you can discover the authorized team or project context.
+- `list_custom_domains` — List custom domains configured for a Convex deployment.
+- `list_deploy_keys` — List deploy keys for a Convex deployment. [write]
+- `list_deployment_classes` — List available deployment classes for a Convex team.
+- `list_deployment_regions` — List available deployment regions for a Convex team.
+- `list_deployments` — List deployments for a Convex project.
+- `list_projects` — List all Convex projects for a team.
+- `run_action` — Execute a Convex action through the deployment HTTP API.
+- `run_function` — Execute an arbitrary Convex function through `/api/run/{functionIdentifier}` using a slash-separated identifier.
+- `run_mutation` — Execute a Convex mutation through the deployment HTTP API.
+- `run_query` — Execute a Convex query through the deployment HTTP API.
+- `update_deployment` — Update mutable Convex deployment properties. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Convex state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Convex state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

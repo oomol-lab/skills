@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Notion"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "notion"
-  categories: "Productivity"
-  homepage: "https://www.notion.so"
+  version: "1.0.1"
+  services: ["notion"]
   icon: "https://static.oomol.com/logo/third-party/Notion.svg"
 ---
 
 # Notion
 
 Operate **Notion** through your OOMOL-connected account. This skill calls the `notion` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 25 action(s).
 
 ## Running an action
 
@@ -37,41 +33,41 @@ oo connector run "notion" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`append_block`](actions/append_block.md) — Append a single paragraph block to a Notion page. This is a simplified compatibility helper over `append_block_children`.
-- [`append_block_children`](actions/append_block_children.md) — Append raw Notion child blocks to an existing parent block, using the official block-children append API.
-- [`create_data_source`](actions/create_data_source.md) — Create a Notion data source under a parent database with a properties schema.
-- [`create_database`](actions/create_database.md) — Create a Notion database container under a parent page or workspace, optionally with an initial data source.
-- [`create_page`](actions/create_page.md) — Create a Notion page under a parent page, data source, or workspace-level private area. Use parentId + title for a simple child page under an existing page. Use parent with an official Notion parent payload for advanced cases: { page_id: "..." }, { data_source_id: "..." }, or { workspace: true } for OAuth public integrations. When parent is provided, do not use the top-level title field; provide the page title through properties.title instead. Internal integration secrets usually cannot create workspace-level private pages and should use a parent page or data source.
-- [`delete_block`](actions/delete_block.md) — Archive a Notion block through the official delete endpoint.
-- [`get_page`](actions/get_page.md) — Get a Notion page together with its first-level child blocks. This is a repo-level aggregate helper over page retrieval plus block-children listing.
-- [`list_block_children`](actions/list_block_children.md) — List the direct child blocks under a Notion block with pagination.
-- [`list_data_source_templates`](actions/list_data_source_templates.md) — List templates available on a Notion data source.
-- [`list_users`](actions/list_users.md) — List users in the Notion workspace with pagination.
-- [`move_page`](actions/move_page.md) — Move a Notion page under another page or under a data source through the official page move API.
-- [`query_data_source`](actions/query_data_source.md) — Query a Notion data source with filters, sorts, pagination, and optional property filtering.
-- [`retrieve_block`](actions/retrieve_block.md) — Retrieve a Notion block by block ID.
-- [`retrieve_data_source`](actions/retrieve_data_source.md) — Retrieve a Notion data source by data source ID.
-- [`retrieve_database`](actions/retrieve_database.md) — Retrieve a Notion database's metadata and schema by database ID.
-- [`retrieve_page`](actions/retrieve_page.md) — Retrieve a Notion page's properties and metadata by page ID. This does not include child block content.
-- [`retrieve_page_markdown`](actions/retrieve_page_markdown.md) — Retrieve a Notion page or block subtree rendered as enhanced Markdown through the official page markdown API.
-- [`retrieve_page_property`](actions/retrieve_page_property.md) — Retrieve a specific property item from a Notion page by page ID and property ID. Title, rich_text, relation, and people properties return the paginated list response with type property_item.
-- [`retrieve_user`](actions/retrieve_user.md) — Retrieve a Notion user by user ID.
-- [`search`](actions/search.md) — Search Notion pages and data sources with optional filter, sort, and pagination controls.
-- [`update_block`](actions/update_block.md) — Update a Notion block using raw block fields, including block-type payloads and optional trash state.
-- [`update_data_source`](actions/update_data_source.md) — Update a Notion data source's title, icon, properties schema, parent, or trash status.
-- [`update_database`](actions/update_database.md) — Update a Notion database container's parent, title, description, icon, cover, inline display, trash status, or locked state.
-- [`update_page`](actions/update_page.md) — Update a Notion page's properties, title, icon, cover, trash status, or locked state.
-- [`update_page_markdown`](actions/update_page_markdown.md) — Update a Notion page's content as enhanced Markdown through the official page markdown API.
+- `append_block` — Append a single paragraph block to a Notion page. This is a simplified compatibility helper over `append_block_children`. [write]
+- `append_block_children` — Append raw Notion child blocks to an existing parent block, using the official block-children append API. [write]
+- `create_data_source` — Create a Notion data source under a parent database with a properties schema. [write]
+- `create_database` — Create a Notion database container under a parent page or workspace, optionally with an initial data source. [write]
+- `create_page` — Create a Notion page under a parent page, data source, or workspace-level private area. Use parentId + title for a simple child page under an existing page. Use parent with an official Notion parent payload for advanced cases: { page_id: "..." }, { data_source_id: "..." }, or { workspace: true } for OAuth public integrations. When parent is provided, do not use the top-level title field; provide the page title through properties.title instead. Internal integration secrets usually cannot create workspace-level private pages and should use a parent page or data source. [write]
+- `delete_block` — Archive a Notion block through the official delete endpoint. [destructive]
+- `get_page` — Get a Notion page together with its first-level child blocks. This is a repo-level aggregate helper over page retrieval plus block-children listing.
+- `list_block_children` — List the direct child blocks under a Notion block with pagination. [write]
+- `list_data_source_templates` — List templates available on a Notion data source.
+- `list_users` — List users in the Notion workspace with pagination.
+- `move_page` — Move a Notion page under another page or under a data source through the official page move API. [write]
+- `query_data_source` — Query a Notion data source with filters, sorts, pagination, and optional property filtering.
+- `retrieve_block` — Retrieve a Notion block by block ID. [write]
+- `retrieve_data_source` — Retrieve a Notion data source by data source ID.
+- `retrieve_database` — Retrieve a Notion database's metadata and schema by database ID.
+- `retrieve_page` — Retrieve a Notion page's properties and metadata by page ID. This does not include child block content.
+- `retrieve_page_markdown` — Retrieve a Notion page or block subtree rendered as enhanced Markdown through the official page markdown API.
+- `retrieve_page_property` — Retrieve a specific property item from a Notion page by page ID and property ID. Title, rich_text, relation, and people properties return the paginated list response with type property_item.
+- `retrieve_user` — Retrieve a Notion user by user ID.
+- `search` — Search Notion pages and data sources with optional filter, sort, and pagination controls.
+- `update_block` — Update a Notion block using raw block fields, including block-type payloads and optional trash state. [write]
+- `update_data_source` — Update a Notion data source's title, icon, properties schema, parent, or trash status. [write]
+- `update_database` — Update a Notion database container's parent, title, description, icon, cover, inline display, trash status, or locked state. [write]
+- `update_page` — Update a Notion page's properties, title, icon, cover, trash status, or locked state. [write]
+- `update_page_markdown` — Update a Notion page's content as enhanced Markdown through the official page markdown API. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Notion state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Notion state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

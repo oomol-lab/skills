@@ -5,17 +5,13 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ShipEngine"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "shipengine"
-  categories: "Productivity, Maps & Location"
-  homepage: "https://www.shipengine.com/"
+  version: "1.0.1"
+  services: ["shipengine"]
 ---
 
 # ShipEngine
 
 Operate **ShipEngine** through your OOMOL-connected account. This skill calls the `shipengine` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity, Maps & Location. Exposes 6 action(s).
 
 ## Running an action
 
@@ -36,22 +32,22 @@ oo connector run "shipengine" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`calculate_rates`](actions/calculate_rates.md) — Calculate shipping rates for a shipment request using connected ShipEngine carriers.
-- [`estimate_rates`](actions/estimate_rates.md) — Estimate shipping rates with basic address and package information.
-- [`get_rate`](actions/get_rate.md) — Retrieve a previously queried ShipEngine rate by ID.
-- [`list_carriers`](actions/list_carriers.md) — List carrier accounts connected to the ShipEngine account.
-- [`parse_address`](actions/parse_address.md) — Parse unstructured text into a structured ShipEngine address.
-- [`validate_addresses`](actions/validate_addresses.md) — Validate one or more mailing addresses with ShipEngine and return deliverability details.
+- `calculate_rates` — Calculate shipping rates for a shipment request using connected ShipEngine carriers.
+- `estimate_rates` — Estimate shipping rates with basic address and package information.
+- `get_rate` — Retrieve a previously queried ShipEngine rate by ID.
+- `list_carriers` — List carrier accounts connected to the ShipEngine account.
+- `parse_address` — Parse unstructured text into a structured ShipEngine address.
+- `validate_addresses` — Validate one or more mailing addresses with ShipEngine and return deliverability details.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change ShipEngine state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change ShipEngine state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

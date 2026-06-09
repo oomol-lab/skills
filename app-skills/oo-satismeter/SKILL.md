@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SatisMeter"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "satismeter"
-  categories: "Marketing, Data & Analytics"
-  homepage: "https://satismeter.com"
+  version: "1.0.1"
+  services: ["satismeter"]
   icon: "https://static.oomol.com/logo/third-party/Satismeter.svg"
 ---
 
 # SatisMeter
 
 Operate **SatisMeter** through your OOMOL-connected account. This skill calls the `satismeter` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Marketing, Data & Analytics. Exposes 6 action(s).
 
 ## Running an action
 
@@ -37,22 +33,22 @@ oo connector run "satismeter" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`get_project`](actions/get_project.md) — Retrieve a SatisMeter project by ID.
-- [`get_survey`](actions/get_survey.md) — Retrieve a SatisMeter survey by ID.
-- [`get_survey_statistics`](actions/get_survey_statistics.md) — Retrieve aggregated statistics for one SatisMeter survey.
-- [`list_project_responses`](actions/list_project_responses.md) — List responses recorded across all surveys in a SatisMeter project.
-- [`list_survey_responses`](actions/list_survey_responses.md) — List responses recorded for one SatisMeter survey.
-- [`list_surveys`](actions/list_surveys.md) — List surveys configured in a SatisMeter project.
+- `get_project` — Retrieve a SatisMeter project by ID.
+- `get_survey` — Retrieve a SatisMeter survey by ID.
+- `get_survey_statistics` — Retrieve aggregated statistics for one SatisMeter survey.
+- `list_project_responses` — List responses recorded across all surveys in a SatisMeter project.
+- `list_survey_responses` — List responses recorded for one SatisMeter survey.
+- `list_surveys` — List surveys configured in a SatisMeter project.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change SatisMeter state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change SatisMeter state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

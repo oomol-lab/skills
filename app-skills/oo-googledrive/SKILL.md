@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Drive"
   author: "OOMOL"
-  version: "1.0.2"
-  service: "googledrive"
-  categories: "Storage, Productivity"
-  homepage: "https://workspace.google.com/products/drive/"
+  version: "1.0.3"
+  services: ["googledrive"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Drive.svg"
 ---
 
 # Google Drive
 
 Operate **Google Drive** through your OOMOL-connected account. This skill calls the `googledrive` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Storage, Productivity. Exposes 43 action(s).
 
 ## Running an action
 
@@ -37,59 +33,59 @@ oo connector run "googledrive" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`about.get`](actions/about-get.md) — Get Drive account information such as user details, quota, and supported capabilities.
-- [`accessproposals.list`](actions/accessproposals-list.md) — List pending access proposals for a specific Drive file.
-- [`approvals.list`](actions/approvals-list.md) — List approvals associated with a specific Drive file.
-- [`apps.get`](actions/apps-get.md) — Get metadata for a specific Google Drive app by app ID.
-- [`changes.getStartPageToken`](actions/changes-getstartpagetoken.md) — Get the page token for monitoring future Drive changes.
-- [`changes.list`](actions/changes-list.md) — List file and drive changes for incremental sync workflows.
-- [`comments.create`](actions/comments-create.md) — Create a comment on a Drive file, optionally with anchor or quoted file content.
-- [`comments.delete`](actions/comments-delete.md) — Permanently delete a comment thread from a Drive file.
-- [`comments.get`](actions/comments-get.md) — Get a specific comment on a Drive file by comment ID.
-- [`comments.list`](actions/comments-list.md) — List comments on a Drive file with pagination.
-- [`comments.update`](actions/comments-update.md) — Update the content of an existing Drive file comment.
-- [`drives.create`](actions/drives-create.md) — Create a new shared drive.
-- [`drives.delete`](actions/drives-delete.md) — Permanently delete a shared drive.
-- [`drives.get`](actions/drives-get.md) — Get a shared drive by drive ID.
-- [`drives.hide`](actions/drives-hide.md) — Hide a shared drive from the default Drive view.
-- [`drives.list`](actions/drives-list.md) — List shared drives accessible to the connected account.
-- [`drives.unhide`](actions/drives-unhide.md) — Unhide a shared drive and restore it to the default Drive view.
-- [`drives.update`](actions/drives-update.md) — Update metadata or restrictions on a shared drive.
-- [`files.copy`](actions/files-copy.md) — Copy a Drive file and optionally override official File metadata.
-- [`files.create`](actions/files-create.md) — Create a Drive file with official File metadata and optional connector media upload content.
-- [`files.delete`](actions/files-delete.md) — Permanently delete a Drive file or folder by ID.
-- [`files.emptyTrash`](actions/files-emptytrash.md) — Permanently empty the user's trash or a shared drive's trash.
-- [`files.export`](actions/files-export.md) — Export a Google Workspace file to the requested MIME type and return a transit URL for the exported content.
-- [`files.generateIds`](actions/files-generateids.md) — Generate one or more Drive file IDs for later create or copy requests.
-- [`files.get`](actions/files-get.md) — Get metadata for a Drive file by ID.
-- [`files.list`](actions/files-list.md) — List Google Drive files using the official Drive query and pagination parameters.
-- [`files.listLabels`](actions/files-listlabels.md) — List the Drive labels currently applied to a file.
-- [`files.modifyLabels`](actions/files-modifylabels.md) — Add, update, or remove Drive labels on a file.
-- [`files.update`](actions/files-update.md) — Patch a Drive file with official metadata, parent query parameters, and optional connector media upload content.
-- [`permissions.create`](actions/permissions-create.md) — Create a permission on a Drive file or shared drive.
-- [`permissions.delete`](actions/permissions-delete.md) — Delete a permission from a Drive file or shared drive.
-- [`permissions.get`](actions/permissions-get.md) — Get a specific permission on a Drive file or shared drive by permission ID.
-- [`permissions.list`](actions/permissions-list.md) — List permissions on a Drive file or shared drive.
-- [`permissions.update`](actions/permissions-update.md) — Update an existing Drive permission using Google Drive v3 patch semantics.
-- [`replies.create`](actions/replies-create.md) — Create a reply under an existing Drive file comment.
-- [`replies.delete`](actions/replies-delete.md) — Permanently delete a specific reply from a Drive file comment thread.
-- [`replies.get`](actions/replies-get.md) — Get a specific reply under a Drive file comment.
-- [`replies.list`](actions/replies-list.md) — List replies under a Drive file comment with pagination.
-- [`replies.update`](actions/replies-update.md) — Update the content of an existing reply on a Drive file comment.
-- [`revisions.delete`](actions/revisions-delete.md) — Permanently delete a specific revision from a Drive file.
-- [`revisions.get`](actions/revisions-get.md) — Get metadata for a specific Drive file revision.
-- [`revisions.list`](actions/revisions-list.md) — List revision metadata for a Drive file.
-- [`revisions.update`](actions/revisions-update.md) — Update revision metadata flags on a specific Drive file revision.
+- `about.get` — Get Drive account information such as user details, quota, and supported capabilities.
+- `accessproposals.list` — List pending access proposals for a specific Drive file.
+- `approvals.list` — List approvals associated with a specific Drive file.
+- `apps.get` — Get metadata for a specific Google Drive app by app ID.
+- `changes.getStartPageToken` — Get the page token for monitoring future Drive changes.
+- `changes.list` — List file and drive changes for incremental sync workflows.
+- `comments.create` — Create a comment on a Drive file, optionally with anchor or quoted file content. [write]
+- `comments.delete` — Permanently delete a comment thread from a Drive file. [destructive]
+- `comments.get` — Get a specific comment on a Drive file by comment ID.
+- `comments.list` — List comments on a Drive file with pagination.
+- `comments.update` — Update the content of an existing Drive file comment. [write]
+- `drives.create` — Create a new shared drive. [write]
+- `drives.delete` — Permanently delete a shared drive. [destructive]
+- `drives.get` — Get a shared drive by drive ID.
+- `drives.hide` — Hide a shared drive from the default Drive view. [write]
+- `drives.list` — List shared drives accessible to the connected account.
+- `drives.unhide` — Unhide a shared drive and restore it to the default Drive view. [write]
+- `drives.update` — Update metadata or restrictions on a shared drive. [write]
+- `files.copy` — Copy a Drive file and optionally override official File metadata. [write]
+- `files.create` — Create a Drive file with official File metadata and optional connector media upload content. [write]
+- `files.delete` — Permanently delete a Drive file or folder by ID. [destructive]
+- `files.emptyTrash` — Permanently empty the user's trash or a shared drive's trash. [write]
+- `files.export` — Export a Google Workspace file to the requested MIME type and return a transit URL for the exported content.
+- `files.generateIds` — Generate one or more Drive file IDs for later create or copy requests. [write]
+- `files.get` — Get metadata for a Drive file by ID.
+- `files.list` — List Google Drive files using the official Drive query and pagination parameters.
+- `files.listLabels` — List the Drive labels currently applied to a file.
+- `files.modifyLabels` — Add, update, or remove Drive labels on a file. [write]
+- `files.update` — Patch a Drive file with official metadata, parent query parameters, and optional connector media upload content. [write]
+- `permissions.create` — Create a permission on a Drive file or shared drive. [write]
+- `permissions.delete` — Delete a permission from a Drive file or shared drive. [destructive]
+- `permissions.get` — Get a specific permission on a Drive file or shared drive by permission ID.
+- `permissions.list` — List permissions on a Drive file or shared drive.
+- `permissions.update` — Update an existing Drive permission using Google Drive v3 patch semantics. [write]
+- `replies.create` — Create a reply under an existing Drive file comment. [write]
+- `replies.delete` — Permanently delete a specific reply from a Drive file comment thread. [destructive]
+- `replies.get` — Get a specific reply under a Drive file comment.
+- `replies.list` — List replies under a Drive file comment with pagination.
+- `replies.update` — Update the content of an existing reply on a Drive file comment. [write]
+- `revisions.delete` — Permanently delete a specific revision from a Drive file. [destructive]
+- `revisions.get` — Get metadata for a specific Drive file revision.
+- `revisions.list` — List revision metadata for a Drive file.
+- `revisions.update` — Update revision metadata flags on a specific Drive file revision. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change Google Drive state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Google Drive state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

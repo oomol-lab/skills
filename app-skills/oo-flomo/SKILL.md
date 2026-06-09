@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "flomo"
   author: "OOMOL"
-  version: "1.0.1"
-  service: "flomo"
-  categories: "Productivity"
-  homepage: "https://flomoapp.com"
+  version: "1.0.2"
+  services: ["flomo"]
   icon: "https://static.oomol.com/logo/third-party/flomo.png"
 ---
 
 # flomo
 
 Operate **flomo** through your OOMOL-connected account. This skill calls the `flomo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Productivity. Exposes 13 action(s).
 
 ## Running an action
 
@@ -37,29 +33,29 @@ oo connector run "flomo" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_memo`](actions/create_memo.md) — Create a flomo memo by sending markdown or plain text to the incoming webhook.
-- [`get_daily_review`](actions/get_daily_review.md) — Fetch flomo daily review content through the flomo Max MCP server.
-- [`get_format_guide`](actions/get_format_guide.md) — Fetch flomo memo formatting guidance through the flomo Max MCP server.
-- [`get_tag_guide`](actions/get_tag_guide.md) — Fetch flomo tag usage guidance through the flomo Max MCP server.
-- [`memo_batch_get`](actions/memo_batch_get.md) — Fetch multiple flomo memos through the flomo Max MCP server in a single tool call.
-- [`memo_recommended`](actions/memo_recommended.md) — Find flomo memos related to a target memo through the flomo Max MCP server.
-- [`memo_search`](actions/memo_search.md) — Search flomo memos through the flomo Max MCP server by keywords, tags, time range, or semantic search options.
-- [`memo_update`](actions/memo_update.md) — Update an existing flomo memo through the flomo Max MCP server. The exact arguments are validated by flomo MCP.
-- [`memory_context`](actions/memory_context.md) — Read the generated flomo memory context through the flomo Max MCP server.
-- [`memory_user`](actions/memory_user.md) — Read the generated flomo memory user profile through the flomo Max MCP server.
-- [`tag_rename`](actions/tag_rename.md) — Rename flomo tags through the flomo Max MCP server and update associated memos.
-- [`tag_search`](actions/tag_search.md) — Search flomo tags through the flomo Max MCP server.
-- [`tag_tree`](actions/tag_tree.md) — Fetch the flomo tag tree through the flomo Max MCP server.
+- `create_memo` — Create a flomo memo by sending markdown or plain text to the incoming webhook. [write]
+- `get_daily_review` — Fetch flomo daily review content through the flomo Max MCP server.
+- `get_format_guide` — Fetch flomo memo formatting guidance through the flomo Max MCP server.
+- `get_tag_guide` — Fetch flomo tag usage guidance through the flomo Max MCP server.
+- `memo_batch_get` — Fetch multiple flomo memos through the flomo Max MCP server in a single tool call.
+- `memo_recommended` — Find flomo memos related to a target memo through the flomo Max MCP server.
+- `memo_search` — Search flomo memos through the flomo Max MCP server by keywords, tags, time range, or semantic search options.
+- `memo_update` — Update an existing flomo memo through the flomo Max MCP server. The exact arguments are validated by flomo MCP. [write]
+- `memory_context` — Read the generated flomo memory context through the flomo Max MCP server.
+- `memory_user` — Read the generated flomo memory user profile through the flomo Max MCP server.
+- `tag_rename` — Rename flomo tags through the flomo Max MCP server and update associated memos. [write]
+- `tag_search` — Search flomo tags through the flomo Max MCP server.
+- `tag_tree` — Fetch the flomo tag tree through the flomo Max MCP server.
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change flomo state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change flomo state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 

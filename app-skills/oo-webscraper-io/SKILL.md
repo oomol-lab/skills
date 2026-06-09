@@ -5,18 +5,14 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WebScraper.io"
   author: "OOMOL"
-  version: "1.0.0"
-  service: "webscraper_io"
-  categories: "Data & Analytics, Developer Tools"
-  homepage: "https://webscraper.io/"
+  version: "1.0.1"
+  services: ["webscraper_io"]
   icon: "https://static.oomol.com/logo/third-party/webscraper_io.svg"
 ---
 
 # WebScraper.io
 
 Operate **WebScraper.io** through your OOMOL-connected account. This skill calls the `webscraper_io` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
-
-Category: Data & Analytics, Developer Tools. Exposes 11 action(s).
 
 ## Running an action
 
@@ -37,27 +33,27 @@ oo connector run "webscraper_io" --action "<action_name>" --data '<json>' --json
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
-Each action below links to a reference file with its purpose and exact commands. Read the linked file, then fetch the live schema with `oo connector schema` before constructing `--data`.
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
 ## Available actions
 
-- [`create_scraping_job`](actions/create_scraping_job.md) — Create a Web Scraper Cloud scraping job for one sitemap.
-- [`create_sitemap`](actions/create_sitemap.md) — Create a new Web Scraper Cloud sitemap from a sitemap JSON document.
-- [`delete_scraping_job`](actions/delete_scraping_job.md) — Delete a Web Scraper Cloud scraping job by numeric scraping job ID.
-- [`delete_sitemap`](actions/delete_sitemap.md) — Delete a Web Scraper Cloud sitemap by numeric sitemap ID.
-- [`download_scraping_job_json`](actions/download_scraping_job_json.md) — Download one Web Scraper Cloud scraping job result in JSON Lines format.
-- [`get_account_info`](actions/get_account_info.md) — Get the current Web Scraper Cloud account profile for the connected API token.
-- [`get_scraping_job`](actions/get_scraping_job.md) — Get one Web Scraper Cloud scraping job by numeric scraping job ID.
-- [`get_sitemap`](actions/get_sitemap.md) — Get one Web Scraper Cloud sitemap by numeric sitemap ID.
-- [`list_scraping_jobs`](actions/list_scraping_jobs.md) — List Web Scraper Cloud scraping jobs with optional page, sitemap, and tag filters.
-- [`list_sitemaps`](actions/list_sitemaps.md) — List Web Scraper Cloud sitemaps with optional page and tag filters.
-- [`update_sitemap`](actions/update_sitemap.md) — Update an existing Web Scraper Cloud sitemap by numeric sitemap ID.
+- `create_scraping_job` — Create a Web Scraper Cloud scraping job for one sitemap. [write]
+- `create_sitemap` — Create a new Web Scraper Cloud sitemap from a sitemap JSON document. [write]
+- `delete_scraping_job` — Delete a Web Scraper Cloud scraping job by numeric scraping job ID. [destructive]
+- `delete_sitemap` — Delete a Web Scraper Cloud sitemap by numeric sitemap ID. [destructive]
+- `download_scraping_job_json` — Download one Web Scraper Cloud scraping job result in JSON Lines format.
+- `get_account_info` — Get the current Web Scraper Cloud account profile for the connected API token.
+- `get_scraping_job` — Get one Web Scraper Cloud scraping job by numeric scraping job ID.
+- `get_sitemap` — Get one Web Scraper Cloud sitemap by numeric sitemap ID.
+- `list_scraping_jobs` — List Web Scraper Cloud scraping jobs with optional page, sitemap, and tag filters.
+- `list_sitemaps` — List Web Scraper Cloud sitemaps with optional page and tag filters.
+- `update_sitemap` — Update an existing Web Scraper Cloud sitemap by numeric sitemap ID. [write]
 
 ## Safety
 
-- Read actions (get / list / search) are safe to run directly.
-- **Create, update, send, or post actions change WebScraper.io state — confirm the exact payload and effect with the user before running.**
-- **Delete or remove actions are destructive — always confirm the target and get explicit approval first.**
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change WebScraper.io state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
 
