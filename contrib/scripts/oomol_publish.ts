@@ -41,9 +41,9 @@ import { appendFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync
 import { tmpdir } from "node:os";
 import { basename, join } from "node:path";
 import process from "node:process";
-// Reuse the semver subset already battle-tested by the ClawHub publisher rather than
-// duplicating it — these are pure, side-effect-free helpers.
-import { parseSemver, semverGt } from "./clawhub_publish.ts";
+// Reuse the semver subset and the exclude-list parsing already battle-tested by the
+// ClawHub publisher rather than duplicating them — these are pure, side-effect-free helpers.
+import { parseExcludeSlugs, parseSemver, semverGt } from "./clawhub_publish.ts";
 
 // ----------------------------------------------------------------------------
 // SKILL.md frontmatter
@@ -418,6 +418,11 @@ export interface RunConfig {
     root: string;
     registry: string;
     concurrency: number;
+    /**
+     * Slugs to skip for this run (from the EXCLUDE_SKILLS input). A skill whose slug is
+     * listed is dropped before any registry query or publish. Omitted/empty excludes nothing.
+     */
+    exclude?: readonly string[];
 }
 
 export interface PublishOutcome {
@@ -513,6 +518,20 @@ export async function run(cfg: RunConfig, deps: RunDeps): Promise<number> {
         slugs = [...deps.listSkillSlugs(cfg.root)].sort((a, b) => a.localeCompare(b));
         if (slugs.length === 0) {
             deps.log(`No skills found under ${cfg.root}/. Nothing to publish.`);
+            deps.report?.({ published: 0, skipped: 0, failed: 0, total: 0 });
+            return 0;
+        }
+    }
+
+    // 1b. Drop any skills excluded for this run (EXCLUDE_SKILLS), before touching the registry.
+    const exclude = new Set(cfg.exclude ?? []);
+    if (exclude.size) {
+        const excluded = slugs.filter(s => exclude.has(s));
+        slugs = slugs.filter(s => !exclude.has(s));
+        if (excluded.length)
+            deps.log(`Excluding ${excluded.length} skill(s) from this run by request: ${excluded.join(", ")}.`);
+        if (slugs.length === 0) {
+            deps.log("No skills left to publish after exclusions. Nothing to do.");
             deps.report?.({ published: 0, skipped: 0, failed: 0, total: 0 });
             return 0;
         }
@@ -635,6 +654,7 @@ export function readRunConfig(getenv: Getenv): RunConfig {
         root: env(getenv, "SKILLS_ROOT", "app-skills").trim().replace(/\/+$/, "") || "app-skills",
         registry: env(getenv, "OOMOL_REGISTRY", DEFAULT_REGISTRY).trim().replace(/\/+$/, "") || DEFAULT_REGISTRY,
         concurrency: Number.isFinite(concurrency) && concurrency > 0 ? concurrency : 10,
+        exclude: [...parseExcludeSlugs(env(getenv, "EXCLUDE_SKILLS"))],
     };
 }
 

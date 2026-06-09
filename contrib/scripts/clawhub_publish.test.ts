@@ -1,6 +1,7 @@
 import type { AccountRef, Candidate, ChangelogDeps, CodexConfig, RunConfig, RunDeps, Target, Totals } from "./clawhub_publish.ts";
 import { describe, expect, test } from "bun:test";
 import {
+    applyExclusions,
     buildCodexArgs,
     buildFallbackChangelog,
     buildPublishArgs,
@@ -13,6 +14,7 @@ import {
     generateChangelog,
     isRateLimitError,
     parseAccounts,
+    parseExcludeSlugs,
     parseSemver,
     planDistribution,
     readAccounts,
@@ -219,6 +221,54 @@ describe("selectCandidates", () => {
         const r = selectCandidates(data, "publish-single", "app-skills/missing", "app-skills", () => false);
         expect(r.done?.code).toBe(1);
         expect(r.done?.error).toContain("was not found");
+    });
+});
+
+// ---------------------------------------------------------------------------
+// exclusions (EXCLUDE_SKILLS)
+// ---------------------------------------------------------------------------
+describe("parseExcludeSlugs", () => {
+    test("splits on commas, trims, drops empties", () => {
+        expect([...parseExcludeSlugs(" oo-ably , oo-github ,, ")]).toEqual(["oo-ably", "oo-github"]);
+    });
+    test("reduces path-shaped entries to their basename", () => {
+        expect([...parseExcludeSlugs("app-skills/oo-ably, oo-jira/")]).toEqual(["oo-ably", "oo-jira"]);
+    });
+    test("empty / whitespace input -> empty set", () => {
+        expect(parseExcludeSlugs("").size).toBe(0);
+        expect(parseExcludeSlugs("   ").size).toBe(0);
+        // @ts-expect-error null is tolerated at runtime (env may be undefined-coerced)
+        expect(parseExcludeSlugs(null).size).toBe(0);
+    });
+    test("de-duplicates repeated slugs", () => {
+        expect([...parseExcludeSlugs("oo-a, oo-a, app-skills/oo-a")]).toEqual(["oo-a"]);
+    });
+});
+
+describe("applyExclusions", () => {
+    const cands: Candidate[] = [
+        { slug: "ably", folder: "app-skills/ably", status: "new", latestVersion: null },
+        { slug: "jira", folder: "app-skills/jira", status: "update", latestVersion: "1.0.0" },
+        { slug: "github", folder: "app-skills/github", status: "new", latestVersion: null },
+    ];
+    test("empty exclude set is a pass-through", () => {
+        const r = applyExclusions(cands, new Set());
+        expect(r.kept).toEqual(cands);
+        expect(r.excluded).toEqual([]);
+    });
+    test("drops matching candidates and reports the excluded slugs sorted", () => {
+        const r = applyExclusions(cands, new Set(["jira", "ably"]));
+        expect(r.kept.map(c => c.slug)).toEqual(["github"]);
+        expect(r.excluded).toEqual(["ably", "jira"]);
+    });
+    test("only reports slugs that actually matched a candidate", () => {
+        const r = applyExclusions(cands, new Set(["jira", "ghost"]));
+        expect(r.kept.map(c => c.slug)).toEqual(["ably", "github"]);
+        expect(r.excluded).toEqual(["jira"]);
+    });
+    test("falls back to folder basename when slug is absent", () => {
+        const noSlug: Candidate[] = [{ folder: "app-skills/oo-x" }];
+        expect(applyExclusions(noSlug, new Set(["oo-x"])).kept).toEqual([]);
     });
 });
 
@@ -765,6 +815,29 @@ describe("run", () => {
         expect(publishCalls).toHaveLength(0);
     });
 
+    test("exclude drops listed skills before publish and logs them", () => {
+        const cfg = { ...baseCfg, exclude: ["oo-skip"] };
+        const { deps, publishCalls, logs } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-keep"), newCand("oo-skip")] },
+            versions: versionsFor({ "oo-keep": "1.0.0", "oo-skip": "1.0.0" }),
+            accounts: [{ name: "solo", configPath: "/s" }],
+        });
+        expect(run(cfg, deps)).toBe(0);
+        // only the non-excluded skill is published
+        expect(publishCalls.flatMap(c => c.cmd.filter(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-keep"]);
+        expect(logs.some(l => l.includes("Excluding 1 skill(s)") && l.includes("oo-skip"))).toBe(true);
+    });
+
+    test("excluding every candidate -> nothing to publish, exit 0", () => {
+        const cfg = { ...baseCfg, exclude: ["oo-a", "oo-b"] };
+        const { deps, publishCalls } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-a"), newCand("oo-b")] },
+            versions: versionsFor({ "oo-a": "1.0.0", "oo-b": "1.0.0" }),
+        });
+        expect(run(cfg, deps)).toBe(0);
+        expect(publishCalls).toHaveLength(0);
+    });
+
     test("publish-single not found -> exit 1, no publish", () => {
         const cfg = { ...baseCfg, mode: "publish-single", skillPath: "app-skills/ghost" };
         const { deps, publishCalls, logs } = makeDeps(cfg, { sync: { wouldPublish: [] } });
@@ -895,6 +968,10 @@ describe("config readers", () => {
         expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "oops" })).maxNewPerAccount).toBe(5);
         expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "-3" })).maxNewPerAccount).toBe(0);
         expect(readRunConfig(fakeEnv({ MAX_NEW_PER_ACCOUNT: "0" })).maxNewPerAccount).toBe(0);
+    });
+    test("readRunConfig parses EXCLUDE_SKILLS into normalized slugs (default empty)", () => {
+        expect(readRunConfig(fakeEnv({})).exclude).toEqual([]);
+        expect(readRunConfig(fakeEnv({ EXCLUDE_SKILLS: " oo-ably , app-skills/oo-github ," })).exclude).toEqual(["oo-ably", "oo-github"]);
     });
     test("readCodexConfig defaults and api-key presence", () => {
         const cfg = readCodexConfig(fakeEnv({ CODEX_BASE_URL: "https://x/v1", OPENAI_API_KEY: "sk-xxx" }));

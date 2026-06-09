@@ -28,12 +28,14 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import process from "node:process";
 import {
+    applyExclusions,
     buildCodexArgs,
     CHANGELOG_PROMPT_VERSION,
     changelogCachePath,
     classify,
     hashSkillInputs,
     listSkillFiles,
+    parseExcludeSlugs,
     readCodexConfig,
     readManifestVersion,
     selectCandidates,
@@ -79,6 +81,8 @@ export interface GenerateConfig {
     cacheDir: string;
     concurrency: number;
     codex: CodexConfig;
+    /** Slugs to skip this run (EXCLUDE_SKILLS) — must match the publish step's exclusions. */
+    exclude?: readonly string[];
 }
 
 export interface GenerateDeps {
@@ -106,7 +110,12 @@ export async function runGenerate(cfg: GenerateConfig, deps: GenerateDeps): Prom
     // gates (not-found, already-in-sync); here they just mean "nothing to generate".
     const sel = selectCandidates(data, cfg.mode, cfg.skillPath, cfg.root, deps.exists);
     const candidates = sel.done ? [] : sel.candidates;
-    const targets = candidates
+    // Mirror the publish step's exclusions so we never burn a codex run on a skill the
+    // publish step is going to skip.
+    const { kept, excluded } = applyExclusions(candidates, new Set(cfg.exclude ?? []));
+    if (excluded.length)
+        deps.log(`Excluding ${excluded.length} skill(s) from this run by request: ${excluded.join(", ")}.`);
+    const targets = kept
         .map(c => classify(c, cfg.root, deps.readVersion))
         .filter(t => t.action === "publish");
 
@@ -217,6 +226,7 @@ if (import.meta.main) {
         cacheDir,
         concurrency,
         codex,
+        exclude: [...parseExcludeSlugs(envOf("EXCLUDE_SKILLS"))],
     };
 
     const deps: GenerateDeps = {
