@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "NewsData.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["newsdata_io"]
+  icon: "https://static.oomol.com/logo/third-party/newsdata_io.png"
 ---
 
 # NewsData.io

@@ -1,11 +1,11 @@
 ---
 name: oo-discord
-description: "Discord (discord.com). Use this skill for ANY Discord request — reading, creating, and updating data. Whenever a task involves Discord, use this skill instead of calling the API directly."
+description: "Discord (discord.com). Use this skill for ANY Discord request — reading, creating, updating, and deleting data. Whenever a task involves Discord, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Discord"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["discord"]
   icon: "https://static.oomol.com/logo/third-party/Discord.svg"
 ---
@@ -37,12 +37,14 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `delete_my_application_role_connection` — Remove the current OAuth user's role connection data for a Discord application. [destructive]
 - `get_current_user_application_entitlements` — Get entitlements for the current OAuth user under a Discord application.
 - `get_gateway` — Get a Discord Gateway URL.
 - `get_guild_template` — Get a Discord guild template by code.
 - `get_guild_widget` — Get a Discord guild widget as JSON.
 - `get_guild_widget_png` — Get a Discord guild widget PNG.
 - `get_invite` — Get a Discord invite by code or URL. [write]
+- `get_my_application_role_connection` — Read the current OAuth user's role connection data for a Discord application. [write]
 - `get_my_guild_member` — Get the current OAuth user's member record in a guild.
 - `get_my_oauth2_authorization` — Get the current OAuth2 authorization information.
 - `get_my_user` — Get the current OAuth user profile.
@@ -53,6 +55,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_my_guilds` — List the current OAuth user's guilds.
 - `list_sticker_packs` — List Discord Nitro sticker packs.
 - `resolve_invite` — Resolve a Discord invite by code. [write]
+- `update_my_application_role_connection` — Set the current OAuth user's role connection platform fields or metadata for a Discord application. [write]
 
 ## Safety
 

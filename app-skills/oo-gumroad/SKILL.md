@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gumroad"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gumroad"]
+  icon: "https://static.oomol.com/logo/third-party/gumroad.png"
 ---
 
 # Gumroad

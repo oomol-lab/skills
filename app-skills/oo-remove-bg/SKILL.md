@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "remove.bg"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["remove_bg"]
   icon: "https://static.oomol.com/logo/third-party/Remove.bg.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_account` — Fetch the current remove.bg credit balance and free API call allowance for the authenticated account.
-- `remove_background` — Remove the background from an image and upload the generated result file to connector transit storage. [destructive]
+- `remove_background` — Remove the background from an image with remove.bg and upload the generated image or ZIP result to connector transit storage. Provide exactly one of imageUrl or contentBase64; use shadowType and shadowOpacity for shadows. [destructive]
 - `submit_improvement` — Submit a source image to the remove.bg improvement program for future model quality improvements. [write]
 
 ## Safety

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TextCortex"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["textcortex"]
+  icon: "https://static.oomol.com/logo/third-party/textcortex.svg"
 ---
 
 # TextCortex

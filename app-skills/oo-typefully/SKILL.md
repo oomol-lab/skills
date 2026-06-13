@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Typefully"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["typefully"]
+  icon: "https://static.oomol.com/logo/third-party/typefully.svg"
 ---
 
 # Typefully

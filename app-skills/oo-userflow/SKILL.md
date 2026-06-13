@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Userflow"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["userflow"]
+  icon: "https://static.oomol.com/logo/third-party/userflow.png"
 ---
 
 # Userflow

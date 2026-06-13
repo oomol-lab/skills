@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Airtable"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["airtable"]
   icon: "https://static.oomol.com/logo/third-party/Airtable.svg"
 ---
@@ -37,13 +37,20 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `create_base` — Create an Airtable base in a workspace with the provided initial table and field schema. [write]
+- `create_field` — Create a field in an Airtable table. [write]
 - `create_records` — Create one or more Airtable records in a table. [write]
+- `create_table` — Create a table in an Airtable base with the provided field schema. [write]
+- `delete_base` — Delete an Airtable base. Airtable restricts this endpoint to enterprise admins. [destructive]
 - `delete_records` — Delete one or more Airtable records by record ID. [destructive]
+- `get_base_collaborators` — Read Airtable base metadata, including workspaceId and optional collaborator details.
 - `get_base_schema` — Read Airtable table, field, and view schema for a specific base.
 - `get_record` — Read a single Airtable record by record ID.
 - `list_bases` — List Airtable bases accessible to the authenticated personal access token.
 - `list_records` — List Airtable records from a table with optional fields, sorting, view filters, formula filters, and pagination.
+- `update_field` — Update an Airtable field name, description, or type-specific options. [write]
 - `update_records` — Update one or more existing Airtable records by record ID. [write]
+- `update_table` — Update an Airtable table name, description, or date dependency settings. [write]
 
 ## Safety
 

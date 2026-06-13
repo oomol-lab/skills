@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Home Assistant"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["home_assistant"]
+  icon: "https://static.oomol.com/logo/third-party/home_assistant.svg"
 ---
 
 # Home Assistant
