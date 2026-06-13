@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Parsera"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["parsera"]
+  icon: "https://static.oomol.com/logo/third-party/parsera.png"
 ---
 
 # Parsera

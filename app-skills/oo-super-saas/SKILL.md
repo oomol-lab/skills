@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SuperSaaS"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["super_saas"]
+  icon: "https://static.oomol.com/logo/third-party/super_saas.svg"
 ---
 
 # SuperSaaS

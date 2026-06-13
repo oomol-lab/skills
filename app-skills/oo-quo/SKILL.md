@@ -1,21 +1,22 @@
 ---
 name: oo-quo
-description: "Quo (quo.com). Use this skill for ANY Quo request — reading, creating, updating, and deleting data. Whenever a task involves Quo, use this skill instead of calling the API directly."
+description: "Quo (OpenPhone) (quo.com). Use this skill for ANY Quo (OpenPhone) request — reading, creating, updating, and deleting data. Whenever a task involves Quo (OpenPhone), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "Quo"
+  title: "Quo (OpenPhone)"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["quo"]
+  icon: "https://static.oomol.com/logo/third-party/quo.svg"
 ---
 
-# Quo
+# Quo (OpenPhone)
 
-Operate **Quo** through your OOMOL-connected account. This skill calls the `quo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **Quo (OpenPhone)** through your OOMOL-connected account. This skill calls the `quo` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected Quo. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected Quo (OpenPhone). **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -52,7 +53,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change Quo state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change Quo (OpenPhone) state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -75,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Quo is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Quo (OpenPhone) is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=quo
@@ -85,4 +86,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- Quo homepage: https://www.quo.com
+- Quo (OpenPhone) homepage: https://www.quo.com

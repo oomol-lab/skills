@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Attio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["attio"]
+  icon: "https://static.oomol.com/logo/third-party/attio.svg"
 ---
 
 # Attio

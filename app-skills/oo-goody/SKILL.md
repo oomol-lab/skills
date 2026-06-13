@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Goody"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["goody"]
+  icon: "https://static.oomol.com/logo/third-party/goody.svg"
 ---
 
 # Goody

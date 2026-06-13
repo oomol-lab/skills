@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---
@@ -37,20 +37,28 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `add_reaction` — Add an emoji reaction to a Slack message. [write]
+- `delete_file` — Delete a Slack file. [destructive]
 - `delete_message` — Delete a Slack message posted by the bot. [destructive]
-- `get_channel_messages` — Get messages from a Slack channel.
+- `get_channel_messages` — Get recent messages from a Slack conversation.
 - `get_conversation` — Get metadata for a Slack conversation.
+- `get_file` — Get metadata for a Slack file.
 - `get_message_permalink` — Get a permalink for a Slack message.
+- `get_reactions` — Get reactions for a Slack message.
 - `get_thread` — Get messages in a Slack thread.
 - `get_user` — Get metadata for a Slack user.
-- `list_channels` — List Slack channels.
+- `list_channels` — List Slack public channels visible to the bot.
 - `list_conversations` — List Slack conversations visible to the bot.
+- `list_files` — List Slack files visible to the bot, optionally filtered by channel or user.
 - `list_users` — List Slack users visible to the bot.
-- `post_ephemeral_message` — Post an ephemeral message to a Slack conversation. [write]
-- `post_message` — Post a message to a Slack channel. [write]
-- `reply_message` — Reply to a Slack thread. [write]
-- `schedule_message` — Schedule a Slack message to be posted later. [write]
-- `update_message` — Update a Slack message posted by the bot. [write]
+- `open_conversation` — Open or resume a direct message or multi-person direct message with one or more Slack users. [write]
+- `post_ephemeral_message` — Post an ephemeral Slack message visible only to one user in a conversation. [write]
+- `post_message` — Post a Slack message. Use text for plain messages, or blocks for rich Block Kit layouts with text as fallback. [write]
+- `remove_reaction` — Remove an emoji reaction from a Slack message. [destructive]
+- `reply_message` — Reply to a Slack thread. Use text, blocks, or attachments for the reply content. [write]
+- `schedule_message` — Schedule a Slack message to be posted later. Use text or blocks for the scheduled content. [write]
+- `update_message` — Update a Slack message posted by the bot. Provide text, blocks, or attachments as the new message content. [write]
+- `upload_file` — Upload a file to Slack using the current external upload flow. Provide fileUrl; binary content is fetched by the connector runtime. [write]
 
 ## Safety
 

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Personal AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["personal_ai"]
+  icon: "https://static.oomol.com/logo/third-party/personal_ai.svg"
 ---
 
 # Personal AI

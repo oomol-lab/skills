@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Abyssale"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["abyssale"]
+  icon: "https://static.oomol.com/logo/third-party/abyssale.svg"
 ---
 
 # Abyssale

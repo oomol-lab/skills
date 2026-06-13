@@ -1,11 +1,11 @@
 ---
 name: oo-supabase
-description: "Supabase (supabase.com). Use this skill for ANY Supabase request — reading, creating, and updating data. Whenever a task involves Supabase, use this skill instead of calling the API directly."
+description: "Supabase (supabase.com). Use this skill for ANY Supabase request — reading, creating, updating, and deleting data. Whenever a task involves Supabase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Supabase"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["supabase"]
   icon: "https://static.oomol.com/logo/third-party/Supabase.svg"
 ---
@@ -38,11 +38,26 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_project_api_key` — Create a publishable or secret API key for a Supabase project. [write]
+- `delete_project_api_key` — Delete a Supabase project API key. [destructive]
+- `delete_project_secrets` — Bulk delete secrets from a Supabase project. [destructive]
+- `generate_typescript_types` — Generate TypeScript database types for a Supabase project.
+- `get_edge_function` — Get metadata for one Supabase Edge Function by slug.
+- `get_organization` — Get details for a Supabase organization by slug.
 - `get_project` — Get detailed metadata for a Supabase project by project ref.
 - `get_project_api_key` — Get one API key record from a Supabase project.
+- `get_project_health` — Check health for selected services in a Supabase project.
+- `list_available_regions` — List Supabase regions available for creating projects in an organization.
+- `list_edge_functions` — List Edge Functions in a Supabase project.
+- `list_organization_members` — List members of a Supabase organization.
+- `list_organization_projects` — List projects in a Supabase organization with optional search and pagination.
 - `list_organizations` — List the organizations available to the authenticated Supabase account.
 - `list_project_api_keys` — List API keys for a Supabase project.
+- `list_project_secrets` — List secrets configured for a Supabase project.
 - `list_projects` — List Supabase projects visible to the authenticated account.
+- `list_storage_buckets` — List Storage buckets for a Supabase project.
+- `run_read_only_query` — Run a SQL query through Supabase as the read-only database user.
+- `update_project_api_key` — Update the name, description, or JWT template for a Supabase project API key. [write]
+- `upsert_project_secrets` — Bulk create or update secrets for a Supabase project. [write]
 
 ## Safety
 
