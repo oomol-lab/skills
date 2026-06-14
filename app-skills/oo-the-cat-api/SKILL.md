@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Cat API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["the_cat_api"]
+  icon: "https://static.oomol.com/logo/third-party/the_cat_api.svg"
 ---
 
 # The Cat API

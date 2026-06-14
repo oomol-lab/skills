@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "xAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["x_ai"]
+  icon: "https://static.oomol.com/logo/third-party/x_ai.svg"
 ---
 
 # xAI

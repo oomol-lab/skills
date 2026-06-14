@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tally"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tally"]
+  icon: "https://static.oomol.com/logo/third-party/tally.svg"
 ---
 
 # Tally

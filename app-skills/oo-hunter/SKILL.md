@@ -1,11 +1,11 @@
 ---
 name: oo-hunter
-description: "Hunter (hunter.io). Use this skill for ANY Hunter request — searching and reading data. Whenever a task involves Hunter, use this skill instead of calling the API directly."
+description: "Hunter (hunter.io). Use this skill for ANY Hunter request — reading, creating, updating, and deleting data. Whenever a task involves Hunter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hunter"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hunter"]
   icon: "https://static.oomol.com/logo/third-party/hunter.png"
 ---
@@ -40,11 +40,21 @@ Each action is listed below with a one-line description; actions that change sta
 - `account_information` — Retrieve information about the authenticated Hunter account.
 - `combined_enrichment` — Retrieve combined person and company enrichment data from Hunter.
 - `company_enrichment` — Retrieve company enrichment data for a domain from Hunter.
+- `create_lead` — Create a new lead in Hunter. [write]
+- `create_leads_list` — Create a new Hunter leads list. [write]
+- `delete_lead` — Delete an existing Hunter lead. [destructive]
 - `discover_companies` — Discover companies in Hunter using a natural-language query or filters.
 - `domain_search` — Search public email addresses for a company domain in Hunter.
+- `email_count` — Count email addresses available for a company domain in Hunter.
 - `email_finder` — Find the most likely professional email address for a person in Hunter.
 - `email_verifier` — Verify the deliverability of an email address in Hunter.
+- `get_lead` — Retrieve a single Hunter lead.
+- `list_custom_attributes` — List custom lead attributes configured in Hunter.
+- `list_leads` — List leads saved in the authenticated Hunter account.
+- `list_leads_lists` — List Hunter leads lists.
 - `people_enrichment` — Retrieve person enrichment data from Hunter by email address or LinkedIn handle.
+- `update_lead` — Update an existing Hunter lead. [write]
+- `upsert_lead` — Create or update a Hunter lead by email address. [write]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-tavily
-description: "Tavily (tavily.com). Use this skill for ANY Tavily request — searching and reading data. Whenever a task involves Tavily, use this skill instead of calling the API directly."
+description: "Tavily (tavily.com). Use this skill for ANY Tavily request — reading, creating, and updating data. Whenever a task involves Tavily, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tavily"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tavily"]
   icon: "https://static.oomol.com/logo/third-party/Tavily.svg"
 ---
@@ -38,7 +38,9 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `crawl` — Crawl a website and extract content from discovered pages with Tavily.
+- `create_research` — Start an asynchronous Tavily Research task and return a request ID for polling. [write]
 - `extract` — Extract structured page content from one or more URLs with Tavily.
+- `get_research` — Get the current status and result for a Tavily Research task.
 - `get_usage` — Get API key and account usage details from Tavily.
 - `map` — Discover URLs from a website with Tavily Map.
 - `search` — Execute a Tavily Search query and return ranked source results.

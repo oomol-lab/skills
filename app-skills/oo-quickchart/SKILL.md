@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "QuickChart"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["quickchart"]
+  icon: "https://static.oomol.com/logo/third-party/quickchart.svg"
 ---
 
 # QuickChart

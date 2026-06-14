@@ -1,22 +1,22 @@
 ---
 name: oo-twitter
-description: "Twitter (x.com). Use this skill for ANY Twitter request — reading, creating, updating, and deleting data. Whenever a task involves Twitter, use this skill instead of calling the API directly."
+description: "X (Twitter) (x.com). Use this skill for ANY X (Twitter) request — reading, creating, updating, and deleting data. Whenever a task involves X (Twitter), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "Twitter"
+  title: "X (Twitter)"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["twitter"]
   icon: "https://static.oomol.com/logo/third-party/Twitter.svg"
 ---
 
-# Twitter
+# X (Twitter)
 
-Operate **Twitter** through your OOMOL-connected account. This skill calls the `twitter` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **X (Twitter)** through your OOMOL-connected account. This skill calls the `twitter` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected Twitter. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected X (Twitter). **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -112,7 +112,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change Twitter state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change X (Twitter) state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -135,7 +135,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Twitter is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — X (Twitter) is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=twitter
@@ -145,4 +145,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- Twitter homepage: https://x.com
+- X (Twitter) homepage: https://x.com

@@ -1,11 +1,11 @@
 ---
 name: oo-elevenlabs
-description: "ElevenLabs (elevenlabs.io). Use this skill for ANY ElevenLabs request — searching and reading data. Whenever a task involves ElevenLabs, use this skill instead of calling the API directly."
+description: "ElevenLabs (elevenlabs.io). Use this skill for ANY ElevenLabs request — reading, creating, updating, and deleting data. Whenever a task involves ElevenLabs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "ElevenLabs"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["elevenlabs"]
   icon: "https://static.oomol.com/logo/third-party/ElevenLabs.svg"
 ---
@@ -37,6 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `create_sound_effect` — Generate a sound effect from a text prompt and upload the binary audio result to connector transit storage. [write]
+- `delete_history_item` — Delete one ElevenLabs history item by history item ID. [destructive]
 - `get_audio_from_history_item` — Download the audio for one ElevenLabs history item and upload the binary result to connector transit storage.
 - `get_generated_items` — List generated ElevenLabs history items with pagination and optional voice filtering.
 - `get_history_item_by_id` — Get one ElevenLabs history item by history item ID without downloading its audio.
@@ -44,8 +46,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_user_info` — Get the current ElevenLabs user profile together with the embedded subscription snapshot.
 - `get_user_subscription_info` — Get the current ElevenLabs subscription details for the authenticated user.
 - `get_voice` — Get one ElevenLabs voice by voice ID, with optional settings included.
+- `get_voice_settings` — Get the synthesis settings configured for one ElevenLabs voice.
 - `get_voices` — List the available ElevenLabs voices with their key metadata and settings.
+- `search_voices` — Search ElevenLabs voices with v2 pagination, filtering, sorting, and optional total count.
 - `text_to_speech` — Generate speech audio from text by calling ElevenLabs text-to-speech and uploading the binary result to connector transit storage.
+- `text_to_speech_with_timestamps` — Generate speech audio with character-level timing, upload the audio to connector transit storage, and return timing metadata.
 
 ## Safety
 

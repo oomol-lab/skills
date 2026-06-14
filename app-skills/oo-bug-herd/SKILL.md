@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BugHerd"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bug_herd"]
+  icon: "https://static.oomol.com/logo/third-party/bug_herd.png"
 ---
 
 # BugHerd

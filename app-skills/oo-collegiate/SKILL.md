@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Merriam-Webster Collegiate"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["collegiate"]
-  icon: "https://dictionaryapi.com/images/MWLogo_120x120_2x.png"
+  icon: "https://static.oomol.com/logo/third-party/collegiate.png"
 ---
 
 # Merriam-Webster Collegiate

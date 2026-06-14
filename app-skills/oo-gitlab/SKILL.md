@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitLab"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gitlab"]
+  icon: "https://static.oomol.com/logo/third-party/gitlab.svg"
 ---
 
 # GitLab

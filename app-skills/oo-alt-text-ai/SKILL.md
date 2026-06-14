@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AltText.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["alt_text_ai"]
+  icon: "https://static.oomol.com/logo/third-party/alt_text_ai.svg"
 ---
 
 # AltText.ai
