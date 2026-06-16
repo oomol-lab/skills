@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Starton"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["starton"]
+  icon: "https://static.oomol.com/logo/third-party/starton.jpg"
 ---
 
 # Starton

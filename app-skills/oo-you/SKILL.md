@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "You.com"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["you"]
+  icon: "https://static.oomol.com/logo/third-party/you.svg"
 ---
 
 # You.com

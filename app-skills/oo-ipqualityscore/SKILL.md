@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "IPQualityScore"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ipqualityscore"]
+  icon: "https://static.oomol.com/logo/third-party/ipqualityscore.svg"
 ---
 
 # IPQualityScore

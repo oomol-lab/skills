@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Stripe"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["stripe"]
+  icon: "https://static.oomol.com/logo/third-party/stripe.svg"
 ---
 
 # Stripe

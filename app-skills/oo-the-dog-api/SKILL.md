@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Dog API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["the_dog_api"]
+  icon: "https://static.oomol.com/logo/third-party/the_dog_api.svg"
 ---
 
 # The Dog API

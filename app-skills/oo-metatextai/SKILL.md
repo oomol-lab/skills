@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MetatextAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["metatextai"]
+  icon: "https://static.oomol.com/logo/third-party/metatextai.svg"
 ---
 
 # MetatextAI
