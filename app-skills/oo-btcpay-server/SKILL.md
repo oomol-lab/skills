@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BTCPay Server"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["btcpay_server"]
+  icon: "https://static.oomol.com/logo/third-party/btcpay_server.svg"
 ---
 
 # BTCPay Server

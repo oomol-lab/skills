@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Chargebee"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["chargebee"]
+  icon: "https://static.oomol.com/logo/third-party/chargebee.svg"
 ---
 
 # Chargebee

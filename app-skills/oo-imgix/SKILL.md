@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Imgix"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["imgix"]
+  icon: "https://static.oomol.com/logo/third-party/imgix.svg"
 ---
 
 # Imgix

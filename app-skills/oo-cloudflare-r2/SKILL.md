@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -42,6 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_bucket_cors_policy` — Delete the bucket-level CORS policy for an R2 bucket. [destructive]
 - `get_bucket` — Get one R2 bucket by name.
 - `get_bucket_cors_policy` — Fetch the bucket-level CORS policy for an R2 bucket.
+- `list_accounts` — List Cloudflare accounts visible to the current credential.
 - `list_buckets` — List the R2 buckets in a Cloudflare account.
 - `update_bucket` — Update mutable R2 bucket properties such as default storage class or jurisdiction. [write]
 - `update_bucket_cors_policy` — Replace the bucket-level CORS policy for an R2 bucket. [write]

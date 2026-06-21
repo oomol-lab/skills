@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TikHub"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tikhub"]
   icon: "https://static.oomol.com/logo/third-party/tikhub.jpeg"
 ---
@@ -46,7 +46,6 @@ Each action is listed below with a one-line description; actions that change sta
 - `fetch_douyin_video_comment_replies` — Fetch public Douyin comment replies through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope. [write]
 - `fetch_douyin_video_comments` — Fetch public Douyin video comments through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope.
 - `fetch_douyin_video_detail` — Fetch a public Douyin video detail through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope.
-- `fetch_tiktok_post_comment_replies` — Fetch public TikTok comment replies through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope. [write]
 - `fetch_tiktok_post_comments` — Fetch public TikTok post comments through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope. [write]
 - `fetch_tiktok_post_detail` — Fetch a public TikTok post detail through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope. [write]
 - `fetch_tiktok_tag_detail` — Fetch a public TikTok tag detail through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope.
@@ -66,7 +65,6 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_douyin_users` — Search public Douyin users through TikHub. Requires the /api/v1/douyin/search/ TikHub path scope.
 - `search_douyin_videos` — Search public Douyin videos through TikHub. Requires the /api/v1/douyin/search/ TikHub path scope.
 - `search_tiktok_users` — Search public TikTok users through TikHub without exposing upstream cookies. Requires the /api/v1/tiktok/web/ TikHub path scope.
-- `search_tiktok_videos` — Search public TikTok videos through TikHub without exposing upstream cookies. Requires the /api/v1/tiktok/web/ TikHub path scope.
 - `search_xiaohongshu_notes` — Search public Xiaohongshu notes through TikHub. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
 - `search_xiaohongshu_users` — Search public Xiaohongshu users through TikHub. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
 

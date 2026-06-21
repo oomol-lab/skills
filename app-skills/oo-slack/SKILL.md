@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_conversations` — List Slack conversations visible to the bot.
 - `list_files` — List Slack files visible to the bot, optionally filtered by channel or user.
 - `list_users` — List Slack users visible to the bot.
-- `open_conversation` — Open or resume a direct message or multi-person direct message with one or more Slack users. [write]
+- `open_conversation` — Open or resume a direct message with one Slack user. [write]
 - `post_ephemeral_message` — Post an ephemeral Slack message visible only to one user in a conversation. [write]
 - `post_message` — Post a Slack message. Use text for plain messages, or blocks for rich Block Kit layouts with text as fallback. [write]
 - `remove_reaction` — Remove an emoji reaction from a Slack message. [destructive]

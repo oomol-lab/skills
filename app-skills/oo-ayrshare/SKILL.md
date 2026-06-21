@@ -1,11 +1,11 @@
 ---
 name: oo-ayrshare
-description: "Ayrshare (ayrshare.com). Use this skill for ANY Ayrshare request — reading, creating, and updating data. Whenever a task involves Ayrshare, use this skill instead of calling the API directly."
+description: "Ayrshare (ayrshare.com). Use this skill for ANY Ayrshare request — reading, creating, updating, and deleting data. Whenever a task involves Ayrshare, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ayrshare"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ayrshare"]
   icon: "https://static.oomol.com/logo/third-party/ayrshare.png"
 ---
@@ -38,9 +38,16 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `check_post_length` — Check weighted social post length and platform validity using Ayrshare's post length validator. [write]
+- `delete_post` — Delete one or more Ayrshare posts, delete all pending scheduled posts, or mark a post as manually deleted. [destructive]
+- `get_post` — Get one Ayrshare post by top-level Ayrshare post ID, including status and per-platform results. [write]
+- `get_post_analytics` — Get real-time analytics for an Ayrshare post, optionally limited to selected social platforms. [write]
 - `get_user_profile` — Get Ayrshare account or user profile details, including linked social accounts and usage metadata.
 - `list_post_history` — List Ayrshare post history with optional filters for date range, status, type, and social platforms. [write]
 - `publish_post` — Publish or schedule a social media post through Ayrshare using a JSON-friendly first-pass field set. [write]
+- `retry_post` — Retry an Ayrshare post whose previous publish attempt failed, returning the new pending post status. [write]
+- `update_post` — Update mutable Ayrshare post metadata such as scheduleDate, approval status, notes, pause state, comments, or YouTube visibility. [write]
+- `validate_post` — Validate an Ayrshare post payload before publishing, including platform and media URL checks. [write]
+- `verify_media_url` — Verify that a media URL exists and is accessible to Ayrshare.
 
 ## Safety
 
