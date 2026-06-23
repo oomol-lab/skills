@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -45,11 +45,16 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_commit_status` — Create a commit status for a GitHub commit SHA. [write]
 - `create_issue` — Create an issue in a GitHub repository. [write]
 - `create_issue_comment` — Create a comment on a GitHub issue. [write]
+- `create_label` — Create a label in a GitHub repository. [write]
 - `create_or_update_file` — Create or update a repository file through the GitHub contents API. Writing under .github/workflows may require GitHub workflow scope. [write]
 - `create_pull_request` — Create a pull request in a GitHub repository. [write]
 - `create_pull_request_review` — Create a review for a GitHub pull request, optionally with inline comments. [write]
 - `create_pull_request_review_comment` — Create a review comment on a GitHub pull request diff. [write]
+- `create_ref` — Create a Git reference in a GitHub repository. [write]
+- `create_release` — Create a release in a GitHub repository. [write]
+- `create_repository` — Create a repository for the authenticated GitHub user. [write]
 - `delete_file` — Delete a repository file through the GitHub contents API. Deleting under .github/workflows may require GitHub workflow scope. [destructive]
+- `delete_repository` — Delete a GitHub repository by owner and name. [destructive]
 - `get_branch` — Get a GitHub branch by name.
 - `get_commit` — Get a commit by SHA in a GitHub repository.
 - `get_commit_statuses` — List statuses for a commit reference in reverse chronological order.

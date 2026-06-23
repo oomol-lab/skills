@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare DNS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cloudflare_dns"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -41,6 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_dns_record` — Delete one DNS record from a Cloudflare zone. [destructive]
 - `get_dns_record` — Get one DNS record from a Cloudflare zone.
 - `get_zone` — Get one Cloudflare zone by zone ID.
+- `list_accounts` — List Cloudflare accounts visible to the current credential.
 - `list_dns_records` — List DNS records inside one Cloudflare zone.
 - `list_zones` — List the Cloudflare zones visible to the current API token.
 - `update_dns_record` — Patch one DNS record inside a Cloudflare zone. [write]

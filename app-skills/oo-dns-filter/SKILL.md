@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DNSFilter"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dns_filter"]
+  icon: "https://static.oomol.com/logo/third-party/dns_filter.webp"
 ---
 
 # DNSFilter

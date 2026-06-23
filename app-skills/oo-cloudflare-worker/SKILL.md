@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Worker"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cloudflare_worker"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -46,6 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_worker_script_content` — Fetch the raw source content for a Cloudflare Worker script.
 - `get_worker_script_secret` — Get one secret binding attached to a Cloudflare Worker script.
 - `get_worker_script_settings` — Get Worker metadata and configuration for a Cloudflare Worker script.
+- `list_accounts` — List Cloudflare accounts visible to the current credential.
 - `list_worker_script_secrets` — List secret bindings attached to a Cloudflare Worker script.
 - `list_worker_scripts` — List Worker scripts in a Cloudflare account.
 - `list_workers` — List Workers in a Cloudflare account using the Workers beta API.
