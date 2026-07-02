@@ -299,6 +299,44 @@ export function applyExclusions(
 }
 
 // ----------------------------------------------------------------------------
+// ClawHub's reserved "admin" slug namespace
+// ----------------------------------------------------------------------------
+/**
+ * True when `slug` falls in ClawHub's protected "admin" namespace — it starts with
+ * `admin-` or ends with `-admin`. ClawHub rejects publishing such a slug with:
+ *   ✖ "<slug>" uses the protected "admin" slug namespace. Choose a slug that does not
+ *     start with "admin-" or end with "-admin".
+ * so there is no point attempting it. Matching is case-insensitive for safety, though
+ * skill slugs are lowercase folder basenames in practice.
+ */
+export function isReservedAdminSlug(slug: string): boolean {
+    const s = slug.trim().toLowerCase();
+    return s.startsWith("admin-") || s.endsWith("-admin");
+}
+
+/**
+ * Drop candidates whose slug is in ClawHub's reserved "admin" namespace (see
+ * isReservedAdminSlug), which ClawHub would reject at publish time. Returns the kept
+ * candidates plus the skipped slugs (sorted, de-duplicated) for the caller to report.
+ * Shared by the publish step and the changelog pre-generate step so both skip the exact
+ * same set — never publishing and never burning a codex run on a slug that can't publish.
+ */
+export function filterReservedAdminSlugs(
+    candidates: readonly Candidate[],
+): { kept: Candidate[]; skipped: string[] } {
+    const kept: Candidate[] = [];
+    const hit = new Set<string>();
+    for (const c of candidates) {
+        const slug = c.slug || basename(c.folder);
+        if (isReservedAdminSlug(slug))
+            hit.add(slug);
+        else
+            kept.push(c);
+    }
+    return { kept, skipped: [...hit].sort((a, b) => a.localeCompare(b)) };
+}
+
+// ----------------------------------------------------------------------------
 // changelog
 // ----------------------------------------------------------------------------
 export function buildSourceLine(repo: string, sha: string): string {
@@ -797,7 +835,13 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
     if (excluded.length)
         deps.log(`Excluding ${excluded.length} skill(s) from this run by request: ${excluded.join(", ")}.`);
 
-    const targets = kept
+    // Skip skills in ClawHub's reserved "admin" namespace (slug can't start with "admin-"
+    // or end with "-admin") — ClawHub rejects them at publish time, so drop them up front.
+    const { kept: publishable, skipped: reservedAdmin } = filterReservedAdminSlugs(kept);
+    if (reservedAdmin.length)
+        deps.log(`Skipping ${reservedAdmin.length} skill(s) in ClawHub's reserved "admin" slug namespace (slug cannot start with "admin-" or end with "-admin"): ${reservedAdmin.join(", ")}.`);
+
+    const targets = publishable
         .map(c => classify(c, cfg.root, deps.readVersion))
         .map(t => ({ ...t, displayName: deps.readTitle(t.folder) }));
 

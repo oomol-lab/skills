@@ -9,10 +9,12 @@ import {
     classify,
     extractManifestTitle,
     extractManifestVersion,
+    filterReservedAdminSlugs,
     formatPlan,
     formatSummaryMarkdown,
     generateChangelog,
     isRateLimitError,
+    isReservedAdminSlug,
     parseAccounts,
     parseExcludeSlugs,
     parseSemver,
@@ -269,6 +271,47 @@ describe("applyExclusions", () => {
     test("falls back to folder basename when slug is absent", () => {
         const noSlug: Candidate[] = [{ folder: "app-skills/oo-x" }];
         expect(applyExclusions(noSlug, new Set(["oo-x"])).kept).toEqual([]);
+    });
+});
+
+describe("isReservedAdminSlug", () => {
+    test("matches the admin- prefix and -admin suffix (case-insensitive)", () => {
+        expect(isReservedAdminSlug("admin-foo")).toBe(true);
+        expect(isReservedAdminSlug("oo-shopify-admin")).toBe(true);
+        expect(isReservedAdminSlug("oo-anthropic-admin")).toBe(true);
+        expect(isReservedAdminSlug("  Oo-Anthropic-ADMIN  ")).toBe(true);
+    });
+    test("does not match slugs that merely contain 'admin'", () => {
+        expect(isReservedAdminSlug("oo-administrator")).toBe(false);
+        expect(isReservedAdminSlug("oo-mongo-db-atlas-administration")).toBe(false);
+        expect(isReservedAdminSlug("admin")).toBe(false);
+        expect(isReservedAdminSlug("oo-admin-tools")).toBe(false);
+        expect(isReservedAdminSlug("oo-ably")).toBe(false);
+    });
+});
+
+describe("filterReservedAdminSlugs", () => {
+    const cands: Candidate[] = [
+        { slug: "oo-ably", folder: "app-skills/oo-ably", status: "new", latestVersion: null },
+        { slug: "oo-shopify-admin", folder: "app-skills/oo-shopify-admin", status: "new", latestVersion: null },
+        { slug: "admin-panel", folder: "app-skills/admin-panel", status: "new", latestVersion: null },
+    ];
+    test("drops reserved-admin candidates and reports the skipped slugs sorted", () => {
+        const r = filterReservedAdminSlugs(cands);
+        expect(r.kept.map(c => c.slug)).toEqual(["oo-ably"]);
+        expect(r.skipped).toEqual(["admin-panel", "oo-shopify-admin"]);
+    });
+    test("passes everything through when nothing is reserved", () => {
+        const ok: Candidate[] = [{ slug: "oo-ably", folder: "app-skills/oo-ably" }];
+        const r = filterReservedAdminSlugs(ok);
+        expect(r.kept).toEqual(ok);
+        expect(r.skipped).toEqual([]);
+    });
+    test("falls back to the folder basename when slug is absent", () => {
+        const noSlug: Candidate[] = [{ folder: "app-skills/oo-anthropic-admin" }];
+        const r = filterReservedAdminSlugs(noSlug);
+        expect(r.kept).toEqual([]);
+        expect(r.skipped).toEqual(["oo-anthropic-admin"]);
     });
 });
 
@@ -826,6 +869,19 @@ describe("run", () => {
         // only the non-excluded skill is published
         expect(publishCalls.flatMap(c => c.cmd.filter(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-keep"]);
         expect(logs.some(l => l.includes("Excluding 1 skill(s)") && l.includes("oo-skip"))).toBe(true);
+    });
+
+    test("auto-skips reserved-admin slugs before publish and logs them (exit 0)", () => {
+        const cfg = { ...baseCfg };
+        const { deps, publishCalls, logs } = makeDeps(cfg, {
+            sync: { wouldPublish: [newCand("oo-keep"), newCand("oo-shopify-admin"), newCand("admin-panel")] },
+            versions: versionsFor({ "oo-keep": "1.0.0", "oo-shopify-admin": "1.0.0", "admin-panel": "1.0.0" }),
+            accounts: [{ name: "solo", configPath: "/s" }],
+        });
+        expect(run(cfg, deps)).toBe(0);
+        // neither the -admin suffix nor the admin- prefix skill is ever attempted
+        expect(publishCalls.flatMap(c => c.cmd.filter(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-keep"]);
+        expect(logs.some(l => l.includes("reserved \"admin\" slug namespace") && l.includes("admin-panel") && l.includes("oo-shopify-admin"))).toBe(true);
     });
 
     test("excluding every candidate -> nothing to publish, exit 0", () => {

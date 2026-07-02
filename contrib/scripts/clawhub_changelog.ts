@@ -33,6 +33,7 @@ import {
     CHANGELOG_PROMPT_VERSION,
     changelogCachePath,
     classify,
+    filterReservedAdminSlugs,
     hashSkillInputs,
     listSkillFiles,
     parseExcludeSlugs,
@@ -115,7 +116,12 @@ export async function runGenerate(cfg: GenerateConfig, deps: GenerateDeps): Prom
     const { kept, excluded } = applyExclusions(candidates, new Set(cfg.exclude ?? []));
     if (excluded.length)
         deps.log(`Excluding ${excluded.length} skill(s) from this run by request: ${excluded.join(", ")}.`);
-    const targets = kept
+    // Mirror the publish step's reserved-"admin"-namespace skip so we never burn a codex
+    // run on a slug ClawHub will reject at publish time.
+    const { kept: publishable, skipped: reservedAdmin } = filterReservedAdminSlugs(kept);
+    if (reservedAdmin.length)
+        deps.log(`Skipping ${reservedAdmin.length} skill(s) in ClawHub's reserved "admin" slug namespace (slug cannot start with "admin-" or end with "-admin"): ${reservedAdmin.join(", ")}.`);
+    const targets = publishable
         .map(c => classify(c, cfg.root, deps.readVersion))
         .filter(t => t.action === "publish");
 

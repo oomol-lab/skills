@@ -236,6 +236,22 @@ describe("runGenerate", () => {
         expect(recorder.spawned.length).toBe(1);
     });
 
+    test("skips a reserved-admin slug so codex never runs for it", async () => {
+        const recorder: Recorder = { spawned: [], written: [], logs: [] };
+        const deps = makeDeps({ recorder });
+        const reserved: GenerateDeps = {
+            ...deps,
+            readText: p => (p === "sync.json"
+                ? JSON.stringify({ wouldPublish: [{ folder: "app-skills/oo-shopify-admin", slug: "oo-shopify-admin", status: "new", latestVersion: null }] })
+                : deps.readText(p)),
+        };
+        const code = await runGenerate(baseCfg(), reserved);
+        expect(code).toBe(0);
+        expect(recorder.spawned.length).toBe(0);
+        expect(recorder.written).toEqual([]);
+        expect(recorder.logs.some(l => l.includes("reserved \"admin\" slug namespace") && l.includes("oo-shopify-admin"))).toBe(true);
+    });
+
     test("skips a target whose metadata.version was not bumped (action !== publish)", async () => {
         const recorder: Recorder = { spawned: [], written: [], logs: [] };
         const deps = makeDeps({ recorder });
