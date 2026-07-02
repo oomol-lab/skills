@@ -31,6 +31,10 @@ name: Publish Skills to ClawHub
 #
 # exclude_skills (optional) skips specific skills for this run only — a comma-separated list of
 # slugs (e.g. "oo-ably,oo-github"). It applies to every mode and never edits any SKILL.md.
+#
+# Reserved "admin" slug namespace: ClawHub rejects publishing any skill whose slug starts with
+# "admin-" or ends with "-admin". Such skills are auto-skipped (never published, never
+# changelogged) and reported in the log, so they no longer fail the run.
 
 on:
   workflow_dispatch:
