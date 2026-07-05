@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Circle"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["circle"]
+  icon: "https://static.oomol.com/logo/third-party/circle.svg"
 ---
 
 # Circle

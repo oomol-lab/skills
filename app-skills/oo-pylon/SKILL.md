@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pylon"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pylon"]
+  icon: "https://static.oomol.com/logo/third-party/pylon.svg"
 ---
 
 # Pylon

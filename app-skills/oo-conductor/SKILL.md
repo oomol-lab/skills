@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Conductor"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["conductor"]
+  icon: "https://static.oomol.com/logo/third-party/conductor.svg"
 ---
 
 # Conductor

@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LinkedIn"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["linkedin"]
-  icon: "https://static.oomol.com/logo/third-party/linkedin.png"
+  icon: "https://static.oomol.com/logo/third-party/linkedin.svg"
 ---
 
 # LinkedIn

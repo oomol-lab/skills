@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -111,7 +111,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `rerun_workflow` — Re-run a GitHub Actions workflow run. [write]
 - `search_code` — Search GitHub code with GitHub search syntax.
 - `search_commits` — Search GitHub commits by commit-message text and qualifiers.
-- `search_issues_and_pull_requests` — Search GitHub issues and pull requests with raw GitHub search syntax or structured filters close to Composio pull-request search.
+- `search_issues_and_pull_requests` — Search GitHub issues and pull requests with raw GitHub search syntax or structured filters.
 - `search_labels` — Search labels within a GitHub repository by repository id and query.
 - `search_repositories` — Search GitHub repositories with GitHub search syntax.
 - `search_topics` — Search GitHub topics with GitHub search syntax.

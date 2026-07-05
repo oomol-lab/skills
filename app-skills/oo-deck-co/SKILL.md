@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Deck.co"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["deck_co"]
+  icon: "https://static.oomol.com/logo/third-party/deck_co.png"
 ---
 
 # Deck.co
