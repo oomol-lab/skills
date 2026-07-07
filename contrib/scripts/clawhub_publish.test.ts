@@ -15,6 +15,7 @@ import {
     generateChangelog,
     isRateLimitError,
     isReservedAdminSlug,
+    isStagedPublishPending,
     parseAccounts,
     parseExcludeSlugs,
     parseSemver,
@@ -416,6 +417,25 @@ describe("isRateLimitError", () => {
 });
 
 // ---------------------------------------------------------------------------
+// isStagedPublishPending — ClawHub's async staged-publish response (accepted, not failed)
+// ---------------------------------------------------------------------------
+describe("isStagedPublishPending", () => {
+    test("matches the CLI's schema error for a staged (pending) publish response", () => {
+        expect(isStagedPublishPending("✖ API response: skillId: invalid value; versionId: invalid value")).toBe(true);
+        expect(isStagedPublishPending("Error: API response: skillId: invalid value; versionId: invalid value")).toBe(true);
+    });
+    test("requires the API-response prefix and BOTH fields (not a generic error)", () => {
+        // a genuine rate limit, an HTTP error, or any other failure must NOT be read as staged
+        expect(isStagedPublishPending("✖ Rate limit: max 5 new skills per hour.")).toBe(false);
+        expect(isStagedPublishPending("Error: HTTP 500 Internal Server Error")).toBe(false);
+        expect(isStagedPublishPending("API response: slug: invalid value")).toBe(false);
+        // only one of the two fields is not the pending signature
+        expect(isStagedPublishPending("API response: skillId: invalid value")).toBe(false);
+        expect(isStagedPublishPending("")).toBe(false);
+    });
+});
+
+// ---------------------------------------------------------------------------
 // parseAccounts (CLAWHUB_TOKENS) — token-handling code; NOTHING may echo a key
 // ---------------------------------------------------------------------------
 describe("parseAccounts", () => {
@@ -533,31 +553,41 @@ describe("planDistribution", () => {
 describe("totalsOf", () => {
     test("sums each column and lists the rate-limited accounts", () => {
         const stats = [
-            { name: "Kevin", published: 5, updated: 3, failed: 0, rateLimited: false, remaining: 10 },
-            { name: "Jack", published: 4, updated: 1, failed: 2, rateLimited: true, remaining: 7 },
+            { name: "Kevin", published: 5, updated: 3, staged: 1, failed: 0, rateLimited: false, remaining: 10 },
+            { name: "Jack", published: 4, updated: 1, staged: 2, failed: 2, rateLimited: true, remaining: 7 },
         ];
-        expect(totalsOf(stats)).toEqual({ published: 9, updated: 4, failed: 2, remaining: 17, rateLimitedAccounts: ["Jack"] });
+        expect(totalsOf(stats)).toEqual({ published: 9, updated: 4, staged: 3, failed: 2, remaining: 17, rateLimitedAccounts: ["Jack"] });
     });
     test("empty -> all zero", () => {
-        expect(totalsOf([])).toEqual({ published: 0, updated: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] });
+        expect(totalsOf([])).toEqual({ published: 0, updated: 0, staged: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] });
     });
 });
 
 describe("formatSummaryMarkdown", () => {
     const stats = [
-        { name: "Kevin", published: 5, updated: 3, failed: 0, rateLimited: false, remaining: 10 },
-        { name: "Jack", published: 5, updated: 2, failed: 1, rateLimited: true, remaining: 12 },
+        { name: "Kevin", published: 5, updated: 3, staged: 0, failed: 0, rateLimited: false, remaining: 10 },
+        { name: "Jack", published: 5, updated: 2, staged: 4, failed: 1, rateLimited: true, remaining: 12 },
     ];
 
     test("renders a per-account table, a totals row and a rate-limit note", () => {
         const md = formatSummaryMarkdown(stats, []).join("\n");
         expect(md).toContain("### ClawHub publish results");
-        expect(md).toContain("| Account | Published (new) | Updated | Failed | Rate-limited | Remaining |");
-        expect(md).toContain("| Kevin | 5 | 3 | 0 | — | 10 |");
-        expect(md).toContain("| Jack | 5 | 2 | 1 | ⚠️ yes | 12 |");
-        expect(md).toContain("| **Total** | **10** | **5** | **1** |");
+        expect(md).toContain("| Account | Published (new) | Updated | Staged | Failed | Rate-limited | Remaining |");
+        expect(md).toContain("| Kevin | 5 | 3 | 0 | 0 | — | 10 |");
+        expect(md).toContain("| Jack | 5 | 2 | 4 | 1 | ⚠️ yes | 12 |");
+        expect(md).toContain("| **Total** | **10** | **5** | **4** | **1** |");
         expect(md).toContain("Rate-limited this run: Jack");
         expect(md).toContain("22 skill(s) still pending");
+    });
+
+    test("notes staged skills accepted for ClawHub's async prepublication checks", () => {
+        const md = formatSummaryMarkdown(stats, []).join("\n");
+        expect(md).toContain("4 skill(s) accepted and staged for ClawHub's prepublication security checks");
+    });
+
+    test("omits the staged note when nothing was staged", () => {
+        const md = formatSummaryMarkdown([{ name: "Kevin", published: 1, updated: 0, staged: 0, failed: 0, rateLimited: false, remaining: 0 }], []).join("\n");
+        expect(md).not.toContain("staged for ClawHub's prepublication");
     });
 
     test("lists blocked skills needing a version bump", () => {
@@ -567,7 +597,7 @@ describe("formatSummaryMarkdown", () => {
     });
 
     test("uses account NAMES only — a results table can never carry a token", () => {
-        const md = formatSummaryMarkdown([{ name: "Kevin", published: 1, updated: 0, failed: 0, rateLimited: false, remaining: 0 }], []).join("\n");
+        const md = formatSummaryMarkdown([{ name: "Kevin", published: 1, updated: 0, staged: 0, failed: 0, rateLimited: false, remaining: 0 }], []).join("\n");
         expect(md).toContain("Kevin");
         expect(md).not.toContain("configPath");
         expect(md).not.toMatch(/token|api[_-]?key/i);
@@ -751,7 +781,7 @@ describe("run", () => {
         expect(run(cfg, deps)).toBe(0);
         expect(publishCalls).toHaveLength(0);
         expect(logs.some(l => l.includes("Nothing to publish"))).toBe(true);
-        expect(reports).toEqual([{ published: 0, updated: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] }]);
+        expect(reports).toEqual([{ published: 0, updated: 0, staged: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] }]);
     });
 
     test("dry-run -> never publishes, previews distribution, lists blockers", () => {
@@ -784,7 +814,7 @@ describe("run", () => {
         expect(kevin.sort()).toEqual(["app-skills/oo-a", "app-skills/oo-c", "app-skills/oo-x"]);
         expect(jack.sort()).toEqual(["app-skills/oo-b"]);
         // 3 new published, 1 updated, nothing left
-        expect(reports[0]).toEqual({ published: 3, updated: 1, failed: 0, remaining: 0, rateLimitedAccounts: [] });
+        expect(reports[0]).toEqual({ published: 3, updated: 1, staged: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] });
     });
 
     test("caps NEW publishes per account and reports the overflow as remaining", () => {
@@ -798,7 +828,7 @@ describe("run", () => {
         expect(run(cfg, deps)).toBe(0);
         // one account, cap 2 -> publishes the 2 lowest, defers 3
         expect(publishCalls).toHaveLength(2);
-        expect(reports[0]).toEqual({ published: 2, updated: 0, failed: 0, remaining: 3, rateLimitedAccounts: [] });
+        expect(reports[0]).toEqual({ published: 2, updated: 0, staged: 0, failed: 0, remaining: 3, rateLimitedAccounts: [] });
     });
 
     test("a per-account rate limit soft-stops that account and defers the rest (exit 0)", () => {
@@ -814,8 +844,29 @@ describe("run", () => {
         });
         expect(run(cfg, deps)).toBe(0);
         expect(publishCalls.map(c => c.cmd.find(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-a", "app-skills/oo-b"]);
-        expect(reports[0]).toEqual({ published: 1, updated: 0, failed: 0, remaining: 2, rateLimitedAccounts: ["solo"] });
+        expect(reports[0]).toEqual({ published: 1, updated: 0, staged: 0, failed: 0, remaining: 2, rateLimitedAccounts: ["solo"] });
         expect(logs.some(l => l.includes("rate limit reached"))).toBe(true);
+    });
+
+    test("a staged (pending) publish is accepted, not failed: run stays green and keeps going", () => {
+        const cfg = { ...baseCfg };
+        const slugs = ["oo-a", "oo-b", "oo-c"];
+        const { deps, publishCalls, reports, summaries, logs } = makeDeps(cfg, {
+            sync: { wouldPublish: slugs.map(newCand) },
+            versions: versionsFor(Object.fromEntries(slugs.map(s => [s, "1.0.0"]))),
+            accounts: [{ name: "solo", configPath: "/s" }],
+            // ClawHub staged oo-b behind its async prepublication checks: the CLI exits non-zero with
+            // the response-schema error, but the upload was accepted — it must not fail the run.
+            publishCode: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? 1 : 0),
+            publishOutput: cmd => (cmd.some(a => a.includes("app-skills/oo-b")) ? "✖ API response: skillId: invalid value; versionId: invalid value" : ""),
+        });
+        expect(run(cfg, deps)).toBe(0);
+        // every skill is still attempted (staging is not a stop like a rate limit)
+        expect(publishCalls).toHaveLength(3);
+        // 2 published outright, 1 staged, nothing failed or remaining
+        expect(reports[0]).toEqual({ published: 2, updated: 0, staged: 1, failed: 0, remaining: 0, rateLimitedAccounts: [] });
+        expect(logs.some(l => l.includes("::notice::") && l.includes("oo-b") && l.includes("staged for ClawHub"))).toBe(true);
+        expect(summaries[0]!.join("\n")).toContain("1 skill(s) accepted and staged for ClawHub's prepublication security checks");
     });
 
     test("a genuine publish failure is counted and fails the run (exit 1) but other skills still go", () => {
@@ -954,11 +1005,11 @@ describe("run", () => {
         // a genuine failure (Kevin) fails the whole run; Jack's rate limit is soft.
         expect(run(cfg, deps)).toBe(1);
         // totals aggregate both accounts; only Jack is rate-limited.
-        expect(reports[0]).toEqual({ published: 2, updated: 0, failed: 1, remaining: 2, rateLimitedAccounts: ["Jack"] });
+        expect(reports[0]).toEqual({ published: 2, updated: 0, staged: 0, failed: 1, remaining: 2, rateLimitedAccounts: ["Jack"] });
         // per-account rows in the results table are independent
         const md = summaries[0]!.join("\n");
-        expect(md).toContain("| Kevin | 1 | 0 | 1 | — | 1 |");
-        expect(md).toContain("| Jack | 1 | 0 | 0 | ⚠️ yes | 1 |");
+        expect(md).toContain("| Kevin | 1 | 0 | 0 | 1 | — | 1 |");
+        expect(md).toContain("| Jack | 1 | 0 | 0 | 0 | ⚠️ yes | 1 |");
     });
 
     test("updates-only re-run: every update publishes (uncapped), round-robin across accounts, nothing remaining", () => {
@@ -980,7 +1031,7 @@ describe("run", () => {
         expect(folders("Bob")).toEqual(["app-skills/oo-w", "app-skills/oo-z"]);
         expect(folders("Carol")).toEqual(["app-skills/oo-x"]);
         // 0 new, 5 updated, nothing deferred or pending
-        expect(reports[0]).toEqual({ published: 0, updated: 5, failed: 0, remaining: 0, rateLimitedAccounts: [] });
+        expect(reports[0]).toEqual({ published: 0, updated: 5, staged: 0, failed: 0, remaining: 0, rateLimitedAccounts: [] });
     });
 
     test("genuine failure then rate-limit within one account: failed counted, then loop breaks, exit 1", () => {
@@ -997,7 +1048,7 @@ describe("run", () => {
         expect(run(cfg, deps)).toBe(1); // a genuine failure takes precedence over the soft rate-limit stop
         expect(publishCalls.map(c => c.cmd.find(a => a.startsWith("app-skills/")))).toEqual(["app-skills/oo-a", "app-skills/oo-b", "app-skills/oo-c"]);
         // remaining = assigned(3) - published(1) - updated(0) = 2 (the failed oo-b + the rate-limited oo-c)
-        expect(reports[0]).toEqual({ published: 1, updated: 0, failed: 1, remaining: 2, rateLimitedAccounts: ["solo"] });
+        expect(reports[0]).toEqual({ published: 1, updated: 0, staged: 0, failed: 1, remaining: 2, rateLimitedAccounts: ["solo"] });
         expect(logs.some(l => l.includes("exited with code 42"))).toBe(true);
         expect(logs.some(l => l.includes("rate limit reached"))).toBe(true);
     });
