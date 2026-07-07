@@ -633,6 +633,11 @@ export interface AccountStats {
     published: number;
     /** Existing skills successfully updated (new version) this run. */
     updated: number;
+    /**
+     * Skills accepted by ClawHub but queued behind its asynchronous prepublication security checks
+     * (see isStagedPublishPending). The upload succeeded; the version finalizes once the checks pass.
+     */
+    staged: number;
     /** Skills attempted but rejected for a non-rate-limit reason. */
     failed: number;
     /** True when ClawHub's quota stopped this account mid-run (the rest is deferred). */
@@ -644,6 +649,7 @@ export interface AccountStats {
 export interface Totals {
     published: number;
     updated: number;
+    staged: number;
     failed: number;
     remaining: number;
     rateLimitedAccounts: string[];
@@ -653,6 +659,7 @@ export function totalsOf(stats: readonly AccountStats[]): Totals {
     return {
         published: stats.reduce((n, s) => n + s.published, 0),
         updated: stats.reduce((n, s) => n + s.updated, 0),
+        staged: stats.reduce((n, s) => n + s.staged, 0),
         failed: stats.reduce((n, s) => n + s.failed, 0),
         remaining: stats.reduce((n, s) => n + s.remaining, 0),
         rateLimitedAccounts: stats.filter(s => s.rateLimited).map(s => s.name),
@@ -675,13 +682,15 @@ export function formatSummaryMarkdown(stats: readonly AccountStats[], blocked: r
     const lines: string[] = [];
     lines.push("### ClawHub publish results");
     lines.push("");
-    lines.push("| Account | Published (new) | Updated | Failed | Rate-limited | Remaining |");
-    lines.push("| --- | ---: | ---: | ---: | :---: | ---: |");
+    lines.push("| Account | Published (new) | Updated | Staged | Failed | Rate-limited | Remaining |");
+    lines.push("| --- | ---: | ---: | ---: | ---: | :---: | ---: |");
     for (const s of stats) {
-        lines.push(`| ${s.name} | ${s.published} | ${s.updated} | ${s.failed} | ${s.rateLimited ? "⚠️ yes" : "—"} | ${s.remaining} |`);
+        lines.push(`| ${s.name} | ${s.published} | ${s.updated} | ${s.staged} | ${s.failed} | ${s.rateLimited ? "⚠️ yes" : "—"} | ${s.remaining} |`);
     }
-    lines.push(`| **Total** | **${t.published}** | **${t.updated}** | **${t.failed}** | ${t.rateLimitedAccounts.length ? `**${t.rateLimitedAccounts.length}**` : "—"} | **${t.remaining}** |`);
+    lines.push(`| **Total** | **${t.published}** | **${t.updated}** | **${t.staged}** | **${t.failed}** | ${t.rateLimitedAccounts.length ? `**${t.rateLimitedAccounts.length}**` : "—"} | **${t.remaining}** |`);
     lines.push("");
+    if (t.staged > 0)
+        lines.push(`> ${t.staged} skill(s) accepted and staged for ClawHub's prepublication security checks (TruffleHog + ClawScan) — they finalize asynchronously and appear in the registry once the checks pass. A staged skill that fails its checks is picked up again on the next run.`);
     if (t.rateLimitedAccounts.length)
         lines.push(`> Rate-limited this run: ${t.rateLimitedAccounts.join(", ")} — their remaining skills roll over to the next run.`);
     if (t.remaining > 0)
@@ -718,6 +727,29 @@ export interface PublishOutcome {
  */
 export function isRateLimitError(output: string): boolean {
     return /rate limit/i.test(output) || /new skills per hour/i.test(output);
+}
+
+/**
+ * True when a failed `clawhub publish` actually reflects ClawHub's *staged* publish flow rather than
+ * a real rejection. ClawHub can gate publishes behind asynchronous prepublication security checks
+ * (TruffleHog + ClawScan) via a server-side flag. When it is on, `POST /api/v1/skills` still ACCEPTS
+ * the upload (HTTP 200) but returns `{ ok: true, status: "pending", attemptId, slug, version }` — the
+ * version is queued and finalizes once the checks pass. The pinned CLI validates that response
+ * against a schema that requires `skillId` and `versionId`, which the pending body omits, so it
+ * exits non-zero with an arktype response-parse error of exactly:
+ *   API response: skillId: invalid value; versionId: invalid value
+ * That is a client-side schema mismatch, not a failed publish: the upload was accepted server-side
+ * before the response was sent. We detect this specific signature so the run reports the skill as
+ * "staged" (accepted, pending checks) instead of failing the whole workflow. This is safe because
+ * the publish step is idempotent — a staged skill that ultimately fails its checks simply reappears
+ * in the next `clawhub sync` diff and is retried — so treating "pending" as accepted never loses a
+ * skill. NOTE: no released/pinned CLI version parses the pending body, so bumping CLAWHUB_SOURCE_REF
+ * does not resolve this; tolerating it here is the fix until the CLI adds first-class support.
+ */
+export function isStagedPublishPending(output: string): boolean {
+    return /API response:/i.test(output)
+        && /skillId: invalid value/i.test(output)
+        && /versionId: invalid value/i.test(output);
 }
 
 export function buildPublishArgs(
@@ -894,7 +926,7 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
     // skills (up to the cap) then its updates, stopping early on its own rate limit. Per-account
     // remaining = everything assigned that did not publish this run (over-cap, failed, or deferred).
     for (const plan of plans) {
-        const s: AccountStats = { name: plan.account.name, published: 0, updated: 0, failed: 0, rateLimited: false, remaining: 0 };
+        const s: AccountStats = { name: plan.account.name, published: 0, updated: 0, staged: 0, failed: 0, rateLimited: false, remaining: 0 };
         const queue: Array<{ kind: "new" | "update"; t: Target }> = [
             ...plan.newTargets.map(t => ({ kind: "new" as const, t })),
             ...plan.updateTargets.map(t => ({ kind: "update" as const, t })),
@@ -923,19 +955,26 @@ export function run(cfg: RunConfig, deps: RunDeps): number {
                 deps.log(`::warning::[${plan.account.name}] ClawHub rate limit reached — deferring ${t.slug} and the rest to a later run.`);
                 break;
             }
+            else if (isStagedPublishPending(output)) {
+                // ClawHub accepted the upload but queued it behind its async prepublication checks;
+                // the pinned CLI can't parse the "pending" response and exits non-zero. Not a
+                // failure — count it as staged and keep going (see isStagedPublishPending).
+                s.staged++;
+                deps.log(`::notice::[${plan.account.name}] ${t.slug}@${t.version} accepted and staged for ClawHub's prepublication security checks — it finalizes asynchronously once TruffleHog + ClawScan pass.`);
+            }
             else {
                 s.failed++;
                 hardFailure = true;
                 deps.log(`::error::[${plan.account.name}] ${t.slug}: clawhub publish exited with code ${code}`);
             }
         }
-        s.remaining = assigned - s.published - s.updated;
+        s.remaining = assigned - s.published - s.updated - s.staged;
         stats.push(s);
     }
 
     const totals = totalsOf(stats);
     deps.log("");
-    deps.log(`Done. Published ${totals.published} new, updated ${totals.updated}, failed ${totals.failed}, remaining ${totals.remaining}.`);
+    deps.log(`Done. Published ${totals.published} new, updated ${totals.updated}, staged ${totals.staged}, failed ${totals.failed}, remaining ${totals.remaining}.`);
     if (totals.rateLimitedAccounts.length)
         deps.log(`Rate-limited account(s) this run: ${totals.rateLimitedAccounts.join(", ")}.`);
     if (totals.remaining > 0)
@@ -1127,7 +1166,7 @@ if (import.meta.main) {
                 try {
                     appendFileSync(
                         outputPath,
-                        `published=${t.published}\nupdated=${t.updated}\nfailed=${t.failed}\nremaining=${t.remaining}\n`
+                        `published=${t.published}\nupdated=${t.updated}\nstaged=${t.staged}\nfailed=${t.failed}\nremaining=${t.remaining}\n`
                         + `rate_limited=${t.rateLimitedAccounts.length > 0}\ndone=${t.remaining === 0 && t.failed === 0}\n`,
                     );
                 }
