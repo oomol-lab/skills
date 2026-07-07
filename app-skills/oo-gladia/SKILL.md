@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gladia"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gladia"]
   icon: "https://static.oomol.com/logo/third-party/gladia.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_transcription` — Retrieve a Gladia pre-recorded transcription job by ID, including results when done.
 - `list_transcriptions` — List Gladia pre-recorded transcription jobs with optional pagination, date, status, and metadata filters.
 - `start_transcription` — Start an asynchronous Gladia pre-recorded transcription job from a public audio or video URL. [write]
-- `upload_file` — Upload an audio or video file up to 100 MiB to Gladia from a local file path, connector transit file, base64 content, or public URL. [write]
+- `upload_file` — Upload an audio or video file up to 100 MiB from connector transit storage to Gladia. [write]
 
 ## Safety
 

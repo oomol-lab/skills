@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Wiza"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["wiza"]
   icon: "https://static.oomol.com/logo/third-party/wiza.png"
 ---
@@ -37,11 +37,11 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_credits` — Get the remaining Wiza API credit balances for the connected account, matching the WIZA_GET_CREDITS Composio tool.
-- `get_individual_reveal` — Get the status and results of a Wiza individual reveal by ID, matching the WIZA_GET_INDIVIDUAL_REVEAL Composio tool.
-- `get_list` — Get the status and details of a Wiza list by ID, matching the WIZA_GET_LIST Composio tool.
-- `prospect_search` — Search Wiza prospects with a filters object, matching the WIZA_PROSPECT_SEARCH Composio tool.
-- `start_individual_reveal` — Start a Wiza individual reveal for real-time single contact enrichment, matching the WIZA_START_INDIVIDUAL_REVEAL Composio tool. [write]
+- `get_credits` — Get the remaining Wiza API credit balances for the connected account.
+- `get_individual_reveal` — Get the status and results of a Wiza individual reveal by ID.
+- `get_list` — Get the status and details of a Wiza list by ID.
+- `prospect_search` — Search Wiza prospects with a filters object.
+- `start_individual_reveal` — Start a Wiza individual reveal for real-time single contact enrichment. [write]
 
 ## Safety
 

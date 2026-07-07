@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Firecrawl"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["firecrawl"]
   icon: "https://static.oomol.com/logo/third-party/Firecrawl.svg"
 ---
@@ -42,9 +42,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `batch_scrape_cancel` — Cancel a running Firecrawl batch scrape job by job ID. [write]
 - `batch_scrape_get` — Get the current status and paged results of a Firecrawl batch scrape job by job ID.
 - `batch_scrape_get_errors` — Get the failed URLs and robots.txt blocks from a Firecrawl batch scrape job.
-- `crawl` — Start a Firecrawl crawl job with compatibility fields accepted from the Composio crawl action.
+- `crawl` — Start a Firecrawl crawl job with compatibility fields accepted from legacy crawl inputs.
 - `crawl_cancel` — Cancel a running Firecrawl crawl job by job ID. [write]
-- `crawl_delete` — Compatibility alias of crawl_cancel for the Composio FIRECRAWL_CRAWL_DELETE action. [destructive]
+- `crawl_delete` — Compatibility alias of crawl_cancel for the FIRECRAWL_CRAWL_DELETE action name. [destructive]
 - `crawl_get` — Get the current status and paged results of a Firecrawl crawl job by job ID.
 - `crawl_get_errors` — Get the failed URLs and robots.txt blocks from a Firecrawl crawl job.
 - `crawl_list_active` — List the currently active Firecrawl crawl jobs for the authenticated team.
@@ -57,10 +57,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `extract_get` — Get the current status and output of a Firecrawl extract job by job ID.
 - `get_agent_status` — Get the current status and output of a Firecrawl agent job by job ID.
 - `get_deep_research_status` — Get the current status and output of a Firecrawl deep research job by job ID.
-- `get_the_status_of_a_crawl_job` — Compatibility alias of crawl_get for the Composio FIRECRAWL_GET_THE_STATUS_OF_A_CRAWL_JOB action.
+- `get_the_status_of_a_crawl_job` — Compatibility alias of crawl_get for the FIRECRAWL_GET_THE_STATUS_OF_A_CRAWL_JOB action name.
 - `llms_txt_generate` — Start an LLMs.txt generation job for a website. This endpoint remains outside the main v2 endpoint set in Firecrawl's docs.
 - `llms_txt_get` — Get the current status and generated content of an LLMs.txt job by job ID.
-- `map_multiple_urls_based_on_options` — Discover URLs from a website with Firecrawl's map endpoint using the Composio-compatible action name.
+- `map_multiple_urls_based_on_options` — Discover URLs from a website with Firecrawl's map endpoint using a legacy action name.
 - `queue_get` — Get the authenticated Firecrawl team's queue status and concurrency information.
 - `scrape` — Scrape a single URL with Firecrawl and return the extracted page content in the requested formats.
 - `search` — Search the web with Firecrawl and optionally scrape the top results in the requested formats.

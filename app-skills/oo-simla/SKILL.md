@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Simla.com"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["simla"]
+  icon: "https://static.oomol.com/logo/third-party/simla.svg"
 ---
 
 # Simla.com
