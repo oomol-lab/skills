@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Browser Run"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cloudflare_browser_rendering"]
+  icon: "https://static.oomol.com/logo/third-party/cloudflare_browser_rendering.svg"
 ---
 
 # Cloudflare Browser Run

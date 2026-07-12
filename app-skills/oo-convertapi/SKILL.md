@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ConvertAPI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["convertapi"]
+  icon: "https://static.oomol.com/logo/third-party/convertapi.svg"
 ---
 
 # ConvertAPI

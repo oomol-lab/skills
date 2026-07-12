@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LogSnag"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["logsnag"]
+  icon: "https://static.oomol.com/logo/third-party/logsnag.svg"
 ---
 
 # LogSnag

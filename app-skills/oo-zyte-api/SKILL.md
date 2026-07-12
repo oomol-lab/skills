@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zyte API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["zyte_api"]
+  icon: "https://static.oomol.com/logo/third-party/zyte_api.svg"
 ---
 
 # Zyte API

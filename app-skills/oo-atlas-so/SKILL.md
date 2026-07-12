@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Atlas.so"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["atlas_so"]
+  icon: "https://static.oomol.com/logo/third-party/atlas_so.svg"
 ---
 
 # Atlas.so

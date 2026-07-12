@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "IQAir AirVisual"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["iqair_airvisual"]
+  icon: "https://static.oomol.com/logo/third-party/iqair_airvisual.svg"
 ---
 
 # IQAir AirVisual

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Intercom"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["intercom"]
   icon: "https://static.oomol.com/logo/third-party/Intercom.svg"
 ---
@@ -40,16 +40,26 @@ Each action is listed below with a one-line description; actions that change sta
 - `close_conversation` — Close an Intercom conversation. [write]
 - `create_contact` — Create a new Intercom contact. [write]
 - `get_admin` — Get a single Intercom admin by identifier.
+- `get_article` — Get a single Intercom help center article by identifier.
+- `get_company` — Get a single Intercom company by company ID or name.
 - `get_contact` — Get a single Intercom contact by identifier.
 - `get_contact_by_external_id` — Get a single Intercom contact by external ID.
 - `get_conversation` — Get a single Intercom conversation with its conversation parts.
+- `get_counts` — Read Intercom workspace, conversation, or grouped counts.
 - `get_current_admin` — Get the currently authorized Intercom admin and workspace metadata.
+- `get_job_status` — Get the status of an Intercom asynchronous job.
+- `get_ticket` — Get a single Intercom ticket by internal ticket identifier.
 - `list_admins` — List Intercom admins for the current workspace.
+- `list_articles` — List Intercom help center articles.
+- `list_companies` — List Intercom companies with pagination.
 - `list_contacts` — List Intercom contacts with cursor-based pagination.
 - `list_conversations` — List Intercom conversations with cursor-based pagination.
+- `list_events` — List recent Intercom data events for one user or lead.
+- `list_tags` — List all Intercom tags for the current workspace.
 - `reopen_conversation` — Reopen an Intercom conversation. [write]
 - `reply_to_conversation` — Reply to an Intercom conversation as an admin. [write]
 - `search_contacts` — Search Intercom contacts with the official search DSL.
+- `search_tickets` — Search Intercom tickets with the official search DSL.
 - `update_contact` — Update an existing Intercom contact. [write]
 
 ## Safety

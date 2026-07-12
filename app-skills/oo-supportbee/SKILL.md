@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SupportBee"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["supportbee"]
+  icon: "https://static.oomol.com/logo/third-party/supportbee.png"
 ---
 
 # SupportBee

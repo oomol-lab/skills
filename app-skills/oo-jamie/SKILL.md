@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jamie"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jamie"]
+  icon: "https://static.oomol.com/logo/third-party/jamie.png"
 ---
 
 # Jamie

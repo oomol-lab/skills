@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cin7 Core"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cin7_core"]
+  icon: "https://static.oomol.com/logo/third-party/cin7_core.svg"
 ---
 
 # Cin7 Core

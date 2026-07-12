@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Glyphic"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["glyphic"]
+  icon: "https://static.oomol.com/logo/third-party/glyphic.svg"
 ---
 
 # Glyphic

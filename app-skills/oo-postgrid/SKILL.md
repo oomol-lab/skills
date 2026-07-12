@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PostGrid"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["postgrid"]
+  icon: "https://static.oomol.com/logo/third-party/postgrid.svg"
 ---
 
 # PostGrid

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Data247"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["data247"]
+  icon: "https://static.oomol.com/logo/third-party/data247.png"
 ---
 
 # Data247

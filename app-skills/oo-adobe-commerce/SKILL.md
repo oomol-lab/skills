@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Adobe Commerce"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["adobe_commerce"]
+  icon: "https://static.oomol.com/logo/third-party/adobe_commerce.svg"
 ---
 
 # Adobe Commerce

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tapfiliate"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["tapfiliate"]
+  icon: "https://static.oomol.com/logo/third-party/tapfiliate.svg"
 ---
 
 # Tapfiliate

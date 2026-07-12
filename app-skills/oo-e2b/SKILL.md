@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "E2B"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["e2b"]
+  icon: "https://static.oomol.com/logo/third-party/e2b.svg"
 ---
 
 # E2B

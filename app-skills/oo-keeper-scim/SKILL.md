@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Keeper SCIM"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["keeper_scim"]
+  icon: "https://static.oomol.com/logo/third-party/keeper_scim.png"
 ---
 
 # Keeper SCIM

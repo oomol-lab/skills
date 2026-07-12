@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "JigsawStack"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jigsawstack"]
+  icon: "https://static.oomol.com/logo/third-party/jigsawstack.svg"
 ---
 
 # JigsawStack

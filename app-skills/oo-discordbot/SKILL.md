@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Discord Bot"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["discordbot"]
   icon: "https://static.oomol.com/logo/third-party/Discord%20Bot.svg"
 ---
@@ -205,7 +205,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Discord Bot is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Discord Bot is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, custom credential) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=discordbot

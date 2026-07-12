@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Moosend"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["moosend"]
+  icon: "https://static.oomol.com/logo/third-party/moosend.svg"
 ---
 
 # Moosend
