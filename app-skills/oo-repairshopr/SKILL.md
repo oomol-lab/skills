@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RepairShopr"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["repairshopr"]
+  icon: "https://static.oomol.com/logo/third-party/repairshopr.png"
 ---
 
 # RepairShopr

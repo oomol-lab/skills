@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Metabase"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["metabase"]
+  icon: "https://static.oomol.com/logo/third-party/metabase.svg"
 ---
 
 # Metabase

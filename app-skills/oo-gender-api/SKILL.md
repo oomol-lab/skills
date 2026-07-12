@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gender-API.com"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gender_api"]
+  icon: "https://static.oomol.com/logo/third-party/gender_api.svg"
 ---
 
 # Gender-API.com

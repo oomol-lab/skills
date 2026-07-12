@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenHands"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["open_hands"]
+  icon: "https://static.oomol.com/logo/third-party/open_hands.png"
 ---
 
 # OpenHands

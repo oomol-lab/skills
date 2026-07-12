@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fern"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["fern"]
+  icon: "https://static.oomol.com/logo/third-party/fern.svg"
 ---
 
 # Fern

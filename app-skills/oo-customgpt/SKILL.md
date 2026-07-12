@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CustomGPT.ai"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["customgpt"]
+  icon: "https://static.oomol.com/logo/third-party/customgpt.svg"
 ---
 
 # CustomGPT.ai

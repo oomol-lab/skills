@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kintone"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kintone"]
+  icon: "https://static.oomol.com/logo/third-party/kintone.svg"
 ---
 
 # Kintone

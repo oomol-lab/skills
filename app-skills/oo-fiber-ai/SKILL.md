@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fiber AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["fiber_ai"]
+  icon: "https://static.oomol.com/logo/third-party/fiber_ai.svg"
 ---
 
 # Fiber AI

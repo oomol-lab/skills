@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jam"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wejam_ai"]
+  icon: "https://static.oomol.com/logo/third-party/wejam_ai.png"
 ---
 
 # Jam

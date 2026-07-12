@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DaData.ru"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dadata_ru"]
+  icon: "https://static.oomol.com/logo/third-party/dadata_ru.svg"
 ---
 
 # DaData.ru

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Accredible Certificates"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["accredible_certificates"]
+  icon: "https://static.oomol.com/logo/third-party/accredible_certificates.png"
 ---
 
 # Accredible Certificates

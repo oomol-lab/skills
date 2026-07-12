@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WebScraping.AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["webscraping_ai"]
+  icon: "https://static.oomol.com/logo/third-party/webscraping_ai.png"
 ---
 
 # WebScraping.AI

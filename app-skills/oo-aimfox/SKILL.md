@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Aimfox"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["aimfox"]
+  icon: "https://static.oomol.com/logo/third-party/aimfox.svg"
 ---
 
 # Aimfox

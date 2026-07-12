@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Workpath"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["workpath"]
+  icon: "https://static.oomol.com/logo/third-party/workpath.svg"
 ---
 
 # Workpath

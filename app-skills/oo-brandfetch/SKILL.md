@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Brandfetch"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["brandfetch"]
   icon: "https://static.oomol.com/logo/third-party/Brandfetch.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_brand` — Fetch a Brandfetch brand profile from a domain, Brand ID, ISIN, or stock ticker identifier.
+- `get_brand` — Fetch a Brandfetch brand profile using an explicit domain, ticker, ISIN, crypto symbol, or Brand ID lookup.
 - `get_transaction_info` — Resolve a raw transaction label into the corresponding Brandfetch merchant brand profile.
 
 ## Safety

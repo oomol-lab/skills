@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Freshsales"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["freshsales"]
+  icon: "https://static.oomol.com/logo/third-party/freshsales.svg"
 ---
 
 # Freshsales

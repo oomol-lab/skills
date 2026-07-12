@@ -1,22 +1,22 @@
 ---
 name: oo-monday
-description: "Monday (monday.com). Use this skill for ANY Monday request — reading, creating, updating, and deleting data. Whenever a task involves Monday, use this skill instead of calling the API directly."
+description: "monday (monday.com). Use this skill for ANY monday request — reading, creating, updating, and deleting data. Whenever a task involves monday, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "Monday"
+  title: "monday"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["monday"]
   icon: "https://static.oomol.com/logo/third-party/Monday.svg"
 ---
 
-# Monday
+# monday
 
-Operate **Monday** through your OOMOL-connected account. This skill calls the `monday` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **monday** through your OOMOL-connected account. This skill calls the `monday` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected Monday. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected monday. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -37,75 +37,75 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `activate_form` — Activate a Monday Workform so it starts accepting submissions. [write]
-- `add_teams_to_board` — Add Monday teams to a board as subscribers or owners. [write]
-- `add_users_to_board` — Add Monday users to a board as subscribers or owners. [write]
-- `archive_board` — Archive a Monday board. [write]
-- `archive_item` — Archive a Monday item. [write]
-- `assign_department_members` — Assign users to a Monday department on an enterprise account. [write]
-- `change_item_position` — Change a Monday item's position on the same board. [write]
-- `change_multiple_column_values` — Change multiple Monday column values in one mutation using the official JSON payload shape. [write]
-- `change_simple_column_value` — Change a Monday column value using the official simple string mutation. [write]
-- `clear_users_department` — Clear department assignments from Monday users on an enterprise account. [destructive]
-- `create_board` — Create a Monday board with the official create_board mutation. [write]
-- `create_column` — Create a Monday column on an existing board. [write]
-- `create_dashboard` — Create a Monday dashboard with the official dashboard mutation. [write]
-- `create_department` — Create a Monday department on an enterprise account. [write]
-- `create_doc` — Create a Monday doc in a workspace or document column location. [write]
-- `create_form` — Create a Monday Workform and its destination responses board. [write]
-- `create_group` — Create a Monday group on an existing board. [write]
-- `create_item` — Create a Monday item on a board, optionally setting column values and position. [write]
-- `create_subitem` — Create a Monday subitem under an existing parent item. [write]
-- `create_update` — Create a Monday update on an item or as a reply to an existing update. [write]
-- `deactivate_form` — Deactivate a Monday Workform so it stops accepting submissions. [destructive]
-- `delete_board` — Delete a Monday board. [destructive]
-- `delete_column` — Delete a Monday column from an existing board. [destructive]
-- `delete_dashboard` — Delete a Monday dashboard. [destructive]
-- `delete_department` — Delete a Monday department on an enterprise account. [destructive]
-- `delete_doc` — Delete an existing Monday doc. [destructive]
-- `delete_group` — Delete a Monday group from an existing board. [destructive]
-- `delete_item` — Delete a Monday item. [destructive]
-- `delete_subscribers_from_board` — Remove Monday user subscribers from a board. [destructive]
-- `delete_teams_from_board` — Remove Monday team subscribers from a board. [destructive]
-- `delete_update` — Delete an existing Monday update. [destructive]
-- `duplicate_item` — Duplicate a Monday item. [write]
-- `edit_update` — Edit an existing Monday update. [write]
-- `find_items_by_column_values` — Find Monday items on a board by matching explicit column values.
-- `get_board_memberships` — Retrieve the user and team memberships configured on a Monday board.
-- `get_current_user` — Retrieve the Monday user associated with the current personal API token.
-- `get_form` — Retrieve a Monday Workform by its unique form token.
-- `get_items` — Retrieve specific Monday items by ID.
-- `get_items_page` — Retrieve a filtered page of Monday board items using the official items_page query.
-- `get_next_items_page` — Retrieve the next page of Monday items from an items_page cursor.
-- `list_activity_logs` — List board-scoped Monday activity logs.
-- `list_assets` — Retrieve one or more Monday assets by asset ID.
-- `list_audit_logs` — List account-level Monday audit logs on enterprise accounts.
-- `list_board_columns` — List the columns for a specific Monday board.
-- `list_boards` — List Monday boards with official pagination and board-level filters.
-- `list_departments` — List Monday departments on enterprise accounts.
-- `list_docs` — List Monday docs by document, object, or workspace identifiers.
-- `list_groups` — List the groups for a specific Monday board.
-- `list_subitems_by_parent` — List Monday subitems for one or more parent items.
-- `list_team_members` — List the members of a specific Monday team.
-- `list_teams` — List Monday teams with official filters and pagination.
-- `list_update_replies` — List Monday replies for updates on one or more boards. [write]
-- `list_updates` — List Monday updates with optional date filtering.
-- `list_users` — List Monday users with official root-level filters and pagination.
-- `list_workspaces` — List Monday workspaces with official filters and pagination.
-- `move_item_to_board` — Move a Monday item to another board and target group. [write]
-- `move_item_to_group` — Move a Monday item to another group on the same board. [write]
-- `set_item_description_content` — Replace a Monday item description using markdown content. [write]
-- `update_board` — Update a Monday board attribute with the official update_board mutation. [write]
-- `update_column` — Update a Monday column with the official update_column mutation. [write]
-- `update_dashboard` — Update a Monday dashboard with the official dashboard mutation. [write]
-- `update_department` — Update a Monday department on an enterprise account. [write]
-- `update_doc_name` — Update the name of an existing Monday doc. [write]
-- `update_group` — Update an existing Monday group attribute. [write]
+- `activate_form` — Activate a monday Workform so it starts accepting submissions. [write]
+- `add_teams_to_board` — Add monday teams to a board as subscribers or owners. [write]
+- `add_users_to_board` — Add monday users to a board as subscribers or owners. [write]
+- `archive_board` — Archive a monday board. [write]
+- `archive_item` — Archive a monday item. [write]
+- `assign_department_members` — Assign users to a monday department on an enterprise account. [write]
+- `change_item_position` — Change a monday item's position on the same board. [write]
+- `change_multiple_column_values` — Change multiple monday column values in one mutation using the official JSON payload shape. [write]
+- `change_simple_column_value` — Change a monday column value using the official simple string mutation. [write]
+- `clear_users_department` — Clear department assignments from monday users on an enterprise account. [destructive]
+- `create_board` — Create a monday board with the official create_board mutation. [write]
+- `create_column` — Create a monday column on an existing board. [write]
+- `create_dashboard` — Create a monday dashboard with the official dashboard mutation. [write]
+- `create_department` — Create a monday department on an enterprise account. [write]
+- `create_doc` — Create a monday doc in a workspace or document column location. [write]
+- `create_form` — Create a monday Workform and its destination responses board. [write]
+- `create_group` — Create a monday group on an existing board. [write]
+- `create_item` — Create a monday item on a board, optionally setting column values and position. [write]
+- `create_subitem` — Create a monday subitem under an existing parent item. [write]
+- `create_update` — Create a monday update on an item or as a reply to an existing update. [write]
+- `deactivate_form` — Deactivate a monday Workform so it stops accepting submissions. [destructive]
+- `delete_board` — Delete a monday board. [destructive]
+- `delete_column` — Delete a monday column from an existing board. [destructive]
+- `delete_dashboard` — Delete a monday dashboard. [destructive]
+- `delete_department` — Delete a monday department on an enterprise account. [destructive]
+- `delete_doc` — Delete an existing monday doc. [destructive]
+- `delete_group` — Delete a monday group from an existing board. [destructive]
+- `delete_item` — Delete a monday item. [destructive]
+- `delete_subscribers_from_board` — Remove monday user subscribers from a board. [destructive]
+- `delete_teams_from_board` — Remove monday team subscribers from a board. [destructive]
+- `delete_update` — Delete an existing monday update. [destructive]
+- `duplicate_item` — Duplicate a monday item. [write]
+- `edit_update` — Edit an existing monday update. [write]
+- `find_items_by_column_values` — Find monday items on a board by matching explicit column values.
+- `get_board_memberships` — Retrieve the user and team memberships configured on a monday board.
+- `get_current_user` — Retrieve the monday user associated with the current personal API token.
+- `get_form` — Retrieve a monday Workform by its unique form token.
+- `get_items` — Retrieve specific monday items by ID.
+- `get_items_page` — Retrieve a filtered page of monday board items using the official items_page query.
+- `get_next_items_page` — Retrieve the next page of monday items from an items_page cursor.
+- `list_activity_logs` — List board-scoped monday activity logs.
+- `list_assets` — Retrieve one or more monday assets by asset ID.
+- `list_audit_logs` — List account-level monday audit logs on enterprise accounts.
+- `list_board_columns` — List the columns for a specific monday board.
+- `list_boards` — List monday boards with official pagination and board-level filters.
+- `list_departments` — List monday departments on enterprise accounts.
+- `list_docs` — List monday docs by document, object, or workspace identifiers.
+- `list_groups` — List the groups for a specific monday board.
+- `list_subitems_by_parent` — List monday subitems for one or more parent items.
+- `list_team_members` — List the members of a specific monday team.
+- `list_teams` — List monday teams with official filters and pagination.
+- `list_update_replies` — List monday replies for updates on one or more boards. [write]
+- `list_updates` — List monday updates with optional date filtering.
+- `list_users` — List monday users with official root-level filters and pagination.
+- `list_workspaces` — List monday workspaces with official filters and pagination.
+- `move_item_to_board` — Move a monday item to another board and target group. [write]
+- `move_item_to_group` — Move a monday item to another group on the same board. [write]
+- `set_item_description_content` — Replace a monday item description using markdown content. [write]
+- `update_board` — Update a monday board attribute with the official update_board mutation. [write]
+- `update_column` — Update a monday column with the official update_column mutation. [write]
+- `update_dashboard` — Update a monday dashboard with the official dashboard mutation. [write]
+- `update_department` — Update a monday department on an enterprise account. [write]
+- `update_doc_name` — Update the name of an existing monday doc. [write]
+- `update_group` — Update an existing monday group attribute. [write]
 
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change Monday state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change monday state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -128,7 +128,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Monday is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — monday is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=monday
@@ -138,4 +138,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- Monday homepage: https://monday.com
+- monday homepage: https://monday.com

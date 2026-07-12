@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Clari Copilot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["clari_copilot"]
+  icon: "https://static.oomol.com/logo/third-party/clari_copilot.png"
 ---
 
 # Clari Copilot

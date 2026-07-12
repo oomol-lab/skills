@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Omnisend"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["omnisend"]
+  icon: "https://static.oomol.com/logo/third-party/omnisend.svg"
 ---
 
 # Omnisend

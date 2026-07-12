@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HERE"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["here"]
+  icon: "https://static.oomol.com/logo/third-party/here.svg"
 ---
 
 # HERE

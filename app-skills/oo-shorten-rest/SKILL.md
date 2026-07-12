@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shorten.REST"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["shorten_rest"]
+  icon: "https://static.oomol.com/logo/third-party/shorten_rest.jpg"
 ---
 
 # Shorten.REST
