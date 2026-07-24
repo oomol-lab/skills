@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Stannp"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["stannp"]
+  icon: "https://static.oomol.com/logo/third-party/stannp.svg"
 ---
 
 # Stannp

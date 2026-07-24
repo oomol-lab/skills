@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Autom"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["autom"]
+  icon: "https://static.oomol.com/logo/third-party/autom.svg"
 ---
 
 # Autom

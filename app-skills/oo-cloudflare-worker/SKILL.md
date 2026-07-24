@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Worker"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cloudflare_worker"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -37,16 +37,22 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `cancel_build` — Cancel a queued or running Workers Builds job. [write]
+- `create_manual_build` — Start a Workers Builds job from a configured trigger and branch or commit. [write]
 - `create_worker` — Create a Cloudflare Worker using the Workers beta API. [write]
 - `delete_worker` — Delete a Cloudflare Worker and its associated resources using the Workers beta API. [destructive]
 - `delete_worker_script` — Delete a Cloudflare Worker script. [destructive]
 - `delete_worker_script_secret` — Delete a secret binding from a Cloudflare Worker script. [destructive]
 - `edit_worker` — Partially update a Cloudflare Worker using the Workers beta API while leaving omitted fields unchanged. [write]
+- `get_build` — Get the current status and outcome of one Workers Builds job.
+- `get_build_logs` — Get one page of log lines for a Workers Builds job.
 - `get_worker` — Get one Worker by Worker ID using the Workers beta API.
 - `get_worker_script_content` — Fetch the raw source content for a Cloudflare Worker script.
 - `get_worker_script_secret` — Get one secret binding attached to a Cloudflare Worker script.
 - `get_worker_script_settings` — Get Worker metadata and configuration for a Cloudflare Worker script.
 - `list_accounts` — List Cloudflare accounts visible to the current credential.
+- `list_build_triggers` — List Workers Builds triggers configured for one Worker script tag.
+- `list_builds` — List Workers Builds jobs for one Worker script tag.
 - `list_worker_script_secrets` — List secret bindings attached to a Cloudflare Worker script.
 - `list_worker_scripts` — List Worker scripts in a Cloudflare account.
 - `list_workers` — List Workers in a Cloudflare account using the Workers beta API.
