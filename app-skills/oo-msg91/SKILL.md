@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MSG91"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["msg91"]
+  icon: "https://static.oomol.com/logo/third-party/msg91.svg"
 ---
 
 # MSG91
