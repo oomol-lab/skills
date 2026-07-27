@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jira"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jira"]
   icon: "https://static.oomol.com/logo/third-party/Jira.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Jira is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Jira is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, custom credential) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=jira

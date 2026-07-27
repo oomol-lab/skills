@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ChatPDF"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["chatpdf"]
+  icon: "https://static.oomol.com/logo/third-party/chatpdf.svg"
 ---
 
 # ChatPDF
