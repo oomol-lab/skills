@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ArcGIS Online"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["arcgis_online"]
+  icon: "https://static.oomol.com/logo/third-party/arcgis_online.svg"
 ---
 
 # ArcGIS Online

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Demio"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["demio"]
+  icon: "https://static.oomol.com/logo/third-party/demio.svg"
 ---
 
 # Demio

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Octopus Deploy"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["octopus_deploy"]
+  icon: "https://static.oomol.com/logo/third-party/octopus_deploy.svg"
 ---
 
 # Octopus Deploy

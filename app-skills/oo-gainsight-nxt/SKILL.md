@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gainsight NXT"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gainsight_nxt"]
+  icon: "https://static.oomol.com/logo/third-party/gainsight_nxt.svg"
 ---
 
 # Gainsight NXT

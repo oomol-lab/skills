@@ -1,22 +1,22 @@
 ---
 name: oo-shopify
-description: "Shopify REST Admin (shopify.com). Use this skill for ANY Shopify REST Admin request — searching and reading data. Whenever a task involves Shopify REST Admin, use this skill instead of calling the API directly."
+description: "Shopify REST Admin (Legacy) (shopify.com). Use this skill for ANY Shopify REST Admin (Legacy) request — searching and reading data. Whenever a task involves Shopify REST Admin (Legacy), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "Shopify REST Admin"
+  title: "Shopify REST Admin (Legacy)"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["shopify"]
   icon: "https://static.oomol.com/logo/third-party/shopify.svg"
 ---
 
-# Shopify REST Admin
+# Shopify REST Admin (Legacy)
 
-Operate **Shopify REST Admin** through your OOMOL-connected account. This skill calls the `shopify` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **Shopify REST Admin (Legacy)** through your OOMOL-connected account. This skill calls the `shopify` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected Shopify REST Admin. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected Shopify REST Admin (Legacy). **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -44,15 +44,17 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_blog` — Retrieve one Shopify REST blog by numeric ID.
 - `get_page` — Retrieve one Shopify REST page by numeric ID.
 - `get_shop` — Retrieve the connected Shopify REST Admin shop configuration.
+- `list_article_authors` — List Shopify REST article authors across the connected shop.
 - `list_article_tags` — List Shopify REST article tags across all articles in the connected shop.
 - `list_articles` — List Shopify REST articles in a blog with optional filters and pagination.
+- `list_blog_article_tags` — List Shopify REST article tags for one blog.
 - `list_blogs` — List Shopify REST blogs with optional handle filtering and pagination.
 - `list_pages` — List Shopify REST pages with optional filters and pagination.
 
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change Shopify REST Admin state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change Shopify REST Admin (Legacy) state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -75,7 +77,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shopify REST Admin is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shopify REST Admin (Legacy) is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=shopify
@@ -85,4 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- Shopify REST Admin homepage: https://www.shopify.com
+- Shopify REST Admin (Legacy) homepage: https://www.shopify.com

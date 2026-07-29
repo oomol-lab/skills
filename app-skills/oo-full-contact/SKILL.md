@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "FullContact"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["full_contact"]
+  icon: "https://static.oomol.com/logo/third-party/full_contact.svg"
 ---
 
 # FullContact

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OCR Web Service"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ocr_web_service"]
+  icon: "https://static.oomol.com/logo/third-party/ocr_web_service.svg"
 ---
 
 # OCR Web Service

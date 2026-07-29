@@ -1,33 +1,33 @@
 ---
-name: oo-zenscrape
-description: "Zenscrape (zenscrape.com). Use this skill for ANY Zenscrape request — searching and reading data. Whenever a task involves Zenscrape, use this skill instead of calling the API directly."
+name: oo-pod-ai
+description: "Pod AI (callpod.ai). Use this skill for ANY Pod AI request — reading, creating, and updating data. Whenever a task involves Pod AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "Zenscrape"
+  title: "Pod AI"
   author: "OOMOL"
-  version: "1.0.1"
-  services: ["zenscrape"]
-  icon: "https://static.oomol.com/logo/third-party/zenscrape.svg"
+  version: "1.0.0"
+  services: ["pod_ai"]
+  icon: "https://static.oomol.com/logo/third-party/pod_ai.png"
 ---
 
-# Zenscrape
+# Pod AI
 
-Operate **Zenscrape** through your OOMOL-connected account. This skill calls the `zenscrape` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **Pod AI** through your OOMOL-connected account. This skill calls the `pod_ai` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected Zenscrape. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected Pod AI. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
 ```bash
-oo connector schema "zenscrape" --action "<action_name>"
+oo connector schema "pod_ai" --action "<action_name>"
 ```
 
 **2. Run the action** with a JSON payload that matches the input schema:
 
 ```bash
-oo connector run "zenscrape" --action "<action_name>" --data '<json>' --json
+oo connector run "pod_ai" --action "<action_name>" --data '<json>' --json
 ```
 
 - `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
@@ -37,12 +37,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `fetch_url` — Fetch one public URL through Zenscrape with optional rendering, proxy, header, and wait controls.
+- `create_outbound_call` — Create an outbound phone call with a Pod AI voice agent. [write]
 
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change Zenscrape state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change Pod AI state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -65,14 +65,14 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Zenscrape is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Pod AI is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=zenscrape
+  https://console.oomol.com/app-connections?provider=pod_ai
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
 
 ## Resources
 
-- Zenscrape homepage: https://zenscrape.com
+- Pod AI homepage: https://callpod.ai/

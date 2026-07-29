@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Predis.ai"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["predis_ai"]
+  icon: "https://static.oomol.com/logo/third-party/predis_ai.svg"
 ---
 
 # Predis.ai
