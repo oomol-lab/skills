@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shopify Admin"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["shopify_admin"]
   icon: "https://static.oomol.com/logo/third-party/shopify_admin.svg"
 ---
@@ -37,10 +37,17 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `adjust_inventory_quantities` — Apply incremental Shopify inventory quantity changes with required idempotency and explicit compare-and-swap values.
+- `create_fulfillment` — Create a Shopify fulfillment for one or more fulfillment orders with optional tracking and customer notification. [write]
+- `create_product` — Create one Shopify product with typed product attributes and optional media sources. [write]
+- `download_bulk_result` — Download a completed or partial Shopify bulk JSONL result and upload it to connector transit storage.
 - `execute_graphql` — Execute a JSON-friendly Shopify Admin GraphQL query or mutation against the connected shop.
+- `get_bulk_operation` — Retrieve one Shopify bulk operation by ID for progress polling and result URL discovery.
 - `get_collection` — Retrieve one Shopify collection by GraphQL global ID.
 - `get_customer` — Retrieve one Shopify customer by GraphQL global ID.
+- `get_fulfillment_order` — Retrieve one Shopify fulfillment order with independently paginated line items. [write]
 - `get_inventory_item` — Retrieve one Shopify inventory item by GraphQL global ID.
+- `get_inventory_quantities` — Retrieve selected inventory quantity states for one Shopify inventory item at one location.
 - `get_location` — Retrieve one Shopify location by GraphQL global ID.
 - `get_order` — Retrieve one Shopify order by GraphQL global ID. [write]
 - `get_product` — Retrieve one Shopify product by GraphQL global ID.
@@ -49,9 +56,13 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_customers` — List Shopify customers with optional search query and cursor pagination.
 - `list_inventory_items` — List Shopify inventory items with optional search query and cursor pagination.
 - `list_locations` — List Shopify inventory locations with optional filters and cursor pagination.
+- `list_order_fulfillment_orders` — List fulfillment orders and fulfillable line items for one Shopify order. [write]
 - `list_orders` — List Shopify orders with optional search query and cursor pagination.
 - `list_product_variants` — List Shopify product variants with optional search query and cursor pagination.
 - `list_products` — List Shopify products with optional search query and cursor pagination.
+- `set_inventory_quantities` — Set absolute Shopify inventory quantities with required idempotency and explicit compare-and-swap values. [write]
+- `submit_bulk_query` — Submit a Shopify Admin GraphQL bulk query and return an operation ID for asynchronous polling. [write]
+- `update_product` — Update one Shopify product by GraphQL global ID with typed attributes and optional new media. [write]
 
 ## Safety
 
@@ -79,7 +90,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shopify Admin is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shopify Admin is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=shopify_admin
