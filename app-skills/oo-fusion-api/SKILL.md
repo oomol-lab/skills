@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---
@@ -61,6 +61,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `fal_nano_banana_result` — Get fal-nano-banana task result
 - `fal_nano_banana_state` — Get fal-nano-banana task state
 - `fal_nano_banana_submit` — Edit images with Nano Banana [write]
+- `fal_qwen_image_layered_result` — Get the Qwen Image Layered task result
+- `fal_qwen_image_layered_state` — Get the Qwen Image Layered task state
+- `fal_qwen_image_layered_submit` — Split an image into multiple layers with Qwen Image Layered [write]
 - `fal_remove_background_result` — Image with background removed [destructive]
 - `fal_remove_background_state` — Get fal-remove-background task state [destructive]
 - `fal_remove_background_submit` — Remove image backgrounds with the Fal.ai BRIA model [destructive]

@@ -1,11 +1,11 @@
 ---
 name: oo-mx-toolbox
-description: "MxToolbox. Use this skill for ANY MxToolbox request — searching and reading data. Whenever a task involves MxToolbox, use this skill instead of calling the API directly."
+description: "MxToolbox (mxtoolbox.com). Use this skill for ANY MxToolbox request — searching and reading data. Whenever a task involves MxToolbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "MxToolbox"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mx_toolbox"]
   icon: "https://static.oomol.com/logo/third-party/mx_toolbox.svg"
 ---
@@ -84,3 +84,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+## Resources
+
+- MxToolbox homepage: https://mxtoolbox.com

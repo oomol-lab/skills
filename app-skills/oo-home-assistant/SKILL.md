@@ -1,11 +1,11 @@
 ---
 name: oo-home-assistant
-description: "Home Assistant (home-assistant.io). Use this skill for ANY Home Assistant request — searching and reading data. Whenever a task involves Home Assistant, use this skill instead of calling the API directly."
+description: "Home Assistant (home-assistant.io). Use this skill for ANY Home Assistant request — reading, creating, updating, and deleting data. Whenever a task involves Home Assistant, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Home Assistant"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["home_assistant"]
   icon: "https://static.oomol.com/logo/third-party/home_assistant.svg"
 ---
@@ -38,13 +38,33 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `call_service` — Call a Home Assistant service to control entities, such as light.turn_on or switch.turn_off.
+- `check_config` — Ask Home Assistant to validate its own configuration files and report errors and warnings. Requires an admin access token.
+- `delete_automation_config` — Delete one Home Assistant automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
+- `delete_scene_config` — Delete one Home Assistant scene. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
+- `delete_script_config` — Delete one Home Assistant script. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
+- `execute_script` — Run a Home Assistant script sequence containing service calls, delays, and conditions.
 - `fire_event` — Fire one Home Assistant event with optional event data.
+- `get_automation_config` — Fetch the stored configuration for one Home Assistant automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found.
 - `get_config` — Fetch the Home Assistant instance configuration.
+- `get_error_log` — Fetch the Home Assistant error log for the current session as plain text. Home Assistant serves this only when the instance runs with file logging enabled, so it can report not found on an otherwise healthy instance.
+- `get_history` — Fetch recorded state history for one or more Home Assistant entities over a time period, for answering questions about how a value changed.
+- `get_logbook` — Fetch the Home Assistant logbook: the human-readable timeline of what happened and what triggered it, for diagnosing why something changed.
+- `get_registries` — List Home Assistant entity, device, area, floor, and label registries over the WebSocket API.
+- `get_scene_config` — Fetch the stored configuration for one Home Assistant scene. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found.
+- `get_script_config` — Fetch the stored configuration for one Home Assistant script. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found.
 - `get_state` — Fetch the current state for one Home Assistant entity.
+- `list_calendar_events` — List the events on one Home Assistant calendar between a start and end time.
+- `list_calendars` — List the calendar entities exposed by Home Assistant.
+- `list_device_automations` — List the triggers, conditions, and actions supported by one Home Assistant device.
 - `list_events` — List Home Assistant event types currently known by the instance.
 - `list_services` — List Home Assistant service domains and their available services.
 - `list_states` — List all current Home Assistant entity states.
 - `render_template` — Render a Home Assistant template against the connected instance.
+- `save_automation_config` — Create or replace one Home Assistant automation. Posting to an unused id creates the automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [write]
+- `save_scene_config` — Create or replace one Home Assistant scene. Posting to an unused id creates the scene. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [write]
+- `save_script_config` — Create or replace one Home Assistant script. Posting to an unused key creates the script. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [write]
+- `search_related` — Find Home Assistant items related to an entity, device, area, automation, or configuration entry.
+- `validate_config` — Validate Home Assistant trigger, condition, and action configurations before storing an automation.
 
 ## Safety
 

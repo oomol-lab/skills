@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["feishu"]
   icon: "https://static.oomol.com/logo/third-party/feishu.svg"
 ---
@@ -402,7 +402,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_base_table` — Rename a table in a Feishu Base. [write]
 - `update_base_workflow` — Replace a Base workflow definition while preserving its enabled state. [write]
 - `update_calendar_event` — Update Feishu calendar event fields and incrementally add or remove attendees. [write]
-- `update_chat` — Update a Feishu chat's profile and membership-related settings. [write]
+- `update_chat` — Update a Feishu chat's name or description. [write]
 - `update_document` — Update a Feishu document with a high-level text or block operation instead of manually orchestrating docx block APIs. [write]
 - `update_document_cover` — Upload an image from a public URL and set it as a Feishu docx document cover. [write]
 - `update_drive_comment` — Mark a Feishu Drive comment as solved or unresolved. [write]
