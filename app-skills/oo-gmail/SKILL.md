@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gmail"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gmail"]
   icon: "https://static.oomol.com/logo/third-party/Gmail.svg"
 ---
@@ -46,6 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_draft` — Permanently delete a Gmail draft by draft ID instead of sending it. [destructive]
 - `delete_filter` — Permanently delete a Gmail filter by filter ID. [destructive]
 - `delete_label` — Permanently delete a user-created Gmail label from the mailbox. This removes the label definition itself rather than just detaching it from one message. [destructive]
+- `download_attachment` — Download a Gmail message attachment using metadata returned by a message action and upload it to Connector file transit storage.
 - `fetch_emails` — List Gmail messages with optional query, label, and pagination filters. Use `detail` to choose between identifiers only, lightweight summaries, or full normalized messages.
 - `fetch_message_by_message_id` — Fetch a Gmail message by message ID with a controllable response format. Use this when you need the normalized full message payload instead of the simplified `get_message` output.
 - `fetch_message_by_thread_id` — Fetch all messages in a Gmail thread. Use this to inspect the full conversation payload for a known `threadId`.

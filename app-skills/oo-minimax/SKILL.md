@@ -1,11 +1,11 @@
 ---
 name: oo-minimax
-description: "MiniMax (minimax.io). Use this skill for ANY MiniMax request — reading, creating, and updating data. Whenever a task involves MiniMax, use this skill instead of calling the API directly."
+description: "MiniMax (minimax.io). Use this skill for ANY MiniMax request — reading, creating, updating, and deleting data. Whenever a task involves MiniMax, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "MiniMax"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["minimax"]
   icon: "https://static.oomol.com/logo/third-party/minimax.svg"
 ---
@@ -38,9 +38,17 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_response` — Create a non-streaming MiniMax response using the OpenAI Responses API shape. [write]
+- `create_video_generation_v2` — Create a MiniMax H3 video generation task with text, image, video, or audio content. [write]
+- `delete_video_generation_v2` — Delete a MiniMax H3 video generation task. [destructive]
+- `download_video` — Download a generated MiniMax video and store it in connector transit storage.
 - `estimate_input_tokens` — Estimate MiniMax response input tokens without invoking the model.
+- `image_to_video` — Create a MiniMax asynchronous image-to-video task from a public URL or data URI first frame.
 - `list_models` — List OpenAI-compatible MiniMax models available to the API key.
+- `list_video_generation_v2` — List MiniMax H3 video generation tasks.
+- `query_video_generation` — Query a MiniMax video generation task and return its status and file identifier.
+- `query_video_generation_v2` — Query a MiniMax H3 video generation task.
 - `retrieve_model` — Retrieve OpenAI-compatible metadata for one MiniMax model.
+- `text_to_video` — Create a MiniMax asynchronous text-to-video generation task.
 
 ## Safety
 

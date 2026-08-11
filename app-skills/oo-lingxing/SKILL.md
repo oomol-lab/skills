@@ -1,11 +1,11 @@
 ---
 name: oo-lingxing
-description: "Lingxing (lingxing.com). Use this skill for ANY Lingxing request — searching and reading data. Whenever a task involves Lingxing, use this skill instead of calling the API directly."
+description: "Lingxing (lingxing.com). Use this skill for ANY Lingxing request — reading, creating, and updating data. Whenever a task involves Lingxing, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Lingxing"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lingxing"]
   icon: "https://static.oomol.com/logo/third-party/lingxing.png"
 ---
@@ -37,8 +37,44 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current Lingxing ERP MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because some Lingxing tools create or update ERP data.
-- `list_tools` — Discover the current Lingxing ERP MCP tools and their live input schemas before choosing a tool to call.
+- `analyze_ad_keywords` — Analyze aggregated Sponsored Products and Sponsored Brands keyword metrics.
+- `analyze_ad_search_terms` — Analyze aggregated Sponsored Products and Sponsored Brands search-term metrics.
+- `batch_get_fba_shipments` — Get details for up to 50 Lingxing FBA shipment orders in one request.
+- `batch_get_products` — Get details for up to 100 Lingxing local products by IDs, SKUs, or SKU identifiers.
+- `get_fba_shipment` — Get one Lingxing FBA shipment order by shipment order number.
+- `get_fba_shipment_creation_result` — Get the processing result for an asynchronous FBA shipment creation request.
+- `get_product` — Get one local product from Lingxing by product ID, SKU, or SKU identifier.
+- `list_accounts` — List all ERP user accounts enabled for the Lingxing enterprise.
+- `list_ad_accounts` — List DSP, seller, or vendor advertising accounts authorized in Lingxing.
+- `list_competitor_monitors` — List Amazon competitor products monitored in Lingxing.
+- `list_concept_sellers` — List all Amazon concept stores configured in the Lingxing ERP account.
+- `list_currencies` — List the Lingxing ERP exchange rates for a calendar month.
+- `list_fba_inventory` — List current Lingxing FBA inventory with product, store, stock-state, and advanced search filters.
+- `list_fba_shipment_carriers` — List first-mile carriers available for Lingxing FBA shipment logistics.
+- `list_fba_shipment_fee_types` — List additional first-mile logistics fee types for Lingxing FBA shipments.
+- `list_fba_shipments` — List Lingxing FBA shipment orders with pagination and operational filters.
+- `list_keyword_rankings` — List monitored Amazon keyword rankings in Lingxing.
+- `list_listings` — List Amazon Listings in Lingxing with store, pairing, update-time, and product filters.
+- `list_marketplaces` — List all Amazon marketplaces configured in the Lingxing ERP account.
+- `list_msku_profit` — List Lingxing profit-report rows aggregated by merchant SKU.
+- `list_order_profit` — List Lingxing order-profit rows aggregated by merchant SKU. [write]
+- `list_product_performance` — List Amazon product performance aggregated by ASIN, parent ASIN, MSKU, or local SKU.
+- `list_products` — List local products in Lingxing with pagination, timestamp ranges, and SKU filters.
+- `list_sb_ad_group_reports` — List Sponsored Brands ad group performance for one report date.
+- `list_sb_campaign_reports` — List Sponsored Brands campaign performance for one report date.
+- `list_sb_product_ad_reports` — List Sponsored Brands advertising creative performance for one report date.
+- `list_sb_target_reports` — List Sponsored Brands targeting performance for one report date.
+- `list_sd_ad_group_reports` — List Sponsored Display ad group performance for one report date.
+- `list_sd_campaign_reports` — List Sponsored Display campaign performance for one report date.
+- `list_sd_product_ad_reports` — List Sponsored Display advertised-product performance for one report date.
+- `list_sd_target_reports` — List Sponsored Display targeting performance for one report date.
+- `list_sellers` — List all Amazon seller stores authorized in the Lingxing ERP account.
+- `list_sp_ad_group_reports` — List Sponsored Products ad group performance for one report date.
+- `list_sp_campaign_reports` — List Sponsored Products campaign performance for one report date.
+- `list_sp_product_ad_reports` — List Sponsored Products advertised-product performance for one report date.
+- `list_sp_target_reports` — List Sponsored Products targeting performance for one report date.
+- `list_states` — List standardized state and province codes for a country.
+- `list_world_states` — List states and provinces for an Amazon country configured in Lingxing.
 
 ## Safety
 

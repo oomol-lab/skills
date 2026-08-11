@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Grafana"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["grafana"]
   icon: "https://static.oomol.com/logo/third-party/grafana.svg"
 ---
@@ -43,9 +43,13 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_dashboard` — Delete a Grafana dashboard resource by UID. [destructive]
 - `delete_data_source` — Delete a Grafana data source by UID. [destructive]
 - `delete_folder` — Delete a Grafana folder by UID. [destructive]
+- `get_alert_rule` — Retrieve one Grafana-managed alert rule by UID via the provisioning API.
 - `get_dashboard` — Retrieve one Grafana dashboard resource by UID.
 - `get_data_source` — Retrieve one Grafana data source by UID.
 - `get_folder` — Retrieve one Grafana folder by UID.
+- `list_alert_instances` — List currently firing or pending Grafana alert instances from the built-in Alertmanager.
+- `list_alert_rules` — List all Grafana-managed alert rules via the provisioning API.
+- `list_contact_points` — List Grafana notification contact points via the provisioning API.
 - `list_data_sources` — List Grafana data sources available to the service account token.
 - `list_folders` — List Grafana folders in a namespace with optional pagination.
 - `search_dashboards` — Search Grafana folders and dashboards by query, tags, type, folder, and pagination.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mux"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mux"]
   icon: "https://static.oomol.com/logo/third-party/mux.svg"
 ---
@@ -37,11 +37,17 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `cancel_direct_upload` — Cancel a waiting Mux Direct Upload so it cannot create an asset. [write]
 - `create_asset` — Create a Mux on-demand video asset from a publicly accessible media URL and return its initial processing state. [write]
+- `create_direct_upload` — Create a signed Mux Direct Upload URL without proxying video bytes through the connector. [write]
 - `create_playback_id` — Create a public, signed, or DRM playback ID for an existing Mux asset. [write]
 - `delete_asset` — Permanently delete a Mux video asset and all of its data. [destructive]
 - `get_asset` — Retrieve the latest processing state and media details for one Mux video asset.
+- `get_direct_upload` — Retrieve the status, signed URL, and resulting asset ID for a Mux Direct Upload. [write]
+- `get_playback_id` — Resolve a Mux playback ID to its asset or live stream and access policy.
 - `list_assets` — List Mux video assets with cursor or page-based pagination and source filters.
+- `list_direct_uploads` — List Mux Direct Uploads in the current environment.
+- `update_asset` — Update the passthrough value or customer metadata for an existing Mux video asset. [write]
 
 ## Safety
 

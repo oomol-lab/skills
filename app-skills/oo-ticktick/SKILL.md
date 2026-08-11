@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TickTick"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ticktick"]
   icon: "https://static.oomol.com/logo/third-party/ticktick.svg"
 ---
@@ -37,6 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `batch_add_tasks` — Batch create multiple TickTick tasks in one request. [write]
 - `complete_task` — Mark a TickTick task as completed by project ID and task ID. [write]
 - `create_or_update_habit_checkin` — Create or update a TickTick habit check-in for a date stamp. [write]
 - `create_project` — Create a TickTick project with optional color, sort order, view mode, and kind. [write]

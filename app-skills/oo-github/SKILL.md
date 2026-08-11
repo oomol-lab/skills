@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -130,7 +130,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_repository_events` — List recent GitHub events for a repository.
 - `list_repository_forks` — List forks of a GitHub repository.
 - `list_repository_issue_events` — List issue events across a GitHub repository.
-- `list_repository_issues` — List issues for a GitHub repository. Pull requests are filtered out from the response.
+- `list_repository_issues` — List issues for a GitHub repository. Pull requests are filtered out of the response; pageInfo.fetched reports the raw page length before filtering, so paginating callers must continue while fetched equals perPage (30 by default) even when the issues array is short or empty.
 - `list_repository_labels` — List labels available in a GitHub repository.
 - `list_repository_languages` — List languages used in a GitHub repository with byte counts.
 - `list_repository_stargazers` — List users who starred a GitHub repository.

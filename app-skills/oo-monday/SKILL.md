@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "monday"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["monday"]
   icon: "https://static.oomol.com/logo/third-party/Monday.svg"
 ---
@@ -57,6 +57,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_item` — Create a monday item on a board, optionally setting column values and position. [write]
 - `create_subitem` — Create a monday subitem under an existing parent item. [write]
 - `create_update` — Create a monday update on an item or as a reply to an existing update. [write]
+- `create_workspace` — Create a monday workspace with the official create_workspace mutation. [write]
 - `deactivate_form` — Deactivate a monday Workform so it stops accepting submissions. [destructive]
 - `delete_board` — Delete a monday board. [destructive]
 - `delete_column` — Delete a monday column from an existing board. [destructive]
@@ -68,6 +69,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_subscribers_from_board` — Remove monday user subscribers from a board. [destructive]
 - `delete_teams_from_board` — Remove monday team subscribers from a board. [destructive]
 - `delete_update` — Delete an existing monday update. [destructive]
+- `delete_workspace` — Delete a monday workspace with the official delete_workspace mutation. [destructive]
 - `duplicate_item` — Duplicate a monday item. [write]
 - `edit_update` — Edit an existing monday update. [write]
 - `find_items_by_column_values` — Find monday items on a board by matching explicit column values.
@@ -101,6 +103,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_department` — Update a monday department on an enterprise account. [write]
 - `update_doc_name` — Update the name of an existing monday doc. [write]
 - `update_group` — Update an existing monday group attribute. [write]
+- `update_workspace` — Update a monday workspace with the official update_workspace mutation. [write]
 
 ## Safety
 
