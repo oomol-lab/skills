@@ -39,7 +39,7 @@ oo connector run "<service>" --action "<action_name>" --data '<json>' --json
 
 发布由两个 GitHub Actions 工作流驱动（在 **Actions** 标签页手动运行，均支持 `dry-run` / `publish-single` / `publish-catalog` 三种模式）：
 
-- **Publish Skills to OOMOL** —— 将每个 skill 的 `metadata.version` 与 `registry.oomol.com` 比对，对新增或版本提升的 skill 执行 `npm publish`。该 registry 无速率限制，运行完全幂等。
+- **Publish Skills to OOMOL** —— 将每个 skill 的 `metadata.version` 与目标 registry 比对，对新增或版本提升的 skill 执行 `npm publish`。`environment` 输入用于选择部署环境：`prod`（`registry.oomol.com`，密钥 `OOMOL_API_KEY`）或 `dev`（`registry.oomol.dev`，密钥 `OOMOL_DEV_API_KEY`，未配置时回退到 `OOMOL_API_KEY`）。该 registry 无速率限制，运行完全幂等。
 - **Publish Skills to ClawHub** —— 用 `clawhub sync` 检测变更的 skill，并按其声明的 `metadata.version` 发布。ClawHub 对*新 skill* 的发布按账户限流，因此工作流可将大规模技能库分摊到多个账户（`CLAWHUB_TOKENS`），并可在配额重置后安全地重跑。
 
 发布逻辑位于 `contrib/scripts/`，并有测试覆盖。

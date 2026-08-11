@@ -39,7 +39,7 @@ Find and install skills with `oo` (e.g. via the `oo-find-skills` workflow) or br
 
 Releases are driven by two GitHub Actions workflows (run manually from the **Actions** tab, each with a `dry-run` / `publish-single` / `publish-catalog` mode):
 
-- **Publish Skills to OOMOL** — diffs each skill's `metadata.version` against `registry.oomol.com` and publishes anything new or bumped via `npm publish`. The registry has no rate limit, so runs are fully idempotent.
+- **Publish Skills to OOMOL** — diffs each skill's `metadata.version` against the target registry and publishes anything new or bumped via `npm publish`. An `environment` input selects the deployment: `prod` (`registry.oomol.com`, secret `OOMOL_API_KEY`) or `dev` (`registry.oomol.dev`, secret `OOMOL_DEV_API_KEY`, falling back to `OOMOL_API_KEY`). The registry has no rate limit, so runs are fully idempotent.
 - **Publish Skills to ClawHub** — uses `clawhub sync` to detect changed skills and publishes them at their declared `metadata.version`. ClawHub caps *new-skill* publishes per account, so the workflow can spread a large catalog across multiple accounts (`CLAWHUB_TOKENS`) and is safe to re-run as quotas reset.
 
 The publishing logic lives in `contrib/scripts/` and is covered by tests.
