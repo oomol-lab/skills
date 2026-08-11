@@ -7,7 +7,7 @@ name: Publish Skills to OOMOL
 # How it works (see contrib/scripts/oomol_publish.ts for the details):
 #   1. For each skill under app-skills/, read its SKILL.md frontmatter and query the
 #      registry for the currently-published version via
-#      GET https://registry.oomol.com/-/oomol/package-info/<slug>/latest (concurrency 10).
+#      GET <registry>/-/oomol/package-info/<slug>/latest (concurrency 10).
 #   2. A skill is published when it is new, or when its metadata.version is greater than
 #      the published version; otherwise it is skipped (so re-runs are idempotent).
 #   3. Each publishable skill is transformed into the package shape the hub expects —
@@ -20,9 +20,17 @@ name: Publish Skills to OOMOL
 #
 # Run it from the Actions tab ("Run workflow") and pick a mode:
 #   dry-run         Preview the plan and validate each package with `npm publish --dry-run`
-#                   (no upload). Does not require the OOMOL_API_KEY secret.
+#                   (no upload). Does not require an API-key secret.
 #   publish-single  Publish one folder, e.g. app-skills/<slug>.
 #   publish-catalog Publish every new/changed skill under app-skills/.
+#
+# environment picks which OOMOL deployment to publish to — the dev hub is the same host with
+# `.com` swapped for `.dev`:
+#   prod  https://registry.oomol.com  (secret OOMOL_API_KEY)
+#   dev   https://registry.oomol.dev  (secret OOMOL_DEV_API_KEY, falling back to OOMOL_API_KEY
+#                                      when no dev-specific secret is configured)
+# The two registries hold independent version histories, so the version diff (and therefore
+# what gets published) is always resolved against the selected environment.
 #
 # exclude_skills (optional) skips specific skills for this run only — a comma-separated list of
 # slugs (e.g. "oo-ably,oo-github"). It applies to every mode and never edits any SKILL.md.
@@ -39,6 +47,14 @@ on:
           - dry-run
           - publish-single
           - publish-catalog
+      environment:
+        description: Which OOMOL deployment to publish to.
+        type: choice
+        required: true
+        default: prod
+        options:
+          - prod
+          - dev
       skill_path:
         description: Skill folder for publish-single, for example app-skills/<slug>.
         type: string
@@ -60,7 +76,9 @@ permissions:
 
 env:
   SKILLS_ROOT: app-skills
-  OOMOL_REGISTRY: https://registry.oomol.com
+  # dev is the same hub with the TLD swapped; every step (version lookup, ~/.npmrc auth host,
+  # `npm publish --registry`) derives from this single value.
+  OOMOL_REGISTRY: ${{ inputs.environment == 'dev' && 'https://registry.oomol.dev' || 'https://registry.oomol.com' }}
 
 jobs:
   publish:
@@ -110,18 +128,23 @@ jobs:
       # Write the registry auth into ~/.npmrc. The secret value is NOT written to disk: we
       # store the literal `${OOMOL_API_KEY}` placeholder, which npm interpolates from the
       # environment at publish time (so OOMOL_API_KEY is passed to the publish step's env).
-      # The _authToken host must match the registry we publish to (registry.oomol.com).
+      # The _authToken host must match the registry we publish to (registry.oomol.com or
+      # registry.oomol.dev), which is why it is derived from $OOMOL_REGISTRY.
+      #
+      # For dev we prefer secrets.OOMOL_DEV_API_KEY; an unset secret expands to "" (falsy),
+      # so the expression falls back to OOMOL_API_KEY when the two deployments share a key.
       - name: Configure OOMOL registry auth
         env:
           MODE: ${{ inputs.mode }}
-          OOMOL_API_KEY: ${{ secrets.OOMOL_API_KEY }}
+          KEY_NAME: ${{ inputs.environment == 'dev' && 'OOMOL_DEV_API_KEY (or OOMOL_API_KEY)' || 'OOMOL_API_KEY' }}
+          OOMOL_API_KEY: ${{ (inputs.environment == 'dev' && secrets.OOMOL_DEV_API_KEY) || secrets.OOMOL_API_KEY }}
         run: |
           set -euo pipefail
           if [[ -z "${OOMOL_API_KEY:-}" ]]; then
             if [[ "$MODE" == "dry-run" ]]; then
-              echo "::warning::OOMOL_API_KEY is not set — fine for dry-run, but a real publish will fail to authenticate."
+              echo "::warning::$KEY_NAME is not set — fine for dry-run, but a real publish will fail to authenticate."
             else
-              echo "::error::Missing secret OOMOL_API_KEY (required for $MODE)."
+              echo "::error::Missing secret $KEY_NAME (required for $MODE)."
               exit 1
             fi
           fi
@@ -142,7 +165,7 @@ jobs:
           EXCLUDE_SKILLS: ${{ inputs.exclude_skills }}
           PUBLISH_CONCURRENCY: ${{ inputs.concurrency }}
           # npm interpolates ${OOMOL_API_KEY} from ~/.npmrc using this env var at publish time.
-          OOMOL_API_KEY: ${{ secrets.OOMOL_API_KEY }}
+          OOMOL_API_KEY: ${{ (inputs.environment == 'dev' && secrets.OOMOL_DEV_API_KEY) || secrets.OOMOL_API_KEY }}
         run: bun contrib/scripts/oomol_publish.ts
 
       - name: Summarize
@@ -152,6 +175,7 @@ jobs:
             echo "### OOMOL publish"
             echo ""
             echo "- Mode: \`${{ inputs.mode }}\`"
+            echo "- Environment: \`${{ inputs.environment }}\` (\`${OOMOL_REGISTRY}\`)"
             echo "- Published this run: **${{ steps.publish.outputs.published }}**"
             echo "- Skipped (up-to-date / already present): **${{ steps.publish.outputs.skipped }}**"
             echo "- Failed: **${{ steps.publish.outputs.failed }}**"
