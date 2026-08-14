@@ -1,11 +1,11 @@
 ---
 name: oo-baidu-netdisk
-description: "Baidu Netdisk (pan.baidu.com). Use this skill for ANY Baidu Netdisk request — reading, creating, updating, and deleting data. Whenever a task involves Baidu Netdisk, use this skill instead of calling the API directly."
+description: "Baidu Netdisk (pan.baidu.com). Use this skill for ANY Baidu Netdisk request — reading, creating, and updating data. Whenever a task involves Baidu Netdisk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baidu Netdisk"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["baidu_netdisk"]
   icon: "https://static.oomol.com/logo/third-party/baidu_netdisk.png"
 ---
@@ -37,19 +37,17 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `copy` — Synchronously copy one file or folder within the Baidu Netdisk app directory. [write]
-- `create_folder` — Create one folder below the configured Baidu Netdisk app directory. [write]
-- `create_text_file` — Create one UTF-8 text file of up to 4 MiB in the configured Baidu Netdisk app directory. [write]
-- `delete` — Delete one file or folder within the configured Baidu Netdisk app directory. [destructive]
+- `copy` — Synchronously copy one Baidu Netdisk file or folder. [write]
+- `create_folder` — Create one folder at an absolute path below the user's Baidu Netdisk root. [write]
+- `create_text_file` — Create one UTF-8 text file through Baidu MCP. [write]
 - `get_current_account` — Get the current Baidu Netdisk account and membership summary.
-- `get_file_metadata` — Get normalized metadata for up to 100 Baidu Netdisk file IDs.
 - `get_quota` — Get total, used, remaining, free, and expiring Baidu Netdisk capacity.
-- `list_files` — List files and folders within the configured Baidu Netdisk app directory.
-- `move` — Synchronously move one file or folder within the Baidu Netdisk app directory. [write]
-- `rename` — Synchronously rename one file or folder within the Baidu Netdisk app directory. [write]
-- `search_files` — Search up to 500 files and folders within the Baidu Netdisk app directory.
-- `semantic_search_files` — Search files in the configured Baidu Netdisk app directory using a natural-language description.
-- `upload_file_from_url` — Download one public URL and upload its bytes to the configured Baidu Netdisk app directory. [write]
+- `list_files` — List files and folders from the user's Baidu Netdisk root.
+- `move` — Synchronously move one Baidu Netdisk file or folder. [write]
+- `rename` — Synchronously rename one Baidu Netdisk file or folder. [write]
+- `search_files` — Search files and folders below an absolute Baidu Netdisk directory.
+- `semantic_search_files` — Search Baidu Netdisk using a natural-language description.
+- `upload_file_from_url` — Ask Baidu Netdisk to fetch one public URL into an absolute destination path. [write]
 
 ## Safety
 

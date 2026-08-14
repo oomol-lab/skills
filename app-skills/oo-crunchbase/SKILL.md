@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Crunchbase"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["crunchbase"]
   icon: "https://static.oomol.com/logo/third-party/crunchbase.png"
 ---
@@ -38,7 +38,11 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `autocomplete_entities` — Suggest Crunchbase entities that match a text query.
+- `get_acquisition` — Look up one Crunchbase acquisition by UUID or permalink.
 - `get_organization` — Look up one Crunchbase organization by UUID or permalink.
+- `get_organization_acquisitions` — List acquisitions where a Crunchbase organization is the acquiree or acquirer.
+- `get_organization_ipos` — List IPO records linked to a Crunchbase organization.
+- `search_acquisitions` — Search Crunchbase acquisitions using the official Search API query structure.
 - `search_organizations` — Search Crunchbase organizations using the official Search API query structure.
 
 ## Safety

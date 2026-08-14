@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tianyancha"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["tianyancha"]
   icon: "https://static.oomol.com/logo/third-party/tianyancha.svg"
 ---
@@ -49,6 +49,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_company_risk_detail` — Get one page of detailed Tianyancha risk records using a risk ID and type from get_company_risk.
 - `list_company_branches` — List a company's branch organizations and their registration details.
 - `list_company_changes` — List a company's registration changes, including before and after values.
+- `list_company_equity_changes` — List a company's disclosed equity changes, including shareholders before and after each change.
+- `list_company_historical_investments` — List companies previously invested in by a company using Tianyancha.
+- `list_company_historical_shareholders` — List a company's historical shareholders, ownership ratios, and subscribed capital from Tianyancha.
 - `list_company_investments` — List companies directly invested in by a company using Tianyancha.
 - `list_company_key_personnel` — List a company's directors, supervisors, and senior managers from Tianyancha.
 - `list_company_news` — List Tianyancha news for an exact company, optionally filtered by publication date and tags.
