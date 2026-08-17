@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Resend"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["resend"]
   icon: "https://static.oomol.com/logo/third-party/Resend.svg"
 ---
@@ -37,7 +37,18 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `cancel_scheduled_email` — Cancel a scheduled Resend email before delivery. [write]
+- `get_received_email` — Retrieve one received Resend email, including its content, headers, and attachment metadata.
+- `get_received_email_attachment` — Retrieve one attachment from a received Resend email, including its temporary download URL.
+- `get_sent_email` — Retrieve one sent Resend email, including its message content and delivery state.
+- `get_sent_email_attachment` — Retrieve one attachment from a sent Resend email, including its temporary download URL.
+- `list_received_email_attachments` — List attachments for a received Resend email.
+- `list_received_emails` — List emails received by the authenticated Resend team.
+- `list_sent_email_attachments` — List attachments for a sent Resend email.
+- `list_sent_emails` — List emails sent by the authenticated Resend team.
+- `send_batch_emails` — Send up to 100 emails in one Resend batch request. [write]
 - `send_email` — Send an email with Resend. [write]
+- `update_scheduled_email` — Change the delivery time of a scheduled Resend email. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tushare"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["tushare"]
   icon: "https://static.oomol.com/logo/third-party/tushare.png"
 ---
@@ -40,6 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_adjustment_factors` — Get A-share adjustment factor rows through Tushare adj_factor.
 - `get_daily_basic` — Get A-share daily valuation and share indicators through Tushare daily_basic.
 - `get_daily_quotes` — Get A-share daily quote rows through Tushare daily with normalized rows.
+- `get_shareholder_trades` — Get A-share important shareholder increases and decreases through Tushare stk_holdertrade.
 - `get_trade_calendar` — Get exchange trading calendar rows through Tushare trade_cal with normalized dates.
 - `list_stocks` — List A-share stock basic information through Tushare stock_basic with normalized rows.
 - `query_data` — Call a Tushare data API through the official HTTP interface and return normalized table rows.
