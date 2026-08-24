@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Happy Scribe"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["happy_scribe"]
+  icon: "https://static.oomol.com/logo/third-party/happy_scribe.svg"
 ---
 
 # Happy Scribe

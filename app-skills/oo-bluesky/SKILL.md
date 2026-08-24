@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bluesky"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bluesky"]
   icon: "https://static.oomol.com/logo/third-party/bluesky.png"
 ---
@@ -39,6 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_text_post` — Create a Bluesky text post in the authenticated account's repository. [write]
 - `get_profile` — Get the detailed Bluesky profile for a handle or DID.
+- `get_timeline` — Get the authenticated account's home timeline with cursor pagination.
 - `search_posts` — Search Bluesky posts with common filters and pagination.
 
 ## Safety

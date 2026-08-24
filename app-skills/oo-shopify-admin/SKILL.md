@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shopify Admin"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["shopify_admin"]
   icon: "https://static.oomol.com/logo/third-party/shopify_admin.svg"
 ---
@@ -90,7 +90,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shopify Admin is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shopify Admin is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=shopify_admin

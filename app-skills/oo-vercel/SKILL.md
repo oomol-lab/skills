@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vercel"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vercel"]
   icon: "https://static.oomol.com/logo/third-party/Vercel.svg"
 ---
@@ -42,6 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_project_env` — Create a Vercel project environment variable. [write]
 - `create_webhook` — Create a Vercel webhook. [write]
 - `delete_project_env` — Delete a Vercel project environment variable. [destructive]
+- `delete_webhook` — Delete a Vercel webhook. [destructive]
 - `get_auth_user` — Get the authenticated Vercel user.
 - `get_deployment` — Get a Vercel deployment.
 - `get_deployment_events` — Get Vercel deployment events.

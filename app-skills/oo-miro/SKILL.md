@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Miro"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["miro"]
+  icon: "https://static.oomol.com/logo/third-party/miro.svg"
 ---
 
 # Miro

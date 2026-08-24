@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mintlify"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mintlify"]
+  icon: "https://static.oomol.com/logo/third-party/mintlify.svg"
 ---
 
 # Mintlify

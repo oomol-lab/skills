@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Files.com"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["files_com"]
   icon: "https://static.oomol.com/logo/third-party/files_com.svg"
 ---
@@ -39,6 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_folder` — Create a folder at a Files.com path. [write]
 - `delete_file` — Delete a Files.com file or folder path. [destructive]
+- `download_file` — Download one Files.com file into connector transit storage.
 - `get_file` — Retrieve Files.com metadata for a single file or folder path.
 - `list_folder` — List files and folders under a Files.com folder path.
 - `update_metadata` — Update custom metadata for a Files.com file or folder path. [write]

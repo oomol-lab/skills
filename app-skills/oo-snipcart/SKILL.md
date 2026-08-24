@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Snipcart"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["snipcart"]
+  icon: "https://static.oomol.com/logo/third-party/snipcart.svg"
 ---
 
 # Snipcart

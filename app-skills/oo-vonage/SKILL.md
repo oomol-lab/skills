@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vonage"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["vonage"]
   icon: "https://static.oomol.com/logo/third-party/vonage.svg"
 ---
@@ -38,6 +38,8 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_balance` — Retrieve the current balance of the connected Vonage API account.
+- `get_sms_record` — Retrieve a Vonage SMS delivery record by message ID.
+- `list_sms_records` — List Vonage SMS delivery records for a date range and optional delivery filters.
 - `send_sms` — Send a text or Unicode SMS through the Vonage SMS API. [write]
 
 ## Safety

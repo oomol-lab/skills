@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_reaction` — Add an emoji reaction to a Slack message. [write]
 - `delete_file` — Delete a Slack file. [destructive]
-- `delete_message` — Delete a Slack message posted by the bot. [destructive]
+- `delete_message` — Delete a Slack message posted through this connection. [destructive]
 - `get_channel_messages` — Get recent messages from a Slack conversation.
 - `get_conversation` — Get metadata for a Slack conversation.
 - `get_file` — Get metadata for a Slack file.
@@ -47,10 +47,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_reactions` — Get reactions for a Slack message.
 - `get_thread` — Get messages in a Slack thread.
 - `get_user` — Get metadata for a Slack user.
-- `list_channels` — List Slack public channels visible to the bot.
-- `list_conversations` — List Slack conversations visible to the bot.
-- `list_files` — List Slack files visible to the bot, optionally filtered by channel or user.
-- `list_users` — List Slack users visible to the bot.
+- `list_channels` — List Slack public channels visible to the connected Slack identity.
+- `list_conversations` — List Slack conversations visible to the connected Slack identity.
+- `list_files` — List Slack files visible to the connected Slack identity, optionally filtered by channel or user.
+- `list_users` — List Slack users visible to the connected Slack identity.
 - `open_conversation` — Open or resume a direct message with one Slack user. [write]
 - `post_ephemeral_message` — Post an ephemeral Slack message visible only to one user in a conversation. [write]
 - `post_message` — Post a Slack message. Use text for plain messages, or blocks for rich Block Kit layouts with text as fallback. [write]
@@ -58,7 +58,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `reply_message` — Reply to a Slack thread. Use text, blocks, or attachments for the reply content. [write]
 - `schedule_message` — Schedule a Slack message to be posted later. Use text or blocks for the scheduled content. [write]
 - `search_messages` — Search messages visible to the Slack user who authorized the connection. Slack search modifiers such as in:channel_name and from:<@UserID> are supported.
-- `update_message` — Update a Slack message posted by the bot. Provide text, blocks, or attachments as the new message content. [write]
+- `update_message` — Update a Slack message posted through this connection. Provide text, blocks, or attachments as the new message content. [write]
 - `upload_file` — Upload a file to Slack using the current external upload flow. Provide fileUrl; binary content is fetched by the connector runtime. [write]
 
 ## Safety

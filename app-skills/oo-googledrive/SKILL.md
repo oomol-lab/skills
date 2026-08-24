@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Drive"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googledrive"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Drive.svg"
 ---
@@ -61,7 +61,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `files.emptyTrash` — Permanently empty the user's trash or a shared drive's trash. [write]
 - `files.export` — Export a Google Workspace file to the requested MIME type and return a transit URL for the exported content.
 - `files.generateIds` — Generate one or more Drive file IDs for later create or copy requests. [write]
-- `files.get` — Get metadata for a Drive file by ID.
+- `files.get` — Get metadata for a Drive file by ID, or download stored file content with alt=media.
 - `files.list` — List Google Drive files using the official Drive query and pagination parameters.
 - `files.listLabels` — List the Drive labels currently applied to a file.
 - `files.modifyLabels` — Add, update, or remove Drive labels on a file. [write]

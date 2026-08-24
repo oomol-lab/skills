@@ -1,11 +1,11 @@
 ---
 name: oo-zhihu
-description: "Zhihu (zhihu.com). Use this skill for ANY Zhihu request — searching and reading data. Whenever a task involves Zhihu, use this skill instead of calling the API directly."
+description: "Zhihu (zhihu.com). Use this skill for ANY Zhihu request — reading, creating, and updating data. Whenever a task involves Zhihu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zhihu"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["zhihu"]
   icon: "https://static.oomol.com/logo/third-party/zhihu.svg"
 ---
@@ -37,8 +37,21 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `favlist_contents` — List public content in one collection owned by the current Access Secret account.
+- `get_pdf_parse` — Get the status and temporary result URL for a Zhihu PDF parsing task.
+- `get_ppt_generation` — Get the status and temporary PPTX download URL for a PPT generation task.
 - `global_search` — Search the global web index exposed by Zhihu Open Platform.
 - `hot_list` — Get the current Zhihu hot list with titles, links, thumbnails, and summaries.
+- `knowledge_base_items` — List content in a Zhida knowledge base using cursor pagination.
+- `knowledge_bases` — List Zhida knowledge bases created by or subscribed to by the current account.
+- `knowledge_file_upload` — Download a file from an HTTP URL and upload it into a Zhida knowledge base. [write]
+- `knowledge_search` — Retrieve relevant document fragments from Zhida knowledge bases with RAG search.
+- `submit_pdf_parse` — Download a PDF from an HTTP URL, upload it to Zhihu, and submit an asynchronous parse task. [write]
+- `submit_ppt_generation` — Submit a Zhihu answer or article URL for asynchronous PPTX generation. [write]
+- `user_collections` — List the current Access Secret owner's recently favorited public content.
+- `user_contents` — List the current Access Secret owner's public Zhihu creations.
+- `user_favlists` — List the current Access Secret owner's public Zhihu collections.
+- `user_followees` — List the current Access Secret owner's public Zhihu followees.
 - `zhida` — Create a non-streaming Zhihu Zhida chat completion.
 - `zhihu_search` — Search Zhihu content and return matching questions, answers, and articles.
 

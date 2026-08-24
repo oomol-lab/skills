@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Twilio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["twilio"]
   icon: "https://static.oomol.com/logo/third-party/twilio.svg"
 ---
@@ -37,8 +37,11 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `create_call` — Create an outbound Twilio voice call using a TwiML URL or inline TwiML. [write]
 - `get_account` — Fetch the current Twilio account profile for the connected credential.
+- `get_call` — Fetch one Twilio voice call by call SID.
 - `get_message` — Fetch one Twilio message by message SID.
+- `list_calls` — List Twilio voice calls with optional recipient, status, date, and pagination filters.
 - `list_messages` — List SMS or MMS messages for the connected Twilio account.
 - `list_usage_records` — List Twilio usage records for the connected account.
 - `send_message` — Send an outbound SMS or MMS message with Twilio. [write]

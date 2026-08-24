@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alibaba Cloud OSS"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["aliyun_oss"]
   icon: "https://static.oomol.com/logo/third-party/alibabacloud.svg"
 ---
@@ -38,6 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `delete_object` — Delete one OSS object. [destructive]
+- `download_object` — Download one OSS object into connector transit storage.
 - `generate_presigned_url` — Generate a pre-signed OSS URL for reading, uploading, or deleting one object.
 - `head_object` — Fetch structured metadata for one OSS object.
 - `list_buckets` — List OSS buckets visible to the connected Alibaba Cloud credential.

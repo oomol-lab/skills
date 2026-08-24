@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -40,6 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_bucket` — Create an R2 bucket in a Cloudflare account. [write]
 - `delete_bucket` — Delete an R2 bucket by name. [destructive]
 - `delete_bucket_cors_policy` — Delete the bucket-level CORS policy for an R2 bucket. [destructive]
+- `download_object` — Download one R2 object and upload it to connector transit storage.
 - `get_bucket` — Get one R2 bucket by name.
 - `get_bucket_cors_policy` — Fetch the bucket-level CORS policy for an R2 bucket.
 - `list_accounts` — List Cloudflare accounts visible to the current credential.
