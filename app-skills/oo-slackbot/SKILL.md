@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack Bot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["slackbot"]
   icon: "https://static.oomol.com/logo/third-party/slackbot.svg"
 ---
@@ -34,6 +34,26 @@ oo connector run "slackbot" --action "<action_name>" --data '<json>' --json
 - The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
 
 Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
+
+### Preserve multiline message text
+
+Slack renders real newline characters in `text`; it renders literal backslash-n
+characters as `\n`. Keep one JSON-encoding boundary:
+
+- Before serialization, message text must contain actual LF characters.
+- In serialized JSON, each intended newline appears as `\n`. If it appears as
+  `\\n`, it has been double-escaped and Slack will display `\n`.
+- When passing raw JSON to `--data`, write the JSON newline escape exactly once.
+
+```bash
+oo connector run "slackbot" \
+  --action "post_message" \
+  --data '{"channelId":"C123","text":"First paragraph.\n\nSecond paragraph."}' \
+  --json
+```
+
+If visible formatting matters, read the posted message back and confirm that
+`text` contains line breaks rather than literal `\n` characters.
 
 ## Available actions
 
