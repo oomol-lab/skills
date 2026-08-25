@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Calendar"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["googlecalendar"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Calendar.svg"
 ---
@@ -37,6 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `add_attendee` — Add one attendee without replacing existing Google Calendar guests. [write]
 - `add_calendar_to_list` — Add a calendar to the current user's Google Calendar list. [write]
 - `clear_calendar` — Clear all events from a Google Calendar. [destructive]
 - `create_acl_rule` — Create an ACL rule on a Google Calendar. [write]

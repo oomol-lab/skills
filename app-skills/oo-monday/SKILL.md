@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "monday"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["monday"]
   icon: "https://static.oomol.com/logo/third-party/Monday.svg"
 ---
@@ -89,7 +89,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_groups` — List the groups for a specific monday board.
 - `list_subitems_by_parent` — List monday subitems for one or more parent items.
 - `list_team_members` — List the members of a specific monday team.
-- `list_teams` — List monday teams with official filters and pagination.
+- `list_teams` — List monday teams, optionally filtering by team IDs.
 - `list_update_replies` — List monday replies for updates on one or more boards. [write]
 - `list_updates` — List monday updates with optional date filtering.
 - `list_users` — List monday users with official root-level filters and pagination.

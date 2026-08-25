@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RedFoxHub"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["redfox"]
   icon: "https://static.oomol.com/logo/third-party/redfox.png"
 ---
@@ -55,7 +55,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_wechat_articles` — Search WeChat Official Account articles through RedFoxHub and return the upstream payload.
 - `search_xiaohongshu_ai_creations` — Search Xiaohongshu AI creation data through RedFoxHub.
 - `search_xiaohongshu_users` — Search Xiaohongshu accounts through RedFoxHub and return the upstream result payload.
-- `search_xiaohongshu_works` — Search Xiaohongshu works through RedFoxHub and return the upstream result payload.
+- `search_xiaohongshu_works` — Search Xiaohongshu works in the RedFoxHub curated database and return matching works.
 
 ## Safety
 

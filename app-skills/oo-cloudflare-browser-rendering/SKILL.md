@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Browser Run"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cloudflare_browser_rendering"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_browser_rendering.svg"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare Browser Run is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare Browser Run is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key, OAuth2) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=cloudflare_browser_rendering

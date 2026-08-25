@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baidu Netdisk"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["baidu_netdisk"]
   icon: "https://static.oomol.com/logo/third-party/baidu_netdisk.png"
 ---
@@ -39,10 +39,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `copy` — Synchronously copy one Baidu Netdisk file or folder. [write]
 - `create_folder` — Create one folder at an absolute path below the user's Baidu Netdisk root. [write]
+- `create_share_link` — Create one Baidu Netdisk share link for one or more files or folders. [write]
 - `create_text_file` — Create one UTF-8 text file through Baidu MCP. [write]
+- `download_file` — Download one Baidu Netdisk file and upload it to connector transit storage.
 - `get_current_account` — Get the current Baidu Netdisk account and membership summary.
 - `get_quota` — Get total, used, remaining, free, and expiring Baidu Netdisk capacity.
-- `list_files` — List files and folders from the user's Baidu Netdisk root.
+- `list_files` — List all files and folders, or only documents, images, or videos, from the user's Baidu Netdisk root.
 - `move` — Synchronously move one Baidu Netdisk file or folder. [write]
 - `rename` — Synchronously rename one Baidu Netdisk file or folder. [write]
 - `search_files` — Search files and folders below an absolute Baidu Netdisk directory.

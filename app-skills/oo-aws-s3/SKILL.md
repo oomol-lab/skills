@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AWS S3"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["aws_s3"]
   icon: "https://static.oomol.com/logo/third-party/aws_s3.svg"
 ---
@@ -38,6 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `delete_object` — Delete one S3 object. [destructive]
+- `download_object` — Download one S3 object into connector transit storage.
 - `generate_presigned_url` — Generate a pre-signed S3 URL for reading, uploading, or deleting one object.
 - `head_object` — Fetch structured metadata for one S3 object.
 - `list_buckets` — List Amazon S3 buckets visible to the connected AWS credential.

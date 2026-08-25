@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Supabase"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["supabase"]
   icon: "https://static.oomol.com/logo/third-party/Supabase.svg"
 ---
@@ -40,6 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_project_api_key` — Create a publishable or secret API key for a Supabase project. [write]
 - `delete_project_api_key` — Delete a Supabase project API key. [destructive]
 - `delete_project_secrets` — Bulk delete secrets from a Supabase project. [destructive]
+- `download_storage_object` — Download a private Supabase Storage object to connector transit storage.
 - `generate_typescript_types` — Generate TypeScript database types for a Supabase project.
 - `get_edge_function` — Get metadata for one Supabase Edge Function by slug.
 - `get_organization` — Get details for a Supabase organization by slug.
