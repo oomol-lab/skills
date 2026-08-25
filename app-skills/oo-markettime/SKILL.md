@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MarketTime"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["markettime"]
+  icon: "https://static.oomol.com/logo/third-party/markettime.svg"
 ---
 
 # MarketTime
