@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MiniMax"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["minimax"]
   icon: "https://static.oomol.com/logo/third-party/minimax.svg"
 ---
@@ -48,6 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `query_video_generation` — Query a MiniMax video generation task and return its status and file identifier.
 - `query_video_generation_v2` — Query a MiniMax H3 video generation task.
 - `retrieve_model` — Retrieve OpenAI-compatible metadata for one MiniMax model.
+- `text_to_audio` — Synthesize text into audio with the MiniMax T2A v2 API.
 - `text_to_video` — Create a MiniMax asynchronous text-to-video generation task.
 
 ## Safety
