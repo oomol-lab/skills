@@ -1,22 +1,22 @@
 ---
 name: oo-qingflow
-description: "轻流 (qingflow.com). Use this skill for ANY 轻流 request — reading, creating, updating, and deleting data. Whenever a task involves 轻流, use this skill instead of calling the API directly."
+description: "Qingflow (qingflow.com). Use this skill for ANY Qingflow request — reading, creating, updating, and deleting data. Whenever a task involves Qingflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "轻流"
+  title: "Qingflow"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["qingflow"]
   icon: "https://static.oomol.com/logo/third-party/qingflow.png"
 ---
 
-# 轻流
+# Qingflow
 
-Operate **轻流** through your OOMOL-connected account. This skill calls the `qingflow` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **Qingflow** through your OOMOL-connected account. This skill calls the `qingflow` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected 轻流. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected Qingflow. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -62,7 +62,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change 轻流 state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change Qingflow state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -85,7 +85,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — 轻流 is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Qingflow is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=qingflow
@@ -95,4 +95,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- 轻流 homepage: https://qingflow.com/
+- Qingflow homepage: https://qingflow.com/

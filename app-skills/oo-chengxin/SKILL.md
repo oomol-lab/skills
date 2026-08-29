@@ -1,22 +1,22 @@
 ---
 name: oo-chengxin
-description: "同程程心 (ly.com). Use this skill for ANY 同程程心 request — searching and reading data. Whenever a task involves 同程程心, use this skill instead of calling the API directly."
+description: "Tongcheng Chengxin (ly.com). Use this skill for ANY Tongcheng Chengxin request — searching and reading data. Whenever a task involves Tongcheng Chengxin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "同程程心"
+  title: "Tongcheng Chengxin"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["chengxin"]
   icon: "https://static.oomol.com/logo/third-party/chengxin.png"
 ---
 
-# 同程程心
+# Tongcheng Chengxin
 
-Operate **同程程心** through your OOMOL-connected account. This skill calls the `chengxin` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **Tongcheng Chengxin** through your OOMOL-connected account. This skill calls the `chengxin` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected 同程程心. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected Tongcheng Chengxin. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change 同程程心 state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change Tongcheng Chengxin state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — 同程程心 is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Tongcheng Chengxin is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=chengxin
@@ -81,4 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- 同程程心 homepage: https://www.ly.com/
+- Tongcheng Chengxin homepage: https://www.ly.com/

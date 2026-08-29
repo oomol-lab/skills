@@ -1,11 +1,11 @@
 ---
 name: oo-tikhub
-description: "TikHub (tikhub.io). Use this skill for ANY TikHub request — reading, creating, and updating data. Whenever a task involves TikHub, use this skill instead of calling the API directly."
+description: "TikHub (tikhub.io). Use this skill for ANY TikHub request — searching and reading data. Whenever a task involves TikHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TikHub"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tikhub"]
   icon: "https://static.oomol.com/logo/third-party/tikhub.jpeg"
 ---
@@ -38,35 +38,12 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `calculate_price` — Calculate TikHub daily request pricing for one endpoint. Requires the /api/v1/tikhub/user/ TikHub path scope.
-- `fetch_douyin_hot_total_list` — Fetch the public Douyin hot total list through TikHub. Requires the /api/v1/douyin/billboard/ TikHub path scope.
-- `fetch_douyin_user_posts` — Fetch public Douyin posts for a user through TikHub without exposing upstream cookies. Requires the /api/v1/douyin/web/ TikHub path scope.
-- `fetch_douyin_user_profile_by_short_id` — Fetch a public Douyin user profile by short ID through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope.
-- `fetch_douyin_user_profile_by_uid` — Fetch a public Douyin user profile by UID through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope.
-- `fetch_douyin_video_by_share_url` — Fetch a public Douyin video detail by share URL through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope. [write]
-- `fetch_douyin_video_comment_replies` — Fetch public Douyin comment replies through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope. [write]
-- `fetch_douyin_video_comments` — Fetch public Douyin video comments through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope.
-- `fetch_douyin_video_detail` — Fetch a public Douyin video detail through TikHub. Requires the /api/v1/douyin/web/ TikHub path scope.
-- `fetch_tiktok_post_comments` — Fetch public TikTok post comments through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope. [write]
-- `fetch_tiktok_post_detail` — Fetch a public TikTok post detail through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope. [write]
-- `fetch_tiktok_tag_detail` — Fetch a public TikTok tag detail through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope.
-- `fetch_tiktok_tag_posts` — Fetch public TikTok posts for a tag through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope.
-- `fetch_tiktok_user_posts` — Fetch public TikTok posts for a user through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope.
-- `fetch_tiktok_user_profile` — Fetch a public TikTok user profile through TikHub. Requires the /api/v1/tiktok/web/ TikHub path scope.
-- `fetch_xiaohongshu_hot_list` — Fetch the public Xiaohongshu hot list through TikHub. Requires the /api/v1/xiaohongshu/web_v2/ TikHub path scope.
-- `fetch_xiaohongshu_note_comment_replies` — Fetch public Xiaohongshu note comment replies through TikHub App V2. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope. [write]
-- `fetch_xiaohongshu_note_comments` — Fetch public Xiaohongshu note comments through TikHub App V2. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
-- `fetch_xiaohongshu_sub_comments` — Fetch public Xiaohongshu sub-comments through TikHub App V2. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
-- `fetch_xiaohongshu_user_info` — Fetch public Xiaohongshu user information through TikHub App V2. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
-- `fetch_xiaohongshu_user_notes` — Fetch public Xiaohongshu user notes through TikHub App V2. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
+- `discover_endpoints` — Discover current TikHub functional API endpoints from the official documentation catalog, excluding account APIs.
 - `get_all_endpoints_info` — Get TikHub cost and metadata for all endpoints. Requires the /api/v1/tikhub/user/ TikHub path scope.
 - `get_endpoint_info` — Get TikHub cost and metadata for one endpoint. Requires the /api/v1/tikhub/user/ TikHub path scope.
 - `get_user_daily_usage` — Get the current TikHub account daily API usage. Requires the /api/v1/tikhub/user/ TikHub path scope.
 - `get_user_info` — Get the current TikHub account and API key information. Requires the /api/v1/tikhub/user/ TikHub path scope.
-- `search_douyin_users` — Search public Douyin users through TikHub. Requires the /api/v1/douyin/search/ TikHub path scope.
-- `search_douyin_videos` — Search public Douyin videos through TikHub. Requires the /api/v1/douyin/search/ TikHub path scope.
-- `search_tiktok_users` — Search public TikTok users through TikHub without exposing upstream cookies. Requires the /api/v1/tiktok/web/ TikHub path scope.
-- `search_xiaohongshu_notes` — Search public Xiaohongshu notes through TikHub. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
-- `search_xiaohongshu_users` — Search public Xiaohongshu users through TikHub. Requires the /api/v1/xiaohongshu/app_v2/ TikHub path scope.
+- `invoke_endpoint` — Invoke one TikHub functional API endpoint at the fixed TikHub API origin. TikHub account endpoints are excluded.
 
 ## Safety
 

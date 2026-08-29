@@ -1,22 +1,22 @@
 ---
 name: oo-chuhaijiang
-description: "出海匠 (chuhaijiang.com). Use this skill for ANY 出海匠 request — searching and reading data. Whenever a task involves 出海匠, use this skill instead of calling the API directly."
+description: "Chuhaijiang (chuhaijiang.com). Use this skill for ANY Chuhaijiang request — searching and reading data. Whenever a task involves Chuhaijiang, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "出海匠"
+  title: "Chuhaijiang"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["chuhaijiang"]
   icon: "https://static.oomol.com/logo/third-party/chuhaijiang.svg"
 ---
 
-# 出海匠
+# Chuhaijiang
 
-Operate **出海匠** through your OOMOL-connected account. This skill calls the `chuhaijiang` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **Chuhaijiang** through your OOMOL-connected account. This skill calls the `chuhaijiang` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected 出海匠. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected Chuhaijiang. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change 出海匠 state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change Chuhaijiang state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — 出海匠 is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Chuhaijiang is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=chuhaijiang
@@ -84,4 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- 出海匠 homepage: https://www.chuhaijiang.com/
+- Chuhaijiang homepage: https://www.chuhaijiang.com/
