@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -97,6 +97,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_repository_readme` — Get the README of a GitHub repository and return both base64 and decoded text when available.
 - `get_user` — Get a GitHub user profile by username.
 - `get_workflow` — Get a GitHub Actions workflow by ID or file name.
+- `get_workflow_job_logs` — Get the tail of the plain-text logs for a completed GitHub Actions workflow job.
 - `get_workflow_run` — Get a GitHub workflow run by id.
 - `list_assignees` — List available assignees for issues in a GitHub repository.
 - `list_authenticated_user_events` — List activity events for a GitHub user and include private events when the authenticated credential belongs to that user.

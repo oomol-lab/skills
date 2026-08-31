@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Scrape Creators"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["scrape_creators"]
+  icon: "https://static.oomol.com/logo/third-party/scrape_creators.svg"
 ---
 
 # Scrape Creators
