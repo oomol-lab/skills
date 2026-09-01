@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -46,6 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_bucket_cors_policy` — Fetch the bucket-level CORS policy for an R2 bucket.
 - `list_accounts` — List Cloudflare accounts visible to the current credential.
 - `list_buckets` — List the R2 buckets in a Cloudflare account.
+- `put_object` — Upload one R2 object from a public URL, plain text, or base64-encoded content. [write]
 - `update_bucket` — Update mutable R2 bucket properties such as default storage class or jurisdiction. [write]
 - `update_bucket_cors_policy` — Replace the bucket-level CORS policy for an R2 bucket. [write]
 
