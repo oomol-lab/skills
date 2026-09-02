@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Supabase"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["supabase"]
   icon: "https://static.oomol.com/logo/third-party/Supabase.svg"
 ---
@@ -58,6 +58,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_storage_buckets` — List Storage buckets for a Supabase project.
 - `run_read_only_query` — Run a SQL query through Supabase as the read-only database user.
 - `update_project_api_key` — Update the name, description, or JWT template for a Supabase project API key. [write]
+- `upload_storage_object` — Upload an object from a public URL to Supabase Storage. [write]
 - `upsert_project_secrets` — Bulk create or update secrets for a Supabase project. [write]
 
 ## Safety
