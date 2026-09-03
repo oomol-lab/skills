@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TikHub"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tikhub"]
   icon: "https://static.oomol.com/logo/third-party/tikhub.jpeg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `calculate_price` — Calculate TikHub daily request pricing for one endpoint. Requires the /api/v1/tikhub/user/ TikHub path scope.
-- `discover_endpoints` — Discover current TikHub functional API endpoints from the official documentation catalog, excluding account APIs.
+- `discover_endpoints` — Discover current TikHub functional API endpoints from the official OpenAPI catalog, excluding account APIs.
 - `get_all_endpoints_info` — Get TikHub cost and metadata for all endpoints. Requires the /api/v1/tikhub/user/ TikHub path scope.
 - `get_endpoint_info` — Get TikHub cost and metadata for one endpoint. Requires the /api/v1/tikhub/user/ TikHub path scope.
 - `get_user_daily_usage` — Get the current TikHub account daily API usage. Requires the /api/v1/tikhub/user/ TikHub path scope.
