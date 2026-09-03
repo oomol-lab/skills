@@ -22,7 +22,12 @@ name: Publish Skills to ClawHub
 #   the results table reports who published/updated/failed/hit-the-rate-limit and what remains.
 #
 # The ClawHub CLI is run from source (openclaw/clawhub, pinned commit) because the published npm
-# release does not yet support `sync --json`, which step 1 relies on.
+# release does not yet support `sync --json`, which step 1 relies on. It is compiled with tsc and
+# run under Node — NOT executed directly with Bun. Under Bun the CLI shells out to `curl -F
+# payload=<json>` for uploads, and curl treats the first `;` in a -F value as the start of its own
+# options, silently dropping the rest. Any `;` in the display name ("tl;dv") or the generated
+# changelog therefore truncated the JSON and ClawHub rejected it with "Invalid JSON payload".
+# Under Node the CLI uses fetch + FormData, which encodes the payload verbatim.
 #
 # Run it from the Actions tab ("Run workflow") and pick a mode:
 #   dry-run         Preview the plan + per-account distribution. No upload.
@@ -124,7 +129,8 @@ jobs:
             fi
           fi
 
-      # Node runs the codex CLI (npm); Bun runs the ClawHub CLI from source and the orchestrator.
+      # Node runs the codex CLI (npm) and the compiled ClawHub CLI (see the header for why it must
+      # not run under Bun); Bun installs/builds the ClawHub source and runs the orchestrator scripts.
       - uses: actions/setup-node@v6
         with:
           node-version: "20"
@@ -140,14 +146,18 @@ jobs:
           ref: ${{ env.CLAWHUB_SOURCE_REF }}
           path: clawhub-source
 
+      # Build the CLI (tsc -> packages/clawhub/dist) and expose a `clawhub` shim that runs it with
+      # Node. Running the TypeScript source directly with Bun is what triggered the curl -F payload
+      # truncation described in the header, so the shim must stay on Node.
       - name: Install ClawHub CLI from source
         run: |
           set -euo pipefail
           ( cd clawhub-source && bun install --frozen-lockfile )
+          ( cd clawhub-source/packages/clawhub && bun run build )
           mkdir -p "$RUNNER_TEMP/bin"
           cat > "$RUNNER_TEMP/bin/clawhub" <<EOF
           #!/usr/bin/env bash
-          exec bun "$GITHUB_WORKSPACE/clawhub-source/packages/clawhub/src/cli.ts" "\$@"
+          exec node "$GITHUB_WORKSPACE/clawhub-source/packages/clawhub/bin/clawdhub.js" "\$@"
           EOF
           chmod +x "$RUNNER_TEMP/bin/clawhub"
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
