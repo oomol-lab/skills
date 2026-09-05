@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---
@@ -77,6 +77,7 @@ If visible formatting matters, read the posted message back and confirm that
 - `remove_reaction` — Remove an emoji reaction from a Slack message. [destructive]
 - `reply_message` — Reply to a Slack thread. Use text, blocks, or attachments for the reply content. [write]
 - `schedule_message` — Schedule a Slack message to be posted later. Use text or blocks for the scheduled content. [write]
+- `search_context` — Search Slack messages with the granular Real-time Search API.
 - `search_messages` — Search messages visible to the Slack user who authorized the connection. Slack search modifiers such as in:channel_name and from:<@UserID> are supported.
 - `update_message` — Update a Slack message posted through this connection. Provide text, blocks, or attachments as the new message content. [write]
 - `upload_file` — Upload a file to Slack using the current external upload flow. Provide fileUrl; binary content is fetched by the connector runtime. [write]

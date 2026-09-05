@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jushuitan ERP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jushuitan"]
   icon: "https://static.oomol.com/logo/third-party/jushuitan.svg"
 ---
@@ -133,7 +133,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_purchase_returns` — List purchase return outbound documents.
 - `list_sales_outbounds` — List sales outbound documents visible through OpenWeb.
 - `list_serial_number_stock_movements` — List inbound and outbound movements for unique product serial numbers.
-- `list_shipments` — List shipment and logistics information visible through OpenWeb.
+- `list_shipments` — List one page of shipment records visible through Jushuitan OpenWeb, including shipment times, tracking numbers, and courier companies. The /open/logistic/query endpoint does not provide parcel tracking events or pickup status. Use a separate carrier tracking service to check pickup, delivery progress, or time since the last tracking event.
 - `list_shop_products` — List shop product records and their mappings to Jushuitan products.
 - `list_shops` — List shops available to the authorized Jushuitan merchant account.
 - `list_suppliers` — List supplier master records.
