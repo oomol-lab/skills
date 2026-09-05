@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jushuitan ERP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jushuitan"]
   icon: "https://static.oomol.com/logo/third-party/jushuitan.svg"
 ---
@@ -35,11 +35,14 @@ oo connector run "jushuitan" --action "<action_name>" --data '<json>' --json
 
 Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
-### Jushuitan request conventions
+### Shipment records and tracking limits
 
-Actions follow the current OpenWeb business schemas. Endpoints whose official `biz` root is an array accept that array in the action's `items` field; the connector restores the root-array payload before signing and sending it. List actions return one upstream page and expose the endpoint's documented page, time-window, or incremental cursor fields instead of silently fetching every page.
+**`list_shipments` returns shipment records, including shipment time, tracking number, and carrier; Jushuitan OpenWeb does not provide tracking events.** These records cannot establish pickup status, the current transit milestone, or the last tracking update. Shipment time is not pickup time, and a tracking number does not prove pickup. Information visible in the Jushuitan dashboard is not necessarily available through its open API.
 
-The standard order, outbound, after-sale, and logistics actions only expose data available through Jushuitan OpenWeb. Taobao data that requires Qimen, Pinduoduo data that requires Fangzhou, and platform-restricted recipient fields are not emulated by these actions.
+- For shipment counts, carrier distributions, or shipment details, use the Jushuitan actions normally.
+- For pickup status, transit progress, or stale-tracking alerts, explain that a separate tracking source is required. Use Kuaidi100 (快递100) for domestic courier tracking: first verify that the current environment exposes the service and that it is connected, discover its available actions, and read the latest action schema before calling it. Do not invent action names or assume account access.
+- If the tracking service, connection, or required query parameters are missing, state exactly what is missing and still complete the independently deliverable Jushuitan shipment query. Do not count missing tracking events or failed queries as awaiting pickup. Do not default to scraping carrier websites or repeatedly solving CAPTCHAs for ongoing monitoring.
+- A “no new tracking event for over 12 hours” alert requires the application to persist the latest valid event timestamp and check it on a schedule; event-change webhooks alone are insufficient. Display no tracking data, query failures, awaiting pickup, and stalled transit separately. Stop stale-tracking alerts for delivered shipments.
 
 ## Available actions
 
@@ -203,8 +206,6 @@ The standard order, outbound, after-sale, and logistics actions only expose data
 - Untagged actions are reads (get / list / search) — safe to run directly.
 - **Actions tagged `[write]` change Jushuitan ERP state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
-- Treat actions that upload, overwrite, ship, cancel, confirm, audit, allocate, bind, unbind, shelve, or change business status as high impact. Verify merchant, shop, warehouse, order, SKU, quantities, and current document state before running them.
-- Do not assume recipient or other platform-sensitive fields are complete across every e-commerce channel. Standard OpenWeb access does not replace Qimen, Fangzhou, or each marketplace's data-governance requirements.
 
 ## First-time setup
 
@@ -234,9 +235,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
 
-- Connect with the merchant's primary Jushuitan ERP account. The application App Key and App Secret are platform-managed system OAuth client configuration, not values that merchants paste into an action.
-- Connector refreshes expiring service-provider tokens through Jushuitan's official `refreshToken` endpoint. Reconnect only when Jushuitan rejects both the saved token and its refresh token.
-
 ## Resources
 
 - Jushuitan ERP homepage: https://www.jushuitan.com/
+- [Jushuitan official FAQ: the open platform has no shipment tracking API](https://openweb.jushuitan.com/qaCenter?groupId=12&postId=39); tracking requires a separate carrier integration.
