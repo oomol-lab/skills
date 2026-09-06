@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Qwen"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["qwen"]
   icon: "https://static.oomol.com/logo/third-party/qwen.svg"
 ---
@@ -41,6 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_designed_voice` — Create a Qwen-Audio custom voice from a text description. [write]
 - `create_voice_clone` — Create a Qwen-Audio custom voice from a public audio sample. [write]
 - `delete_custom_voice` — Delete one Qwen-Audio cloned or designed voice. [destructive]
+- `extract_text` — Extract text and structured information from an image with Qwen3.5-OCR.
 - `generate_image` — Generate or edit images with the Qwen Image 3.0 family.
 - `generate_speech` — Generate speech with Qwen-Audio 3.0 TTS.
 - `get_custom_voice` — Get one Qwen-Audio cloned or designed voice.
@@ -49,6 +50,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_custom_voices` — List Qwen-Audio cloned and designed voices together.
 - `submit_image_translation` — Submit an asynchronous Qwen image translation task. [write]
 - `submit_speech_recognition` — Submit a Qwen-Audio 3.0 asynchronous audio or video transcription task. [write]
+- `translate_text` — Translate text with Qwen-MT and optional terminology, translation memory, and domain guidance.
 
 ## Safety
 
