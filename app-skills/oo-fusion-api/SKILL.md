@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---
@@ -74,10 +74,6 @@ Each action is listed below with a one-line description; actions that change sta
 - `file_upload_generate_presigned_urls` — Generate a presigned URL for multipart upload parts [write]
 - `jina_reader_read` — Read and extract URL content
 - `jina_reader_search` — Search web content
-- `oomol_tts_ng_generate` — Generate speech audio
-- `oomol_tts_result` — Get oomol-tts task result
-- `oomol_tts_state` — Get oomol-tts task state
-- `oomol_tts_submit` — Convert text to audio [write]
 - `openai_image_async_result` — Get asynchronous OpenAI image generation result
 - `openai_image_async_submit` — Submit asynchronous OpenAI image generation requests, including gpt-image-2 image creation. [write]
 - `openai_image_edit_async_result` — Get asynchronous OpenAI image edit result [write]
@@ -107,7 +103,6 @@ Each action is listed below with a one-line description; actions that change sta
 - `seedance_video_result` — Query a Seedance video generation task result
 - `seedance_video_state` — Get a Seedance video generation task state
 - `seedance_video_submit` — Generate videos with Doubao Seedance [write]
-- `text_to_epub_illustrate_generate` — Generate illustrations for EPUB content
 - `tinify_png_shrink_compress` — Compress PNG images with the Tinify API
 - `wanx_i2v_video_result` — Query first-frame-to-video task result
 - `wanx_i2v_video_state` — Get wanx-i2v-video task state

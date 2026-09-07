@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RedFoxHub"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["redfox"]
   icon: "https://static.oomol.com/logo/third-party/redfox.png"
 ---
@@ -37,25 +37,43 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_douyin_user` — Fetch a Douyin account detail payload through RedFoxHub.
-- `get_douyin_work` — Fetch a Douyin work detail payload through RedFoxHub by work ID or work URL.
-- `get_wechat_account` — Fetch a WeChat Official Account detail payload through RedFoxHub.
-- `get_wechat_article` — Fetch a WeChat Official Account article payload through RedFoxHub.
-- `get_wechat_article_by_url` — Fetch WeChat Official Account article data through RedFoxHub by article URL.
-- `get_xiaohongshu_user` — Fetch a Xiaohongshu account detail payload through RedFoxHub.
-- `get_xiaohongshu_work` — Fetch a Xiaohongshu work detail payload through RedFoxHub by work ID or link.
-- `list_douyin_user_works` — List works published by a Douyin account through RedFoxHub.
-- `list_wechat_account_articles` — List articles published by a WeChat Official Account through RedFoxHub.
-- `search_douyin_ai_creations` — Search Douyin AI creation data through RedFoxHub.
-- `search_douyin_users` — Search Douyin accounts through RedFoxHub and return the upstream result payload.
-- `search_douyin_works` — Search Douyin works through RedFoxHub and return the upstream result payload.
-- `search_tiktok_users` — Search TikTok accounts through RedFoxHub.
-- `search_wechat_accounts` — Search WeChat Official Accounts through RedFoxHub and return the upstream payload.
-- `search_wechat_ai_creations` — Search WeChat Official Account AI creation data through RedFoxHub.
-- `search_wechat_articles` — Search WeChat Official Account articles through RedFoxHub and return the upstream payload.
-- `search_xiaohongshu_ai_creations` — Search Xiaohongshu AI creation data through RedFoxHub.
-- `search_xiaohongshu_users` — Search Xiaohongshu accounts through RedFoxHub and return the upstream result payload.
-- `search_xiaohongshu_works` — Search Xiaohongshu works in the RedFoxHub curated database and return matching works.
+- `get_bilibili_user` — Get details about a Bilibili account.
+- `get_bilibili_work` — Get a Bilibili work by its BV ID or URL.
+- `get_douyin_user` — Get details about a Douyin account.
+- `get_douyin_work` — Get a Douyin work by its ID or URL.
+- `get_kuaishou_work` — Get details about a Kuaishou work.
+- `get_toutiao_work` — Get details about a Toutiao work.
+- `get_wechat_account` — Get details about a WeChat Official Account.
+- `get_wechat_article` — Get a WeChat Official Account article by its UUID.
+- `get_wechat_article_by_url` — Get a WeChat Official Account article by its URL.
+- `get_wechat_channel_work` — Get details about a WeChat Channel work.
+- `get_xiaohongshu_user` — Get details about a Xiaohongshu account.
+- `get_xiaohongshu_work` — Get a Xiaohongshu work by its ID or link.
+- `list_bilibili_user_works` — List works published by a Bilibili account.
+- `list_douyin_user_works` — List works published by a Douyin account.
+- `list_kuaishou_user_works` — List works published by a Kuaishou account.
+- `list_toutiao_user_works` — List works published by a Toutiao account.
+- `list_toutiao_work_comments` — List comments on a Toutiao work.
+- `list_wechat_account_articles` — List articles published by a WeChat Official Account.
+- `list_wechat_channel_user_works` — List works published by a WeChat Channel account.
+- `search_bilibili_users` — Search Bilibili accounts by keyword.
+- `search_bilibili_works` — Search Bilibili works by keyword.
+- `search_douyin_ai_creations` — Search Douyin works related to AI creation.
+- `search_douyin_users` — Search Douyin accounts by keyword.
+- `search_douyin_works` — Search Douyin works by keyword.
+- `search_kuaishou_users` — Search Kuaishou accounts by name.
+- `search_kuaishou_works` — Search Kuaishou works by keyword.
+- `search_tiktok_users` — Search TikTok accounts by keyword.
+- `search_toutiao_users` — Search Toutiao accounts by keyword.
+- `search_toutiao_works` — Search Toutiao works by keyword.
+- `search_wechat_accounts` — Search WeChat Official Accounts by keyword.
+- `search_wechat_ai_creations` — Search WeChat Official Account articles related to AI creation.
+- `search_wechat_articles` — Search WeChat Official Account articles by keyword.
+- `search_wechat_channel_users` — Search WeChat Channel accounts by name.
+- `search_wechat_channel_works` — Search WeChat Channel works by keyword.
+- `search_xiaohongshu_ai_creations` — Search Xiaohongshu works related to AI creation.
+- `search_xiaohongshu_users` — Search Xiaohongshu accounts by keyword.
+- `search_xiaohongshu_works` — Search Xiaohongshu works in the curated database.
 
 ## Safety
 
