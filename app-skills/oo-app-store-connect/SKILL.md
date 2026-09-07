@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "App Store Connect"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["app_store_connect"]
+  icon: "https://static.oomol.com/logo/third-party/app_store_connect.png"
 ---
 
 # App Store Connect
