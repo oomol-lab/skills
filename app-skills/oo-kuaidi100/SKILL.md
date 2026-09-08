@@ -1,11 +1,11 @@
 ---
 name: oo-kuaidi100
-description: "Kuaidi100 (kuaidi100.com). Use this skill for ANY Kuaidi100 request — searching and reading data. Whenever a task involves Kuaidi100, use this skill instead of calling the API directly."
+description: "Kuaidi100 (kuaidi100.com). Use this skill for ANY Kuaidi100 request — reading, creating, and updating data. Whenever a task involves Kuaidi100, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kuaidi100"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kuaidi100"]
   icon: "https://static.oomol.com/logo/third-party/kuaidi100.png"
 ---
@@ -37,8 +37,15 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `detect_carriers` — Identify candidate carriers for a tracking number. Results are advisory; prefer a known carrier from the shipment source and do not automatically choose the first candidate.
-- `query_tracking` — Query current parcel tracking with Kuaidi100. Repeated queries for the same account, carrier, tracking number and phone reuse the first successful response for 30 minutes to avoid upstream locking.
+- `auto_number` — Detect the likely express carriers for a tracking number from its format.
+- `cancel_order` — Cancel a pickup order that is no longer needed. [write]
+- `create_order` — Create a pay-offline pickup order after obtaining an order_price quote. [write]
+- `estimate_price` — Estimate the shipping price for a carrier, sender and recipient addresses, and parcel weight.
+- `estimate_time` — Estimate the delivery time for a shipment before it is sent, from the carrier, origin, destination, and optional order time and product type.
+- `estimate_time_with_logistic` — Estimate the remaining delivery time for an in-transit shipment from its existing logistics trajectory, usually the data returned by kuaidi100.query_trace.
+- `order_price` — Quote a pickup order before creating it. This uses the pickup-order pricing service, not the general estimate_price calculation. [write]
+- `query_order` — Get a pickup order and optionally include its logistics trajectory. [write]
+- `query_trace` — Query the real-time logistics trajectory for an express tracking number. The carrier is detected automatically.
 
 ## Safety
 
