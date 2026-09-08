@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sorftime MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sorftime_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sorftime_mcp.png"
 ---
@@ -37,43 +37,43 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `ali1688_get_product` — Inspect one 1688 product using its ID from ali1688_search_products.
-- `ali1688_list_categories` — Browse 1688 categories. Omit parentId for the top levels, then pass a returned category ID to explore its children.
-- `ali1688_search_products` — Search 1688 products by name to find sourcing suppliers and procurement prices.
-- `amazon_find_related_keywords` — Expand an Amazon keyword into related and long-tail search terms.
-- `amazon_get_category_report` — Research an Amazon category market using a category ID from amazon_list_categories.
-- `amazon_get_keyword` — Inspect demand for a specific Amazon keyword.
-- `amazon_get_product` — Inspect one Amazon product using its ID from amazon_search_products.
-- `amazon_get_product_trend` — Inspect historical Amazon product performance. Select one metric.
-- `amazon_list_categories` — Browse Amazon categories. Omit parentId for the top levels, then pass a returned category ID to explore its children.
-- `amazon_list_keywords` — Discover Amazon keywords ranked by weekly search volume. Supports optional rank and search-volume bounds.
-- `amazon_search_products` — Find Amazon products by name.
+- `ali1688_get_product` — Inspect one 1688 product using its ID from ali1688_search_products through Sorftime.
+- `ali1688_list_categories` — Browse 1688 categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
+- `ali1688_search_products` — Search 1688 products by name to find sourcing suppliers and procurement prices through Sorftime.
+- `amazon_find_related_keywords` — Expand an Amazon keyword into related and long-tail search terms through Sorftime.
+- `amazon_get_category_report` — Research an Amazon category market using a category ID from amazon_list_categories through Sorftime.
+- `amazon_get_keyword` — Inspect demand for a specific Amazon keyword through Sorftime.
+- `amazon_get_product` — Inspect one Amazon product using its ID from amazon_search_products through Sorftime.
+- `amazon_get_product_trend` — Inspect historical Amazon product performance through Sorftime. Select one metric.
+- `amazon_list_categories` — Browse Amazon categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
+- `amazon_list_keywords` — Discover Amazon keywords ranked by weekly search volume through Sorftime. Supports optional rank and search-volume bounds.
+- `amazon_search_products` — Find Amazon products by name through Sorftime.
 - `call_tool` — Run a tool from list_tools with its required arguments. Supports research queries and changes to favorites, including deletion. Credit cost depends on the tool.
 - `list_tools` — List all tools available to your Sorftime MCP account with their descriptions and argument schemas.
-- `shopee_get_product` — Inspect one Shopee product using its ID from shopee_search_products.
-- `shopee_get_product_trend` — Inspect historical Shopee product performance. Returns available dimensions together. Ranges beyond one year cost 10 credits.
-- `shopee_list_categories` — Browse Shopee categories. Omit parentId for the top levels, then pass a returned category ID to explore its children.
-- `shopee_list_category_products` — Find best-selling products in a Shopee category. Optionally query historical natural-week snapshots for leaf categories.
-- `shopee_list_keywords` — Discover Shopee keywords ranked by monthly search volume. Supports optional rank and search-volume bounds.
-- `shopee_search_products` — Find Shopee products by name.
-- `temu_get_product` — Inspect one Temu product using its ID from temu_search_products.
-- `temu_get_product_trend` — Inspect historical Temu product performance. Returns available dimensions together. Ranges beyond one year cost 10 credits.
-- `temu_list_categories` — Browse Temu categories. Omit parentId for the top levels, then pass a returned category ID to explore its children.
-- `temu_list_category_products` — Find best-selling products in a Temu category.
-- `temu_search_products` — Find Temu products by name.
-- `tiktok_get_category_report` — Research a TikTok category market using a category ID from tiktok_list_categories.
-- `tiktok_get_product` — Inspect one TikTok product using its ID from tiktok_search_products.
-- `tiktok_get_product_trend` — Inspect historical TikTok product performance. Returns available dimensions together.
-- `tiktok_list_categories` — Browse TikTok categories. Omit parentId for the top levels, then pass a returned category ID to explore its children.
-- `tiktok_search_products` — Find TikTok products by name.
-- `walmart_find_related_keywords` — Expand a Walmart US keyword into related and long-tail search terms.
-- `walmart_get_category_report` — Research a Walmart US category market using a category ID from walmart_list_categories.
-- `walmart_get_keyword` — Inspect demand for a specific Walmart US keyword.
-- `walmart_get_product` — Inspect one Walmart US product using its ID from walmart_search_products.
-- `walmart_get_product_trend` — Inspect historical Walmart US product performance. Select one metric.
-- `walmart_list_categories` — Browse Walmart US categories. Omit parentId for the top levels, then pass a returned category ID to explore its children.
-- `walmart_list_keywords` — Discover Walmart US keywords ranked by monthly search volume. Requires minRank and maxRank.
-- `walmart_search_products` — Find Walmart US products by name.
+- `shopee_get_product` — Inspect one Shopee product using its ID from shopee_search_products through Sorftime.
+- `shopee_get_product_trend` — Inspect historical Shopee product performance through Sorftime. Returns available dimensions together. Ranges beyond one year cost 10 credits.
+- `shopee_list_categories` — Browse Shopee categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
+- `shopee_list_category_products` — Find best-selling products in a Shopee category through Sorftime. Optionally query historical natural-week snapshots for leaf categories.
+- `shopee_list_keywords` — Discover Shopee keywords ranked by monthly search volume through Sorftime. Supports optional rank and search-volume bounds.
+- `shopee_search_products` — Find Shopee products by name through Sorftime.
+- `temu_get_product` — Inspect one Temu product using its ID from temu_search_products through Sorftime.
+- `temu_get_product_trend` — Inspect historical Temu product performance through Sorftime. Returns available dimensions together. Ranges beyond one year cost 10 credits.
+- `temu_list_categories` — Browse Temu categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
+- `temu_list_category_products` — Find best-selling products in a Temu category through Sorftime.
+- `temu_search_products` — Find Temu products by name through Sorftime.
+- `tiktok_get_category_report` — Research a TikTok category market using a category ID from tiktok_list_categories through Sorftime.
+- `tiktok_get_product` — Inspect one TikTok product using its ID from tiktok_search_products through Sorftime.
+- `tiktok_get_product_trend` — Inspect historical TikTok product performance through Sorftime. Returns available dimensions together.
+- `tiktok_list_categories` — Browse TikTok categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
+- `tiktok_search_products` — Find TikTok products by name through Sorftime.
+- `walmart_find_related_keywords` — Expand a Walmart US keyword into related and long-tail search terms through Sorftime.
+- `walmart_get_category_report` — Research a Walmart US category market using a category ID from walmart_list_categories through Sorftime.
+- `walmart_get_keyword` — Inspect demand for a specific Walmart US keyword through Sorftime.
+- `walmart_get_product` — Inspect one Walmart US product using its ID from walmart_search_products through Sorftime.
+- `walmart_get_product_trend` — Inspect historical Walmart US product performance through Sorftime. Select one metric.
+- `walmart_list_categories` — Browse Walmart US categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
+- `walmart_list_keywords` — Discover Walmart US keywords ranked by monthly search volume through Sorftime. Requires minRank and maxRank.
+- `walmart_search_products` — Find Walmart US products by name through Sorftime.
 
 ## Safety
 

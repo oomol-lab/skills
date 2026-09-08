@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sorftime"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sorftime"]
   icon: "https://static.oomol.com/logo/third-party/sorftime.png"
 ---
@@ -38,6 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `extend_keywords` — Find related Amazon keywords from a seed keyword through Sorftime. Consumes five Sorftime requests.
+- `extend_walmart_keywords` — Find related Sorftime Walmart US keywords from a seed keyword. Consumes five Sorftime requests.
 - `get_asin_keyword_rankings` — Get up to two years of US Amazon rankings for an ASIN and keyword through Sorftime. Returns 200 records per page and consumes two Sorftime requests.
 - `get_asin_sales_history` — Get current or historical Sorftime estimated sales for one Amazon ASIN. Consumes one Sorftime request.
 - `get_category_best_sellers` — Get the current or historical Amazon Best Seller Top 100 products for a category through Sorftime. Consumes five requests; historical lookup costs ten requests per three-day block.
@@ -51,15 +52,24 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_product_review_summary` — Get Sorftime's Amazon customer review summary for one ASIN. Consumes one Sorftime request.
 - `get_product_variations` — List Amazon product variations through Sorftime, optionally including variation sales. Consumes one request, or two when sales are included.
 - `get_request_usage` — Get Sorftime monthly request purchases and consumption history without consuming a request.
+- `get_walmart_category_report` — Get Sorftime's Walmart US category report and Best Seller Top 80 products for a known node path. Consumes five Sorftime requests.
+- `get_walmart_keyword_details` — Get Sorftime Walmart US keyword details such as search volume, competition, and first-page averages. Consumes one Sorftime request.
+- `get_walmart_keyword_search_results` — Get products appearing in the last 15 days of Walmart US results for a current Sorftime hot keyword. Consumes five Sorftime requests.
+- `get_walmart_product_details` — Get current Sorftime Walmart US details for one product ID. Consumes one Sorftime request.
+- `get_walmart_product_sales_history` — Get Sorftime Walmart US published variant sales history for one product ID. Defaults to the latest 30 days, returns up to 100 rows per page, and consumes one Sorftime request.
+- `get_walmart_product_trend` — Get Sorftime Walmart US sales, price, review, rating, and category-rank trends for one product ID. Consumes two Sorftime requests.
 - `list_category_products` — List Sorftime Amazon products in a category ordered by monthly sales. Returns 100 products per page and consumes five Sorftime requests.
 - `list_credit_usage` — List paginated Sorftime credit usage records for Amazon, Shopee, or Walmart. Consumes one Sorftime request.
 - `list_product_reviews` — List Sorftime Amazon product review records with rating and verified-purchase filters. Returns 100 records per page and consumes five Sorftime requests.
 - `reverse_lookup_asin_keywords` — Find Amazon keywords that exposed an ASIN in the first three search-result pages during the last 30 days through Sorftime. Consumes one Sorftime request.
 - `reverse_lookup_category_keywords` — Find Amazon keywords associated with a leaf category through Sorftime. Consumes one Sorftime request.
+- `reverse_lookup_walmart_product_keywords` — Find keywords that exposed a Walmart US product in the first three search-result pages during the last 30 days. Consumes one Sorftime request.
 - `search_categories_by_name` — Search Amazon category markets by natural-language name through Sorftime and return matching NodeIds. Consumes one Sorftime request.
 - `search_keywords` — Search and filter the Sorftime Amazon keyword database. Consumes five Sorftime requests.
 - `search_products` — Search and filter the Sorftime Amazon product database. Returns up to 100 products per page and consumes five Sorftime requests.
 - `search_products_by_name` — Search Amazon products by name through Sorftime and return product research results. Consumes two Sorftime requests.
+- `search_walmart_keywords` — Search and filter Sorftime's current Walmart US hot-keyword database. Consumes five Sorftime requests.
+- `search_walmart_keywords_by_name` — Search Sorftime Walmart US hot keywords from a natural-language name. Consumes one Sorftime request.
 
 ## Safety
 

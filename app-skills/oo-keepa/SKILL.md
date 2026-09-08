@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Keepa"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["keepa"]
   icon: "https://static.oomol.com/logo/third-party/keepa.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `find_deals` — Find recently changed Amazon products with Keepa deal filters and bounded pagination.
 - `find_products` — Find Amazon ASINs with Keepa Product Finder filters using official ProductFinderRequest field names.
 - `get_best_sellers` — Retrieve Keepa's ordered Amazon best-seller ASIN list for a category node or website display group.
-- `get_product_history` — Retrieve named, timestamped Keepa price, rank, offer-count, rating, and review history for Amazon ASINs.
+- `get_product_history` — Retrieve named Keepa price, rank, offer-count, rating, review, monthly-sales, and coupon history for Amazon ASINs.
 - `get_product_snapshot` — Retrieve current Keepa product metadata and named statistics for one or more Amazon ASINs.
 - `get_seller_snapshot` — Retrieve compact Keepa marketplace seller profiles, ratings, category statistics, brands, and competitors.
 - `get_token_status` — Retrieve Keepa token availability and refill information without consuming tokens.

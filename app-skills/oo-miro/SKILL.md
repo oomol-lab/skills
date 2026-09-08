@@ -1,11 +1,11 @@
 ---
 name: oo-miro
-description: "Miro (miro.com). Use this skill for ANY Miro request — reading, creating, and updating data. Whenever a task involves Miro, use this skill instead of calling the API directly."
+description: "Miro (miro.com). Use this skill for ANY Miro request — reading, creating, updating, and deleting data. Whenever a task involves Miro, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Miro"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["miro"]
   icon: "https://static.oomol.com/logo/third-party/miro.svg"
 ---
@@ -38,12 +38,17 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_board` — Create a Miro board. [write]
+- `create_connector` — Create a connector between two items on a Miro board. [write]
+- `create_shape` — Create a shape on a Miro board. [write]
 - `create_sticky_note` — Create a sticky note on a Miro board. [write]
 - `create_text` — Create a text item on a Miro board. [write]
+- `delete_connector` — Delete a connector from a Miro board. [destructive]
+- `delete_item` — Delete an item from a Miro board. [destructive]
 - `get_board` — Get one Miro board by ID.
 - `get_item` — Get one item from a Miro board.
 - `list_boards` — List Miro boards visible to the connected user.
 - `list_items` — List items on a Miro board.
+- `update_sticky_note` — Update a sticky note on a Miro board. [write]
 
 ## Safety
 

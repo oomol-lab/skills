@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -73,6 +73,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `disable_workflow` — Disable a GitHub Actions workflow. [write]
 - `dismiss_pull_request_review` — Dismiss a GitHub pull request review. [write]
 - `dispatch_workflow` — Trigger a GitHub Actions workflow dispatch event. [write]
+- `download_workflow_artifact` — Download a GitHub Actions workflow artifact ZIP to temporary file transit.
 - `enable_workflow` — Enable a GitHub Actions workflow. [write]
 - `fork_repository` — Fork a GitHub repository. Forking happens asynchronously, so the returned repository may not be immediately ready. [write]
 - `generate_release_notes` — Generate release notes content for a GitHub release. [write]
