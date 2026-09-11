@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Apple Ads"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["apple_ads"]
+  icon: "https://static.oomol.com/logo/third-party/apple_ads.svg"
 ---
 
 # Apple Ads
