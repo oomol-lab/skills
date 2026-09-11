@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Apple Notary"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["apple_notary"]
+  icon: "https://static.oomol.com/logo/third-party/apple_notary.svg"
 ---
 
 # Apple Notary

@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "iTunes Search API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["itunes_search"]
+  icon: "https://static.oomol.com/logo/third-party/itunes_search.svg"
 ---
 
 # iTunes Search API

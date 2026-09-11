@@ -1,11 +1,11 @@
 ---
 name: oo-cursor
-description: "Cursor (cursor.com). Use this skill for ANY Cursor request — searching and reading data. Whenever a task involves Cursor, use this skill instead of calling the API directly."
+description: "Cursor (cursor.com). Use this skill for ANY Cursor request — reading, creating, updating, and deleting data. Whenever a task involves Cursor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cursor"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cursor"]
   icon: "https://static.oomol.com/logo/third-party/cursor.svg"
 ---
@@ -37,10 +37,21 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `archive_agent` — Archive a session while retaining readable history. Call unarchive_agent before sending another prompt. [write]
+- `cancel_run` — Cancel an active run. To continue afterward, create a new run on the same session. [write]
+- `create_agent` — Create a durable Cursor cloud session and enqueue its first run. Returns immediately; poll get_run for the result. MCP servers can give the session access to external tools. [write]
+- `create_run` — Send a follow-up using the session's conversation and workspace. Wait for or cancel an active run before starting another. Unarchive archived sessions first. [write]
+- `delete_agent` — Permanently delete a cloud session. This is irreversible; archive_agent provides reversible removal. [destructive]
+- `get_agent` — Read a cloud session's configuration and latestRunId. Use get_run for execution status and results.
 - `get_daily_usage_data` — Retrieve Cursor daily usage metrics for a team over a date range of up to 30 days.
+- `get_run` — Read a run's progress, final assistant reply, and pushed branches. FINISHED, ERROR, CANCELLED, and EXPIRED are terminal statuses.
 - `get_team_spend` — Retrieve Cursor team spending for the current billing cycle with optional search, sort, and pagination.
+- `list_agents` — List cloud sessions, newest first. Use nextCursor to request another page.
 - `list_audit_logs` — List Cursor team audit log events with optional time, event type, user, search, and page filters.
+- `list_models` — List available cloud agent models and their supported parameters and variants.
+- `list_runs` — List a cloud session's runs, newest first, with cursor pagination.
 - `list_team_members` — List Cursor team members visible to the team API key.
+- `unarchive_agent` — Restore an archived session so it can accept new runs.
 
 ## Safety
 
