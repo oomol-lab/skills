@@ -59,8 +59,6 @@ export interface SkillManifest {
     version: string | null;
     /** `metadata.icon` — null/empty means "no icon" (omitted from the manifests). */
     icon: string | null;
-    /** Generator provenance; independent of visibility. */
-    source?: string | null;
 }
 
 export function emptyManifest(): SkillManifest {
@@ -129,8 +127,6 @@ export function parseSkillManifest(text: string): SkillManifest {
                 m.title = value || null;
             else if (key === "version")
                 m.version = value || null;
-            else if (key === "source")
-                m.source = value || null;
             else if (key === "icon")
                 m.icon = value || null;
         }
@@ -168,8 +164,6 @@ export interface PackageFields {
     description: string;
     /** Omitted from output when null/empty. */
     icon: string | null;
-    /** Generator provenance; independent of visibility. */
-    source?: string | null;
 }
 
 /** Build the package.json object. `icon` is added only when present, placed before `files`. */
@@ -182,8 +176,6 @@ export function buildPackageJson(f: PackageFields): Record<string, unknown> {
     };
     if (f.icon)
         pkg.icon = f.icon;
-    if (f.source)
-        pkg.extra = { source: f.source };
     pkg.files = [...FIXED_PACKAGE_FILES];
     return pkg;
 }
@@ -208,15 +200,12 @@ export function buildPackageOoYaml(f: PackageFields): string {
     ];
     if (f.icon)
         lines.push(`icon: ${scalar(f.icon)}`);
-    if (f.source)
-        lines.push("extra:", `  source: ${scalar(f.source)}`);
     return `${lines.join("\n")}\n`;
 }
 
 /** Resolve the publishable fields for a skill from its slug + manifest (with fallbacks). */
 export function resolvePackageFields(slug: string, manifest: SkillManifest): PackageFields {
     return {
-        ...(manifest.source ? { source: manifest.source } : {}),
         name: slug,
         version: manifest.version ?? "",
         displayName: manifest.title ?? slug,
