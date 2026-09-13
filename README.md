@@ -42,18 +42,6 @@ Releases are driven by two GitHub Actions workflows (run manually from the **Act
 - **Publish Skills to OOMOL** — diffs each skill's `metadata.version` against the target registry and publishes anything new or bumped via `npm publish`. An `environment` input selects the deployment: `prod` (`registry.oomol.com`, secret `OOMOL_API_KEY`) or `dev` (`registry.oomol.dev`, secret `OOMOL_DEV_API_KEY`, falling back to `OOMOL_API_KEY`). The registry has no rate limit, so runs are fully idempotent.
 - **Publish Skills to ClawHub** — uses `clawhub sync` to detect changed skills and publishes them at their declared `metadata.version`. ClawHub caps *new-skill* publishes per account, so the workflow can spread a large catalog across multiple accounts (`CLAWHUB_TOKENS`) and is safe to re-run as quotas reset.
 
-Generated app-skills carry `metadata.source: oomol-connector-generated`. The OOMOL
-publisher copies this to `extra.source` in both package manifests so consumers can
-distinguish generator provenance without guessing from names or authors. This is a
-source label, not a visibility or access-control setting.
-
-The initial backfill adds the label to every existing `app-skills/*/SKILL.md` and
-increments each patch version. Merge the generator template change before the next
-catalog sync, then run **Publish Skills to OOMOL → publish-catalog** for each desired
-environment, with no exclusions. Merging this PR does not publish by itself; check
-that the workflow reports zero failures and inspect the search response after index
-refresh. Historical registry versions and installed copies remain unchanged.
-
 The publishing logic lives in `contrib/scripts/` and is covered by tests.
 
 ## License
