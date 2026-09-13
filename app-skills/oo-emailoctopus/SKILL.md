@@ -3,9 +3,10 @@ name: oo-emailoctopus
 description: "EmailOctopus (emailoctopus.com). Use this skill for ANY EmailOctopus request — reading, creating, updating, and deleting data. Whenever a task involves EmailOctopus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "EmailOctopus"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["emailoctopus"]
   icon: "https://static.oomol.com/logo/third-party/EmailOctopus.svg"
 ---

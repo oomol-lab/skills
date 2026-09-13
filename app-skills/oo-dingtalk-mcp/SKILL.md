@@ -3,9 +3,10 @@ name: oo-dingtalk-mcp
 description: "DingTalk MCP (dingtalk.com). Use this skill for ANY DingTalk MCP request — searching and reading data. Whenever a task involves DingTalk MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DingTalk MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dingtalk_mcp"]
   icon: "https://static.oomol.com/logo/third-party/dingtalk_mcp.png"
 ---

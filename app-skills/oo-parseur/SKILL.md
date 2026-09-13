@@ -3,9 +3,10 @@ name: oo-parseur
 description: "Parseur (parseur.com). Use this skill for ANY Parseur request — searching and reading data. Whenever a task involves Parseur, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Parseur"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["parseur"]
   icon: "https://static.oomol.com/logo/third-party/parseur.svg"
 ---

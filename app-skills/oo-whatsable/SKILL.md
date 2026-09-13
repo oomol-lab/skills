@@ -3,9 +3,10 @@ name: oo-whatsable
 description: "WhatsAble (whatsable.app). Use this skill for ANY WhatsAble request — reading, creating, and updating data. Whenever a task involves WhatsAble, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WhatsAble"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["whatsable"]
   icon: "https://static.oomol.com/logo/third-party/whatsable.svg"
 ---

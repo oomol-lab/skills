@@ -3,9 +3,10 @@ name: oo-openfda
 description: "openFDA (open.fda.gov). Use this skill for ANY openFDA request — searching and reading data. Whenever a task involves openFDA, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "openFDA"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["openfda"]
   icon: "https://static.oomol.com/logo/third-party/openfda.png"
 ---

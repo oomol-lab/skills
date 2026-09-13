@@ -3,9 +3,10 @@ name: oo-alt-text-generator-ai
 description: "Alt Text Generator AI (alttextgeneratorai.com). Use this skill for ANY Alt Text Generator AI request — searching and reading data. Whenever a task involves Alt Text Generator AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Alt Text Generator AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["alt_text_generator_ai"]
   icon: "https://static.oomol.com/logo/third-party/alt_text_generator_ai.png"
 ---

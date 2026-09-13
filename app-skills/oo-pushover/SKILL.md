@@ -3,9 +3,10 @@ name: oo-pushover
 description: "Pushover (pushover.net). Use this skill for ANY Pushover request — reading, creating, updating, and deleting data. Whenever a task involves Pushover, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pushover"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pushover"]
   icon: "https://static.oomol.com/logo/third-party/Pushover.svg"
 ---

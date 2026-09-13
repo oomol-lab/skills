@@ -3,9 +3,10 @@ name: oo-pandadoc
 description: "PandaDoc (pandadoc.com). Use this skill for ANY PandaDoc request — reading, creating, updating, and deleting data. Whenever a task involves PandaDoc, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PandaDoc"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pandadoc"]
   icon: "https://static.oomol.com/logo/third-party/PandaDoc.svg"
 ---

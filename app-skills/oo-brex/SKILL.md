@@ -3,9 +3,10 @@ name: oo-brex
 description: "Brex (brex.com). Use this skill for ANY Brex request — searching and reading data. Whenever a task involves Brex, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Brex"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["brex"]
   icon: "https://static.oomol.com/logo/third-party/brex.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-skyfire
 description: "Skyfire (skyfire.xyz). Use this skill for ANY Skyfire request — reading, creating, and updating data. Whenever a task involves Skyfire, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Skyfire"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["skyfire"]
   icon: "https://static.oomol.com/logo/third-party/skyfire.png"
 ---

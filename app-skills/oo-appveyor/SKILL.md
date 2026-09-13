@@ -3,9 +3,10 @@ name: oo-appveyor
 description: "AppVeyor (appveyor.com). Use this skill for ANY AppVeyor request — searching and reading data. Whenever a task involves AppVeyor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AppVeyor"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["appveyor"]
   icon: "https://static.oomol.com/logo/third-party/appveyor.svg"
 ---

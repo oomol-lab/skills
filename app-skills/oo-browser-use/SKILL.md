@@ -3,9 +3,10 @@ name: oo-browser-use
 description: "Browser Use (browser-use.com). Use this skill for ANY Browser Use request — reading, creating, and updating data. Whenever a task involves Browser Use, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Browser Use"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["browser_use"]
   icon: "https://static.oomol.com/logo/third-party/browser_use.svg"
 ---

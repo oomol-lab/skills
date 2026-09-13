@@ -3,9 +3,10 @@ name: oo-elevio
 description: "Elevio (elev.io). Use this skill for ANY Elevio request — searching and reading data. Whenever a task involves Elevio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Elevio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["elevio"]
   icon: "https://static.oomol.com/logo/third-party/elevio.png"
 ---

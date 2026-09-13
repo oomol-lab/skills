@@ -3,9 +3,10 @@ name: oo-chengxin
 description: "Tongcheng Chengxin (ly.com). Use this skill for ANY Tongcheng Chengxin request — searching and reading data. Whenever a task involves Tongcheng Chengxin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Tongcheng Chengxin"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chengxin"]
   icon: "https://static.oomol.com/logo/third-party/chengxin.png"
 ---

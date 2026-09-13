@@ -3,9 +3,10 @@ name: oo-zeplin
 description: "Zeplin (zeplin.io). Use this skill for ANY Zeplin request — searching and reading data. Whenever a task involves Zeplin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zeplin"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zeplin"]
   icon: "https://static.oomol.com/logo/third-party/zeplin.svg"
 ---

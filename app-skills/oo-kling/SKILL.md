@@ -3,9 +3,10 @@ name: oo-kling
 description: "Kling AI (klingai.com). Use this skill for ANY Kling AI request — reading, creating, and updating data. Whenever a task involves Kling AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Kling AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kling"]
   icon: "https://static.oomol.com/logo/third-party/kling.svg"
 ---

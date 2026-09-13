@@ -3,9 +3,10 @@ name: oo-recallai
 description: "Recall.ai (recall.ai). Use this skill for ANY Recall.ai request — reading, creating, updating, and deleting data. Whenever a task involves Recall.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Recall.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["recallai"]
   icon: "https://static.oomol.com/logo/third-party/Recall.ai.svg"
 ---

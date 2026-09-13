@@ -3,9 +3,10 @@ name: oo-neetocal
 description: "NeetoCal (neeto.com). Use this skill for ANY NeetoCal request — searching and reading data. Whenever a task involves NeetoCal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NeetoCal"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["neetocal"]
   icon: "https://static.oomol.com/logo/third-party/neetocal.svg"
 ---

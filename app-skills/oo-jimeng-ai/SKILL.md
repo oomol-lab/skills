@@ -3,9 +3,10 @@ name: oo-jimeng-ai
 description: "Jimeng AI (volcengine.com). Use this skill for ANY Jimeng AI request — reading, creating, and updating data. Whenever a task involves Jimeng AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jimeng AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jimeng_ai"]
   icon: "https://static.oomol.com/logo/third-party/jimeng_ai.png"
 ---

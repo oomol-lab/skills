@@ -3,9 +3,10 @@ name: oo-onfleet
 description: "Onfleet (onfleet.com). Use this skill for ANY Onfleet request — reading, creating, updating, and deleting data. Whenever a task involves Onfleet, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Onfleet"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["onfleet"]
   icon: "https://static.oomol.com/logo/third-party/onfleet.png"
 ---

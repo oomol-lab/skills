@@ -3,9 +3,10 @@ name: oo-mailchimp
 description: "Mailchimp (mailchimp.com). Use this skill for ANY Mailchimp request — reading, creating, updating, and deleting data. Whenever a task involves Mailchimp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailchimp"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailchimp"]
   icon: "https://static.oomol.com/logo/third-party/Mailchimp.svg"
 ---

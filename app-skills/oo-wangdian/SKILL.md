@@ -3,9 +3,10 @@ name: oo-wangdian
 description: "Wangdian ERP (wangdian.cn). Use this skill for ANY Wangdian ERP request — searching and reading data. Whenever a task involves Wangdian ERP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Wangdian ERP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wangdian"]
   icon: "https://static.oomol.com/logo/third-party/wangdian.png"
 ---

@@ -3,9 +3,10 @@ name: oo-sage-hr
 description: "Sage HR (sage.com). Use this skill for ANY Sage HR request — searching and reading data. Whenever a task involves Sage HR, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Sage HR"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sage_hr"]
   icon: "https://static.oomol.com/logo/third-party/sage_hr.svg"
 ---

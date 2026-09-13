@@ -3,9 +3,10 @@ name: oo-knock
 description: "Knock (knock.app). Use this skill for ANY Knock request — reading, creating, updating, and deleting data. Whenever a task involves Knock, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Knock"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["knock"]
   icon: "https://static.oomol.com/logo/third-party/knock.svg"
 ---

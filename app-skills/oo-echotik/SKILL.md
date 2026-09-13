@@ -3,9 +3,10 @@ name: oo-echotik
 description: "EchoTik (echotik.live). Use this skill for ANY EchoTik request — searching and reading data. Whenever a task involves EchoTik, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "EchoTik"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["echotik"]
   icon: "https://static.oomol.com/logo/third-party/echotik.png"
 ---

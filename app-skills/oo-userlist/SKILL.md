@@ -3,9 +3,10 @@ name: oo-userlist
 description: "Userlist (userlist.com). Use this skill for ANY Userlist request — reading, creating, and updating data. Whenever a task involves Userlist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Userlist"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["userlist"]
   icon: "https://static.oomol.com/logo/third-party/userlist.svg"
 ---

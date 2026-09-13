@@ -3,9 +3,10 @@ name: oo-datalust
 description: "Datalust Seq (datalust.co). Use this skill for ANY Datalust Seq request — reading, creating, updating, and deleting data. Whenever a task involves Datalust Seq, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Datalust Seq"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["datalust"]
   icon: "https://static.oomol.com/logo/third-party/datalust.svg"
 ---

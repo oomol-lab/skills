@@ -3,9 +3,10 @@ name: oo-dub
 description: "Dub (dub.co). Use this skill for ANY Dub request — reading, creating, updating, and deleting data. Whenever a task involves Dub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dub"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dub"]
   icon: "https://static.oomol.com/logo/third-party/dub.svg"
 ---

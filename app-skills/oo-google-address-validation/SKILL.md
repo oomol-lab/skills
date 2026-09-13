@@ -3,9 +3,10 @@ name: oo-google-address-validation
 description: "Google Address Validation (developers.google.com). Use this skill for ANY Google Address Validation request — searching and reading data. Whenever a task involves Google Address Validation, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Address Validation"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["google_address_validation"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Address%20Validation.svg"
 ---

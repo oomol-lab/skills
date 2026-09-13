@@ -3,9 +3,10 @@ name: oo-granola
 description: "Granola (granola.ai). Use this skill for ANY Granola request — searching and reading data. Whenever a task involves Granola, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Granola"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["granola"]
   icon: "https://static.oomol.com/logo/third-party/granola.svg"
 ---

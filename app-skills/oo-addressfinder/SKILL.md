@@ -3,9 +3,10 @@ name: oo-addressfinder
 description: "Addressfinder (addressfinder.com). Use this skill for ANY Addressfinder request — searching and reading data. Whenever a task involves Addressfinder, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Addressfinder"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["addressfinder"]
   icon: "https://static.oomol.com/logo/third-party/addressfinder.svg"
 ---

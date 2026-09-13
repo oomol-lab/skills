@@ -3,9 +3,10 @@ name: oo-gleap
 description: "Gleap (gleap.io). Use this skill for ANY Gleap request — reading, creating, updating, and deleting data. Whenever a task involves Gleap, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gleap"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gleap"]
   icon: "https://static.oomol.com/logo/third-party/gleap.svg"
 ---

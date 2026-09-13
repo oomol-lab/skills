@@ -3,9 +3,10 @@ name: oo-anysearch
 description: "AnySearch (anysearch.com). Use this skill for ANY AnySearch request — searching and reading data. Whenever a task involves AnySearch, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AnySearch"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["anysearch"]
   icon: "https://static.oomol.com/logo/third-party/anysearch.png"
 ---

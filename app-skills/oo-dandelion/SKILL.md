@@ -3,9 +3,10 @@ name: oo-dandelion
 description: "Dandelion API (dandelion.eu). Use this skill for ANY Dandelion API request — searching and reading data. Whenever a task involves Dandelion API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dandelion API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dandelion"]
   icon: "https://static.oomol.com/logo/third-party/dandelion.png"
 ---

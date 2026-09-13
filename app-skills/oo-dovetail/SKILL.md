@@ -3,9 +3,10 @@ name: oo-dovetail
 description: "Dovetail (dovetail.com). Use this skill for ANY Dovetail request — reading, creating, and updating data. Whenever a task involves Dovetail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dovetail"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["dovetail"]
   icon: "https://static.oomol.com/logo/third-party/Dovetail.svg"
 ---

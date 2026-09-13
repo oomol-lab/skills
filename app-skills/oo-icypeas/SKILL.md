@@ -3,9 +3,10 @@ name: oo-icypeas
 description: "Icypeas (icypeas.com). Use this skill for ANY Icypeas request — reading, creating, and updating data. Whenever a task involves Icypeas, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Icypeas"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["icypeas"]
   icon: "https://static.oomol.com/logo/third-party/icypeas.png"
 ---

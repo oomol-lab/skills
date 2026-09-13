@@ -3,9 +3,10 @@ name: oo-mindbody
 description: "Mindbody (mindbodyonline.com). Use this skill for ANY Mindbody request — searching and reading data. Whenever a task involves Mindbody, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mindbody"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mindbody"]
   icon: "https://static.oomol.com/logo/third-party/mindbody.svg"
 ---

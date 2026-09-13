@@ -3,9 +3,10 @@ name: oo-pagerduty
 description: "PagerDuty (pagerduty.com). Use this skill for ANY PagerDuty request — reading, creating, and updating data. Whenever a task involves PagerDuty, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PagerDuty"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pagerduty"]
   icon: "https://static.oomol.com/logo/third-party/pagerduty.svg"
 ---

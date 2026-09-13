@@ -3,9 +3,10 @@ name: oo-encodian
 description: "Encodian (encodian.com). Use this skill for ANY Encodian request — reading, creating, and updating data. Whenever a task involves Encodian, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Encodian"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["encodian"]
   icon: "https://static.oomol.com/logo/third-party/Encodian.svg"
 ---

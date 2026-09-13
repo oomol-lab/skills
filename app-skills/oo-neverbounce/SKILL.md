@@ -3,9 +3,10 @@ name: oo-neverbounce
 description: "NeverBounce (neverbounce.com). Use this skill for ANY NeverBounce request — reading, creating, and updating data. Whenever a task involves NeverBounce, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NeverBounce"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["neverbounce"]
   icon: "https://static.oomol.com/logo/third-party/NeverBounce.svg"
 ---

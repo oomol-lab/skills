@@ -3,9 +3,10 @@ name: oo-greenhouse
 description: "Greenhouse (greenhouse.com). Use this skill for ANY Greenhouse request — reading, creating, and updating data. Whenever a task involves Greenhouse, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Greenhouse"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["greenhouse"]
   icon: "https://static.oomol.com/logo/third-party/greenhouse.svg"
 ---

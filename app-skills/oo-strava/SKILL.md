@@ -3,9 +3,10 @@ name: oo-strava
 description: "Strava (strava.com). Use this skill for ANY Strava request — reading, creating, and updating data. Whenever a task involves Strava, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Strava"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["strava"]
   icon: "https://static.oomol.com/logo/third-party/Strava.svg"
 ---

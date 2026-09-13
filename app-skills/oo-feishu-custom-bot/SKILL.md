@@ -3,9 +3,10 @@ name: oo-feishu-custom-bot
 description: "Feishu Custom Bot (feishu.cn). Use this skill for ANY Feishu Custom Bot request — reading, creating, and updating data. Whenever a task involves Feishu Custom Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Feishu Custom Bot"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["feishu_custom_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_custom_bot.svg"
 ---

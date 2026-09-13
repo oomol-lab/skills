@@ -3,9 +3,10 @@ name: oo-files-com
 description: "Files.com (files.com). Use this skill for ANY Files.com request — reading, creating, updating, and deleting data. Whenever a task involves Files.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Files.com"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["files_com"]
   icon: "https://static.oomol.com/logo/third-party/files_com.svg"
 ---

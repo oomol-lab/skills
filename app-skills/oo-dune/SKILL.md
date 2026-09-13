@@ -3,9 +3,10 @@ name: oo-dune
 description: "Dune (dune.com). Use this skill for ANY Dune request — searching and reading data. Whenever a task involves Dune, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dune"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dune"]
   icon: "https://static.oomol.com/logo/third-party/dune.svg"
 ---

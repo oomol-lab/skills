@@ -3,9 +3,10 @@ name: oo-alt-text-ai
 description: "AltText.ai (alttext.ai). Use this skill for ANY AltText.ai request — reading, creating, updating, and deleting data. Whenever a task involves AltText.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AltText.ai"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["alt_text_ai"]
   icon: "https://static.oomol.com/logo/third-party/alt_text_ai.svg"
 ---

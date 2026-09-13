@@ -3,9 +3,10 @@ name: oo-securitytrails
 description: "SecurityTrails. Use this skill for ANY SecurityTrails request — searching and reading data. Whenever a task involves SecurityTrails, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SecurityTrails"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["securitytrails"]
   icon: "https://static.oomol.com/logo/third-party/Securitytrails.svg"
 ---

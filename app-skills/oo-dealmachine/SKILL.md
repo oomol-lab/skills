@@ -3,9 +3,10 @@ name: oo-dealmachine
 description: "DealMachine (dealmachine.com). Use this skill for ANY DealMachine request — searching and reading data. Whenever a task involves DealMachine, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DealMachine"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dealmachine"]
   icon: "https://static.oomol.com/logo/third-party/dealmachine.svg"
 ---

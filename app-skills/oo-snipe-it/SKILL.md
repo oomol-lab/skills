@@ -3,9 +3,10 @@ name: oo-snipe-it
 description: "Snipe-IT (snipeitapp.com). Use this skill for ANY Snipe-IT request — searching and reading data. Whenever a task involves Snipe-IT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Snipe-IT"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["snipe_it"]
   icon: "https://static.oomol.com/logo/third-party/snipe_it.png"
 ---

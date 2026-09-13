@@ -3,9 +3,10 @@ name: oo-permit-io
 description: "Permit.io (permit.io). Use this skill for ANY Permit.io request — reading, creating, updating, and deleting data. Whenever a task involves Permit.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Permit.io"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["permit_io"]
   icon: "https://static.oomol.com/logo/third-party/permit_io.svg"
 ---

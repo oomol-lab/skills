@@ -3,9 +3,10 @@ name: oo-lucid-scim
 description: "Lucid SCIM (lucid.co). Use this skill for ANY Lucid SCIM request — searching and reading data. Whenever a task involves Lucid SCIM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lucid SCIM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["lucid_scim"]
   icon: "https://static.oomol.com/logo/third-party/lucid_scim.svg"
 ---

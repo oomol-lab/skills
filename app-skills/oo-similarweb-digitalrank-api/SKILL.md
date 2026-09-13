@@ -3,9 +3,10 @@ name: oo-similarweb-digitalrank-api
 description: "Similarweb (similarweb.com). Use this skill for ANY Similarweb request — searching and reading data. Whenever a task involves Similarweb, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Similarweb"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["similarweb_digitalrank_api"]
   icon: "https://static.oomol.com/logo/third-party/SimilarWeb%20Digital%20Rank%20API.svg"
 ---

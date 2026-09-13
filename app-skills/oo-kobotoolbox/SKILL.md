@@ -3,9 +3,10 @@ name: oo-kobotoolbox
 description: "KoboToolbox (kobotoolbox.org). Use this skill for ANY KoboToolbox request — reading, creating, updating, and deleting data. Whenever a task involves KoboToolbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "KoboToolbox"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["kobotoolbox"]
   icon: "https://static.oomol.com/logo/third-party/kobotoolbox.svg"
 ---

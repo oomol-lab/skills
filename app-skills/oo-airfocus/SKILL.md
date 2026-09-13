@@ -3,9 +3,10 @@ name: oo-airfocus
 description: "airfocus (airfocus.com). Use this skill for ANY airfocus request — reading, creating, updating, and deleting data. Whenever a task involves airfocus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "airfocus"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["airfocus"]
   icon: "https://static.oomol.com/logo/third-party/airfocus.svg"
 ---

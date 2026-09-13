@@ -3,9 +3,10 @@ name: oo-mailosaur
 description: "Mailosaur (mailosaur.com). Use this skill for ANY Mailosaur request — reading, creating, updating, and deleting data. Whenever a task involves Mailosaur, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailosaur"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mailosaur"]
   icon: "https://static.oomol.com/logo/third-party/mailosaur.svg"
 ---

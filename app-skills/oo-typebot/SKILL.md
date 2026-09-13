@@ -3,9 +3,10 @@ name: oo-typebot
 description: "Typebot (typebot.com). Use this skill for ANY Typebot request — searching and reading data. Whenever a task involves Typebot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Typebot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["typebot"]
   icon: "https://static.oomol.com/logo/third-party/typebot.svg"
 ---

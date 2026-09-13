@@ -3,9 +3,10 @@ name: oo-megaventory
 description: "Megaventory (megaventory.com). Use this skill for ANY Megaventory request — reading, creating, and updating data. Whenever a task involves Megaventory, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Megaventory"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["megaventory"]
   icon: "https://static.oomol.com/logo/third-party/megaventory.svg"
 ---

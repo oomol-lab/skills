@@ -3,9 +3,10 @@ name: oo-tmdb
 description: "TMDB (themoviedb.org). Use this skill for ANY TMDB request — searching and reading data. Whenever a task involves TMDB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TMDB"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["tmdb"]
   icon: "https://static.oomol.com/logo/third-party/tmdb.svg"
 ---

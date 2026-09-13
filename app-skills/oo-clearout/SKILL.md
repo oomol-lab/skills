@@ -3,9 +3,10 @@ name: oo-clearout
 description: "Clearout (clearout.io). Use this skill for ANY Clearout request — searching and reading data. Whenever a task involves Clearout, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Clearout"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["clearout"]
   icon: "https://static.oomol.com/logo/third-party/Clearout.svg"
 ---

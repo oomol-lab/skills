@@ -3,9 +3,10 @@ name: oo-abuseipdb
 description: "AbuseIPDB (abuseipdb.com). Use this skill for ANY AbuseIPDB request — reading, creating, and updating data. Whenever a task involves AbuseIPDB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AbuseIPDB"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["abuseipdb"]
   icon: "https://static.oomol.com/logo/third-party/abuseipdb.svg"
 ---

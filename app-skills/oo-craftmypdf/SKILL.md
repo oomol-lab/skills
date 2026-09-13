@@ -3,9 +3,10 @@ name: oo-craftmypdf
 description: "CraftMyPDF (craftmypdf.com). Use this skill for ANY CraftMyPDF request — reading, creating, and updating data. Whenever a task involves CraftMyPDF, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "CraftMyPDF"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["craftmypdf"]
   icon: "https://static.oomol.com/logo/third-party/Craftmypdf.svg"
 ---

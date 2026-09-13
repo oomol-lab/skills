@@ -3,9 +3,10 @@ name: oo-one-drive
 description: "OneDrive (microsoft.com). Use this skill for ANY OneDrive request — reading, creating, updating, and deleting data. Whenever a task involves OneDrive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OneDrive"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["one_drive"]
   icon: "https://static.oomol.com/logo/third-party/OneDrive.svg"
 ---

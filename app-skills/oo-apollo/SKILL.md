@@ -3,9 +3,10 @@ name: oo-apollo
 description: "Apollo. Use this skill for ANY Apollo request — searching and reading data. Whenever a task involves Apollo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Apollo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["apollo"]
   icon: "https://static.oomol.com/logo/third-party/Apollo.svg"
 ---

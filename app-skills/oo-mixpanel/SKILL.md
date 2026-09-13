@@ -3,9 +3,10 @@ name: oo-mixpanel
 description: "Mixpanel (mixpanel.com). Use this skill for ANY Mixpanel request — searching and reading data. Whenever a task involves Mixpanel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mixpanel"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mixpanel"]
   icon: "https://static.oomol.com/logo/third-party/Mixpanel.svg"
 ---

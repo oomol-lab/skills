@@ -3,9 +3,10 @@ name: oo-openalex
 description: "OpenAlex (openalex.org). Use this skill for ANY OpenAlex request — searching and reading data. Whenever a task involves OpenAlex, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OpenAlex"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["openalex"]
   icon: "https://static.oomol.com/logo/third-party/openalex.svg"
 ---

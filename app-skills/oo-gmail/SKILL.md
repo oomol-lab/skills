@@ -3,9 +3,10 @@ name: oo-gmail
 description: "Gmail (workspace.google.com). Use this skill for ANY Gmail request — reading, creating, updating, and deleting data. Whenever a task involves Gmail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gmail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["gmail"]
   icon: "https://static.oomol.com/logo/third-party/Gmail.svg"
 ---

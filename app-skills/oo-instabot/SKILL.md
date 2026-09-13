@@ -3,9 +3,10 @@ name: oo-instabot
 description: "Instabot (instabot.io). Use this skill for ANY Instabot request — reading, creating, updating, and deleting data. Whenever a task involves Instabot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Instabot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["instabot"]
   icon: "https://static.oomol.com/logo/third-party/instabot.svg"
 ---

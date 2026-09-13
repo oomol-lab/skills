@@ -3,9 +3,10 @@ name: oo-lemlist
 description: "lemlist (lemlist.com). Use this skill for ANY lemlist request — searching and reading data. Whenever a task involves lemlist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "lemlist"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["lemlist"]
   icon: "https://static.oomol.com/logo/third-party/lemlist.svg"
 ---

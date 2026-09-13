@@ -3,9 +3,10 @@ name: oo-dachser
 description: "DACHSER (dachser.com). Use this skill for ANY DACHSER request — reading, creating, and updating data. Whenever a task involves DACHSER, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DACHSER"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dachser"]
   icon: "https://static.oomol.com/logo/third-party/dachser.svg"
 ---

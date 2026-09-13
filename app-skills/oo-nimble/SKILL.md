@@ -3,9 +3,10 @@ name: oo-nimble
 description: "Nimble (nimble.com). Use this skill for ANY Nimble request — reading, creating, and updating data. Whenever a task involves Nimble, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Nimble"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["nimble"]
   icon: "https://static.oomol.com/logo/third-party/nimble.svg"
 ---

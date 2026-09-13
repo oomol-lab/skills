@@ -3,9 +3,10 @@ name: oo-mailgun
 description: "Mailgun (mailgun.com). Use this skill for ANY Mailgun request — reading, creating, updating, and deleting data. Whenever a task involves Mailgun, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailgun"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailgun"]
   icon: "https://static.oomol.com/logo/third-party/mailgun.svg"
 ---

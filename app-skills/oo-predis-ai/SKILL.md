@@ -3,9 +3,10 @@ name: oo-predis-ai
 description: "Predis.ai (predis.ai). Use this skill for ANY Predis.ai request — reading, creating, and updating data. Whenever a task involves Predis.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Predis.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["predis_ai"]
   icon: "https://static.oomol.com/logo/third-party/predis_ai.svg"
 ---

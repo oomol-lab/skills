@@ -3,9 +3,10 @@ name: oo-lattice
 description: "Lattice (lattice.com). Use this skill for ANY Lattice request — searching and reading data. Whenever a task involves Lattice, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lattice"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lattice"]
   icon: "https://static.oomol.com/logo/third-party/lattice.svg"
 ---

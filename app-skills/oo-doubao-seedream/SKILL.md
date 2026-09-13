@@ -3,9 +3,10 @@ name: oo-doubao-seedream
 description: "Doubao Seedream (volcengine.com). Use this skill for ANY Doubao Seedream request — searching and reading data. Whenever a task involves Doubao Seedream, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Doubao Seedream"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["doubao_seedream"]
   icon: "https://static.oomol.com/logo/third-party/doubao_seedream.svg"
 ---

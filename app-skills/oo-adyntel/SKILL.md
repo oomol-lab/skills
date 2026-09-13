@@ -3,9 +3,10 @@ name: oo-adyntel
 description: "Adyntel (adyntel.com). Use this skill for ANY Adyntel request — searching and reading data. Whenever a task involves Adyntel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Adyntel"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["adyntel"]
   icon: "https://static.oomol.com/logo/third-party/adyntel.png"
 ---

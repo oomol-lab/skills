@@ -3,9 +3,10 @@ name: oo-algolia
 description: "Algolia (algolia.com). Use this skill for ANY Algolia request — reading, creating, updating, and deleting data. Whenever a task involves Algolia, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Algolia"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["algolia"]
   icon: "https://static.oomol.com/logo/third-party/Algolia.svg"
 ---

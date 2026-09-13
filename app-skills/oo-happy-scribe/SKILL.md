@@ -3,9 +3,10 @@ name: oo-happy-scribe
 description: "Happy Scribe (happyscribe.com). Use this skill for ANY Happy Scribe request — reading, creating, updating, and deleting data. Whenever a task involves Happy Scribe, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Happy Scribe"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["happy_scribe"]
   icon: "https://static.oomol.com/logo/third-party/happy_scribe.svg"
 ---

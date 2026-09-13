@@ -3,9 +3,10 @@ name: oo-linguapop
 description: "Linguapop (linguapop.eu). Use this skill for ANY Linguapop request — reading, creating, and updating data. Whenever a task involves Linguapop, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Linguapop"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["linguapop"]
   icon: "https://static.oomol.com/logo/third-party/Linguapop.svg"
 ---

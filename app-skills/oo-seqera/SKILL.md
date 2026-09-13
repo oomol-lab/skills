@@ -3,9 +3,10 @@ name: oo-seqera
 description: "Seqera (seqera.io). Use this skill for ANY Seqera request — searching and reading data. Whenever a task involves Seqera, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Seqera"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["seqera"]
   icon: "https://static.oomol.com/logo/third-party/Seqera.svg"
 ---

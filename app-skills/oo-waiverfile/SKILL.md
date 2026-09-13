@@ -3,9 +3,10 @@ name: oo-waiverfile
 description: "WaiverFile (waiverfile.com). Use this skill for ANY WaiverFile request — searching and reading data. Whenever a task involves WaiverFile, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WaiverFile"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["waiverfile"]
   icon: "https://static.oomol.com/logo/third-party/waiverfile.png"
 ---

@@ -3,9 +3,10 @@ name: oo-venafitlsprotectcloud
 description: "Venafi TLS Protect Cloud (paloaltonetworks.com). Use this skill for ANY Venafi TLS Protect Cloud request — searching and reading data. Whenever a task involves Venafi TLS Protect Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Venafi TLS Protect Cloud"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["venafitlsprotectcloud"]
   icon: "https://static.oomol.com/logo/third-party/venafitlsprotectcloud.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-lever
 description: "Lever (lever.co). Use this skill for ANY Lever request — reading, creating, and updating data. Whenever a task involves Lever, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lever"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lever"]
   icon: "https://static.oomol.com/logo/third-party/lever.svg"
 ---

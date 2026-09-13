@@ -3,9 +3,10 @@ name: oo-twitter
 description: "X (Twitter) (x.com). Use this skill for ANY X (Twitter) request — reading, creating, updating, and deleting data. Whenever a task involves X (Twitter), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "X (Twitter)"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["twitter"]
   icon: "https://static.oomol.com/logo/third-party/Twitter.svg"
 ---

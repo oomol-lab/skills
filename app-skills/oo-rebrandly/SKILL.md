@@ -3,9 +3,10 @@ name: oo-rebrandly
 description: "Rebrandly (rebrandly.com). Use this skill for ANY Rebrandly request — reading, creating, updating, and deleting data. Whenever a task involves Rebrandly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Rebrandly"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["rebrandly"]
   icon: "https://static.oomol.com/logo/third-party/rebrandly.png"
 ---

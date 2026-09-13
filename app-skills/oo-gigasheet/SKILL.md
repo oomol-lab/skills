@@ -3,9 +3,10 @@ name: oo-gigasheet
 description: "Gigasheet (gigasheet.com). Use this skill for ANY Gigasheet request — searching and reading data. Whenever a task involves Gigasheet, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gigasheet"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gigasheet"]
   icon: "https://static.oomol.com/logo/third-party/Gigasheet.svg"
 ---

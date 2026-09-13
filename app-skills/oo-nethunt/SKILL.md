@@ -3,9 +3,10 @@ name: oo-nethunt
 description: "NetHunt (nethunt.com). Use this skill for ANY NetHunt request — reading, creating, updating, and deleting data. Whenever a task involves NetHunt, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NetHunt"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["nethunt"]
   icon: "https://static.oomol.com/logo/third-party/nethunt.png"
 ---

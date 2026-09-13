@@ -3,9 +3,10 @@ name: oo-baidu-netdisk
 description: "Baidu Netdisk (pan.baidu.com). Use this skill for ANY Baidu Netdisk request — reading, creating, and updating data. Whenever a task involves Baidu Netdisk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Baidu Netdisk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["baidu_netdisk"]
   icon: "https://static.oomol.com/logo/third-party/baidu_netdisk.png"
 ---

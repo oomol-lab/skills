@@ -3,9 +3,10 @@ name: oo-geokeo
 description: "Geokeo (geokeo.com). Use this skill for ANY Geokeo request — reading, creating, and updating data. Whenever a task involves Geokeo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Geokeo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["geokeo"]
   icon: "https://static.oomol.com/logo/third-party/Geokeo.svg"
 ---

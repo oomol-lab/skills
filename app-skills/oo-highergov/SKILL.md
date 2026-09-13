@@ -3,9 +3,10 @@ name: oo-highergov
 description: "HigherGov (highergov.com). Use this skill for ANY HigherGov request — searching and reading data. Whenever a task involves HigherGov, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HigherGov"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["highergov"]
   icon: "https://static.oomol.com/logo/third-party/highergov.svg"
 ---

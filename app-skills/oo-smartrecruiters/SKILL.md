@@ -3,9 +3,10 @@ name: oo-smartrecruiters
 description: "SmartRecruiters (smartrecruiters.com). Use this skill for ANY SmartRecruiters request — searching and reading data. Whenever a task involves SmartRecruiters, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SmartRecruiters"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["smartrecruiters"]
   icon: "https://static.oomol.com/logo/third-party/smartrecruiters.png"
 ---

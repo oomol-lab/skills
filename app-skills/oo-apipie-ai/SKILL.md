@@ -3,9 +3,10 @@ name: oo-apipie-ai
 description: "APIpie AI (apipie.ai). Use this skill for ANY APIpie AI request — reading, creating, and updating data. Whenever a task involves APIpie AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "APIpie AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["apipie_ai"]
   icon: "https://static.oomol.com/logo/third-party/apipie_ai.png"
 ---

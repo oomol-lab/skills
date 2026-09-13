@@ -3,9 +3,10 @@ name: oo-mailcheck
 description: "Mailcheck (usercheck.com). Use this skill for ANY Mailcheck request — searching and reading data. Whenever a task involves Mailcheck, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailcheck"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailcheck"]
   icon: "https://static.oomol.com/logo/third-party/Mailcheck.svg"
 ---

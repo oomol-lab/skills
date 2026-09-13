@@ -3,9 +3,10 @@ name: oo-apiverve
 description: "APIVerve (apiverve.com). Use this skill for ANY APIVerve request — searching and reading data. Whenever a task involves APIVerve, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "APIVerve"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["apiverve"]
   icon: "https://static.oomol.com/logo/third-party/Apiverve.svg"
 ---

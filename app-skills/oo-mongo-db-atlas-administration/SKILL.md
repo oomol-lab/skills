@@ -3,9 +3,10 @@ name: oo-mongo-db-atlas-administration
 description: "MongoDB Atlas Administration (mongodb.com). Use this skill for ANY MongoDB Atlas Administration request — searching and reading data. Whenever a task involves MongoDB Atlas Administration, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MongoDB Atlas Administration"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mongo_db_atlas_administration"]
   icon: "https://static.oomol.com/logo/third-party/mongo_db_atlas_administration.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-gist
 description: "Gist (gist.github.com). Use this skill for ANY Gist request — reading, creating, updating, and deleting data. Whenever a task involves Gist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gist"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gist"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---

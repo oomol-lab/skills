@@ -3,9 +3,10 @@ name: oo-kit
 description: "Kit (kit.com). Use this skill for ANY Kit request — reading, creating, and updating data. Whenever a task involves Kit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Kit"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["kit"]
   icon: "https://static.oomol.com/logo/third-party/kit.svg"
 ---

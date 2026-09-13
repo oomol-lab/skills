@@ -3,9 +3,10 @@ name: oo-vultr
 description: "Vultr (vultr.com). Use this skill for ANY Vultr request — reading, creating, updating, and deleting data. Whenever a task involves Vultr, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Vultr"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["vultr"]
   icon: "https://static.oomol.com/logo/third-party/vultr.svg"
 ---

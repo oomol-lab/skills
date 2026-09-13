@@ -3,9 +3,10 @@ name: oo-appledb
 description: "AppleDB (appledb.dev). Use this skill for ANY AppleDB request — searching and reading data. Whenever a task involves AppleDB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AppleDB"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["appledb"]
   icon: "https://static.oomol.com/logo/third-party/appledb.png"
 ---

@@ -3,9 +3,10 @@ name: oo-heartbeat
 description: "Heartbeat (heartbeat.chat). Use this skill for ANY Heartbeat request — searching and reading data. Whenever a task involves Heartbeat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Heartbeat"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["heartbeat"]
   icon: "https://static.oomol.com/logo/third-party/heartbeat.png"
 ---

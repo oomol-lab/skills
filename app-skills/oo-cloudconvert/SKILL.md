@@ -3,9 +3,10 @@ name: oo-cloudconvert
 description: "CloudConvert (cloudconvert.com). Use this skill for ANY CloudConvert request — reading, creating, updating, and deleting data. Whenever a task involves CloudConvert, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "CloudConvert"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cloudconvert"]
   icon: "https://static.oomol.com/logo/third-party/CloudConvert.svg"
 ---

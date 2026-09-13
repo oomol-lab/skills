@@ -3,9 +3,10 @@ name: oo-waterfall
 description: "Waterfall (waterfall.io). Use this skill for ANY Waterfall request — searching and reading data. Whenever a task involves Waterfall, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Waterfall"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["waterfall"]
   icon: "https://static.oomol.com/logo/third-party/waterfall.svg"
 ---

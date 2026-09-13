@@ -3,9 +3,10 @@ name: oo-chuhaijiang
 description: "Chuhaijiang (chuhaijiang.com). Use this skill for ANY Chuhaijiang request — searching and reading data. Whenever a task involves Chuhaijiang, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Chuhaijiang"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chuhaijiang"]
   icon: "https://static.oomol.com/logo/third-party/chuhaijiang.svg"
 ---

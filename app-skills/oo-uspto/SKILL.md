@@ -3,9 +3,10 @@ name: oo-uspto
 description: "USPTO (uspto.gov). Use this skill for ANY USPTO request — reading, creating, and updating data. Whenever a task involves USPTO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "USPTO"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["uspto"]
   icon: "https://static.oomol.com/logo/third-party/uspto.png"
 ---

@@ -3,9 +3,10 @@ name: oo-cronitor
 description: "Cronitor (cronitor.io). Use this skill for ANY Cronitor request — reading, creating, updating, and deleting data. Whenever a task involves Cronitor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cronitor"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cronitor"]
   icon: "https://static.oomol.com/logo/third-party/cronitor.svg"
 ---

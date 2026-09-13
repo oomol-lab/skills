@@ -3,9 +3,10 @@ name: oo-moco
 description: "MOCO (mocoapp.com). Use this skill for ANY MOCO request — searching and reading data. Whenever a task involves MOCO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MOCO"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["moco"]
   icon: "https://static.oomol.com/logo/third-party/moco.svg"
 ---

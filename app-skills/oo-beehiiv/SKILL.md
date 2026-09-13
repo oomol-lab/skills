@@ -3,9 +3,10 @@ name: oo-beehiiv
 description: "Beehiiv (beehiiv.com). Use this skill for ANY Beehiiv request — reading, creating, and updating data. Whenever a task involves Beehiiv, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Beehiiv"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["beehiiv"]
   icon: "https://static.oomol.com/logo/third-party/beehiiv.svg"
 ---

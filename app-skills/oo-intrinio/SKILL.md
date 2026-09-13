@@ -3,9 +3,10 @@ name: oo-intrinio
 description: "Intrinio (intrinio.com). Use this skill for ANY Intrinio request — searching and reading data. Whenever a task involves Intrinio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Intrinio"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["intrinio"]
   icon: "https://static.oomol.com/logo/third-party/intrinio.png"
 ---

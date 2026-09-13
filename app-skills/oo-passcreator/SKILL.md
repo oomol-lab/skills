@@ -3,9 +3,10 @@ name: oo-passcreator
 description: "Passcreator (passcreator.com). Use this skill for ANY Passcreator request — reading, creating, and updating data. Whenever a task involves Passcreator, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Passcreator"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["passcreator"]
   icon: "https://static.oomol.com/logo/third-party/passcreator.svg"
 ---

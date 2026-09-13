@@ -3,9 +3,10 @@ name: oo-hub-planner
 description: "Resource Flow (Hub Planner) (milientsoftware.com). Use this skill for ANY Resource Flow (Hub Planner) request — reading, creating, and updating data. Whenever a task involves Resource Flow (Hub Planner), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Resource Flow (Hub Planner)"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["hub_planner"]
   icon: "https://static.oomol.com/logo/third-party/hub_planner.svg"
 ---

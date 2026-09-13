@@ -3,9 +3,10 @@ name: oo-acuity-scheduling
 description: "Acuity Scheduling (acuityscheduling.com). Use this skill for ANY Acuity Scheduling request — reading, creating, and updating data. Whenever a task involves Acuity Scheduling, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Acuity Scheduling"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["acuity_scheduling"]
   icon: "https://static.oomol.com/logo/third-party/acuity_scheduling.png"
 ---

@@ -3,9 +3,10 @@ name: oo-perdoo
 description: "Perdoo (perdoo.com). Use this skill for ANY Perdoo request — reading, creating, and updating data. Whenever a task involves Perdoo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Perdoo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["perdoo"]
   icon: "https://static.oomol.com/logo/third-party/perdoo.svg"
 ---

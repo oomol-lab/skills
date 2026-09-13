@@ -3,9 +3,10 @@ name: oo-cutt-ly
 description: "Cuttly (cutt.ly). Use this skill for ANY Cuttly request — searching and reading data. Whenever a task involves Cuttly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cuttly"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cutt_ly"]
   icon: "https://static.oomol.com/logo/third-party/Cutt.ly.svg"
 ---

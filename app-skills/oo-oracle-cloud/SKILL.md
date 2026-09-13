@@ -3,9 +3,10 @@ name: oo-oracle-cloud
 description: "Oracle Cloud Infrastructure (oracle.com). Use this skill for ANY Oracle Cloud Infrastructure request — reading, creating, updating, and deleting data. Whenever a task involves Oracle Cloud Infrastructure, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Oracle Cloud Infrastructure"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["oracle_cloud"]
   icon: "https://static.oomol.com/logo/third-party/oracle_cloud.png"
 ---

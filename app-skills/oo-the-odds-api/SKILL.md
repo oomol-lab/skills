@@ -3,9 +3,10 @@ name: oo-the-odds-api
 description: "The Odds API (the-odds-api.com). Use this skill for ANY The Odds API request — searching and reading data. Whenever a task involves The Odds API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "The Odds API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["the_odds_api"]
   icon: "https://static.oomol.com/logo/third-party/the_odds_api.svg"
 ---

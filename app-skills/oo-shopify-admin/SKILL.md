@@ -3,9 +3,10 @@ name: oo-shopify-admin
 description: "Shopify Admin (shopify.com). Use this skill for ANY Shopify Admin request — reading, creating, and updating data. Whenever a task involves Shopify Admin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Shopify Admin"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["shopify_admin"]
   icon: "https://static.oomol.com/logo/third-party/shopify_admin.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-gildata
 description: "Gildata Data Map (gildata.com). Use this skill for ANY Gildata Data Map request — searching and reading data. Whenever a task involves Gildata Data Map, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gildata Data Map"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gildata"]
   icon: "https://static.oomol.com/logo/third-party/gildata.png"
 ---

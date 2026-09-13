@@ -3,9 +3,10 @@ name: oo-uptimerobot
 description: "UptimeRobot (uptimerobot.com). Use this skill for ANY UptimeRobot request — reading, creating, updating, and deleting data. Whenever a task involves UptimeRobot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "UptimeRobot"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["uptimerobot"]
   icon: "https://static.oomol.com/logo/third-party/Uptimerobot.svg"
 ---

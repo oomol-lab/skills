@@ -3,9 +3,10 @@ name: oo-ahrefs
 description: "Ahrefs (ahrefs.com). Use this skill for ANY Ahrefs request — searching and reading data. Whenever a task involves Ahrefs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Ahrefs"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ahrefs"]
   icon: "https://static.oomol.com/logo/third-party/ahrefs.svg"
 ---

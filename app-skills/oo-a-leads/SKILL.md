@@ -3,9 +3,10 @@ name: oo-a-leads
 description: "A-Leads (a-leads.co). Use this skill for ANY A-Leads request — searching and reading data. Whenever a task involves A-Leads, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "A-Leads"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["a_leads"]
   icon: "https://static.oomol.com/logo/third-party/a_leads.svg"
 ---

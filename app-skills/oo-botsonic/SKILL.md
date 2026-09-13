@@ -3,9 +3,10 @@ name: oo-botsonic
 description: "Botsonic (botsonic.com). Use this skill for ANY Botsonic request — searching and reading data. Whenever a task involves Botsonic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Botsonic"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["botsonic"]
   icon: "https://static.oomol.com/logo/third-party/botsonic.svg"
 ---

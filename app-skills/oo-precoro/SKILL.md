@@ -3,9 +3,10 @@ name: oo-precoro
 description: "Precoro (precoro.com). Use this skill for ANY Precoro request — reading, creating, and updating data. Whenever a task involves Precoro, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Precoro"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["precoro"]
   icon: "https://static.oomol.com/logo/third-party/precoro.svg"
 ---

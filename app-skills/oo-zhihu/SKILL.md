@@ -3,9 +3,10 @@ name: oo-zhihu
 description: "Zhihu (zhihu.com). Use this skill for ANY Zhihu request — reading, creating, and updating data. Whenever a task involves Zhihu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zhihu"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zhihu"]
   icon: "https://static.oomol.com/logo/third-party/zhihu.svg"
 ---

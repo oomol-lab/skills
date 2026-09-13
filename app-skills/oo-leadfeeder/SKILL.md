@@ -3,9 +3,10 @@ name: oo-leadfeeder
 description: "Leadfeeder (leadfeeder.com). Use this skill for ANY Leadfeeder request — searching and reading data. Whenever a task involves Leadfeeder, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Leadfeeder"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["leadfeeder"]
   icon: "https://static.oomol.com/logo/third-party/leadfeeder.svg"
 ---

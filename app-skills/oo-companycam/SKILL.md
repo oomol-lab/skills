@@ -3,9 +3,10 @@ name: oo-companycam
 description: "CompanyCam (companycam.com). Use this skill for ANY CompanyCam request — reading, creating, updating, and deleting data. Whenever a task involves CompanyCam, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "CompanyCam"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["companycam"]
   icon: "https://static.oomol.com/logo/third-party/companycam.png"
 ---

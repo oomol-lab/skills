@@ -3,9 +3,10 @@ name: oo-crossref
 description: "Crossref (crossref.org). Use this skill for ANY Crossref request — searching and reading data. Whenever a task involves Crossref, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Crossref"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["crossref"]
   icon: "https://static.oomol.com/logo/third-party/crossref.svg"
 ---

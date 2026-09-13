@@ -3,9 +3,10 @@ name: oo-simplybook-me
 description: "SimplyBook.me (simplybook.me). Use this skill for ANY SimplyBook.me request — reading, creating, and updating data. Whenever a task involves SimplyBook.me, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SimplyBook.me"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["simplybook_me"]
   icon: "https://static.oomol.com/logo/third-party/simplybook_me.svg"
 ---

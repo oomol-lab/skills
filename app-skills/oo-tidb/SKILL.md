@@ -3,9 +3,10 @@ name: oo-tidb
 description: "TiDB Cloud (pingcap.com). Use this skill for ANY TiDB Cloud request — reading, creating, and updating data. Whenever a task involves TiDB Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TiDB Cloud"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tidb"]
   icon: "https://static.oomol.com/logo/third-party/tidb.svg"
 ---

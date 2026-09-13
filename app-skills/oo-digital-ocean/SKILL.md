@@ -3,9 +3,10 @@ name: oo-digital-ocean
 description: "DigitalOcean (digitalocean.com). Use this skill for ANY DigitalOcean request — searching and reading data. Whenever a task involves DigitalOcean, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DigitalOcean"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["digital_ocean"]
   icon: "https://static.oomol.com/logo/third-party/DigitalOcean.svg"
 ---

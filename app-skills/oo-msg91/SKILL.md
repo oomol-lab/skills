@@ -3,9 +3,10 @@ name: oo-msg91
 description: "MSG91 (msg91.com). Use this skill for ANY MSG91 request — reading, creating, and updating data. Whenever a task involves MSG91, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MSG91"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["msg91"]
   icon: "https://static.oomol.com/logo/third-party/msg91.svg"
 ---

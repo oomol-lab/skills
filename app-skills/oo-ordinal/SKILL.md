@@ -3,9 +3,10 @@ name: oo-ordinal
 description: "Ordinal (tryordinal.com). Use this skill for ANY Ordinal request — reading, creating, and updating data. Whenever a task involves Ordinal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Ordinal"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ordinal"]
   icon: "https://static.oomol.com/logo/third-party/ordinal.png"
 ---

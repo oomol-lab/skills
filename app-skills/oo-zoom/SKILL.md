@@ -3,9 +3,10 @@ name: oo-zoom
 description: "Zoom (zoom.com). Use this skill for ANY Zoom request — reading, creating, and updating data. Whenever a task involves Zoom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zoom"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zoom"]
   icon: "https://static.oomol.com/logo/third-party/zoom.svg"
 ---

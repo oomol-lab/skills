@@ -3,9 +3,10 @@ name: oo-pexels
 description: "Pexels (pexels.com). Use this skill for ANY Pexels request — searching and reading data. Whenever a task involves Pexels, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pexels"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pexels"]
   icon: "https://static.oomol.com/logo/third-party/Pexels.svg"
 ---

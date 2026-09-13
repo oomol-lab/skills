@@ -3,9 +3,10 @@ name: oo-quickbase
 description: "Quickbase (quickbase.com). Use this skill for ANY Quickbase request — reading, creating, updating, and deleting data. Whenever a task involves Quickbase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Quickbase"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["quickbase"]
   icon: "https://static.oomol.com/logo/third-party/quickbase.svg"
 ---

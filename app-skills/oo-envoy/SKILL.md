@@ -3,9 +3,10 @@ name: oo-envoy
 description: "Envoy (envoy.com). Use this skill for ANY Envoy request — reading, creating, and updating data. Whenever a task involves Envoy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Envoy"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["envoy"]
   icon: "https://static.oomol.com/logo/third-party/envoy.svg"
 ---

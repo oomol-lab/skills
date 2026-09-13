@@ -3,9 +3,10 @@ name: oo-openfootball-worldcup
 description: "OpenFootball World Cup (github.com). Use this skill for ANY OpenFootball World Cup request — searching and reading data. Whenever a task involves OpenFootball World Cup, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OpenFootball World Cup"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["openfootball_worldcup"]
   icon: "https://static.oomol.com/logo/third-party/openfootball_worldcup.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-textit
 description: "TextIt (textit.com). Use this skill for ANY TextIt request — reading, creating, updating, and deleting data. Whenever a task involves TextIt, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TextIt"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["textit"]
   icon: "https://static.oomol.com/logo/third-party/textit.webp"
 ---

@@ -3,9 +3,10 @@ name: oo-lemon-squeezy
 description: "Lemon Squeezy (lemonsqueezy.com). Use this skill for ANY Lemon Squeezy request — reading, creating, updating, and deleting data. Whenever a task involves Lemon Squeezy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lemon Squeezy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["lemon_squeezy"]
   icon: "https://static.oomol.com/logo/third-party/Lemon%20Squeezy.svg"
 ---

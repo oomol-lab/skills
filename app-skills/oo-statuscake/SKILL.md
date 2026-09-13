@@ -3,9 +3,10 @@ name: oo-statuscake
 description: "StatusCake (statuscake.com). Use this skill for ANY StatusCake request — reading, creating, updating, and deleting data. Whenever a task involves StatusCake, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "StatusCake"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["statuscake"]
   icon: "https://static.oomol.com/logo/third-party/Statuscake.svg"
 ---

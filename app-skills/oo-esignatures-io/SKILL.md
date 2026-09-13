@@ -3,9 +3,10 @@ name: oo-esignatures-io
 description: "eSignatures.com (esignatures.com). Use this skill for ANY eSignatures.com request — reading, creating, and updating data. Whenever a task involves eSignatures.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "eSignatures.com"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["esignatures_io"]
   icon: "https://static.oomol.com/logo/third-party/esignatures_io.png"
 ---

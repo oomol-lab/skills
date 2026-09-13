@@ -3,9 +3,10 @@ name: oo-courier
 description: "Courier (courier.com). Use this skill for ANY Courier request — reading, creating, updating, and deleting data. Whenever a task involves Courier, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Courier"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["courier"]
   icon: "https://static.oomol.com/logo/third-party/courier.svg"
 ---

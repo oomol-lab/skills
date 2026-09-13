@@ -3,9 +3,10 @@ name: oo-googlemeet
 description: "Google Meet (workspace.google.com). Use this skill for ANY Google Meet request — reading, creating, and updating data. Whenever a task involves Google Meet, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Meet"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["googlemeet"]
   icon: "https://static.oomol.com/logo/third-party/googlemeet.svg"
 ---

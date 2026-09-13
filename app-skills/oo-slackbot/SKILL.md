@@ -3,9 +3,10 @@ name: oo-slackbot
 description: "Slack Bot (slack.com). Use this skill for ANY Slack Bot request — reading, creating, updating, and deleting data. Whenever a task involves Slack Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Slack Bot"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["slackbot"]
   icon: "https://static.oomol.com/logo/third-party/slackbot.svg"
 ---

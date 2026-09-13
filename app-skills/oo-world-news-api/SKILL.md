@@ -3,9 +3,10 @@ name: oo-world-news-api
 description: "World News API (worldnewsapi.com). Use this skill for ANY World News API request — searching and reading data. Whenever a task involves World News API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "World News API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["world_news_api"]
   icon: "https://static.oomol.com/logo/third-party/world_news_api.svg"
 ---

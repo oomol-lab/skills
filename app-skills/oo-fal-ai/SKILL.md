@@ -3,9 +3,10 @@ name: oo-fal-ai
 description: "fal.ai (fal.ai). Use this skill for ANY fal.ai request — reading, creating, and updating data. Whenever a task involves fal.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "fal.ai"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fal_ai"]
   icon: "https://static.oomol.com/logo/third-party/Fal.ai.svg"
 ---

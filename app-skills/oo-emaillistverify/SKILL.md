@@ -3,9 +3,10 @@ name: oo-emaillistverify
 description: "EmailListVerify (emaillistverify.com). Use this skill for ANY EmailListVerify request — reading, creating, updating, and deleting data. Whenever a task involves EmailListVerify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "EmailListVerify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["emaillistverify"]
   icon: "https://static.oomol.com/logo/third-party/Emaillistverify.svg"
 ---

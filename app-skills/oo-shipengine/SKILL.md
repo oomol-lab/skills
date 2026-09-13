@@ -3,9 +3,10 @@ name: oo-shipengine
 description: "ShipEngine (shipengine.com). Use this skill for ANY ShipEngine request — searching and reading data. Whenever a task involves ShipEngine, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ShipEngine"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["shipengine"]
   icon: "https://static.oomol.com/logo/third-party/shipengine.png"
 ---

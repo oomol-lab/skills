@@ -3,9 +3,10 @@ name: oo-cubox
 description: "Cubox (cubox.pro). Use this skill for ANY Cubox request — reading, creating, and updating data. Whenever a task involves Cubox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cubox"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cubox"]
   icon: "https://static.oomol.com/logo/third-party/cubox.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-urlscan
 description: "urlscan.io (urlscan.io). Use this skill for ANY urlscan.io request — reading, creating, and updating data. Whenever a task involves urlscan.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "urlscan.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["urlscan"]
   icon: "https://static.oomol.com/logo/third-party/urlscan.png"
 ---

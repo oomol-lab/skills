@@ -3,9 +3,10 @@ name: oo-zendesk
 description: "Zendesk (zendesk.com). Use this skill for ANY Zendesk request — reading, creating, and updating data. Whenever a task involves Zendesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zendesk"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zendesk"]
   icon: "https://static.oomol.com/logo/third-party/Zendesk.svg"
 ---

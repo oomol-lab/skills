@@ -3,9 +3,10 @@ name: oo-dynatrace
 description: "Dynatrace (dynatrace.com). Use this skill for ANY Dynatrace request — searching and reading data. Whenever a task involves Dynatrace, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dynatrace"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["dynatrace"]
   icon: "https://static.oomol.com/logo/third-party/dynatrace.svg"
 ---

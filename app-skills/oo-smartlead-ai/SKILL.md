@@ -3,9 +3,10 @@ name: oo-smartlead-ai
 description: "Smartlead (smartlead.ai). Use this skill for ANY Smartlead request — searching and reading data. Whenever a task involves Smartlead, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Smartlead"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["smartlead_ai"]
   icon: "https://static.oomol.com/logo/third-party/smartlead_ai.png"
 ---

@@ -3,9 +3,10 @@ name: oo-referralhero
 description: "ReferralHero (referralhero.com). Use this skill for ANY ReferralHero request — reading, creating, updating, and deleting data. Whenever a task involves ReferralHero, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ReferralHero"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["referralhero"]
   icon: "https://static.oomol.com/logo/third-party/referralhero.svg"
 ---

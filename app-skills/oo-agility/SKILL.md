@@ -3,9 +3,10 @@ name: oo-agility
 description: "Agility CMS (agilitycms.com). Use this skill for ANY Agility CMS request — searching and reading data. Whenever a task involves Agility CMS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Agility CMS"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["agility"]
   icon: "https://static.oomol.com/logo/third-party/agility.svg"
 ---

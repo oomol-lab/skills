@@ -3,9 +3,10 @@ name: oo-anthropic
 description: "Anthropic (anthropic.com). Use this skill for ANY Anthropic request — reading, creating, and updating data. Whenever a task involves Anthropic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Anthropic"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["anthropic"]
   icon: "https://static.oomol.com/logo/third-party/anthropic.svg"
 ---

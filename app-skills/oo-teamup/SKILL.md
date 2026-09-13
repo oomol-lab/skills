@@ -3,9 +3,10 @@ name: oo-teamup
 description: "Teamup Calendar (teamup.com). Use this skill for ANY Teamup Calendar request — reading, creating, updating, and deleting data. Whenever a task involves Teamup Calendar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Teamup Calendar"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["teamup"]
   icon: "https://static.oomol.com/logo/third-party/teamup.png"
 ---

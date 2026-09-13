@@ -3,9 +3,10 @@ name: oo-pdfmonkey
 description: "PDFMonkey (pdfmonkey.io). Use this skill for ANY PDFMonkey request — reading, creating, and updating data. Whenever a task involves PDFMonkey, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PDFMonkey"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pdfmonkey"]
   icon: "https://static.oomol.com/logo/third-party/pdfmonkey.svg"
 ---

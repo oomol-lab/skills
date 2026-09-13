@@ -3,9 +3,10 @@ name: oo-flomo
 description: "flomo (flomoapp.com). Use this skill for ANY flomo request — reading, creating, and updating data. Whenever a task involves flomo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "flomo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["flomo"]
   icon: "https://static.oomol.com/logo/third-party/flomo.png"
 ---

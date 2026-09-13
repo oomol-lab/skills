@@ -3,9 +3,10 @@ name: oo-deck-co
 description: "Deck.co (deck.co). Use this skill for ANY Deck.co request — reading, creating, and updating data. Whenever a task involves Deck.co, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Deck.co"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["deck_co"]
   icon: "https://static.oomol.com/logo/third-party/deck_co.png"
 ---

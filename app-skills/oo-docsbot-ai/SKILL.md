@@ -3,9 +3,10 @@ name: oo-docsbot-ai
 description: "DocsBot AI (docsbot.ai). Use this skill for ANY DocsBot AI request — searching and reading data. Whenever a task involves DocsBot AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DocsBot AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["docsbot_ai"]
   icon: "https://static.oomol.com/logo/third-party/docsbot_ai.svg"
 ---

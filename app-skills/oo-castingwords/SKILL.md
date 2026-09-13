@@ -3,9 +3,10 @@ name: oo-castingwords
 description: "CastingWords (castingwords.com). Use this skill for ANY CastingWords request — reading, creating, and updating data. Whenever a task involves CastingWords, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "CastingWords"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["castingwords"]
   icon: "https://static.oomol.com/logo/third-party/castingwords.svg"
 ---

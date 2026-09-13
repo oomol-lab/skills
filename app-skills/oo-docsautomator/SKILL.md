@@ -3,9 +3,10 @@ name: oo-docsautomator
 description: "DocsAutomator (docsautomator.co). Use this skill for ANY DocsAutomator request — reading, creating, and updating data. Whenever a task involves DocsAutomator, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DocsAutomator"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["docsautomator"]
   icon: "https://static.oomol.com/logo/third-party/docsautomator.png"
 ---

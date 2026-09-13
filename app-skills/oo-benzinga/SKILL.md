@@ -3,9 +3,10 @@ name: oo-benzinga
 description: "Benzinga (benzinga.com). Use this skill for ANY Benzinga request — searching and reading data. Whenever a task involves Benzinga, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Benzinga"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["benzinga"]
   icon: "https://static.oomol.com/logo/third-party/benzinga.svg"
 ---

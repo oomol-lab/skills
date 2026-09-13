@@ -3,9 +3,10 @@ name: oo-brevo
 description: "Brevo (brevo.com). Use this skill for ANY Brevo request — reading, creating, updating, and deleting data. Whenever a task involves Brevo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Brevo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["brevo"]
   icon: "https://static.oomol.com/logo/third-party/Brevo.svg"
 ---

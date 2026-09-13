@@ -3,9 +3,10 @@ name: oo-moesif
 description: "Moesif (moesif.com). Use this skill for ANY Moesif request — searching and reading data. Whenever a task involves Moesif, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Moesif"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["moesif"]
   icon: "https://static.oomol.com/logo/third-party/moesif.svg"
 ---

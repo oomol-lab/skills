@@ -3,9 +3,10 @@ name: oo-campaign-cleaner
 description: "Campaign Cleaner (campaigncleaner.com). Use this skill for ANY Campaign Cleaner request — reading, creating, updating, and deleting data. Whenever a task involves Campaign Cleaner, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Campaign Cleaner"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["campaign_cleaner"]
   icon: "https://static.oomol.com/logo/third-party/campaign_cleaner.png"
 ---

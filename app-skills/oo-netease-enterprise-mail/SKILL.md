@@ -3,9 +3,10 @@ name: oo-netease-enterprise-mail
 description: "NetEase Enterprise Mail (qiye.163.com). Use this skill for ANY NetEase Enterprise Mail request — reading, creating, updating, and deleting data. Whenever a task involves NetEase Enterprise Mail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NetEase Enterprise Mail"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["netease_enterprise_mail"]
   icon: "https://static.oomol.com/logo/third-party/netease_enterprise_mail.png"
 ---

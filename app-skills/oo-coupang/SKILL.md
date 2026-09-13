@@ -3,9 +3,10 @@ name: oo-coupang
 description: "Coupang (coupang.com). Use this skill for ANY Coupang request — reading, creating, and updating data. Whenever a task involves Coupang, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Coupang"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["coupang"]
   icon: "https://static.oomol.com/logo/third-party/coupang.svg"
 ---

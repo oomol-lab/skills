@@ -3,9 +3,10 @@ name: oo-twelve-data
 description: "Twelve Data (twelvedata.com). Use this skill for ANY Twelve Data request — searching and reading data. Whenever a task involves Twelve Data, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Twelve Data"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["twelve_data"]
   icon: "https://static.oomol.com/logo/third-party/Twelve%20Data.svg"
 ---

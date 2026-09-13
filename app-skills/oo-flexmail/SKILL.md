@@ -3,9 +3,10 @@ name: oo-flexmail
 description: "Flexmail (flexmail.be). Use this skill for ANY Flexmail request — reading, creating, updating, and deleting data. Whenever a task involves Flexmail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Flexmail"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["flexmail"]
   icon: "https://static.oomol.com/logo/third-party/flexmail.svg"
 ---

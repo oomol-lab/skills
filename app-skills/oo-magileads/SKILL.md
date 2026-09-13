@@ -3,9 +3,10 @@ name: oo-magileads
 description: "Magileads (magileads.com). Use this skill for ANY Magileads request — reading, creating, updating, and deleting data. Whenever a task involves Magileads, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Magileads"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["magileads"]
   icon: "https://static.oomol.com/logo/third-party/magileads.svg"
 ---

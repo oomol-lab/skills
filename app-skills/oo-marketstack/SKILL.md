@@ -3,9 +3,10 @@ name: oo-marketstack
 description: "Marketstack (marketstack.com). Use this skill for ANY Marketstack request — searching and reading data. Whenever a task involves Marketstack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Marketstack"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["marketstack"]
   icon: "https://static.oomol.com/logo/third-party/Marketstack.svg"
 ---

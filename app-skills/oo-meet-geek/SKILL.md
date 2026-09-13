@@ -3,9 +3,10 @@ name: oo-meet-geek
 description: "MeetGeek (meetgeek.ai). Use this skill for ANY MeetGeek request — searching and reading data. Whenever a task involves MeetGeek, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MeetGeek"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["meet_geek"]
   icon: "https://static.oomol.com/logo/third-party/meet_geek.svg"
 ---

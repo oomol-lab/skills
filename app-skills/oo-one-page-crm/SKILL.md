@@ -3,9 +3,10 @@ name: oo-one-page-crm
 description: "OnePageCRM (onepagecrm.com). Use this skill for ANY OnePageCRM request — reading, creating, and updating data. Whenever a task involves OnePageCRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OnePageCRM"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["one_page_crm"]
   icon: "https://static.oomol.com/logo/third-party/one_page_crm.svg"
 ---

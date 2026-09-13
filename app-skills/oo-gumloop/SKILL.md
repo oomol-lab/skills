@@ -3,9 +3,10 @@ name: oo-gumloop
 description: "Gumloop (gumloop.com). Use this skill for ANY Gumloop request — reading, creating, and updating data. Whenever a task involves Gumloop, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gumloop"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gumloop"]
   icon: "https://static.oomol.com/logo/third-party/gumloop.svg"
 ---

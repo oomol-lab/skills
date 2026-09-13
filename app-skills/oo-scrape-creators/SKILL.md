@@ -3,9 +3,10 @@ name: oo-scrape-creators
 description: "Scrape Creators (scrapecreators.com). Use this skill for ANY Scrape Creators request — searching and reading data. Whenever a task involves Scrape Creators, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Scrape Creators"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["scrape_creators"]
   icon: "https://static.oomol.com/logo/third-party/scrape_creators.svg"
 ---

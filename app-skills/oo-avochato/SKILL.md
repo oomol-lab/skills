@@ -3,9 +3,10 @@ name: oo-avochato
 description: "Avochato (avochato.com). Use this skill for ANY Avochato request — reading, creating, and updating data. Whenever a task involves Avochato, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Avochato"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["avochato"]
   icon: "https://static.oomol.com/logo/third-party/avochato.svg"
 ---

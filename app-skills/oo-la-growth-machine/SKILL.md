@@ -3,9 +3,10 @@ name: oo-la-growth-machine
 description: "La Growth Machine (lagrowthmachine.com). Use this skill for ANY La Growth Machine request — reading, creating, and updating data. Whenever a task involves La Growth Machine, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "La Growth Machine"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["la_growth_machine"]
   icon: "https://static.oomol.com/logo/third-party/la_growth_machine.svg"
 ---

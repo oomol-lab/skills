@@ -3,9 +3,10 @@ name: oo-rocket-reach
 description: "RocketReach (rocketreach.co). Use this skill for ANY RocketReach request — searching and reading data. Whenever a task involves RocketReach, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "RocketReach"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["rocket_reach"]
   icon: "https://static.oomol.com/logo/third-party/RocketReach.svg"
 ---

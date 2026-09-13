@@ -3,9 +3,10 @@ name: oo-ynab
 description: "YNAB (ynab.com). Use this skill for ANY YNAB request — searching and reading data. Whenever a task involves YNAB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "YNAB"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ynab"]
   icon: "https://static.oomol.com/logo/third-party/ynab.svg"
 ---

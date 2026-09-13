@@ -3,9 +3,10 @@ name: oo-appcues
 description: "Appcues (appcues.com). Use this skill for ANY Appcues request — reading, creating, and updating data. Whenever a task involves Appcues, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Appcues"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["appcues"]
   icon: "https://static.oomol.com/logo/third-party/appcues.svg"
 ---

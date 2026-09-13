@@ -3,9 +3,10 @@ name: oo-hyperbrowser
 description: "Hyperbrowser (hyperbrowser.ai). Use this skill for ANY Hyperbrowser request — reading, creating, and updating data. Whenever a task involves Hyperbrowser, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Hyperbrowser"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hyperbrowser"]
   icon: "https://static.oomol.com/logo/third-party/hyperbrowser.svg"
 ---

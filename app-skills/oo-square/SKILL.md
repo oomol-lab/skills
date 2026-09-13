@@ -3,9 +3,10 @@ name: oo-square
 description: "Square (squareup.com). Use this skill for ANY Square request — reading, creating, and updating data. Whenever a task involves Square, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Square"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["square"]
   icon: "https://static.oomol.com/logo/third-party/square.svg"
 ---

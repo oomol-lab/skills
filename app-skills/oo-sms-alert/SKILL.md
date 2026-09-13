@@ -3,9 +3,10 @@ name: oo-sms-alert
 description: "SMS Alert (smsalert.co.in). Use this skill for ANY SMS Alert request — reading, creating, and updating data. Whenever a task involves SMS Alert, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SMS Alert"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sms_alert"]
   icon: "https://static.oomol.com/logo/third-party/sms_alert.jpg"
 ---

@@ -3,9 +3,10 @@ name: oo-docuseal
 description: "DocuSeal (docuseal.com). Use this skill for ANY DocuSeal request — reading, creating, and updating data. Whenever a task involves DocuSeal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DocuSeal"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["docuseal"]
   icon: "https://static.oomol.com/logo/third-party/docuseal.svg"
 ---

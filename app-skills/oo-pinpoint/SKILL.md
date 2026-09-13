@@ -3,9 +3,10 @@ name: oo-pinpoint
 description: "Pinpoint (pinpointhq.com). Use this skill for ANY Pinpoint request — searching and reading data. Whenever a task involves Pinpoint, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pinpoint"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pinpoint"]
   icon: "https://static.oomol.com/logo/third-party/pinpoint.svg"
 ---

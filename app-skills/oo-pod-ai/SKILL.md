@@ -3,9 +3,10 @@ name: oo-pod-ai
 description: "Pod AI (callpod.ai). Use this skill for ANY Pod AI request — reading, creating, and updating data. Whenever a task involves Pod AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pod AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pod_ai"]
   icon: "https://static.oomol.com/logo/third-party/pod_ai.png"
 ---

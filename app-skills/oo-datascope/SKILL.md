@@ -3,9 +3,10 @@ name: oo-datascope
 description: "DataScope (mydatascope.com). Use this skill for ANY DataScope request — reading, creating, and updating data. Whenever a task involves DataScope, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DataScope"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["datascope"]
   icon: "https://static.oomol.com/logo/third-party/Datascope.svg"
 ---

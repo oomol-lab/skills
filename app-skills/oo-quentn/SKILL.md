@@ -3,9 +3,10 @@ name: oo-quentn
 description: "Quentn (quentn.com). Use this skill for ANY Quentn request — reading, creating, updating, and deleting data. Whenever a task involves Quentn, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Quentn"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["quentn"]
   icon: "https://static.oomol.com/logo/third-party/quentn.png"
 ---

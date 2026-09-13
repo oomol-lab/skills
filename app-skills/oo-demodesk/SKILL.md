@@ -3,9 +3,10 @@ name: oo-demodesk
 description: "Demodesk (demodesk.com). Use this skill for ANY Demodesk request — searching and reading data. Whenever a task involves Demodesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Demodesk"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["demodesk"]
   icon: "https://static.oomol.com/logo/third-party/demodesk.svg"
 ---

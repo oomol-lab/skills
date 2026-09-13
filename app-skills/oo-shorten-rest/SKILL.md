@@ -3,9 +3,10 @@ name: oo-shorten-rest
 description: "Shorten.REST (shorten.rest). Use this skill for ANY Shorten.REST request — reading, creating, updating, and deleting data. Whenever a task involves Shorten.REST, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Shorten.REST"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["shorten_rest"]
   icon: "https://static.oomol.com/logo/third-party/shorten_rest.jpg"
 ---

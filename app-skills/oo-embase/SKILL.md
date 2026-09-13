@@ -3,9 +3,10 @@ name: oo-embase
 description: "Embase (elsevier.com). Use this skill for ANY Embase request — searching and reading data. Whenever a task involves Embase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Embase"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["embase"]
   icon: "https://static.oomol.com/logo/third-party/embase.png"
 ---

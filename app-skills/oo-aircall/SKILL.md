@@ -3,9 +3,10 @@ name: oo-aircall
 description: "Aircall (aircall.io). Use this skill for ANY Aircall request — searching and reading data. Whenever a task involves Aircall, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Aircall"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["aircall"]
   icon: "https://static.oomol.com/logo/third-party/aircall.svg"
 ---

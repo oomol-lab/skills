@@ -3,9 +3,10 @@ name: oo-refiner
 description: "Refiner (refiner.io). Use this skill for ANY Refiner request — reading, creating, updating, and deleting data. Whenever a task involves Refiner, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Refiner"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["refiner"]
   icon: "https://static.oomol.com/logo/third-party/Refiner.svg"
 ---

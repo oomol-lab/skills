@@ -3,9 +3,10 @@ name: oo-cloudflare-worker
 description: "Cloudflare Worker (workers.cloudflare.com). Use this skill for ANY Cloudflare Worker request — reading, creating, updating, and deleting data. Whenever a task involves Cloudflare Worker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cloudflare Worker"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["cloudflare_worker"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---

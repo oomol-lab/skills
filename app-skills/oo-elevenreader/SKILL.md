@@ -3,9 +3,10 @@ name: oo-elevenreader
 description: "ElevenReader (elevenlabs.io). Use this skill for ANY ElevenReader request — searching and reading data. Whenever a task involves ElevenReader, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ElevenReader"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["elevenreader"]
   icon: "https://static.oomol.com/logo/third-party/Elevenreader.svg"
 ---

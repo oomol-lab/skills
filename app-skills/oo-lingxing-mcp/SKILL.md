@@ -3,9 +3,10 @@ name: oo-lingxing-mcp
 description: "Lingxing MCP (lingxing.com). Use this skill for ANY Lingxing MCP request — searching and reading data. Whenever a task involves Lingxing MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lingxing MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lingxing_mcp"]
   icon: "https://static.oomol.com/logo/third-party/lingxing_mcp.png"
 ---

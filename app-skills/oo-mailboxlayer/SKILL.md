@@ -3,9 +3,10 @@ name: oo-mailboxlayer
 description: "Mailboxlayer. Use this skill for ANY Mailboxlayer request — searching and reading data. Whenever a task involves Mailboxlayer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailboxlayer"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailboxlayer"]
   icon: "https://static.oomol.com/logo/third-party/Mailboxlayer.svg"
 ---

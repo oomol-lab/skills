@@ -3,9 +3,10 @@ name: oo-checkly
 description: "Checkly (checklyhq.com). Use this skill for ANY Checkly request — searching and reading data. Whenever a task involves Checkly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Checkly"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["checkly"]
   icon: "https://static.oomol.com/logo/third-party/checkly.png"
 ---

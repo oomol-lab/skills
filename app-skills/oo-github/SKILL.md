@@ -3,9 +3,10 @@ name: oo-github
 description: "GitHub (github.com). Use this skill for ANY GitHub request — reading, creating, updating, and deleting data. Whenever a task involves GitHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---

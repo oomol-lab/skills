@@ -3,9 +3,10 @@ name: oo-supermemory
 description: "Supermemory (supermemory.ai). Use this skill for ANY Supermemory request — reading, creating, updating, and deleting data. Whenever a task involves Supermemory, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Supermemory"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["supermemory"]
   icon: "https://static.oomol.com/logo/third-party/supermemory.svg"
 ---

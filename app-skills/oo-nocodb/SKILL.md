@@ -3,9 +3,10 @@ name: oo-nocodb
 description: "NocoDB (nocodb.com). Use this skill for ANY NocoDB request — reading, creating, updating, and deleting data. Whenever a task involves NocoDB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NocoDB"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["nocodb"]
   icon: "https://static.oomol.com/logo/third-party/nocodb.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-daily
 description: "Daily (daily.co). Use this skill for ANY Daily request — reading, creating, updating, and deleting data. Whenever a task involves Daily, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Daily"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["daily"]
   icon: "https://static.oomol.com/logo/third-party/daily.svg"
 ---

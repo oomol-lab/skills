@@ -3,9 +3,10 @@ name: oo-make
 description: "Make (make.com). Use this skill for ANY Make request — reading, creating, updating, and deleting data. Whenever a task involves Make, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Make"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["make"]
   icon: "https://static.oomol.com/logo/third-party/make.png"
 ---

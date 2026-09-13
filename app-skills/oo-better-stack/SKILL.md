@@ -3,9 +3,10 @@ name: oo-better-stack
 description: "Better Stack (betterstack.com). Use this skill for ANY Better Stack request — reading, creating, and updating data. Whenever a task involves Better Stack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Better Stack"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["better_stack"]
   icon: "https://static.oomol.com/logo/third-party/Better%20Stack.svg"
 ---

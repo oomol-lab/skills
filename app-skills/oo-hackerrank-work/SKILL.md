@@ -3,9 +3,10 @@ name: oo-hackerrank-work
 description: "HackerRank Work (hackerrank.com). Use this skill for ANY HackerRank Work request — searching and reading data. Whenever a task involves HackerRank Work, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HackerRank Work"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hackerrank_work"]
   icon: "https://static.oomol.com/logo/third-party/HackerRank%20Work.svg"
 ---

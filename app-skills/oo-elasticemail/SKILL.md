@@ -3,9 +3,10 @@ name: oo-elasticemail
 description: "Elastic Email (elasticemail.com). Use this skill for ANY Elastic Email request — reading, creating, updating, and deleting data. Whenever a task involves Elastic Email, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Elastic Email"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["elasticemail"]
   icon: "https://static.oomol.com/logo/third-party/elasticemail.svg"
 ---

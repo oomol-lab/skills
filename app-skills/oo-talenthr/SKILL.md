@@ -3,9 +3,10 @@ name: oo-talenthr
 description: "TalentHR (talenthr.io). Use this skill for ANY TalentHR request — searching and reading data. Whenever a task involves TalentHR, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TalentHR"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["talenthr"]
   icon: "https://static.oomol.com/logo/third-party/Talenthr.svg"
 ---

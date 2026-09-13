@@ -3,9 +3,10 @@ name: oo-trello
 description: "Trello (trello.com). Use this skill for ANY Trello request — reading, creating, updating, and deleting data. Whenever a task involves Trello, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Trello"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["trello"]
   icon: "https://static.oomol.com/logo/third-party/trello.svg"
 ---

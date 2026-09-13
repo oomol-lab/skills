@@ -3,9 +3,10 @@ name: oo-jsonbin
 description: "JSONBin.io (jsonbin.io). Use this skill for ANY JSONBin.io request — reading, creating, updating, and deleting data. Whenever a task involves JSONBin.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "JSONBin.io"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jsonbin"]
   icon: "https://static.oomol.com/logo/third-party/jsonbin.png"
 ---

@@ -3,9 +3,10 @@ name: oo-finerworks
 description: "FinerWorks (finerworks.com). Use this skill for ANY FinerWorks request — searching and reading data. Whenever a task involves FinerWorks, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "FinerWorks"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["finerworks"]
   icon: "https://static.oomol.com/logo/third-party/finerworks.png"
 ---

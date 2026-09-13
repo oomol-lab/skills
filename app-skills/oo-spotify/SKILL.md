@@ -3,9 +3,10 @@ name: oo-spotify
 description: "Spotify (spotify.com). Use this skill for ANY Spotify request — reading, creating, updating, and deleting data. Whenever a task involves Spotify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Spotify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["spotify"]
   icon: "https://static.oomol.com/logo/third-party/spotify.svg"
 ---

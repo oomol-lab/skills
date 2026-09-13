@@ -3,9 +3,10 @@ name: oo-sf-express
 description: "SF Express (open.sf-express.com). Use this skill for ANY SF Express request — reading, creating, updating, and deleting data. Whenever a task involves SF Express, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SF Express"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sf_express"]
 ---
 

@@ -3,9 +3,10 @@ name: oo-screenshotbase
 description: "screenshotbase (screenshotbase.com). Use this skill for ANY screenshotbase request — searching and reading data. Whenever a task involves screenshotbase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "screenshotbase"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["screenshotbase"]
   icon: "https://static.oomol.com/logo/third-party/screenshotbase.svg"
 ---

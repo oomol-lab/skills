@@ -3,9 +3,10 @@ name: oo-app-store-server
 description: "App Store Server API (developer.apple.com). Use this skill for ANY App Store Server API request — reading, creating, and updating data. Whenever a task involves App Store Server API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "App Store Server API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["app_store_server"]
 ---
 

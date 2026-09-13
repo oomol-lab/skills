@@ -3,9 +3,10 @@ name: oo-apaleo
 description: "apaleo (apaleo.com). Use this skill for ANY apaleo request — reading, creating, updating, and deleting data. Whenever a task involves apaleo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "apaleo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["apaleo"]
   icon: "https://static.oomol.com/logo/third-party/Apaleo.svg"
 ---

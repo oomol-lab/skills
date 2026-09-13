@@ -3,9 +3,10 @@ name: oo-positionstack
 description: "Positionstack (positionstack.com). Use this skill for ANY Positionstack request — reading, creating, and updating data. Whenever a task involves Positionstack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Positionstack"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["positionstack"]
   icon: "https://static.oomol.com/logo/third-party/positionstack.png"
 ---

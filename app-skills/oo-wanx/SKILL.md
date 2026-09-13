@@ -3,9 +3,10 @@ name: oo-wanx
 description: "Wanx (tongyi.aliyun.com). Use this skill for ANY Wanx request — reading, creating, and updating data. Whenever a task involves Wanx, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Wanx"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wanx"]
   icon: "https://static.oomol.com/logo/third-party/wanx.svg"
 ---

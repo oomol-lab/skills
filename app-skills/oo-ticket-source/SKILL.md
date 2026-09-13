@@ -3,9 +3,10 @@ name: oo-ticket-source
 description: "TicketSource (ticketsource.co.uk). Use this skill for ANY TicketSource request — searching and reading data. Whenever a task involves TicketSource, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TicketSource"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ticket_source"]
   icon: "https://static.oomol.com/logo/third-party/ticket_source.svg"
 ---

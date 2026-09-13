@@ -3,9 +3,10 @@ name: oo-folk
 description: "folk (folk.app). Use this skill for ANY folk request — reading, creating, updating, and deleting data. Whenever a task involves folk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "folk"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["folk"]
   icon: "https://static.oomol.com/logo/third-party/folk.svg"
 ---

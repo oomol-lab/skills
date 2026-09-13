@@ -3,9 +3,10 @@ name: oo-raindrop
 description: "Raindrop.io (raindrop.io). Use this skill for ANY Raindrop.io request — reading, creating, updating, and deleting data. Whenever a task involves Raindrop.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Raindrop.io"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["raindrop"]
   icon: "https://static.oomol.com/logo/third-party/raindrop.svg"
 ---

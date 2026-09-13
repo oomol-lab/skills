@@ -3,9 +3,10 @@ name: oo-octopus-deploy
 description: "Octopus Deploy (octopus.com). Use this skill for ANY Octopus Deploy request — searching and reading data. Whenever a task involves Octopus Deploy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Octopus Deploy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["octopus_deploy"]
   icon: "https://static.oomol.com/logo/third-party/octopus_deploy.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-screenshot-fyi
 description: "screenshot.fyi (screenshot.fyi). Use this skill for ANY screenshot.fyi request — searching and reading data. Whenever a task involves screenshot.fyi, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "screenshot.fyi"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["screenshot_fyi"]
   icon: "https://static.oomol.com/logo/third-party/Screenshot.fyi.svg"
 ---

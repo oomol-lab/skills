@@ -3,9 +3,10 @@ name: oo-jamie
 description: "Jamie (meetjamie.ai). Use this skill for ANY Jamie request — searching and reading data. Whenever a task involves Jamie, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jamie"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jamie"]
   icon: "https://static.oomol.com/logo/third-party/jamie.png"
 ---

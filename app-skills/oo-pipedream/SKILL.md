@@ -3,9 +3,10 @@ name: oo-pipedream
 description: "Pipedream (pipedream.com). Use this skill for ANY Pipedream request — searching and reading data. Whenever a task involves Pipedream, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pipedream"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pipedream"]
   icon: "https://static.oomol.com/logo/third-party/pipedream.png"
 ---

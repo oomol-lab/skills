@@ -3,9 +3,10 @@ name: oo-wachete
 description: "Wachete (wachete.com). Use this skill for ANY Wachete request — reading, creating, updating, and deleting data. Whenever a task involves Wachete, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Wachete"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wachete"]
   icon: "https://static.oomol.com/logo/third-party/wachete.svg"
 ---

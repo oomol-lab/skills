@@ -3,9 +3,10 @@ name: oo-sumup
 description: "SumUp (sumup.com). Use this skill for ANY SumUp request — reading, creating, updating, and deleting data. Whenever a task involves SumUp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SumUp"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sumup"]
   icon: "https://static.oomol.com/logo/third-party/sumup.svg"
 ---

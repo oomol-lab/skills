@@ -3,9 +3,10 @@ name: oo-trilium
 description: "TriliumNext Notes (triliumnotes.org). Use this skill for ANY TriliumNext Notes request — reading, creating, updating, and deleting data. Whenever a task involves TriliumNext Notes, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TriliumNext Notes"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["trilium"]
   icon: "https://static.oomol.com/logo/third-party/trilium.svg"
 ---

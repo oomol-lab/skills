@@ -3,9 +3,10 @@ name: oo-eversign
 description: "Xodo Sign (eversign.com). Use this skill for ANY Xodo Sign request — reading, creating, and updating data. Whenever a task involves Xodo Sign, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Xodo Sign"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["eversign"]
   icon: "https://static.oomol.com/logo/third-party/eversign.svg"
 ---

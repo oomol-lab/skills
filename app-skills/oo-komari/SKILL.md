@@ -3,9 +3,10 @@ name: oo-komari
 description: "Komari (github.com). Use this skill for ANY Komari request — reading, creating, updating, and deleting data. Whenever a task involves Komari, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Komari"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["komari"]
   icon: "https://static.oomol.com/logo/third-party/komari.png"
 ---

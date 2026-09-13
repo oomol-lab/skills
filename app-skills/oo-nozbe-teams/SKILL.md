@@ -3,9 +3,10 @@ name: oo-nozbe-teams
 description: "Nozbe (nozbe.com). Use this skill for ANY Nozbe request — reading, creating, updating, and deleting data. Whenever a task involves Nozbe, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Nozbe"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["nozbe_teams"]
   icon: "https://static.oomol.com/logo/third-party/nozbe_teams.svg"
 ---

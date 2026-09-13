@@ -3,9 +3,10 @@ name: oo-optimoroute
 description: "OptimoRoute (optimoroute.com). Use this skill for ANY OptimoRoute request — reading, creating, updating, and deleting data. Whenever a task involves OptimoRoute, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OptimoRoute"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["optimoroute"]
   icon: "https://static.oomol.com/logo/third-party/optimoroute.svg"
 ---

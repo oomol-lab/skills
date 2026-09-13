@@ -3,9 +3,10 @@ name: oo-wrike
 description: "Wrike (wrike.com). Use this skill for ANY Wrike request — reading, creating, and updating data. Whenever a task involves Wrike, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Wrike"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wrike"]
   icon: "https://static.oomol.com/logo/third-party/wrike.svg"
 ---

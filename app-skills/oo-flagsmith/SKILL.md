@@ -3,9 +3,10 @@ name: oo-flagsmith
 description: "Flagsmith (flagsmith.com). Use this skill for ANY Flagsmith request — searching and reading data. Whenever a task involves Flagsmith, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Flagsmith"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["flagsmith"]
   icon: "https://static.oomol.com/logo/third-party/flagsmith.svg"
 ---

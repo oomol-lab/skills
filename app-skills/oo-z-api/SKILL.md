@@ -3,9 +3,10 @@ name: oo-z-api
 description: "Z-API (z-api.io). Use this skill for ANY Z-API request — reading, creating, and updating data. Whenever a task involves Z-API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Z-API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["z_api"]
   icon: "https://static.oomol.com/logo/third-party/z_api.webp"
 ---

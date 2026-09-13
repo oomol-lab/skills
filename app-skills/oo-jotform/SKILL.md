@@ -3,9 +3,10 @@ name: oo-jotform
 description: "Jotform (jotform.com). Use this skill for ANY Jotform request — reading, creating, and updating data. Whenever a task involves Jotform, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jotform"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jotform"]
   icon: "https://static.oomol.com/logo/third-party/Jotform.svg"
 ---

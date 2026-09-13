@@ -3,9 +3,10 @@ name: oo-browserstack
 description: "BrowserStack (browserstack.com). Use this skill for ANY BrowserStack request — reading, creating, and updating data. Whenever a task involves BrowserStack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BrowserStack"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["browserstack"]
   icon: "https://static.oomol.com/logo/third-party/browserstack.svg"
 ---

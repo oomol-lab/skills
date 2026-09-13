@@ -3,9 +3,10 @@ name: oo-grafana
 description: "Grafana (grafana.com). Use this skill for ANY Grafana request — reading, creating, updating, and deleting data. Whenever a task involves Grafana, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Grafana"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["grafana"]
   icon: "https://static.oomol.com/logo/third-party/grafana.svg"
 ---

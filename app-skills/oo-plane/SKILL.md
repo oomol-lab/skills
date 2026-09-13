@@ -3,9 +3,10 @@ name: oo-plane
 description: "Plane (plane.so). Use this skill for ANY Plane request — reading, creating, updating, and deleting data. Whenever a task involves Plane, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Plane"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["plane"]
   icon: "https://static.oomol.com/logo/third-party/plane.svg"
 ---

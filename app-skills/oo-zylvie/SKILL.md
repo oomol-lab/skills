@@ -3,9 +3,10 @@ name: oo-zylvie
 description: "Zylvie (zylvie.com). Use this skill for ANY Zylvie request — reading, creating, updating, and deleting data. Whenever a task involves Zylvie, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zylvie"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["zylvie"]
   icon: "https://static.oomol.com/logo/third-party/zylvie.svg"
 ---

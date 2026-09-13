@@ -3,9 +3,10 @@ name: oo-tomtom
 description: "TomTom (developer.tomtom.com). Use this skill for ANY TomTom request — searching and reading data. Whenever a task involves TomTom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TomTom"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tomtom"]
   icon: "https://static.oomol.com/logo/third-party/Tomtom.svg"
 ---

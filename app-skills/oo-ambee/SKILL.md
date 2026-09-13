@@ -3,9 +3,10 @@ name: oo-ambee
 description: "Ambee (getambee.com). Use this skill for ANY Ambee request — searching and reading data. Whenever a task involves Ambee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Ambee"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ambee"]
   icon: "https://static.oomol.com/logo/third-party/Ambee.svg"
 ---

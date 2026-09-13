@@ -3,9 +3,10 @@ name: oo-consensus
 description: "Consensus (consensus.app). Use this skill for ANY Consensus request — searching and reading data. Whenever a task involves Consensus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Consensus"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["consensus"]
   icon: "https://static.oomol.com/logo/third-party/consensus.png"
 ---

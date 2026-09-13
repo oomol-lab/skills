@@ -3,9 +3,10 @@ name: oo-clicksend
 description: "ClickSend (clicksend.com). Use this skill for ANY ClickSend request — reading, creating, updating, and deleting data. Whenever a task involves ClickSend, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ClickSend"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["clicksend"]
   icon: "https://static.oomol.com/logo/third-party/clicksend.png"
 ---

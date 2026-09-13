@@ -3,9 +3,10 @@ name: oo-surveymethods
 description: "SurveyMethods (surveymethods.com). Use this skill for ANY SurveyMethods request — reading, creating, and updating data. Whenever a task involves SurveyMethods, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SurveyMethods"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["surveymethods"]
   icon: "https://static.oomol.com/logo/third-party/surveymethods.svg"
 ---

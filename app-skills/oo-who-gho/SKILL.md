@@ -3,9 +3,10 @@ name: oo-who-gho
 description: "WHO Global Health Observatory (who.int). Use this skill for ANY WHO Global Health Observatory request — searching and reading data. Whenever a task involves WHO Global Health Observatory, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WHO Global Health Observatory"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["who_gho"]
   icon: "https://static.oomol.com/logo/third-party/who_gho.svg"
 ---

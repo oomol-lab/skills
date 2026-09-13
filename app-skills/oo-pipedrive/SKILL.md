@@ -3,9 +3,10 @@ name: oo-pipedrive
 description: "Pipedrive (pipedrive.com). Use this skill for ANY Pipedrive request — reading, creating, updating, and deleting data. Whenever a task involves Pipedrive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pipedrive"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pipedrive"]
   icon: "https://static.oomol.com/logo/third-party/Pipedrive.svg"
 ---

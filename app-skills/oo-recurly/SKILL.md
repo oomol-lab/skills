@@ -3,9 +3,10 @@ name: oo-recurly
 description: "Recurly (recurly.com). Use this skill for ANY Recurly request — reading, creating, and updating data. Whenever a task involves Recurly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Recurly"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["recurly"]
   icon: "https://static.oomol.com/logo/third-party/recurly.svg"
 ---

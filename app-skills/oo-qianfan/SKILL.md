@@ -3,9 +3,10 @@ name: oo-qianfan
 description: "Baidu Qianfan (qianfan.cloud.baidu.com). Use this skill for ANY Baidu Qianfan request — reading, creating, updating, and deleting data. Whenever a task involves Baidu Qianfan, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Baidu Qianfan"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["qianfan"]
   icon: "https://static.oomol.com/logo/third-party/Qianfan.png"
 ---

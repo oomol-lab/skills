@@ -3,9 +3,10 @@ name: oo-tencent-docs
 description: "Tencent Docs (docs.qq.com). Use this skill for ANY Tencent Docs request — reading, creating, and updating data. Whenever a task involves Tencent Docs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Tencent Docs"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["tencent_docs"]
   icon: "https://static.oomol.com/logo/third-party/tencent_docs.svg"
 ---

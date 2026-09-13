@@ -3,9 +3,10 @@ name: oo-venafitlsprotectdatacenter
 description: "Venafi TLS Protect Datacenter (cyberark.com). Use this skill for ANY Venafi TLS Protect Datacenter request — searching and reading data. Whenever a task involves Venafi TLS Protect Datacenter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Venafi TLS Protect Datacenter"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["venafitlsprotectdatacenter"]
   icon: "https://static.oomol.com/logo/third-party/venafitlsprotectdatacenter.svg"
 ---

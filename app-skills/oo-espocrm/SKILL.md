@@ -3,9 +3,10 @@ name: oo-espocrm
 description: "EspoCRM (espocrm.com). Use this skill for ANY EspoCRM request — reading, creating, updating, and deleting data. Whenever a task involves EspoCRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "EspoCRM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["espocrm"]
   icon: "https://static.oomol.com/logo/third-party/Espocrm.svg"
 ---

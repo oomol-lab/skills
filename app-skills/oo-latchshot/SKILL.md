@@ -3,9 +3,10 @@ name: oo-latchshot
 description: "Latchshot (latchshot.fly.dev). Use this skill for ANY Latchshot request — searching and reading data. Whenever a task involves Latchshot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Latchshot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["latchshot"]
   icon: "https://static.oomol.com/logo/third-party/latchshot.svg"
 ---

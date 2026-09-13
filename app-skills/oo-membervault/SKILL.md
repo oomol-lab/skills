@@ -3,9 +3,10 @@ name: oo-membervault
 description: "MemberVault (membervault.co). Use this skill for ANY MemberVault request — reading, creating, updating, and deleting data. Whenever a task involves MemberVault, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MemberVault"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["membervault"]
   icon: "https://static.oomol.com/logo/third-party/membervault.svg"
 ---

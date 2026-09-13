@@ -3,9 +3,10 @@ name: oo-jina-ai
 description: "Jina AI (jina.ai). Use this skill for ANY Jina AI request — reading, creating, and updating data. Whenever a task involves Jina AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jina AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jina_ai"]
   icon: "https://static.oomol.com/logo/third-party/jina_ai.svg"
 ---

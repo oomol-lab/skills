@@ -3,9 +3,10 @@ name: oo-linux-do
 description: "Linux DO (linux.do). Use this skill for ANY Linux DO request — searching and reading data. Whenever a task involves Linux DO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Linux DO"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["linux_do"]
   icon: "https://static.oomol.com/logo/third-party/linux_do.svg"
 ---

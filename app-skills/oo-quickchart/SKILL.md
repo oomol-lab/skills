@@ -3,9 +3,10 @@ name: oo-quickchart
 description: "QuickChart (quickchart.io). Use this skill for ANY QuickChart request — reading, creating, and updating data. Whenever a task involves QuickChart, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "QuickChart"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["quickchart"]
   icon: "https://static.oomol.com/logo/third-party/quickchart.svg"
 ---

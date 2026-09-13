@@ -3,9 +3,10 @@ name: oo-zerobounce
 description: "ZeroBounce (zerobounce.net). Use this skill for ANY ZeroBounce request — reading, creating, and updating data. Whenever a task involves ZeroBounce, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ZeroBounce"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zerobounce"]
   icon: "https://static.oomol.com/logo/third-party/zerobounce.svg"
 ---

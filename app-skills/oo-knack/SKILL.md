@@ -3,9 +3,10 @@ name: oo-knack
 description: "Knack (knack.com). Use this skill for ANY Knack request — reading, creating, updating, and deleting data. Whenever a task involves Knack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Knack"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["knack"]
   icon: "https://static.oomol.com/logo/third-party/knack.png"
 ---

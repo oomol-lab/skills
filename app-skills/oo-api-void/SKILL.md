@@ -3,9 +3,10 @@ name: oo-api-void
 description: "APIVoid (apivoid.com). Use this skill for ANY APIVoid request — searching and reading data. Whenever a task involves APIVoid, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "APIVoid"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["api_void"]
   icon: "https://static.oomol.com/logo/third-party/api_void.png"
 ---

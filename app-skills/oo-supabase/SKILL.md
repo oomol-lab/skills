@@ -3,9 +3,10 @@ name: oo-supabase
 description: "Supabase (supabase.com). Use this skill for ANY Supabase request — reading, creating, updating, and deleting data. Whenever a task involves Supabase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Supabase"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["supabase"]
   icon: "https://static.oomol.com/logo/third-party/Supabase.svg"
 ---

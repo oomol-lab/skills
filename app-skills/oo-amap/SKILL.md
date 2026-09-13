@@ -3,9 +3,10 @@ name: oo-amap
 description: "AMap (amap.com). Use this skill for ANY AMap request — searching and reading data. Whenever a task involves AMap, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AMap"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["amap"]
   icon: "https://static.oomol.com/logo/third-party/amap.svg"
 ---

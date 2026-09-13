@@ -3,9 +3,10 @@ name: oo-sonarcloud
 description: "SonarQube Cloud (sonarsource.com). Use this skill for ANY SonarQube Cloud request — searching and reading data. Whenever a task involves SonarQube Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SonarQube Cloud"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sonarcloud"]
   icon: "https://static.oomol.com/logo/third-party/sonarcloud.svg"
 ---

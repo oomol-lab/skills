@@ -3,9 +3,10 @@ name: oo-chatwork
 description: "Chatwork (go.chatwork.com). Use this skill for ANY Chatwork request — reading, creating, updating, and deleting data. Whenever a task involves Chatwork, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Chatwork"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chatwork"]
   icon: "https://static.oomol.com/logo/third-party/Chatwork.svg"
 ---

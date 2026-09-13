@@ -3,9 +3,10 @@ name: oo-kintone
 description: "Kintone (kintone.com). Use this skill for ANY Kintone request — searching and reading data. Whenever a task involves Kintone, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Kintone"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["kintone"]
   icon: "https://static.oomol.com/logo/third-party/kintone.svg"
 ---

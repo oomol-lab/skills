@@ -3,9 +3,10 @@ name: oo-vestaboard
 description: "Vestaboard (vestaboard.com). Use this skill for ANY Vestaboard request — reading, creating, and updating data. Whenever a task involves Vestaboard, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Vestaboard"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vestaboard"]
   icon: "https://static.oomol.com/logo/third-party/vestaboard.png"
 ---

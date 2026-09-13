@@ -3,9 +3,10 @@ name: oo-cloudlayer
 description: "cloudlayer.io (cloudlayer.io). Use this skill for ANY cloudlayer.io request — reading, creating, and updating data. Whenever a task involves cloudlayer.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "cloudlayer.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cloudlayer"]
   icon: "https://static.oomol.com/logo/third-party/cloudlayer.svg"
 ---

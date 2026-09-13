@@ -3,9 +3,10 @@ name: oo-walmart-marketplace
 description: "Walmart Marketplace (marketplace.walmart.com). Use this skill for ANY Walmart Marketplace request — reading, creating, and updating data. Whenever a task involves Walmart Marketplace, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Walmart Marketplace"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["walmart_marketplace"]
   icon: "https://static.oomol.com/logo/third-party/walmart_marketplace.png"
 ---

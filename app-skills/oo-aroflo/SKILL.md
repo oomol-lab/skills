@@ -3,9 +3,10 @@ name: oo-aroflo
 description: "AroFlo (aroflo.com). Use this skill for ANY AroFlo request — searching and reading data. Whenever a task involves AroFlo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AroFlo"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["aroflo"]
   icon: "https://static.oomol.com/logo/third-party/aroflo.svg"
 ---

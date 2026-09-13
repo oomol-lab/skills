@@ -3,9 +3,10 @@ name: oo-waiverforever
 description: "WaiverForever (waiverforever.com). Use this skill for ANY WaiverForever request — reading, creating, and updating data. Whenever a task involves WaiverForever, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WaiverForever"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["waiverforever"]
   icon: "https://static.oomol.com/logo/third-party/waiverforever.svg"
 ---

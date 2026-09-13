@@ -3,9 +3,10 @@ name: oo-realphonevalidation
 description: "RealPhoneValidation (realphonevalidation.com). Use this skill for ANY RealPhoneValidation request — searching and reading data. Whenever a task involves RealPhoneValidation, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "RealPhoneValidation"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["realphonevalidation"]
   icon: "https://static.oomol.com/logo/third-party/realphonevalidation.jpg"
 ---

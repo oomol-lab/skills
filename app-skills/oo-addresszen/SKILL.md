@@ -3,9 +3,10 @@ name: oo-addresszen
 description: "AddressZen (addresszen.com). Use this skill for ANY AddressZen request — searching and reading data. Whenever a task involves AddressZen, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AddressZen"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["addresszen"]
   icon: "https://static.oomol.com/logo/third-party/addresszen.svg"
 ---

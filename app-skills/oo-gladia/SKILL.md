@@ -3,9 +3,10 @@ name: oo-gladia
 description: "Gladia (app.gladia.io). Use this skill for ANY Gladia request — reading, creating, updating, and deleting data. Whenever a task involves Gladia, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gladia"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["gladia"]
   icon: "https://static.oomol.com/logo/third-party/gladia.svg"
 ---

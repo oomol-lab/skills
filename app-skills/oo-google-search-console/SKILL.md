@@ -3,9 +3,10 @@ name: oo-google-search-console
 description: "Google Search Console (search.google.com). Use this skill for ANY Google Search Console request — reading, creating, updating, and deleting data. Whenever a task involves Google Search Console, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Search Console"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["google_search_console"]
   icon: "https://static.oomol.com/logo/third-party/google_search_console.svg"
 ---

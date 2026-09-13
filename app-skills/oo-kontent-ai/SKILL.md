@@ -3,9 +3,10 @@ name: oo-kontent-ai
 description: "Kontent.ai (kontent.ai). Use this skill for ANY Kontent.ai request — searching and reading data. Whenever a task involves Kontent.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Kontent.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["kontent_ai"]
   icon: "https://static.oomol.com/logo/third-party/kontent_ai.svg"
 ---

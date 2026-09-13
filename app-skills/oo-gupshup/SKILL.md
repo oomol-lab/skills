@@ -3,9 +3,10 @@ name: oo-gupshup
 description: "Gupshup (gupshup.io). Use this skill for ANY Gupshup request — reading, creating, and updating data. Whenever a task involves Gupshup, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gupshup"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gupshup"]
   icon: "https://static.oomol.com/logo/third-party/gupshup.svg"
 ---

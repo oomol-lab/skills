@@ -3,9 +3,10 @@ name: oo-affinda
 description: "Affinda (affinda.com). Use this skill for ANY Affinda request — reading, creating, and updating data. Whenever a task involves Affinda, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Affinda"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["affinda"]
   icon: "https://static.oomol.com/logo/third-party/affinda.svg"
 ---

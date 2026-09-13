@@ -3,9 +3,10 @@ name: oo-gatherup
 description: "GatherUp (gatherup.com). Use this skill for ANY GatherUp request — searching and reading data. Whenever a task involves GatherUp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "GatherUp"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gatherup"]
   icon: "https://static.oomol.com/logo/third-party/gatherup.svg"
 ---

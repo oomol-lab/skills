@@ -3,9 +3,10 @@ name: oo-mymind
 description: "mymind (mymind.com). Use this skill for ANY mymind request — reading, creating, updating, and deleting data. Whenever a task involves mymind, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "mymind"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mymind"]
   icon: "https://static.oomol.com/logo/third-party/mymind.svg"
 ---

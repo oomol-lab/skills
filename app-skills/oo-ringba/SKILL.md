@@ -3,9 +3,10 @@ name: oo-ringba
 description: "Ringba (ringba.com). Use this skill for ANY Ringba request — searching and reading data. Whenever a task involves Ringba, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Ringba"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ringba"]
   icon: "https://static.oomol.com/logo/third-party/ringba.svg"
 ---

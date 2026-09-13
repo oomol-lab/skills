@@ -3,9 +3,10 @@ name: oo-formstack
 description: "Formstack (formstack.com). Use this skill for ANY Formstack request — reading, creating, updating, and deleting data. Whenever a task involves Formstack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Formstack"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["formstack"]
   icon: "https://static.oomol.com/logo/third-party/formstack.svg"
 ---

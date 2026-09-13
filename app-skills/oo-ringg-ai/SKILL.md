@@ -3,9 +3,10 @@ name: oo-ringg-ai
 description: "Ringg AI (ringg.ai). Use this skill for ANY Ringg AI request — searching and reading data. Whenever a task involves Ringg AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Ringg AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ringg_ai"]
   icon: "https://static.oomol.com/logo/third-party/ringg_ai.svg"
 ---

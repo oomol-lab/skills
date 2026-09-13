@@ -3,9 +3,10 @@ name: oo-processplan
 description: "ProcessPlan (processplan.com). Use this skill for ANY ProcessPlan request — reading, creating, and updating data. Whenever a task involves ProcessPlan, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ProcessPlan"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["processplan"]
   icon: "https://static.oomol.com/logo/third-party/processplan.jpeg"
 ---

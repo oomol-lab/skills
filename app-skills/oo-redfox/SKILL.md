@@ -3,9 +3,10 @@ name: oo-redfox
 description: "RedFoxHub (redfox.hk). Use this skill for ANY RedFoxHub request — searching and reading data. Whenever a task involves RedFoxHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "RedFoxHub"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["redfox"]
   icon: "https://static.oomol.com/logo/third-party/redfox.png"
 ---

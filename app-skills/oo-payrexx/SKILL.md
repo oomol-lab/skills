@@ -3,9 +3,10 @@ name: oo-payrexx
 description: "Payrexx (payrexx.com). Use this skill for ANY Payrexx request — reading, creating, and updating data. Whenever a task involves Payrexx, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Payrexx"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["payrexx"]
   icon: "https://static.oomol.com/logo/third-party/payrexx.svg"
 ---

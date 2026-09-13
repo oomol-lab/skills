@@ -3,9 +3,10 @@ name: oo-pinata
 description: "Pinata (pinata.cloud). Use this skill for ANY Pinata request — reading, creating, updating, and deleting data. Whenever a task involves Pinata, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pinata"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pinata"]
   icon: "https://static.oomol.com/logo/third-party/pinata.svg"
 ---

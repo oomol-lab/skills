@@ -3,9 +3,10 @@ name: oo-klazify
 description: "Klazify (klazify.com). Use this skill for ANY Klazify request — searching and reading data. Whenever a task involves Klazify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Klazify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["klazify"]
   icon: "https://static.oomol.com/logo/third-party/klazify.svg"
 ---

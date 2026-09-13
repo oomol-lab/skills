@@ -3,9 +3,10 @@ name: oo-printify
 description: "Printify (printify.com). Use this skill for ANY Printify request — reading, creating, and updating data. Whenever a task involves Printify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Printify"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["printify"]
   icon: "https://static.oomol.com/logo/third-party/printify.svg"
 ---

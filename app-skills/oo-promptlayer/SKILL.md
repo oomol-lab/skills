@@ -3,9 +3,10 @@ name: oo-promptlayer
 description: "PromptLayer (promptlayer.com). Use this skill for ANY PromptLayer request — searching and reading data. Whenever a task involves PromptLayer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PromptLayer"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["promptlayer"]
   icon: "https://static.oomol.com/logo/third-party/promptlayer.png"
 ---

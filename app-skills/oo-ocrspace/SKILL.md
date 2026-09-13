@@ -3,9 +3,10 @@ name: oo-ocrspace
 description: "OCR.space (ocr.space). Use this skill for ANY OCR.space request — searching and reading data. Whenever a task involves OCR.space, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OCR.space"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ocrspace"]
   icon: "https://static.oomol.com/logo/third-party/ocrspace.svg"
 ---

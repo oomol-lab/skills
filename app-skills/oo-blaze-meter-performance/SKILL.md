@@ -3,9 +3,10 @@ name: oo-blaze-meter-performance
 description: "BlazeMeter Performance (blazemeter.com). Use this skill for ANY BlazeMeter Performance request — searching and reading data. Whenever a task involves BlazeMeter Performance, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BlazeMeter Performance"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["blaze_meter_performance"]
   icon: "https://static.oomol.com/logo/third-party/blaze_meter_performance.svg"
 ---

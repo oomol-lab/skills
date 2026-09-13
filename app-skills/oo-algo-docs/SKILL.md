@@ -3,9 +3,10 @@ name: oo-algo-docs
 description: "AlgoDocs (algodocs.com). Use this skill for ANY AlgoDocs request — reading, creating, and updating data. Whenever a task involves AlgoDocs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AlgoDocs"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["algo_docs"]
   icon: "https://static.oomol.com/logo/third-party/algo_docs.png"
 ---

@@ -3,9 +3,10 @@ name: oo-unthread
 description: "Unthread (unthread.io). Use this skill for ANY Unthread request — reading, creating, updating, and deleting data. Whenever a task involves Unthread, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Unthread"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["unthread"]
   icon: "https://static.oomol.com/logo/third-party/unthread.svg"
 ---

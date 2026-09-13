@@ -3,9 +3,10 @@ name: oo-clinicaltrials-gov
 description: "ClinicalTrials.gov (clinicaltrials.gov). Use this skill for ANY ClinicalTrials.gov request — searching and reading data. Whenever a task involves ClinicalTrials.gov, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ClinicalTrials.gov"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["clinicaltrials_gov"]
   icon: "https://static.oomol.com/logo/third-party/clinicaltrials_gov.svg"
 ---

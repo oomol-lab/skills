@@ -3,9 +3,10 @@ name: oo-peopledatalabs
 description: "People Data Labs (peopledatalabs.com). Use this skill for ANY People Data Labs request — searching and reading data. Whenever a task involves People Data Labs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "People Data Labs"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["peopledatalabs"]
   icon: "https://static.oomol.com/logo/third-party/peopledatalabs.png"
 ---

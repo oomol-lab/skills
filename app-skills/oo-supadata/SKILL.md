@@ -3,9 +3,10 @@ name: oo-supadata
 description: "Supadata (supadata.ai). Use this skill for ANY Supadata request — searching and reading data. Whenever a task involves Supadata, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Supadata"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["supadata"]
   icon: "https://static.oomol.com/logo/third-party/supadata.svg"
 ---

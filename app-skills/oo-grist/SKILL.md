@@ -3,9 +3,10 @@ name: oo-grist
 description: "Grist (getgrist.com). Use this skill for ANY Grist request — reading, creating, updating, and deleting data. Whenever a task involves Grist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Grist"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["grist"]
   icon: "https://static.oomol.com/logo/third-party/grist.png"
 ---

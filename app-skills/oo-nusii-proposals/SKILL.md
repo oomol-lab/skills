@@ -3,9 +3,10 @@ name: oo-nusii-proposals
 description: "Nusii Proposals (nusii.com). Use this skill for ANY Nusii Proposals request — reading, creating, and updating data. Whenever a task involves Nusii Proposals, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Nusii Proposals"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["nusii_proposals"]
   icon: "https://static.oomol.com/logo/third-party/nusii_proposals.svg"
 ---

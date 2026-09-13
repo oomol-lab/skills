@@ -3,9 +3,10 @@ name: oo-tanium
 description: "Tanium (tanium.com). Use this skill for ANY Tanium request — searching and reading data. Whenever a task involves Tanium, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Tanium"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tanium"]
   icon: "https://static.oomol.com/logo/third-party/tanium.svg"
 ---

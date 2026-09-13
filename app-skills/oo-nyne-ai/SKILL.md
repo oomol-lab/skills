@@ -3,9 +3,10 @@ name: oo-nyne-ai
 description: "Nyne.ai (nyne.ai). Use this skill for ANY Nyne.ai request — reading, creating, and updating data. Whenever a task involves Nyne.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Nyne.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["nyne_ai"]
   icon: "https://static.oomol.com/logo/third-party/nyne_ai.png"
 ---

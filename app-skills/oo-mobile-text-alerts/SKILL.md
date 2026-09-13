@@ -3,9 +3,10 @@ name: oo-mobile-text-alerts
 description: "Mobile Text Alerts (mobile-text-alerts.com). Use this skill for ANY Mobile Text Alerts request — reading, creating, updating, and deleting data. Whenever a task involves Mobile Text Alerts, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mobile Text Alerts"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mobile_text_alerts"]
   icon: "https://static.oomol.com/logo/third-party/mobile_text_alerts.svg"
 ---

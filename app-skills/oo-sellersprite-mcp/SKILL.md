@@ -3,9 +3,10 @@ name: oo-sellersprite-mcp
 description: "SellerSprite MCP (open.sellersprite.com). Use this skill for ANY SellerSprite MCP request — reading, creating, and updating data. Whenever a task involves SellerSprite MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SellerSprite MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sellersprite_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sellersprite_mcp.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-currents-api
 description: "Currents API (currentsapi.services). Use this skill for ANY Currents API request — searching and reading data. Whenever a task involves Currents API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Currents API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["currents_api"]
   icon: "https://static.oomol.com/logo/third-party/Currents%20API.svg"
 ---

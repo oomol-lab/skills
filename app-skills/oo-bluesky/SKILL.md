@@ -3,9 +3,10 @@ name: oo-bluesky
 description: "Bluesky (bsky.social). Use this skill for ANY Bluesky request — reading, creating, and updating data. Whenever a task involves Bluesky, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bluesky"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bluesky"]
   icon: "https://static.oomol.com/logo/third-party/bluesky.png"
 ---
