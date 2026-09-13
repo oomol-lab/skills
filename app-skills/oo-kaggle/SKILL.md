@@ -3,9 +3,10 @@ name: oo-kaggle
 description: "Kaggle (kaggle.com). Use this skill for ANY Kaggle request — searching and reading data. Whenever a task involves Kaggle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Kaggle"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kaggle"]
   icon: "https://static.oomol.com/logo/third-party/kaggle.png"
 ---

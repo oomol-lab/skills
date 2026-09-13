@@ -3,9 +3,10 @@ name: oo-detect-language
 description: "Detect Language (detectlanguage.com). Use this skill for ANY Detect Language request — searching and reading data. Whenever a task involves Detect Language, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Detect Language"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["detect_language"]
   icon: "https://static.oomol.com/logo/third-party/detect_language.png"
 ---

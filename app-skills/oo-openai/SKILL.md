@@ -3,9 +3,10 @@ name: oo-openai
 description: "OpenAI (openai.com). Use this skill for ANY OpenAI request — reading, creating, and updating data. Whenever a task involves OpenAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OpenAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["openai"]
   icon: "https://static.oomol.com/logo/third-party/OpenAI.svg"
 ---

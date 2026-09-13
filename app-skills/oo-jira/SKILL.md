@@ -3,9 +3,10 @@ name: oo-jira
 description: "Jira (atlassian.com). Use this skill for ANY Jira request — reading, creating, and updating data. Whenever a task involves Jira, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jira"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["jira"]
   icon: "https://static.oomol.com/logo/third-party/Jira.svg"
 ---

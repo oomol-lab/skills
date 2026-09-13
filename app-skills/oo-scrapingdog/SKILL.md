@@ -3,9 +3,10 @@ name: oo-scrapingdog
 description: "Scrapingdog (scrapingdog.com). Use this skill for ANY Scrapingdog request — searching and reading data. Whenever a task involves Scrapingdog, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Scrapingdog"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["scrapingdog"]
   icon: "https://static.oomol.com/logo/third-party/scrapingdog.png"
 ---

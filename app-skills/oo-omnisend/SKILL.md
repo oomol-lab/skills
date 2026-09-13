@@ -3,9 +3,10 @@ name: oo-omnisend
 description: "Omnisend (omnisend.com). Use this skill for ANY Omnisend request — reading, creating, updating, and deleting data. Whenever a task involves Omnisend, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Omnisend"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["omnisend"]
   icon: "https://static.oomol.com/logo/third-party/omnisend.svg"
 ---

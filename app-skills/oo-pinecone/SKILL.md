@@ -3,9 +3,10 @@ name: oo-pinecone
 description: "Pinecone (pinecone.io). Use this skill for ANY Pinecone request — reading, creating, updating, and deleting data. Whenever a task involves Pinecone, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pinecone"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pinecone"]
   icon: "https://static.oomol.com/logo/third-party/pinecone.svg"
 ---

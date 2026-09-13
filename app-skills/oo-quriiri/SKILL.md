@@ -3,9 +3,10 @@ name: oo-quriiri
 description: "Quriiri (quriiri.fi). Use this skill for ANY Quriiri request — reading, creating, and updating data. Whenever a task involves Quriiri, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Quriiri"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["quriiri"]
   icon: "https://static.oomol.com/logo/third-party/quriiri.png"
 ---

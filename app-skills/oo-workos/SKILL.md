@@ -3,9 +3,10 @@ name: oo-workos
 description: "WorkOS (workos.com). Use this skill for ANY WorkOS request — reading, creating, updating, and deleting data. Whenever a task involves WorkOS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WorkOS"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["workos"]
   icon: "https://static.oomol.com/logo/third-party/workos.svg"
 ---

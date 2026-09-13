@@ -3,9 +3,10 @@ name: oo-xero
 description: "Xero (xero.com). Use this skill for ANY Xero request — reading, creating, and updating data. Whenever a task involves Xero, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Xero"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["xero"]
   icon: "https://static.oomol.com/logo/third-party/xero.svg"
 ---

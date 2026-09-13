@@ -3,9 +3,10 @@ name: oo-bunnycdn
 description: "BunnyCDN (bunny.net). Use this skill for ANY BunnyCDN request — reading, creating, updating, and deleting data. Whenever a task involves BunnyCDN, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BunnyCDN"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bunnycdn"]
   icon: "https://static.oomol.com/logo/third-party/BunnyCDN.svg"
 ---

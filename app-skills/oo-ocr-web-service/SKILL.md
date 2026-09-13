@@ -3,9 +3,10 @@ name: oo-ocr-web-service
 description: "OCR Web Service (ocrwebservice.com). Use this skill for ANY OCR Web Service request — searching and reading data. Whenever a task involves OCR Web Service, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OCR Web Service"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ocr_web_service"]
   icon: "https://static.oomol.com/logo/third-party/ocr_web_service.svg"
 ---

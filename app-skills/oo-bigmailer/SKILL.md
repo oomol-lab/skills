@@ -3,9 +3,10 @@ name: oo-bigmailer
 description: "BigMailer (bigmailer.io). Use this skill for ANY BigMailer request — reading, creating, updating, and deleting data. Whenever a task involves BigMailer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BigMailer"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bigmailer"]
   icon: "https://static.oomol.com/logo/third-party/bigmailer.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-ticktick
 description: "TickTick (ticktick.com). Use this skill for ANY TickTick request — reading, creating, updating, and deleting data. Whenever a task involves TickTick, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TickTick"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ticktick"]
   icon: "https://static.oomol.com/logo/third-party/ticktick.svg"
 ---

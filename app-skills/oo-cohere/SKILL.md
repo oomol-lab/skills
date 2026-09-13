@@ -3,9 +3,10 @@ name: oo-cohere
 description: "Cohere (cohere.com). Use this skill for ANY Cohere request — searching and reading data. Whenever a task involves Cohere, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cohere"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cohere"]
   icon: "https://static.oomol.com/logo/third-party/cohere.svg"
 ---

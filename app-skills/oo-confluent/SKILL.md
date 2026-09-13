@@ -3,9 +3,10 @@ name: oo-confluent
 description: "Confluent (confluent.io). Use this skill for ANY Confluent request — reading, creating, updating, and deleting data. Whenever a task involves Confluent, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Confluent"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["confluent"]
   icon: "https://static.oomol.com/logo/third-party/confluent.svg"
 ---

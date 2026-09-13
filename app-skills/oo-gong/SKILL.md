@@ -3,9 +3,10 @@ name: oo-gong
 description: "Gong (gong.io). Use this skill for ANY Gong request — searching and reading data. Whenever a task involves Gong, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gong"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gong"]
   icon: "https://static.oomol.com/logo/third-party/gong.svg"
 ---

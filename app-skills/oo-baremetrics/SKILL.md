@@ -3,9 +3,10 @@ name: oo-baremetrics
 description: "Baremetrics (baremetrics.com). Use this skill for ANY Baremetrics request — reading, creating, and updating data. Whenever a task involves Baremetrics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Baremetrics"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["baremetrics"]
   icon: "https://static.oomol.com/logo/third-party/baremetrics.png"
 ---

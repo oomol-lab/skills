@@ -3,9 +3,10 @@ name: oo-apify
 description: "Apify (apify.com). Use this skill for ANY Apify request — searching and reading data. Whenever a task involves Apify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Apify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["apify"]
   icon: "https://static.oomol.com/logo/third-party/Apify.svg"
 ---

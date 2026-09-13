@@ -3,9 +3,10 @@ name: oo-gitea
 description: "Gitea (about.gitea.com). Use this skill for ANY Gitea request — reading, creating, updating, and deleting data. Whenever a task involves Gitea, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gitea"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["gitea"]
   icon: "https://static.oomol.com/logo/third-party/Gitea.svg"
 ---

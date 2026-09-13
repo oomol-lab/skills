@@ -3,9 +3,10 @@ name: oo-sunsama-mcp
 description: "Sunsama MCP (help.sunsama.com). Use this skill for ANY Sunsama MCP request — reading, creating, updating, and deleting data. Whenever a task involves Sunsama MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Sunsama MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sunsama_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sunsama_mcp.svg"
 ---

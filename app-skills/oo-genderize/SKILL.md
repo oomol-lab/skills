@@ -3,9 +3,10 @@ name: oo-genderize
 description: "Genderize (genderize.io). Use this skill for ANY Genderize request — searching and reading data. Whenever a task involves Genderize, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Genderize"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["genderize"]
   icon: "https://static.oomol.com/logo/third-party/Genderize.svg"
 ---

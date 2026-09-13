@@ -3,9 +3,10 @@ name: oo-databricks
 description: "Databricks (databricks.com). Use this skill for ANY Databricks request — reading, creating, updating, and deleting data. Whenever a task involves Databricks, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Databricks"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["databricks"]
   icon: "https://static.oomol.com/logo/third-party/Databricks.svg"
 ---

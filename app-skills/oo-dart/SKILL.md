@@ -3,9 +3,10 @@ name: oo-dart
 description: "Dart (dartai.com). Use this skill for ANY Dart request — reading, creating, updating, and deleting data. Whenever a task involves Dart, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dart"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dart"]
   icon: "https://static.oomol.com/logo/third-party/dart.png"
 ---

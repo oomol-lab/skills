@@ -3,9 +3,10 @@ name: oo-sling
 description: "Sling (getsling.com). Use this skill for ANY Sling request — searching and reading data. Whenever a task involves Sling, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Sling"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sling"]
   icon: "https://static.oomol.com/logo/third-party/sling.png"
 ---

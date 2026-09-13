@@ -3,9 +3,10 @@ name: oo-gender-api
 description: "Gender-API.com (gender-api.com). Use this skill for ANY Gender-API.com request — searching and reading data. Whenever a task involves Gender-API.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gender-API.com"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gender_api"]
   icon: "https://static.oomol.com/logo/third-party/gender_api.svg"
 ---

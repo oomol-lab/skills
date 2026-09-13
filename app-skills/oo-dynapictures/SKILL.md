@@ -3,9 +3,10 @@ name: oo-dynapictures
 description: "DynaPictures (dynapictures.com). Use this skill for ANY DynaPictures request — searching and reading data. Whenever a task involves DynaPictures, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DynaPictures"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dynapictures"]
   icon: "https://static.oomol.com/logo/third-party/dynapictures.svg"
 ---

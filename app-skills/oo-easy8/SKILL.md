@@ -3,9 +3,10 @@ name: oo-easy8
 description: "Easy8 (easy8.com). Use this skill for ANY Easy8 request — reading, creating, updating, and deleting data. Whenever a task involves Easy8, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Easy8"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["easy8"]
   icon: "https://static.oomol.com/logo/third-party/easy8.svg"
 ---

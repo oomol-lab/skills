@@ -3,9 +3,10 @@ name: oo-formcarry
 description: "Formcarry (formcarry.com). Use this skill for ANY Formcarry request — reading, creating, updating, and deleting data. Whenever a task involves Formcarry, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Formcarry"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["formcarry"]
   icon: "https://static.oomol.com/logo/third-party/Formcarry.svg"
 ---

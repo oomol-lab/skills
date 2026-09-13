@@ -3,9 +3,10 @@ name: oo-linkup
 description: "Linkup (linkup.so). Use this skill for ANY Linkup request — searching and reading data. Whenever a task involves Linkup, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Linkup"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["linkup"]
   icon: "https://static.oomol.com/logo/third-party/Linkup.svg"
 ---

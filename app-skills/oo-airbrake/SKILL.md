@@ -3,9 +3,10 @@ name: oo-airbrake
 description: "Airbrake (airbrake.io). Use this skill for ANY Airbrake request — reading, creating, and updating data. Whenever a task involves Airbrake, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Airbrake"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["airbrake"]
   icon: "https://static.oomol.com/logo/third-party/airbrake.png"
 ---

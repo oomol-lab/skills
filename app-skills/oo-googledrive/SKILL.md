@@ -3,9 +3,10 @@ name: oo-googledrive
 description: "Google Drive (workspace.google.com). Use this skill for ANY Google Drive request — reading, creating, updating, and deleting data. Whenever a task involves Google Drive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Drive"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["googledrive"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Drive.svg"
 ---

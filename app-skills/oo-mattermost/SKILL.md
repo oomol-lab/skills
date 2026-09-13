@@ -3,9 +3,10 @@ name: oo-mattermost
 description: "Mattermost (mattermost.com). Use this skill for ANY Mattermost request — reading, creating, and updating data. Whenever a task involves Mattermost, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mattermost"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mattermost"]
   icon: "https://static.oomol.com/logo/third-party/mattermost.svg"
 ---

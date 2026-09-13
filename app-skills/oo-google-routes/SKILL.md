@@ -3,9 +3,10 @@ name: oo-google-routes
 description: "Google Routes (developers.google.com). Use this skill for ANY Google Routes request — searching and reading data. Whenever a task involves Google Routes, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Routes"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["google_routes"]
   icon: "https://static.oomol.com/logo/third-party/google_routes.svg"
 ---

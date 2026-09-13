@@ -3,9 +3,10 @@ name: oo-gorgias
 description: "Gorgias (gorgias.com). Use this skill for ANY Gorgias request — searching and reading data. Whenever a task involves Gorgias, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gorgias"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["gorgias"]
   icon: "https://static.oomol.com/logo/third-party/gorgias.png"
 ---

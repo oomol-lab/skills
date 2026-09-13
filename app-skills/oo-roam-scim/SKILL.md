@@ -3,9 +3,10 @@ name: oo-roam-scim
 description: "Roam SCIM (ro.am). Use this skill for ANY Roam SCIM request — reading, creating, updating, and deleting data. Whenever a task involves Roam SCIM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Roam SCIM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["roam_scim"]
   icon: "https://static.oomol.com/logo/third-party/roam_scim.png"
 ---

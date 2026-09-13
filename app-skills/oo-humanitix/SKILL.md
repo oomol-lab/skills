@@ -3,9 +3,10 @@ name: oo-humanitix
 description: "Humanitix (humanitix.com). Use this skill for ANY Humanitix request — searching and reading data. Whenever a task involves Humanitix, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Humanitix"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["humanitix"]
   icon: "https://static.oomol.com/logo/third-party/humanitix.png"
 ---

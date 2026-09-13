@@ -3,9 +3,10 @@ name: oo-bigml
 description: "BigML (bigml.com). Use this skill for ANY BigML request — reading, creating, updating, and deleting data. Whenever a task involves BigML, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BigML"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bigml"]
   icon: "https://static.oomol.com/logo/third-party/bigml.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-cursor
 description: "Cursor (cursor.com). Use this skill for ANY Cursor request — searching and reading data. Whenever a task involves Cursor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cursor"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cursor"]
   icon: "https://static.oomol.com/logo/third-party/cursor.svg"
 ---

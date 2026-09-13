@@ -3,9 +3,10 @@ name: oo-helium10
 description: "Helium 10 (helium10.com). Use this skill for ANY Helium 10 request — searching and reading data. Whenever a task involves Helium 10, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Helium 10"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["helium10"]
   icon: "https://static.oomol.com/logo/third-party/helium10.svg"
 ---

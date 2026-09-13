@@ -3,9 +3,10 @@ name: oo-freepik
 description: "Magnific (Freepik) (magnific.com). Use this skill for ANY Magnific (Freepik) request — searching and reading data. Whenever a task involves Magnific (Freepik), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Magnific (Freepik)"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["freepik"]
   icon: "https://static.oomol.com/logo/third-party/freepik.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-discordbot
 description: "Discord Bot (discord.com). Use this skill for ANY Discord Bot request — reading, creating, updating, and deleting data. Whenever a task involves Discord Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Discord Bot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["discordbot"]
   icon: "https://static.oomol.com/logo/third-party/Discord%20Bot.svg"
 ---

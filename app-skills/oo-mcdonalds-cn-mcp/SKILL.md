@@ -3,9 +3,10 @@ name: oo-mcdonalds-cn-mcp
 description: "McDonald's China MCP (open.mcd.cn). Use this skill for ANY McDonald's China MCP request — searching and reading data. Whenever a task involves McDonald's China MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "McDonald's China MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mcdonalds_cn_mcp"]
   icon: "https://static.oomol.com/logo/third-party/mcdonalds_cn_mcp.png"
 ---

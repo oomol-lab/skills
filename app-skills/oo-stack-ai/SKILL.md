@@ -3,9 +3,10 @@ name: oo-stack-ai
 description: "StackAI (stack-ai.com). Use this skill for ANY StackAI request — searching and reading data. Whenever a task involves StackAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "StackAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["stack_ai"]
   icon: "https://static.oomol.com/logo/third-party/stack_ai.png"
 ---

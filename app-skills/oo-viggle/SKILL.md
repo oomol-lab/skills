@@ -3,9 +3,10 @@ name: oo-viggle
 description: "Viggle (viggle.ai). Use this skill for ANY Viggle request — reading, creating, updating, and deleting data. Whenever a task involves Viggle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Viggle"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["viggle"]
   icon: "https://static.oomol.com/logo/third-party/viggle.png"
 ---

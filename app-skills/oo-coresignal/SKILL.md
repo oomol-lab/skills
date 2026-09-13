@@ -3,9 +3,10 @@ name: oo-coresignal
 description: "Coresignal (coresignal.com). Use this skill for ANY Coresignal request — searching and reading data. Whenever a task involves Coresignal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Coresignal"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["coresignal"]
   icon: "https://static.oomol.com/logo/third-party/coresignal.svg"
 ---

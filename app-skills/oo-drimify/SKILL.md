@@ -3,9 +3,10 @@ name: oo-drimify
 description: "Drimify (drimify.com). Use this skill for ANY Drimify request — searching and reading data. Whenever a task involves Drimify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Drimify"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["drimify"]
   icon: "https://static.oomol.com/logo/third-party/drimify.svg"
 ---

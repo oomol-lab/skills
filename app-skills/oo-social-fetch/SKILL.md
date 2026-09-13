@@ -3,9 +3,10 @@ name: oo-social-fetch
 description: "Social Fetch (socialfetch.dev). Use this skill for ANY Social Fetch request — searching and reading data. Whenever a task involves Social Fetch, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Social Fetch"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["social_fetch"]
   icon: "https://static.oomol.com/logo/third-party/social_fetch.svg"
 ---

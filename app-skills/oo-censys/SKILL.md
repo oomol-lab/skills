@@ -3,9 +3,10 @@ name: oo-censys
 description: "Censys (censys.com). Use this skill for ANY Censys request — searching and reading data. Whenever a task involves Censys, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Censys"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["censys"]
   icon: "https://static.oomol.com/logo/third-party/censys.jpg"
 ---

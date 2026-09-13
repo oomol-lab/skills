@@ -3,9 +3,10 @@ name: oo-7-shifts
 description: "7shifts (7shifts.com). Use this skill for ANY 7shifts request — searching and reading data. Whenever a task involves 7shifts, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "7shifts"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["7_shifts"]
   icon: "https://static.oomol.com/logo/third-party/7_shifts.png"
 ---

@@ -3,9 +3,10 @@ name: oo-typefully
 description: "Typefully (typefully.com). Use this skill for ANY Typefully request — reading, creating, updating, and deleting data. Whenever a task involves Typefully, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Typefully"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["typefully"]
   icon: "https://static.oomol.com/logo/third-party/typefully.svg"
 ---

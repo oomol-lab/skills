@@ -3,9 +3,10 @@ name: oo-hackernews
 description: "Hacker News (news.ycombinator.com). Use this skill for ANY Hacker News request — searching and reading data. Whenever a task involves Hacker News, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Hacker News"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hackernews"]
   icon: "https://static.oomol.com/logo/third-party/Hacker%20News.svg"
 ---

@@ -548,3 +548,22 @@ describe("readRunConfig", () => {
         expect(readRunConfig(n => (n === "EXCLUDE_SKILLS" ? " oo-a , app-skills/oo-b ," : undefined)).exclude).toEqual(["oo-a", "oo-b"]);
     });
 });
+
+// Provenance must survive the complete parser -> package conversion path.
+describe("generated skill provenance", () => {
+    test("publishes the declared source in both manifests", () => {
+        const skill = ABLY_SKILL.replace("metadata:\n", "metadata:\n  source: \"oomol-connector-generated\"\n");
+        const fields = resolvePackageFields("oo-ably", parseSkillManifest(skill));
+        expect(buildPackageJson(fields).extra).toEqual({ source: "oomol-connector-generated" });
+        expect(buildPackageOoYaml(fields)).toContain("extra:\n  source: \"oomol-connector-generated\"\n");
+    });
+    test("does not classify an unmarked skill by its author or name", () => {
+        const fields = resolvePackageFields("oo-ably", parseSkillManifest(ABLY_SKILL));
+        expect(buildPackageJson(fields)).not.toHaveProperty("extra");
+        expect(buildPackageOoYaml(fields)).not.toContain("extra:");
+    });
+    test("ignores a source declared outside metadata", () => {
+        const skill = ABLY_SKILL.replace("metadata:\n", "source: oomol-connector-generated\nmetadata:\n");
+        expect(parseSkillManifest(skill).source).toBeUndefined();
+    });
+});

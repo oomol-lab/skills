@@ -3,9 +3,10 @@ name: oo-ffhub
 description: "FFHub (ffhub.io). Use this skill for ANY FFHub request — reading, creating, and updating data. Whenever a task involves FFHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "FFHub"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ffhub"]
   icon: "https://static.oomol.com/logo/third-party/ffhub.png"
 ---

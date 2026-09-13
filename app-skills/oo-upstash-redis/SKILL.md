@@ -3,9 +3,10 @@ name: oo-upstash-redis
 description: "Upstash Redis (upstash.com). Use this skill for ANY Upstash Redis request — reading, creating, updating, and deleting data. Whenever a task involves Upstash Redis, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Upstash Redis"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["upstash_redis"]
   icon: "https://static.oomol.com/logo/third-party/upstash_redis.png"
 ---

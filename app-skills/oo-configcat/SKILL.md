@@ -3,9 +3,10 @@ name: oo-configcat
 description: "ConfigCat (configcat.com). Use this skill for ANY ConfigCat request — searching and reading data. Whenever a task involves ConfigCat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ConfigCat"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["configcat"]
   icon: "https://static.oomol.com/logo/third-party/configcat.svg"
 ---

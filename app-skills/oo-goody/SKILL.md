@@ -3,9 +3,10 @@ name: oo-goody
 description: "Goody (ongoody.com). Use this skill for ANY Goody request — reading, creating, and updating data. Whenever a task involves Goody, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Goody"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["goody"]
   icon: "https://static.oomol.com/logo/third-party/goody.svg"
 ---

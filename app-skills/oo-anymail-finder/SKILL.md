@@ -3,9 +3,10 @@ name: oo-anymail-finder
 description: "Anymail Finder (anymailfinder.com). Use this skill for ANY Anymail Finder request — searching and reading data. Whenever a task involves Anymail Finder, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Anymail Finder"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["anymail_finder"]
   icon: "https://static.oomol.com/logo/third-party/anymail_finder.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-webinarjam
 description: "WebinarJam (webinarjam.com). Use this skill for ANY WebinarJam request — reading, creating, and updating data. Whenever a task involves WebinarJam, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WebinarJam"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["webinarjam"]
   icon: "https://static.oomol.com/logo/third-party/webinarjam.png"
 ---

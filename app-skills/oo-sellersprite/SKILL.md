@@ -3,9 +3,10 @@ name: oo-sellersprite
 description: "SellerSprite (sellersprite.com). Use this skill for ANY SellerSprite request — searching and reading data. Whenever a task involves SellerSprite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SellerSprite"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sellersprite"]
   icon: "https://static.oomol.com/logo/third-party/sellersprite.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-mautic
 description: "Mautic (mautic.org). Use this skill for ANY Mautic request — reading, creating, updating, and deleting data. Whenever a task involves Mautic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mautic"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mautic"]
   icon: "https://static.oomol.com/logo/third-party/mautic.svg"
 ---

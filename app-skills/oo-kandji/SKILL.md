@@ -3,9 +3,10 @@ name: oo-kandji
 description: "Iru (Kandji) (iru.com). Use this skill for ANY Iru (Kandji) request — searching and reading data. Whenever a task involves Iru (Kandji), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Iru (Kandji)"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kandji"]
   icon: "https://static.oomol.com/logo/third-party/kandji.png"
 ---

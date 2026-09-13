@@ -3,9 +3,10 @@ name: oo-chatpdf
 description: "ChatPDF (chatpdf.com). Use this skill for ANY ChatPDF request — reading, creating, updating, and deleting data. Whenever a task involves ChatPDF, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ChatPDF"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chatpdf"]
   icon: "https://static.oomol.com/logo/third-party/chatpdf.svg"
 ---

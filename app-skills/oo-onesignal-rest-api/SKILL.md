@@ -3,9 +3,10 @@ name: oo-onesignal-rest-api
 description: "OneSignal (onesignal.com). Use this skill for ANY OneSignal request — reading, creating, and updating data. Whenever a task involves OneSignal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OneSignal"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["onesignal_rest_api"]
   icon: "https://static.oomol.com/logo/third-party/onesignal_rest_api.svg"
 ---

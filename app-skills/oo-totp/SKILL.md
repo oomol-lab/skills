@@ -3,9 +3,10 @@ name: oo-totp
 description: "TOTP Authenticator (rfc-editor.org). Use this skill for ANY TOTP Authenticator request — searching and reading data. Whenever a task involves TOTP Authenticator, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TOTP Authenticator"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["totp"]
   icon: "https://static.oomol.com/logo/third-party/totp.svg"
 ---

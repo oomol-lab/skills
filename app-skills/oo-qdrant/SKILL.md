@@ -3,9 +3,10 @@ name: oo-qdrant
 description: "Qdrant Cloud (qdrant.tech). Use this skill for ANY Qdrant Cloud request — reading, creating, and updating data. Whenever a task involves Qdrant Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Qdrant Cloud"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["qdrant"]
   icon: "https://static.oomol.com/logo/third-party/qdrant.svg"
 ---

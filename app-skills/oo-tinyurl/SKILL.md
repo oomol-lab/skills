@@ -3,9 +3,10 @@ name: oo-tinyurl
 description: "TinyURL (tinyurl.com). Use this skill for ANY TinyURL request — reading, creating, and updating data. Whenever a task involves TinyURL, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TinyURL"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tinyurl"]
   icon: "https://static.oomol.com/logo/third-party/Tinyurl.svg"
 ---

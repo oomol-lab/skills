@@ -3,9 +3,10 @@ name: oo-docsend-2-pdf
 description: "Docsend2pdf (docsend2pdf.com). Use this skill for ANY Docsend2pdf request — searching and reading data. Whenever a task involves Docsend2pdf, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Docsend2pdf"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["docsend_2_pdf"]
   icon: "https://static.oomol.com/logo/third-party/docsend_2_pdf.png"
 ---

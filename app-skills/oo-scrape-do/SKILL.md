@@ -3,9 +3,10 @@ name: oo-scrape-do
 description: "Scrape.do (scrape.do). Use this skill for ANY Scrape.do request — searching and reading data. Whenever a task involves Scrape.do, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Scrape.do"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["scrape_do"]
   icon: "https://static.oomol.com/logo/third-party/scrape_do.svg"
 ---

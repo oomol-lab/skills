@@ -3,9 +3,10 @@ name: oo-demio
 description: "Demio (demio.com). Use this skill for ANY Demio request — reading, creating, and updating data. Whenever a task involves Demio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Demio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["demio"]
   icon: "https://static.oomol.com/logo/third-party/demio.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-bot-star
 description: "BotStar (botstar.com). Use this skill for ANY BotStar request — reading, creating, updating, and deleting data. Whenever a task involves BotStar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BotStar"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bot_star"]
   icon: "https://static.oomol.com/logo/third-party/bot_star.svg"
 ---

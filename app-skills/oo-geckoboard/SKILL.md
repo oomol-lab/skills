@@ -3,9 +3,10 @@ name: oo-geckoboard
 description: "Geckoboard (geckoboard.com). Use this skill for ANY Geckoboard request — reading, creating, updating, and deleting data. Whenever a task involves Geckoboard, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Geckoboard"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["geckoboard"]
   icon: "https://static.oomol.com/logo/third-party/geckoboard.png"
 ---

@@ -3,9 +3,10 @@ name: oo-dropbox-sign
 description: "Dropbox Sign (sign.dropbox.com). Use this skill for ANY Dropbox Sign request — searching and reading data. Whenever a task involves Dropbox Sign, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dropbox Sign"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dropbox_sign"]
   icon: "https://static.oomol.com/logo/third-party/dropbox_sign.svg"
 ---

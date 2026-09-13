@@ -3,9 +3,10 @@ name: oo-oura
 description: "Oura (ouraring.com). Use this skill for ANY Oura request — searching and reading data. Whenever a task involves Oura, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Oura"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["oura"]
   icon: "https://static.oomol.com/logo/third-party/oura.svg"
 ---

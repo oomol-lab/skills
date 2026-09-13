@@ -3,9 +3,10 @@ name: oo-store-leads
 description: "Store Leads (storeleads.app). Use this skill for ANY Store Leads request — searching and reading data. Whenever a task involves Store Leads, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Store Leads"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["store_leads"]
   icon: "https://static.oomol.com/logo/third-party/store_leads.png"
 ---

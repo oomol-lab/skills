@@ -3,9 +3,10 @@ name: oo-google-analytics
 description: "Google Analytics (analytics.google.com). Use this skill for ANY Google Analytics request — reading, creating, and updating data. Whenever a task involves Google Analytics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Analytics"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["google_analytics"]
   icon: "https://static.oomol.com/logo/third-party/google_analytics.svg"
 ---

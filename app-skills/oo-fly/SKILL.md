@@ -3,9 +3,10 @@ name: oo-fly
 description: "Fly.io (fly.io). Use this skill for ANY Fly.io request — reading, creating, and updating data. Whenever a task involves Fly.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Fly.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fly"]
   icon: "https://static.oomol.com/logo/third-party/fly.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-jin10
 description: "Jin10 (jin10.com). Use this skill for ANY Jin10 request — searching and reading data. Whenever a task involves Jin10, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jin10"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jin10"]
   icon: "https://static.oomol.com/logo/third-party/jin10.png"
 ---

@@ -3,9 +3,10 @@ name: oo-thehive
 description: "TheHive (thehive-project.org). Use this skill for ANY TheHive request — reading, creating, and updating data. Whenever a task involves TheHive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TheHive"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["thehive"]
   icon: "https://static.oomol.com/logo/third-party/thehive.svg"
 ---

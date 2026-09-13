@@ -3,9 +3,10 @@ name: oo-pivotal-tracker
 description: "Pivotal Tracker (pivotaltracker.com). Use this skill for ANY Pivotal Tracker request — reading, creating, and updating data. Whenever a task involves Pivotal Tracker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pivotal Tracker"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pivotal_tracker"]
   icon: "https://static.oomol.com/logo/third-party/pivotal_tracker.svg"
 ---

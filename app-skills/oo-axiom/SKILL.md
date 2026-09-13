@@ -3,9 +3,10 @@ name: oo-axiom
 description: "Axiom (axiom.co). Use this skill for ANY Axiom request — reading, creating, updating, and deleting data. Whenever a task involves Axiom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Axiom"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["axiom"]
   icon: "https://static.oomol.com/logo/third-party/axiom.png"
 ---

@@ -3,9 +3,10 @@ name: oo-dumplingai
 description: "DumplingAI (dumplingai.com). Use this skill for ANY DumplingAI request — searching and reading data. Whenever a task involves DumplingAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DumplingAI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dumplingai"]
   icon: "https://static.oomol.com/logo/third-party/dumplingai.svg"
 ---

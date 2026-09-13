@@ -3,9 +3,10 @@ name: oo-plausible-analytics
 description: "Plausible Analytics (plausible.io). Use this skill for ANY Plausible Analytics request — searching and reading data. Whenever a task involves Plausible Analytics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Plausible Analytics"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["plausible_analytics"]
   icon: "https://static.oomol.com/logo/third-party/Plausible%20Analytics.svg"
 ---

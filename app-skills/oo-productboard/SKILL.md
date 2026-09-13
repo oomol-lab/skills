@@ -3,9 +3,10 @@ name: oo-productboard
 description: "Productboard (productboard.com). Use this skill for ANY Productboard request — searching and reading data. Whenever a task involves Productboard, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Productboard"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["productboard"]
   icon: "https://static.oomol.com/logo/third-party/productboard.svg"
 ---

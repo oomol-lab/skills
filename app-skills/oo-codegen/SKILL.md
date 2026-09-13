@@ -3,9 +3,10 @@ name: oo-codegen
 description: "Codegen (codegen.com). Use this skill for ANY Codegen request — searching and reading data. Whenever a task involves Codegen, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Codegen"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["codegen"]
   icon: "https://static.oomol.com/logo/third-party/codegen.svg"
 ---

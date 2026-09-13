@@ -3,9 +3,10 @@ name: oo-together-ai
 description: "Together AI (together.ai). Use this skill for ANY Together AI request — reading, creating, and updating data. Whenever a task involves Together AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Together AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["together_ai"]
   icon: "https://static.oomol.com/logo/third-party/together_ai.svg"
 ---

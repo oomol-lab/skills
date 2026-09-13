@@ -3,9 +3,10 @@ name: oo-bazhuayu
 description: "Bazhuayu (bazhuayu.com). Use this skill for ANY Bazhuayu request — reading, creating, and updating data. Whenever a task involves Bazhuayu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bazhuayu"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bazhuayu"]
   icon: "https://static.oomol.com/logo/third-party/bazhuayu.png"
 ---

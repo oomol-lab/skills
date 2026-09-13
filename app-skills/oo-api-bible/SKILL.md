@@ -3,9 +3,10 @@ name: oo-api-bible
 description: "API.Bible (scripture.api.bible). Use this skill for ANY API.Bible request — searching and reading data. Whenever a task involves API.Bible, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "API.Bible"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["api_bible"]
   icon: "https://static.oomol.com/logo/third-party/api_bible.svg"
 ---

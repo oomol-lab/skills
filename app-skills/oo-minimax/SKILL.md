@@ -3,9 +3,10 @@ name: oo-minimax
 description: "MiniMax (minimax.io). Use this skill for ANY MiniMax request — reading, creating, updating, and deleting data. Whenever a task involves MiniMax, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MiniMax"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["minimax"]
   icon: "https://static.oomol.com/logo/third-party/minimax.svg"
 ---

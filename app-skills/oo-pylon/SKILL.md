@@ -3,9 +3,10 @@ name: oo-pylon
 description: "Pylon (usepylon.com). Use this skill for ANY Pylon request — reading, creating, and updating data. Whenever a task involves Pylon, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pylon"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pylon"]
   icon: "https://static.oomol.com/logo/third-party/pylon.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-unipile
 description: "Unipile (unipile.com). Use this skill for ANY Unipile request — searching and reading data. Whenever a task involves Unipile, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Unipile"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["unipile"]
   icon: "https://static.oomol.com/logo/third-party/unipile.svg"
 ---

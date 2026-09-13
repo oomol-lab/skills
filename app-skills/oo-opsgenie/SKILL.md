@@ -3,9 +3,10 @@ name: oo-opsgenie
 description: "Opsgenie (atlassian.com). Use this skill for ANY Opsgenie request — reading, creating, and updating data. Whenever a task involves Opsgenie, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Opsgenie"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["opsgenie"]
   icon: "https://static.oomol.com/logo/third-party/opsgenie.png"
 ---

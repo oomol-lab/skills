@@ -3,9 +3,10 @@ name: oo-mother-duck
 description: "MotherDuck (motherduck.com). Use this skill for ANY MotherDuck request — reading, creating, updating, and deleting data. Whenever a task involves MotherDuck, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MotherDuck"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mother_duck"]
   icon: "https://static.oomol.com/logo/third-party/mother_duck.svg"
 ---

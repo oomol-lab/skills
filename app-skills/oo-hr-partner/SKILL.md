@@ -3,9 +3,10 @@ name: oo-hr-partner
 description: "HR Partner (hrpartner.io). Use this skill for ANY HR Partner request — searching and reading data. Whenever a task involves HR Partner, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HR Partner"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["hr_partner"]
   icon: "https://static.oomol.com/logo/third-party/hr_partner.png"
 ---

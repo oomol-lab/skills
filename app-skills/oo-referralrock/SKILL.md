@@ -3,9 +3,10 @@ name: oo-referralrock
 description: "Referral Rock (referralrock.com). Use this skill for ANY Referral Rock request — searching and reading data. Whenever a task involves Referral Rock, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Referral Rock"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["referralrock"]
   icon: "https://static.oomol.com/logo/third-party/referralrock.svg"
 ---

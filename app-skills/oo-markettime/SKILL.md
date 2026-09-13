@@ -3,9 +3,10 @@ name: oo-markettime
 description: "MarketTime (markettime.com). Use this skill for ANY MarketTime request — searching and reading data. Whenever a task involves MarketTime, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MarketTime"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["markettime"]
   icon: "https://static.oomol.com/logo/third-party/markettime.svg"
 ---

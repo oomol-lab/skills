@@ -3,9 +3,10 @@ name: oo-linkfox
 description: "LinkFox (linkfox.com). Use this skill for ANY LinkFox request — searching and reading data. Whenever a task involves LinkFox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "LinkFox"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["linkfox"]
   icon: "https://static.oomol.com/logo/third-party/linkfox.svg"
 ---

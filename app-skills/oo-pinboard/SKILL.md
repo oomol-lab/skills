@@ -3,9 +3,10 @@ name: oo-pinboard
 description: "Pinboard (pinboard.in). Use this skill for ANY Pinboard request — reading, creating, updating, and deleting data. Whenever a task involves Pinboard, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pinboard"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pinboard"]
   icon: "https://static.oomol.com/logo/third-party/pinboard.svg"
 ---

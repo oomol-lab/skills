@@ -3,9 +3,10 @@ name: oo-vonage
 description: "Vonage (vonage.com). Use this skill for ANY Vonage request — reading, creating, and updating data. Whenever a task involves Vonage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Vonage"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vonage"]
   icon: "https://static.oomol.com/logo/third-party/vonage.svg"
 ---

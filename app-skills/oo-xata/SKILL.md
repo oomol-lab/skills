@@ -3,9 +3,10 @@ name: oo-xata
 description: "Xata (xata.io). Use this skill for ANY Xata request — searching and reading data. Whenever a task involves Xata, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Xata"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["xata"]
   icon: "https://static.oomol.com/logo/third-party/xata.svg"
 ---

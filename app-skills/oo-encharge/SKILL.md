@@ -3,9 +3,10 @@ name: oo-encharge
 description: "Encharge (encharge.io). Use this skill for ANY Encharge request — reading, creating, and updating data. Whenever a task involves Encharge, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Encharge"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["encharge"]
   icon: "https://static.oomol.com/logo/third-party/encharge.png"
 ---

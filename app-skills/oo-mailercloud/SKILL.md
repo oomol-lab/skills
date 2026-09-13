@@ -3,9 +3,10 @@ name: oo-mailercloud
 description: "Mailercloud (mailercloud.com). Use this skill for ANY Mailercloud request — reading, creating, updating, and deleting data. Whenever a task involves Mailercloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailercloud"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mailercloud"]
   icon: "https://static.oomol.com/logo/third-party/mailercloud.png"
 ---

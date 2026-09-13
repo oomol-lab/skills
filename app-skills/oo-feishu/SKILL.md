@@ -3,9 +3,10 @@ name: oo-feishu
 description: "Feishu (feishu.cn). Use this skill for ANY Feishu request — reading, creating, updating, and deleting data. Whenever a task involves Feishu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Feishu"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["feishu"]
   icon: "https://static.oomol.com/logo/third-party/feishu.svg"
 ---

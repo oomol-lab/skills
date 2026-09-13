@@ -3,9 +3,10 @@ name: oo-bannerbear
 description: "Bannerbear (bannerbear.com). Use this skill for ANY Bannerbear request — reading, creating, and updating data. Whenever a task involves Bannerbear, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bannerbear"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bannerbear"]
   icon: "https://static.oomol.com/logo/third-party/bannerbear.svg"
 ---

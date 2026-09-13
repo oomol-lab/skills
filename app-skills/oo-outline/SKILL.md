@@ -3,9 +3,10 @@ name: oo-outline
 description: "Outline (getoutline.com). Use this skill for ANY Outline request — searching and reading data. Whenever a task involves Outline, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Outline"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["outline"]
   icon: "https://static.oomol.com/logo/third-party/outline.svg"
 ---

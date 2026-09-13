@@ -3,9 +3,10 @@ name: oo-webflow
 description: "Webflow (webflow.com). Use this skill for ANY Webflow request — reading, creating, updating, and deleting data. Whenever a task involves Webflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Webflow"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["webflow"]
   icon: "https://static.oomol.com/logo/third-party/webflow.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-mailwizz
 description: "MailWizz (mailwizz.com). Use this skill for ANY MailWizz request — reading, creating, updating, and deleting data. Whenever a task involves MailWizz, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MailWizz"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mailwizz"]
   icon: "https://static.oomol.com/logo/third-party/mailwizz.svg"
 ---

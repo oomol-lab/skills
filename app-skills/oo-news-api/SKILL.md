@@ -3,9 +3,10 @@ name: oo-news-api
 description: "News API (newsapi.org). Use this skill for ANY News API request — searching and reading data. Whenever a task involves News API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "News API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["news_api"]
   icon: "https://static.oomol.com/logo/third-party/NewsAPI.svg"
 ---

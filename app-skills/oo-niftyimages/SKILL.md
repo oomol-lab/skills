@@ -3,9 +3,10 @@ name: oo-niftyimages
 description: "NiftyImages (niftyimages.com). Use this skill for ANY NiftyImages request — searching and reading data. Whenever a task involves NiftyImages, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NiftyImages"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["niftyimages"]
   icon: "https://static.oomol.com/logo/third-party/niftyimages.png"
 ---

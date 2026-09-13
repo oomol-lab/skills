@@ -3,9 +3,10 @@ name: oo-fivetran
 description: "Fivetran (fivetran.com). Use this skill for ANY Fivetran request — searching and reading data. Whenever a task involves Fivetran, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Fivetran"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["fivetran"]
   icon: "https://static.oomol.com/logo/third-party/fivetran.svg"
 ---

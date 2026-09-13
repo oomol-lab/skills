@@ -3,9 +3,10 @@ name: oo-helpscout
 description: "Help Scout (helpscout.com). Use this skill for ANY Help Scout request — reading, creating, and updating data. Whenever a task involves Help Scout, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Help Scout"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["helpscout"]
   icon: "https://static.oomol.com/logo/third-party/helpscout.svg"
 ---

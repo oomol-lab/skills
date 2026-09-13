@@ -3,9 +3,10 @@ name: oo-scrapingant
 description: "ScrapingAnt (scrapingant.com). Use this skill for ANY ScrapingAnt request — searching and reading data. Whenever a task involves ScrapingAnt, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ScrapingAnt"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["scrapingant"]
   icon: "https://static.oomol.com/logo/third-party/scrapingant.png"
 ---

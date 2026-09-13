@@ -3,9 +3,10 @@ name: oo-zyte-api
 description: "Zyte API (zyte.com). Use this skill for ANY Zyte API request — searching and reading data. Whenever a task involves Zyte API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zyte API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zyte_api"]
   icon: "https://static.oomol.com/logo/third-party/zyte_api.svg"
 ---

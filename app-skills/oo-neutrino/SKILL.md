@@ -3,9 +3,10 @@ name: oo-neutrino
 description: "Neutrino API (neutrinoapi.com). Use this skill for ANY Neutrino API request — searching and reading data. Whenever a task involves Neutrino API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Neutrino API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["neutrino"]
   icon: "https://static.oomol.com/logo/third-party/neutrino.svg"
 ---

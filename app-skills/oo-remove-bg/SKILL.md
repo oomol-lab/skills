@@ -3,9 +3,10 @@ name: oo-remove-bg
 description: "remove.bg (remove.bg). Use this skill for ANY remove.bg request — reading, creating, updating, and deleting data. Whenever a task involves remove.bg, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "remove.bg"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["remove_bg"]
   icon: "https://static.oomol.com/logo/third-party/Remove.bg.svg"
 ---

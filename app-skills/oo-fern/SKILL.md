@@ -3,9 +3,10 @@ name: oo-fern
 description: "Fern (fernhq.com). Use this skill for ANY Fern request — searching and reading data. Whenever a task involves Fern, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Fern"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fern"]
   icon: "https://static.oomol.com/logo/third-party/fern.svg"
 ---

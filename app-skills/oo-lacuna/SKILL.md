@@ -3,9 +3,10 @@ name: oo-lacuna
 description: "Lacuna (lacuna.tiptreesystems.com). Use this skill for ANY Lacuna request — searching and reading data. Whenever a task involves Lacuna, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lacuna"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lacuna"]
   icon: "https://static.oomol.com/logo/third-party/lacuna.svg"
 ---

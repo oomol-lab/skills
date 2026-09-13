@@ -3,9 +3,10 @@ name: oo-keen-io
 description: "Keen IO (keen.io). Use this skill for ANY Keen IO request — reading, creating, and updating data. Whenever a task involves Keen IO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Keen IO"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["keen_io"]
   icon: "https://static.oomol.com/logo/third-party/keen_io.svg"
 ---

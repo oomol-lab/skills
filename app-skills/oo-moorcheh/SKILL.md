@@ -3,9 +3,10 @@ name: oo-moorcheh
 description: "Moorcheh (moorcheh.ai). Use this skill for ANY Moorcheh request — reading, creating, updating, and deleting data. Whenever a task involves Moorcheh, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Moorcheh"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["moorcheh"]
   icon: "https://static.oomol.com/logo/third-party/moorcheh.png"
 ---

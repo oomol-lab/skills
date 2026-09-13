@@ -3,9 +3,10 @@ name: oo-lingvanex-translation-api
 description: "Lingvanex Translation API (lingvanex.com). Use this skill for ANY Lingvanex Translation API request — searching and reading data. Whenever a task involves Lingvanex Translation API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lingvanex Translation API"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lingvanex_translation_api"]
   icon: "https://static.oomol.com/logo/third-party/lingvanex_translation_api.svg"
 ---

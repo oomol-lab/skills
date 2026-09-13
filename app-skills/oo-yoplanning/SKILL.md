@@ -3,9 +3,10 @@ name: oo-yoplanning
 description: "YoPlanning (yoplanning.com). Use this skill for ANY YoPlanning request — searching and reading data. Whenever a task involves YoPlanning, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "YoPlanning"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["yoplanning"]
   icon: "https://static.oomol.com/logo/third-party/yoplanning.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-buildium
 description: "Buildium (buildium.com). Use this skill for ANY Buildium request — searching and reading data. Whenever a task involves Buildium, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Buildium"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["buildium"]
   icon: "https://static.oomol.com/logo/third-party/buildium.svg"
 ---

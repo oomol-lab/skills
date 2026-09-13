@@ -3,9 +3,10 @@ name: oo-ashby
 description: "Ashby (ashbyhq.com). Use this skill for ANY Ashby request — searching and reading data. Whenever a task involves Ashby, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Ashby"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ashby"]
   icon: "https://static.oomol.com/logo/third-party/ashby.png"
 ---

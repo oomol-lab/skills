@@ -3,9 +3,10 @@ name: oo-memberstack
 description: "Memberstack (memberstack.com). Use this skill for ANY Memberstack request — reading, creating, updating, and deleting data. Whenever a task involves Memberstack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Memberstack"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["memberstack"]
   icon: "https://static.oomol.com/logo/third-party/memberstack.svg"
 ---

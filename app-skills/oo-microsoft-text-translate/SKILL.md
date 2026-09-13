@@ -3,9 +3,10 @@ name: oo-microsoft-text-translate
 description: "Microsoft Text Translate (azure.microsoft.com). Use this skill for ANY Microsoft Text Translate request — searching and reading data. Whenever a task involves Microsoft Text Translate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Microsoft Text Translate"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["microsoft_text_translate"]
   icon: "https://static.oomol.com/logo/third-party/microsoft_text_translate.svg"
 ---

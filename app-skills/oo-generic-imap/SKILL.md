@@ -3,9 +3,10 @@ name: oo-generic-imap
 description: "IMAP Mailbox (rfc-editor.org). Use this skill for ANY IMAP Mailbox request — reading, creating, updating, and deleting data. Whenever a task involves IMAP Mailbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "IMAP Mailbox"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["generic_imap"]
   icon: "https://static.oomol.com/logo/third-party/generic_imap.svg"
 ---

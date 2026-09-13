@@ -3,9 +3,10 @@ name: oo-mistral-ai
 description: "Mistral AI (mistral.ai). Use this skill for ANY Mistral AI request — reading, creating, updating, and deleting data. Whenever a task involves Mistral AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mistral AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mistral_ai"]
   icon: "https://static.oomol.com/logo/third-party/Mistral%20AI.svg"
 ---

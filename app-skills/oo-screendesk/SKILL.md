@@ -3,9 +3,10 @@ name: oo-screendesk
 description: "Screendesk (screendesk.io). Use this skill for ANY Screendesk request — reading, creating, and updating data. Whenever a task involves Screendesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Screendesk"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["screendesk"]
   icon: "https://static.oomol.com/logo/third-party/screendesk.svg"
 ---

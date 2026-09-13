@@ -3,9 +3,10 @@ name: oo-seatable
 description: "SeaTable (seatable.com). Use this skill for ANY SeaTable request — reading, creating, updating, and deleting data. Whenever a task involves SeaTable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SeaTable"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["seatable"]
   icon: "https://static.oomol.com/logo/third-party/seatable.svg"
 ---

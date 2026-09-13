@@ -3,9 +3,10 @@ name: oo-gift-up
 description: "Gift Up (giftup.com). Use this skill for ANY Gift Up request — reading, creating, and updating data. Whenever a task involves Gift Up, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gift Up"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gift_up"]
   icon: "https://static.oomol.com/logo/third-party/gift_up.png"
 ---

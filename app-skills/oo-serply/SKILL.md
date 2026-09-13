@@ -3,9 +3,10 @@ name: oo-serply
 description: "Serply (serply.io). Use this skill for ANY Serply request — searching and reading data. Whenever a task involves Serply, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Serply"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["serply"]
   icon: "https://static.oomol.com/logo/third-party/serply.svg"
 ---

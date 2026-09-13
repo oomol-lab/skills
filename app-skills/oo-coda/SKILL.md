@@ -3,9 +3,10 @@ name: oo-coda
 description: "Coda (coda.io). Use this skill for ANY Coda request — reading, creating, and updating data. Whenever a task involves Coda, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Coda"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["coda"]
   icon: "https://static.oomol.com/logo/third-party/Coda.svg"
 ---

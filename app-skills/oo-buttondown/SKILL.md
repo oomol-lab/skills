@@ -3,9 +3,10 @@ name: oo-buttondown
 description: "Buttondown (buttondown.com). Use this skill for ANY Buttondown request — reading, creating, updating, and deleting data. Whenever a task involves Buttondown, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Buttondown"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["buttondown"]
   icon: "https://static.oomol.com/logo/third-party/buttondown.svg"
 ---

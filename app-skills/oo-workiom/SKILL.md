@@ -3,9 +3,10 @@ name: oo-workiom
 description: "Workiom (workiom.com). Use this skill for ANY Workiom request — reading, creating, and updating data. Whenever a task involves Workiom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Workiom"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["workiom"]
   icon: "https://static.oomol.com/logo/third-party/workiom.png"
 ---

@@ -3,9 +3,10 @@ name: oo-clinicalkey
 description: "ClinicalKey (clinicalkey.com). Use this skill for ANY ClinicalKey request — searching and reading data. Whenever a task involves ClinicalKey, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ClinicalKey"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["clinicalkey"]
   icon: "https://static.oomol.com/logo/third-party/clinicalkey.svg"
 ---

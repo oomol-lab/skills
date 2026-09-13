@@ -3,9 +3,10 @@ name: oo-cisco-meraki
 description: "Cisco Meraki (meraki.cisco.com). Use this skill for ANY Cisco Meraki request — searching and reading data. Whenever a task involves Cisco Meraki, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cisco Meraki"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cisco_meraki"]
   icon: "https://static.oomol.com/logo/third-party/cisco_meraki.png"
 ---

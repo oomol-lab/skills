@@ -3,9 +3,10 @@ name: oo-bird
 description: "Bird (bird.com). Use this skill for ANY Bird request — reading, creating, updating, and deleting data. Whenever a task involves Bird, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bird"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bird"]
   icon: "https://static.oomol.com/logo/third-party/bird.png"
 ---

@@ -3,9 +3,10 @@ name: oo-vtex
 description: "VTEX (vtex.com). Use this skill for ANY VTEX request — searching and reading data. Whenever a task involves VTEX, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "VTEX"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vtex"]
   icon: "https://static.oomol.com/logo/third-party/vtex.svg"
 ---

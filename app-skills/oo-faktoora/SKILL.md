@@ -3,9 +3,10 @@ name: oo-faktoora
 description: "Faktoora (faktoora.com). Use this skill for ANY Faktoora request — reading, creating, updating, and deleting data. Whenever a task involves Faktoora, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Faktoora"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["faktoora"]
   icon: "https://static.oomol.com/logo/third-party/faktoora.svg"
 ---

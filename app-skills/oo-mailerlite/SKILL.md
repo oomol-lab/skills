@@ -3,9 +3,10 @@ name: oo-mailerlite
 description: "MailerLite (mailerlite.com). Use this skill for ANY MailerLite request — reading, creating, updating, and deleting data. Whenever a task involves MailerLite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MailerLite"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailerlite"]
   icon: "https://static.oomol.com/logo/third-party/MailerLite.svg"
 ---

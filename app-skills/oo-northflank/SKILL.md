@@ -3,9 +3,10 @@ name: oo-northflank
 description: "Northflank (northflank.com). Use this skill for ANY Northflank request — searching and reading data. Whenever a task involves Northflank, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Northflank"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["northflank"]
   icon: "https://static.oomol.com/logo/third-party/northflank.svg"
 ---

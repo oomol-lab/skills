@@ -3,9 +3,10 @@ name: oo-monica-crm
 description: "Monica CRM (monicahq.com). Use this skill for ANY Monica CRM request — reading, creating, updating, and deleting data. Whenever a task involves Monica CRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Monica CRM"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["monica_crm"]
   icon: "https://static.oomol.com/logo/third-party/monica_crm.png"
 ---

@@ -3,9 +3,10 @@ name: oo-fast-note-sync
 description: "Fast Note Sync (github.com). Use this skill for ANY Fast Note Sync request — reading, creating, updating, and deleting data. Whenever a task involves Fast Note Sync, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Fast Note Sync"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["fast_note_sync"]
   icon: "https://static.oomol.com/logo/third-party/fast_note_sync.png"
 ---

@@ -3,9 +3,10 @@ name: oo-postalytics
 description: "Postalytics (postalytics.com). Use this skill for ANY Postalytics request — searching and reading data. Whenever a task involves Postalytics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Postalytics"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["postalytics"]
   icon: "https://static.oomol.com/logo/third-party/postalytics.png"
 ---

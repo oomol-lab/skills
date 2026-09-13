@@ -3,9 +3,10 @@ name: oo-linkly
 description: "Linkly (linklyhq.com). Use this skill for ANY Linkly request — reading, creating, updating, and deleting data. Whenever a task involves Linkly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Linkly"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["linkly"]
   icon: "https://static.oomol.com/logo/third-party/linkly.svg"
 ---

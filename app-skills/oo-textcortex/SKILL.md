@@ -3,9 +3,10 @@ name: oo-textcortex
 description: "TextCortex (textcortex.com). Use this skill for ANY TextCortex request — reading, creating, and updating data. Whenever a task involves TextCortex, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TextCortex"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["textcortex"]
   icon: "https://static.oomol.com/logo/third-party/textcortex.svg"
 ---

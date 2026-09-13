@@ -3,9 +3,10 @@ name: oo-clickup-mcp
 description: "ClickUp MCP (developer.clickup.com). Use this skill for ANY ClickUp MCP request — reading, creating, and updating data. Whenever a task involves ClickUp MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ClickUp MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["clickup_mcp"]
   icon: "https://static.oomol.com/logo/third-party/clickup_mcp.svg"
 ---

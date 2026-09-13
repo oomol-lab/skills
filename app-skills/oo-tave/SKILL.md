@@ -3,9 +3,10 @@ name: oo-tave
 description: "Táve (vsco.co). Use this skill for ANY Táve request — searching and reading data. Whenever a task involves Táve, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Táve"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tave"]
   icon: "https://static.oomol.com/logo/third-party/tave.png"
 ---

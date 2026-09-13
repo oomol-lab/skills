@@ -3,9 +3,10 @@ name: oo-lifx
 description: "LIFX (lifx.com). Use this skill for ANY LIFX request — reading, creating, and updating data. Whenever a task involves LIFX, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "LIFX"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lifx"]
   icon: "https://static.oomol.com/logo/third-party/lifx.png"
 ---

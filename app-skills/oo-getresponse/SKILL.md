@@ -3,9 +3,10 @@ name: oo-getresponse
 description: "GetResponse (getresponse.com). Use this skill for ANY GetResponse request — reading, creating, updating, and deleting data. Whenever a task involves GetResponse, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "GetResponse"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["getresponse"]
   icon: "https://static.oomol.com/logo/third-party/getresponse.svg"
 ---

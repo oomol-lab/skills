@@ -3,9 +3,10 @@ name: oo-signwell
 description: "SignWell (signwell.com). Use this skill for ANY SignWell request — reading, creating, and updating data. Whenever a task involves SignWell, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SignWell"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["signwell"]
   icon: "https://static.oomol.com/logo/third-party/signwell.svg"
 ---

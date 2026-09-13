@@ -3,9 +3,10 @@ name: oo-webscraping-ai
 description: "WebScraping.AI (webscraping.ai). Use this skill for ANY WebScraping.AI request — searching and reading data. Whenever a task involves WebScraping.AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WebScraping.AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["webscraping_ai"]
   icon: "https://static.oomol.com/logo/third-party/webscraping_ai.png"
 ---

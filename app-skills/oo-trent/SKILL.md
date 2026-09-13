@@ -3,9 +3,10 @@ name: oo-trent
 description: "Trent (trent.ai). Use this skill for ANY Trent request — reading, creating, and updating data. Whenever a task involves Trent, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Trent"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["trent"]
   icon: "https://static.oomol.com/logo/third-party/trent.svg"
 ---

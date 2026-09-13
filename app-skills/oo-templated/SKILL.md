@@ -3,9 +3,10 @@ name: oo-templated
 description: "Templated (templated.io). Use this skill for ANY Templated request — reading, creating, updating, and deleting data. Whenever a task involves Templated, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Templated"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["templated"]
   icon: "https://static.oomol.com/logo/third-party/Templated.svg"
 ---

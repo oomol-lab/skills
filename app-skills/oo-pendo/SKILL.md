@@ -3,9 +3,10 @@ name: oo-pendo
 description: "Pendo (pendo.io). Use this skill for ANY Pendo request — searching and reading data. Whenever a task involves Pendo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Pendo"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pendo"]
   icon: "https://static.oomol.com/logo/third-party/pendo.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-box
 description: "Box (box.com). Use this skill for ANY Box request — reading, creating, updating, and deleting data. Whenever a task involves Box, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Box"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["box"]
   icon: "https://static.oomol.com/logo/third-party/box.svg"
 ---

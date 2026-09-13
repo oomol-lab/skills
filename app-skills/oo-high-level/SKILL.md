@@ -3,9 +3,10 @@ name: oo-high-level
 description: "HighLevel (gohighlevel.com). Use this skill for ANY HighLevel request — reading, creating, updating, and deleting data. Whenever a task involves HighLevel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HighLevel"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["high_level"]
   icon: "https://static.oomol.com/logo/third-party/high_level.svg"
 ---

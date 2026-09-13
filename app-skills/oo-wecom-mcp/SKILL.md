@@ -3,9 +3,10 @@ name: oo-wecom-mcp
 description: "WeCom MCP (work.weixin.qq.com). Use this skill for ANY WeCom MCP request — searching and reading data. Whenever a task involves WeCom MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "WeCom MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wecom_mcp"]
   icon: "https://static.oomol.com/logo/third-party/wecom_mcp.png"
 ---

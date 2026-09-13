@@ -3,9 +3,10 @@ name: oo-wappalyzer
 description: "Wappalyzer (wappalyzer.com). Use this skill for ANY Wappalyzer request — searching and reading data. Whenever a task involves Wappalyzer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Wappalyzer"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wappalyzer"]
   icon: "https://static.oomol.com/logo/third-party/wappalyzer.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-workpath
 description: "Workpath (workpath.com). Use this skill for ANY Workpath request — searching and reading data. Whenever a task involves Workpath, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Workpath"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["workpath"]
   icon: "https://static.oomol.com/logo/third-party/workpath.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-wandb
 description: "Weights & Biases (wandb.ai). Use this skill for ANY Weights & Biases request — reading, creating, and updating data. Whenever a task involves Weights & Biases, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Weights & Biases"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wandb"]
   icon: "https://static.oomol.com/logo/third-party/wandb.svg"
 ---

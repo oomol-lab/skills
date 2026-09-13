@@ -3,9 +3,10 @@ name: oo-sensibo
 description: "Sensibo (home.sensibo.com). Use this skill for ANY Sensibo request — reading, creating, and updating data. Whenever a task involves Sensibo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Sensibo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sensibo"]
   icon: "https://static.oomol.com/logo/third-party/sensibo.svg"
 ---

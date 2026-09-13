@@ -3,9 +3,10 @@ name: oo-openrouter
 description: "OpenRouter (openrouter.ai). Use this skill for ANY OpenRouter request — reading, creating, and updating data. Whenever a task involves OpenRouter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OpenRouter"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["openrouter"]
   icon: "https://static.oomol.com/logo/third-party/Openrouter.svg"
 ---

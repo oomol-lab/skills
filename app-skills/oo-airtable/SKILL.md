@@ -3,9 +3,10 @@ name: oo-airtable
 description: "Airtable (airtable.com). Use this skill for ANY Airtable request — reading, creating, updating, and deleting data. Whenever a task involves Airtable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Airtable"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["airtable"]
   icon: "https://static.oomol.com/logo/third-party/Airtable.svg"
 ---

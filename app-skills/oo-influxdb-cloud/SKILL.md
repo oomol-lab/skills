@@ -3,9 +3,10 @@ name: oo-influxdb-cloud
 description: "InfluxDB Cloud (influxdata.com). Use this skill for ANY InfluxDB Cloud request — reading, creating, and updating data. Whenever a task involves InfluxDB Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "InfluxDB Cloud"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["influxdb_cloud"]
   icon: "https://static.oomol.com/logo/third-party/influxdb_cloud.svg"
 ---

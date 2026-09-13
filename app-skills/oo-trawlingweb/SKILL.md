@@ -3,9 +3,10 @@ name: oo-trawlingweb
 description: "TrawlingWeb (trawlingweb.com). Use this skill for ANY TrawlingWeb request — searching and reading data. Whenever a task involves TrawlingWeb, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TrawlingWeb"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["trawlingweb"]
   icon: "https://static.oomol.com/logo/third-party/trawlingweb.png"
 ---

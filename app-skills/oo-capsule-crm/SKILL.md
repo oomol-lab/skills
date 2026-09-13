@@ -3,9 +3,10 @@ name: oo-capsule-crm
 description: "Capsule CRM (capsulecrm.com). Use this skill for ANY Capsule CRM request — reading, creating, updating, and deleting data. Whenever a task involves Capsule CRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Capsule CRM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["capsule_crm"]
   icon: "https://static.oomol.com/logo/third-party/capsule_crm.svg"
 ---

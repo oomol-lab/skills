@@ -3,9 +3,10 @@ name: oo-griptape
 description: "Griptape (griptape.ai). Use this skill for ANY Griptape request — reading, creating, updating, and deleting data. Whenever a task involves Griptape, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Griptape"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["griptape"]
   icon: "https://static.oomol.com/logo/third-party/griptape.svg"
 ---

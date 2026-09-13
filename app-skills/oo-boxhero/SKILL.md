@@ -3,9 +3,10 @@ name: oo-boxhero
 description: "BoxHero (boxhero-app.com). Use this skill for ANY BoxHero request — searching and reading data. Whenever a task involves BoxHero, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BoxHero"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["boxhero"]
   icon: "https://static.oomol.com/logo/third-party/Boxhero.svg"
 ---

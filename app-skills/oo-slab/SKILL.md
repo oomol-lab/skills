@@ -3,9 +3,10 @@ name: oo-slab
 description: "Slab (slab.com). Use this skill for ANY Slab request — reading, creating, updating, and deleting data. Whenever a task involves Slab, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Slab"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["slab"]
   icon: "https://static.oomol.com/logo/third-party/slab.svg"
 ---

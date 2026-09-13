@@ -3,9 +3,10 @@ name: oo-getform
 description: "Getform (forminit.com). Use this skill for ANY Getform request — reading, creating, and updating data. Whenever a task involves Getform, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Getform"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["getform"]
   icon: "https://static.oomol.com/logo/third-party/getform.png"
 ---

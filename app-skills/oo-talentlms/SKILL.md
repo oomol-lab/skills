@@ -3,9 +3,10 @@ name: oo-talentlms
 description: "TalentLMS (talentlms.com). Use this skill for ANY TalentLMS request — reading, creating, updating, and deleting data. Whenever a task involves TalentLMS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TalentLMS"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["talentlms"]
   icon: "https://static.oomol.com/logo/third-party/talentlms.svg"
 ---

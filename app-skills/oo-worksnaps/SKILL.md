@@ -3,9 +3,10 @@ name: oo-worksnaps
 description: "Worksnaps (worksnaps.com). Use this skill for ANY Worksnaps request — searching and reading data. Whenever a task involves Worksnaps, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Worksnaps"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["worksnaps"]
   icon: "https://static.oomol.com/logo/third-party/worksnaps.png"
 ---

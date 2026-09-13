@@ -3,9 +3,10 @@ name: oo-projectmanager
 description: "ProjectManager (projectmanager.com). Use this skill for ANY ProjectManager request — searching and reading data. Whenever a task involves ProjectManager, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ProjectManager"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["projectmanager"]
   icon: "https://static.oomol.com/logo/third-party/projectmanager.svg"
 ---

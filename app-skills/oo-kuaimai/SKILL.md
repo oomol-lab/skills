@@ -3,9 +3,10 @@ name: oo-kuaimai
 description: "Kuaimai ERP (kuaimai.com). Use this skill for ANY Kuaimai ERP request — searching and reading data. Whenever a task involves Kuaimai ERP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Kuaimai ERP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kuaimai"]
   icon: "https://static.oomol.com/logo/third-party/kuaimai.png"
 ---

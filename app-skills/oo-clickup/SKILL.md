@@ -3,9 +3,10 @@ name: oo-clickup
 description: "ClickUp (clickup.com). Use this skill for ANY ClickUp request — reading, creating, updating, and deleting data. Whenever a task involves ClickUp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ClickUp"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["clickup"]
   icon: "https://static.oomol.com/logo/third-party/ClickUp.svg"
 ---

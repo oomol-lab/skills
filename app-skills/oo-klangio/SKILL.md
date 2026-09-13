@@ -3,9 +3,10 @@ name: oo-klangio
 description: "Klangio (klang.io). Use this skill for ANY Klangio request — reading, creating, and updating data. Whenever a task involves Klangio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Klangio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["klangio"]
   icon: "https://static.oomol.com/logo/third-party/klangio.svg"
 ---

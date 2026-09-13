@@ -3,9 +3,10 @@ name: oo-notion
 description: "Notion (notion.so). Use this skill for ANY Notion request — reading, creating, updating, and deleting data. Whenever a task involves Notion, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Notion"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["notion"]
   icon: "https://static.oomol.com/logo/third-party/Notion.svg"
 ---

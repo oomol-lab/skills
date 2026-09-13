@@ -3,9 +3,10 @@ name: oo-faraday
 description: "Faraday (faraday.ai). Use this skill for ANY Faraday request — searching and reading data. Whenever a task involves Faraday, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Faraday"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["faraday"]
   icon: "https://static.oomol.com/logo/third-party/faraday.svg"
 ---

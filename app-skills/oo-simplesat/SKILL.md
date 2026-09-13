@@ -3,9 +3,10 @@ name: oo-simplesat
 description: "Simplesat (simplesat.io). Use this skill for ANY Simplesat request — reading, creating, and updating data. Whenever a task involves Simplesat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Simplesat"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["simplesat"]
   icon: "https://static.oomol.com/logo/third-party/simplesat.svg"
 ---

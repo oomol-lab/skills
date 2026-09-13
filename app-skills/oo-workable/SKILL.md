@@ -3,9 +3,10 @@ name: oo-workable
 description: "Workable (workable.com). Use this skill for ANY Workable request — searching and reading data. Whenever a task involves Workable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Workable"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["workable"]
   icon: "https://static.oomol.com/logo/third-party/workable.svg"
 ---

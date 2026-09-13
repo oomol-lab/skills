@@ -3,9 +3,10 @@ name: oo-botpress
 description: "Botpress (botpress.com). Use this skill for ANY Botpress request — searching and reading data. Whenever a task involves Botpress, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Botpress"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["botpress"]
   icon: "https://static.oomol.com/logo/third-party/botpress.svg"
 ---

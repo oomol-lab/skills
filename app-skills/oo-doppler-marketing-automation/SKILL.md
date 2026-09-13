@@ -3,9 +3,10 @@ name: oo-doppler-marketing-automation
 description: "Doppler Marketing Automation (fromdoppler.com). Use this skill for ANY Doppler Marketing Automation request — reading, creating, updating, and deleting data. Whenever a task involves Doppler Marketing Automation, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Doppler Marketing Automation"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["doppler_marketing_automation"]
   icon: "https://static.oomol.com/logo/third-party/doppler_marketing_automation.png"
 ---

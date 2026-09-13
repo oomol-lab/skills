@@ -3,9 +3,10 @@ name: oo-feishu-app-bot
 description: "Feishu App Bot (open.feishu.cn). Use this skill for ANY Feishu App Bot request — reading, creating, updating, and deleting data. Whenever a task involves Feishu App Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["feishu_app_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_custom_bot.svg"
 ---

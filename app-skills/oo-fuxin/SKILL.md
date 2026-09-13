@@ -3,9 +3,10 @@ name: oo-fuxin
 description: "Foxit Cloud API (cloudapi.fuxinsoft.cn). Use this skill for ANY Foxit Cloud API request — reading, creating, updating, and deleting data. Whenever a task involves Foxit Cloud API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Foxit Cloud API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fuxin"]
   icon: "https://static.oomol.com/logo/third-party/fuxin.svg"
 ---

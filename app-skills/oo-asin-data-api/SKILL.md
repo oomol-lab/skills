@@ -3,9 +3,10 @@ name: oo-asin-data-api
 description: "ASIN Data API (asindataapi.com). Use this skill for ANY ASIN Data API request — reading, creating, updating, and deleting data. Whenever a task involves ASIN Data API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ASIN Data API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["asin_data_api"]
   icon: "https://static.oomol.com/logo/third-party/asin_data_api.png"
 ---

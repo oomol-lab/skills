@@ -3,9 +3,10 @@ name: oo-metabase
 description: "Metabase (metabase.com). Use this skill for ANY Metabase request — searching and reading data. Whenever a task involves Metabase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Metabase"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["metabase"]
   icon: "https://static.oomol.com/logo/third-party/metabase.svg"
 ---

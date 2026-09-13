@@ -3,9 +3,10 @@ name: oo-genpage
 description: "GenPage (genpage.ai). Use this skill for ANY GenPage request — reading, creating, updating, and deleting data. Whenever a task involves GenPage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "GenPage"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["genpage"]
   icon: "https://static.oomol.com/logo/third-party/genpage.svg"
 ---

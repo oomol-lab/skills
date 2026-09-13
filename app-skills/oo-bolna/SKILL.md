@@ -3,9 +3,10 @@ name: oo-bolna
 description: "Bolna (bolna.ai). Use this skill for ANY Bolna request — searching and reading data. Whenever a task involves Bolna, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bolna"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bolna"]
   icon: "https://static.oomol.com/logo/third-party/bolna.png"
 ---

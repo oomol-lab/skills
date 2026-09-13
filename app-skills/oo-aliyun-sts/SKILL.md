@@ -3,9 +3,10 @@ name: oo-aliyun-sts
 description: "Alibaba Cloud STS (alibabacloud.com). Use this skill for ANY Alibaba Cloud STS request — searching and reading data. Whenever a task involves Alibaba Cloud STS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Alibaba Cloud STS"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["aliyun_sts"]
   icon: "https://static.oomol.com/logo/third-party/alibabacloud.svg"
 ---

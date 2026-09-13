@@ -3,9 +3,10 @@ name: oo-skyvern
 description: "Skyvern (skyvern.com). Use this skill for ANY Skyvern request — reading, creating, and updating data. Whenever a task involves Skyvern, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Skyvern"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["skyvern"]
   icon: "https://static.oomol.com/logo/third-party/skyvern.png"
 ---

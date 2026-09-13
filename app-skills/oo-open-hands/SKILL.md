@@ -3,9 +3,10 @@ name: oo-open-hands
 description: "OpenHands (all-hands.dev). Use this skill for ANY OpenHands request — reading, creating, and updating data. Whenever a task involves OpenHands, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OpenHands"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["open_hands"]
   icon: "https://static.oomol.com/logo/third-party/open_hands.png"
 ---

@@ -3,9 +3,10 @@ name: oo-retell-ai
 description: "Retell AI (retellai.com). Use this skill for ANY Retell AI request — searching and reading data. Whenever a task involves Retell AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Retell AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["retell_ai"]
   icon: "https://static.oomol.com/logo/third-party/retell_ai.svg"
 ---

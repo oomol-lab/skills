@@ -3,9 +3,10 @@ name: oo-weatherbit
 description: "Weatherbit (weatherbit.io). Use this skill for ANY Weatherbit request — searching and reading data. Whenever a task involves Weatherbit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Weatherbit"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["weatherbit"]
   icon: "https://static.oomol.com/logo/third-party/weatherbit.svg"
 ---

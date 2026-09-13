@@ -3,9 +3,10 @@ name: oo-pdf-api-io
 description: "PDF-API.io (pdf-api.io). Use this skill for ANY PDF-API.io request — searching and reading data. Whenever a task involves PDF-API.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PDF-API.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pdf_api_io"]
   icon: "https://static.oomol.com/logo/third-party/pdf_api_io.png"
 ---

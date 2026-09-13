@@ -3,9 +3,10 @@ name: oo-livespace
 description: "Livespace (livespace.io). Use this skill for ANY Livespace request — reading, creating, updating, and deleting data. Whenever a task involves Livespace, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Livespace"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["livespace"]
   icon: "https://static.oomol.com/logo/third-party/livespace.svg"
 ---

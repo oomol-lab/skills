@@ -3,9 +3,10 @@ name: oo-roam
 description: "Roam HQ (ro.am). Use this skill for ANY Roam HQ request — reading, creating, and updating data. Whenever a task involves Roam HQ, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Roam HQ"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["roam"]
   icon: "https://static.oomol.com/logo/third-party/roam.png"
 ---

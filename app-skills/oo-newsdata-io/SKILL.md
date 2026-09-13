@@ -3,9 +3,10 @@ name: oo-newsdata-io
 description: "NewsData.io (newsdata.io). Use this skill for ANY NewsData.io request — reading, creating, and updating data. Whenever a task involves NewsData.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "NewsData.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["newsdata_io"]
   icon: "https://static.oomol.com/logo/third-party/newsdata_io.png"
 ---

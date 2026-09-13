@@ -3,9 +3,10 @@ name: oo-qase
 description: "Qase (qase.io). Use this skill for ANY Qase request — reading, creating, and updating data. Whenever a task involves Qase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Qase"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["qase"]
   icon: "https://static.oomol.com/logo/third-party/qase.svg"
 ---

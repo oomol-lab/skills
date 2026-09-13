@@ -3,9 +3,10 @@ name: oo-sorftime
 description: "Sorftime (sorftime.com). Use this skill for ANY Sorftime request — searching and reading data. Whenever a task involves Sorftime, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Sorftime"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sorftime"]
   icon: "https://static.oomol.com/logo/third-party/sorftime.png"
 ---

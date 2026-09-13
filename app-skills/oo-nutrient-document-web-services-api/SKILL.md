@@ -3,9 +3,10 @@ name: oo-nutrient-document-web-services-api
 description: "Nutrient DWS (nutrient.io). Use this skill for ANY Nutrient DWS request — reading, creating, updating, and deleting data. Whenever a task involves Nutrient DWS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Nutrient DWS"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["nutrient_document_web_services_api"]
   icon: "https://static.oomol.com/logo/third-party/nutrient_document_web_services_api.svg"
 ---

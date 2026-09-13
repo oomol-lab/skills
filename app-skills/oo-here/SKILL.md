@@ -3,9 +3,10 @@ name: oo-here
 description: "HERE (here.com). Use this skill for ANY HERE request — searching and reading data. Whenever a task involves HERE, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HERE"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["here"]
   icon: "https://static.oomol.com/logo/third-party/here.svg"
 ---

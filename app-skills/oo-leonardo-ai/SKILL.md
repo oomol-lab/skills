@@ -3,9 +3,10 @@ name: oo-leonardo-ai
 description: "Leonardo.Ai (leonardo.ai). Use this skill for ANY Leonardo.Ai request — reading, creating, and updating data. Whenever a task involves Leonardo.Ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Leonardo.Ai"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["leonardo_ai"]
   icon: "https://static.oomol.com/logo/third-party/leonardo_ai.png"
 ---

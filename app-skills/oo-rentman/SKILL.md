@@ -3,9 +3,10 @@ name: oo-rentman
 description: "Rentman (rentman.io). Use this skill for ANY Rentman request — searching and reading data. Whenever a task involves Rentman, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Rentman"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["rentman"]
   icon: "https://static.oomol.com/logo/third-party/rentman.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-stormboard
 description: "Stormboard (stormboard.com). Use this skill for ANY Stormboard request — searching and reading data. Whenever a task involves Stormboard, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Stormboard"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["stormboard"]
   icon: "https://static.oomol.com/logo/third-party/stormboard.png"
 ---

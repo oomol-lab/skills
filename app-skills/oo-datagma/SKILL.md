@@ -3,9 +3,10 @@ name: oo-datagma
 description: "Datagma (datagma.com). Use this skill for ANY Datagma request — searching and reading data. Whenever a task involves Datagma, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Datagma"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["datagma"]
   icon: "https://static.oomol.com/logo/third-party/datagma.png"
 ---

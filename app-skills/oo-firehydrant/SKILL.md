@@ -3,9 +3,10 @@ name: oo-firehydrant
 description: "FireHydrant (firehydrant.com). Use this skill for ANY FireHydrant request — reading, creating, and updating data. Whenever a task involves FireHydrant, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "FireHydrant"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["firehydrant"]
   icon: "https://static.oomol.com/logo/third-party/firehydrant.png"
 ---

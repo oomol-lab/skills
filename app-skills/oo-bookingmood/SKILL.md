@@ -3,9 +3,10 @@ name: oo-bookingmood
 description: "Bookingmood (bookingmood.com). Use this skill for ANY Bookingmood request — searching and reading data. Whenever a task involves Bookingmood, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bookingmood"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bookingmood"]
   icon: "https://static.oomol.com/logo/third-party/bookingmood.svg"
 ---

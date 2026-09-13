@@ -3,9 +3,10 @@ name: oo-gcloud-sts
 description: "Google Cloud STS (cloud.google.com). Use this skill for ANY Google Cloud STS request — searching and reading data. Whenever a task involves Google Cloud STS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Google Cloud STS"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gcloud_sts"]
   icon: "https://static.oomol.com/logo/third-party/gcloud_sts.png"
 ---

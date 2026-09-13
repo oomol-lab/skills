@@ -3,9 +3,10 @@ name: oo-chatarmin
 description: "Chatarmin (chatarmin.com). Use this skill for ANY Chatarmin request — reading, creating, updating, and deleting data. Whenever a task involves Chatarmin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Chatarmin"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chatarmin"]
   icon: "https://static.oomol.com/logo/third-party/chatarmin.svg"
 ---

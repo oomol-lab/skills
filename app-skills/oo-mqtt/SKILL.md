@@ -3,9 +3,10 @@ name: oo-mqtt
 description: "MQTT (mqtt.org). Use this skill for ANY MQTT request — reading, creating, and updating data. Whenever a task involves MQTT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MQTT"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mqtt"]
   icon: "https://static.oomol.com/logo/third-party/mqtt.svg"
 ---

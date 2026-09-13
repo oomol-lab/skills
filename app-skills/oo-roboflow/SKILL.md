@@ -3,9 +3,10 @@ name: oo-roboflow
 description: "Roboflow (roboflow.com). Use this skill for ANY Roboflow request — searching and reading data. Whenever a task involves Roboflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Roboflow"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["roboflow"]
   icon: "https://static.oomol.com/logo/third-party/roboflow.svg"
 ---

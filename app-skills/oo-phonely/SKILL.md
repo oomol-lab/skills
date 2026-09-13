@@ -3,9 +3,10 @@ name: oo-phonely
 description: "Phonely (phonely.ai). Use this skill for ANY Phonely request — searching and reading data. Whenever a task involves Phonely, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Phonely"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["phonely"]
   icon: "https://static.oomol.com/logo/third-party/phonely.png"
 ---

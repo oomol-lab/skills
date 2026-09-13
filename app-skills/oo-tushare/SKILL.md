@@ -3,9 +3,10 @@ name: oo-tushare
 description: "Tushare (tushare.pro). Use this skill for ANY Tushare request — searching and reading data. Whenever a task involves Tushare, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Tushare"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tushare"]
   icon: "https://static.oomol.com/logo/third-party/tushare.png"
 ---

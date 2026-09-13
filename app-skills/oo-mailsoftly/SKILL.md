@@ -3,9 +3,10 @@ name: oo-mailsoftly
 description: "Mailsoftly (mailsoftly.com). Use this skill for ANY Mailsoftly request — reading, creating, and updating data. Whenever a task involves Mailsoftly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailsoftly"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mailsoftly"]
   icon: "https://static.oomol.com/logo/third-party/mailsoftly.png"
 ---

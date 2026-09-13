@@ -3,9 +3,10 @@ name: oo-financial-modeling-prep
 description: "Financial Modeling Prep (financialmodelingprep.com). Use this skill for ANY Financial Modeling Prep request — searching and reading data. Whenever a task involves Financial Modeling Prep, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Financial Modeling Prep"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["financial_modeling_prep"]
   icon: "https://static.oomol.com/logo/third-party/financial_modeling_prep.svg"
 ---

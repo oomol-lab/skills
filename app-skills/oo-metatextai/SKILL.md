@@ -3,9 +3,10 @@ name: oo-metatextai
 description: "MetatextAI (metatext.ai). Use this skill for ANY MetatextAI request — reading, creating, and updating data. Whenever a task involves MetatextAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "MetatextAI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["metatextai"]
   icon: "https://static.oomol.com/logo/third-party/metatextai.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-pkulaw
 description: "PKULaw (mcp.pkulaw.com). Use this skill for ANY PKULaw request — searching and reading data. Whenever a task involves PKULaw, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PKULaw"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pkulaw"]
   icon: "https://static.oomol.com/logo/third-party/pkulaw.svg"
 ---

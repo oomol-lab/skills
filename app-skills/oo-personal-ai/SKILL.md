@@ -3,9 +3,10 @@ name: oo-personal-ai
 description: "Personal AI (personal.ai). Use this skill for ANY Personal AI request — reading, creating, and updating data. Whenever a task involves Personal AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Personal AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["personal_ai"]
   icon: "https://static.oomol.com/logo/third-party/personal_ai.svg"
 ---

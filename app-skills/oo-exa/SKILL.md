@@ -3,9 +3,10 @@ name: oo-exa
 description: "Exa (exa.ai). Use this skill for ANY Exa request — searching and reading data. Whenever a task involves Exa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Exa"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["exa"]
   icon: "https://static.oomol.com/logo/third-party/Exa.svg"
 ---

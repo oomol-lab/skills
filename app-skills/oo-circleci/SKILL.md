@@ -3,9 +3,10 @@ name: oo-circleci
 description: "CircleCI (circleci.com). Use this skill for ANY CircleCI request — reading, creating, and updating data. Whenever a task involves CircleCI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "CircleCI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["circleci"]
   icon: "https://static.oomol.com/logo/third-party/CircleCI.svg"
 ---

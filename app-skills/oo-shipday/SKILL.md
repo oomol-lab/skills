@@ -3,9 +3,10 @@ name: oo-shipday
 description: "Shipday (shipday.com). Use this skill for ANY Shipday request — reading, creating, updating, and deleting data. Whenever a task involves Shipday, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Shipday"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["shipday"]
   icon: "https://static.oomol.com/logo/third-party/shipday.png"
 ---

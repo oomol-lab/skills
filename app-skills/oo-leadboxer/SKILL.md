@@ -3,9 +3,10 @@ name: oo-leadboxer
 description: "LeadBoxer (leadboxer.com). Use this skill for ANY LeadBoxer request — searching and reading data. Whenever a task involves LeadBoxer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "LeadBoxer"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["leadboxer"]
   icon: "https://static.oomol.com/logo/third-party/leadboxer.png"
 ---

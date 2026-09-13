@@ -3,9 +3,10 @@ name: oo-lingxing
 description: "Lingxing (lingxing.com). Use this skill for ANY Lingxing request — reading, creating, and updating data. Whenever a task involves Lingxing, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lingxing"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["lingxing"]
   icon: "https://static.oomol.com/logo/third-party/lingxing.png"
 ---

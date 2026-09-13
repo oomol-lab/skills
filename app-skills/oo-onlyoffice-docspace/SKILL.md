@@ -3,9 +3,10 @@ name: oo-onlyoffice-docspace
 description: "ONLYOFFICE DocSpace (onlyoffice.com). Use this skill for ANY ONLYOFFICE DocSpace request — searching and reading data. Whenever a task involves ONLYOFFICE DocSpace, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "ONLYOFFICE DocSpace"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["onlyoffice_docspace"]
   icon: "https://static.oomol.com/logo/third-party/onlyoffice_docspace.png"
 ---

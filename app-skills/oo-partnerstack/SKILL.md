@@ -3,9 +3,10 @@ name: oo-partnerstack
 description: "PartnerStack (partnerstack.com). Use this skill for ANY PartnerStack request — reading, creating, and updating data. Whenever a task involves PartnerStack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "PartnerStack"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["partnerstack"]
   icon: "https://static.oomol.com/logo/third-party/partnerstack.svg"
 ---

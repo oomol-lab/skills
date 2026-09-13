@@ -3,9 +3,10 @@ name: oo-splunk-http-event-collector
 description: "Splunk HTTP Event Collector (splunk.com). Use this skill for ANY Splunk HTTP Event Collector request — reading, creating, and updating data. Whenever a task involves Splunk HTTP Event Collector, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Splunk HTTP Event Collector"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["splunk_http_event_collector"]
   icon: "https://static.oomol.com/logo/third-party/splunk_http_event_collector.png"
 ---

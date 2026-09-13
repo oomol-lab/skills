@@ -3,9 +3,10 @@ name: oo-agora
 description: "Agora (agora.io). Use this skill for ANY Agora request — reading, creating, updating, and deleting data. Whenever a task involves Agora, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Agora"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["agora"]
   icon: "https://static.oomol.com/logo/third-party/agora.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-persona
 description: "Persona (withpersona.com). Use this skill for ANY Persona request — reading, creating, and updating data. Whenever a task involves Persona, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Persona"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["persona"]
   icon: "https://static.oomol.com/logo/third-party/persona.svg"
 ---

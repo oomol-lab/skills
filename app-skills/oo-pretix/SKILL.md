@@ -3,9 +3,10 @@ name: oo-pretix
 description: "pretix (pretix.eu). Use this skill for ANY pretix request — reading, creating, and updating data. Whenever a task involves pretix, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "pretix"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pretix"]
   icon: "https://static.oomol.com/logo/third-party/pretix.svg"
 ---

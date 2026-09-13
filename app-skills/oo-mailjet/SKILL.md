@@ -3,9 +3,10 @@ name: oo-mailjet
 description: "Mailjet (mailjet.com). Use this skill for ANY Mailjet request — reading, creating, and updating data. Whenever a task involves Mailjet, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mailjet"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailjet"]
   icon: "https://static.oomol.com/logo/third-party/mailjet.png"
 ---

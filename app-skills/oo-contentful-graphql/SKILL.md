@@ -3,9 +3,10 @@ name: oo-contentful-graphql
 description: "Contentful GraphQL (contentful.com). Use this skill for ANY Contentful GraphQL request — searching and reading data. Whenever a task involves Contentful GraphQL, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Contentful GraphQL"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["contentful_graphql"]
   icon: "https://static.oomol.com/logo/third-party/contentful_graphql.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-gainsight-nxt
 description: "Gainsight NXT (gainsight.com). Use this skill for ANY Gainsight NXT request — reading, creating, updating, and deleting data. Whenever a task involves Gainsight NXT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Gainsight NXT"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gainsight_nxt"]
   icon: "https://static.oomol.com/logo/third-party/gainsight_nxt.svg"
 ---

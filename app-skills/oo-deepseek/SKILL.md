@@ -3,9 +3,10 @@ name: oo-deepseek
 description: "DeepSeek (platform.deepseek.com). Use this skill for ANY DeepSeek request — reading, creating, and updating data. Whenever a task involves DeepSeek, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DeepSeek"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["deepseek"]
   icon: "https://static.oomol.com/logo/third-party/DeepSeek.svg"
 ---

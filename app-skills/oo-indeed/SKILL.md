@@ -3,9 +3,10 @@ name: oo-indeed
 description: "Indeed (indeed.com). Use this skill for ANY Indeed request — reading, creating, updating, and deleting data. Whenever a task involves Indeed, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Indeed"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["indeed"]
   icon: "https://static.oomol.com/logo/third-party/indeed.svg"
 ---

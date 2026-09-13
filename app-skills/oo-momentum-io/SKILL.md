@@ -3,9 +3,10 @@ name: oo-momentum-io
 description: "Momentum.io (momentum.io). Use this skill for ANY Momentum.io request — searching and reading data. Whenever a task involves Momentum.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Momentum.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["momentum_io"]
   icon: "https://static.oomol.com/logo/third-party/momentum_io.svg"
 ---

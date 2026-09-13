@@ -3,9 +3,10 @@ name: oo-jumpserver
 description: "JumpServer (jumpserver.org). Use this skill for ANY JumpServer request — searching and reading data. Whenever a task involves JumpServer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "JumpServer"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jumpserver"]
   icon: "https://static.oomol.com/logo/third-party/jumpserver.svg"
 ---

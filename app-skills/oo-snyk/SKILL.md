@@ -3,9 +3,10 @@ name: oo-snyk
 description: "Snyk (snyk.io). Use this skill for ANY Snyk request — searching and reading data. Whenever a task involves Snyk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Snyk"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["snyk"]
   icon: "https://static.oomol.com/logo/third-party/snyk.svg"
 ---

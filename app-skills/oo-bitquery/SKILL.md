@@ -3,9 +3,10 @@ name: oo-bitquery
 description: "Bitquery (bitquery.io). Use this skill for ANY Bitquery request — searching and reading data. Whenever a task involves Bitquery, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bitquery"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bitquery"]
   icon: "https://static.oomol.com/logo/third-party/bitquery.svg"
 ---

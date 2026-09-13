@@ -3,9 +3,10 @@ name: oo-waffo
 description: "Waffo Pancake (waffo.ai). Use this skill for ANY Waffo Pancake request — reading, creating, and updating data. Whenever a task involves Waffo Pancake, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Waffo Pancake"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["waffo"]
   icon: "https://static.oomol.com/logo/third-party/waffo.svg"
 ---

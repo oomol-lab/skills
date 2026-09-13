@@ -3,9 +3,10 @@ name: oo-zlibrary
 description: "Z-Library (z-lib.org). Use this skill for ANY Z-Library request — searching and reading data. Whenever a task involves Z-Library, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Z-Library"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["zlibrary"]
   icon: "https://static.oomol.com/logo/third-party/zlibrary.svg"
 ---

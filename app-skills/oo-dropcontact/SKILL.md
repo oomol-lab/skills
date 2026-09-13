@@ -3,9 +3,10 @@ name: oo-dropcontact
 description: "Dropcontact (dropcontact.com). Use this skill for ANY Dropcontact request — reading, creating, and updating data. Whenever a task involves Dropcontact, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dropcontact"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dropcontact"]
   icon: "https://static.oomol.com/logo/third-party/dropcontact.svg"
 ---

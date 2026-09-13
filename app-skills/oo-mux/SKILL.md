@@ -3,9 +3,10 @@ name: oo-mux
 description: "Mux (mux.com). Use this skill for ANY Mux request — reading, creating, updating, and deleting data. Whenever a task involves Mux, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Mux"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mux"]
   icon: "https://static.oomol.com/logo/third-party/mux.svg"
 ---

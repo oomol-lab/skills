@@ -3,9 +3,10 @@ name: oo-deepgram
 description: "Deepgram (deepgram.com). Use this skill for ANY Deepgram request — searching and reading data. Whenever a task involves Deepgram, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Deepgram"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["deepgram"]
   icon: "https://static.oomol.com/logo/third-party/deepgram.svg"
 ---

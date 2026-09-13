@@ -3,9 +3,10 @@ name: oo-iplocate
 description: "IPLocate (iplocate.io). Use this skill for ANY IPLocate request — searching and reading data. Whenever a task involves IPLocate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "IPLocate"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["iplocate"]
   icon: "https://static.oomol.com/logo/third-party/iplocate.svg"
 ---

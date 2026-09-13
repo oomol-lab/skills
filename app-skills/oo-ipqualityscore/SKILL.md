@@ -3,9 +3,10 @@ name: oo-ipqualityscore
 description: "IPQualityScore (ipqualityscore.com). Use this skill for ANY IPQualityScore request — searching and reading data. Whenever a task involves IPQualityScore, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "IPQualityScore"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ipqualityscore"]
   icon: "https://static.oomol.com/logo/third-party/ipqualityscore.svg"
 ---

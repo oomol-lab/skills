@@ -3,9 +3,10 @@ name: oo-stannp
 description: "Stannp (stannp.com). Use this skill for ANY Stannp request — reading, creating, updating, and deleting data. Whenever a task involves Stannp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Stannp"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["stannp"]
   icon: "https://static.oomol.com/logo/third-party/stannp.svg"
 ---

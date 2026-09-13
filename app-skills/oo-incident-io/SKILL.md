@@ -3,9 +3,10 @@ name: oo-incident-io
 description: "incident.io (incident.io). Use this skill for ANY incident.io request — searching and reading data. Whenever a task involves incident.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "incident.io"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["incident_io"]
   icon: "https://static.oomol.com/logo/third-party/incident_io.svg"
 ---

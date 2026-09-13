@@ -3,9 +3,10 @@ name: oo-app-store-connect
 description: "App Store Connect (appstoreconnect.apple.com). Use this skill for ANY App Store Connect request — reading, creating, updating, and deleting data. Whenever a task involves App Store Connect, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "App Store Connect"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["app_store_connect"]
   icon: "https://static.oomol.com/logo/third-party/app_store_connect.png"
 ---

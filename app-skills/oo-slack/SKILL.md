@@ -3,9 +3,10 @@ name: oo-slack
 description: "Slack (slack.com). Use this skill for ANY Slack request — reading, creating, updating, and deleting data. Whenever a task involves Slack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---

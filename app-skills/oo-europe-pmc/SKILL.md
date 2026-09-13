@@ -3,9 +3,10 @@ name: oo-europe-pmc
 description: "Europe PMC (europepmc.org). Use this skill for ANY Europe PMC request — searching and reading data. Whenever a task involves Europe PMC, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Europe PMC"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["europe_pmc"]
   icon: "https://static.oomol.com/logo/third-party/europe_pmc.svg"
 ---

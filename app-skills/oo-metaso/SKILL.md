@@ -3,9 +3,10 @@ name: oo-metaso
 description: "Metaso (metaso.cn). Use this skill for ANY Metaso request — reading, creating, and updating data. Whenever a task involves Metaso, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Metaso"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["metaso"]
   icon: "https://static.oomol.com/logo/third-party/metaso.png"
 ---

@@ -3,9 +3,10 @@ name: oo-canva
 description: "Canva (canva.com). Use this skill for ANY Canva request — reading, creating, and updating data. Whenever a task involves Canva, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Canva"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["canva"]
   icon: "https://static.oomol.com/logo/third-party/canva.png"
 ---

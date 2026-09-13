@@ -3,9 +3,10 @@ name: oo-stack-overflow-for-teams
 description: "Stack Internal (stackoverflow.co). Use this skill for ANY Stack Internal request — searching and reading data. Whenever a task involves Stack Internal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Stack Internal"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["stack_overflow_for_teams"]
   icon: "https://static.oomol.com/logo/third-party/stack_overflow_for_teams.svg"
 ---

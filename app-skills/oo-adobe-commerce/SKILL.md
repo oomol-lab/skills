@@ -3,9 +3,10 @@ name: oo-adobe-commerce
 description: "Adobe Commerce (business.adobe.com). Use this skill for ANY Adobe Commerce request — searching and reading data. Whenever a task involves Adobe Commerce, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Adobe Commerce"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["adobe_commerce"]
   icon: "https://static.oomol.com/logo/third-party/adobe_commerce.svg"
 ---

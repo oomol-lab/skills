@@ -3,9 +3,10 @@ name: oo-aivoov
 description: "AiVOOV (aivoov.com). Use this skill for ANY AiVOOV request — reading, creating, and updating data. Whenever a task involves AiVOOV, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AiVOOV"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["aivoov"]
   icon: "https://static.oomol.com/logo/third-party/Aivoov.svg"
 ---

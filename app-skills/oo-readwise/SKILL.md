@@ -3,9 +3,10 @@ name: oo-readwise
 description: "Readwise (readwise.io). Use this skill for ANY Readwise request — reading, creating, and updating data. Whenever a task involves Readwise, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Readwise"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["readwise"]
   icon: "https://static.oomol.com/logo/third-party/readwise.svg"
 ---

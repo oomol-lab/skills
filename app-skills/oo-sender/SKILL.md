@@ -3,9 +3,10 @@ name: oo-sender
 description: "Sender (sender.net). Use this skill for ANY Sender request — reading, creating, updating, and deleting data. Whenever a task involves Sender, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Sender"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sender"]
   icon: "https://static.oomol.com/logo/third-party/sender.svg"
 ---

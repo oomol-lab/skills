@@ -3,9 +3,10 @@ name: oo-data247
 description: "Data247 (data247.com). Use this skill for ANY Data247 request — searching and reading data. Whenever a task involves Data247, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Data247"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["data247"]
   icon: "https://static.oomol.com/logo/third-party/data247.png"
 ---

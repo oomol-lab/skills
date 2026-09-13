@@ -3,9 +3,10 @@ name: oo-esa
 description: "esa (esa.io). Use this skill for ANY esa request — reading, creating, updating, and deleting data. Whenever a task involves esa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "esa"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["esa"]
   icon: "https://static.oomol.com/logo/third-party/esa.svg"
 ---

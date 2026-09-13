@@ -3,9 +3,10 @@ name: oo-grafana-cloud
 description: "Grafana Cloud (grafana.com). Use this skill for ANY Grafana Cloud request — searching and reading data. Whenever a task involves Grafana Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Grafana Cloud"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["grafana_cloud"]
   icon: "https://static.oomol.com/logo/third-party/grafana_cloud.svg"
 ---

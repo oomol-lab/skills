@@ -3,9 +3,10 @@ name: oo-dixa
 description: "Dixa (dixa.com). Use this skill for ANY Dixa request — searching and reading data. Whenever a task involves Dixa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Dixa"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dixa"]
   icon: "https://static.oomol.com/logo/third-party/dixa.svg"
 ---

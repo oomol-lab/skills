@@ -3,9 +3,10 @@ name: oo-polygon-io
 description: "Massive (Polygon.io) (massive.com). Use this skill for ANY Massive (Polygon.io) request — searching and reading data. Whenever a task involves Massive (Polygon.io), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Massive (Polygon.io)"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["polygon_io"]
   icon: "https://static.oomol.com/logo/third-party/polygon_io.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-platerecognizer
 description: "Plate Recognizer (platerecognizer.com). Use this skill for ANY Plate Recognizer request — searching and reading data. Whenever a task involves Plate Recognizer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Plate Recognizer"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["platerecognizer"]
   icon: "https://static.oomol.com/logo/third-party/platerecognizer.png"
 ---

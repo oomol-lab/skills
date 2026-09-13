@@ -3,9 +3,10 @@ name: oo-laposta
 description: "Laposta (laposta.nl). Use this skill for ANY Laposta request — reading, creating, and updating data. Whenever a task involves Laposta, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Laposta"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["laposta"]
   icon: "https://static.oomol.com/logo/third-party/laposta.svg"
 ---

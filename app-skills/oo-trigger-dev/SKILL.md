@@ -3,9 +3,10 @@ name: oo-trigger-dev
 description: "Trigger.dev (trigger.dev). Use this skill for ANY Trigger.dev request — reading, creating, and updating data. Whenever a task involves Trigger.dev, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Trigger.dev"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["trigger_dev"]
   icon: "https://static.oomol.com/logo/third-party/trigger_dev.svg"
 ---

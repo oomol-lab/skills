@@ -3,9 +3,10 @@ name: oo-qingflow
 description: "Qingflow (qingflow.com). Use this skill for ANY Qingflow request — reading, creating, updating, and deleting data. Whenever a task involves Qingflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Qingflow"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["qingflow"]
   icon: "https://static.oomol.com/logo/third-party/qingflow.png"
 ---

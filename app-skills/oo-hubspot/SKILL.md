@@ -3,9 +3,10 @@ name: oo-hubspot
 description: "HubSpot (hubspot.com). Use this skill for ANY HubSpot request — reading, creating, and updating data. Whenever a task involves HubSpot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HubSpot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hubspot"]
   icon: "https://static.oomol.com/logo/third-party/HubSpot.svg"
 ---

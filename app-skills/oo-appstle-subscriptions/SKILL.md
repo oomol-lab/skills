@@ -3,9 +3,10 @@ name: oo-appstle-subscriptions
 description: "Appstle Subscriptions (appstle.com). Use this skill for ANY Appstle Subscriptions request — searching and reading data. Whenever a task involves Appstle Subscriptions, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Appstle Subscriptions"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["appstle_subscriptions"]
   icon: "https://static.oomol.com/logo/third-party/appstle_subscriptions.png"
 ---

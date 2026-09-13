@@ -3,9 +3,10 @@ name: oo-parma
 description: "Parma (parma.ai). Use this skill for ANY Parma request — reading, creating, updating, and deleting data. Whenever a task involves Parma, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Parma"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["parma"]
   icon: "https://static.oomol.com/logo/third-party/parma.png"
 ---

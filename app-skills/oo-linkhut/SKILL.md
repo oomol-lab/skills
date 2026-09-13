@@ -3,9 +3,10 @@ name: oo-linkhut
 description: "Linkhut (ln.ht). Use this skill for ANY Linkhut request — reading, creating, updating, and deleting data. Whenever a task involves Linkhut, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Linkhut"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["linkhut"]
   icon: "https://static.oomol.com/logo/third-party/Linkhut.svg"
 ---

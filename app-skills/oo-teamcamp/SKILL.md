@@ -3,9 +3,10 @@ name: oo-teamcamp
 description: "Teamcamp (teamcamp.app). Use this skill for ANY Teamcamp request — reading, creating, and updating data. Whenever a task involves Teamcamp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Teamcamp"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["teamcamp"]
   icon: "https://static.oomol.com/logo/third-party/teamcamp.png"
 ---

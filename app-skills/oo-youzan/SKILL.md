@@ -3,9 +3,10 @@ name: oo-youzan
 description: "Youzan (youzan.com). Use this skill for ANY Youzan request — reading, creating, and updating data. Whenever a task involves Youzan, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Youzan"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["youzan"]
   icon: "https://static.oomol.com/logo/third-party/youzan.png"
 ---

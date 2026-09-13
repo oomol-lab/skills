@@ -3,9 +3,10 @@ name: oo-wufoo
 description: "Wufoo (wufoo.com). Use this skill for ANY Wufoo request — reading, creating, and updating data. Whenever a task involves Wufoo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Wufoo"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wufoo"]
   icon: "https://static.oomol.com/logo/third-party/wufoo.svg"
 ---

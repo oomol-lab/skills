@@ -3,9 +3,10 @@ name: oo-lumos
 description: "Lumos (lumos.com). Use this skill for ANY Lumos request — searching and reading data. Whenever a task involves Lumos, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lumos"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["lumos"]
   icon: "https://static.oomol.com/logo/third-party/lumos.svg"
 ---

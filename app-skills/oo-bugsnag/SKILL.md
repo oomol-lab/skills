@@ -3,9 +3,10 @@ name: oo-bugsnag
 description: "Bugsnag (bugsnag.com). Use this skill for ANY Bugsnag request — searching and reading data. Whenever a task involves Bugsnag, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bugsnag"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bugsnag"]
   icon: "https://static.oomol.com/logo/third-party/Bugsnag.svg"
 ---

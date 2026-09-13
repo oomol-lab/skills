@@ -3,9 +3,10 @@ name: oo-krispcall
 description: "KrispCall (krispcall.com). Use this skill for ANY KrispCall request — reading, creating, updating, and deleting data. Whenever a task involves KrispCall, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "KrispCall"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["krispcall"]
   icon: "https://static.oomol.com/logo/third-party/krispcall.svg"
 ---

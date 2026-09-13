@@ -3,9 +3,10 @@ name: oo-figma
 description: "Figma (figma.com). Use this skill for ANY Figma request — reading, creating, updating, and deleting data. Whenever a task involves Figma, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Figma"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["figma"]
   icon: "https://static.oomol.com/logo/third-party/figma.svg"
 ---

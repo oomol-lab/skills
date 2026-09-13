@@ -3,9 +3,10 @@ name: oo-meituan
 description: "Meituan (meituan.com). Use this skill for ANY Meituan request — searching and reading data. Whenever a task involves Meituan, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Meituan"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["meituan"]
   icon: "https://static.oomol.com/logo/third-party/meituan.svg"
 ---

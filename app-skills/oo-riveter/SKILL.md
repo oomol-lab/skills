@@ -3,9 +3,10 @@ name: oo-riveter
 description: "Riveter (riveterhq.com). Use this skill for ANY Riveter request — searching and reading data. Whenever a task involves Riveter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Riveter"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["riveter"]
   icon: "https://static.oomol.com/logo/third-party/riveter.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-stabilityai
 description: "Stability AI (stability.ai). Use this skill for ANY Stability AI request — searching and reading data. Whenever a task involves Stability AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Stability AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["stabilityai"]
   icon: "https://static.oomol.com/logo/third-party/stabilityai.svg"
 ---

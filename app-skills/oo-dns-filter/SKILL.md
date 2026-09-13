@@ -3,9 +3,10 @@ name: oo-dns-filter
 description: "DNSFilter (dnsfilter.com). Use this skill for ANY DNSFilter request — searching and reading data. Whenever a task involves DNSFilter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DNSFilter"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["dns_filter"]
   icon: "https://static.oomol.com/logo/third-party/dns_filter.webp"
 ---

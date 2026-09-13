@@ -3,9 +3,10 @@ name: oo-contentstack-content-management
 description: "Contentstack Content Management (contentstack.com). Use this skill for ANY Contentstack Content Management request — reading, creating, and updating data. Whenever a task involves Contentstack Content Management, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Contentstack Content Management"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["contentstack_content_management"]
   icon: "https://static.oomol.com/logo/third-party/contentstack_content_management.webp"
 ---

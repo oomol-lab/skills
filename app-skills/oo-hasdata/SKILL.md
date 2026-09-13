@@ -3,9 +3,10 @@ name: oo-hasdata
 description: "HasData (hasdata.com). Use this skill for ANY HasData request — searching and reading data. Whenever a task involves HasData, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HasData"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["hasdata"]
   icon: "https://static.oomol.com/logo/third-party/hasdata.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-superchat
 description: "Superchat (superchat.com). Use this skill for ANY Superchat request — reading, creating, and updating data. Whenever a task involves Superchat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Superchat"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["superchat"]
   icon: "https://static.oomol.com/logo/third-party/superchat.png"
 ---

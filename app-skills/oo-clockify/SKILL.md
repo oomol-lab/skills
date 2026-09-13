@@ -3,9 +3,10 @@ name: oo-clockify
 description: "Clockify (clockify.me). Use this skill for ANY Clockify request — reading, creating, updating, and deleting data. Whenever a task involves Clockify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Clockify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["clockify"]
   icon: "https://static.oomol.com/logo/third-party/clockify.svg"
 ---

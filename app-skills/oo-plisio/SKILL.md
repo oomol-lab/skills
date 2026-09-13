@@ -3,9 +3,10 @@ name: oo-plisio
 description: "Plisio (plisio.net). Use this skill for ANY Plisio request — reading, creating, and updating data. Whenever a task involves Plisio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Plisio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["plisio"]
   icon: "https://static.oomol.com/logo/third-party/plisio.png"
 ---

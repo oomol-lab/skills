@@ -3,9 +3,10 @@ name: oo-dialmycalls
 description: "DialMyCalls (dialmycalls.com). Use this skill for ANY DialMyCalls request — reading, creating, updating, and deleting data. Whenever a task involves DialMyCalls, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DialMyCalls"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["dialmycalls"]
   icon: "https://static.oomol.com/logo/third-party/dialmycalls.svg"
 ---

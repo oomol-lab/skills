@@ -3,9 +3,10 @@ name: oo-landbot
 description: "Landbot (landbot.io). Use this skill for ANY Landbot request — reading, creating, and updating data. Whenever a task involves Landbot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Landbot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["landbot"]
   icon: "https://static.oomol.com/logo/third-party/landbot.svg"
 ---

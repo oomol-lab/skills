@@ -3,9 +3,10 @@ name: oo-contentful
 description: "Contentful (contentful.com). Use this skill for ANY Contentful request — reading, creating, and updating data. Whenever a task involves Contentful, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Contentful"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["contentful"]
   icon: "https://static.oomol.com/logo/third-party/Contentful.svg"
 ---

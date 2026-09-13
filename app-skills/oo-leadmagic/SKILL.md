@@ -3,9 +3,10 @@ name: oo-leadmagic
 description: "LeadMagic (leadmagic.io). Use this skill for ANY LeadMagic request — searching and reading data. Whenever a task involves LeadMagic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "LeadMagic"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["leadmagic"]
   icon: "https://static.oomol.com/logo/third-party/leadmagic.svg"
 ---

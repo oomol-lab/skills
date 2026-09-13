@@ -3,9 +3,10 @@ name: oo-slite
 description: "Slite (slite.com). Use this skill for ANY Slite request — reading, creating, updating, and deleting data. Whenever a task involves Slite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Slite"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["slite"]
   icon: "https://static.oomol.com/logo/third-party/slite.png"
 ---

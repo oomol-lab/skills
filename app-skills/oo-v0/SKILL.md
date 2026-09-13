@@ -3,9 +3,10 @@ name: oo-v0
 description: "v0 (v0.dev). Use this skill for ANY v0 request — reading, creating, updating, and deleting data. Whenever a task involves v0, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "v0"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["v0"]
   icon: "https://static.oomol.com/logo/third-party/V0.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-cronly
 description: "Cronly (cronly.app). Use this skill for ANY Cronly request — reading, creating, updating, and deleting data. Whenever a task involves Cronly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cronly"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cronly"]
   icon: "https://static.oomol.com/logo/third-party/cronly.svg"
 ---

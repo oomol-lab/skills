@@ -3,9 +3,10 @@ name: oo-openpagerank
 description: "OpenPageRank (openpagerank.com). Use this skill for ANY OpenPageRank request — searching and reading data. Whenever a task involves OpenPageRank, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "OpenPageRank"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["openpagerank"]
   icon: "https://static.oomol.com/logo/third-party/openpagerank.webp"
 ---

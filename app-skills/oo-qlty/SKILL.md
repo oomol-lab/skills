@@ -3,9 +3,10 @@ name: oo-qlty
 description: "Qlty (qlty.sh). Use this skill for ANY Qlty request — searching and reading data. Whenever a task involves Qlty, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Qlty"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["qlty"]
   icon: "https://static.oomol.com/logo/third-party/qlty.svg"
 ---

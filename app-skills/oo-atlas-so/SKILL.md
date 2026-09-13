@@ -3,9 +3,10 @@ name: oo-atlas-so
 description: "Atlas.so (atlas.so). Use this skill for ANY Atlas.so request — reading, creating, and updating data. Whenever a task involves Atlas.so, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Atlas.so"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["atlas_so"]
   icon: "https://static.oomol.com/logo/third-party/atlas_so.svg"
 ---

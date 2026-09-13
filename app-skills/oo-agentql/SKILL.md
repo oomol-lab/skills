@@ -3,9 +3,10 @@ name: oo-agentql
 description: "AgentQL (agentql.com). Use this skill for ANY AgentQL request — reading, creating, and updating data. Whenever a task involves AgentQL, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "AgentQL"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["agentql"]
   icon: "https://static.oomol.com/logo/third-party/agentql.png"
 ---

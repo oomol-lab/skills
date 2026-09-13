@@ -3,9 +3,10 @@ name: oo-tiktok-business
 description: "TikTok Business (business.tiktok.com). Use this skill for ANY TikTok Business request — searching and reading data. Whenever a task involves TikTok Business, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "TikTok Business"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tiktok_business"]
   icon: "https://static.oomol.com/logo/third-party/tiktok.svg"
 ---

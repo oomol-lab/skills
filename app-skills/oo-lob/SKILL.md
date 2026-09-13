@@ -3,9 +3,10 @@ name: oo-lob
 description: "Lob (lob.com). Use this skill for ANY Lob request — searching and reading data. Whenever a task involves Lob, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Lob"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lob"]
   icon: "https://static.oomol.com/logo/third-party/lob.svg"
 ---

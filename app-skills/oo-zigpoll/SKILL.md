@@ -3,9 +3,10 @@ name: oo-zigpoll
 description: "Zigpoll (zigpoll.com). Use this skill for ANY Zigpoll request — searching and reading data. Whenever a task involves Zigpoll, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Zigpoll"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["zigpoll"]
   icon: "https://static.oomol.com/logo/third-party/zigpoll.png"
 ---

@@ -3,9 +3,10 @@ name: oo-honeyhive
 description: "HoneyHive (honeyhive.ai). Use this skill for ANY HoneyHive request — reading, creating, updating, and deleting data. Whenever a task involves HoneyHive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HoneyHive"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["honeyhive"]
   icon: "https://static.oomol.com/logo/third-party/honeyhive.png"
 ---

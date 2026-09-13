@@ -3,9 +3,10 @@ name: oo-timebuzzer
 description: "timeBuzzer (timebuzzer.com). Use this skill for ANY timeBuzzer request — reading, creating, updating, and deleting data. Whenever a task involves timeBuzzer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "timeBuzzer"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["timebuzzer"]
   icon: "https://static.oomol.com/logo/third-party/timebuzzer.svg"
 ---

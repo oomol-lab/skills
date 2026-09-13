@@ -3,9 +3,10 @@ name: oo-rootly
 description: "Rootly (rootly.com). Use this skill for ANY Rootly request — searching and reading data. Whenever a task involves Rootly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Rootly"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["rootly"]
   icon: "https://static.oomol.com/logo/third-party/rootly.svg"
 ---

@@ -3,9 +3,10 @@ name: oo-helpdesk
 description: "HelpDesk (helpdesk.com). Use this skill for ANY HelpDesk request — reading, creating, updating, and deleting data. Whenever a task involves HelpDesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "HelpDesk"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["helpdesk"]
   icon: "https://static.oomol.com/logo/third-party/helpdesk.svg"
 ---

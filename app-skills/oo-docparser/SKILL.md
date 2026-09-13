@@ -3,9 +3,10 @@ name: oo-docparser
 description: "Docparser (docparser.com). Use this skill for ANY Docparser request — reading, creating, and updating data. Whenever a task involves Docparser, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Docparser"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["docparser"]
   icon: "https://static.oomol.com/logo/third-party/Docparser.svg"
 ---

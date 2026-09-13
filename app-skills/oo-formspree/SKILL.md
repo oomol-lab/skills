@@ -3,9 +3,10 @@ name: oo-formspree
 description: "Formspree (formspree.io). Use this skill for ANY Formspree request — searching and reading data. Whenever a task involves Formspree, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Formspree"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["formspree"]
   icon: "https://static.oomol.com/logo/third-party/formspree.svg"
 ---

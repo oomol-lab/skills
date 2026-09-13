@@ -3,9 +3,10 @@ name: oo-discolike
 description: "DiscoLike (discolike.com). Use this skill for ANY DiscoLike request — searching and reading data. Whenever a task involves DiscoLike, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DiscoLike"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["discolike"]
   icon: "https://static.oomol.com/logo/third-party/discolike.svg"
 ---

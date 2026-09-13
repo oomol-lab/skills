@@ -3,9 +3,10 @@ name: oo-amilia
 description: "Amilia (amilia.com). Use this skill for ANY Amilia request — searching and reading data. Whenever a task involves Amilia, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Amilia"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["amilia"]
   icon: "https://static.oomol.com/logo/third-party/amilia.svg"
 ---

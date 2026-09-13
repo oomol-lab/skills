@@ -3,9 +3,10 @@ name: oo-census-bureau
 description: "Census Bureau (census.gov). Use this skill for ANY Census Bureau request — searching and reading data. Whenever a task involves Census Bureau, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Census Bureau"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["census_bureau"]
   icon: "https://static.oomol.com/logo/third-party/census_bureau.svg"
 ---

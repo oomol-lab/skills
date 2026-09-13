@@ -3,9 +3,10 @@ name: oo-parsera
 description: "Parsera (parsera.org). Use this skill for ANY Parsera request — searching and reading data. Whenever a task involves Parsera, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Parsera"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["parsera"]
   icon: "https://static.oomol.com/logo/third-party/parsera.png"
 ---

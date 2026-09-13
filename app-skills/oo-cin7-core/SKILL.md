@@ -3,9 +3,10 @@ name: oo-cin7-core
 description: "Cin7 Core (cin7.com). Use this skill for ANY Cin7 Core request — searching and reading data. Whenever a task involves Cin7 Core, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Cin7 Core"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cin7_core"]
   icon: "https://static.oomol.com/logo/third-party/cin7_core.svg"
 ---

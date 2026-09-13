@@ -3,9 +3,10 @@ name: oo-junglescout
 description: "Jungle Scout (junglescout.com). Use this skill for ANY Jungle Scout request — reading, creating, and updating data. Whenever a task involves Jungle Scout, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jungle Scout"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["junglescout"]
   icon: "https://static.oomol.com/logo/third-party/junglescout.svg"
 ---

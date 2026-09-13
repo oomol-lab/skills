@@ -3,9 +3,10 @@ name: oo-satismeter
 description: "SatisMeter (satismeter.com). Use this skill for ANY SatisMeter request — searching and reading data. Whenever a task involves SatisMeter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "SatisMeter"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["satismeter"]
   icon: "https://static.oomol.com/logo/third-party/Satismeter.svg"
 ---

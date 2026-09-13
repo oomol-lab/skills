@@ -3,9 +3,10 @@ name: oo-bug-herd
 description: "BugHerd (bugherd.com). Use this skill for ANY BugHerd request — reading, creating, and updating data. Whenever a task involves BugHerd, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "BugHerd"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bug_herd"]
   icon: "https://static.oomol.com/logo/third-party/bug_herd.png"
 ---

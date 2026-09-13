@@ -3,9 +3,10 @@ name: oo-bitbucket
 description: "Bitbucket (bitbucket.org). Use this skill for ANY Bitbucket request — reading, creating, updating, and deleting data. Whenever a task involves Bitbucket, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Bitbucket"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bitbucket"]
   icon: "https://static.oomol.com/logo/third-party/bitbucket.svg"
 ---

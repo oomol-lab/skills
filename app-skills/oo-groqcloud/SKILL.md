@@ -3,9 +3,10 @@ name: oo-groqcloud
 description: "GroqCloud (groq.com). Use this skill for ANY GroqCloud request — reading, creating, and updating data. Whenever a task involves GroqCloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "GroqCloud"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["groqcloud"]
   icon: "https://static.oomol.com/logo/third-party/GroqCloud.svg"
 ---

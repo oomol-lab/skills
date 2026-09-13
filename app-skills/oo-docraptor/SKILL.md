@@ -3,9 +3,10 @@ name: oo-docraptor
 description: "DocRaptor (docraptor.com). Use this skill for ANY DocRaptor request — reading, creating, and updating data. Whenever a task involves DocRaptor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "DocRaptor"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["docraptor"]
   icon: "https://static.oomol.com/logo/third-party/docraptor.svg"
 ---

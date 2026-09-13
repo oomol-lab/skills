@@ -3,9 +3,10 @@ name: oo-intuiface
 description: "Intuiface (intuiface.com). Use this skill for ANY Intuiface request — reading, creating, and updating data. Whenever a task involves Intuiface, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Intuiface"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["intuiface"]
   icon: "https://static.oomol.com/logo/third-party/intuiface.png"
 ---

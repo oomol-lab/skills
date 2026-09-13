@@ -3,9 +3,10 @@ name: oo-voicemaker
 description: "Voicemaker (voicemaker.in). Use this skill for ANY Voicemaker request — searching and reading data. Whenever a task involves Voicemaker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Voicemaker"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["voicemaker"]
   icon: "https://static.oomol.com/logo/third-party/voicemaker.svg"
 ---

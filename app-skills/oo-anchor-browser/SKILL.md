@@ -3,9 +3,10 @@ name: oo-anchor-browser
 description: "Anchor Browser (anchorbrowser.io). Use this skill for ANY Anchor Browser request — reading, creating, and updating data. Whenever a task involves Anchor Browser, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Anchor Browser"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["anchor_browser"]
   icon: "https://static.oomol.com/logo/third-party/anchor_browser.svg"
 ---

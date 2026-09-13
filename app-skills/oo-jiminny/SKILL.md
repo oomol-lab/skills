@@ -3,9 +3,10 @@ name: oo-jiminny
 description: "Jiminny (jiminny.com). Use this skill for ANY Jiminny request — searching and reading data. Whenever a task involves Jiminny, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Jiminny"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jiminny"]
   icon: "https://static.oomol.com/logo/third-party/jiminny.png"
 ---

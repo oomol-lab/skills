@@ -3,9 +3,10 @@ name: oo-kie-ai
 description: "KIE.AI (kie.ai). Use this skill for ANY KIE.AI request — searching and reading data. Whenever a task involves KIE.AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "KIE.AI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["kie_ai"]
   icon: "https://static.oomol.com/logo/third-party/kie_ai.png"
 ---

@@ -3,9 +3,10 @@ name: oo-certifier
 description: "Certifier (certifier.io). Use this skill for ANY Certifier request — reading, creating, and updating data. Whenever a task involves Certifier, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Certifier"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["certifier"]
   icon: "https://static.oomol.com/logo/third-party/Certifier.svg"
 ---

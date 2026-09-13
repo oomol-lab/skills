@@ -3,9 +3,10 @@ name: oo-delighted
 description: "Delighted (delighted.com). Use this skill for ANY Delighted request — reading, creating, updating, and deleting data. Whenever a task involves Delighted, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Delighted"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["delighted"]
   icon: "https://static.oomol.com/logo/third-party/Delighted.svg"
 ---

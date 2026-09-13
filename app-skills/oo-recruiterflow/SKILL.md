@@ -3,9 +3,10 @@ name: oo-recruiterflow
 description: "Recruiterflow (recruiterflow.com). Use this skill for ANY Recruiterflow request — searching and reading data. Whenever a task involves Recruiterflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Recruiterflow"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["recruiterflow"]
   icon: "https://static.oomol.com/logo/third-party/recruiterflow.png"
 ---

@@ -3,9 +3,10 @@ name: oo-intelliprint
 description: "Intelliprint (intelliprint.net). Use this skill for ANY Intelliprint request — searching and reading data. Whenever a task involves Intelliprint, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Intelliprint"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["intelliprint"]
   icon: "https://static.oomol.com/logo/third-party/intelliprint.png"
 ---

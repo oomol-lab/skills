@@ -3,9 +3,10 @@ name: oo-keyword
 description: "Keyword.com (keyword.com). Use this skill for ANY Keyword.com request — searching and reading data. Whenever a task involves Keyword.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
+  source: "oomol-connector-generated"
   title: "Keyword.com"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["keyword"]
   icon: "https://static.oomol.com/logo/third-party/keyword.svg"
 ---
