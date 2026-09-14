@@ -3,10 +3,9 @@ name: oo-context7
 description: "Context7 (context7.com). Use this skill for ANY Context7 request — searching and reading data. Whenever a task involves Context7, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Context7"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["context7"]
   icon: "https://static.oomol.com/logo/third-party/context7.svg"
 ---

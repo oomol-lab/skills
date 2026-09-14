@@ -3,10 +3,9 @@ name: oo-listennotes
 description: "Listen Notes (listennotes.com). Use this skill for ANY Listen Notes request — searching and reading data. Whenever a task involves Listen Notes, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Listen Notes"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["listennotes"]
   icon: "https://static.oomol.com/logo/third-party/Listen%20Notes.svg"
 ---

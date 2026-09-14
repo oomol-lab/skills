@@ -3,10 +3,9 @@ name: oo-abstract
 description: "Abstract (abstractapi.com). Use this skill for ANY Abstract request — searching and reading data. Whenever a task involves Abstract, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Abstract"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["abstract"]
   icon: "https://static.oomol.com/logo/third-party/abstract.svg"
 ---

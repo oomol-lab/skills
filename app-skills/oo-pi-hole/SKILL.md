@@ -3,10 +3,9 @@ name: oo-pi-hole
 description: "Pi-hole (pi-hole.net). Use this skill for ANY Pi-hole request — reading, creating, updating, and deleting data. Whenever a task involves Pi-hole, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Pi-hole"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pi_hole"]
   icon: "https://static.oomol.com/logo/third-party/pi_hole.svg"
 ---

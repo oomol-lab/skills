@@ -3,10 +3,9 @@ name: oo-planetscale
 description: "PlanetScale (planetscale.com). Use this skill for ANY PlanetScale request — reading, creating, updating, and deleting data. Whenever a task involves PlanetScale, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PlanetScale"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["planetscale"]
   icon: "https://static.oomol.com/logo/third-party/planetscale.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-juniper-mist
 description: "Juniper Mist (juniper.net). Use this skill for ANY Juniper Mist request — searching and reading data. Whenever a task involves Juniper Mist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Juniper Mist"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["juniper_mist"]
   icon: "https://static.oomol.com/logo/third-party/juniper_mist.png"
 ---

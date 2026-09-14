@@ -3,10 +3,9 @@ name: oo-repairshopr
 description: "RepairShopr (repairshopr.com). Use this skill for ANY RepairShopr request — searching and reading data. Whenever a task involves RepairShopr, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "RepairShopr"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["repairshopr"]
   icon: "https://static.oomol.com/logo/third-party/repairshopr.png"
 ---

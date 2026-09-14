@@ -3,10 +3,9 @@ name: oo-cloudflare-docs
 description: "Cloudflare Docs (developers.cloudflare.com). Use this skill for ANY Cloudflare Docs request — searching and reading data. Whenever a task involves Cloudflare Docs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudflare Docs"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cloudflare_docs"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_docs.svg"
 ---

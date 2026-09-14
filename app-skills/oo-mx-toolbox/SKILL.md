@@ -3,10 +3,9 @@ name: oo-mx-toolbox
 description: "MxToolbox (mxtoolbox.com). Use this skill for ANY MxToolbox request — searching and reading data. Whenever a task involves MxToolbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "MxToolbox"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mx_toolbox"]
   icon: "https://static.oomol.com/logo/third-party/mx_toolbox.svg"
 ---

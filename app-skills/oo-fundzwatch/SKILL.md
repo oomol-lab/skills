@@ -3,10 +3,9 @@ name: oo-fundzwatch
 description: "FundzWatch (fundzwatch.ai). Use this skill for ANY FundzWatch request — reading, creating, and updating data. Whenever a task involves FundzWatch, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "FundzWatch"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fundzwatch"]
   icon: "https://static.oomol.com/logo/third-party/fundzwatch.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-parallel
 description: "Parallel (parallel.ai). Use this skill for ANY Parallel request — reading, creating, and updating data. Whenever a task involves Parallel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Parallel"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["parallel"]
   icon: "https://static.oomol.com/logo/third-party/parallel.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-alpha-vantage
 description: "Alpha Vantage (alphavantage.co). Use this skill for ANY Alpha Vantage request — searching and reading data. Whenever a task involves Alpha Vantage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Alpha Vantage"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["alpha_vantage"]
   icon: "https://static.oomol.com/logo/third-party/Alpha%20Vantage.svg"
 ---

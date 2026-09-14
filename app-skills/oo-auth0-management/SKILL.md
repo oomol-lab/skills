@@ -3,10 +3,9 @@ name: oo-auth0-management
 description: "Auth0 Management (auth0.com). Use this skill for ANY Auth0 Management request — reading, creating, updating, and deleting data. Whenever a task involves Auth0 Management, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Auth0 Management"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["auth0_management"]
   icon: "https://static.oomol.com/logo/third-party/auth0_management.svg"
 ---

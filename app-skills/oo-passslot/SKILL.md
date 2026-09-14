@@ -3,10 +3,9 @@ name: oo-passslot
 description: "PassSlot (passslot.com). Use this skill for ANY PassSlot request — reading, creating, updating, and deleting data. Whenever a task involves PassSlot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PassSlot"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["passslot"]
   icon: "https://static.oomol.com/logo/third-party/passslot.png"
 ---

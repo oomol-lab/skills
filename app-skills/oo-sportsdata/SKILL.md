@@ -3,10 +3,9 @@ name: oo-sportsdata
 description: "SportsDataIO (sportsdata.io). Use this skill for ANY SportsDataIO request — reading, creating, and updating data. Whenever a task involves SportsDataIO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SportsDataIO"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sportsdata"]
   icon: "https://static.oomol.com/logo/third-party/sportsdata.png"
 ---

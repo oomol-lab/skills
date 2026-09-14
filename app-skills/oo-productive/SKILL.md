@@ -3,10 +3,9 @@ name: oo-productive
 description: "Productive (productive.io). Use this skill for ANY Productive request — reading, creating, updating, and deleting data. Whenever a task involves Productive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Productive"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["productive"]
   icon: "https://static.oomol.com/logo/third-party/productive.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-whop
 description: "Whop (whop.com). Use this skill for ANY Whop request — searching and reading data. Whenever a task involves Whop, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Whop"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["whop"]
   icon: "https://static.oomol.com/logo/third-party/whop.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-close
 description: "Close (close.com). Use this skill for ANY Close request — reading, creating, and updating data. Whenever a task involves Close, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Close"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["close"]
   icon: "https://static.oomol.com/logo/third-party/Close.svg"
 ---

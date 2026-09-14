@@ -3,10 +3,9 @@ name: oo-jibble
 description: "Jibble (jibble.io). Use this skill for ANY Jibble request — reading, creating, updating, and deleting data. Whenever a task involves Jibble, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Jibble"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jibble"]
   icon: "https://static.oomol.com/logo/third-party/jibble.svg"
 ---

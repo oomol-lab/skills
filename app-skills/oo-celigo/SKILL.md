@@ -3,10 +3,9 @@ name: oo-celigo
 description: "Celigo (celigo.com). Use this skill for ANY Celigo request — reading, creating, and updating data. Whenever a task involves Celigo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Celigo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["celigo"]
   icon: "https://static.oomol.com/logo/third-party/Celigo.svg"
 ---

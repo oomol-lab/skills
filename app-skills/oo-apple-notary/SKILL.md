@@ -3,11 +3,11 @@ name: oo-apple-notary
 description: "Apple Notary (developer.apple.com). Use this skill for ANY Apple Notary request — reading, creating, and updating data. Whenever a task involves Apple Notary, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Apple Notary"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["apple_notary"]
+  icon: "https://static.oomol.com/logo/third-party/apple_notary.svg"
 ---
 
 # Apple Notary

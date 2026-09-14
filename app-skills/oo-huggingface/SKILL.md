@@ -3,10 +3,9 @@ name: oo-huggingface
 description: "Hugging Face (huggingface.co). Use this skill for ANY Hugging Face request — searching and reading data. Whenever a task involves Hugging Face, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hugging Face"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["huggingface"]
   icon: "https://static.oomol.com/logo/third-party/Hugging%20Face.svg"
 ---

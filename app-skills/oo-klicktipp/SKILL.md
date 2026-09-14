@@ -3,10 +3,9 @@ name: oo-klicktipp
 description: "KlickTipp (klicktipp.com). Use this skill for ANY KlickTipp request — searching and reading data. Whenever a task involves KlickTipp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "KlickTipp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["klicktipp"]
   icon: "https://static.oomol.com/logo/third-party/klicktipp.svg"
 ---

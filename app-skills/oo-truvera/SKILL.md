@@ -3,10 +3,9 @@ name: oo-truvera
 description: "Truvera (truvera.io). Use this skill for ANY Truvera request — reading, creating, updating, and deleting data. Whenever a task involves Truvera, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Truvera"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["truvera"]
   icon: "https://static.oomol.com/logo/third-party/truvera.svg"
 ---

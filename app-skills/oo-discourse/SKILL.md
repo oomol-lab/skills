@@ -3,10 +3,9 @@ name: oo-discourse
 description: "Discourse (discourse.org). Use this skill for ANY Discourse request — reading, creating, and updating data. Whenever a task involves Discourse, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Discourse"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["discourse"]
   icon: "https://static.oomol.com/logo/third-party/discourse.svg"
 ---

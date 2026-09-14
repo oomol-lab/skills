@@ -3,10 +3,9 @@ name: oo-missive
 description: "Missive (missiveapp.com). Use this skill for ANY Missive request — searching and reading data. Whenever a task involves Missive, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Missive"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["missive"]
   icon: "https://static.oomol.com/logo/third-party/missive.svg"
 ---

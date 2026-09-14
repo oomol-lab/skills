@@ -3,10 +3,9 @@ name: oo-salesloft
 description: "Salesloft (salesloft.com). Use this skill for ANY Salesloft request — searching and reading data. Whenever a task involves Salesloft, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Salesloft"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["salesloft"]
   icon: "https://static.oomol.com/logo/third-party/salesloft.svg"
 ---

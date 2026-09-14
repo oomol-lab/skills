@@ -3,10 +3,9 @@ name: oo-open-exchange-rates
 description: "Open Exchange Rates (openexchangerates.org). Use this skill for ANY Open Exchange Rates request — searching and reading data. Whenever a task involves Open Exchange Rates, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Open Exchange Rates"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["open_exchange_rates"]
   icon: "https://static.oomol.com/logo/third-party/open_exchange_rates.jpg"
 ---

@@ -3,10 +3,9 @@ name: oo-stay-ai
 description: "Stay AI (stay.ai). Use this skill for ANY Stay AI request — searching and reading data. Whenever a task involves Stay AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Stay AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["stay_ai"]
   icon: "https://static.oomol.com/logo/third-party/stay_ai.png"
 ---

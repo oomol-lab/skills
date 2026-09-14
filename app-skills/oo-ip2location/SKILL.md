@@ -3,10 +3,9 @@ name: oo-ip2location
 description: "IP2Location.io (ip2location.io). Use this skill for ANY IP2Location.io request — searching and reading data. Whenever a task involves IP2Location.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "IP2Location.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ip2location"]
   icon: "https://static.oomol.com/logo/third-party/ip2location.png"
 ---

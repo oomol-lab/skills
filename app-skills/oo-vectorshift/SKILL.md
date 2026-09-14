@@ -3,10 +3,9 @@ name: oo-vectorshift
 description: "VectorShift (vectorshift.ai). Use this skill for ANY VectorShift request — searching and reading data. Whenever a task involves VectorShift, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "VectorShift"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["vectorshift"]
   icon: "https://static.oomol.com/logo/third-party/vectorshift.png"
 ---

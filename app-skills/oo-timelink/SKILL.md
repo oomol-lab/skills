@@ -3,10 +3,9 @@ name: oo-timelink
 description: "timelink (timelink.io). Use this skill for ANY timelink request — searching and reading data. Whenever a task involves timelink, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "timelink"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["timelink"]
   icon: "https://static.oomol.com/logo/third-party/timelink.svg"
 ---

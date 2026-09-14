@@ -3,10 +3,9 @@ name: oo-short-io
 description: "Short.io (short.io). Use this skill for ANY Short.io request — reading, creating, updating, and deleting data. Whenever a task involves Short.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Short.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["short_io"]
   icon: "https://static.oomol.com/logo/third-party/short_io.svg"
 ---

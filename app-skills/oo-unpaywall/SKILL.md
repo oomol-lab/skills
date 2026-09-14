@@ -3,10 +3,9 @@ name: oo-unpaywall
 description: "Unpaywall (unpaywall.org). Use this skill for ANY Unpaywall request — searching and reading data. Whenever a task involves Unpaywall, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Unpaywall"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["unpaywall"]
   icon: "https://static.oomol.com/logo/third-party/unpaywall.png"
 ---

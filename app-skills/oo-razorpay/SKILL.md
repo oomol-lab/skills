@@ -3,10 +3,9 @@ name: oo-razorpay
 description: "Razorpay (razorpay.com). Use this skill for ANY Razorpay request — reading, creating, and updating data. Whenever a task involves Razorpay, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Razorpay"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["razorpay"]
   icon: "https://static.oomol.com/logo/third-party/razorpay.png"
 ---

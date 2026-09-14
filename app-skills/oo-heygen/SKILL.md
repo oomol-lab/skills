@@ -3,10 +3,9 @@ name: oo-heygen
 description: "HeyGen (heygen.com). Use this skill for ANY HeyGen request — reading, creating, updating, and deleting data. Whenever a task involves HeyGen, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "HeyGen"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["heygen"]
   icon: "https://static.oomol.com/logo/third-party/HeyGen.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-klipfolio
 description: "Klipfolio (klipfolio.com). Use this skill for ANY Klipfolio request — searching and reading data. Whenever a task involves Klipfolio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Klipfolio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["klipfolio"]
   icon: "https://static.oomol.com/logo/third-party/klipfolio.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-webscraper-io
 description: "WebScraper.io (webscraper.io). Use this skill for ANY WebScraper.io request — reading, creating, updating, and deleting data. Whenever a task involves WebScraper.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WebScraper.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["webscraper_io"]
   icon: "https://static.oomol.com/logo/third-party/webscraper_io.svg"
 ---

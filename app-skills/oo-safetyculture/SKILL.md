@@ -3,10 +3,9 @@ name: oo-safetyculture
 description: "SafetyCulture (safetyculture.com). Use this skill for ANY SafetyCulture request — reading, creating, and updating data. Whenever a task involves SafetyCulture, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SafetyCulture"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["safetyculture"]
   icon: "https://static.oomol.com/logo/third-party/safetyculture.png"
 ---

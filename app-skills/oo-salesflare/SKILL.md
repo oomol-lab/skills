@@ -3,10 +3,9 @@ name: oo-salesflare
 description: "Salesflare (salesflare.com). Use this skill for ANY Salesflare request — reading, creating, and updating data. Whenever a task involves Salesflare, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Salesflare"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["salesflare"]
   icon: "https://static.oomol.com/logo/third-party/salesflare.svg"
 ---

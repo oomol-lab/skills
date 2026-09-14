@@ -3,10 +3,9 @@ name: oo-proxiedmail
 description: "ProxiedMail (proxiedmail.com). Use this skill for ANY ProxiedMail request — reading, creating, and updating data. Whenever a task involves ProxiedMail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ProxiedMail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["proxiedmail"]
   icon: "https://static.oomol.com/logo/third-party/proxiedmail.svg"
 ---

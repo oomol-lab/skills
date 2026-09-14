@@ -3,10 +3,9 @@ name: oo-coderpad
 description: "CoderPad (coderpad.io). Use this skill for ANY CoderPad request — reading, creating, and updating data. Whenever a task involves CoderPad, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CoderPad"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["coderpad"]
   icon: "https://static.oomol.com/logo/third-party/coderpad.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-guru
 description: "Guru (getguru.com). Use this skill for ANY Guru request — searching and reading data. Whenever a task involves Guru, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Guru"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["guru"]
   icon: "https://static.oomol.com/logo/third-party/guru.svg"
 ---

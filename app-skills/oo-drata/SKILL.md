@@ -3,10 +3,9 @@ name: oo-drata
 description: "Drata (drata.com). Use this skill for ANY Drata request — searching and reading data. Whenever a task involves Drata, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Drata"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["drata"]
   icon: "https://static.oomol.com/logo/third-party/drata.png"
 ---

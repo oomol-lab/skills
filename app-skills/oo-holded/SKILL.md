@@ -3,10 +3,9 @@ name: oo-holded
 description: "Holded (holded.com). Use this skill for ANY Holded request — reading, creating, and updating data. Whenever a task involves Holded, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Holded"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["holded"]
   icon: "https://static.oomol.com/logo/third-party/holded.svg"
 ---

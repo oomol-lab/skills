@@ -3,10 +3,9 @@ name: oo-ambient-weather
 description: "Ambient Weather (ambientweather.net). Use this skill for ANY Ambient Weather request — searching and reading data. Whenever a task involves Ambient Weather, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ambient Weather"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ambient_weather"]
   icon: "https://static.oomol.com/logo/third-party/Ambient%20Weather.svg"
 ---

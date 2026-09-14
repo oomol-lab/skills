@@ -3,10 +3,9 @@ name: oo-owl-protocol
 description: "Owl Protocol (owlprotocol.xyz). Use this skill for ANY Owl Protocol request — reading, creating, and updating data. Whenever a task involves Owl Protocol, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Owl Protocol"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["owl_protocol"]
   icon: "https://static.oomol.com/logo/third-party/owl_protocol.png"
 ---

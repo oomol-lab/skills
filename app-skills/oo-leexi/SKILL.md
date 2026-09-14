@@ -3,10 +3,9 @@ name: oo-leexi
 description: "Leexi (leexi.ai). Use this skill for ANY Leexi request — searching and reading data. Whenever a task involves Leexi, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Leexi"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["leexi"]
   icon: "https://static.oomol.com/logo/third-party/leexi.svg"
 ---

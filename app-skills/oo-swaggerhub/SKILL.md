@@ -3,10 +3,9 @@ name: oo-swaggerhub
 description: "SwaggerHub (swagger.io). Use this skill for ANY SwaggerHub request — searching and reading data. Whenever a task involves SwaggerHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SwaggerHub"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["swaggerhub"]
   icon: "https://static.oomol.com/logo/third-party/Swaggerhub.svg"
 ---

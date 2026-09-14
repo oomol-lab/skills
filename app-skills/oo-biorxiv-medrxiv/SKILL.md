@@ -3,10 +3,9 @@ name: oo-biorxiv-medrxiv
 description: "bioRxiv and medRxiv (biorxiv.org). Use this skill for ANY bioRxiv and medRxiv request — searching and reading data. Whenever a task involves bioRxiv and medRxiv, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "bioRxiv and medRxiv"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["biorxiv_medrxiv"]
   icon: "https://static.oomol.com/logo/third-party/biorxiv_medrxiv.png"
 ---

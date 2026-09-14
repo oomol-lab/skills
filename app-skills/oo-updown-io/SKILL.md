@@ -3,10 +3,9 @@ name: oo-updown-io
 description: "updown.io (updown.io). Use this skill for ANY updown.io request — reading, creating, updating, and deleting data. Whenever a task involves updown.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "updown.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["updown_io"]
   icon: "https://static.oomol.com/logo/third-party/Updown.io.svg"
 ---

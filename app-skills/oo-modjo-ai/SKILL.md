@@ -3,10 +3,9 @@ name: oo-modjo-ai
 description: "Modjo AI (modjo.ai). Use this skill for ANY Modjo AI request — searching and reading data. Whenever a task involves Modjo AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Modjo AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["modjo_ai"]
   icon: "https://static.oomol.com/logo/third-party/modjo_ai.png"
 ---

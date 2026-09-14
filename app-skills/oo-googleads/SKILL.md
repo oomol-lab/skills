@@ -3,10 +3,9 @@ name: oo-googleads
 description: "Google Ads (ads.google.com). Use this skill for ANY Google Ads request — reading, creating, updating, and deleting data. Whenever a task involves Google Ads, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Ads"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googleads"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Ads.svg"
 ---

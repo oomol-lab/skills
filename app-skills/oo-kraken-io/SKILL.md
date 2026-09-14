@@ -3,10 +3,9 @@ name: oo-kraken-io
 description: "Kraken.io (kraken.io). Use this skill for ANY Kraken.io request — searching and reading data. Whenever a task involves Kraken.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Kraken.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["kraken_io"]
   icon: "https://static.oomol.com/logo/third-party/Kraken.io.svg"
 ---

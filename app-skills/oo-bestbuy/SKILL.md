@@ -3,10 +3,9 @@ name: oo-bestbuy
 description: "Best Buy (bestbuy.com). Use this skill for ANY Best Buy request — searching and reading data. Whenever a task involves Best Buy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Best Buy"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bestbuy"]
   icon: "https://static.oomol.com/logo/third-party/bestbuy.png"
 ---

@@ -3,10 +3,9 @@ name: oo-quipteams
 description: "Quipteams (quipteams.com). Use this skill for ANY Quipteams request — searching and reading data. Whenever a task involves Quipteams, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Quipteams"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["quipteams"]
   icon: "https://static.oomol.com/logo/third-party/quipteams.svg"
 ---

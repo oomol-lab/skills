@@ -3,10 +3,9 @@ name: oo-calendly
 description: "Calendly (calendly.com). Use this skill for ANY Calendly request — reading, creating, updating, and deleting data. Whenever a task involves Calendly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Calendly"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["calendly"]
   icon: "https://static.oomol.com/logo/third-party/Calendly.svg"
 ---

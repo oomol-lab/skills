@@ -3,10 +3,9 @@ name: oo-manus
 description: "Manus (manus.im). Use this skill for ANY Manus request — reading, creating, updating, and deleting data. Whenever a task involves Manus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Manus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["manus"]
   icon: "https://static.oomol.com/logo/third-party/manus.svg"
 ---

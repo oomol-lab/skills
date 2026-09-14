@@ -3,10 +3,9 @@ name: oo-lexoffice
 description: "lexoffice (office.lexware.de). Use this skill for ANY lexoffice request — reading, creating, and updating data. Whenever a task involves lexoffice, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "lexoffice"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lexoffice"]
   icon: "https://static.oomol.com/logo/third-party/lexoffice.svg"
 ---

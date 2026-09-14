@@ -3,10 +3,9 @@ name: oo-kuaidi100
 description: "Kuaidi100 (kuaidi100.com). Use this skill for ANY Kuaidi100 request — reading, creating, and updating data. Whenever a task involves Kuaidi100, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Kuaidi100"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["kuaidi100"]
   icon: "https://static.oomol.com/logo/third-party/kuaidi100.png"
 ---

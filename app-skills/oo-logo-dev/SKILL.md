@@ -3,10 +3,9 @@ name: oo-logo-dev
 description: "Logo.dev (logo.dev). Use this skill for ANY Logo.dev request — searching and reading data. Whenever a task involves Logo.dev, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Logo.dev"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["logo_dev"]
   icon: "https://static.oomol.com/logo/third-party/Logo.dev.svg"
 ---

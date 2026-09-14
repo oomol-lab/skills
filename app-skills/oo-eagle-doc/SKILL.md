@@ -3,10 +3,9 @@ name: oo-eagle-doc
 description: "Eagle Doc (eagle-doc.com). Use this skill for ANY Eagle Doc request — searching and reading data. Whenever a task involves Eagle Doc, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Eagle Doc"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["eagle_doc"]
   icon: "https://static.oomol.com/logo/third-party/eagle_doc.png"
 ---

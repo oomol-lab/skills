@@ -3,10 +3,9 @@ name: oo-databar-ai
 description: "Databar.ai (databar.ai). Use this skill for ANY Databar.ai request — reading, creating, and updating data. Whenever a task involves Databar.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Databar.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["databar_ai"]
   icon: "https://static.oomol.com/logo/third-party/databar_ai.svg"
 ---

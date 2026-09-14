@@ -3,10 +3,9 @@ name: oo-sendfox
 description: "SendFox (sendfox.com). Use this skill for ANY SendFox request — reading, creating, updating, and deleting data. Whenever a task involves SendFox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SendFox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sendfox"]
   icon: "https://static.oomol.com/logo/third-party/sendfox.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-aliyun-oss
 description: "Alibaba Cloud OSS (alibabacloud.com). Use this skill for ANY Alibaba Cloud OSS request — reading, creating, updating, and deleting data. Whenever a task involves Alibaba Cloud OSS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Alibaba Cloud OSS"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["aliyun_oss"]
   icon: "https://static.oomol.com/logo/third-party/alibabacloud.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-bettercontact
 description: "BetterContact (bettercontact.rocks). Use this skill for ANY BetterContact request — reading, creating, and updating data. Whenever a task involves BetterContact, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BetterContact"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bettercontact"]
   icon: "https://static.oomol.com/logo/third-party/bettercontact.svg"
 ---

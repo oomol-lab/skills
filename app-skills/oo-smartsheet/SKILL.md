@@ -3,10 +3,9 @@ name: oo-smartsheet
 description: "Smartsheet (smartsheet.com). Use this skill for ANY Smartsheet request — reading, creating, updating, and deleting data. Whenever a task involves Smartsheet, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Smartsheet"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["smartsheet"]
   icon: "https://static.oomol.com/logo/third-party/smartsheet.svg"
 ---

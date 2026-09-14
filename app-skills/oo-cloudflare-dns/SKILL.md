@@ -3,10 +3,9 @@ name: oo-cloudflare-dns
 description: "Cloudflare DNS (cloudflare.com). Use this skill for ANY Cloudflare DNS request — reading, creating, updating, and deleting data. Whenever a task involves Cloudflare DNS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudflare DNS"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["cloudflare_dns"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---

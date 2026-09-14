@@ -3,10 +3,9 @@ name: oo-manatal
 description: "Manatal (manatal.com). Use this skill for ANY Manatal request — reading, creating, and updating data. Whenever a task involves Manatal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Manatal"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["manatal"]
   icon: "https://static.oomol.com/logo/third-party/manatal.svg"
 ---

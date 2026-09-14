@@ -3,10 +3,9 @@ name: oo-one-password-events
 description: "1Password Events API (1password.com). Use this skill for ANY 1Password Events API request — searching and reading data. Whenever a task involves 1Password Events API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "1Password Events API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["one_password_events"]
   icon: "https://static.oomol.com/logo/third-party/one_password_events.svg"
 ---

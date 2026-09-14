@@ -3,10 +3,9 @@ name: oo-feathery
 description: "Feathery (feathery.io). Use this skill for ANY Feathery request — reading, creating, updating, and deleting data. Whenever a task involves Feathery, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Feathery"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["feathery"]
   icon: "https://static.oomol.com/logo/third-party/feathery.png"
 ---

@@ -3,10 +3,9 @@ name: oo-microsoft-todo
 description: "Microsoft To Do (to-do.office.com). Use this skill for ANY Microsoft To Do request — reading, creating, updating, and deleting data. Whenever a task involves Microsoft To Do, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Microsoft To Do"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["microsoft_todo"]
   icon: "https://static.oomol.com/logo/third-party/microsoft_todo.png"
 ---

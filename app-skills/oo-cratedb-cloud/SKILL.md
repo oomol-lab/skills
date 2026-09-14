@@ -3,10 +3,9 @@ name: oo-cratedb-cloud
 description: "CrateDB Cloud (cratedb.com). Use this skill for ANY CrateDB Cloud request — searching and reading data. Whenever a task involves CrateDB Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CrateDB Cloud"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cratedb_cloud"]
   icon: "https://static.oomol.com/logo/third-party/cratedb_cloud.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-big-data-cloud
 description: "BigDataCloud (bigdatacloud.com). Use this skill for ANY BigDataCloud request — searching and reading data. Whenever a task involves BigDataCloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BigDataCloud"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["big_data_cloud"]
   icon: "https://static.oomol.com/logo/third-party/BigDataCloud.svg"
 ---

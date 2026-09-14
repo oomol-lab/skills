@@ -3,10 +3,9 @@ name: oo-slicktext
 description: "SlickText (slicktext.com). Use this skill for ANY SlickText request — reading, creating, updating, and deleting data. Whenever a task involves SlickText, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SlickText"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["slicktext"]
   icon: "https://static.oomol.com/logo/third-party/slicktext.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-you
 description: "You.com (you.com). Use this skill for ANY You.com request — searching and reading data. Whenever a task involves You.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "You.com"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["you"]
   icon: "https://static.oomol.com/logo/third-party/you.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-helloleads
 description: "HelloLeads (helloleads.io). Use this skill for ANY HelloLeads request — reading, creating, and updating data. Whenever a task involves HelloLeads, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "HelloLeads"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["helloleads"]
   icon: "https://static.oomol.com/logo/third-party/helloleads.png"
 ---

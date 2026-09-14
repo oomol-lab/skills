@@ -3,10 +3,9 @@ name: oo-taxjar
 description: "TaxJar (taxjar.com). Use this skill for ANY TaxJar request — reading, creating, updating, and deleting data. Whenever a task involves TaxJar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TaxJar"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["taxjar"]
   icon: "https://static.oomol.com/logo/third-party/Taxjar.svg"
 ---

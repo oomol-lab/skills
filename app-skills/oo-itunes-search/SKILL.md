@@ -3,11 +3,11 @@ name: oo-itunes-search
 description: "iTunes Search API (performance-partners.apple.com). Use this skill for ANY iTunes Search API request — searching and reading data. Whenever a task involves iTunes Search API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "iTunes Search API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["itunes_search"]
+  icon: "https://static.oomol.com/logo/third-party/itunes_search.svg"
 ---
 
 # iTunes Search API

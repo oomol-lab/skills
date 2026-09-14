@@ -3,10 +3,9 @@ name: oo-fellow
 description: "Fellow (fellow.app). Use this skill for ANY Fellow request — reading, creating, and updating data. Whenever a task involves Fellow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fellow"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fellow"]
   icon: "https://static.oomol.com/logo/third-party/fellow.svg"
 ---

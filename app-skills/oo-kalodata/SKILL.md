@@ -3,10 +3,9 @@ name: oo-kalodata
 description: "Kalodata (kalodata.com). Use this skill for ANY Kalodata request — searching and reading data. Whenever a task involves Kalodata, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Kalodata"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["kalodata"]
   icon: "https://static.oomol.com/logo/third-party/kalodata.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-valyu
 description: "Valyu (valyu.ai). Use this skill for ANY Valyu request — searching and reading data. Whenever a task involves Valyu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Valyu"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["valyu"]
   icon: "https://static.oomol.com/logo/third-party/valyu.png"
 ---

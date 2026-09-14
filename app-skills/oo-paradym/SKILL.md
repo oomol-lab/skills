@@ -3,10 +3,9 @@ name: oo-paradym
 description: "Paradym (paradym.id). Use this skill for ANY Paradym request — reading, creating, and updating data. Whenever a task involves Paradym, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Paradym"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["paradym"]
   icon: "https://static.oomol.com/logo/third-party/paradym.png"
 ---

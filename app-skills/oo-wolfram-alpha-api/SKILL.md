@@ -3,10 +3,9 @@ name: oo-wolfram-alpha-api
 description: "Wolfram|Alpha (products.wolframalpha.com). Use this skill for ANY Wolfram|Alpha request — searching and reading data. Whenever a task involves Wolfram|Alpha, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Wolfram|Alpha"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wolfram_alpha_api"]
   icon: "https://static.oomol.com/logo/third-party/wolfram_alpha_api.svg"
 ---

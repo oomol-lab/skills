@@ -3,10 +3,9 @@ name: oo-accuweather
 description: "AccuWeather (accuweather.com). Use this skill for ANY AccuWeather request — searching and reading data. Whenever a task involves AccuWeather, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AccuWeather"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["accuweather"]
   icon: "https://static.oomol.com/logo/third-party/accuweather.svg"
 ---

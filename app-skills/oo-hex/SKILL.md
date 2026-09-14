@@ -3,10 +3,9 @@ name: oo-hex
 description: "Hex (hex.tech). Use this skill for ANY Hex request — reading, creating, and updating data. Whenever a task involves Hex, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hex"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hex"]
   icon: "https://static.oomol.com/logo/third-party/hex.svg"
 ---

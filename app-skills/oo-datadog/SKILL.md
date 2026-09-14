@@ -3,10 +3,9 @@ name: oo-datadog
 description: "Datadog (datadoghq.com). Use this skill for ANY Datadog request — searching and reading data. Whenever a task involves Datadog, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Datadog"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["datadog"]
   icon: "https://static.oomol.com/logo/third-party/datadog.png"
 ---

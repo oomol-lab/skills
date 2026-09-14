@@ -3,10 +3,9 @@ name: oo-docsumo
 description: "Docsumo (docsumo.com). Use this skill for ANY Docsumo request — reading, creating, and updating data. Whenever a task involves Docsumo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Docsumo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["docsumo"]
   icon: "https://static.oomol.com/logo/third-party/docsumo.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-dingtalk-bot
 description: "DingTalk Bot (dingtalk.com). Use this skill for ANY DingTalk Bot request — reading, creating, and updating data. Whenever a task involves DingTalk Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DingTalk Bot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dingtalk_bot"]
   icon: "https://static.oomol.com/logo/third-party/dingtalk_bot.png"
 ---

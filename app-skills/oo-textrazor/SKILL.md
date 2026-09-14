@@ -3,10 +3,9 @@ name: oo-textrazor
 description: "TextRazor (textrazor.com). Use this skill for ANY TextRazor request — searching and reading data. Whenever a task involves TextRazor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TextRazor"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["textrazor"]
   icon: "https://static.oomol.com/logo/third-party/TextRazor.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-northbeam
 description: "Northbeam (northbeam.io). Use this skill for ANY Northbeam request — searching and reading data. Whenever a task involves Northbeam, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Northbeam"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["northbeam"]
   icon: "https://static.oomol.com/logo/third-party/northbeam.svg"
 ---

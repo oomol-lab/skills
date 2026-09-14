@@ -3,10 +3,9 @@ name: oo-uploadcare
 description: "Uploadcare (uploadcare.com). Use this skill for ANY Uploadcare request — reading, creating, updating, and deleting data. Whenever a task involves Uploadcare, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Uploadcare"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["uploadcare"]
   icon: "https://static.oomol.com/logo/third-party/uploadcare.svg"
 ---

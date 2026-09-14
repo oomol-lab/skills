@@ -3,10 +3,9 @@ name: oo-featurebase
 description: "Featurebase (featurebase.app). Use this skill for ANY Featurebase request — reading, creating, updating, and deleting data. Whenever a task involves Featurebase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Featurebase"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["featurebase"]
   icon: "https://static.oomol.com/logo/third-party/featurebase.svg"
 ---

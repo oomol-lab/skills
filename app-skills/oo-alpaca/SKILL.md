@@ -3,10 +3,9 @@ name: oo-alpaca
 description: "Alpaca (alpaca.markets). Use this skill for ANY Alpaca request — reading, creating, and updating data. Whenever a task involves Alpaca, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Alpaca"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["alpaca"]
   icon: "https://static.oomol.com/logo/third-party/alpaca.svg"
 ---

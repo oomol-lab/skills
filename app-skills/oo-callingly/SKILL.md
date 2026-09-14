@@ -3,10 +3,9 @@ name: oo-callingly
 description: "Callingly (callingly.com). Use this skill for ANY Callingly request — reading, creating, updating, and deleting data. Whenever a task involves Callingly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Callingly"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["callingly"]
   icon: "https://static.oomol.com/logo/third-party/callingly.svg"
 ---

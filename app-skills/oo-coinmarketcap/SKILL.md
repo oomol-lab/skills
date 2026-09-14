@@ -3,10 +3,9 @@ name: oo-coinmarketcap
 description: "CoinMarketCap (coinmarketcap.com). Use this skill for ANY CoinMarketCap request — searching and reading data. Whenever a task involves CoinMarketCap, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CoinMarketCap"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["coinmarketcap"]
   icon: "https://static.oomol.com/logo/third-party/coinmarketcap.svg"
 ---

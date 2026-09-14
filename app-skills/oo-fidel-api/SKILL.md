@@ -3,10 +3,9 @@ name: oo-fidel-api
 description: "Fidel API (fidel.uk). Use this skill for ANY Fidel API request — searching and reading data. Whenever a task involves Fidel API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fidel API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fidel_api"]
   icon: "https://static.oomol.com/logo/third-party/flowiseai.jpg"
 ---

@@ -3,10 +3,9 @@ name: oo-haveibeenpwned
 description: "Have I Been Pwned (haveibeenpwned.com). Use this skill for ANY Have I Been Pwned request — searching and reading data. Whenever a task involves Have I Been Pwned, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Have I Been Pwned"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["haveibeenpwned"]
   icon: "https://static.oomol.com/logo/third-party/haveibeenpwned.svg"
 ---

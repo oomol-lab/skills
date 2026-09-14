@@ -3,10 +3,9 @@ name: oo-emailable
 description: "Emailable (emailable.com). Use this skill for ANY Emailable request — searching and reading data. Whenever a task involves Emailable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Emailable"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["emailable"]
   icon: "https://static.oomol.com/logo/third-party/Emailable.svg"
 ---

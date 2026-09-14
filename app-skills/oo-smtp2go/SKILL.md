@@ -3,10 +3,9 @@ name: oo-smtp2go
 description: "SMTP2GO (smtp2go.com). Use this skill for ANY SMTP2GO request — reading, creating, and updating data. Whenever a task involves SMTP2GO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SMTP2GO"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["smtp2go"]
   icon: "https://static.oomol.com/logo/third-party/smtp2go.png"
 ---

@@ -3,10 +3,9 @@ name: oo-triple-whale
 description: "Triple Whale (triplewhale.com). Use this skill for ANY Triple Whale request — searching and reading data. Whenever a task involves Triple Whale, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Triple Whale"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["triple_whale"]
   icon: "https://static.oomol.com/logo/third-party/triple_whale.svg"
 ---

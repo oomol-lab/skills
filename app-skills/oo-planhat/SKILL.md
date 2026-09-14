@@ -3,10 +3,9 @@ name: oo-planhat
 description: "Planhat (planhat.com). Use this skill for ANY Planhat request — reading, creating, and updating data. Whenever a task involves Planhat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Planhat"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["planhat"]
   icon: "https://static.oomol.com/logo/third-party/planhat.svg"
 ---

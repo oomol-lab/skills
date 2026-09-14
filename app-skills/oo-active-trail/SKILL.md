@@ -3,10 +3,9 @@ name: oo-active-trail
 description: "ActiveTrail (activetrail.com). Use this skill for ANY ActiveTrail request — reading, creating, updating, and deleting data. Whenever a task involves ActiveTrail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ActiveTrail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["active_trail"]
   icon: "https://static.oomol.com/logo/third-party/active_trail.svg"
 ---

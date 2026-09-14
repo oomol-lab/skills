@@ -3,10 +3,9 @@ name: oo-mailcoach
 description: "Mailcoach (mailcoach.app). Use this skill for ANY Mailcoach request — reading, creating, updating, and deleting data. Whenever a task involves Mailcoach, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mailcoach"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mailcoach"]
   icon: "https://static.oomol.com/logo/third-party/mailcoach.svg"
 ---

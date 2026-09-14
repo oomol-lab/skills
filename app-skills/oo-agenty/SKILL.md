@@ -3,10 +3,9 @@ name: oo-agenty
 description: "Agenty (agenty.com). Use this skill for ANY Agenty request — reading, creating, updating, and deleting data. Whenever a task involves Agenty, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Agenty"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["agenty"]
   icon: "https://static.oomol.com/logo/third-party/Agenty.svg"
 ---

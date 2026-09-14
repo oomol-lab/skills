@@ -3,10 +3,9 @@ name: oo-blaze-meter-service-virtualization
 description: "BlazeMeter Service Virtualization (blazemeter.com). Use this skill for ANY BlazeMeter Service Virtualization request — reading, creating, and updating data. Whenever a task involves BlazeMeter Service Virtualization, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BlazeMeter Service Virtualization"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["blaze_meter_service_virtualization"]
   icon: "https://static.oomol.com/logo/third-party/blaze_meter_service_virtualization.svg"
 ---

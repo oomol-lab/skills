@@ -3,10 +3,9 @@ name: oo-payhip
 description: "Payhip (payhip.com). Use this skill for ANY Payhip request — reading, creating, updating, and deleting data. Whenever a task involves Payhip, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Payhip"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["payhip"]
   icon: "https://static.oomol.com/logo/third-party/payhip.svg"
 ---

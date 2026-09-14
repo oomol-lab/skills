@@ -3,10 +3,9 @@ name: oo-freshteam
 description: "Freshteam (freshworks.com). Use this skill for ANY Freshteam request — searching and reading data. Whenever a task involves Freshteam, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Freshteam"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["freshteam"]
   icon: "https://static.oomol.com/logo/third-party/freshteam.svg"
 ---

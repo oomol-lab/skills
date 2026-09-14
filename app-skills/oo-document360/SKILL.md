@@ -3,10 +3,9 @@ name: oo-document360
 description: "Document360 (document360.com). Use this skill for ANY Document360 request — searching and reading data. Whenever a task involves Document360, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Document360"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["document360"]
   icon: "https://static.oomol.com/logo/third-party/document360.png"
 ---

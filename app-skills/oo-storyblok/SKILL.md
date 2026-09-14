@@ -3,10 +3,9 @@ name: oo-storyblok
 description: "Storyblok (storyblok.com). Use this skill for ANY Storyblok request — searching and reading data. Whenever a task involves Storyblok, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Storyblok"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["storyblok"]
   icon: "https://static.oomol.com/logo/third-party/storyblok.svg"
 ---

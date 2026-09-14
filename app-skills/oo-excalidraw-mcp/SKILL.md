@@ -3,10 +3,9 @@ name: oo-excalidraw-mcp
 description: "Excalidraw MCP (excalidraw.com). Use this skill for ANY Excalidraw MCP request — reading, creating, and updating data. Whenever a task involves Excalidraw MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Excalidraw MCP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["excalidraw_mcp"]
   icon: "https://static.oomol.com/logo/third-party/excalidraw_mcp.png"
 ---

@@ -3,10 +3,9 @@ name: oo-invoice-ninja
 description: "Invoice Ninja (invoiceninja.com). Use this skill for ANY Invoice Ninja request — reading, creating, and updating data. Whenever a task involves Invoice Ninja, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Invoice Ninja"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["invoice_ninja"]
   icon: "https://static.oomol.com/logo/third-party/invoice_ninja.png"
 ---

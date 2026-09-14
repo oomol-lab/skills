@@ -3,10 +3,9 @@ name: oo-sevdesk
 description: "sevdesk (sevdesk.com). Use this skill for ANY sevdesk request — reading, creating, updating, and deleting data. Whenever a task involves sevdesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "sevdesk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sevdesk"]
   icon: "https://static.oomol.com/logo/third-party/sevdesk.svg"
 ---

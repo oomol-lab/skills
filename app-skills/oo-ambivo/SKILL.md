@@ -3,10 +3,9 @@ name: oo-ambivo
 description: "Ambivo (ambivo.com). Use this skill for ANY Ambivo request — reading, creating, updating, and deleting data. Whenever a task involves Ambivo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ambivo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ambivo"]
   icon: "https://static.oomol.com/logo/third-party/ambivo.png"
 ---

@@ -3,10 +3,9 @@ name: oo-googleforms
 description: "Google Forms (workspace.google.com). Use this skill for ANY Google Forms request — reading, creating, and updating data. Whenever a task involves Google Forms, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Forms"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googleforms"]
   icon: "https://static.oomol.com/logo/third-party/Googleforms.svg"
 ---

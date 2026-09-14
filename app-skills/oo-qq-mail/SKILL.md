@@ -3,10 +3,9 @@ name: oo-qq-mail
 description: "QQ Mail (mail.qq.com). Use this skill for ANY QQ Mail request — reading, creating, updating, and deleting data. Whenever a task involves QQ Mail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "QQ Mail"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["qq_mail"]
   icon: "https://static.oomol.com/logo/third-party/qq_mail.png"
 ---

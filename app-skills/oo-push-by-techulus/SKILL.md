@@ -3,10 +3,9 @@ name: oo-push-by-techulus
 description: "Push by Techulus (push.techulus.com). Use this skill for ANY Push by Techulus request — reading, creating, and updating data. Whenever a task involves Push by Techulus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Push by Techulus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["push_by_techulus"]
   icon: "https://static.oomol.com/logo/third-party/push_by_techulus.png"
 ---

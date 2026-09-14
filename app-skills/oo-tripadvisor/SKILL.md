@@ -3,10 +3,9 @@ name: oo-tripadvisor
 description: "Tripadvisor (tripadvisor.com). Use this skill for ANY Tripadvisor request — searching and reading data. Whenever a task involves Tripadvisor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tripadvisor"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tripadvisor"]
   icon: "https://static.oomol.com/logo/third-party/Tripadvisor.svg"
 ---

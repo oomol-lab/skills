@@ -3,10 +3,9 @@ name: oo-honeybadger
 description: "Honeybadger (honeybadger.io). Use this skill for ANY Honeybadger request — searching and reading data. Whenever a task involves Honeybadger, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Honeybadger"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["honeybadger"]
   icon: "https://static.oomol.com/logo/third-party/Honeybadger.svg"
 ---

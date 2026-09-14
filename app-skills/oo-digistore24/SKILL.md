@@ -3,10 +3,9 @@ name: oo-digistore24
 description: "Digistore24 (digistore24.com). Use this skill for ANY Digistore24 request — searching and reading data. Whenever a task involves Digistore24, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Digistore24"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["digistore24"]
   icon: "https://static.oomol.com/logo/third-party/digistore24.svg"
 ---

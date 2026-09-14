@@ -3,10 +3,9 @@ name: oo-virustotal
 description: "VirusTotal (virustotal.com). Use this skill for ANY VirusTotal request — reading, creating, and updating data. Whenever a task involves VirusTotal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "VirusTotal"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["virustotal"]
   icon: "https://static.oomol.com/logo/third-party/Virustotal.webp"
 ---

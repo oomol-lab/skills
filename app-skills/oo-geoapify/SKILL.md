@@ -3,10 +3,9 @@ name: oo-geoapify
 description: "Geoapify (geoapify.com). Use this skill for ANY Geoapify request — reading, creating, and updating data. Whenever a task involves Geoapify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Geoapify"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["geoapify"]
   icon: "https://static.oomol.com/logo/third-party/Geoapify.png"
 ---

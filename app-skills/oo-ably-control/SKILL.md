@@ -3,10 +3,9 @@ name: oo-ably-control
 description: "Ably Control (ably.com). Use this skill for ANY Ably Control request — reading, creating, updating, and deleting data. Whenever a task involves Ably Control, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ably Control"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ably_control"]
   icon: "https://static.oomol.com/logo/third-party/ably_control.svg"
 ---

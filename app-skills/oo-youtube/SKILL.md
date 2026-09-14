@@ -3,10 +3,9 @@ name: oo-youtube
 description: "YouTube (youtube.com). Use this skill for ANY YouTube request — reading, creating, updating, and deleting data. Whenever a task involves YouTube, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "YouTube"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["youtube"]
   icon: "https://static.oomol.com/logo/third-party/youtube.svg"
 ---

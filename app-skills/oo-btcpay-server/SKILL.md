@@ -3,10 +3,9 @@ name: oo-btcpay-server
 description: "BTCPay Server (btcpayserver.org). Use this skill for ANY BTCPay Server request — reading, creating, and updating data. Whenever a task involves BTCPay Server, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BTCPay Server"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["btcpay_server"]
   icon: "https://static.oomol.com/logo/third-party/btcpay_server.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-loops
 description: "Loops (loops.so). Use this skill for ANY Loops request — reading, creating, updating, and deleting data. Whenever a task involves Loops, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Loops"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["loops"]
   icon: "https://static.oomol.com/logo/third-party/loops.png"
 ---

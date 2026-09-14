@@ -3,10 +3,9 @@ name: oo-the-cat-api
 description: "The Cat API (thecatapi.com). Use this skill for ANY The Cat API request — searching and reading data. Whenever a task involves The Cat API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "The Cat API"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["the_cat_api"]
   icon: "https://static.oomol.com/logo/third-party/the_cat_api.svg"
 ---

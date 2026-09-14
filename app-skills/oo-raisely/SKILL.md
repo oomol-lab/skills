@@ -3,10 +3,9 @@ name: oo-raisely
 description: "Raisely (raisely.com). Use this skill for ANY Raisely request — reading, creating, updating, and deleting data. Whenever a task involves Raisely, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Raisely"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["raisely"]
   icon: "https://static.oomol.com/logo/third-party/raisely.svg"
 ---

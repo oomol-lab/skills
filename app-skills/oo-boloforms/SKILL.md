@@ -3,10 +3,9 @@ name: oo-boloforms
 description: "BoloForms (boloforms.com). Use this skill for ANY BoloForms request — reading, creating, and updating data. Whenever a task involves BoloForms, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BoloForms"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["boloforms"]
   icon: "https://static.oomol.com/logo/third-party/Boloforms.svg"
 ---

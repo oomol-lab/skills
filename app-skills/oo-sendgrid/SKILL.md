@@ -3,10 +3,9 @@ name: oo-sendgrid
 description: "SendGrid (sendgrid.com). Use this skill for ANY SendGrid request — reading, creating, and updating data. Whenever a task involves SendGrid, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SendGrid"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sendgrid"]
   icon: "https://static.oomol.com/logo/third-party/SendGrid.svg"
 ---

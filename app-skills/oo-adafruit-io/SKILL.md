@@ -3,10 +3,9 @@ name: oo-adafruit-io
 description: "Adafruit IO (io.adafruit.com). Use this skill for ANY Adafruit IO request — reading, creating, and updating data. Whenever a task involves Adafruit IO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Adafruit IO"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["adafruit_io"]
   icon: "https://static.oomol.com/logo/third-party/adafruit_io.svg"
 ---

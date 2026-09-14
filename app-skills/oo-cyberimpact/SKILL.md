@@ -3,10 +3,9 @@ name: oo-cyberimpact
 description: "Cyberimpact (cyberimpact.com). Use this skill for ANY Cyberimpact request — reading, creating, updating, and deleting data. Whenever a task involves Cyberimpact, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cyberimpact"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cyberimpact"]
   icon: "https://static.oomol.com/logo/third-party/cyberimpact.svg"
 ---

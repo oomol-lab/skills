@@ -3,10 +3,9 @@ name: oo-ossinsight
 description: "OSS Insight (ossinsight.io). Use this skill for ANY OSS Insight request — searching and reading data. Whenever a task involves OSS Insight, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OSS Insight"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ossinsight"]
   icon: "https://static.oomol.com/logo/third-party/ossinsight.png"
 ---

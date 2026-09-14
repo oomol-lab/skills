@@ -3,10 +3,9 @@ name: oo-deutschlandgpt
 description: "DeutschlandGPT (deutschlandgpt.de). Use this skill for ANY DeutschlandGPT request — reading, creating, and updating data. Whenever a task involves DeutschlandGPT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DeutschlandGPT"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["deutschlandgpt"]
   icon: "https://static.oomol.com/logo/third-party/deutschlandgpt.svg"
 ---

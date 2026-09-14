@@ -3,10 +3,9 @@ name: oo-freshsales
 description: "Freshsales (freshworks.com). Use this skill for ANY Freshsales request — reading, creating, updating, and deleting data. Whenever a task involves Freshsales, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Freshsales"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["freshsales"]
   icon: "https://static.oomol.com/logo/third-party/freshsales.svg"
 ---

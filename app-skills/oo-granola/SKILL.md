@@ -3,10 +3,9 @@ name: oo-granola
 description: "Granola (granola.ai). Use this skill for ANY Granola request — searching and reading data. Whenever a task involves Granola, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Granola"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["granola"]
   icon: "https://static.oomol.com/logo/third-party/granola.svg"
 ---
@@ -38,9 +37,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_note` — Get a Granola meeting note by ID, optionally including the transcript.
-- `list_folders` — List accessible Granola folders with cursor pagination.
-- `list_notes` — List accessible Granola meeting notes with optional date, folder, and cursor filters.
+- `get_meeting_transcript` — Read a Granola meeting transcript with OAuth or an API key. Requires an eligible paid Granola plan.
+- `get_meetings` — Read Granola meeting details and summaries by ID with OAuth or an API key. Use IDs returned for the same connection. Free-plan OAuth access covers personal notes from the last 30 days.
+- `get_note` — Get a Granola note and summary by ID with OAuth or an API key, optionally including the transcript on eligible paid plans. Use an ID returned for the same connection.
+- `list_folders` — List accessible Granola folders with OAuth or an API key and cursor pagination. MCP folder access requires a paid plan and uses local pagination of the returned list.
+- `list_meetings` — List recent Granola meetings with OAuth or an API key. OAuth uses MCP's last-30-days window; API keys list notes created in the last 30 days. Use get_meetings to read summaries.
+- `list_notes` — List Granola notes with OAuth or an API key. MCP lists meetings from the last 30 days and supports folder filtering and local cursor pagination. Creation and update filters require an API key.
 
 ## Safety
 
@@ -68,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Granola is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Granola is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, API key) at:
 
   ```text
   https://console.oomol.com/app-connections?provider=granola

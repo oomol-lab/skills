@@ -3,10 +3,9 @@ name: oo-everhour
 description: "Everhour (everhour.com). Use this skill for ANY Everhour request — reading, creating, and updating data. Whenever a task involves Everhour, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Everhour"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["everhour"]
   icon: "https://static.oomol.com/logo/third-party/everhour.png"
 ---

@@ -3,10 +3,9 @@ name: oo-workast
 description: "Workast (workast.com). Use this skill for ANY Workast request — reading, creating, and updating data. Whenever a task involves Workast, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Workast"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["workast"]
   icon: "https://static.oomol.com/logo/third-party/workast.svg"
 ---

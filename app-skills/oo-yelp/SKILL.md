@@ -3,10 +3,9 @@ name: oo-yelp
 description: "Yelp (yelp.com). Use this skill for ANY Yelp request — searching and reading data. Whenever a task involves Yelp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Yelp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["yelp"]
   icon: "https://static.oomol.com/logo/third-party/yelp.svg"
 ---

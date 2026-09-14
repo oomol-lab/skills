@@ -3,10 +3,9 @@ name: oo-hgj
 description: "HaiGuanJia (openapi.hgj.com). Use this skill for ANY HaiGuanJia request — reading, creating, updating, and deleting data. Whenever a task involves HaiGuanJia, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "HaiGuanJia"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hgj"]
   icon: "https://static.oomol.com/logo/third-party/hgj.png"
 ---

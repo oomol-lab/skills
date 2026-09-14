@@ -3,10 +3,9 @@ name: oo-dadata-ru
 description: "DaData.ru (dadata.ru). Use this skill for ANY DaData.ru request — searching and reading data. Whenever a task involves DaData.ru, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DaData.ru"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dadata_ru"]
   icon: "https://static.oomol.com/logo/third-party/dadata_ru.svg"
 ---

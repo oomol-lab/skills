@@ -3,10 +3,9 @@ name: oo-solcast
 description: "Solcast (solcast.com). Use this skill for ANY Solcast request — searching and reading data. Whenever a task involves Solcast, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Solcast"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["solcast"]
   icon: "https://static.oomol.com/logo/third-party/solcast.svg"
 ---

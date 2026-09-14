@@ -3,10 +3,9 @@ name: oo-elasticsearch
 description: "Elasticsearch (elastic.co). Use this skill for ANY Elasticsearch request — reading, creating, updating, and deleting data. Whenever a task involves Elasticsearch, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Elasticsearch"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["elasticsearch"]
   icon: "https://static.oomol.com/logo/third-party/Elasticsearch.svg"
 ---

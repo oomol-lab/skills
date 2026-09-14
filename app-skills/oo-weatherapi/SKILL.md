@@ -3,10 +3,9 @@ name: oo-weatherapi
 description: "WeatherAPI (weatherapi.com). Use this skill for ANY WeatherAPI request — searching and reading data. Whenever a task involves WeatherAPI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WeatherAPI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["weatherapi"]
   icon: "https://static.oomol.com/logo/third-party/weatherapi.png"
 ---

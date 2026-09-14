@@ -3,10 +3,9 @@ name: oo-respond-io
 description: "Respond.io (respond.io). Use this skill for ANY Respond.io request — reading, creating, updating, and deleting data. Whenever a task involves Respond.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Respond.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["respond_io"]
   icon: "https://static.oomol.com/logo/third-party/respond_io.svg"
 ---

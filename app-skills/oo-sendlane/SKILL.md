@@ -3,10 +3,9 @@ name: oo-sendlane
 description: "Sendlane (sendlane.com). Use this skill for ANY Sendlane request — reading, creating, updating, and deleting data. Whenever a task involves Sendlane, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sendlane"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sendlane"]
   icon: "https://static.oomol.com/logo/third-party/sendlane.svg"
 ---

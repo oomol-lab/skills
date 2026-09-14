@@ -3,10 +3,9 @@ name: oo-httpsms
 description: "httpSMS (httpsms.com). Use this skill for ANY httpSMS request — reading, creating, updating, and deleting data. Whenever a task involves httpSMS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "httpSMS"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["httpsms"]
   icon: "https://static.oomol.com/logo/third-party/httpsms.svg"
 ---

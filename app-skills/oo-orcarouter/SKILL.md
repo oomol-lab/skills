@@ -3,10 +3,9 @@ name: oo-orcarouter
 description: "OrcaRouter (orcarouter.ai). Use this skill for ANY OrcaRouter request — reading, creating, and updating data. Whenever a task involves OrcaRouter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OrcaRouter"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["orcarouter"]
   icon: "https://static.oomol.com/logo/third-party/orcarouter.png"
 ---

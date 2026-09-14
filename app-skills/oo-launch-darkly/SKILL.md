@@ -3,10 +3,9 @@ name: oo-launch-darkly
 description: "LaunchDarkly (launchdarkly.com). Use this skill for ANY LaunchDarkly request — reading, creating, updating, and deleting data. Whenever a task involves LaunchDarkly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LaunchDarkly"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["launch_darkly"]
   icon: "https://static.oomol.com/logo/third-party/LaunchDarkly.svg"
 ---

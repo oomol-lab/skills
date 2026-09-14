@@ -3,10 +3,9 @@ name: oo-shippo
 description: "Shippo (goshippo.com). Use this skill for ANY Shippo request — reading, creating, and updating data. Whenever a task involves Shippo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Shippo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["shippo"]
   icon: "https://static.oomol.com/logo/third-party/shippo.png"
 ---

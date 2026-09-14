@@ -3,10 +3,9 @@ name: oo-lightspeed-vt
 description: "LightSpeed VT (lightspeedvt.com). Use this skill for ANY LightSpeed VT request — searching and reading data. Whenever a task involves LightSpeed VT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LightSpeed VT"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["lightspeed_vt"]
   icon: "https://static.oomol.com/logo/third-party/lightspeed_vt.png"
 ---

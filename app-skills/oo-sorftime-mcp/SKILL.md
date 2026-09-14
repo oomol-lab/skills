@@ -3,10 +3,9 @@ name: oo-sorftime-mcp
 description: "Sorftime MCP (sorftime.com). Use this skill for ANY Sorftime MCP request — searching and reading data. Whenever a task involves Sorftime MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sorftime MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sorftime_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sorftime_mcp.png"
 ---

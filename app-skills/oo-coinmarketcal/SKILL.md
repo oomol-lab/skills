@@ -3,10 +3,9 @@ name: oo-coinmarketcal
 description: "CoinMarketCal. Use this skill for ANY CoinMarketCal request — searching and reading data. Whenever a task involves CoinMarketCal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CoinMarketCal"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["coinmarketcal"]
   icon: "https://static.oomol.com/logo/third-party/CoinMarketCal.svg"
 ---

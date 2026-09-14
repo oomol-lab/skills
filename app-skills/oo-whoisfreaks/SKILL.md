@@ -3,10 +3,9 @@ name: oo-whoisfreaks
 description: "WhoisFreaks (whoisfreaks.com). Use this skill for ANY WhoisFreaks request — searching and reading data. Whenever a task involves WhoisFreaks, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WhoisFreaks"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["whoisfreaks"]
   icon: "https://static.oomol.com/logo/third-party/Whoisfreaks.svg"
 ---

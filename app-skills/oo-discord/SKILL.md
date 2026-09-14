@@ -3,10 +3,9 @@ name: oo-discord
 description: "Discord (discord.com). Use this skill for ANY Discord request — reading, creating, updating, and deleting data. Whenever a task involves Discord, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Discord"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["discord"]
   icon: "https://static.oomol.com/logo/third-party/Discord.svg"
 ---

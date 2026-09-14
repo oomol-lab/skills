@@ -3,10 +3,9 @@ name: oo-plasmic
 description: "Plasmic (plasmic.app). Use this skill for ANY Plasmic request — searching and reading data. Whenever a task involves Plasmic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Plasmic"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["plasmic"]
   icon: "https://static.oomol.com/logo/third-party/plasmic.svg"
 ---

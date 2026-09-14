@@ -3,10 +3,9 @@ name: oo-octave
 description: "Octave (octavehq.com). Use this skill for ANY Octave request — searching and reading data. Whenever a task involves Octave, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Octave"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["octave"]
   icon: "https://static.oomol.com/logo/third-party/octave.png"
 ---

@@ -3,10 +3,9 @@ name: oo-iqair-airvisual
 description: "IQAir AirVisual (iqair.com). Use this skill for ANY IQAir AirVisual request — searching and reading data. Whenever a task involves IQAir AirVisual, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "IQAir AirVisual"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["iqair_airvisual"]
   icon: "https://static.oomol.com/logo/third-party/iqair_airvisual.svg"
 ---

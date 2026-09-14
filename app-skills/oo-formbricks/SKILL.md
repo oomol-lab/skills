@@ -3,10 +3,9 @@ name: oo-formbricks
 description: "Formbricks (formbricks.com). Use this skill for ANY Formbricks request — reading, creating, updating, and deleting data. Whenever a task involves Formbricks, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Formbricks"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["formbricks"]
   icon: "https://static.oomol.com/logo/third-party/formbricks.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-breathe
 description: "Breathe (breathehr.com). Use this skill for ANY Breathe request — searching and reading data. Whenever a task involves Breathe, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Breathe"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["breathe"]
   icon: "https://static.oomol.com/logo/third-party/breathe.svg"
 ---

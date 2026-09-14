@@ -3,10 +3,9 @@ name: oo-ship-station
 description: "ShipStation (shipstation.com). Use this skill for ANY ShipStation request — reading, creating, and updating data. Whenever a task involves ShipStation, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ShipStation"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ship_station"]
   icon: "https://static.oomol.com/logo/third-party/ship_station.svg"
 ---

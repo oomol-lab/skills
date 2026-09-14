@@ -3,10 +3,9 @@ name: oo-emelia
 description: "Emelia (emelia.io). Use this skill for ANY Emelia request — searching and reading data. Whenever a task involves Emelia, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Emelia"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["emelia"]
   icon: "https://static.oomol.com/logo/third-party/emelia.svg"
 ---

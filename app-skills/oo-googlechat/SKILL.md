@@ -3,10 +3,9 @@ name: oo-googlechat
 description: "Google Chat (workspace.google.com). Use this skill for ANY Google Chat request — searching and reading data. Whenever a task involves Google Chat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Chat"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["googlechat"]
   icon: "https://static.oomol.com/logo/third-party/googlechat.svg"
 ---

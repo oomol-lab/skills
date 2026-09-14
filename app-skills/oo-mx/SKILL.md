@@ -3,10 +3,9 @@ name: oo-mx
 description: "MX (mx.com). Use this skill for ANY MX request — reading, creating, updating, and deleting data. Whenever a task involves MX, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "MX"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mx"]
   icon: "https://static.oomol.com/logo/third-party/mx.svg"
 ---

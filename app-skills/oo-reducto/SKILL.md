@@ -3,10 +3,9 @@ name: oo-reducto
 description: "Reducto (reducto.ai). Use this skill for ANY Reducto request — searching and reading data. Whenever a task involves Reducto, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Reducto"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["reducto"]
   icon: "https://static.oomol.com/logo/third-party/reducto.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-rollbar
 description: "Rollbar (rollbar.com). Use this skill for ANY Rollbar request — reading, creating, and updating data. Whenever a task involves Rollbar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Rollbar"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["rollbar"]
   icon: "https://static.oomol.com/logo/third-party/rollbar.svg"
 ---

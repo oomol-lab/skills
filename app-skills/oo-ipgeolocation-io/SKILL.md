@@ -3,10 +3,9 @@ name: oo-ipgeolocation-io
 description: "IPGeolocation.io (ipgeolocation.io). Use this skill for ANY IPGeolocation.io request — searching and reading data. Whenever a task involves IPGeolocation.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "IPGeolocation.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ipgeolocation_io"]
   icon: "https://static.oomol.com/logo/third-party/ipgeolocation_io.svg"
 ---

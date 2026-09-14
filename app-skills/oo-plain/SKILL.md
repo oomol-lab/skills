@@ -3,10 +3,9 @@ name: oo-plain
 description: "Plain (plain.com). Use this skill for ANY Plain request — reading, creating, and updating data. Whenever a task involves Plain, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Plain"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["plain"]
   icon: "https://static.oomol.com/logo/third-party/plain.svg"
 ---

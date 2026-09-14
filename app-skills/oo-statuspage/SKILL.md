@@ -3,10 +3,9 @@ name: oo-statuspage
 description: "Statuspage (atlassian.com). Use this skill for ANY Statuspage request — reading, creating, updating, and deleting data. Whenever a task involves Statuspage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Statuspage"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["statuspage"]
   icon: "https://static.oomol.com/logo/third-party/statuspage.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-chargify
 description: "Maxio Advanced Billing (maxio.com). Use this skill for ANY Maxio Advanced Billing request — searching and reading data. Whenever a task involves Maxio Advanced Billing, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Maxio Advanced Billing"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chargify"]
   icon: "https://static.oomol.com/logo/third-party/chargify.svg"
 ---

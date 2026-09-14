@@ -3,10 +3,9 @@ name: oo-ipregistry
 description: "Ipregistry (ipregistry.co). Use this skill for ANY Ipregistry request — searching and reading data. Whenever a task involves Ipregistry, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ipregistry"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ipregistry"]
   icon: "https://static.oomol.com/logo/third-party/ipregistry.png"
 ---

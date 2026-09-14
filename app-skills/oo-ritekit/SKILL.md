@@ -3,10 +3,9 @@ name: oo-ritekit
 description: "RiteKit (ritekit.com). Use this skill for ANY RiteKit request — searching and reading data. Whenever a task involves RiteKit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "RiteKit"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ritekit"]
   icon: "https://static.oomol.com/logo/third-party/ritekit.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-collegiate
 description: "Merriam-Webster Collegiate (merriam-webster.com). Use this skill for ANY Merriam-Webster Collegiate request — searching and reading data. Whenever a task involves Merriam-Webster Collegiate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Merriam-Webster Collegiate"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["collegiate"]
   icon: "https://static.oomol.com/logo/third-party/collegiate.png"
 ---

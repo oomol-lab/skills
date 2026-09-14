@@ -3,10 +3,9 @@ name: oo-globalping
 description: "Globalping (globalping.io). Use this skill for ANY Globalping request — reading, creating, and updating data. Whenever a task involves Globalping, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Globalping"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["globalping"]
   icon: "https://static.oomol.com/logo/third-party/globalping.svg"
 ---

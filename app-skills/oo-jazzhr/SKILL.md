@@ -3,10 +3,9 @@ name: oo-jazzhr
 description: "JazzHR (jazzhr.com). Use this skill for ANY JazzHR request — searching and reading data. Whenever a task involves JazzHR, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "JazzHR"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jazzhr"]
   icon: "https://static.oomol.com/logo/third-party/jazzhr.png"
 ---

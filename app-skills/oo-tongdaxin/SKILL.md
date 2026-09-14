@@ -3,10 +3,9 @@ name: oo-tongdaxin
 description: "Tongdaxin (vip.tdx.com.cn). Use this skill for ANY Tongdaxin request — searching and reading data. Whenever a task involves Tongdaxin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tongdaxin"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tongdaxin"]
   icon: "https://static.oomol.com/logo/third-party/tongdaxin.png"
 ---

@@ -3,10 +3,9 @@ name: oo-pixellab
 description: "PixelLab (pixellab.ai). Use this skill for ANY PixelLab request — reading, creating, updating, and deleting data. Whenever a task involves PixelLab, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PixelLab"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pixellab"]
   icon: "https://static.oomol.com/logo/third-party/pixellab.png"
 ---

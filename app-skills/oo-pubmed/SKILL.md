@@ -3,10 +3,9 @@ name: oo-pubmed
 description: "PubMed (pubmed.ncbi.nlm.nih.gov). Use this skill for ANY PubMed request — searching and reading data. Whenever a task involves PubMed, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PubMed"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pubmed"]
   icon: "https://static.oomol.com/logo/third-party/pubmed.svg"
 ---

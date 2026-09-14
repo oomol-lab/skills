@@ -3,10 +3,9 @@ name: oo-ip2whois
 description: "IP2WHOIS. Use this skill for ANY IP2WHOIS request — searching and reading data. Whenever a task involves IP2WHOIS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "IP2WHOIS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ip2whois"]
   icon: "https://static.oomol.com/logo/third-party/ip2whois.png"
 ---

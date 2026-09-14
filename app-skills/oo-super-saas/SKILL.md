@@ -3,10 +3,9 @@ name: oo-super-saas
 description: "SuperSaaS (supersaas.com). Use this skill for ANY SuperSaaS request — searching and reading data. Whenever a task involves SuperSaaS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SuperSaaS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["super_saas"]
   icon: "https://static.oomol.com/logo/third-party/super_saas.svg"
 ---

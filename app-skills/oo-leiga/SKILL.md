@@ -3,10 +3,9 @@ name: oo-leiga
 description: "Leiga (leiga.com). Use this skill for ANY Leiga request — searching and reading data. Whenever a task involves Leiga, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Leiga"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["leiga"]
   icon: "https://static.oomol.com/logo/third-party/leiga.png"
 ---

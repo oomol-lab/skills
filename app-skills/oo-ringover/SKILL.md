@@ -3,10 +3,9 @@ name: oo-ringover
 description: "Ringover (ringover.com). Use this skill for ANY Ringover request — searching and reading data. Whenever a task involves Ringover, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ringover"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ringover"]
   icon: "https://static.oomol.com/logo/third-party/ringover.svg"
 ---

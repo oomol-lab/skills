@@ -3,10 +3,9 @@ name: oo-harmonic-ai
 description: "Harmonic.ai (harmonic.ai). Use this skill for ANY Harmonic.ai request — searching and reading data. Whenever a task involves Harmonic.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Harmonic.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["harmonic_ai"]
   icon: "https://static.oomol.com/logo/third-party/harmonic_ai.png"
 ---

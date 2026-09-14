@@ -3,10 +3,9 @@ name: oo-x-ai
 description: "xAI (x.ai). Use this skill for ANY xAI request — reading, creating, and updating data. Whenever a task involves xAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "xAI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["x_ai"]
   icon: "https://static.oomol.com/logo/third-party/x_ai.svg"
 ---

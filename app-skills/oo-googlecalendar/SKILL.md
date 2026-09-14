@@ -3,10 +3,9 @@ name: oo-googlecalendar
 description: "Google Calendar (workspace.google.com). Use this skill for ANY Google Calendar request — reading, creating, updating, and deleting data. Whenever a task involves Google Calendar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Calendar"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googlecalendar"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Calendar.svg"
 ---

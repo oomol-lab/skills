@@ -3,10 +3,9 @@ name: oo-forem
 description: "Forem (forem.com). Use this skill for ANY Forem request — reading, creating, and updating data. Whenever a task involves Forem, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Forem"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["forem"]
   icon: "https://static.oomol.com/logo/third-party/forem.svg"
 ---

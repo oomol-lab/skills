@@ -3,10 +3,9 @@ name: oo-attention
 description: "Attention (attention.com). Use this skill for ANY Attention request — searching and reading data. Whenever a task involves Attention, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Attention"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["attention"]
   icon: "https://static.oomol.com/logo/third-party/attention.svg"
 ---

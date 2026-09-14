@@ -3,10 +3,9 @@ name: oo-loop-returns
 description: "Loop Returns (loopreturns.com). Use this skill for ANY Loop Returns request — searching and reading data. Whenever a task involves Loop Returns, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Loop Returns"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["loop_returns"]
   icon: "https://static.oomol.com/logo/third-party/loop_returns.svg"
 ---

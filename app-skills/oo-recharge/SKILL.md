@@ -3,10 +3,9 @@ name: oo-recharge
 description: "Recharge (getrecharge.com). Use this skill for ANY Recharge request — reading, creating, and updating data. Whenever a task involves Recharge, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Recharge"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["recharge"]
   icon: "https://static.oomol.com/logo/third-party/recharge.svg"
 ---

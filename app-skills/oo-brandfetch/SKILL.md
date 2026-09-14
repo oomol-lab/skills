@@ -3,10 +3,9 @@ name: oo-brandfetch
 description: "Brandfetch (brandfetch.com). Use this skill for ANY Brandfetch request — searching and reading data. Whenever a task involves Brandfetch, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Brandfetch"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["brandfetch"]
   icon: "https://static.oomol.com/logo/third-party/Brandfetch.svg"
 ---

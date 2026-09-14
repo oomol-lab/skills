@@ -3,10 +3,9 @@ name: oo-diffbot
 description: "Diffbot (diffbot.com). Use this skill for ANY Diffbot request — searching and reading data. Whenever a task involves Diffbot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Diffbot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["diffbot"]
   icon: "https://static.oomol.com/logo/third-party/Diffbot.svg"
 ---

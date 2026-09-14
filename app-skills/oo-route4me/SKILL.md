@@ -3,10 +3,9 @@ name: oo-route4me
 description: "Route4Me (route4me.com). Use this skill for ANY Route4Me request — reading, creating, updating, and deleting data. Whenever a task involves Route4Me, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Route4Me"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["route4me"]
   icon: "https://static.oomol.com/logo/third-party/route4me.svg"
 ---

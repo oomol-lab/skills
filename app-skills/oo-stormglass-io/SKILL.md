@@ -3,10 +3,9 @@ name: oo-stormglass-io
 description: "Stormglass (stormglass.io). Use this skill for ANY Stormglass request — searching and reading data. Whenever a task involves Stormglass, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Stormglass"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["stormglass_io"]
   icon: "https://static.oomol.com/logo/third-party/stormglass_io.png"
 ---

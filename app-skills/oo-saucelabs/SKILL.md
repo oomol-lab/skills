@@ -3,10 +3,9 @@ name: oo-saucelabs
 description: "Sauce Labs (saucelabs.com). Use this skill for ANY Sauce Labs request — reading, creating, and updating data. Whenever a task involves Sauce Labs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sauce Labs"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["saucelabs"]
   icon: "https://static.oomol.com/logo/third-party/saucelabs.svg"
 ---

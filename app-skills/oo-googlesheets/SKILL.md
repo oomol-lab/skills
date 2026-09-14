@@ -3,10 +3,9 @@ name: oo-googlesheets
 description: "Google Sheets (workspace.google.com). Use this skill for ANY Google Sheets request — reading, creating, updating, and deleting data. Whenever a task involves Google Sheets, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Sheets"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googlesheets"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Sheets.svg"
 ---

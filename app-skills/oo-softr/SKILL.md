@@ -3,10 +3,9 @@ name: oo-softr
 description: "Softr (softr.io). Use this skill for ANY Softr request — reading, creating, updating, and deleting data. Whenever a task involves Softr, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Softr"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["softr"]
   icon: "https://static.oomol.com/logo/third-party/softr.svg"
 ---

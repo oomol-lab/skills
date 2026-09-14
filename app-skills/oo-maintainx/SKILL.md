@@ -3,10 +3,9 @@ name: oo-maintainx
 description: "MaintainX (getmaintainx.com). Use this skill for ANY MaintainX request — reading, creating, updating, and deleting data. Whenever a task involves MaintainX, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "MaintainX"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["maintainx"]
   icon: "https://static.oomol.com/logo/third-party/maintainx.svg"
 ---

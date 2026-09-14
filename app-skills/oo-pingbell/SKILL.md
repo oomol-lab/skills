@@ -3,10 +3,9 @@ name: oo-pingbell
 description: "PingBell (pingbell.io). Use this skill for ANY PingBell request — searching and reading data. Whenever a task involves PingBell, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PingBell"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["pingbell"]
   icon: "https://static.oomol.com/logo/third-party/pingbell.png"
 ---

@@ -3,10 +3,9 @@ name: oo-aws-sts
 description: "AWS STS (aws.amazon.com). Use this skill for ANY AWS STS request — searching and reading data. Whenever a task involves AWS STS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AWS STS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aws_sts"]
   icon: "https://static.oomol.com/logo/third-party/aws_sts.svg"
 ---

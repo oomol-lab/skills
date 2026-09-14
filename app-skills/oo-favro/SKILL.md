@@ -3,10 +3,9 @@ name: oo-favro
 description: "Favro (favro.com). Use this skill for ANY Favro request — reading, creating, and updating data. Whenever a task involves Favro, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Favro"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["favro"]
   icon: "https://static.oomol.com/logo/third-party/favro.svg"
 ---

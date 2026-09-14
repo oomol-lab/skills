@@ -3,10 +3,9 @@ name: oo-beebole
 description: "Beebole (beebole.com). Use this skill for ANY Beebole request — searching and reading data. Whenever a task involves Beebole, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Beebole"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["beebole"]
   icon: "https://static.oomol.com/logo/third-party/beebole.svg"
 ---

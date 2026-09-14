@@ -3,10 +3,9 @@ name: oo-writer
 description: "Writer (writer.com). Use this skill for ANY Writer request — reading, creating, and updating data. Whenever a task involves Writer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Writer"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["writer"]
   icon: "https://static.oomol.com/logo/third-party/writer.svg"
 ---

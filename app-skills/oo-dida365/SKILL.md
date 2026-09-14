@@ -3,10 +3,9 @@ name: oo-dida365
 description: "Dida365 (dida365.com). Use this skill for ANY Dida365 request — reading, creating, updating, and deleting data. Whenever a task involves Dida365, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Dida365"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["dida365"]
   icon: "https://static.oomol.com/logo/third-party/ticktick.svg"
 ---

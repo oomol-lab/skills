@@ -3,10 +3,9 @@ name: oo-customerio
 description: "Customer.io (customer.io). Use this skill for ANY Customer.io request — reading, creating, updating, and deleting data. Whenever a task involves Customer.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Customer.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["customerio"]
   icon: "https://static.oomol.com/logo/third-party/customerio.svg"
 ---

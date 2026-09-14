@@ -3,10 +3,9 @@ name: oo-starton
 description: "Starton (starton.com). Use this skill for ANY Starton request — reading, creating, updating, and deleting data. Whenever a task involves Starton, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Starton"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["starton"]
   icon: "https://static.oomol.com/logo/third-party/starton.jpg"
 ---

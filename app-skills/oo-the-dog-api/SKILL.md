@@ -3,10 +3,9 @@ name: oo-the-dog-api
 description: "The Dog API (thedogapi.com). Use this skill for ANY The Dog API request — reading, creating, updating, and deleting data. Whenever a task involves The Dog API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "The Dog API"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["the_dog_api"]
   icon: "https://static.oomol.com/logo/third-party/the_dog_api.svg"
 ---

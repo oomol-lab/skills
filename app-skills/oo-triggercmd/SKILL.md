@@ -3,10 +3,9 @@ name: oo-triggercmd
 description: "TRIGGERcmd (triggercmd.com). Use this skill for ANY TRIGGERcmd request — reading, creating, and updating data. Whenever a task involves TRIGGERcmd, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TRIGGERcmd"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["triggercmd"]
   icon: "https://static.oomol.com/logo/third-party/triggercmd.png"
 ---

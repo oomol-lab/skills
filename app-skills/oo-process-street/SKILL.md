@@ -3,10 +3,9 @@ name: oo-process-street
 description: "Process Street (process.st). Use this skill for ANY Process Street request — reading, creating, and updating data. Whenever a task involves Process Street, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Process Street"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["process_street"]
   icon: "https://static.oomol.com/logo/third-party/process_street.png"
 ---

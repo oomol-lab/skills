@@ -3,10 +3,9 @@ name: oo-chargebee
 description: "Chargebee (chargebee.com). Use this skill for ANY Chargebee request — reading, creating, and updating data. Whenever a task involves Chargebee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Chargebee"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["chargebee"]
   icon: "https://static.oomol.com/logo/third-party/chargebee.svg"
 ---

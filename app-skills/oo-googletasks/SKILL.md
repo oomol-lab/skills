@@ -3,10 +3,9 @@ name: oo-googletasks
 description: "Google Tasks (tasks.google.com). Use this skill for ANY Google Tasks request — reading, creating, updating, and deleting data. Whenever a task involves Google Tasks, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Tasks"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googletasks"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Tasks.svg"
 ---

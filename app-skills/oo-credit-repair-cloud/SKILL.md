@@ -3,10 +3,9 @@ name: oo-credit-repair-cloud
 description: "Credit Repair Cloud (creditrepaircloud.com). Use this skill for ANY Credit Repair Cloud request — reading, creating, updating, and deleting data. Whenever a task involves Credit Repair Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Credit Repair Cloud"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["credit_repair_cloud"]
   icon: "https://static.oomol.com/logo/third-party/credit_repair_cloud.svg"
 ---

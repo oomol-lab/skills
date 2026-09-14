@@ -3,10 +3,9 @@ name: oo-teable
 description: "Teable (teable.cn). Use this skill for ANY Teable request — reading, creating, updating, and deleting data. Whenever a task involves Teable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Teable"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["teable"]
   icon: "https://static.oomol.com/logo/third-party/teable.svg"
 ---

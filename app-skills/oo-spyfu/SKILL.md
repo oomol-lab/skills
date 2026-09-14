@@ -3,10 +3,9 @@ name: oo-spyfu
 description: "SpyFu (spyfu.com). Use this skill for ANY SpyFu request — searching and reading data. Whenever a task involves SpyFu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SpyFu"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["spyfu"]
   icon: "https://static.oomol.com/logo/third-party/spyfu.svg"
 ---

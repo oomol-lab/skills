@@ -3,10 +3,9 @@ name: oo-profileapi
 description: "profileAPI (profileapi.com). Use this skill for ANY profileAPI request — searching and reading data. Whenever a task involves profileAPI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "profileAPI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["profileapi"]
   icon: "https://static.oomol.com/logo/third-party/profileapi.svg"
 ---

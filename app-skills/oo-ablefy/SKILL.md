@@ -3,10 +3,9 @@ name: oo-ablefy
 description: "ablefy (ablefy.io). Use this skill for ANY ablefy request — searching and reading data. Whenever a task involves ablefy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ablefy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ablefy"]
   icon: "https://static.oomol.com/logo/third-party/ablefy.svg"
 ---

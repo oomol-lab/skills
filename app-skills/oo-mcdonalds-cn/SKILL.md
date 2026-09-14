@@ -3,10 +3,9 @@ name: oo-mcdonalds-cn
 description: "McDonald's China (open.mcd.cn). Use this skill for ANY McDonald's China request — searching and reading data. Whenever a task involves McDonald's China, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "McDonald's China"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mcdonalds_cn"]
   icon: "https://static.oomol.com/logo/third-party/mcdonalds_cn.png"
 ---

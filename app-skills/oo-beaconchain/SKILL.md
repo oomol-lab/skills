@@ -3,10 +3,9 @@ name: oo-beaconchain
 description: "Beaconcha.in (beaconcha.in). Use this skill for ANY Beaconcha.in request — searching and reading data. Whenever a task involves Beaconcha.in, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Beaconcha.in"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["beaconchain"]
   icon: "https://static.oomol.com/logo/third-party/beaconchain.svg"
 ---

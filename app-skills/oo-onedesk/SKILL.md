@@ -3,10 +3,9 @@ name: oo-onedesk
 description: "OneDesk (onedesk.com). Use this skill for ANY OneDesk request — searching and reading data. Whenever a task involves OneDesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OneDesk"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["onedesk"]
   icon: "https://static.oomol.com/logo/third-party/onedesk.svg"
 ---

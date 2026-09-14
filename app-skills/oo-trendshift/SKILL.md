@@ -3,10 +3,9 @@ name: oo-trendshift
 description: "Trendshift (trendshift.io). Use this skill for ANY Trendshift request — searching and reading data. Whenever a task involves Trendshift, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Trendshift"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["trendshift"]
   icon: "https://static.oomol.com/logo/third-party/trendshift.svg"
 ---

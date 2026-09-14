@@ -3,10 +3,9 @@ name: oo-anrok
 description: "Anrok (anrok.com). Use this skill for ANY Anrok request — searching and reading data. Whenever a task involves Anrok, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Anrok"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["anrok"]
   icon: "https://static.oomol.com/logo/third-party/anrok.svg"
 ---

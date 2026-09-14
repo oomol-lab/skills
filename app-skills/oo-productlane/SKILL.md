@@ -3,10 +3,9 @@ name: oo-productlane
 description: "Productlane (productlane.com). Use this skill for ANY Productlane request — reading, creating, updating, and deleting data. Whenever a task involves Productlane, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Productlane"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["productlane"]
   icon: "https://static.oomol.com/logo/third-party/productlane.svg"
 ---

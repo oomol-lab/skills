@@ -3,10 +3,9 @@ name: oo-unifapi
 description: "UnifAPI (unifapi.com). Use this skill for ANY UnifAPI request — reading, creating, and updating data. Whenever a task involves UnifAPI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "UnifAPI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["unifapi"]
   icon: "https://static.oomol.com/logo/third-party/unifapi.svg"
 ---

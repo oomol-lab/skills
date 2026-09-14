@@ -3,10 +3,9 @@ name: oo-basin
 description: "Basin (usebasin.com). Use this skill for ANY Basin request — reading, creating, updating, and deleting data. Whenever a task involves Basin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Basin"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["basin"]
   icon: "https://static.oomol.com/logo/third-party/Basin.svg"
 ---

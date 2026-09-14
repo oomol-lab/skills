@@ -3,10 +3,9 @@ name: oo-cal
 description: "Cal.com (cal.com). Use this skill for ANY Cal.com request — reading, creating, updating, and deleting data. Whenever a task involves Cal.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cal.com"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cal"]
   icon: "https://static.oomol.com/logo/third-party/Cal.svg"
 ---

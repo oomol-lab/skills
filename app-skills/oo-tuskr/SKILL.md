@@ -3,10 +3,9 @@ name: oo-tuskr
 description: "Tuskr (tuskr.app). Use this skill for ANY Tuskr request — reading, creating, and updating data. Whenever a task involves Tuskr, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tuskr"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tuskr"]
   icon: "https://static.oomol.com/logo/third-party/tuskr.svg"
 ---

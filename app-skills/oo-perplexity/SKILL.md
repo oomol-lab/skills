@@ -3,10 +3,9 @@ name: oo-perplexity
 description: "Perplexity (perplexity.ai). Use this skill for ANY Perplexity request — reading, creating, and updating data. Whenever a task involves Perplexity, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Perplexity"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["perplexity"]
   icon: "https://static.oomol.com/logo/third-party/Perplexity%20AI.svg"
 ---

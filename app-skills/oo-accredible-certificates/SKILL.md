@@ -3,10 +3,9 @@ name: oo-accredible-certificates
 description: "Accredible Certificates (accredible.com). Use this skill for ANY Accredible Certificates request — reading, creating, updating, and deleting data. Whenever a task involves Accredible Certificates, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Accredible Certificates"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["accredible_certificates"]
   icon: "https://static.oomol.com/logo/third-party/accredible_certificates.png"
 ---

@@ -3,10 +3,9 @@ name: oo-wttr-in
 description: "wttr.in (wttr.in). Use this skill for ANY wttr.in request — searching and reading data. Whenever a task involves wttr.in, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "wttr.in"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["wttr_in"]
   icon: "https://static.oomol.com/logo/third-party/wttr_in.png"
 ---

@@ -3,10 +3,9 @@ name: oo-easypost
 description: "EasyPost (easypost.com). Use this skill for ANY EasyPost request — reading, creating, and updating data. Whenever a task involves EasyPost, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "EasyPost"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["easypost"]
   icon: "https://static.oomol.com/logo/third-party/easypost.svg"
 ---

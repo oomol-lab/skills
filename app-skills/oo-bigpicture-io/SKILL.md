@@ -3,10 +3,9 @@ name: oo-bigpicture-io
 description: "BigPicture.io (bigpicture.io). Use this skill for ANY BigPicture.io request — searching and reading data. Whenever a task involves BigPicture.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BigPicture.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bigpicture_io"]
   icon: "https://static.oomol.com/logo/third-party/bigpicture_io.png"
 ---

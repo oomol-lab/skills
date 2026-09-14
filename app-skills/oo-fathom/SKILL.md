@@ -3,10 +3,9 @@ name: oo-fathom
 description: "Fathom Analytics (usefathom.com). Use this skill for ANY Fathom Analytics request — reading, creating, and updating data. Whenever a task involves Fathom Analytics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fathom Analytics"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fathom"]
   icon: "https://static.oomol.com/logo/third-party/fathom.svg"
 ---

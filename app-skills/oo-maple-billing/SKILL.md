@@ -3,10 +3,9 @@ name: oo-maple-billing
 description: "Measure (getmeasure.com). Use this skill for ANY Measure request — reading, creating, and updating data. Whenever a task involves Measure, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Measure"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["maple_billing"]
   icon: "https://static.oomol.com/logo/third-party/maple_billing.png"
 ---

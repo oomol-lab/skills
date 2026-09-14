@@ -3,10 +3,9 @@ name: oo-simplelocalize
 description: "SimpleLocalize (simplelocalize.io). Use this skill for ANY SimpleLocalize request — reading, creating, updating, and deleting data. Whenever a task involves SimpleLocalize, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SimpleLocalize"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["simplelocalize"]
   icon: "https://static.oomol.com/logo/third-party/simplelocalize.svg"
 ---

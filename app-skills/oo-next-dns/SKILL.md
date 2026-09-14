@@ -3,10 +3,9 @@ name: oo-next-dns
 description: "NextDNS (nextdns.io). Use this skill for ANY NextDNS request — searching and reading data. Whenever a task involves NextDNS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "NextDNS"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["next_dns"]
   icon: "https://static.oomol.com/logo/third-party/next_dns.svg"
 ---

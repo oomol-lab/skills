@@ -3,10 +3,9 @@ name: oo-currencyscoop
 description: "CurrencyBeacon (currencybeacon.com). Use this skill for ANY CurrencyBeacon request — searching and reading data. Whenever a task involves CurrencyBeacon, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CurrencyBeacon"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["currencyscoop"]
   icon: "https://static.oomol.com/logo/third-party/CurrencyScoop.svg"
 ---

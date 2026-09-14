@@ -3,10 +3,9 @@ name: oo-oomol-console
 description: "OOMOL Console (console.oomol.com). Use this skill for ANY OOMOL Console request — reading, creating, updating, and deleting data. Whenever a task involves OOMOL Console, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OOMOL Console"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["oomol_console"]
   icon: "https://static.oomol.com/logo/third-party/oomol_console.svg"
 ---

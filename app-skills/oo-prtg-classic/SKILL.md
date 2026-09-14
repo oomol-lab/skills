@@ -3,10 +3,9 @@ name: oo-prtg-classic
 description: "PRTG Classic (paessler.com). Use this skill for ANY PRTG Classic request — searching and reading data. Whenever a task involves PRTG Classic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PRTG Classic"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["prtg_classic"]
   icon: "https://static.oomol.com/logo/third-party/prtg_classic.svg"
 ---

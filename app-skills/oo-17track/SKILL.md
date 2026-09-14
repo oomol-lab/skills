@@ -3,10 +3,9 @@ name: oo-17track
 description: "17TRACK (17track.net). Use this skill for ANY 17TRACK request — reading, creating, and updating data. Whenever a task involves 17TRACK, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "17TRACK"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["17track"]
   icon: "https://static.oomol.com/logo/third-party/17track.svg"
 ---

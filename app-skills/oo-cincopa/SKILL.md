@@ -3,10 +3,9 @@ name: oo-cincopa
 description: "Cincopa (cincopa.com). Use this skill for ANY Cincopa request — searching and reading data. Whenever a task involves Cincopa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cincopa"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cincopa"]
   icon: "https://static.oomol.com/logo/third-party/cincopa.svg"
 ---

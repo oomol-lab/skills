@@ -3,10 +3,9 @@ name: oo-googlephotos
 description: "Google Photos (google.com). Use this skill for ANY Google Photos request — reading, creating, updating, and deleting data. Whenever a task involves Google Photos, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Photos"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googlephotos"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Photos.svg"
 ---

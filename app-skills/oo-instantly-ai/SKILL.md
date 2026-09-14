@@ -3,10 +3,9 @@ name: oo-instantly-ai
 description: "Instantly.ai (instantly.ai). Use this skill for ANY Instantly.ai request — reading, creating, and updating data. Whenever a task involves Instantly.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Instantly.ai"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["instantly_ai"]
   icon: "https://static.oomol.com/logo/third-party/instantly_ai.svg"
 ---

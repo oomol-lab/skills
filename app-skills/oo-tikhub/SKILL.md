@@ -3,10 +3,9 @@ name: oo-tikhub
 description: "TikHub (tikhub.io). Use this skill for ANY TikHub request — searching and reading data. Whenever a task involves TikHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TikHub"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["tikhub"]
   icon: "https://static.oomol.com/logo/third-party/tikhub.jpeg"
 ---

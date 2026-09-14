@@ -3,10 +3,9 @@ name: oo-tapfiliate
 description: "Tapfiliate (tapfiliate.com). Use this skill for ANY Tapfiliate request — reading, creating, and updating data. Whenever a task involves Tapfiliate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tapfiliate"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tapfiliate"]
   icon: "https://static.oomol.com/logo/third-party/tapfiliate.svg"
 ---

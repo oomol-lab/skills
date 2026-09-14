@@ -3,10 +3,9 @@ name: oo-claid-ai
 description: "Claid AI (claid.ai). Use this skill for ANY Claid AI request — reading, creating, and updating data. Whenever a task involves Claid AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Claid AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["claid_ai"]
   icon: "https://static.oomol.com/logo/third-party/claid_ai.svg"
 ---

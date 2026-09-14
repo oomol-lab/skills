@@ -3,10 +3,9 @@ name: oo-imagetranslate-ai
 description: "ImageTranslate.AI (imagetranslate.ai). Use this skill for ANY ImageTranslate.AI request — searching and reading data. Whenever a task involves ImageTranslate.AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ImageTranslate.AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["imagetranslate_ai"]
   icon: "https://static.oomol.com/logo/third-party/imagetranslate_ai.png"
 ---

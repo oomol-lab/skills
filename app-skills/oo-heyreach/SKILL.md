@@ -3,10 +3,9 @@ name: oo-heyreach
 description: "HeyReach (heyreach.io). Use this skill for ANY HeyReach request — reading, creating, and updating data. Whenever a task involves HeyReach, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "HeyReach"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["heyreach"]
   icon: "https://static.oomol.com/logo/third-party/heyreach.svg"
 ---

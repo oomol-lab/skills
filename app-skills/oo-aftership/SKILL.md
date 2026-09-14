@@ -3,10 +3,9 @@ name: oo-aftership
 description: "AfterShip (aftership.com). Use this skill for ANY AfterShip request — reading, creating, updating, and deleting data. Whenever a task involves AfterShip, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AfterShip"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["aftership"]
   icon: "https://static.oomol.com/logo/third-party/aftership.svg"
 ---

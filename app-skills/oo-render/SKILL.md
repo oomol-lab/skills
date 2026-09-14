@@ -3,10 +3,9 @@ name: oo-render
 description: "Render (render.com). Use this skill for ANY Render request — reading, creating, updating, and deleting data. Whenever a task involves Render, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Render"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["render"]
   icon: "https://static.oomol.com/logo/third-party/Render.svg"
 ---

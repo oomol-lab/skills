@@ -3,10 +3,9 @@ name: oo-sendbird
 description: "Sendbird (sendbird.com). Use this skill for ANY Sendbird request — reading, creating, updating, and deleting data. Whenever a task involves Sendbird, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sendbird"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sendbird"]
   icon: "https://static.oomol.com/logo/third-party/Sendbird.svg"
 ---

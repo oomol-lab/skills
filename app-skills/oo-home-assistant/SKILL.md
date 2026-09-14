@@ -3,10 +3,9 @@ name: oo-home-assistant
 description: "Home Assistant (home-assistant.io). Use this skill for ANY Home Assistant request — reading, creating, updating, and deleting data. Whenever a task involves Home Assistant, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Home Assistant"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["home_assistant"]
   icon: "https://static.oomol.com/logo/third-party/home_assistant.svg"
 ---

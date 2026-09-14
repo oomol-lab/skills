@@ -3,10 +3,9 @@ name: oo-winston-ai
 description: "Winston AI (gowinston.ai). Use this skill for ANY Winston AI request — searching and reading data. Whenever a task involves Winston AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Winston AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["winston_ai"]
   icon: "https://static.oomol.com/logo/third-party/winston_ai.svg"
 ---

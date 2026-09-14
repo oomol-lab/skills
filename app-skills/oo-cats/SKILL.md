@@ -3,10 +3,9 @@ name: oo-cats
 description: "CATS (catsone.com). Use this skill for ANY CATS request — searching and reading data. Whenever a task involves CATS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CATS"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cats"]
   icon: "https://static.oomol.com/logo/third-party/cats.svg"
 ---

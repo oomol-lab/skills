@@ -3,10 +3,9 @@ name: oo-miro
 description: "Miro (miro.com). Use this skill for ANY Miro request — reading, creating, updating, and deleting data. Whenever a task involves Miro, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Miro"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["miro"]
   icon: "https://static.oomol.com/logo/third-party/miro.svg"
 ---

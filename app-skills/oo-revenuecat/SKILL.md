@@ -3,10 +3,9 @@ name: oo-revenuecat
 description: "RevenueCat (revenuecat.com). Use this skill for ANY RevenueCat request — searching and reading data. Whenever a task involves RevenueCat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "RevenueCat"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["revenuecat"]
   icon: "https://static.oomol.com/logo/third-party/revenuecat.svg"
 ---

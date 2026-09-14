@@ -3,10 +3,9 @@ name: oo-e2b
 description: "E2B (e2b.dev). Use this skill for ANY E2B request — reading, creating, updating, and deleting data. Whenever a task involves E2B, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "E2B"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["e2b"]
   icon: "https://static.oomol.com/logo/third-party/e2b.svg"
 ---

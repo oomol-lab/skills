@@ -3,10 +3,9 @@ name: oo-laravel-cloud
 description: "Laravel Cloud (cloud.laravel.com). Use this skill for ANY Laravel Cloud request — searching and reading data. Whenever a task involves Laravel Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Laravel Cloud"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["laravel_cloud"]
   icon: "https://static.oomol.com/logo/third-party/laravel_cloud.svg"
 ---

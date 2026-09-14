@@ -3,10 +3,9 @@ name: oo-arcgis-online
 description: "ArcGIS Online (arcgis.com). Use this skill for ANY ArcGIS Online request — searching and reading data. Whenever a task involves ArcGIS Online, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ArcGIS Online"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["arcgis_online"]
   icon: "https://static.oomol.com/logo/third-party/arcgis_online.svg"
 ---

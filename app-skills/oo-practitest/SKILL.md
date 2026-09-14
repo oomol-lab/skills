@@ -3,10 +3,9 @@ name: oo-practitest
 description: "PractiTest (practitest.com). Use this skill for ANY PractiTest request — reading, creating, updating, and deleting data. Whenever a task involves PractiTest, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PractiTest"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["practitest"]
   icon: "https://static.oomol.com/logo/third-party/practitest.png"
 ---

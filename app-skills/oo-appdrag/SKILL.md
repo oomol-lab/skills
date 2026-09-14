@@ -3,10 +3,9 @@ name: oo-appdrag
 description: "AppDrag (appdrag.com). Use this skill for ANY AppDrag request — searching and reading data. Whenever a task involves AppDrag, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AppDrag"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["appdrag"]
   icon: "https://static.oomol.com/logo/third-party/appdrag.svg"
 ---

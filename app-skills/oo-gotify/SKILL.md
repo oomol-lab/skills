@@ -3,10 +3,9 @@ name: oo-gotify
 description: "Gotify (gotify.net). Use this skill for ANY Gotify request — reading, creating, and updating data. Whenever a task involves Gotify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Gotify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gotify"]
   icon: "https://static.oomol.com/logo/third-party/gotify.svg"
 ---

@@ -3,11 +3,11 @@ name: oo-apple-ads
 description: "Apple Ads (ads.apple.com). Use this skill for ANY Apple Ads request — reading, creating, updating, and deleting data. Whenever a task involves Apple Ads, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Apple Ads"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["apple_ads"]
+  icon: "https://static.oomol.com/logo/third-party/apple_ads.svg"
 ---
 
 # Apple Ads

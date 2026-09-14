@@ -3,10 +3,9 @@ name: oo-survey-monkey
 description: "SurveyMonkey (surveymonkey.com). Use this skill for ANY SurveyMonkey request — reading, creating, and updating data. Whenever a task involves SurveyMonkey, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SurveyMonkey"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["survey_monkey"]
   icon: "https://static.oomol.com/logo/third-party/survey_monkey.svg"
 ---

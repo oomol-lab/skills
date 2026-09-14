@@ -3,10 +3,9 @@ name: oo-storecensus
 description: "StoreCensus (storecensus.com). Use this skill for ANY StoreCensus request — searching and reading data. Whenever a task involves StoreCensus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "StoreCensus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["storecensus"]
   icon: "https://static.oomol.com/logo/third-party/storecensus.png"
 ---

@@ -3,10 +3,9 @@ name: oo-gosquared
 description: "GoSquared (gosquared.com). Use this skill for ANY GoSquared request — searching and reading data. Whenever a task involves GoSquared, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "GoSquared"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gosquared"]
   icon: "https://static.oomol.com/logo/third-party/gosquared.png"
 ---

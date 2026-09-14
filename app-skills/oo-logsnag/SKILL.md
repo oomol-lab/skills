@@ -3,10 +3,9 @@ name: oo-logsnag
 description: "LogSnag (logsnag.com). Use this skill for ANY LogSnag request — reading, creating, and updating data. Whenever a task involves LogSnag, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LogSnag"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["logsnag"]
   icon: "https://static.oomol.com/logo/third-party/logsnag.svg"
 ---

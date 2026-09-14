@@ -3,10 +3,9 @@ name: oo-detrack
 description: "Detrack (detrack.com). Use this skill for ANY Detrack request — reading, creating, updating, and deleting data. Whenever a task involves Detrack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Detrack"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["detrack"]
   icon: "https://static.oomol.com/logo/third-party/detrack.svg"
 ---

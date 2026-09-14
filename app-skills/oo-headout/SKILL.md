@@ -3,10 +3,9 @@ name: oo-headout
 description: "Headout (headout.com). Use this skill for ANY Headout request — searching and reading data. Whenever a task involves Headout, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Headout"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["headout"]
   icon: "https://static.oomol.com/logo/third-party/headout.png"
 ---

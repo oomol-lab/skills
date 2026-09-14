@@ -3,10 +3,9 @@ name: oo-ragie
 description: "Ragie (ragie.ai). Use this skill for ANY Ragie request — reading, creating, updating, and deleting data. Whenever a task involves Ragie, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ragie"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ragie"]
   icon: "https://static.oomol.com/logo/third-party/Ragie.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-concord
 description: "Concord (concord.app). Use this skill for ANY Concord request — searching and reading data. Whenever a task involves Concord, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Concord"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["concord"]
   icon: "https://static.oomol.com/logo/third-party/concord.svg"
 ---

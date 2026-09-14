@@ -3,10 +3,9 @@ name: oo-stripe
 description: "Stripe (stripe.com). Use this skill for ANY Stripe request — reading, creating, updating, and deleting data. Whenever a task involves Stripe, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Stripe"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["stripe"]
   icon: "https://static.oomol.com/logo/third-party/stripe.svg"
 ---

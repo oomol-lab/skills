@@ -3,10 +3,9 @@ name: oo-zixflow
 description: "Zixflow (zixflow.com). Use this skill for ANY Zixflow request — reading, creating, updating, and deleting data. Whenever a task involves Zixflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Zixflow"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zixflow"]
   icon: "https://static.oomol.com/logo/third-party/zixflow.svg"
 ---

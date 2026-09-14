@@ -3,10 +3,9 @@ name: oo-api-ninjas
 description: "API Ninjas (api-ninjas.com). Use this skill for ANY API Ninjas request — searching and reading data. Whenever a task involves API Ninjas, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "API Ninjas"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["api_ninjas"]
   icon: "https://static.oomol.com/logo/third-party/API%20Ninjas.svg"
 ---

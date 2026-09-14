@@ -3,10 +3,9 @@ name: oo-dailybot
 description: "Dailybot (dailybot.com). Use this skill for ANY Dailybot request — reading, creating, and updating data. Whenever a task involves Dailybot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Dailybot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dailybot"]
   icon: "https://static.oomol.com/logo/third-party/dailybot.svg"
 ---

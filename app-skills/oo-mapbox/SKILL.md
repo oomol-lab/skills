@@ -3,10 +3,9 @@ name: oo-mapbox
 description: "Mapbox (mapbox.com). Use this skill for ANY Mapbox request — reading, creating, and updating data. Whenever a task involves Mapbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mapbox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mapbox"]
   icon: "https://static.oomol.com/logo/third-party/Mapbox.svg"
 ---

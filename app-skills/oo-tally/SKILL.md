@@ -3,10 +3,9 @@ name: oo-tally
 description: "Tally (tally.so). Use this skill for ANY Tally request — searching and reading data. Whenever a task involves Tally, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tally"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tally"]
   icon: "https://static.oomol.com/logo/third-party/tally.svg"
 ---

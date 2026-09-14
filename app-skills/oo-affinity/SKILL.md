@@ -3,10 +3,9 @@ name: oo-affinity
 description: "Affinity (affinity.co). Use this skill for ANY Affinity request — searching and reading data. Whenever a task involves Affinity, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Affinity"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["affinity"]
   icon: "https://static.oomol.com/logo/third-party/affinity.svg"
 ---

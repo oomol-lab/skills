@@ -3,10 +3,9 @@ name: oo-indiegogo
 description: "Indiegogo (indiegogo.com). Use this skill for ANY Indiegogo request — searching and reading data. Whenever a task involves Indiegogo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Indiegogo"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["indiegogo"]
   icon: "https://static.oomol.com/logo/third-party/indiegogo.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-abyssale
 description: "Abyssale (abyssale.com). Use this skill for ANY Abyssale request — reading, creating, and updating data. Whenever a task involves Abyssale, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Abyssale"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["abyssale"]
   icon: "https://static.oomol.com/logo/third-party/abyssale.svg"
 ---

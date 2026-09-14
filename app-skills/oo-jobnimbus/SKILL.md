@@ -3,10 +3,9 @@ name: oo-jobnimbus
 description: "JobNimbus (jobnimbus.com). Use this skill for ANY JobNimbus request — reading, creating, and updating data. Whenever a task involves JobNimbus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "JobNimbus"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["jobnimbus"]
   icon: "https://static.oomol.com/logo/third-party/jobnimbus.png"
 ---

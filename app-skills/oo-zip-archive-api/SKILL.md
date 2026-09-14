@@ -3,10 +3,9 @@ name: oo-zip-archive-api
 description: "Zip Archive API (archiveapi.com). Use this skill for ANY Zip Archive API request — reading, creating, and updating data. Whenever a task involves Zip Archive API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Zip Archive API"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zip_archive_api"]
   icon: "https://static.oomol.com/logo/third-party/zip_archive_api.png"
 ---

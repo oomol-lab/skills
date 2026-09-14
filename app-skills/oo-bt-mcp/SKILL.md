@@ -3,10 +3,9 @@ name: oo-bt-mcp
 description: "BT Panel MCP (bt.cn). Use this skill for ANY BT Panel MCP request — searching and reading data. Whenever a task involves BT Panel MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BT Panel MCP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bt_mcp"]
   icon: "https://static.oomol.com/logo/third-party/bt_mcp.png"
 ---

@@ -3,10 +3,9 @@ name: oo-samcart
 description: "SamCart (samcart.com). Use this skill for ANY SamCart request — reading, creating, and updating data. Whenever a task involves SamCart, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SamCart"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["samcart"]
   icon: "https://static.oomol.com/logo/third-party/samcart.svg"
 ---

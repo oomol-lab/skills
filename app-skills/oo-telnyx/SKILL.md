@@ -3,10 +3,9 @@ name: oo-telnyx
 description: "Telnyx (telnyx.com). Use this skill for ANY Telnyx request — reading, creating, and updating data. Whenever a task involves Telnyx, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Telnyx"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["telnyx"]
   icon: "https://static.oomol.com/logo/third-party/telnyx.png"
 ---

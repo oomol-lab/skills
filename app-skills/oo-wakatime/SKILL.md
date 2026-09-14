@@ -3,10 +3,9 @@ name: oo-wakatime
 description: "WakaTime (wakatime.com). Use this skill for ANY WakaTime request — searching and reading data. Whenever a task involves WakaTime, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WakaTime"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wakatime"]
   icon: "https://static.oomol.com/logo/third-party/WakaTime.svg"
 ---

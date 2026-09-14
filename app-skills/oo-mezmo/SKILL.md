@@ -3,10 +3,9 @@ name: oo-mezmo
 description: "Mezmo (mezmo.com). Use this skill for ANY Mezmo request — searching and reading data. Whenever a task involves Mezmo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mezmo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mezmo"]
   icon: "https://static.oomol.com/logo/third-party/mezmo.svg"
 ---

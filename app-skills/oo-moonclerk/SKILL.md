@@ -3,10 +3,9 @@ name: oo-moonclerk
 description: "MoonClerk (moonclerk.com). Use this skill for ANY MoonClerk request — searching and reading data. Whenever a task involves MoonClerk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "MoonClerk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["moonclerk"]
   icon: "https://static.oomol.com/logo/third-party/moonclerk.svg"
 ---

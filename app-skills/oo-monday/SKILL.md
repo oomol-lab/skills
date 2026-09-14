@@ -3,10 +3,9 @@ name: oo-monday
 description: "monday (monday.com). Use this skill for ANY monday request — reading, creating, updating, and deleting data. Whenever a task involves monday, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "monday"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["monday"]
   icon: "https://static.oomol.com/logo/third-party/Monday.svg"
 ---

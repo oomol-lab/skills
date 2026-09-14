@@ -3,10 +3,9 @@ name: oo-instatus
 description: "Instatus (instatus.com). Use this skill for ANY Instatus request — reading, creating, updating, and deleting data. Whenever a task involves Instatus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Instatus"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["instatus"]
   icon: "https://static.oomol.com/logo/third-party/instatus.svg"
 ---

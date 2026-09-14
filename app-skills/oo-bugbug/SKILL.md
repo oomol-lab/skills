@@ -3,10 +3,9 @@ name: oo-bugbug
 description: "BugBug (bugbug.io). Use this skill for ANY BugBug request — searching and reading data. Whenever a task involves BugBug, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BugBug"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bugbug"]
   icon: "https://static.oomol.com/logo/third-party/Bugbug.png"
 ---

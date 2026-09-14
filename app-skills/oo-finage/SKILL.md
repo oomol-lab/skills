@@ -3,10 +3,9 @@ name: oo-finage
 description: "Finage (finage.co.uk). Use this skill for ANY Finage request — reading, creating, and updating data. Whenever a task involves Finage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Finage"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["finage"]
   icon: "https://static.oomol.com/logo/third-party/Finage.svg"
 ---

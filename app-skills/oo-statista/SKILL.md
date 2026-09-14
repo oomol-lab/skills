@@ -3,10 +3,9 @@ name: oo-statista
 description: "Statista (statista.com). Use this skill for ANY Statista request — searching and reading data. Whenever a task involves Statista, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Statista"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["statista"]
   icon: "https://static.oomol.com/logo/third-party/statista.svg"
 ---

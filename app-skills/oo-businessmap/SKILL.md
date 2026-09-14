@@ -3,10 +3,9 @@ name: oo-businessmap
 description: "Businessmap (businessmap.io). Use this skill for ANY Businessmap request — reading, creating, updating, and deleting data. Whenever a task involves Businessmap, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Businessmap"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["businessmap"]
   icon: "https://static.oomol.com/logo/third-party/businessmap.svg"
 ---

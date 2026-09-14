@@ -3,10 +3,9 @@ name: oo-dealnews
 description: "DealNews (dealnews.com). Use this skill for ANY DealNews request — searching and reading data. Whenever a task involves DealNews, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DealNews"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["dealnews"]
   icon: "https://static.oomol.com/logo/third-party/dealnews.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-twilio
 description: "Twilio (twilio.com). Use this skill for ANY Twilio request — reading, creating, and updating data. Whenever a task involves Twilio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Twilio"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["twilio"]
   icon: "https://static.oomol.com/logo/third-party/twilio.svg"
 ---

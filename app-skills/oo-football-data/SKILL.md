@@ -3,10 +3,9 @@ name: oo-football-data
 description: "football-data.org (football-data.org). Use this skill for ANY football-data.org request — searching and reading data. Whenever a task involves football-data.org, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "football-data.org"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["football_data"]
   icon: "https://static.oomol.com/logo/third-party/football_data.png"
 ---

@@ -3,10 +3,9 @@ name: oo-it-glue
 description: "IT Glue (itglue.com). Use this skill for ANY IT Glue request — searching and reading data. Whenever a task involves IT Glue, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "IT Glue"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["it_glue"]
   icon: "https://static.oomol.com/logo/third-party/it_glue.svg"
 ---

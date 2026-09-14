@@ -3,10 +3,9 @@ name: oo-subvisory
 description: "Subvisory (subvisory.com). Use this skill for ANY Subvisory request — reading, creating, updating, and deleting data. Whenever a task involves Subvisory, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Subvisory"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["subvisory"]
   icon: "https://static.oomol.com/logo/third-party/subvisory.svg"
 ---

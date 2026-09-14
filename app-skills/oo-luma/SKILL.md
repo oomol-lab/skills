@@ -3,10 +3,9 @@ name: oo-luma
 description: "Luma (lu.ma). Use this skill for ANY Luma request — searching and reading data. Whenever a task involves Luma, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Luma"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["luma"]
   icon: "https://static.oomol.com/logo/third-party/luma.png"
 ---

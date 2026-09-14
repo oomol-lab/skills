@@ -3,10 +3,9 @@ name: oo-sage-sales-management
 description: "Sage Sales Management (forcemanager.com). Use this skill for ANY Sage Sales Management request — reading, creating, updating, and deleting data. Whenever a task involves Sage Sales Management, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sage Sales Management"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sage_sales_management"]
   icon: "https://static.oomol.com/logo/third-party/sage_sales_management.svg"
 ---

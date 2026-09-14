@@ -3,10 +3,9 @@ name: oo-dropbox
 description: "Dropbox (dropbox.com). Use this skill for ANY Dropbox request — reading, creating, updating, and deleting data. Whenever a task involves Dropbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Dropbox"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["dropbox"]
   icon: "https://static.oomol.com/logo/third-party/Dropbox.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-gem
 description: "Gem (gem.com). Use this skill for ANY Gem request — searching and reading data. Whenever a task involves Gem, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Gem"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gem"]
   icon: "https://static.oomol.com/logo/third-party/gem.svg"
 ---

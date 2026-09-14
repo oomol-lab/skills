@@ -3,10 +3,9 @@ name: oo-klaviyo
 description: "Klaviyo (klaviyo.com). Use this skill for ANY Klaviyo request — reading, creating, and updating data. Whenever a task involves Klaviyo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Klaviyo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["klaviyo"]
   icon: "https://static.oomol.com/logo/third-party/klaviyo.svg"
 ---

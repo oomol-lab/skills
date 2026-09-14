@@ -3,10 +3,9 @@ name: oo-karakeep
 description: "Karakeep (karakeep.app). Use this skill for ANY Karakeep request — reading, creating, updating, and deleting data. Whenever a task involves Karakeep, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Karakeep"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["karakeep"]
   icon: "https://static.oomol.com/logo/third-party/karakeep.svg"
 ---

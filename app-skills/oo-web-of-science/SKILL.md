@@ -3,10 +3,9 @@ name: oo-web-of-science
 description: "Web of Science (clarivate.com). Use this skill for ANY Web of Science request — searching and reading data. Whenever a task involves Web of Science, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Web of Science"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["web_of_science"]
   icon: "https://static.oomol.com/logo/third-party/web_of_science.svg"
 ---

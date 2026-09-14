@@ -3,10 +3,9 @@ name: oo-docker-hub
 description: "Docker Hub (hub.docker.com). Use this skill for ANY Docker Hub request — reading, creating, updating, and deleting data. Whenever a task involves Docker Hub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Docker Hub"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["docker_hub"]
   icon: "https://static.oomol.com/logo/third-party/Docker%20Hub.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-diffy
 description: "Diffy (diffy.website). Use this skill for ANY Diffy request — searching and reading data. Whenever a task involves Diffy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Diffy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["diffy"]
   icon: "https://static.oomol.com/logo/third-party/diffy.svg"
 ---

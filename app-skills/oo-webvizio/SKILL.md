@@ -3,10 +3,9 @@ name: oo-webvizio
 description: "Webvizio (webvizio.com). Use this skill for ANY Webvizio request — reading, creating, updating, and deleting data. Whenever a task involves Webvizio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Webvizio"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["webvizio"]
   icon: "https://static.oomol.com/logo/third-party/webvizio.png"
 ---

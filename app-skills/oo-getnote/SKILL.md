@@ -3,10 +3,9 @@ name: oo-getnote
 description: "Get Biji (biji.com). Use this skill for ANY Get Biji request — reading, creating, updating, and deleting data. Whenever a task involves Get Biji, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Get Biji"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["getnote"]
   icon: "https://static.oomol.com/logo/third-party/getnote.png"
 ---

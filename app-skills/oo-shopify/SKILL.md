@@ -3,10 +3,9 @@ name: oo-shopify
 description: "Shopify REST Admin (Legacy) (shopify.com). Use this skill for ANY Shopify REST Admin (Legacy) request — searching and reading data. Whenever a task involves Shopify REST Admin (Legacy), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Shopify REST Admin (Legacy)"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["shopify"]
   icon: "https://static.oomol.com/logo/third-party/shopify.svg"
 ---

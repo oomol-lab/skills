@@ -3,10 +3,9 @@ name: oo-tisane
 description: "Tisane (tisane.ai). Use this skill for ANY Tisane request — searching and reading data. Whenever a task involves Tisane, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tisane"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tisane"]
   icon: "https://static.oomol.com/logo/third-party/tisane.svg"
 ---

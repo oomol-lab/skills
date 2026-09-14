@@ -3,10 +3,9 @@ name: oo-amara
 description: "Amara (amara.org). Use this skill for ANY Amara request — reading, creating, updating, and deleting data. Whenever a task involves Amara, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Amara"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["amara"]
   icon: "https://static.oomol.com/logo/third-party/Amara.svg"
 ---

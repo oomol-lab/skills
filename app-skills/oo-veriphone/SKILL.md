@@ -3,10 +3,9 @@ name: oo-veriphone
 description: "Veriphone. Use this skill for ANY Veriphone request — searching and reading data. Whenever a task involves Veriphone, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Veriphone"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["veriphone"]
   icon: "https://static.oomol.com/logo/third-party/Veriphone.svg"
 ---
