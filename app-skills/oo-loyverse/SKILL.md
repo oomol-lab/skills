@@ -3,10 +3,9 @@ name: oo-loyverse
 description: "Loyverse (loyverse.com). Use this skill for ANY Loyverse request — searching and reading data. Whenever a task involves Loyverse, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Loyverse"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["loyverse"]
   icon: "https://static.oomol.com/logo/third-party/loyverse.svg"
 ---

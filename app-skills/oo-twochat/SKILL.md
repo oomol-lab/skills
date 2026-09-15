@@ -3,10 +3,9 @@ name: oo-twochat
 description: "2Chat (2chat.co). Use this skill for ANY 2Chat request — reading, creating, and updating data. Whenever a task involves 2Chat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "2Chat"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["twochat"]
   icon: "https://static.oomol.com/logo/third-party/twochat.png"
 ---

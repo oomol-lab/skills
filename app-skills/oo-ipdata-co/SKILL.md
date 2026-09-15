@@ -3,10 +3,9 @@ name: oo-ipdata-co
 description: "ipdata.co (ipdata.co). Use this skill for ANY ipdata.co request — searching and reading data. Whenever a task involves ipdata.co, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ipdata.co"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ipdata_co"]
   icon: "https://static.oomol.com/logo/third-party/ipdata_co.svg"
 ---

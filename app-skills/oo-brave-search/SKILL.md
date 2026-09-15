@@ -3,10 +3,9 @@ name: oo-brave-search
 description: "Brave Search (search.brave.com). Use this skill for ANY Brave Search request — searching and reading data. Whenever a task involves Brave Search, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Brave Search"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["brave_search"]
   icon: "https://static.oomol.com/logo/third-party/brave_search.svg"
 ---

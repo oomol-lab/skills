@@ -3,10 +3,9 @@ name: oo-postman
 description: "Postman (postman.com). Use this skill for ANY Postman request — reading, creating, updating, and deleting data. Whenever a task involves Postman, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Postman"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["postman"]
   icon: "https://static.oomol.com/logo/third-party/Postman.webp"
 ---

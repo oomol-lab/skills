@@ -3,10 +3,9 @@ name: oo-apiflash
 description: "ApiFlash (apiflash.com). Use this skill for ANY ApiFlash request — searching and reading data. Whenever a task involves ApiFlash, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ApiFlash"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["apiflash"]
   icon: "https://static.oomol.com/logo/third-party/Apiflash.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-mem0
 description: "Mem0 (mem0.ai). Use this skill for ANY Mem0 request — reading, creating, updating, and deleting data. Whenever a task involves Mem0, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mem0"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mem0"]
   icon: "https://static.oomol.com/logo/third-party/Mem0.svg"
 ---

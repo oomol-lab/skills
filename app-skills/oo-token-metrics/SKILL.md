@@ -3,10 +3,9 @@ name: oo-token-metrics
 description: "Token Metrics (tokenmetrics.com). Use this skill for ANY Token Metrics request — searching and reading data. Whenever a task involves Token Metrics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Token Metrics"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["token_metrics"]
   icon: "https://static.oomol.com/logo/third-party/token_metrics.png"
 ---

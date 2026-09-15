@@ -3,10 +3,9 @@ name: oo-theirstack
 description: "TheirStack (theirstack.com). Use this skill for ANY TheirStack request — searching and reading data. Whenever a task involves TheirStack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TheirStack"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["theirstack"]
   icon: "https://static.oomol.com/logo/third-party/theirstack.svg"
 ---

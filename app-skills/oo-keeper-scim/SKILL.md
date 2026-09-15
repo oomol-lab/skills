@@ -3,10 +3,9 @@ name: oo-keeper-scim
 description: "Keeper SCIM (keepersecurity.com). Use this skill for ANY Keeper SCIM request — searching and reading data. Whenever a task involves Keeper SCIM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Keeper SCIM"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["keeper_scim"]
   icon: "https://static.oomol.com/logo/third-party/keeper_scim.png"
 ---

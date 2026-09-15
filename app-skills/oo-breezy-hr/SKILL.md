@@ -3,10 +3,9 @@ name: oo-breezy-hr
 description: "Breezy HR (breezy.hr). Use this skill for ANY Breezy HR request — searching and reading data. Whenever a task involves Breezy HR, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Breezy HR"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["breezy_hr"]
   icon: "https://static.oomol.com/logo/third-party/breezy_hr.png"
 ---

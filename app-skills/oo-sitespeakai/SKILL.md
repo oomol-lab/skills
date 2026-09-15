@@ -3,10 +3,9 @@ name: oo-sitespeakai
 description: "SiteSpeakAI (sitespeak.ai). Use this skill for ANY SiteSpeakAI request — reading, creating, updating, and deleting data. Whenever a task involves SiteSpeakAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SiteSpeakAI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sitespeakai"]
   icon: "https://static.oomol.com/logo/third-party/sitespeakai.png"
 ---

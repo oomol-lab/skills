@@ -3,10 +3,9 @@ name: oo-smartsuite
 description: "SmartSuite (smartsuite.com). Use this skill for ANY SmartSuite request — reading, creating, updating, and deleting data. Whenever a task involves SmartSuite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SmartSuite"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["smartsuite"]
   icon: "https://static.oomol.com/logo/third-party/smartsuite.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-sendmator
 description: "Sendmator (sendmator.com). Use this skill for ANY Sendmator request — reading, creating, updating, and deleting data. Whenever a task involves Sendmator, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sendmator"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["sendmator"]
   icon: "https://static.oomol.com/logo/third-party/sendmator.png"
 ---

@@ -3,10 +3,9 @@ name: oo-aliyun-sls
 description: "Alibaba Cloud SLS (alibabacloud.com). Use this skill for ANY Alibaba Cloud SLS request — searching and reading data. Whenever a task involves Alibaba Cloud SLS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Alibaba Cloud SLS"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["aliyun_sls"]
   icon: "https://static.oomol.com/logo/third-party/aliyun_sls.svg"
 ---

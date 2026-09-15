@@ -3,10 +3,9 @@ name: oo-eventzilla
 description: "Eventzilla (eventzilla.net). Use this skill for ANY Eventzilla request — searching and reading data. Whenever a task involves Eventzilla, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Eventzilla"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["eventzilla"]
   icon: "https://static.oomol.com/logo/third-party/eventzilla.svg"
 ---

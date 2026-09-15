@@ -3,10 +3,9 @@ name: oo-fluxguard
 description: "Fluxguard (fluxguard.com). Use this skill for ANY Fluxguard request — reading, creating, updating, and deleting data. Whenever a task involves Fluxguard, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fluxguard"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fluxguard"]
   icon: "https://static.oomol.com/logo/third-party/fluxguard.svg"
 ---

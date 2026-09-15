@@ -3,10 +3,9 @@ name: oo-vectera
 description: "Vectera (go.vectera.com). Use this skill for ANY Vectera request — reading, creating, and updating data. Whenever a task involves Vectera, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Vectera"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vectera"]
   icon: "https://static.oomol.com/logo/third-party/vectera.svg"
 ---

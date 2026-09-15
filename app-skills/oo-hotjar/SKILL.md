@@ -3,10 +3,9 @@ name: oo-hotjar
 description: "Hotjar (hotjar.com). Use this skill for ANY Hotjar request — reading, creating, and updating data. Whenever a task involves Hotjar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hotjar"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hotjar"]
   icon: "https://static.oomol.com/logo/third-party/hotjar.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-ipinfo-io
 description: "IPinfo (ipinfo.io). Use this skill for ANY IPinfo request — searching and reading data. Whenever a task involves IPinfo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "IPinfo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ipinfo_io"]
   icon: "https://static.oomol.com/logo/third-party/ipinfo_io.png"
 ---

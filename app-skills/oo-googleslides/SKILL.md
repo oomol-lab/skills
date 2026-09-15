@@ -3,10 +3,9 @@ name: oo-googleslides
 description: "Google Slides (workspace.google.com). Use this skill for ANY Google Slides request — reading, creating, and updating data. Whenever a task involves Google Slides, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Slides"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googleslides"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Slides.svg"
 ---

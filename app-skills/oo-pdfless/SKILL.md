@@ -3,10 +3,9 @@ name: oo-pdfless
 description: "Pdfless (pdfless.com). Use this skill for ANY Pdfless request — searching and reading data. Whenever a task involves Pdfless, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Pdfless"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pdfless"]
   icon: "https://static.oomol.com/logo/third-party/Pdfless.svg"
 ---

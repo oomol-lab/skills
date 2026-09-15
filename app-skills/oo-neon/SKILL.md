@@ -3,10 +3,9 @@ name: oo-neon
 description: "Neon (neon.com). Use this skill for ANY Neon request — reading, creating, updating, and deleting data. Whenever a task involves Neon, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Neon"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["neon"]
   icon: "https://static.oomol.com/logo/third-party/Neon.svg"
 ---

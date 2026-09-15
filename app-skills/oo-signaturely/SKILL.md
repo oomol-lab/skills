@@ -3,10 +3,9 @@ name: oo-signaturely
 description: "Signaturely (signaturely.com). Use this skill for ANY Signaturely request — reading, creating, and updating data. Whenever a task involves Signaturely, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Signaturely"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["signaturely"]
   icon: "https://static.oomol.com/logo/third-party/signaturely.svg"
 ---

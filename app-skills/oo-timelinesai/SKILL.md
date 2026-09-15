@@ -3,10 +3,9 @@ name: oo-timelinesai
 description: "TimelinesAI (timelines.ai). Use this skill for ANY TimelinesAI request — reading, creating, and updating data. Whenever a task involves TimelinesAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TimelinesAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["timelinesai"]
   icon: "https://static.oomol.com/logo/third-party/timelinesai.svg"
 ---

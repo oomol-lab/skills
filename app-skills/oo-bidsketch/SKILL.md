@@ -3,10 +3,9 @@ name: oo-bidsketch
 description: "BidSketch (bidsketch.com). Use this skill for ANY BidSketch request — searching and reading data. Whenever a task involves BidSketch, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BidSketch"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bidsketch"]
   icon: "https://static.oomol.com/logo/third-party/bidsketch.svg"
 ---

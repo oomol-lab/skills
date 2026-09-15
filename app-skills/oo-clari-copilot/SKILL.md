@@ -3,10 +3,9 @@ name: oo-clari-copilot
 description: "Clari Copilot (clari.com). Use this skill for ANY Clari Copilot request — searching and reading data. Whenever a task involves Clari Copilot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Clari Copilot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["clari_copilot"]
   icon: "https://static.oomol.com/logo/third-party/clari_copilot.png"
 ---

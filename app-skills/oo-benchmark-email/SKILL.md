@@ -3,10 +3,9 @@ name: oo-benchmark-email
 description: "Benchmark Email (benchmarkemail.com). Use this skill for ANY Benchmark Email request — searching and reading data. Whenever a task involves Benchmark Email, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Benchmark Email"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["benchmark_email"]
   icon: "https://static.oomol.com/logo/third-party/benchmark_email.svg"
 ---

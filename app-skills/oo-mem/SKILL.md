@@ -3,10 +3,9 @@ name: oo-mem
 description: "Mem (mem.ai). Use this skill for ANY Mem request — reading, creating, updating, and deleting data. Whenever a task involves Mem, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mem"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mem"]
   icon: "https://static.oomol.com/logo/third-party/mem.svg"
 ---

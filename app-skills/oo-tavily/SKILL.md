@@ -3,10 +3,9 @@ name: oo-tavily
 description: "Tavily (tavily.com). Use this skill for ANY Tavily request — reading, creating, and updating data. Whenever a task involves Tavily, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tavily"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tavily"]
   icon: "https://static.oomol.com/logo/third-party/Tavily.svg"
 ---

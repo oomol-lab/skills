@@ -3,10 +3,9 @@ name: oo-giphy
 description: "GIPHY (giphy.com). Use this skill for ANY GIPHY request — searching and reading data. Whenever a task involves GIPHY, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "GIPHY"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["giphy"]
   icon: "https://static.oomol.com/logo/third-party/giphy.png"
 ---

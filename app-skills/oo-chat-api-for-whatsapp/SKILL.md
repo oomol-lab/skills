@@ -3,10 +3,9 @@ name: oo-chat-api-for-whatsapp
 description: "Chat API for WhatsApp (chat-api.com). Use this skill for ANY Chat API for WhatsApp request — reading, creating, and updating data. Whenever a task involves Chat API for WhatsApp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Chat API for WhatsApp"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chat_api_for_whatsapp"]
   icon: "https://static.oomol.com/logo/third-party/chat_api_for_whatsapp.png"
 ---

@@ -3,10 +3,9 @@ name: oo-semantic-scholar
 description: "Semantic Scholar (semanticscholar.org). Use this skill for ANY Semantic Scholar request — searching and reading data. Whenever a task involves Semantic Scholar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Semantic Scholar"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["semantic_scholar"]
   icon: "https://static.oomol.com/logo/third-party/semantic_scholar.svg"
 ---

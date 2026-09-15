@@ -3,10 +3,9 @@ name: oo-rosette-text-analytics
 description: "Rosette Text Analytics (babelstreet.com). Use this skill for ANY Rosette Text Analytics request — searching and reading data. Whenever a task involves Rosette Text Analytics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Rosette Text Analytics"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["rosette_text_analytics"]
   icon: "https://static.oomol.com/logo/third-party/rosette_text_analytics.svg"
 ---

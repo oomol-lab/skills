@@ -3,10 +3,9 @@ name: oo-formsite
 description: "Formsite (formsite.com). Use this skill for ANY Formsite request — reading, creating, updating, and deleting data. Whenever a task involves Formsite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Formsite"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["formsite"]
   icon: "https://static.oomol.com/logo/third-party/formsite.svg"
 ---

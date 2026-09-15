@@ -3,10 +3,9 @@ name: oo-railway
 description: "Railway (railway.com). Use this skill for ANY Railway request — reading, creating, updating, and deleting data. Whenever a task involves Railway, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Railway"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["railway"]
   icon: "https://static.oomol.com/logo/third-party/railway.png"
 ---

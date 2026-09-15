@@ -3,10 +3,9 @@ name: oo-datacite
 description: "DataCite (datacite.org). Use this skill for ANY DataCite request — searching and reading data. Whenever a task involves DataCite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DataCite"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["datacite"]
   icon: "https://static.oomol.com/logo/third-party/datacite.svg"
 ---

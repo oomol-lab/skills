@@ -3,10 +3,9 @@ name: oo-cloudflare-r2
 description: "Cloudflare R2 (cloudflare.com). Use this skill for ANY Cloudflare R2 request — reading, creating, updating, and deleting data. Whenever a task involves Cloudflare R2, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.8"
+  version: "1.0.9"
   services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-u301
 description: "U301 (u301.com). Use this skill for ANY U301 request — reading, creating, updating, and deleting data. Whenever a task involves U301, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "U301"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["u301"]
   icon: "https://static.oomol.com/logo/third-party/u301.svg"
 ---

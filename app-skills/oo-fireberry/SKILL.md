@@ -3,10 +3,9 @@ name: oo-fireberry
 description: "Fireberry (fireberry.com). Use this skill for ANY Fireberry request — reading, creating, updating, and deleting data. Whenever a task involves Fireberry, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fireberry"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fireberry"]
   icon: "https://static.oomol.com/logo/third-party/fireberry.svg"
 ---

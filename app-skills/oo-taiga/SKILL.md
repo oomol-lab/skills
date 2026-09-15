@@ -3,10 +3,9 @@ name: oo-taiga
 description: "Taiga (taiga.io). Use this skill for ANY Taiga request — reading, creating, and updating data. Whenever a task involves Taiga, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Taiga"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["taiga"]
   icon: "https://static.oomol.com/logo/third-party/taiga.svg"
 ---

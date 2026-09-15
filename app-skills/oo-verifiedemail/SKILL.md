@@ -3,10 +3,9 @@ name: oo-verifiedemail
 description: "VerifiedEmail (verified.email). Use this skill for ANY VerifiedEmail request — searching and reading data. Whenever a task involves VerifiedEmail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "VerifiedEmail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["verifiedemail"]
   icon: "https://static.oomol.com/logo/third-party/verifiedemail.svg"
 ---

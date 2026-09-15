@@ -3,10 +3,9 @@ name: oo-microsoft-clarity
 description: "Microsoft Clarity (clarity.microsoft.com). Use this skill for ANY Microsoft Clarity request — searching and reading data. Whenever a task involves Microsoft Clarity, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Microsoft Clarity"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["microsoft_clarity"]
   icon: "https://static.oomol.com/logo/third-party/microsoft_clarity.png"
 ---

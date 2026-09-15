@@ -3,10 +3,9 @@ name: oo-energy-performance-certificates
 description: "Energy Performance Certificates (get-energy-performance-data.communities.gov.uk). Use this skill for ANY Energy Performance Certificates request — searching and reading data. Whenever a task involves Energy Performance Certificates, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Energy Performance Certificates"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["energy_performance_certificates"]
   icon: "https://static.oomol.com/logo/third-party/energy_performance_certificates.svg"
 ---

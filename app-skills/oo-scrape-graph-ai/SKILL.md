@@ -3,10 +3,9 @@ name: oo-scrape-graph-ai
 description: "ScrapeGraphAI (scrapegraphai.com). Use this skill for ANY ScrapeGraphAI request — searching and reading data. Whenever a task involves ScrapeGraphAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ScrapeGraphAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["scrape_graph_ai"]
   icon: "https://static.oomol.com/logo/third-party/scrape_graph_ai.svg"
 ---

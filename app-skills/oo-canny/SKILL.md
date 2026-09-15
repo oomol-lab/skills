@@ -3,10 +3,9 @@ name: oo-canny
 description: "Canny (canny.io). Use this skill for ANY Canny request — reading, creating, and updating data. Whenever a task involves Canny, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Canny"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["canny"]
   icon: "https://static.oomol.com/logo/third-party/Canny.svg"
 ---

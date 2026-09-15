@@ -3,10 +3,9 @@ name: oo-new-relic
 description: "New Relic (newrelic.com). Use this skill for ANY New Relic request — reading, creating, updating, and deleting data. Whenever a task involves New Relic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "New Relic"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["new_relic"]
   icon: "https://static.oomol.com/logo/third-party/New%20Relic.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-quo
 description: "Quo (OpenPhone) (quo.com). Use this skill for ANY Quo (OpenPhone) request — reading, creating, updating, and deleting data. Whenever a task involves Quo (OpenPhone), use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Quo (OpenPhone)"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["quo"]
   icon: "https://static.oomol.com/logo/third-party/quo.svg"
 ---

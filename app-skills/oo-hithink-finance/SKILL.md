@@ -3,10 +3,9 @@ name: oo-hithink-finance
 description: "Tonghuashun Financial Data (fuyao.aicubes.cn). Use this skill for ANY Tonghuashun Financial Data request — searching and reading data. Whenever a task involves Tonghuashun Financial Data, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tonghuashun Financial Data"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hithink_finance"]
   icon: "https://static.oomol.com/logo/third-party/hithink_finance.png"
 ---

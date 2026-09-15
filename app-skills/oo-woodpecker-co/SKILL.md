@@ -3,10 +3,9 @@ name: oo-woodpecker-co
 description: "Woodpecker.co (woodpecker.co). Use this skill for ANY Woodpecker.co request — searching and reading data. Whenever a task involves Woodpecker.co, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Woodpecker.co"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["woodpecker_co"]
   icon: "https://static.oomol.com/logo/third-party/woodpecker_co.svg"
 ---

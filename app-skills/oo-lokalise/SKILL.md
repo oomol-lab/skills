@@ -3,10 +3,9 @@ name: oo-lokalise
 description: "Lokalise (lokalise.com). Use this skill for ANY Lokalise request — reading, creating, updating, and deleting data. Whenever a task involves Lokalise, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Lokalise"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lokalise"]
   icon: "https://static.oomol.com/logo/third-party/lokalise.svg"
 ---

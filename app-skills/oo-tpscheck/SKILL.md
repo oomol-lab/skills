@@ -3,10 +3,9 @@ name: oo-tpscheck
 description: "TPSCheck (tpscheck.uk). Use this skill for ANY TPSCheck request — searching and reading data. Whenever a task involves TPSCheck, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TPSCheck"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tpscheck"]
   icon: "https://static.oomol.com/logo/third-party/Tpscheck.svg"
 ---

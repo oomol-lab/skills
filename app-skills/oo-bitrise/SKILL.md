@@ -3,10 +3,9 @@ name: oo-bitrise
 description: "Bitrise (bitrise.io). Use this skill for ANY Bitrise request — reading, creating, and updating data. Whenever a task involves Bitrise, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Bitrise"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bitrise"]
   icon: "https://static.oomol.com/logo/third-party/bitrise.svg"
 ---

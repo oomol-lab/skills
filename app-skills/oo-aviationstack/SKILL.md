@@ -3,10 +3,9 @@ name: oo-aviationstack
 description: "Aviationstack (aviationstack.com). Use this skill for ANY Aviationstack request — searching and reading data. Whenever a task involves Aviationstack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Aviationstack"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aviationstack"]
   icon: "https://static.oomol.com/logo/third-party/aviationstack.png"
 ---

@@ -3,10 +3,9 @@ name: oo-more-trees
 description: "More Trees (moretrees.eco). Use this skill for ANY More Trees request — searching and reading data. Whenever a task involves More Trees, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "More Trees"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["more_trees"]
   icon: "https://static.oomol.com/logo/third-party/more_trees.svg"
 ---

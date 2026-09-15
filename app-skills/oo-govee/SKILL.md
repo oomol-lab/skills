@@ -3,10 +3,9 @@ name: oo-govee
 description: "Govee (govee.com). Use this skill for ANY Govee request — searching and reading data. Whenever a task involves Govee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Govee"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["govee"]
   icon: "https://static.oomol.com/logo/third-party/govee.svg"
 ---

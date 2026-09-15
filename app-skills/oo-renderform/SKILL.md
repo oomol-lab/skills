@@ -3,10 +3,9 @@ name: oo-renderform
 description: "RenderForm (renderform.io). Use this skill for ANY RenderForm request — searching and reading data. Whenever a task involves RenderForm, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "RenderForm"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["renderform"]
   icon: "https://static.oomol.com/logo/third-party/renderform.svg"
 ---

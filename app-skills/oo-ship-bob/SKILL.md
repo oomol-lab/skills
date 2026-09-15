@@ -3,10 +3,9 @@ name: oo-ship-bob
 description: "ShipBob (shipbob.com). Use this skill for ANY ShipBob request — searching and reading data. Whenever a task involves ShipBob, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ShipBob"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ship_bob"]
   icon: "https://static.oomol.com/logo/third-party/ship_bob.png"
 ---

@@ -3,10 +3,9 @@ name: oo-hamsa
 description: "Hamsa (tryhamsa.com). Use this skill for ANY Hamsa request — searching and reading data. Whenever a task involves Hamsa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hamsa"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hamsa"]
   icon: "https://static.oomol.com/logo/third-party/hamsa.svg"
 ---

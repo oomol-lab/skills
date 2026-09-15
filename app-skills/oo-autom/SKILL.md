@@ -3,10 +3,9 @@ name: oo-autom
 description: "Autom (autom.dev). Use this skill for ANY Autom request — searching and reading data. Whenever a task involves Autom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Autom"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["autom"]
   icon: "https://static.oomol.com/logo/third-party/autom.svg"
 ---

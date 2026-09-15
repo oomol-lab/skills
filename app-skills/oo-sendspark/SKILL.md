@@ -3,10 +3,9 @@ name: oo-sendspark
 description: "Sendspark (sendspark.com). Use this skill for ANY Sendspark request — reading, creating, and updating data. Whenever a task involves Sendspark, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sendspark"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sendspark"]
   icon: "https://static.oomol.com/logo/third-party/sendspark.svg"
 ---

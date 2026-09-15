@@ -3,10 +3,9 @@ name: oo-tinybird
 description: "Tinybird (tinybird.co). Use this skill for ANY Tinybird request — searching and reading data. Whenever a task involves Tinybird, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tinybird"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tinybird"]
   icon: "https://static.oomol.com/logo/third-party/tinybird.svg"
 ---

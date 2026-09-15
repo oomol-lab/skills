@@ -3,10 +3,9 @@ name: oo-callerapi
 description: "CallerAPI (callerapi.com). Use this skill for ANY CallerAPI request — searching and reading data. Whenever a task involves CallerAPI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CallerAPI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["callerapi"]
   icon: "https://static.oomol.com/logo/third-party/callerapi.svg"
 ---

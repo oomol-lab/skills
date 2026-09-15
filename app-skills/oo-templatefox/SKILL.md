@@ -3,10 +3,9 @@ name: oo-templatefox
 description: "TemplateFox (templatefox.com). Use this skill for ANY TemplateFox request — reading, creating, and updating data. Whenever a task involves TemplateFox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TemplateFox"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["templatefox"]
   icon: "https://static.oomol.com/logo/third-party/templatefox.png"
 ---

@@ -3,10 +3,9 @@ name: oo-cloudflare-browser-rendering
 description: "Cloudflare Browser Run (developers.cloudflare.com). Use this skill for ANY Cloudflare Browser Run request — searching and reading data. Whenever a task involves Cloudflare Browser Run, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudflare Browser Run"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cloudflare_browser_rendering"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_browser_rendering.svg"
 ---

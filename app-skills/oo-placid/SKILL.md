@@ -3,10 +3,9 @@ name: oo-placid
 description: "Placid (placid.app). Use this skill for ANY Placid request — reading, creating, updating, and deleting data. Whenever a task involves Placid, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Placid"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["placid"]
   icon: "https://static.oomol.com/logo/third-party/placid.png"
 ---

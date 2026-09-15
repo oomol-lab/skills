@@ -3,10 +3,9 @@ name: oo-livesession
 description: "LiveSession (livesession.io). Use this skill for ANY LiveSession request — searching and reading data. Whenever a task involves LiveSession, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LiveSession"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["livesession"]
   icon: "https://static.oomol.com/logo/third-party/livesession.jpg"
 ---

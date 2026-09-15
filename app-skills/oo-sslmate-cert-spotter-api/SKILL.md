@@ -3,10 +3,9 @@ name: oo-sslmate-cert-spotter-api
 description: "Cert Spotter (sslmate.com). Use this skill for ANY Cert Spotter request — reading, creating, updating, and deleting data. Whenever a task involves Cert Spotter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cert Spotter"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sslmate_cert_spotter_api"]
   icon: "https://static.oomol.com/logo/third-party/SSLMate%20Cert%20Spotter%20API.svg"
 ---

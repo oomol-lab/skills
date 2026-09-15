@@ -3,10 +3,9 @@ name: oo-daytona
 description: "Daytona (daytona.io). Use this skill for ANY Daytona request — reading, creating, updating, and deleting data. Whenever a task involves Daytona, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Daytona"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["daytona"]
   icon: "https://static.oomol.com/logo/third-party/daytona.svg"
 ---

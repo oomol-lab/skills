@@ -3,10 +3,9 @@ name: oo-v2ex
 description: "V2EX (v2ex.com). Use this skill for ANY V2EX request — reading, creating, updating, and deleting data. Whenever a task involves V2EX, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "V2EX"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["v2ex"]
   icon: "https://static.oomol.com/logo/third-party/v2ex.png"
 ---

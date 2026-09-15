@@ -3,10 +3,9 @@ name: oo-chatbotkit
 description: "ChatBotKit (chatbotkit.com). Use this skill for ANY ChatBotKit request — reading, creating, and updating data. Whenever a task involves ChatBotKit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ChatBotKit"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["chatbotkit"]
   icon: "https://static.oomol.com/logo/third-party/Chatbotkit.svg"
 ---

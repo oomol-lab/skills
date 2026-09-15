@@ -3,10 +3,9 @@ name: oo-classmarker
 description: "ClassMarker (classmarker.com). Use this skill for ANY ClassMarker request — searching and reading data. Whenever a task involves ClassMarker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ClassMarker"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["classmarker"]
   icon: "https://static.oomol.com/logo/third-party/classmarker.png"
 ---

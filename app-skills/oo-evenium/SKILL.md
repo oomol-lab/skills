@@ -3,10 +3,9 @@ name: oo-evenium
 description: "Evenium (corp.evenium.com). Use this skill for ANY Evenium request — reading, creating, and updating data. Whenever a task involves Evenium, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Evenium"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["evenium"]
   icon: "https://static.oomol.com/logo/third-party/evenium.svg"
 ---

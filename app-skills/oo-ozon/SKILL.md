@@ -3,10 +3,9 @@ name: oo-ozon
 description: "Ozon (ozon.ru). Use this skill for ANY Ozon request — searching and reading data. Whenever a task involves Ozon, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ozon"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ozon"]
   icon: "https://static.oomol.com/logo/third-party/ozon.png"
 ---

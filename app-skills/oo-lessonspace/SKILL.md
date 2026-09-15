@@ -3,10 +3,9 @@ name: oo-lessonspace
 description: "Lessonspace (thelessonspace.com). Use this skill for ANY Lessonspace request — reading, creating, and updating data. Whenever a task involves Lessonspace, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Lessonspace"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lessonspace"]
   icon: "https://static.oomol.com/logo/third-party/lessonspace.svg"
 ---

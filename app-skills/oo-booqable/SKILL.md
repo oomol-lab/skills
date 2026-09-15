@@ -3,10 +3,9 @@ name: oo-booqable
 description: "Booqable (booqable.com). Use this skill for ANY Booqable request — reading, creating, and updating data. Whenever a task involves Booqable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Booqable"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["booqable"]
   icon: "https://static.oomol.com/logo/third-party/booqable.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-wp-maps
 description: "WP Maps (wpmaps.com). Use this skill for ANY WP Maps request — reading, creating, updating, and deleting data. Whenever a task involves WP Maps, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WP Maps"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["wp_maps"]
   icon: "https://static.oomol.com/logo/third-party/wp_maps.svg"
 ---

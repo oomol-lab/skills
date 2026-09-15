@@ -3,10 +3,9 @@ name: oo-longbridge
 description: "Longbridge (longbridge.com). Use this skill for ANY Longbridge request — reading, creating, and updating data. Whenever a task involves Longbridge, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Longbridge"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["longbridge"]
   icon: "https://static.oomol.com/logo/third-party/longbridge.png"
 ---

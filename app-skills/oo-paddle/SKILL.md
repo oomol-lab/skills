@@ -3,10 +3,9 @@ name: oo-paddle
 description: "Paddle (paddle.com). Use this skill for ANY Paddle request — reading, creating, and updating data. Whenever a task involves Paddle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Paddle"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["paddle"]
   icon: "https://static.oomol.com/logo/third-party/paddle.svg"
 ---

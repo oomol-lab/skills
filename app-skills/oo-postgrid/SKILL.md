@@ -3,10 +3,9 @@ name: oo-postgrid
 description: "PostGrid (postgrid.com). Use this skill for ANY PostGrid request — reading, creating, updating, and deleting data. Whenever a task involves PostGrid, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PostGrid"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["postgrid"]
   icon: "https://static.oomol.com/logo/third-party/postgrid.svg"
 ---

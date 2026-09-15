@@ -3,10 +3,9 @@ name: oo-jushuitan
 description: "Jushuitan ERP (jushuitan.com). Use this skill for ANY Jushuitan ERP request — reading, creating, and updating data. Whenever a task involves Jushuitan ERP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Jushuitan ERP"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["jushuitan"]
   icon: "https://static.oomol.com/logo/third-party/jushuitan.svg"
 ---

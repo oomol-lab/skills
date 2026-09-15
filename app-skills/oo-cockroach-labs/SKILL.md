@@ -3,10 +3,9 @@ name: oo-cockroach-labs
 description: "Cockroach Labs (cockroachlabs.com). Use this skill for ANY Cockroach Labs request — searching and reading data. Whenever a task involves Cockroach Labs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cockroach Labs"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cockroach_labs"]
   icon: "https://static.oomol.com/logo/third-party/cockroach_labs.png"
 ---

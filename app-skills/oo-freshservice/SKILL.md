@@ -3,10 +3,9 @@ name: oo-freshservice
 description: "Freshservice (freshworks.com). Use this skill for ANY Freshservice request — reading, creating, and updating data. Whenever a task involves Freshservice, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Freshservice"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["freshservice"]
   icon: "https://static.oomol.com/logo/third-party/freshservice.svg"
 ---

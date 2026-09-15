@@ -3,10 +3,9 @@ name: oo-uniswap-api
 description: "Uniswap API (uniswap.org). Use this skill for ANY Uniswap API request — reading, creating, and updating data. Whenever a task involves Uniswap API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Uniswap API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["uniswap_api"]
   icon: "https://static.oomol.com/logo/third-party/uniswap_api.svg"
 ---

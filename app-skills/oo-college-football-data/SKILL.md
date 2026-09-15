@@ -3,10 +3,9 @@ name: oo-college-football-data
 description: "CollegeFootballData (collegefootballdata.com). Use this skill for ANY CollegeFootballData request — searching and reading data. Whenever a task involves CollegeFootballData, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CollegeFootballData"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["college_football_data"]
   icon: "https://static.oomol.com/logo/third-party/college_football_data.svg"
 ---

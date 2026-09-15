@@ -3,10 +3,9 @@ name: oo-wit-ai
 description: "Wit.ai (wit.ai). Use this skill for ANY Wit.ai request — reading, creating, updating, and deleting data. Whenever a task involves Wit.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Wit.ai"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wit_ai"]
   icon: "https://static.oomol.com/logo/third-party/Wit.ai.svg"
 ---

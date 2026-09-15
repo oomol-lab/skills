@@ -3,10 +3,9 @@ name: oo-resend
 description: "Resend (resend.com). Use this skill for ANY Resend request — reading, creating, and updating data. Whenever a task involves Resend, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Resend"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["resend"]
   icon: "https://static.oomol.com/logo/third-party/Resend.svg"
 ---

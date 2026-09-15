@@ -3,10 +3,9 @@ name: oo-teltel
 description: "TelTel (teltel.io). Use this skill for ANY TelTel request — reading, creating, and updating data. Whenever a task involves TelTel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TelTel"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["teltel"]
   icon: "https://static.oomol.com/logo/third-party/teltel.svg"
 ---

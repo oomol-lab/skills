@@ -3,10 +3,9 @@ name: oo-timecamp
 description: "TimeCamp (timecamp.com). Use this skill for ANY TimeCamp request — reading, creating, and updating data. Whenever a task involves TimeCamp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TimeCamp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["timecamp"]
   icon: "https://static.oomol.com/logo/third-party/timecamp.svg"
 ---

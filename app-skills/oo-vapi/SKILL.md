@@ -3,10 +3,9 @@ name: oo-vapi
 description: "Vapi (vapi.ai). Use this skill for ANY Vapi request — reading, creating, updating, and deleting data. Whenever a task involves Vapi, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Vapi"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["vapi"]
   icon: "https://static.oomol.com/logo/third-party/Vapi.svg"
 ---

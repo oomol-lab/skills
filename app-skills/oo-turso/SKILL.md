@@ -3,10 +3,9 @@ name: oo-turso
 description: "Turso (turso.tech). Use this skill for ANY Turso request — reading, creating, updating, and deleting data. Whenever a task involves Turso, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Turso"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["turso"]
   icon: "https://static.oomol.com/logo/third-party/turso.svg"
 ---

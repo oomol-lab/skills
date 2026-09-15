@@ -3,10 +3,9 @@ name: oo-better-proposals
 description: "Better Proposals (betterproposals.io). Use this skill for ANY Better Proposals request — reading, creating, and updating data. Whenever a task involves Better Proposals, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Better Proposals"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["better_proposals"]
   icon: "https://static.oomol.com/logo/third-party/better_proposals.svg"
 ---

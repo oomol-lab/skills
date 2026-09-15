@@ -3,10 +3,9 @@ name: oo-lodgify
 description: "Lodgify (lodgify.com). Use this skill for ANY Lodgify request — searching and reading data. Whenever a task involves Lodgify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Lodgify"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["lodgify"]
   icon: "https://static.oomol.com/logo/third-party/lodgify.svg"
 ---

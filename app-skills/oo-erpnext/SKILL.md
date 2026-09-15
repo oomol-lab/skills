@@ -3,10 +3,9 @@ name: oo-erpnext
 description: "ERPNext (erpnext.com). Use this skill for ANY ERPNext request — reading, creating, updating, and deleting data. Whenever a task involves ERPNext, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ERPNext"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["erpnext"]
   icon: "https://static.oomol.com/logo/third-party/Erpnext.svg"
 ---

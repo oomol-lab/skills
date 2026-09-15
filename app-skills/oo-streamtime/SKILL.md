@@ -3,10 +3,9 @@ name: oo-streamtime
 description: "Streamtime (streamtime.net). Use this skill for ANY Streamtime request — reading, creating, and updating data. Whenever a task involves Streamtime, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Streamtime"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["streamtime"]
   icon: "https://static.oomol.com/logo/third-party/streamtime.svg"
 ---

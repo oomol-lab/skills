@@ -3,10 +3,9 @@ name: oo-langsmith
 description: "LangSmith (langchain.com). Use this skill for ANY LangSmith request — reading, creating, and updating data. Whenever a task involves LangSmith, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LangSmith"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["langsmith"]
   icon: "https://static.oomol.com/logo/third-party/langsmith.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-boldsign
 description: "BoldSign (boldsign.com). Use this skill for ANY BoldSign request — reading, creating, and updating data. Whenever a task involves BoldSign, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BoldSign"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["boldsign"]
   icon: "https://static.oomol.com/logo/third-party/boldsign.svg"
 ---

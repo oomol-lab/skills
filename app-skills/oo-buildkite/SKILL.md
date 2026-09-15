@@ -3,10 +3,9 @@ name: oo-buildkite
 description: "Buildkite (buildkite.com). Use this skill for ANY Buildkite request — reading, creating, and updating data. Whenever a task involves Buildkite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Buildkite"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["buildkite"]
   icon: "https://static.oomol.com/logo/third-party/Buildkite.svg"
 ---

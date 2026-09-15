@@ -3,10 +3,9 @@ name: oo-shortcut
 description: "Shortcut (shortcut.com). Use this skill for ANY Shortcut request — reading, creating, and updating data. Whenever a task involves Shortcut, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Shortcut"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["shortcut"]
   icon: "https://static.oomol.com/logo/third-party/shortcut.svg"
 ---

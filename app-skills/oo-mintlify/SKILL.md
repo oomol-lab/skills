@@ -3,10 +3,9 @@ name: oo-mintlify
 description: "Mintlify (mintlify.com). Use this skill for ANY Mintlify request — reading, creating, and updating data. Whenever a task involves Mintlify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mintlify"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mintlify"]
   icon: "https://static.oomol.com/logo/third-party/mintlify.svg"
 ---

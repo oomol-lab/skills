@@ -3,10 +3,9 @@ name: oo-nasdaq
 description: "Nasdaq Data Link (data.nasdaq.com). Use this skill for ANY Nasdaq Data Link request — searching and reading data. Whenever a task involves Nasdaq Data Link, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Nasdaq Data Link"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["nasdaq"]
   icon: "https://static.oomol.com/logo/third-party/Nasdaq.png"
 ---

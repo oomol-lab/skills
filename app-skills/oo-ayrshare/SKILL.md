@@ -3,10 +3,9 @@ name: oo-ayrshare
 description: "Ayrshare (ayrshare.com). Use this skill for ANY Ayrshare request — reading, creating, updating, and deleting data. Whenever a task involves Ayrshare, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ayrshare"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["ayrshare"]
   icon: "https://static.oomol.com/logo/third-party/ayrshare.png"
 ---

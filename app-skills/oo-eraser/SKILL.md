@@ -3,10 +3,9 @@ name: oo-eraser
 description: "Eraser (eraser.io). Use this skill for ANY Eraser request — reading, creating, updating, and deleting data. Whenever a task involves Eraser, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Eraser"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["eraser"]
   icon: "https://static.oomol.com/logo/third-party/eraser.svg"
 ---

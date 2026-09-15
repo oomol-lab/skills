@@ -3,10 +3,9 @@ name: oo-twitterapi-io
 description: "TwitterAPI.io (twitterapi.io). Use this skill for ANY TwitterAPI.io request — reading, creating, updating, and deleting data. Whenever a task involves TwitterAPI.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TwitterAPI.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["twitterapi_io"]
   icon: "https://static.oomol.com/logo/third-party/twitterapi_io.svg"
 ---

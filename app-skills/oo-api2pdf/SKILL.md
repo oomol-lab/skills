@@ -3,10 +3,9 @@ name: oo-api2pdf
 description: "API2PDF (api2pdf.com). Use this skill for ANY API2PDF request — searching and reading data. Whenever a task involves API2PDF, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "API2PDF"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["api2pdf"]
   icon: "https://static.oomol.com/logo/third-party/api2pdf.jpg"
 ---

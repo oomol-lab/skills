@@ -3,10 +3,9 @@ name: oo-vimeo
 description: "Vimeo (vimeo.com). Use this skill for ANY Vimeo request — reading, creating, updating, and deleting data. Whenever a task involves Vimeo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Vimeo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["vimeo"]
   icon: "https://static.oomol.com/logo/third-party/vimeo.svg"
 ---

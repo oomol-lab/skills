@@ -3,10 +3,9 @@ name: oo-htmlcsstoimage
 description: "HTML/CSS to Image (htmlcsstoimage.com). Use this skill for ANY HTML/CSS to Image request — reading, creating, updating, and deleting data. Whenever a task involves HTML/CSS to Image, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "HTML/CSS to Image"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["htmlcsstoimage"]
   icon: "https://static.oomol.com/logo/third-party/htmlcsstoimage.svg"
 ---

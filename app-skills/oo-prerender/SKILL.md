@@ -3,10 +3,9 @@ name: oo-prerender
 description: "Prerender (prerender.io). Use this skill for ANY Prerender request — reading, creating, updating, and deleting data. Whenever a task involves Prerender, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Prerender"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["prerender"]
   icon: "https://static.oomol.com/logo/third-party/prerender.svg"
 ---

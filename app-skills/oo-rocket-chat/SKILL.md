@@ -3,10 +3,9 @@ name: oo-rocket-chat
 description: "Rocket.Chat (rocket.chat). Use this skill for ANY Rocket.Chat request — reading, creating, updating, and deleting data. Whenever a task involves Rocket.Chat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Rocket.Chat"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["rocket_chat"]
   icon: "https://static.oomol.com/logo/third-party/rocket_chat.png"
 ---

@@ -3,10 +3,9 @@ name: oo-rippling
 description: "Rippling (rippling.com). Use this skill for ANY Rippling request — searching and reading data. Whenever a task involves Rippling, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Rippling"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["rippling"]
   icon: "https://static.oomol.com/logo/third-party/rippling.svg"
 ---

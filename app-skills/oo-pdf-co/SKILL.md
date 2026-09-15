@@ -3,10 +3,9 @@ name: oo-pdf-co
 description: "PDF.co (pdf.co). Use this skill for ANY PDF.co request — reading, creating, and updating data. Whenever a task involves PDF.co, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PDF.co"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pdf_co"]
   icon: "https://static.oomol.com/logo/third-party/pdf_co.svg"
 ---

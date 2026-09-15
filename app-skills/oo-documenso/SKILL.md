@@ -3,10 +3,9 @@ name: oo-documenso
 description: "Documenso (documenso.com). Use this skill for ANY Documenso request — searching and reading data. Whenever a task involves Documenso, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Documenso"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["documenso"]
   icon: "https://static.oomol.com/logo/third-party/documenso.svg"
 ---

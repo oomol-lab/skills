@@ -3,10 +3,9 @@ name: oo-certn
 description: "Certn (certn.co). Use this skill for ANY Certn request — searching and reading data. Whenever a task involves Certn, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Certn"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["certn"]
   icon: "https://static.oomol.com/logo/third-party/certn.svg"
 ---

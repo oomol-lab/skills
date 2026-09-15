@@ -3,10 +3,9 @@ name: oo-dokploy
 description: "Dokploy (dokploy.com). Use this skill for ANY Dokploy request — reading, creating, updating, and deleting data. Whenever a task involves Dokploy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Dokploy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["dokploy"]
   icon: "https://static.oomol.com/logo/third-party/dokploy.png"
 ---

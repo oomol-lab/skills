@@ -3,10 +3,9 @@ name: oo-sentry
 description: "Sentry (sentry.io). Use this skill for ANY Sentry request — reading, creating, and updating data. Whenever a task involves Sentry, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sentry"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sentry"]
   icon: "https://static.oomol.com/logo/third-party/Sentry.svg"
 ---

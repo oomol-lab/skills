@@ -3,10 +3,9 @@ name: oo-bamboohr
 description: "BambooHR (bamboohr.com). Use this skill for ANY BambooHR request — searching and reading data. Whenever a task involves BambooHR, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BambooHR"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bamboohr"]
   icon: "https://static.oomol.com/logo/third-party/bamboohr.png"
 ---

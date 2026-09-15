@@ -3,10 +3,9 @@ name: oo-scopus
 description: "Scopus (scopus.com). Use this skill for ANY Scopus request — searching and reading data. Whenever a task involves Scopus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Scopus"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["scopus"]
   icon: "https://static.oomol.com/logo/third-party/scopus.svg"
 ---

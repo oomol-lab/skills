@@ -3,10 +3,9 @@ name: oo-streak
 description: "Streak (streak.com). Use this skill for ANY Streak request — searching and reading data. Whenever a task involves Streak, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Streak"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["streak"]
   icon: "https://static.oomol.com/logo/third-party/streak.png"
 ---

@@ -3,10 +3,9 @@ name: oo-mixmax
 description: "Mixmax (mixmax.com). Use this skill for ANY Mixmax request — reading, creating, and updating data. Whenever a task involves Mixmax, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mixmax"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mixmax"]
   icon: "https://static.oomol.com/logo/third-party/mixmax.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-spider
 description: "Spider Cloud (spider.cloud). Use this skill for ANY Spider Cloud request — searching and reading data. Whenever a task involves Spider Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Spider Cloud"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["spider"]
   icon: "https://static.oomol.com/logo/third-party/spider.svg"
 ---

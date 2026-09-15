@@ -3,10 +3,9 @@ name: oo-loyjoy
 description: "LoyJoy (loyjoy.com). Use this skill for ANY LoyJoy request — reading, creating, and updating data. Whenever a task involves LoyJoy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LoyJoy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["loyjoy"]
   icon: "https://static.oomol.com/logo/third-party/loyjoy.svg"
 ---

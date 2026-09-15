@@ -3,10 +3,9 @@ name: oo-convex
 description: "Convex (convex.dev). Use this skill for ANY Convex request — reading, creating, updating, and deleting data. Whenever a task involves Convex, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Convex"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["convex"]
   icon: "https://static.oomol.com/logo/third-party/Convex.svg"
 ---

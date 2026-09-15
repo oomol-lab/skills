@@ -3,10 +3,9 @@ name: oo-cloudflare-mcp
 description: "Cloudflare MCP (github.com). Use this skill for ANY Cloudflare MCP request — searching and reading data. Whenever a task involves Cloudflare MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudflare MCP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cloudflare_mcp"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_mcp.svg"
 ---

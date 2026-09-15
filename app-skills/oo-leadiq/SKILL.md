@@ -3,10 +3,9 @@ name: oo-leadiq
 description: "LeadIQ (leadiq.com). Use this skill for ANY LeadIQ request — searching and reading data. Whenever a task involves LeadIQ, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LeadIQ"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["leadiq"]
   icon: "https://static.oomol.com/logo/third-party/leadiq.svg"
 ---

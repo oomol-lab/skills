@@ -3,10 +3,9 @@ name: oo-mineru
 description: "MinerU (mineru.net). Use this skill for ANY MinerU request — reading, creating, and updating data. Whenever a task involves MinerU, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "MinerU"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mineru"]
   icon: "https://static.oomol.com/logo/third-party/mineru.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-linkedin
 description: "LinkedIn (linkedin.com). Use this skill for ANY LinkedIn request — reading, creating, updating, and deleting data. Whenever a task involves LinkedIn, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "LinkedIn"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["linkedin"]
   icon: "https://static.oomol.com/logo/third-party/linkedin.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-geocodio
 description: "Geocodio (geocod.io). Use this skill for ANY Geocodio request — searching and reading data. Whenever a task involves Geocodio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Geocodio"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["geocodio"]
   icon: "https://static.oomol.com/logo/third-party/Geocodio.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-waboxapp
 description: "waboxapp (waboxapp.com). Use this skill for ANY waboxapp request — reading, creating, and updating data. Whenever a task involves waboxapp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "waboxapp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["waboxapp"]
   icon: "https://static.oomol.com/logo/third-party/waboxapp.svg"
 ---

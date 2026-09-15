@@ -3,10 +3,9 @@ name: oo-honeycomb
 description: "Honeycomb (honeycomb.io). Use this skill for ANY Honeycomb request — reading, creating, and updating data. Whenever a task involves Honeycomb, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Honeycomb"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["honeycomb"]
   icon: "https://static.oomol.com/logo/third-party/honeycomb.svg"
 ---

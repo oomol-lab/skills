@@ -3,10 +3,9 @@ name: oo-coderabbit
 description: "CodeRabbit (coderabbit.ai). Use this skill for ANY CodeRabbit request — reading, creating, updating, and deleting data. Whenever a task involves CodeRabbit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CodeRabbit"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["coderabbit"]
   icon: "https://static.oomol.com/logo/third-party/coderabbit.png"
 ---

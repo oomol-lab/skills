@@ -3,10 +3,9 @@ name: oo-reddit
 description: "Reddit (reddit.com). Use this skill for ANY Reddit request — reading, creating, updating, and deleting data. Whenever a task involves Reddit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Reddit"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["reddit"]
   icon: "https://static.oomol.com/logo/third-party/reddit.png"
 ---

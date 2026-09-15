@@ -3,10 +3,9 @@ name: oo-wordpress
 description: "WordPress (wordpress.org). Use this skill for ANY WordPress request — reading, creating, updating, and deleting data. Whenever a task involves WordPress, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WordPress"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["wordpress"]
   icon: "https://static.oomol.com/logo/third-party/wordpress.png"
 ---

@@ -3,10 +3,9 @@ name: oo-browserless
 description: "Browserless (browserless.io). Use this skill for ANY Browserless request — searching and reading data. Whenever a task involves Browserless, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Browserless"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["browserless"]
   icon: "https://static.oomol.com/logo/third-party/browserless.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-feishu-app-bot
 description: "Feishu App Bot (open.feishu.cn). Use this skill for ANY Feishu App Bot request — reading, creating, updating, and deleting data. Whenever a task involves Feishu App Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["feishu_app_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_custom_bot.svg"
 ---
@@ -331,7 +330,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_app_slash_command` — Update the description, localized descriptions, or icon of a slash command selected by ID or name. [write]
 - `update_base_dashboard` — Update a Base dashboard name or theme. [write]
 - `update_base_dashboard_block` — Update a Base dashboard block name or data configuration. [write]
-- `update_base_field` — Update one field in a Feishu Base table. [write]
+- `update_base_field` — Replace one field definition in a Feishu Base table. Read the field first and include all writable configuration to preserve; this is a full PUT replacement, not a partial update. [write]
 - `update_base_form` — Update the name or description of a Base form. [write]
 - `update_base_form_questions` — Update up to ten Base form questions by question ID. [write]
 - `update_base_record` — Update one record in a Feishu Base table. [write]

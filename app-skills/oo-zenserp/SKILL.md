@@ -3,10 +3,9 @@ name: oo-zenserp
 description: "Zenserp (zenserp.com). Use this skill for ANY Zenserp request — searching and reading data. Whenever a task involves Zenserp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Zenserp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zenserp"]
   icon: "https://static.oomol.com/logo/third-party/zenserp.svg"
 ---

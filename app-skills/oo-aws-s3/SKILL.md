@@ -3,10 +3,9 @@ name: oo-aws-s3
 description: "AWS S3 (aws.amazon.com). Use this skill for ANY AWS S3 request — reading, creating, updating, and deleting data. Whenever a task involves AWS S3, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AWS S3"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["aws_s3"]
   icon: "https://static.oomol.com/logo/third-party/aws_s3.svg"
 ---

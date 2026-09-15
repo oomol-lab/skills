@@ -3,10 +3,9 @@ name: oo-meta
 description: "Meta (business.meta.com). Use this skill for ANY Meta request — searching and reading data. Whenever a task involves Meta, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Meta"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["meta"]
   icon: "https://static.oomol.com/logo/third-party/meta.svg"
 ---

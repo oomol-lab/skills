@@ -3,10 +3,9 @@ name: oo-autotask
 description: "Autotask (datto.com). Use this skill for ANY Autotask request — searching and reading data. Whenever a task involves Autotask, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Autotask"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["autotask"]
   icon: "https://static.oomol.com/logo/third-party/autotask.svg"
 ---

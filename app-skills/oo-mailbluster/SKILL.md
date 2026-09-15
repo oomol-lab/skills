@@ -3,10 +3,9 @@ name: oo-mailbluster
 description: "MailBluster (mailbluster.com). Use this skill for ANY MailBluster request — reading, creating, updating, and deleting data. Whenever a task involves MailBluster, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "MailBluster"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mailbluster"]
   icon: "https://static.oomol.com/logo/third-party/mailbluster.svg"
 ---

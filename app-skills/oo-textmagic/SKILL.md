@@ -3,10 +3,9 @@ name: oo-textmagic
 description: "Textmagic (textmagic.com). Use this skill for ANY Textmagic request — reading, creating, and updating data. Whenever a task involves Textmagic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Textmagic"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["textmagic"]
   icon: "https://static.oomol.com/logo/third-party/textmagic.svg"
 ---

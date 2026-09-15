@@ -3,10 +3,9 @@ name: oo-hunter
 description: "Hunter (hunter.io). Use this skill for ANY Hunter request — reading, creating, updating, and deleting data. Whenever a task involves Hunter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hunter"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["hunter"]
   icon: "https://static.oomol.com/logo/third-party/hunter.png"
 ---

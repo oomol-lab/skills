@@ -3,10 +3,9 @@ name: oo-todoist
 description: "Todoist (todoist.com). Use this skill for ANY Todoist request — reading, creating, and updating data. Whenever a task involves Todoist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Todoist"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["todoist"]
   icon: "https://static.oomol.com/logo/third-party/Todoist.svg"
 ---

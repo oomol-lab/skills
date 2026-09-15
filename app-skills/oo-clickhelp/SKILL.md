@@ -3,10 +3,9 @@ name: oo-clickhelp
 description: "ClickHelp (clickhelp.com). Use this skill for ANY ClickHelp request — reading, creating, and updating data. Whenever a task involves ClickHelp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ClickHelp"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["clickhelp"]
   icon: "https://static.oomol.com/logo/third-party/clickhelp.svg"
 ---

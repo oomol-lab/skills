@@ -3,10 +3,9 @@ name: oo-vercel
 description: "Vercel (vercel.com). Use this skill for ANY Vercel request — reading, creating, updating, and deleting data. Whenever a task involves Vercel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Vercel"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["vercel"]
   icon: "https://static.oomol.com/logo/third-party/Vercel.svg"
 ---

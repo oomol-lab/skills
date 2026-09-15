@@ -3,10 +3,9 @@ name: oo-wiza
 description: "Wiza (wiza.co). Use this skill for ANY Wiza request — reading, creating, and updating data. Whenever a task involves Wiza, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Wiza"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["wiza"]
   icon: "https://static.oomol.com/logo/third-party/wiza.png"
 ---

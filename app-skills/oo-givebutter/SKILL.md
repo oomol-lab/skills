@@ -3,10 +3,9 @@ name: oo-givebutter
 description: "Givebutter (givebutter.com). Use this skill for ANY Givebutter request — searching and reading data. Whenever a task involves Givebutter, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Givebutter"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["givebutter"]
   icon: "https://static.oomol.com/logo/third-party/givebutter.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-central-station-crm
 description: "CentralStationCRM (centralstationcrm.de). Use this skill for ANY CentralStationCRM request — reading, creating, updating, and deleting data. Whenever a task involves CentralStationCRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CentralStationCRM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["central_station_crm"]
   icon: "https://static.oomol.com/logo/third-party/central_station_crm.svg"
 ---

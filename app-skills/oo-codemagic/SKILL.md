@@ -3,10 +3,9 @@ name: oo-codemagic
 description: "Codemagic (codemagic.io). Use this skill for ANY Codemagic request — reading, creating, and updating data. Whenever a task involves Codemagic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Codemagic"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["codemagic"]
   icon: "https://static.oomol.com/logo/third-party/Codemagic.svg"
 ---

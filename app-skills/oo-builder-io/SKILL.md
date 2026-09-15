@@ -3,10 +3,9 @@ name: oo-builder-io
 description: "Builder.io (builder.io). Use this skill for ANY Builder.io request — reading, creating, updating, and deleting data. Whenever a task involves Builder.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Builder.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["builder_io"]
   icon: "https://static.oomol.com/logo/third-party/builder_io.svg"
 ---

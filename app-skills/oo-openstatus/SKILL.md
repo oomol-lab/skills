@@ -3,10 +3,9 @@ name: oo-openstatus
 description: "OpenStatus (openstatus.dev). Use this skill for ANY OpenStatus request — reading, creating, updating, and deleting data. Whenever a task involves OpenStatus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OpenStatus"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["openstatus"]
   icon: "https://static.oomol.com/logo/third-party/openstatus.svg"
 ---

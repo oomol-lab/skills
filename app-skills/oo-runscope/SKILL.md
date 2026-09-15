@@ -3,10 +3,9 @@ name: oo-runscope
 description: "Runscope (blazemeter.com). Use this skill for ANY Runscope request — searching and reading data. Whenever a task involves Runscope, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Runscope"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["runscope"]
   icon: "https://static.oomol.com/logo/third-party/runscope.svg"
 ---

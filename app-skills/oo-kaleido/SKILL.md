@@ -3,10 +3,9 @@ name: oo-kaleido
 description: "Kaleido (kaleido.io). Use this skill for ANY Kaleido request — searching and reading data. Whenever a task involves Kaleido, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Kaleido"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["kaleido"]
   icon: "https://static.oomol.com/logo/third-party/kaleido.png"
 ---

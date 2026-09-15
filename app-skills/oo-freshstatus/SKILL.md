@@ -3,10 +3,9 @@ name: oo-freshstatus
 description: "Freshstatus (freshworks.com). Use this skill for ANY Freshstatus request — reading, creating, updating, and deleting data. Whenever a task involves Freshstatus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Freshstatus"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["freshstatus"]
   icon: "https://static.oomol.com/logo/third-party/freshstatus.svg"
 ---

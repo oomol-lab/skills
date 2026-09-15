@@ -3,10 +3,9 @@ name: oo-callpage
 description: "CallPage (callpage.io). Use this skill for ANY CallPage request — reading, creating, and updating data. Whenever a task involves CallPage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CallPage"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["callpage"]
   icon: "https://static.oomol.com/logo/third-party/callpage.svg"
 ---

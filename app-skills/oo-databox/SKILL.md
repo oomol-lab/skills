@@ -3,10 +3,9 @@ name: oo-databox
 description: "Databox (databox.com). Use this skill for ANY Databox request — reading, creating, updating, and deleting data. Whenever a task involves Databox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Databox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["databox"]
   icon: "https://static.oomol.com/logo/third-party/databox.svg"
 ---

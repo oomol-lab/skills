@@ -3,10 +3,9 @@ name: oo-heyy
 description: "Heyy (heyy.io). Use this skill for ANY Heyy request — reading, creating, and updating data. Whenever a task involves Heyy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Heyy"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["heyy"]
   icon: "https://static.oomol.com/logo/third-party/heyy.svg"
 ---

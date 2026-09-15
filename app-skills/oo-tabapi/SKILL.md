@@ -3,10 +3,9 @@ name: oo-tabapi
 description: "TabAPI (tabapi.com). Use this skill for ANY TabAPI request — searching and reading data. Whenever a task involves TabAPI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TabAPI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tabapi"]
   icon: "https://static.oomol.com/logo/third-party/tabapi.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-interzoid
 description: "Interzoid (interzoid.com). Use this skill for ANY Interzoid request — searching and reading data. Whenever a task involves Interzoid, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Interzoid"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["interzoid"]
   icon: "https://static.oomol.com/logo/third-party/interzoid.svg"
 ---

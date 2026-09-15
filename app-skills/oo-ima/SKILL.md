@@ -3,10 +3,9 @@ name: oo-ima
 description: "ima (ima.qq.com). Use this skill for ANY ima request — reading, creating, and updating data. Whenever a task involves ima, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ima"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["ima"]
   icon: "https://static.oomol.com/logo/third-party/ima.svg"
 ---

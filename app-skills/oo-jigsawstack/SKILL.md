@@ -3,10 +3,9 @@ name: oo-jigsawstack
 description: "JigsawStack (jigsawstack.com). Use this skill for ANY JigsawStack request — searching and reading data. Whenever a task involves JigsawStack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "JigsawStack"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["jigsawstack"]
   icon: "https://static.oomol.com/logo/third-party/jigsawstack.svg"
 ---

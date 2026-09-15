@@ -3,10 +3,9 @@ name: oo-ninjapear
 description: "NinjaPear (nubela.co). Use this skill for ANY NinjaPear request — searching and reading data. Whenever a task involves NinjaPear, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "NinjaPear"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ninjapear"]
   icon: "https://static.oomol.com/logo/third-party/ninjapear.svg"
 ---

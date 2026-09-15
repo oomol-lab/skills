@@ -3,10 +3,9 @@ name: oo-baidu-maps
 description: "Baidu Maps (lbsyun.baidu.com). Use this skill for ANY Baidu Maps request — searching and reading data. Whenever a task involves Baidu Maps, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Baidu Maps"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["baidu_maps"]
   icon: "https://static.oomol.com/logo/third-party/baidu_maps.png"
 ---

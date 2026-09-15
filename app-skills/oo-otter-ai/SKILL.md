@@ -3,10 +3,9 @@ name: oo-otter-ai
 description: "Otter.ai (otter.ai). Use this skill for ANY Otter.ai request — searching and reading data. Whenever a task involves Otter.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Otter.ai"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["otter_ai"]
   icon: "https://static.oomol.com/logo/third-party/otter_ai.png"
 ---

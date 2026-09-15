@@ -3,10 +3,9 @@ name: oo-feedier
 description: "Feedier (feedier.ai). Use this skill for ANY Feedier request — reading, creating, updating, and deleting data. Whenever a task involves Feedier, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Feedier"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["feedier"]
   icon: "https://static.oomol.com/logo/third-party/feedier.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-linear
 description: "Linear (linear.app). Use this skill for ANY Linear request — reading, creating, updating, and deleting data. Whenever a task involves Linear, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Linear"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["linear"]
   icon: "https://static.oomol.com/logo/third-party/Linear.svg"
 ---

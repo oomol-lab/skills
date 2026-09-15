@@ -3,10 +3,9 @@ name: oo-checkout-com
 description: "Checkout.com (checkout.com). Use this skill for ANY Checkout.com request — reading, creating, updating, and deleting data. Whenever a task involves Checkout.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Checkout.com"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["checkout_com"]
   icon: "https://static.oomol.com/logo/third-party/checkout_com.svg"
 ---

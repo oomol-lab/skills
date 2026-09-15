@@ -3,10 +3,9 @@ name: oo-aimfox
 description: "Aimfox (aimfox.com). Use this skill for ANY Aimfox request — reading, creating, updating, and deleting data. Whenever a task involves Aimfox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Aimfox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aimfox"]
   icon: "https://static.oomol.com/logo/third-party/aimfox.svg"
 ---

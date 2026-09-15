@@ -3,10 +3,9 @@ name: oo-clerk
 description: "Clerk (clerk.com). Use this skill for ANY Clerk request — reading, creating, updating, and deleting data. Whenever a task involves Clerk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Clerk"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["clerk"]
   icon: "https://static.oomol.com/logo/third-party/clerk.svg"
 ---

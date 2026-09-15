@@ -3,10 +3,9 @@ name: oo-thehive5
 description: "TheHive 5 (strangebee.com). Use this skill for ANY TheHive 5 request — reading, creating, and updating data. Whenever a task involves TheHive 5, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TheHive 5"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["thehive5"]
   icon: "https://static.oomol.com/logo/third-party/thehive5.svg"
 ---

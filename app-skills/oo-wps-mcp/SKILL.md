@@ -3,10 +3,9 @@ name: oo-wps-mcp
 description: "WPS MCP (wps.cn). Use this skill for ANY WPS MCP request — reading, creating, and updating data. Whenever a task involves WPS MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WPS MCP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["wps_mcp"]
   icon: "https://static.oomol.com/logo/third-party/wps_mcp.svg"
 ---

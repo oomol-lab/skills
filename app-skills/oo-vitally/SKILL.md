@@ -3,10 +3,9 @@ name: oo-vitally
 description: "Vitally (vitally.io). Use this skill for ANY Vitally request — reading, creating, updating, and deleting data. Whenever a task involves Vitally, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Vitally"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vitally"]
   icon: "https://static.oomol.com/logo/third-party/vitally.svg"
 ---

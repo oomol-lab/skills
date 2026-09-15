@@ -3,10 +3,9 @@ name: oo-float
 description: "Float (float.com). Use this skill for ANY Float request — searching and reading data. Whenever a task involves Float, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Float"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["float"]
   icon: "https://static.oomol.com/logo/third-party/float.svg"
 ---

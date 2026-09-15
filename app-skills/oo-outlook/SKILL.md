@@ -3,10 +3,9 @@ name: oo-outlook
 description: "Outlook (microsoft.com). Use this skill for ANY Outlook request — reading, creating, and updating data. Whenever a task involves Outlook, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Outlook"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["outlook"]
   icon: "https://static.oomol.com/logo/third-party/Outlook.webp"
 ---

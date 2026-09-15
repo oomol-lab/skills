@@ -3,10 +3,9 @@ name: oo-felt
 description: "Felt (felt.com). Use this skill for ANY Felt request — reading, creating, updating, and deleting data. Whenever a task involves Felt, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Felt"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["felt"]
   icon: "https://static.oomol.com/logo/third-party/felt.png"
 ---

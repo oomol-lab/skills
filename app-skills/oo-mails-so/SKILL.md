@@ -3,10 +3,9 @@ name: oo-mails-so
 description: "Mails (mails.so). Use this skill for ANY Mails request — reading, creating, and updating data. Whenever a task involves Mails, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mails"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mails_so"]
   icon: "https://static.oomol.com/logo/third-party/Mails.so.svg"
 ---

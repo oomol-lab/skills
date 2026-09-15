@@ -3,10 +3,9 @@ name: oo-codacy
 description: "Codacy (codacy.com). Use this skill for ANY Codacy request — searching and reading data. Whenever a task involves Codacy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Codacy"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["codacy"]
   icon: "https://static.oomol.com/logo/third-party/codacy.png"
 ---

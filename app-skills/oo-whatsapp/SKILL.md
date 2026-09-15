@@ -3,10 +3,9 @@ name: oo-whatsapp
 description: "WhatsApp (whatsapp.com). Use this skill for ANY WhatsApp request — reading, creating, updating, and deleting data. Whenever a task involves WhatsApp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WhatsApp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["whatsapp"]
   icon: "https://static.oomol.com/logo/third-party/whatsapp.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-agent-mail
 description: "AgentMail (agentmail.to). Use this skill for ANY AgentMail request — reading, creating, updating, and deleting data. Whenever a task involves AgentMail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AgentMail"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["agent_mail"]
   icon: "https://static.oomol.com/logo/third-party/agent_mail.svg"
 ---

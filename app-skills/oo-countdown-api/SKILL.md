@@ -3,10 +3,9 @@ name: oo-countdown-api
 description: "Countdown API (countdownapi.com). Use this skill for ANY Countdown API request — searching and reading data. Whenever a task involves Countdown API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Countdown API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["countdown_api"]
   icon: "https://static.oomol.com/logo/third-party/countdown_api.webp"
 ---

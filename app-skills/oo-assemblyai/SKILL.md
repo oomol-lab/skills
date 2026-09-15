@@ -3,10 +3,9 @@ name: oo-assemblyai
 description: "AssemblyAI (assemblyai.com). Use this skill for ANY AssemblyAI request — reading, creating, updating, and deleting data. Whenever a task involves AssemblyAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "AssemblyAI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["assemblyai"]
   icon: "https://static.oomol.com/logo/third-party/assemblyai.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-speechmatics
 description: "Speechmatics (speechmatics.com). Use this skill for ANY Speechmatics request — reading, creating, and updating data. Whenever a task involves Speechmatics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Speechmatics"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["speechmatics"]
   icon: "https://static.oomol.com/logo/third-party/speechmatics.svg"
 ---

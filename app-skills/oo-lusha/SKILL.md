@@ -3,10 +3,9 @@ name: oo-lusha
 description: "Lusha (lusha.com). Use this skill for ANY Lusha request — searching and reading data. Whenever a task involves Lusha, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Lusha"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lusha"]
   icon: "https://static.oomol.com/logo/third-party/lusha.png"
 ---

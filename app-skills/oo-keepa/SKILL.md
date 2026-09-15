@@ -3,10 +3,9 @@ name: oo-keepa
 description: "Keepa (keepa.com). Use this skill for ANY Keepa request — searching and reading data. Whenever a task involves Keepa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Keepa"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["keepa"]
   icon: "https://static.oomol.com/logo/third-party/keepa.svg"
 ---

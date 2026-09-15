@@ -3,10 +3,9 @@ name: oo-recruitcrm
 description: "Recruit CRM (recruitcrm.io). Use this skill for ANY Recruit CRM request — searching and reading data. Whenever a task involves Recruit CRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Recruit CRM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["recruitcrm"]
   icon: "https://static.oomol.com/logo/third-party/recruitcrm.png"
 ---

@@ -3,10 +3,9 @@ name: oo-crustdata
 description: "Crustdata (crustdata.com). Use this skill for ANY Crustdata request — searching and reading data. Whenever a task involves Crustdata, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Crustdata"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["crustdata"]
   icon: "https://static.oomol.com/logo/third-party/crustdata.png"
 ---

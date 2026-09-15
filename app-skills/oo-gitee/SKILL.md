@@ -3,10 +3,9 @@ name: oo-gitee
 description: "Gitee (gitee.com). Use this skill for ANY Gitee request — searching and reading data. Whenever a task involves Gitee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Gitee"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gitee"]
   icon: "https://static.oomol.com/logo/third-party/gitee.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-svix
 description: "Svix (svix.com). Use this skill for ANY Svix request — reading, creating, updating, and deleting data. Whenever a task involves Svix, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Svix"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["svix"]
   icon: "https://static.oomol.com/logo/third-party/Svix.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-dialpad-wfm
 description: "Dialpad WFM (dialpad.com). Use this skill for ANY Dialpad WFM request — reading, creating, and updating data. Whenever a task involves Dialpad WFM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Dialpad WFM"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dialpad_wfm"]
   icon: "https://static.oomol.com/logo/third-party/dialpad_wfm.svg"
 ---

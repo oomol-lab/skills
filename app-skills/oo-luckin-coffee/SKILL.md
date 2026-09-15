@@ -3,10 +3,9 @@ name: oo-luckin-coffee
 description: "Luckin Coffee (open.lkcoffee.com). Use this skill for ANY Luckin Coffee request — searching and reading data. Whenever a task involves Luckin Coffee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Luckin Coffee"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["luckin_coffee"]
   icon: "https://static.oomol.com/logo/third-party/luckin_coffee.svg"
 ---

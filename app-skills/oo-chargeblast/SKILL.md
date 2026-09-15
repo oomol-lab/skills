@@ -3,10 +3,9 @@ name: oo-chargeblast
 description: "Chargeblast (chargeblast.com). Use this skill for ANY Chargeblast request — reading, creating, and updating data. Whenever a task involves Chargeblast, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Chargeblast"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["chargeblast"]
   icon: "https://static.oomol.com/logo/third-party/chargeblast.png"
 ---

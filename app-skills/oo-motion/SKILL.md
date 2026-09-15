@@ -3,10 +3,9 @@ name: oo-motion
 description: "Motion (usemotion.com). Use this skill for ANY Motion request — reading, creating, updating, and deleting data. Whenever a task involves Motion, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Motion"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["motion"]
   icon: "https://static.oomol.com/logo/third-party/motion.svg"
 ---

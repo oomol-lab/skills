@@ -3,10 +3,9 @@ name: oo-circle
 description: "Circle (circle.so). Use this skill for ANY Circle request — reading, creating, and updating data. Whenever a task involves Circle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Circle"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["circle"]
   icon: "https://static.oomol.com/logo/third-party/circle.svg"
 ---

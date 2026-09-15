@@ -3,10 +3,9 @@ name: oo-short-menu
 description: "Short Menu (shortmenu.com). Use this skill for ANY Short Menu request — reading, creating, updating, and deleting data. Whenever a task involves Short Menu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Short Menu"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["short_menu"]
   icon: "https://static.oomol.com/logo/third-party/Short%20Menu.svg"
 ---

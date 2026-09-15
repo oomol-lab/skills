@@ -3,10 +3,9 @@ name: oo-zotero
 description: "Zotero (zotero.org). Use this skill for ANY Zotero request — reading, creating, updating, and deleting data. Whenever a task involves Zotero, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Zotero"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zotero"]
   icon: "https://static.oomol.com/logo/third-party/zotero.png"
 ---

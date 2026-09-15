@@ -3,10 +3,9 @@ name: oo-habitica
 description: "Habitica (habitica.com). Use this skill for ANY Habitica request — reading, creating, updating, and deleting data. Whenever a task involves Habitica, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Habitica"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["habitica"]
   icon: "https://static.oomol.com/logo/third-party/habitica.png"
 ---

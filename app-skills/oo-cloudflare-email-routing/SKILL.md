@@ -3,10 +3,9 @@ name: oo-cloudflare-email-routing
 description: "Cloudflare Email Routing (cloudflare.com). Use this skill for ANY Cloudflare Email Routing request — reading, creating, updating, and deleting data. Whenever a task involves Cloudflare Email Routing, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudflare Email Routing"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["cloudflare_email_routing"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_email_routing.svg"
 ---

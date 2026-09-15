@@ -3,10 +3,9 @@ name: oo-tiktok-business-mcp
 description: "TikTok for Business MCP (business.tiktok.com). Use this skill for ANY TikTok for Business MCP request — searching and reading data. Whenever a task involves TikTok for Business MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TikTok for Business MCP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tiktok_business_mcp"]
   icon: "https://static.oomol.com/logo/third-party/tiktok_business_mcp.svg"
 ---

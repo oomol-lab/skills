@@ -3,10 +3,9 @@ name: oo-zorus
 description: "Zorus (zorustech.com). Use this skill for ANY Zorus request — reading, creating, and updating data. Whenever a task involves Zorus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Zorus"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zorus"]
   icon: "https://static.oomol.com/logo/third-party/zorus.svg"
 ---

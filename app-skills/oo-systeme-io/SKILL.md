@@ -3,10 +3,9 @@ name: oo-systeme-io
 description: "Systeme.io (systeme.io). Use this skill for ANY Systeme.io request — reading, creating, updating, and deleting data. Whenever a task involves Systeme.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Systeme.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["systeme_io"]
   icon: "https://static.oomol.com/logo/third-party/systeme_io.svg"
 ---

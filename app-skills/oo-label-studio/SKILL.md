@@ -3,10 +3,9 @@ name: oo-label-studio
 description: "Label Studio (labelstud.io). Use this skill for ANY Label Studio request — reading, creating, and updating data. Whenever a task involves Label Studio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Label Studio"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["label_studio"]
   icon: "https://static.oomol.com/logo/third-party/label_studio.svg"
 ---

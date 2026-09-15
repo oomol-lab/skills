@@ -3,10 +3,9 @@ name: oo-flowiseai
 description: "FlowiseAI (flowiseai.com). Use this skill for ANY FlowiseAI request — reading, creating, and updating data. Whenever a task involves FlowiseAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "FlowiseAI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["flowiseai"]
   icon: "https://static.oomol.com/logo/third-party/flowiseai.jpg"
 ---

@@ -3,10 +3,9 @@ name: oo-scrapfly
 description: "Scrapfly (scrapfly.io). Use this skill for ANY Scrapfly request — searching and reading data. Whenever a task involves Scrapfly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Scrapfly"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["scrapfly"]
   icon: "https://static.oomol.com/logo/third-party/scrapfly.svg"
 ---

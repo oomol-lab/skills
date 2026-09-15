@@ -3,10 +3,9 @@ name: oo-foursquare
 description: "Foursquare (foursquare.com). Use this skill for ANY Foursquare request — searching and reading data. Whenever a task involves Foursquare, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Foursquare"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["foursquare"]
   icon: "https://static.oomol.com/logo/third-party/Foursquare.svg"
 ---

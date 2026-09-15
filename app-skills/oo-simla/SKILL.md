@@ -3,10 +3,9 @@ name: oo-simla
 description: "Simla.com (simla.com). Use this skill for ANY Simla.com request — reading, creating, and updating data. Whenever a task involves Simla.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Simla.com"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["simla"]
   icon: "https://static.oomol.com/logo/third-party/simla.svg"
 ---

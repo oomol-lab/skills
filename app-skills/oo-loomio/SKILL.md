@@ -3,10 +3,9 @@ name: oo-loomio
 description: "Loomio (loomio.com). Use this skill for ANY Loomio request — searching and reading data. Whenever a task involves Loomio, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Loomio"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["loomio"]
   icon: "https://static.oomol.com/logo/third-party/loomio.png"
 ---

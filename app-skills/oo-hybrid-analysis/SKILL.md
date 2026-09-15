@@ -3,10 +3,9 @@ name: oo-hybrid-analysis
 description: "Hybrid Analysis (hybrid-analysis.com). Use this skill for ANY Hybrid Analysis request — searching and reading data. Whenever a task involves Hybrid Analysis, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hybrid Analysis"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hybrid_analysis"]
   icon: "https://static.oomol.com/logo/third-party/hybrid_analysis.svg"
 ---

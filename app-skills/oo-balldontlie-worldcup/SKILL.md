@@ -3,10 +3,9 @@ name: oo-balldontlie-worldcup
 description: "BALLDONTLIE World Cup (fifa.balldontlie.io). Use this skill for ANY BALLDONTLIE World Cup request — searching and reading data. Whenever a task involves BALLDONTLIE World Cup, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BALLDONTLIE World Cup"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["balldontlie_worldcup"]
   icon: "https://static.oomol.com/logo/third-party/balldontlie_worldcup.png"
 ---

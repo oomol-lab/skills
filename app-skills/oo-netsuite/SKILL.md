@@ -3,10 +3,9 @@ name: oo-netsuite
 description: "NetSuite (netsuite.com). Use this skill for ANY NetSuite request — reading, creating, and updating data. Whenever a task involves NetSuite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "NetSuite"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["netsuite"]
   icon: "https://static.oomol.com/logo/third-party/netsuite.svg"
 ---

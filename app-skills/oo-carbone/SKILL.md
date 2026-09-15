@@ -3,10 +3,9 @@ name: oo-carbone
 description: "Carbone (carbone.io). Use this skill for ANY Carbone request — reading, creating, updating, and deleting data. Whenever a task involves Carbone, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Carbone"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["carbone"]
   icon: "https://static.oomol.com/logo/third-party/carbone.svg"
 ---

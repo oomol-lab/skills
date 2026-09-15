@@ -3,10 +3,9 @@ name: oo-ortto
 description: "Ortto (ortto.com). Use this skill for ANY Ortto request — reading, creating, and updating data. Whenever a task involves Ortto, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ortto"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ortto"]
   icon: "https://static.oomol.com/logo/third-party/ortto.svg"
 ---

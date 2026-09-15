@@ -3,10 +3,9 @@ name: oo-scrapingbee
 description: "ScrapingBee (scrapingbee.com). Use this skill for ANY ScrapingBee request — searching and reading data. Whenever a task involves ScrapingBee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ScrapingBee"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["scrapingbee"]
   icon: "https://static.oomol.com/logo/third-party/Scrapingbee.svg"
 ---

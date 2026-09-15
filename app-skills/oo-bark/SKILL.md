@@ -3,10 +3,9 @@ name: oo-bark
 description: "Bark (bark.day.app). Use this skill for ANY Bark request — reading, creating, and updating data. Whenever a task involves Bark, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Bark"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bark"]
   icon: "https://static.oomol.com/logo/third-party/bark.png"
 ---

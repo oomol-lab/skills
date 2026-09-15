@@ -3,10 +3,9 @@ name: oo-seedance
 description: "Seedance (volcengine.com). Use this skill for ANY Seedance request — reading, creating, updating, and deleting data. Whenever a task involves Seedance, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Seedance"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["seedance"]
   icon: "https://static.oomol.com/logo/third-party/seedance.svg"
 ---

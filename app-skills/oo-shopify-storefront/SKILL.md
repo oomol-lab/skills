@@ -3,10 +3,9 @@ name: oo-shopify-storefront
 description: "Shopify Storefront (shopify.com). Use this skill for ANY Shopify Storefront request — reading, creating, and updating data. Whenever a task involves Shopify Storefront, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Shopify Storefront"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["shopify_storefront"]
   icon: "https://static.oomol.com/logo/third-party/shopify_storefront.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-serveravatar
 description: "ServerAvatar (serveravatar.com). Use this skill for ANY ServerAvatar request — searching and reading data. Whenever a task involves ServerAvatar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ServerAvatar"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["serveravatar"]
   icon: "https://static.oomol.com/logo/third-party/serveravatar.png"
 ---

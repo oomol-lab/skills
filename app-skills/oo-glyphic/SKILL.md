@@ -3,10 +3,9 @@ name: oo-glyphic
 description: "Glyphic (goairspeed.com). Use this skill for ANY Glyphic request — searching and reading data. Whenever a task involves Glyphic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Glyphic"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["glyphic"]
   icon: "https://static.oomol.com/logo/third-party/glyphic.svg"
 ---

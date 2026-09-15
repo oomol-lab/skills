@@ -3,10 +3,9 @@ name: oo-supportbee
 description: "SupportBee (supportbee.com). Use this skill for ANY SupportBee request — reading, creating, updating, and deleting data. Whenever a task involves SupportBee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SupportBee"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["supportbee"]
   icon: "https://static.oomol.com/logo/third-party/supportbee.png"
 ---

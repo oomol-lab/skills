@@ -3,10 +3,9 @@ name: oo-imgix
 description: "Imgix (imgix.com). Use this skill for ANY Imgix request — reading, creating, updating, and deleting data. Whenever a task involves Imgix, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Imgix"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["imgix"]
   icon: "https://static.oomol.com/logo/third-party/imgix.svg"
 ---

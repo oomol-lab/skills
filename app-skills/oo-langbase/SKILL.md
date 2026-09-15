@@ -3,10 +3,9 @@ name: oo-langbase
 description: "Langbase (langbase.com). Use this skill for ANY Langbase request — reading, creating, updating, and deleting data. Whenever a task involves Langbase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Langbase"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["langbase"]
   icon: "https://static.oomol.com/logo/third-party/langbase.svg"
 ---

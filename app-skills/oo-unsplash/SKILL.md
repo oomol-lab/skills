@@ -3,10 +3,9 @@ name: oo-unsplash
 description: "Unsplash (unsplash.com). Use this skill for ANY Unsplash request — searching and reading data. Whenever a task involves Unsplash, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Unsplash"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["unsplash"]
   icon: "https://static.oomol.com/logo/third-party/unsplash.svg"
 ---

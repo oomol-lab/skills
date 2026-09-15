@@ -3,10 +3,9 @@ name: oo-the-colony
 description: "The Colony (thecolony.cc). Use this skill for ANY The Colony request — reading, creating, and updating data. Whenever a task involves The Colony, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "The Colony"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["the_colony"]
   icon: "https://static.oomol.com/logo/third-party/the_colony.svg"
 ---

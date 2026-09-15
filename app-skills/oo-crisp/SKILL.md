@@ -3,10 +3,9 @@ name: oo-crisp
 description: "Crisp (crisp.chat). Use this skill for ANY Crisp request — reading, creating, and updating data. Whenever a task involves Crisp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Crisp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["crisp"]
   icon: "https://static.oomol.com/logo/third-party/crisp.svg"
 ---

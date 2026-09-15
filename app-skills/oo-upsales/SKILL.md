@@ -3,10 +3,9 @@ name: oo-upsales
 description: "Upsales (upsales.com). Use this skill for ANY Upsales request — reading, creating, updating, and deleting data. Whenever a task involves Upsales, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Upsales"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["upsales"]
   icon: "https://static.oomol.com/logo/third-party/upsales.svg"
 ---

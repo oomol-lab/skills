@@ -3,10 +3,9 @@ name: oo-fiber-ai
 description: "Fiber AI (fiber.ai). Use this skill for ANY Fiber AI request — searching and reading data. Whenever a task involves Fiber AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fiber AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fiber_ai"]
   icon: "https://static.oomol.com/logo/third-party/fiber_ai.svg"
 ---

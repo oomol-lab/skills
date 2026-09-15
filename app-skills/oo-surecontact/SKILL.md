@@ -3,10 +3,9 @@ name: oo-surecontact
 description: "SureContact (surecontact.com). Use this skill for ANY SureContact request — reading, creating, updating, and deleting data. Whenever a task involves SureContact, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SureContact"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["surecontact"]
   icon: "https://static.oomol.com/logo/third-party/surecontact.svg"
 ---

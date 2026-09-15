@@ -3,10 +3,9 @@ name: oo-the-swarm
 description: "The Swarm (theswarm.com). Use this skill for ANY The Swarm request — searching and reading data. Whenever a task involves The Swarm, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "The Swarm"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["the_swarm"]
   icon: "https://static.oomol.com/logo/third-party/the_swarm.svg"
 ---

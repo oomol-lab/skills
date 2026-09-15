@@ -3,10 +3,9 @@ name: oo-freshdesk
 description: "Freshdesk (freshworks.com). Use this skill for ANY Freshdesk request — searching and reading data. Whenever a task involves Freshdesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Freshdesk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["freshdesk"]
   icon: "https://static.oomol.com/logo/third-party/Freshdesk.svg"
 ---

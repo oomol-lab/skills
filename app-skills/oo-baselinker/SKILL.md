@@ -3,10 +3,9 @@ name: oo-baselinker
 description: "BaseLinker (baselinker.com). Use this skill for ANY BaseLinker request — reading, creating, and updating data. Whenever a task involves BaseLinker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BaseLinker"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["baselinker"]
   icon: "https://static.oomol.com/logo/third-party/baselinker.svg"
 ---

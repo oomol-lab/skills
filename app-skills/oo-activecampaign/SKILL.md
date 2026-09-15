@@ -3,10 +3,9 @@ name: oo-activecampaign
 description: "ActiveCampaign (activecampaign.com). Use this skill for ANY ActiveCampaign request — reading, creating, and updating data. Whenever a task involves ActiveCampaign, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ActiveCampaign"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["activecampaign"]
   icon: "https://static.oomol.com/logo/third-party/activecampaign.svg"
 ---

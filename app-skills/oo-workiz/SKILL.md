@@ -3,10 +3,9 @@ name: oo-workiz
 description: "Workiz (workiz.com). Use this skill for ANY Workiz request — searching and reading data. Whenever a task involves Workiz, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Workiz"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["workiz"]
   icon: "https://static.oomol.com/logo/third-party/workiz.svg"
 ---

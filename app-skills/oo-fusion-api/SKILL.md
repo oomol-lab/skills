@@ -3,10 +3,9 @@ name: oo-fusion-api
 description: "OOMOL Fusion API (oomol.com). Use this skill for ANY OOMOL Fusion API request — reading, creating, updating, and deleting data. Whenever a task involves OOMOL Fusion API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---

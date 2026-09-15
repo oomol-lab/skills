@@ -3,10 +3,9 @@ name: oo-y-gy
 description: "Y.GY (app.y.gy). Use this skill for ANY Y.GY request — reading, creating, updating, and deleting data. Whenever a task involves Y.GY, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Y.GY"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["y_gy"]
   icon: "https://static.oomol.com/logo/third-party/y_gy.svg"
 ---

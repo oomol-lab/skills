@@ -3,10 +3,9 @@ name: oo-neetodesk
 description: "NeetoDesk (neeto.com). Use this skill for ANY NeetoDesk request — reading, creating, and updating data. Whenever a task involves NeetoDesk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "NeetoDesk"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["neetodesk"]
   icon: "https://static.oomol.com/logo/third-party/neetodesk.svg"
 ---

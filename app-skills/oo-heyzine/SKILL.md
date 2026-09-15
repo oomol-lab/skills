@@ -3,10 +3,9 @@ name: oo-heyzine
 description: "Heyzine (heyzine.com). Use this skill for ANY Heyzine request — reading, creating, updating, and deleting data. Whenever a task involves Heyzine, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Heyzine"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["heyzine"]
   icon: "https://static.oomol.com/logo/third-party/heyzine.svg"
 ---

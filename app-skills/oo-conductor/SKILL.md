@@ -3,10 +3,9 @@ name: oo-conductor
 description: "Conductor (conductor.com). Use this skill for ANY Conductor request — searching and reading data. Whenever a task involves Conductor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Conductor"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["conductor"]
   icon: "https://static.oomol.com/logo/third-party/conductor.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-desktime
 description: "DeskTime (desktime.com). Use this skill for ANY DeskTime request — reading, creating, and updating data. Whenever a task involves DeskTime, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DeskTime"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["desktime"]
   icon: "https://static.oomol.com/logo/third-party/desktime.svg"
 ---

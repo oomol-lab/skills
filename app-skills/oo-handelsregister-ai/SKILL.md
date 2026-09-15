@@ -3,10 +3,9 @@ name: oo-handelsregister-ai
 description: "Handelsregister AI (handelsregister.ai). Use this skill for ANY Handelsregister AI request — searching and reading data. Whenever a task involves Handelsregister AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Handelsregister AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["handelsregister_ai"]
   icon: "https://static.oomol.com/logo/third-party/handelsregister_ai.jpg"
 ---

@@ -3,10 +3,9 @@ name: oo-api-sports
 description: "API-SPORTS (api-sports.io). Use this skill for ANY API-SPORTS request — searching and reading data. Whenever a task involves API-SPORTS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "API-SPORTS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["api_sports"]
   icon: "https://static.oomol.com/logo/third-party/API-Sports.svg"
 ---

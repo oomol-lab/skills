@@ -3,10 +3,9 @@ name: oo-wecom-bot
 description: "WeCom Bot (work.weixin.qq.com). Use this skill for ANY WeCom Bot request — reading, creating, updating, and deleting data. Whenever a task involves WeCom Bot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "WeCom Bot"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["wecom_bot"]
   icon: "https://static.oomol.com/logo/third-party/wecom_bot.png"
 ---

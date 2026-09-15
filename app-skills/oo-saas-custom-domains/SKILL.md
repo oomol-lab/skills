@@ -3,10 +3,9 @@ name: oo-saas-custom-domains
 description: "SaaS Custom Domains (saascustomdomains.com). Use this skill for ANY SaaS Custom Domains request — reading, creating, updating, and deleting data. Whenever a task involves SaaS Custom Domains, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SaaS Custom Domains"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["saas_custom_domains"]
   icon: "https://static.oomol.com/logo/third-party/saas_custom_domains.svg"
 ---

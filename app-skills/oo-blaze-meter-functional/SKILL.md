@@ -3,10 +3,9 @@ name: oo-blaze-meter-functional
 description: "BlazeMeter Functional (blazemeter.com). Use this skill for ANY BlazeMeter Functional request — searching and reading data. Whenever a task involves BlazeMeter Functional, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "BlazeMeter Functional"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["blaze_meter_functional"]
   icon: "https://static.oomol.com/logo/third-party/blaze_meter_functional.svg"
 ---

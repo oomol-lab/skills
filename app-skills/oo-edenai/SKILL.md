@@ -3,10 +3,9 @@ name: oo-edenai
 description: "Eden AI (edenai.co). Use this skill for ANY Eden AI request — reading, creating, and updating data. Whenever a task involves Eden AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Eden AI"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["edenai"]
   icon: "https://static.oomol.com/logo/third-party/edenai.png"
 ---

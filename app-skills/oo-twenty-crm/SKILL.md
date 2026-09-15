@@ -3,10 +3,9 @@ name: oo-twenty-crm
 description: "Twenty CRM (twenty.com). Use this skill for ANY Twenty CRM request — reading, creating, updating, and deleting data. Whenever a task involves Twenty CRM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Twenty CRM"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["twenty_crm"]
   icon: "https://static.oomol.com/logo/third-party/twenty_crm.svg"
 ---

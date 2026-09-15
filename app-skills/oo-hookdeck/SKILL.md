@@ -3,10 +3,9 @@ name: oo-hookdeck
 description: "Hookdeck (hookdeck.com). Use this skill for ANY Hookdeck request — reading, creating, updating, and deleting data. Whenever a task involves Hookdeck, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hookdeck"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hookdeck"]
   icon: "https://static.oomol.com/logo/third-party/hookdeck.svg"
 ---

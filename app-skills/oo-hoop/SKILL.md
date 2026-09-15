@@ -3,10 +3,9 @@ name: oo-hoop
 description: "Hoop (hoop.dev). Use this skill for ANY Hoop request — searching and reading data. Whenever a task involves Hoop, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hoop"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hoop"]
   icon: "https://static.oomol.com/logo/third-party/hoop.svg"
 ---

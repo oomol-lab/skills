@@ -3,10 +3,9 @@ name: oo-gangtise
 description: "Gangtise (gangtise.com). Use this skill for ANY Gangtise request — searching and reading data. Whenever a task involves Gangtise, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Gangtise"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["gangtise"]
   icon: "https://static.oomol.com/logo/third-party/gangtise.png"
 ---

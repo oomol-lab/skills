@@ -3,10 +3,9 @@ name: oo-googledocs
 description: "Google Docs (workspace.google.com). Use this skill for ANY Google Docs request — reading, creating, updating, and deleting data. Whenever a task involves Google Docs, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google Docs"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googledocs"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Docs.svg"
 ---

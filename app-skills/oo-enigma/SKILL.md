@@ -3,10 +3,9 @@ name: oo-enigma
 description: "Enigma (enigma.com). Use this skill for ANY Enigma request — reading, creating, updating, and deleting data. Whenever a task involves Enigma, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Enigma"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["enigma"]
   icon: "https://static.oomol.com/logo/third-party/Enigma.svg"
 ---

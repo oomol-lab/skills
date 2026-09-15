@@ -3,10 +3,9 @@ name: oo-search-api
 description: "SearchApi (searchapi.io). Use this skill for ANY SearchApi request — searching and reading data. Whenever a task involves SearchApi, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "SearchApi"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["search_api"]
   icon: "https://static.oomol.com/logo/third-party/Search%20api.svg"
 ---

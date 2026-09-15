@@ -3,10 +3,9 @@ name: oo-reply-io
 description: "Reply.io (reply.io). Use this skill for ANY Reply.io request — reading, creating, and updating data. Whenever a task involves Reply.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Reply.io"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["reply_io"]
   icon: "https://static.oomol.com/logo/third-party/reply_io.svg"
 ---

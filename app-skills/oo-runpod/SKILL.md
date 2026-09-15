@@ -3,10 +3,9 @@ name: oo-runpod
 description: "Runpod (runpod.io). Use this skill for ANY Runpod request — reading, creating, updating, and deleting data. Whenever a task involves Runpod, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Runpod"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["runpod"]
   icon: "https://static.oomol.com/logo/third-party/RunPod.svg"
 ---

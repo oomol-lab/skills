@@ -3,10 +3,9 @@ name: oo-rawg
 description: "RAWG (rawg.io). Use this skill for ANY RAWG request — searching and reading data. Whenever a task involves RAWG, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "RAWG"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["rawg"]
   icon: "https://static.oomol.com/logo/third-party/RAWG%20Video%20Games%20Database.svg"
 ---

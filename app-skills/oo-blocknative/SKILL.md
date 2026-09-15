@@ -3,10 +3,9 @@ name: oo-blocknative
 description: "Blocknative (blocknative.com). Use this skill for ANY Blocknative request — searching and reading data. Whenever a task involves Blocknative, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Blocknative"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["blocknative"]
   icon: "https://static.oomol.com/logo/third-party/Blocknative.svg"
 ---

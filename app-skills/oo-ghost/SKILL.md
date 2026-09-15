@@ -3,10 +3,9 @@ name: oo-ghost
 description: "Ghost (ghost.org). Use this skill for ANY Ghost request — reading, creating, and updating data. Whenever a task involves Ghost, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ghost"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ghost"]
   icon: "https://static.oomol.com/logo/third-party/ghost.png"
 ---

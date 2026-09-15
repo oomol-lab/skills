@@ -3,10 +3,9 @@ name: oo-tinypng
 description: "TinyPNG (tinypng.com). Use this skill for ANY TinyPNG request — searching and reading data. Whenever a task involves TinyPNG, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "TinyPNG"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tinypng"]
   icon: "https://static.oomol.com/logo/third-party/TinyPNG.svg"
 ---

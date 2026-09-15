@@ -3,10 +3,9 @@ name: oo-l2s
 description: "L2S (l2s.is). Use this skill for ANY L2S request — reading, creating, and updating data. Whenever a task involves L2S, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "L2S"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["l2s"]
   icon: "https://static.oomol.com/logo/third-party/l2s.png"
 ---

@@ -3,10 +3,9 @@ name: oo-yuandian
 description: "Yuan Dian (open.chineselaw.com). Use this skill for ANY Yuan Dian request — searching and reading data. Whenever a task involves Yuan Dian, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Yuan Dian"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["yuandian"]
   icon: "https://static.oomol.com/logo/third-party/yuandian.svg"
 ---

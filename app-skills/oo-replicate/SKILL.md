@@ -3,10 +3,9 @@ name: oo-replicate
 description: "Replicate (replicate.com). Use this skill for ANY Replicate request — reading, creating, and updating data. Whenever a task involves Replicate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Replicate"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["replicate"]
   icon: "https://static.oomol.com/logo/third-party/replicate.png"
 ---

@@ -3,10 +3,9 @@ name: oo-humaans
 description: "Humaans (humaans.io). Use this skill for ANY Humaans request — searching and reading data. Whenever a task involves Humaans, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Humaans"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["humaans"]
   icon: "https://static.oomol.com/logo/third-party/humaans.svg"
 ---

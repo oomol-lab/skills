@@ -3,10 +3,9 @@ name: oo-jumpseller
 description: "Jumpseller (jumpseller.com). Use this skill for ANY Jumpseller request — reading, creating, and updating data. Whenever a task involves Jumpseller, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Jumpseller"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["jumpseller"]
   icon: "https://static.oomol.com/logo/third-party/jumpseller.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-netlify
 description: "Netlify (netlify.com). Use this skill for ANY Netlify request — reading, creating, updating, and deleting data. Whenever a task involves Netlify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Netlify"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["netlify"]
   icon: "https://static.oomol.com/logo/third-party/netlify.svg"
 ---

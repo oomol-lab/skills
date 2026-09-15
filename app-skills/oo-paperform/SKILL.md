@@ -3,10 +3,9 @@ name: oo-paperform
 description: "Paperform (paperform.co). Use this skill for ANY Paperform request — searching and reading data. Whenever a task involves Paperform, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Paperform"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["paperform"]
   icon: "https://static.oomol.com/logo/third-party/paperform.png"
 ---

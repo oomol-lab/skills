@@ -3,10 +3,9 @@ name: oo-oncehub
 description: "OnceHub (oncehub.com). Use this skill for ANY OnceHub request — searching and reading data. Whenever a task involves OnceHub, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OnceHub"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["oncehub"]
   icon: "https://static.oomol.com/logo/third-party/oncehub.png"
 ---

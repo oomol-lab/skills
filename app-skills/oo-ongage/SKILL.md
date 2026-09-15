@@ -3,10 +3,9 @@ name: oo-ongage
 description: "Ongage (ongage.com). Use this skill for ANY Ongage request — reading, creating, and updating data. Whenever a task involves Ongage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ongage"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["ongage"]
   icon: "https://static.oomol.com/logo/third-party/ongage.png"
 ---

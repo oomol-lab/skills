@@ -3,10 +3,9 @@ name: oo-hashnode
 description: "Hashnode (hashnode.com). Use this skill for ANY Hashnode request — reading, creating, updating, and deleting data. Whenever a task involves Hashnode, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Hashnode"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["hashnode"]
   icon: "https://static.oomol.com/logo/third-party/hashnode.svg"
 ---

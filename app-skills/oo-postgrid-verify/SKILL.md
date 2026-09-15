@@ -3,10 +3,9 @@ name: oo-postgrid-verify
 description: "PostGrid Verify (postgrid.com). Use this skill for ANY PostGrid Verify request — searching and reading data. Whenever a task involves PostGrid Verify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "PostGrid Verify"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["postgrid_verify"]
   icon: "https://static.oomol.com/logo/third-party/postgrid_verify.svg"
 ---

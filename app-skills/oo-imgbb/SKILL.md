@@ -3,10 +3,9 @@ name: oo-imgbb
 description: "ImgBB (imgbb.com). Use this skill for ANY ImgBB request — reading, creating, and updating data. Whenever a task involves ImgBB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ImgBB"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["imgbb"]
   icon: "https://static.oomol.com/logo/third-party/imgbb.png"
 ---

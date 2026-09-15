@@ -3,10 +3,9 @@ name: oo-serpdog
 description: "Serpdog (serpdog.io). Use this skill for ANY Serpdog request — searching and reading data. Whenever a task involves Serpdog, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Serpdog"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["serpdog"]
   icon: "https://static.oomol.com/logo/third-party/serpdog.svg"
 ---

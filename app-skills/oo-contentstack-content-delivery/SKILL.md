@@ -3,10 +3,9 @@ name: oo-contentstack-content-delivery
 description: "Contentstack Content Delivery (contentstack.com). Use this skill for ANY Contentstack Content Delivery request — searching and reading data. Whenever a task involves Contentstack Content Delivery, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Contentstack Content Delivery"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["contentstack_content_delivery"]
   icon: "https://static.oomol.com/logo/third-party/contentstack_content_delivery.webp"
 ---

@@ -3,10 +3,9 @@ name: oo-countly
 description: "Countly (countly.com). Use this skill for ANY Countly request — searching and reading data. Whenever a task involves Countly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Countly"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["countly"]
   icon: "https://static.oomol.com/logo/third-party/countly.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-mendeley
 description: "Mendeley (mendeley.com). Use this skill for ANY Mendeley request — reading, creating, updating, and deleting data. Whenever a task involves Mendeley, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mendeley"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["mendeley"]
   icon: "https://static.oomol.com/logo/third-party/mendeley.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-nocrm-io
 description: "noCRM.io (nocrm.io). Use this skill for ANY noCRM.io request — reading, creating, updating, and deleting data. Whenever a task involves noCRM.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "noCRM.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["nocrm_io"]
   icon: "https://static.oomol.com/logo/third-party/NoCRM.io.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-firecrawl
 description: "Firecrawl (firecrawl.dev). Use this skill for ANY Firecrawl request — reading, creating, updating, and deleting data. Whenever a task involves Firecrawl, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Firecrawl"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["firecrawl"]
   icon: "https://static.oomol.com/logo/third-party/Firecrawl.svg"
 ---

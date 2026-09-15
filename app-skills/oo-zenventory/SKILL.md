@@ -3,10 +3,9 @@ name: oo-zenventory
 description: "Zenventory (zenventory.com). Use this skill for ANY Zenventory request — reading, creating, and updating data. Whenever a task involves Zenventory, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Zenventory"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["zenventory"]
   icon: "https://static.oomol.com/logo/third-party/zenventory.png"
 ---

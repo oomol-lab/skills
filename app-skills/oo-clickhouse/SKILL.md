@@ -3,10 +3,9 @@ name: oo-clickhouse
 description: "ClickHouse (clickhouse.com). Use this skill for ANY ClickHouse request — searching and reading data. Whenever a task involves ClickHouse, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ClickHouse"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["clickhouse"]
   icon: "https://static.oomol.com/logo/third-party/clickhouse.svg"
 ---

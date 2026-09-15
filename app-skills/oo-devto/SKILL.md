@@ -3,10 +3,9 @@ name: oo-devto
 description: "Dev.to (dev.to). Use this skill for ANY Dev.to request — reading, creating, and updating data. Whenever a task involves Dev.to, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Dev.to"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["devto"]
   icon: "https://static.oomol.com/logo/third-party/devto.svg"
 ---

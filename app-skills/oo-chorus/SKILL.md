@@ -3,10 +3,9 @@ name: oo-chorus
 description: "Chorus (chorus.ai). Use this skill for ANY Chorus request — searching and reading data. Whenever a task involves Chorus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Chorus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["chorus"]
   icon: "https://static.oomol.com/logo/third-party/chorus.svg"
 ---

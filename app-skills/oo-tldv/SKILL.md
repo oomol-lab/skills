@@ -3,10 +3,9 @@ name: oo-tldv
 description: "tl;dv (tldv.io). Use this skill for ANY tl;dv request — reading, creating, and updating data. Whenever a task involves tl;dv, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "tl;dv"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["tldv"]
   icon: "https://static.oomol.com/logo/third-party/tldv.png"
 ---

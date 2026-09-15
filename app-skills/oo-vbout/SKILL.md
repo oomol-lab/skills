@@ -3,10 +3,9 @@ name: oo-vbout
 description: "VBOUT (vbout.com). Use this skill for ANY VBOUT request — reading, creating, updating, and deleting data. Whenever a task involves VBOUT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "VBOUT"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["vbout"]
   icon: "https://static.oomol.com/logo/third-party/vbout.png"
 ---

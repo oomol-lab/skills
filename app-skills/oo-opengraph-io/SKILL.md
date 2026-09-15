@@ -3,10 +3,9 @@ name: oo-opengraph-io
 description: "OpenGraph.io (opengraph.io). Use this skill for ANY OpenGraph.io request — searching and reading data. Whenever a task involves OpenGraph.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OpenGraph.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["opengraph_io"]
   icon: "https://static.oomol.com/logo/third-party/OpenGraph.io.svg"
 ---

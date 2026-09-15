@@ -3,10 +3,9 @@ name: oo-postmark
 description: "Postmark (postmarkapp.com). Use this skill for ANY Postmark request — reading, creating, and updating data. Whenever a task involves Postmark, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Postmark"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["postmark"]
   icon: "https://static.oomol.com/logo/third-party/Postmark.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-crunchbase
 description: "Crunchbase (crunchbase.com). Use this skill for ANY Crunchbase request — searching and reading data. Whenever a task involves Crunchbase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Crunchbase"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["crunchbase"]
   icon: "https://static.oomol.com/logo/third-party/crunchbase.png"
 ---

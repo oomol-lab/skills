@@ -3,10 +3,9 @@ name: oo-perigon
 description: "Perigon (perigon.io). Use this skill for ANY Perigon request — searching and reading data. Whenever a task involves Perigon, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Perigon"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["perigon"]
   icon: "https://static.oomol.com/logo/third-party/perigon.svg"
 ---

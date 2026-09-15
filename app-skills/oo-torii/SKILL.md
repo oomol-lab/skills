@@ -3,10 +3,9 @@ name: oo-torii
 description: "Torii (toriihq.com). Use this skill for ANY Torii request — searching and reading data. Whenever a task involves Torii, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Torii"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["torii"]
   icon: "https://static.oomol.com/logo/third-party/torii.svg"
 ---

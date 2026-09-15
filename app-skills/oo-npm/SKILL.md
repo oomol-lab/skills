@@ -3,10 +3,9 @@ name: oo-npm
 description: "npm (npmjs.com). Use this skill for ANY npm request — searching and reading data. Whenever a task involves npm, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "npm"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["npm"]
   icon: "https://static.oomol.com/logo/third-party/npm.svg"
 ---

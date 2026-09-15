@@ -3,10 +3,9 @@ name: oo-ticketmaster
 description: "Ticketmaster (ticketmaster.com). Use this skill for ANY Ticketmaster request — searching and reading data. Whenever a task involves Ticketmaster, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ticketmaster"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ticketmaster"]
   icon: "https://static.oomol.com/logo/third-party/Ticketmaster.png"
 ---

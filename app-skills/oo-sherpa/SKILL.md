@@ -3,10 +3,9 @@ name: oo-sherpa
 description: "Sherpa (joinsherpa.com). Use this skill for ANY Sherpa request — searching and reading data. Whenever a task involves Sherpa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Sherpa"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sherpa"]
   icon: "https://static.oomol.com/logo/third-party/sherpa.svg"
 ---

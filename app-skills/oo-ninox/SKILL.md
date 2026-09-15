@@ -3,10 +3,9 @@ name: oo-ninox
 description: "Ninox (ninox.com). Use this skill for ANY Ninox request — reading, creating, updating, and deleting data. Whenever a task involves Ninox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Ninox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ninox"]
   icon: "https://static.oomol.com/logo/third-party/ninox.png"
 ---

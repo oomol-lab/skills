@@ -3,10 +3,9 @@ name: oo-harvest
 description: "Harvest (getharvest.com). Use this skill for ANY Harvest request — reading, creating, updating, and deleting data. Whenever a task involves Harvest, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Harvest"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["harvest"]
   icon: "https://static.oomol.com/logo/third-party/Harvest.svg"
 ---

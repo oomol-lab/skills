@@ -3,10 +3,9 @@ name: oo-tencent-maps
 description: "Tencent Maps (lbs.qq.com). Use this skill for ANY Tencent Maps request — searching and reading data. Whenever a task involves Tencent Maps, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tencent Maps"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tencent_maps"]
   icon: "https://static.oomol.com/logo/third-party/tencent_maps.png"
 ---

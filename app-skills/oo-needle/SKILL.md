@@ -3,10 +3,9 @@ name: oo-needle
 description: "Needle (needle.app). Use this skill for ANY Needle request — reading, creating, and updating data. Whenever a task involves Needle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Needle"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["needle"]
   icon: "https://static.oomol.com/logo/third-party/Needle.svg"
 ---

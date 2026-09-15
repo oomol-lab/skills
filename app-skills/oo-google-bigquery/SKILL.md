@@ -3,10 +3,9 @@ name: oo-google-bigquery
 description: "Google BigQuery (cloud.google.com). Use this skill for ANY Google BigQuery request — reading, creating, updating, and deleting data. Whenever a task involves Google BigQuery, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Google BigQuery"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["google_bigquery"]
   icon: "https://static.oomol.com/logo/third-party/google_bigquery.png"
 ---

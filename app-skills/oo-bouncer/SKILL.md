@@ -3,10 +3,9 @@ name: oo-bouncer
 description: "Bouncer (usebouncer.com). Use this skill for ANY Bouncer request — reading, creating, updating, and deleting data. Whenever a task involves Bouncer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Bouncer"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bouncer"]
   icon: "https://static.oomol.com/logo/third-party/Bouncer.svg"
 ---

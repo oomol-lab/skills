@@ -3,10 +3,9 @@ name: oo-html-to-image
 description: "HTML to Image (html2img.com). Use this skill for ANY HTML to Image request — searching and reading data. Whenever a task involves HTML to Image, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "HTML to Image"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["html_to_image"]
   icon: "https://static.oomol.com/logo/third-party/html_to_image.svg"
 ---

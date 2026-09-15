@@ -3,10 +3,9 @@ name: oo-insites
 description: "Insites (insites.com). Use this skill for ANY Insites request — reading, creating, and updating data. Whenever a task involves Insites, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Insites"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["insites"]
   icon: "https://static.oomol.com/logo/third-party/insites.svg"
 ---

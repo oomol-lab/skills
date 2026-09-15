@@ -3,10 +3,9 @@ name: oo-mailtrap
 description: "Mailtrap (mailtrap.io). Use this skill for ANY Mailtrap request — reading, creating, updating, and deleting data. Whenever a task involves Mailtrap, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mailtrap"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mailtrap"]
   icon: "https://static.oomol.com/logo/third-party/Mailtrap.svg"
 ---

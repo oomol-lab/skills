@@ -3,10 +3,9 @@ name: oo-netease-mail
 description: "NetEase Mail (mail.163.com). Use this skill for ANY NetEase Mail request — reading, creating, updating, and deleting data. Whenever a task involves NetEase Mail, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "NetEase Mail"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["netease_mail"]
   icon: "https://static.oomol.com/logo/third-party/netease_mail.png"
 ---

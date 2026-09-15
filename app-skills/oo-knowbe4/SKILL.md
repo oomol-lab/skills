@@ -3,10 +3,9 @@ name: oo-knowbe4
 description: "KnowBe4 (knowbe4.com). Use this skill for ANY KnowBe4 request — searching and reading data. Whenever a task involves KnowBe4, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "KnowBe4"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["knowbe4"]
   icon: "https://static.oomol.com/logo/third-party/knowbe4.png"
 ---

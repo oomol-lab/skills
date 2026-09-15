@@ -3,10 +3,9 @@ name: oo-toggl
 description: "Toggl Track (toggl.com). Use this skill for ANY Toggl Track request — reading, creating, updating, and deleting data. Whenever a task involves Toggl Track, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Toggl Track"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["toggl"]
   icon: "https://static.oomol.com/logo/third-party/Toggl.svg"
 ---

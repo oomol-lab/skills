@@ -3,10 +3,9 @@ name: oo-altiria
 description: "Altiria (altiria.com). Use this skill for ANY Altiria request — reading, creating, updating, and deleting data. Whenever a task involves Altiria, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Altiria"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["altiria"]
   icon: "https://static.oomol.com/logo/third-party/altiria.png"
 ---

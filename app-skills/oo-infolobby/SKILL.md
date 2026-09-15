@@ -3,10 +3,9 @@ name: oo-infolobby
 description: "InfoLobby (infolobby.com). Use this skill for ANY InfoLobby request — reading, creating, updating, and deleting data. Whenever a task involves InfoLobby, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "InfoLobby"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["infolobby"]
   icon: "https://static.oomol.com/logo/third-party/infolobby.png"
 ---

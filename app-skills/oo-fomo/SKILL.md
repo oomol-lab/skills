@@ -3,10 +3,9 @@ name: oo-fomo
 description: "Fomo (fomo.com). Use this skill for ANY Fomo request — reading, creating, updating, and deleting data. Whenever a task involves Fomo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fomo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fomo"]
   icon: "https://static.oomol.com/logo/third-party/fomo.svg"
 ---

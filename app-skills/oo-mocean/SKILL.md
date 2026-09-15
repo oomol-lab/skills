@@ -3,10 +3,9 @@ name: oo-mocean
 description: "Mocean (moceanapi.com). Use this skill for ANY Mocean request — reading, creating, and updating data. Whenever a task involves Mocean, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Mocean"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mocean"]
   icon: "https://static.oomol.com/logo/third-party/mocean.png"
 ---

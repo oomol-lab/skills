@@ -3,10 +3,9 @@ name: oo-fireflies
 description: "Fireflies (fireflies.ai). Use this skill for ANY Fireflies request — reading, creating, updating, and deleting data. Whenever a task involves Fireflies, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Fireflies"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fireflies"]
   icon: "https://static.oomol.com/logo/third-party/Fireflies.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-torii-image-translator
 description: "Torii Image Translator (toriitranslate.com). Use this skill for ANY Torii Image Translator request — searching and reading data. Whenever a task involves Torii Image Translator, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Torii Image Translator"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["torii_image_translator"]
   icon: "https://static.oomol.com/logo/third-party/torii_image_translator.png"
 ---

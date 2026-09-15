@@ -3,10 +3,9 @@ name: oo-expofp
 description: "ExpoFP (expofp.com). Use this skill for ANY ExpoFP request — reading, creating, updating, and deleting data. Whenever a task involves ExpoFP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "ExpoFP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["expofp"]
   icon: "https://static.oomol.com/logo/third-party/expofp.svg"
 ---

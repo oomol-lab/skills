@@ -3,10 +3,9 @@ name: oo-rewiser
 description: "Rewiser (rewiser.io). Use this skill for ANY Rewiser request — reading, creating, and updating data. Whenever a task involves Rewiser, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Rewiser"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["rewiser"]
   icon: "https://static.oomol.com/logo/third-party/rewiser.svg"
 ---

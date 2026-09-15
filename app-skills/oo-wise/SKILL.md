@@ -3,10 +3,9 @@ name: oo-wise
 description: "Wise (wise.com). Use this skill for ANY Wise request — searching and reading data. Whenever a task involves Wise, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Wise"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["wise"]
   icon: "https://static.oomol.com/logo/third-party/wise.svg"
 ---

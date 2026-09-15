@@ -3,10 +3,9 @@ name: oo-userflow
 description: "Userflow (userflow.com). Use this skill for ANY Userflow request — reading, creating, updating, and deleting data. Whenever a task involves Userflow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Userflow"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["userflow"]
   icon: "https://static.oomol.com/logo/third-party/userflow.png"
 ---

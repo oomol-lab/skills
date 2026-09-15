@@ -3,10 +3,9 @@ name: oo-one-password
 description: "1Password (1password.com). Use this skill for ANY 1Password request — searching and reading data. Whenever a task involves 1Password, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "1Password"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["one_password"]
   icon: "https://static.oomol.com/logo/third-party/one_password.svg"
 ---

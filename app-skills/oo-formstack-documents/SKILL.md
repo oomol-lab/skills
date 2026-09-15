@@ -3,10 +3,9 @@ name: oo-formstack-documents
 description: "Formstack Documents (forms.formstack.com). Use this skill for ANY Formstack Documents request — reading, creating, updating, and deleting data. Whenever a task involves Formstack Documents, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Formstack Documents"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["formstack_documents"]
   icon: "https://static.oomol.com/logo/third-party/formstack_documents.svg"
 ---

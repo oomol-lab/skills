@@ -3,10 +3,9 @@ name: oo-front
 description: "Front (front.com). Use this skill for ANY Front request — reading, creating, and updating data. Whenever a task involves Front, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Front"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["front"]
   icon: "https://static.oomol.com/logo/third-party/front.png"
 ---

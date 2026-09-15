@@ -3,10 +3,9 @@ name: oo-bright-data
 description: "Bright Data (brightdata.com). Use this skill for ANY Bright Data request — searching and reading data. Whenever a task involves Bright Data, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Bright Data"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["bright_data"]
   icon: "https://static.oomol.com/logo/third-party/bright_data.png"
 ---

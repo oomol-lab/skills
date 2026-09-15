@@ -3,10 +3,9 @@ name: oo-nylas
 description: "Nylas (nylas.com). Use this skill for ANY Nylas request — searching and reading data. Whenever a task involves Nylas, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Nylas"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["nylas"]
   icon: "https://static.oomol.com/logo/third-party/nylas.svg"
 ---

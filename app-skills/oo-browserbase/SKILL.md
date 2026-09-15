@@ -3,10 +3,9 @@ name: oo-browserbase
 description: "Browserbase (browserbase.com). Use this skill for ANY Browserbase request — reading, creating, updating, and deleting data. Whenever a task involves Browserbase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Browserbase"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["browserbase"]
   icon: "https://static.oomol.com/logo/third-party/Browserbase.svg"
 ---

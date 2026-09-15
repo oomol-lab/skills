@@ -3,10 +3,9 @@ name: oo-intercom
 description: "Intercom (intercom.com). Use this skill for ANY Intercom request — reading, creating, and updating data. Whenever a task involves Intercom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Intercom"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["intercom"]
   icon: "https://static.oomol.com/logo/third-party/Intercom.svg"
 ---

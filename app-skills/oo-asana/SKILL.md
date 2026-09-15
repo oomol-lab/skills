@@ -3,10 +3,9 @@ name: oo-asana
 description: "Asana (asana.com). Use this skill for ANY Asana request — reading, creating, updating, and deleting data. Whenever a task involves Asana, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Asana"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["asana"]
   icon: "https://static.oomol.com/logo/third-party/Asana.svg"
 ---

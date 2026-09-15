@@ -3,10 +3,9 @@ name: oo-coingecko
 description: "CoinGecko (coingecko.com). Use this skill for ANY CoinGecko request — searching and reading data. Whenever a task involves CoinGecko, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "CoinGecko"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["coingecko"]
   icon: "https://static.oomol.com/logo/third-party/coingecko.svg"
 ---

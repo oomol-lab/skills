@@ -3,10 +3,9 @@ name: oo-tianyancha
 description: "Tianyancha (tianyancha.com). Use this skill for ANY Tianyancha request — searching and reading data. Whenever a task involves Tianyancha, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Tianyancha"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tianyancha"]
   icon: "https://static.oomol.com/logo/third-party/tianyancha.svg"
 ---

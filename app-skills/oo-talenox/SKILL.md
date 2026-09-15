@@ -3,10 +3,9 @@ name: oo-talenox
 description: "Talenox (talenox.com). Use this skill for ANY Talenox request — searching and reading data. Whenever a task involves Talenox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Talenox"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["talenox"]
   icon: "https://static.oomol.com/logo/third-party/talenox.png"
 ---

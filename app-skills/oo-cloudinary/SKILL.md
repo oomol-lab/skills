@@ -3,10 +3,9 @@ name: oo-cloudinary
 description: "Cloudinary (cloudinary.com). Use this skill for ANY Cloudinary request — reading, creating, and updating data. Whenever a task involves Cloudinary, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Cloudinary"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cloudinary"]
   icon: "https://static.oomol.com/logo/third-party/Cloudinary.svg"
 ---

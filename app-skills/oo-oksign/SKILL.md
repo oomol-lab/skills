@@ -3,10 +3,9 @@ name: oo-oksign
 description: "OKSign (oksign.be). Use this skill for ANY OKSign request — searching and reading data. Whenever a task involves OKSign, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OKSign"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["oksign"]
   icon: "https://static.oomol.com/logo/third-party/oksign.png"
 ---

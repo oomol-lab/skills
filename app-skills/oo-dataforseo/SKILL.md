@@ -3,10 +3,9 @@ name: oo-dataforseo
 description: "DataForSEO (dataforseo.com). Use this skill for ANY DataForSEO request — reading, creating, and updating data. Whenever a task involves DataForSEO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "DataForSEO"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["dataforseo"]
   icon: "https://static.oomol.com/logo/third-party/dataforseo.png"
 ---

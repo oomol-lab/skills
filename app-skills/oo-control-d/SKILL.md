@@ -3,10 +3,9 @@ name: oo-control-d
 description: "Control D (controld.com). Use this skill for ANY Control D request — reading, creating, updating, and deleting data. Whenever a task involves Control D, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Control D"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["control_d"]
   icon: "https://static.oomol.com/logo/third-party/Control%20D.svg"
 ---

@@ -3,10 +3,9 @@ name: oo-beeminder
 description: "Beeminder (beeminder.com). Use this skill for ANY Beeminder request — reading, creating, updating, and deleting data. Whenever a task involves Beeminder, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Beeminder"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["beeminder"]
   icon: "https://static.oomol.com/logo/third-party/beeminder.png"
 ---

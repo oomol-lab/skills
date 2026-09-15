@@ -3,10 +3,9 @@ name: oo-openweather-api
 description: "OpenWeather (openweathermap.org). Use this skill for ANY OpenWeather request — reading, creating, updating, and deleting data. Whenever a task involves OpenWeather, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "OpenWeather"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["openweather_api"]
   icon: "https://static.oomol.com/logo/third-party/OpenWeather%20API.svg"
 ---

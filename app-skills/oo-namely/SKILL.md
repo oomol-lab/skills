@@ -3,10 +3,9 @@ name: oo-namely
 description: "Namely (namely.com). Use this skill for ANY Namely request — searching and reading data. Whenever a task involves Namely, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Namely"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["namely"]
   icon: "https://static.oomol.com/logo/third-party/namely.svg"
 ---

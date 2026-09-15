@@ -3,10 +3,9 @@ name: oo-salesmate
 description: "Salesmate (salesmate.io). Use this skill for ANY Salesmate request — reading, creating, updating, and deleting data. Whenever a task involves Salesmate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Salesmate"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["salesmate"]
   icon: "https://static.oomol.com/logo/third-party/salesmate.svg"
 ---

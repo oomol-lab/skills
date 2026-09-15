@@ -3,10 +3,9 @@ name: oo-elorus
 description: "Elorus (elorus.com). Use this skill for ANY Elorus request — reading, creating, and updating data. Whenever a task involves Elorus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "Elorus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["elorus"]
   icon: "https://static.oomol.com/logo/third-party/elorus.svg"
 ---

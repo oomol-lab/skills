@@ -3,10 +3,9 @@ name: oo-genderapi-io
 description: "GenderAPI.io (genderapi.io). Use this skill for ANY GenderAPI.io request — searching and reading data. Whenever a task involves GenderAPI.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  source: "oomol-connector-generated"
   title: "GenderAPI.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["genderapi_io"]
   icon: "https://static.oomol.com/logo/third-party/genderapi_io.png"
 ---
