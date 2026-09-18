@@ -1,11 +1,11 @@
 ---
 name: oo-taiga
-description: "Taiga (taiga.io). Use this skill for ANY Taiga request — reading, creating, and updating data. Whenever a task involves Taiga, use this skill instead of calling the API directly."
+description: "Taiga (taiga.io). Use this skill for ANY Taiga request — reading, creating, updating, and deleting data. Whenever a task involves Taiga, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Taiga"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["taiga"]
   icon: "https://static.oomol.com/logo/third-party/taiga.svg"
 ---
@@ -49,10 +49,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_projects` — List Taiga projects visible to the connected user.
 - `list_tasks` — List Taiga tasks with optional project filters.
 - `list_user_stories` — List Taiga user stories with optional project filters.
-- `update_issue` — Update a Taiga issue using optimistic concurrency control. [write]
-- `update_project` — Update a Taiga project using optimistic concurrency control. [write]
-- `update_task` — Update a Taiga task using optimistic concurrency control. [write]
-- `update_user_story` — Update a Taiga user story using optimistic concurrency control. [write]
+- `update_issue` — Update a Taiga issue using optimistic concurrency control. [destructive]
+- `update_project` — Update a Taiga project using optimistic concurrency control. [destructive]
+- `update_task` — Update a Taiga task using optimistic concurrency control. [destructive]
+- `update_user_story` — Update a Taiga user story using optimistic concurrency control. [destructive]
 
 ## Safety
 

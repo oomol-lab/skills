@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dropbox"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["dropbox"]
   icon: "https://static.oomol.com/logo/third-party/Dropbox.svg"
 ---
@@ -53,11 +53,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_revisions` — List revisions for one Dropbox file.
 - `list_shared_links` — List Dropbox shared links for the current user or a specific path.
 - `modify_shared_link` — Modify settings for an existing Dropbox shared link. [write]
-- `move` — Move one file or folder to another Dropbox path. [write]
-- `restore` — Restore one Dropbox file to a previous revision. [write]
+- `move` — Move one file or folder to another Dropbox path. [destructive]
+- `restore` — Restore one Dropbox file to a previous revision. [destructive]
 - `revoke_shared_link` — Revoke an existing Dropbox shared link. [destructive]
 - `save_url` — Ask Dropbox to save a public URL into a Dropbox file path. [write]
-- `save_url_check_job_status` — Check the status of an asynchronous Dropbox save_url job. [write]
+- `save_url_check_job_status` — Check the status of an asynchronous Dropbox save_url job.
 - `search_files` — Search Dropbox files and folders with the official search_v2 endpoint.
 - `search_files_continue` — Continue a previous Dropbox file search with a cursor.
 - `upload_file` — Upload one file to Dropbox from inline text or base64 content. [write]

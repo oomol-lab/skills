@@ -1,11 +1,11 @@
 ---
 name: oo-torii-image-translator
-description: "Torii Image Translator (toriitranslate.com). Use this skill for ANY Torii Image Translator request — searching and reading data. Whenever a task involves Torii Image Translator, use this skill instead of calling the API directly."
+description: "Torii Image Translator (toriitranslate.com). Use this skill for ANY Torii Image Translator request — reading, creating, and updating data. Whenever a task involves Torii Image Translator, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Torii Image Translator"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["torii_image_translator"]
   icon: "https://static.oomol.com/logo/third-party/torii_image_translator.png"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_credits` — Retrieve the credit balance remaining for the connected Torii API key.
 - `inpaint_image` — Remove masked text or objects from a public image with Torii inpainting and return the cleaned PNG through transit storage.
 - `translate_image` — Translate text in a manga, comic, or other public image with Torii, remove the source text, re-typeset the translation, and return the downloadable translated image.
-- `typeset_image` — Render translated text boxes over a pre-cleaned public image with Torii and return the typeset PNG through transit storage.
+- `typeset_image` — Render translated text boxes over a pre-cleaned public image with Torii and return the typeset PNG through transit storage. [write]
 
 ## Safety
 

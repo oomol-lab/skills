@@ -1,11 +1,11 @@
 ---
 name: oo-circle
-description: "Circle (circle.so). Use this skill for ANY Circle request — reading, creating, and updating data. Whenever a task involves Circle, use this skill instead of calling the API directly."
+description: "Circle (circle.so). Use this skill for ANY Circle request — searching and reading data. Whenever a task involves Circle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Circle"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["circle"]
   icon: "https://static.oomol.com/logo/third-party/circle.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_community` — Get details about the Circle community associated with the current API token.
 - `get_community_member` — Get a Circle community member by ID.
-- `get_post` — Get a Circle basic post by ID. [write]
+- `get_post` — Get a Circle basic post by ID.
 - `get_space_group` — Get a Circle space group by ID.
 - `list_community_members` — List Circle community members with optional status and tag filters.
 - `list_posts` — List Circle basic posts with optional space, status, search, and sort filters.

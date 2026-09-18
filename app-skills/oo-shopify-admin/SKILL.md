@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shopify Admin"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["shopify_admin"]
   icon: "https://static.oomol.com/logo/third-party/shopify_admin.svg"
 ---
@@ -37,26 +37,26 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `adjust_inventory_quantities` — Apply incremental Shopify inventory quantity changes with required idempotency and explicit compare-and-swap values.
+- `adjust_inventory_quantities` — Apply incremental Shopify inventory quantity changes with required idempotency and explicit compare-and-swap values. [write]
 - `create_fulfillment` — Create a Shopify fulfillment for one or more fulfillment orders with optional tracking and customer notification. [write]
 - `create_product` — Create one Shopify product with typed product attributes and optional media sources. [write]
 - `download_bulk_result` — Download a completed or partial Shopify bulk JSONL result and upload it to connector transit storage.
-- `execute_graphql` — Execute a JSON-friendly Shopify Admin GraphQL query or mutation against the connected shop.
+- `execute_graphql` — Execute a JSON-friendly Shopify Admin GraphQL query or mutation against the connected shop. [write]
 - `get_bulk_operation` — Retrieve one Shopify bulk operation by ID for progress polling and result URL discovery.
 - `get_collection` — Retrieve one Shopify collection by GraphQL global ID.
 - `get_customer` — Retrieve one Shopify customer by GraphQL global ID.
-- `get_fulfillment_order` — Retrieve one Shopify fulfillment order with independently paginated line items. [write]
+- `get_fulfillment_order` — Retrieve one Shopify fulfillment order with independently paginated line items.
 - `get_inventory_item` — Retrieve one Shopify inventory item by GraphQL global ID.
 - `get_inventory_quantities` — Retrieve selected inventory quantity states for one Shopify inventory item at one location.
 - `get_location` — Retrieve one Shopify location by GraphQL global ID.
-- `get_order` — Retrieve one Shopify order by GraphQL global ID. [write]
+- `get_order` — Retrieve one Shopify order by GraphQL global ID.
 - `get_product` — Retrieve one Shopify product by GraphQL global ID.
 - `get_shop` — Retrieve basic shop information for the connected Shopify Admin token.
 - `list_collections` — List Shopify collections with optional search query and cursor pagination.
 - `list_customers` — List Shopify customers with optional search query and cursor pagination.
 - `list_inventory_items` — List Shopify inventory items with optional search query and cursor pagination.
 - `list_locations` — List Shopify inventory locations with optional filters and cursor pagination.
-- `list_order_fulfillment_orders` — List fulfillment orders and fulfillable line items for one Shopify order. [write]
+- `list_order_fulfillment_orders` — List fulfillment orders and fulfillable line items for one Shopify order.
 - `list_orders` — List Shopify orders with optional search query and cursor pagination.
 - `list_product_variants` — List Shopify product variants with optional search query and cursor pagination.
 - `list_products` — List Shopify products with optional search query and cursor pagination.

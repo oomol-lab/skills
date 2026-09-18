@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Perdoo"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["perdoo"]
   icon: "https://static.oomol.com/logo/third-party/perdoo.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_graphql` — Execute a JSON-friendly Perdoo GraphQL query or mutation.
+- `execute_graphql` — Execute a JSON-friendly Perdoo GraphQL query or mutation. [write]
 - `get_goal` — Retrieve one Perdoo goal by UUID.
 - `list_goals` — List Perdoo goals with the documented GraphQL goal filters and cursor pagination.
 - `upsert_commit` — Create or update a Perdoo progress update for exactly one goal, key result, or KPI. [write]

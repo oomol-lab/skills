@@ -1,11 +1,11 @@
 ---
 name: oo-coupang
-description: "Coupang (coupang.com). Use this skill for ANY Coupang request — reading, creating, and updating data. Whenever a task involves Coupang, use this skill instead of calling the API directly."
+description: "Coupang (coupang.com). Use this skill for ANY Coupang request — reading, creating, updating, and deleting data. Whenever a task involves Coupang, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Coupang"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["coupang"]
   icon: "https://static.oomol.com/logo/third-party/coupang.svg"
 ---
@@ -38,13 +38,13 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_item_inventory` — Get the stock quantity, sale price, and sale status of one Coupang item.
-- `get_order` — Get current purchase-order and receiver details for one Coupang order. [write]
+- `get_order` — Get current purchase-order and receiver details for one Coupang order.
 - `get_product` — Get the registered details of one Coupang seller product.
 - `list_orders` — List Coupang purchase orders for a date range and fulfillment status.
 - `list_products` — List seller products in Coupang with optional filters and cursor pagination.
 - `list_return_requests` — List Coupang return or cancellation requests submitted in a time range.
-- `update_item_price` — Replace the selling price and optional auto-pricing settings of one Coupang item. [write]
-- `update_item_quantity` — Replace the available inventory quantity of one Coupang item. [write]
+- `update_item_price` — Replace the selling price and optional auto-pricing settings of one Coupang item. [destructive]
+- `update_item_quantity` — Replace the available inventory quantity of one Coupang item. [destructive]
 
 ## Safety
 

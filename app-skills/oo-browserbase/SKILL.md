@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Browserbase"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["browserbase"]
   icon: "https://static.oomol.com/logo/third-party/Browserbase.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_projects` — List the Browserbase projects visible to the current API key.
 - `list_sessions` — List Browserbase sessions with optional status or metadata query filters.
 - `refresh_context_upload_credentials` — Refresh the Browserbase upload credentials for an existing context so a new encrypted archive can be uploaded. [write]
-- `request_session_release` — Request that Browserbase releases a session before timeout by sending status REQUEST_RELEASE.
+- `request_session_release` — Request that Browserbase releases a session before timeout by sending status REQUEST_RELEASE. [destructive]
 
 ## Safety
 

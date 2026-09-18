@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Together AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["together_ai"]
   icon: "https://static.oomol.com/logo/third-party/together_ai.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a non-streaming Together AI chat completion. [write]
+- `create_chat_completion` — Create a non-streaming Together AI chat completion.
 - `create_embedding` — Create Together AI embeddings for one or more text inputs. [write]
 - `list_models` — List the Together AI models available to the current API key.
 

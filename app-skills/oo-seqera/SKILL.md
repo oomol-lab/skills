@@ -1,11 +1,11 @@
 ---
 name: oo-seqera
-description: "Seqera (seqera.io). Use this skill for ANY Seqera request — searching and reading data. Whenever a task involves Seqera, use this skill instead of calling the API directly."
+description: "Seqera (seqera.io). Use this skill for ANY Seqera request — reading, creating, and updating data. Whenever a task involves Seqera, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Seqera"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["seqera"]
   icon: "https://static.oomol.com/logo/third-party/Seqera.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_pipeline` — Retrieve one Seqera pipeline by pipeline ID.
 - `get_workflow` — Retrieve one Seqera workflow run by workflow ID.
 - `get_workspace` — Retrieve one Seqera workspace by organization ID and workspace ID.
-- `launch_workflow` — Launch a Seqera workflow from a pipeline repository or registered pipeline.
+- `launch_workflow` — Launch a Seqera workflow from a pipeline repository or registered pipeline. [write]
 - `list_pipelines` — List Seqera pipelines in the current user context or a specific workspace.
 - `list_user_workspaces` — List the workspaces and organizations visible to the current Seqera user.
 - `list_workflows` — List Seqera workflow runs in the current user context or a specific workspace.

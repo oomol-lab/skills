@@ -1,11 +1,11 @@
 ---
 name: oo-evenium
-description: "Evenium (corp.evenium.com). Use this skill for ANY Evenium request — reading, creating, and updating data. Whenever a task involves Evenium, use this skill instead of calling the API directly."
+description: "Evenium (corp.evenium.com). Use this skill for ANY Evenium request — searching and reading data. Whenever a task involves Evenium, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Evenium"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["evenium"]
   icon: "https://static.oomol.com/logo/third-party/evenium.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_event` — Get one Evenium event by event ID or external event ID.
 - `get_guest` — Get one Evenium guest by contact ID or guest code for a given event.
-- `get_guest_post_status` — Get the current post-event attendance status for one Evenium guest. [write]
+- `get_guest_post_status` — Get the current post-event attendance status for one Evenium guest.
 - `get_guest_status` — Get the current RSVP status for one Evenium guest.
 - `list_events` — List Evenium events with optional title, status, date filters, and pagination.
 - `list_guests` — List guests for one Evenium event with optional attendee filters, expansions, and pagination.

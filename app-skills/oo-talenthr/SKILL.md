@@ -1,11 +1,11 @@
 ---
 name: oo-talenthr
-description: "TalentHR (talenthr.io). Use this skill for ANY TalentHR request — searching and reading data. Whenever a task involves TalentHR, use this skill instead of calling the API directly."
+description: "TalentHR (talenthr.io). Use this skill for ANY TalentHR request — reading, creating, and updating data. Whenever a task involves TalentHR, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TalentHR"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["talenthr"]
   icon: "https://static.oomol.com/logo/third-party/Talenthr.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `change_employee_role` — Change a TalentHR employee's user role to Employee or HR-Manager using the official employee role endpoints.
+- `change_employee_role` — Change a TalentHR employee's user role to Employee or HR-Manager using the official employee role endpoints. [write]
 
 ## Safety
 

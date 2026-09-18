@@ -1,11 +1,11 @@
 ---
 name: oo-signpath
-description: "SignPath (signpath.io). Use this skill for ANY SignPath request — searching and reading data. Whenever a task involves SignPath, use this skill instead of calling the API directly."
+description: "SignPath (signpath.io). Use this skill for ANY SignPath request — reading, creating, and updating data. Whenever a task involves SignPath, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "SignPath"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["signpath"]
   icon: "https://static.oomol.com/logo/third-party/signpath.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `fast_sign_hash` — Submit a fast SignPath hash-signing request using the REST API payload.json contract and return the signature result immediately.
+- `fast_sign_hash` — Submit a fast SignPath hash-signing request using the REST API payload.json contract and return the signature result immediately. [write]
 - `get_signing_request` — Get the current status and metadata for a SignPath signing request so callers can poll for completion.
 - `list_signing_policies` — List SignPath signing policies visible to the API token, optionally filtered by project and policy slug.
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Telegram Bot"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["telegram"]
   icon: "https://static.oomol.com/logo/third-party/Telegram.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `copy_message` — Copy one message without linking back to the original message. [write]
 - `copy_messages` — Copy 1-100 messages without links to the originals while preserving album grouping. [write]
 - `create_chat_invite_link` — Create an additional Telegram chat invite link with optional expiry or approval rules. [write]
-- `decline_chat_join_request` — Decline a user's pending request to join a Telegram chat. [write]
+- `decline_chat_join_request` — Decline a user's pending request to join a Telegram chat. [destructive]
 - `delete_business_messages` — Delete one or more messages on behalf of a connected Telegram business account. [destructive]
 - `delete_message` — Delete a message from a chat. [destructive]
 - `delete_messages` — Delete 1-100 messages from one Telegram chat. [destructive]
@@ -61,10 +61,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_me` — Validate the bot token and return the bot profile from Telegram Bot API.
 - `get_updates` — Poll pending updates for the bot. Use this only when webhook delivery is disabled or for debugging.
 - `get_webhook_info` — Return the webhook status configured for the bot.
-- `pin_chat_message` — Pin a message in a Telegram chat.
-- `promote_chat_member` — Promote, update, or demote a supergroup or channel administrator.
-- `read_business_message` — Mark an incoming message as read on behalf of a connected Telegram business account.
-- `restrict_chat_member` — Set temporary or permanent permissions for one supergroup member.
+- `pin_chat_message` — Pin a message in a Telegram chat. [write]
+- `promote_chat_member` — Promote, update, or demote a supergroup or channel administrator. [write]
+- `read_business_message` — Mark an incoming message as read on behalf of a connected Telegram business account. [write]
+- `restrict_chat_member` — Set temporary or permanent permissions for one supergroup member. [write]
 - `revoke_chat_invite_link` — Revoke a Telegram chat invite link created by the bot. [destructive]
 - `send_animation` — Send a GIF or silent MPEG-4 animation by URL or Telegram file_id. [write]
 - `send_audio` — Send an MP3 or M4A audio track by URL or Telegram file_id. [write]
@@ -81,12 +81,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `send_video` — Send an MPEG-4 video by URL or Telegram file_id. [write]
 - `send_voice` — Send a playable voice message by URL or Telegram file_id. [write]
 - `set_chat_permissions` — Set default permissions for all members of a group or supergroup. [write]
-- `set_message_reaction` — Replace the bot's chosen reaction on a Telegram message. [write]
+- `set_message_reaction` — Replace the bot's chosen reaction on a Telegram message. [destructive]
 - `set_my_commands` — Set the bot command list exposed in Telegram clients. [write]
 - `set_webhook` — Configure a webhook endpoint for update delivery. [write]
-- `unban_chat_member` — Unban a user so they can join the chat again.
-- `unpin_all_chat_messages` — Remove all pinned messages from a Telegram chat.
-- `unpin_chat_message` — Unpin one message, or the most recently pinned message, from a Telegram chat.
+- `unban_chat_member` — Unban a user so they can join the chat again. [write]
+- `unpin_all_chat_messages` — Remove all pinned messages from a Telegram chat. [destructive]
+- `unpin_chat_message` — Unpin one message, or the most recently pinned message, from a Telegram chat. [destructive]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-evervault
-description: "Evervault (evervault.com). Use this skill for ANY Evervault request — searching and reading data. Whenever a task involves Evervault, use this skill instead of calling the API directly."
+description: "Evervault (evervault.com). Use this skill for ANY Evervault request — reading, creating, and updating data. Whenever a task involves Evervault, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Evervault"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["evervault"]
   icon: "https://static.oomol.com/logo/third-party/evervault.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `decrypt_json` — Decrypt an Evervault-encrypted JSON-compatible value.
-- `encrypt_json` — Encrypt a JSON-compatible value with the configured Evervault app.
+- `decrypt_json` — Decrypt an Evervault-encrypted JSON-compatible value. [write]
+- `encrypt_json` — Encrypt a JSON-compatible value with the configured Evervault app. [write]
 - `inspect_token` — Inspect metadata for an Evervault-encrypted token without decrypting it.
 
 ## Safety

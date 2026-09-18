@@ -1,11 +1,11 @@
 ---
 name: oo-samcart
-description: "SamCart (samcart.com). Use this skill for ANY SamCart request — reading, creating, and updating data. Whenever a task involves SamCart, use this skill instead of calling the API directly."
+description: "SamCart (samcart.com). Use this skill for ANY SamCart request — searching and reading data. Whenever a task involves SamCart, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "SamCart"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["samcart"]
   icon: "https://static.oomol.com/logo/third-party/samcart.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_customer` — Retrieve a customer by its SamCart ID.
-- `get_order` — Retrieve an order by its SamCart ID. [write]
+- `get_order` — Retrieve an order by its SamCart ID.
 - `get_product` — Retrieve a product by its SamCart ID.
 - `get_subscription` — Retrieve a subscription by its SamCart ID.
 - `list_customers` — List customers in the connected SamCart marketplace.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Home Assistant"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["home_assistant"]
   icon: "https://static.oomol.com/logo/third-party/home_assistant.svg"
 ---
@@ -37,13 +37,13 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_service` — Call a Home Assistant service to control entities, such as light.turn_on or switch.turn_off.
+- `call_service` — Call a Home Assistant service to control entities, such as light.turn_on or switch.turn_off. [destructive]
 - `check_config` — Ask Home Assistant to validate its own configuration files and report errors and warnings. Requires an admin access token.
 - `delete_automation_config` — Delete one Home Assistant automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
 - `delete_scene_config` — Delete one Home Assistant scene. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
 - `delete_script_config` — Delete one Home Assistant script. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
-- `execute_script` — Run a Home Assistant script sequence containing service calls, delays, and conditions.
-- `fire_event` — Fire one Home Assistant event with optional event data.
+- `execute_script` — Run a Home Assistant script sequence containing service calls, delays, and conditions. [write]
+- `fire_event` — Fire one Home Assistant event with optional event data. [destructive]
 - `get_automation_config` — Fetch the stored configuration for one Home Assistant automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found.
 - `get_config` — Fetch the Home Assistant instance configuration.
 - `get_error_log` — Fetch the Home Assistant error log for the current session as plain text. Home Assistant serves this only when the instance runs with file logging enabled, so it can report not found on an otherwise healthy instance.
@@ -60,9 +60,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_services` — List Home Assistant service domains and their available services.
 - `list_states` — List all current Home Assistant entity states.
 - `render_template` — Render a Home Assistant template against the connected instance.
-- `save_automation_config` — Create or replace one Home Assistant automation. Posting to an unused id creates the automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [write]
-- `save_scene_config` — Create or replace one Home Assistant scene. Posting to an unused id creates the scene. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [write]
-- `save_script_config` — Create or replace one Home Assistant script. Posting to an unused key creates the script. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [write]
+- `save_automation_config` — Create or replace one Home Assistant automation. Posting to an unused id creates the automation. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
+- `save_scene_config` — Create or replace one Home Assistant scene. Posting to an unused id creates the scene. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
+- `save_script_config` — Create or replace one Home Assistant script. Posting to an unused key creates the script. Requires an admin access token, and only covers entries stored in the Home Assistant UI-editable config; entries defined in other YAML files return not found. [destructive]
 - `search_related` — Find Home Assistant items related to an entity, device, area, automation, or configuration entry.
 - `validate_config` — Validate Home Assistant trigger, condition, and action configurations before storing an automation.
 

@@ -1,11 +1,11 @@
 ---
 name: oo-plausible-analytics
-description: "Plausible Analytics (plausible.io). Use this skill for ANY Plausible Analytics request — searching and reading data. Whenever a task involves Plausible Analytics, use this skill instead of calling the API directly."
+description: "Plausible Analytics (plausible.io). Use this skill for ANY Plausible Analytics request — reading, creating, and updating data. Whenever a task involves Plausible Analytics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Plausible Analytics"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["plausible_analytics"]
   icon: "https://static.oomol.com/logo/third-party/Plausible%20Analytics.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_breakdown_stats` — Query Plausible analytics grouped by a single dimension such as source, page, country, or browser.
 - `get_timeseries_stats` — Query Plausible analytics as a timeseries grouped by a time dimension such as day or hour.
 - `query_stats` — Query historical or real-time analytics for a Plausible site using the Stats API v2.
-- `record_event` — Record a pageview or custom event through the Plausible Events API for server-side or app tracking.
+- `record_event` — Record a pageview or custom event through the Plausible Events API for server-side or app tracking. [write]
 
 ## Safety
 

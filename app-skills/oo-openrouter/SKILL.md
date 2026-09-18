@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenRouter"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["openrouter"]
   icon: "https://static.oomol.com/logo/third-party/Openrouter.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create an OpenRouter chat completion through the OpenAI-compatible `/chat/completions` endpoint. [write]
+- `create_chat_completion` — Create an OpenRouter chat completion through the OpenAI-compatible `/chat/completions` endpoint.
 - `create_coinbase_charge` — Call OpenRouter's deprecated Coinbase charge endpoint for credits purchases. The upstream endpoint is currently deprecated and may return 410 Gone. [write]
 - `create_message` — Create an OpenRouter Anthropic-format message through the `/messages` endpoint. [write]
 - `get_credits` — Get the authenticated OpenRouter credit balance summary.

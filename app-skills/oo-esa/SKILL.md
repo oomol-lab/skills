@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "esa"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["esa"]
   icon: "https://static.oomol.com/logo/third-party/esa.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `append_post` — Append Markdown content to an esa post without first fetching its current body. [write]
-- `archive_post` — Archive an esa post by moving it to the Archived category. [write]
+- `archive_post` — Archive an esa post by moving it to the Archived category. [destructive]
 - `create_comment` — Create a Markdown comment on an existing esa post. [write]
 - `create_post` — Create a new esa post with optional Markdown body, tags, category, WIP state, and revision message. [write]
 - `delete_comment` — Permanently delete an esa comment by ID. [destructive]
@@ -46,12 +46,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_all_category_paths` — List esa category paths with pagination and optional path filters.
 - `get_attachment` — Get an esa attachment as a local transit file when possible, otherwise return its downloadable URL.
 - `get_categories` — Get an esa category, its child categories, and optional posts or parents.
-- `get_comment` — Get one esa comment by ID, optionally including its stargazers. [write]
+- `get_comment` — Get one esa comment by ID, optionally including its stargazers.
 - `get_markdown_syntax_help` — Get esa's official Markdown-syntax documentation post.
-- `get_post` — Get one esa post by number. The body is truncated by default to keep agent context bounded. [write]
-- `get_post_backlinks` — List posts that link to a specific esa post. [write]
-- `get_post_comments` — List comments on an esa post with pagination. [write]
-- `get_post_summary_prompt` — Build the summary prompt for an esa post. The caller supplies the returned prompt to its model. [write]
+- `get_post` — Get one esa post by number. The body is truncated by default to keep agent context bounded.
+- `get_post_backlinks` — List posts that link to a specific esa post.
+- `get_post_comments` — List comments on an esa post with pagination.
+- `get_post_summary_prompt` — Build the summary prompt for an esa post. The caller supplies the returned prompt to its model.
 - `get_search_options_help` — Get esa's official search-syntax documentation post.
 - `get_team_comments` — List comments in an esa team with pagination.
 - `get_team_members` — List members of an esa team with their roles and profiles.
@@ -61,7 +61,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_top_categories` — Get all top-level esa categories for a team.
 - `list_recent_posts` — List recently updated esa posts. This is the action equivalent of the esa_recent_posts MCP resource.
 - `prepend_post` — Prepend Markdown content to an esa post without first fetching its current body. [write]
-- `rollback_post_revision` — Restore an esa post to a selected revision and create a new revision from it. [destructive]
+- `rollback_post_revision` — Restore an esa post to a selected revision and create a new revision from it. [write]
 - `search_help` — Search esa's official documentation team with esa query syntax.
 - `search_posts` — Search posts in an esa team with esa query syntax and pagination.
 - `ship_post` — Mark an esa post as shipped without changing other fields. [write]

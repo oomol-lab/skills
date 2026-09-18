@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Formstack"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["formstack"]
   icon: "https://static.oomol.com/logo/third-party/formstack.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_form_fields` — List the fields defined on a Formstack form.
 - `list_forms` — List Formstack forms with pagination, name search, sorting, and folder filtering.
 - `list_submissions` — List submissions for a Formstack form with pagination, time, keyword, and field-level filters.
-- `update_submission` — Replace field values or metadata on an existing Formstack submission. [write]
+- `update_submission` — Replace field values or metadata on an existing Formstack submission. [destructive]
 
 ## Safety
 

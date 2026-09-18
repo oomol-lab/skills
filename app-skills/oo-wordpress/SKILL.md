@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WordPress"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wordpress"]
   icon: "https://static.oomol.com/logo/third-party/wordpress.png"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_post` — Delete a WordPress post by ID. [destructive]
 - `get_current_user` — Get the authenticated WordPress user.
 - `get_page` — Get a WordPress page by ID.
-- `get_post` — Get a WordPress post by ID. [write]
+- `get_post` — Get a WordPress post by ID.
 - `list_categories` — List WordPress categories with optional filters and pagination.
 - `list_comments` — List WordPress comments with optional filters and pagination.
 - `list_pages` — List WordPress pages with optional filters and pagination.

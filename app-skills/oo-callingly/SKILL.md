@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Callingly"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["callingly"]
   icon: "https://static.oomol.com/logo/third-party/callingly.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_call` — Create a Callingly call from lead details and routing information. [write]
 - `delete_lead` — Delete a Callingly lead by ID. [destructive]
-- `get_agent_schedule` — Retrieve the weekly schedule for one Callingly agent. [write]
+- `get_agent_schedule` — Retrieve the weekly schedule for one Callingly agent.
 - `get_call` — Retrieve one Callingly call by ID.
 - `get_lead` — Retrieve one Callingly lead by ID.
 - `get_team` — Retrieve one Callingly team by ID.

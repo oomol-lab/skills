@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Patsnap MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["patsnap_mcp"]
   icon: "https://static.oomol.com/logo/third-party/patsnap_mcp.svg"
 ---
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `design_get_task_status` — Query workflow task status — returns lightweight task overview and per-stage summaries (status/duration/retry count/error message) without large result_data, suitable for high-frequency polling
 - `design_submit_workflow` — Submit FTO workflow task — triggers the full pipeline (lineart conversion → search → rerank → RRF fusion → feature comparison → report generation) in one shot. Returns a task_id for polling via design_get_task_status and fetching results via design_get_stage_result [write]
 - `family` — Retrieves Patent Family to review family relationships, jurisdictional coverage, and family breadth.
-- `forward_citation` — Retrieves Valuation Patent Forward Citation data so users can review the key information and continue with downstream analysis. [write]
+- `forward_citation` — Retrieves Valuation Patent Forward Citation data so users can review the key information and continue with downstream analysis.
 - `fulltext_image` — Retrieves detailed Full-text Images for verification, full-text review, and deeper analysis.
 - `get_patent_legal_status` — Retrieves Simple Legal Status to assess status changes, patent stability, and potential legal risk.
 - `landscape_applicant_rank` — Analyzes Applicant Ranking to show activity changes, leading entities, and directional signals.
@@ -85,7 +85,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `pledge_data` — Retrieves Valuation Patent Pledge Data data so users can review the key information and continue with downstream analysis.
 - `reexamination_invalidation` — Retrieves Reexamination And Invalidation to assess status changes, patent stability, and potential legal risk.
 - `search_patents` — Searches Patent Search By Query based on input criteria and returns matching results for screening, comparison, and follow-up analysis.
-- `transfer_data` — Retrieves Valuation Patent Transfer Data data so users can review the key information and continue with downstream analysis. [write]
+- `transfer_data` — Retrieves Valuation Patent Transfer Data data so users can review the key information and continue with downstream analysis.
 
 ## Safety
 

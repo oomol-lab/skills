@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Typefully"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["typefully"]
   icon: "https://static.oomol.com/logo/third-party/typefully.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_draft` — Delete a Typefully draft by ID. [destructive]
 - `get_current_user` — Retrieve the Typefully user associated with the current API key.
 - `get_draft` — Retrieve a Typefully draft by ID.
-- `get_social_set` — Retrieve details for a Typefully social set. [write]
+- `get_social_set` — Retrieve details for a Typefully social set.
 - `list_drafts` — List Typefully drafts for a social set with optional filters.
 - `list_social_sets` — List Typefully social sets available to the current API key.
 - `update_draft` — Update a Typefully draft by ID. [write]

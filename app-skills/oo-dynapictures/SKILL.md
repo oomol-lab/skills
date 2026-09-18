@@ -1,11 +1,11 @@
 ---
 name: oo-dynapictures
-description: "DynaPictures (dynapictures.com). Use this skill for ANY DynaPictures request — searching and reading data. Whenever a task involves DynaPictures, use this skill instead of calling the API directly."
+description: "DynaPictures (dynapictures.com). Use this skill for ANY DynaPictures request — reading, creating, and updating data. Whenever a task involves DynaPictures, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "DynaPictures"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dynapictures"]
   icon: "https://static.oomol.com/logo/third-party/dynapictures.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_images` — Generate one image from a single-page template or multiple images from a multipage template and return hosted URLs.
+- `generate_images` — Generate one image from a single-page template or multiple images from a multipage template and return hosted URLs. [write]
 - `get_template` — Retrieve one DynaPictures template and its customizable layers by UID.
 - `list_templates` — List DynaPictures templates that are ready for API generation and have Sync to Zapier enabled.
 

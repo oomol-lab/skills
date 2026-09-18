@@ -1,107 +1,144 @@
 ---
 name: oo-kingdee
-description: "Query and manage records, reports, approvals and master data in Kingdee Galaxy Enterprise (金蝶星空企业版). Use for Kingdee business tasks such as 查询销售订单、保存单据、审核、下推、分配 or finding a less-common operation and executing it through the connected account. Does not cover other Kingdee product families."
+description: "Kingdee (kingdee.com). Use this skill for ANY Kingdee request — reading, creating, updating, and deleting data. Whenever a task involves Kingdee, use this skill instead of calling the API directly."
+allowed-tools: [Bash(oo *)]
 metadata:
-  title: "金蝶"
+  title: "Kingdee"
   author: "OOMOL"
-  version: "1.1.0"
+  version: "1.1.1"
   services: ["kingdee"]
   icon: "https://static.oomol.com/logo/third-party/kingdee.svg"
 ---
 
-# 金蝶 · Kingdee Galaxy Enterprise
+# Kingdee
 
-Requires the oo CLI, an OOMOL login and a connected Kingdee Galaxy Enterprise account. Long-tail discovery also requires local file search and public HTTPS documentation access.
+Operate **Kingdee** through your OOMOL-connected account. This skill calls the `kingdee` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
-Use the `kingdee` connector with the oo CLI. Connector supplies enterprise credentials and login sessions; never obtain or pass application secrets, cookies or session headers yourself. The instance must be reachable over public HTTPS; private-network instances are rejected.
+## Running an action
 
-## Choose the route
+Assume the user has already installed the oo CLI, signed in, and connected Kingdee. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
-- Use a foundation action below when it covers the requested operation. These actions work across business objects through `formId`; a different object alone is not a reason to use proxy.
-- If the object's FormId or business fields are unknown, use the bundled index and official-document lookup below, then return to the matching action.
-- Use **proxy** for a documented operation not covered by those actions, such as a form-specific general operation or custom business service. Do not invent an endpoint from a Chinese operation name.
-- For another Kingdee product family, state this skill's scope before trying Galaxy Enterprise endpoints.
+**1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
-Assume oo is installed, signed in and connected. Use setup only after a matching connection failure. Preserve the user's selected connection/team; inspect `oo connector apps kingdee --json` when connection selection is actually needed.
+```bash
+oo connector schema "kingdee" --action "<action_name>"
+```
 
-## Foundation actions
+**2. Run the action** with a JSON payload that matches the input schema:
 
-| Action | Purpose | Effect |
-| --- | --- | --- |
-| `query_records` | Query fields, filters and row pagination | read |
-| `get_record` | View a record by ID or number | read |
-| `query_report` | Query a report with form-specific filters | read |
-| `save_record` | Save or update a record | destructive |
-| `batch_save_records` | Save or update multiple records | destructive |
-| `draft_record` | Save or overwrite a draft | destructive |
-| `submit_records` | Submit records | write |
-| `audit_records` | Audit records | write |
-| `unaudit_records` | Reverse audit status | destructive |
-| `delete_records` | Delete records | destructive |
-| `push_records` | Generate target records through conversion | write |
-| `allocate_records` | Allocate master data to organizations | write |
+```bash
+oo connector run "kingdee" --action "<action_name>" --data '<json>' --json
+```
 
-Inspect the live schema before constructing input:
+- `--data` takes a JSON object string or `@path/to/file.json`; omit it to send `{}`.
+- The response is `{ "data": ..., "meta": { "executionId": "..." } }`; the execution id lives under `meta.executionId`.
+
+Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
+
+### Choose the route
+
+- Use a foundation action from the action index below whenever it covers the requested operation. These actions work across business objects through `formId`; a different object alone is not a reason to use proxy.
+- If the object's FormId or business fields are unknown, search the bundled index and inspect the official operation contract, then return to the matching action.
+- Use proxy only for a documented operation that no foundation action covers, such as a form-specific general operation or custom business service. Never invent an endpoint from a Chinese operation name.
+- This skill covers Kingdee Galaxy Enterprise (金蝶星空企业版). State the scope mismatch before trying these endpoints for another Kingdee product family.
+
+Foundation actions accept `{ "formId": "...", "data": { ... } }`. Preserve official business-field casing inside `data`; Connector serializes it internally. `Model` fields and object-specific keys come from the selected object's documentation, not its Chinese display name.
 
 ```bash
 oo connector schema "kingdee" --action "query_records"
-oo connector run "kingdee" --action "query_records" --data @action-input.json --json
+oo connector run "kingdee" \
+  --action "query_records" \
+  --data '{"formId":"SAL_SaleOrder","data":{"FieldKeys":"FID,FBillNo","StartRow":0,"Limit":20}}' \
+  --json
 ```
 
-Actions accept `{ "formId": "...", "data": { ... } }`. Keep official business-field casing inside `data`; Connector serializes it internally. `Model` fields and object-specific keys come from the selected object's documentation, not its Chinese display name. For example, a sales-order query input is:
+Queries return `rows` and `fieldKeys`; views return `record` and `result`; reports return `result`. Mutations return `success`, `partialSuccess`, `errors`, `successfulEntities`, and `result`. Inspect these fields before reporting completion. Never repeat an entire partially successful batch without identifying which items failed.
 
-```json
-{
-  "formId": "SAL_SaleOrder",
-  "data": { "FieldKeys": "FID,FBillNo", "StartRow": 0, "Limit": 20 }
-}
-```
+### Find an object or long-tail operation
 
-Action JSON output is under `response.data`; execution ID is `response.meta.executionId`. Queries return `rows` and `fieldKeys`, views return `record` and `result`, reports return `result`. Mutations return `success`, `partialSuccess`, `errors`, `successfulEntities` and `result`: inspect them before reporting completion. Never repeat an entire partially successful batch without identifying which items failed.
-
-## Find an object or long-tail operation
-
-1. Search [references/api-index.jsonl](references/api-index.jsonl) by the user's business-object name. Resolve the path relative to this installed skill directory, not the user's project. With that directory as the working directory:
+1. Search [references/api-index.jsonl](references/api-index.jsonl) by the user's business-object name. Resolve the path relative to this installed skill directory, not the user's project:
 
    ```bash
    rg -n -F '"object":"应收调汇单"' references/api-index.jsonl
    ```
 
-   If exact search misses, use a shorter Chinese keyword and examine the returned `domain`, `module`, and `object`. Do not read the entire index into context or select the first ambiguous match. If `rg` is unavailable, use an available local text search or JSONL reader.
-2. Select an operation actually present in the chosen row's `operations`. Preserve `apiInfoId` and `catalogNodeId` as strings; neither is a FormId. If the requested operation is absent, report that gap instead of inventing support.
-3. Read [references/proxy-reference.md](references/proxy-reference.md) for the official documentation URLs. Fetch the selected operation's detail first, then its request fields and only the examples or response fields needed for this task. Verify object identity, operation code and version before using its fields.
-4. Use the appropriate foundation action if available. Otherwise follow the reference's standard, special or general-operation request rule; separately verify any custom service URL.
+   If an exact search misses, use a shorter Chinese keyword and compare the returned `domain`, `module`, and `object`. Do not read the entire index into context or select the first ambiguous match.
+
+2. Select an operation present in the chosen row's `operations`. Preserve `apiInfoId` and `catalogNodeId` as strings; neither is a FormId. If the operation is absent, report the gap.
+3. Read [references/proxy-reference.md](references/proxy-reference.md). Fetch the selected operation's official detail first, then only the request fields, response fields, or examples needed for the task. Verify object identity, operation code, and version.
+4. Return to a foundation action when it covers the operation. Otherwise follow the reference's standard, special, or general-operation request rule and separately verify any custom service URL.
 5. Write the complete proxy request to `proxy-request.json`, then execute only the authorized operation:
 
    ```bash
    oo connector proxy "kingdee" --data @proxy-request.json --json
    ```
 
-   The file contains `endpoint`, `method` and the actual upstream `body`. It is not an action input. For the named-parameter format, inner `body.data` is serialized exactly once; do not serialize an existing string again.
-6. For proxy, inspect `response.data.status` and then **`response.data.data`**, the Kingdee payload. A successful CLI invocation or HTTP 200 alone does not prove business success. Apply the reference's query-error and partial-success rules.
+   The file contains `endpoint`, `method`, and the upstream `body`; it is not an action input. In the named-parameter format, serialize inner `body.data` exactly once.
 
-The bundled index is a 2026-09-15 snapshot with 1,076 object rows and 7,881 unique operation IDs. It is a discovery aid, not proof that an operation is enabled in the user's instance. If documentation identity/version conflicts with the index, stop using that entry and resolve the discrepancy. Public documentation access is separate from authenticated business execution.
+6. For proxy results, inspect `response.data.status` and then `response.data.data`. CLI success or HTTP 200 alone does not prove business success.
 
-## Execution boundaries
+The bundled index is a 2026-09-15 snapshot with 1,076 object rows and 7,881 unique operation IDs. It helps discovery but does not prove that an operation is enabled in the user's instance. Stop and resolve any identity or version conflict with current official documentation.
 
-- Read requests may proceed within the user's task. For writes, establish the exact target and intended effect; destructive operations require explicit authorization. Reuse authorization already given for that operation instead of asking repeatedly.
-- Classify proxy calls by the documented business effect, not HTTP method. A POST can query, approve or delete. If the effect is unclear, resolve it before execution.
-- Each action/proxy call gets a fresh login session. `SwitchOrg` followed by another call does not carry session state forward; use documented per-operation organization fields. Organization IDs are distinct from data-center IDs.
-- On timeout or network interruption, a write may already have occurred. Do not retry it automatically; use known record identifiers to reconcile state first.
+## Available actions
+
+- `allocate_records` — Allocate master data to target organizations. [write]
+- `audit_records` — Approve records through the audit operation. [write]
+- `batch_save_records` — Save multiple records, including updates, and preserve partial results. [destructive]
+- `delete_records` — Delete records by internal IDs or numbers. [destructive]
+- `draft_record` — Save a draft, including changes to an existing draft. [destructive]
+- `get_record` — View a record by its internal ID or number.
+- `push_records` — Convert source records or entries into target records using a conversion rule. [write]
+- `query_records` — Query business records by fields, filters and row offset.
+- `query_report` — Query a report using its form-specific filters.
+- `save_record` — Save a record, including updates to existing records. [destructive]
+- `submit_records` — Submit records for approval. [write]
+- `unaudit_records` — Reverse the audit status of records. [destructive]
+
+## Safety
+
+- Untagged actions are reads (get / list / search) — safe to run directly.
+- **Actions tagged `[write]` change Kingdee state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
+- Classify proxy calls by the documented business effect, not the HTTP method. A POST can query, approve, or delete; resolve an unclear effect before execution.
+- Each action or proxy call gets a fresh login session. `SwitchOrg` does not affect a later call; use documented per-operation organization fields. Organization IDs are distinct from data-center IDs.
+- A timed-out or interrupted write may already have completed. Do not retry automatically; reconcile state with known record identifiers first.
 - Keep documentation requests anonymous. Never send enterprise credentials to the documentation host or use proxy to call login endpoints.
-- Real enterprise end-to-end behavior has not been validated by this skill's authoring checks. Do not claim a tenant is working until its own result confirms it.
+- Real enterprise end-to-end behavior has not been validated by the skill's authoring checks. Claim success only from the current tenant's result.
 
-## Setup and failures
+## First-time setup
 
-- If oo is missing, follow the [official installation guide](https://cli.oomol.com/install-guide.md).
-- If OOMOL login is missing, run `oo auth login`.
-- For `app_not_found`, `app_not_ready`, `credential_expired` or `scope_missing`, use the [Kingdee connection page](https://console.oomol.com/app-connections?provider=kingdee). The connection uses custom credentials configured by the user in their enterprise system.
-- Preserve ambiguous HTTP 401/403 and business errors as reported; do not conclude that the application secret expired from HTTP status alone.
-- Stop on HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`; the user can recharge at `https://console.oomol.com/billing/token-recharge`.
-- If the selected documentation is unavailable, report the missing contract. Do not guess fields, enumerate documentation IDs or fetch all operations.
+These are **one-time** steps — do not repeat them on every call. Run a step only when a command fails for the matching reason.
 
-## References
+- **`oo: command not found`** — install the oo CLI (other platforms: <https://cli.oomol.com/install-guide.md>):
 
-- [Business operation index](references/api-index.jsonl): search when identifying an object or operation.
-- [Documentation lookup, proxy formatting and result handling](references/proxy-reference.md): read for contract lookup or proxy execution.
-- [Official third-party authorization setup](https://open.kingdee.com/K3Cloud/Open/ApiCenterReportDetail.aspx).
+  ```bash
+  curl -fsSL https://cli.oomol.com/install.sh | bash    # macOS / Linux
+  ```
+
+  ```powershell
+  irm https://cli.oomol.com/install.ps1 | iex           # Windows PowerShell
+  ```
+
+- **Not signed in / authentication error** — sign in to your OOMOL account once:
+
+  ```bash
+  oo auth login
+  ```
+
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Kingdee is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
+
+  ```text
+  https://console.oomol.com/app-connections?provider=kingdee
+  ```
+
+- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+- **Ambiguous HTTP 401/403 or business error** — preserve the upstream error as reported; do not conclude that the application secret expired unless the response contains a documented credential signal.
+- **Official operation documentation unavailable** — report the missing contract. Do not guess fields, enumerate documentation IDs, or fetch every operation.
+
+## Resources
+
+- Kingdee homepage: https://www.kingdee.com/cn
+- [Business operation index](references/api-index.jsonl) — search this when identifying an object or operation.
+- [Documentation lookup, proxy formatting, and result handling](references/proxy-reference.md) — read this before proxy execution.
+- [Official third-party authorization setup](https://open.kingdee.com/K3Cloud/Open/ApiCenterReportDetail.aspx)

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Simple Analytics"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["simple_analytics"]
   icon: "https://static.oomol.com/logo/third-party/SimpleAnalytics.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `export_data_points` — Export raw datapoints from the Simple Analytics Export API.
+- `export_data_points` — Export raw datapoints from the Simple Analytics Export API. [write]
 - `get_aggregated_stats` — Get aggregated website statistics from the Simple Analytics Stats API.
 - `list_websites` — List websites available to the authenticated Simple Analytics account.
 - `send_event` — Send a server-side event or pageview to Simple Analytics. [write]

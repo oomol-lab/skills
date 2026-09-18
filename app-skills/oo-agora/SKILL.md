@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Agora"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["agora"]
   icon: "https://static.oomol.com/logo/third-party/agora.svg"
 ---
@@ -42,8 +42,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_project_usage` — Retrieve usage data for one Agora Console project and business type.
 - `list_projects` — List Agora Console projects for the connected account.
 - `reset_primary_certificate` — Reset the primary App Certificate for an Agora Console project. [destructive]
-- `set_primary_certificate` — Enable or disable the primary App Certificate for an Agora Console project. [write]
-- `update_project_status` — Enable or disable an Agora Console project. [write]
+- `set_primary_certificate` — Enable or disable the primary App Certificate for an Agora Console project. [destructive]
+- `update_project_status` — Enable or disable an Agora Console project. [destructive]
 
 ## Safety
 

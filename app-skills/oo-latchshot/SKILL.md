@@ -1,11 +1,11 @@
 ---
 name: oo-latchshot
-description: "Latchshot (latchshot.fly.dev). Use this skill for ANY Latchshot request — searching and reading data. Whenever a task involves Latchshot, use this skill instead of calling the API directly."
+description: "Latchshot (latchshot.fly.dev). Use this skill for ANY Latchshot request — reading, creating, and updating data. Whenever a task involves Latchshot, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Latchshot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["latchshot"]
   icon: "https://static.oomol.com/logo/third-party/latchshot.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `capture_page` — Render a public web page as a PNG, JPEG, or PDF and upload the bounded artifact to transit storage.
+- `capture_page` — Render a public web page as a PNG, JPEG, or PDF and upload the bounded artifact to transit storage. [write]
 - `get_usage` — Read the current Latchshot plan, successful-render quota, reset time, upgrade-request status, and informational continuation links.
 
 ## Safety

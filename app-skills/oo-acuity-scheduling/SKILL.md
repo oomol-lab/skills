@@ -1,11 +1,11 @@
 ---
 name: oo-acuity-scheduling
-description: "Acuity Scheduling (acuityscheduling.com). Use this skill for ANY Acuity Scheduling request — reading, creating, and updating data. Whenever a task involves Acuity Scheduling, use this skill instead of calling the API directly."
+description: "Acuity Scheduling (acuityscheduling.com). Use this skill for ANY Acuity Scheduling request — reading, creating, updating, and deleting data. Whenever a task involves Acuity Scheduling, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Acuity Scheduling"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["acuity_scheduling"]
   icon: "https://static.oomol.com/logo/third-party/acuity_scheduling.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_appointment` — Cancel an Acuity Scheduling appointment. [write]
+- `cancel_appointment` — Cancel an Acuity Scheduling appointment. [destructive]
 - `create_appointment` — Create an appointment in Acuity Scheduling. [write]
 - `get_account` — Retrieve the Acuity Scheduling account associated with the credential.
 - `get_appointment` — Retrieve one Acuity Scheduling appointment by ID.

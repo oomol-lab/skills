@@ -1,11 +1,11 @@
 ---
 name: oo-invoice-ninja
-description: "Invoice Ninja (invoiceninja.com). Use this skill for ANY Invoice Ninja request — reading, creating, and updating data. Whenever a task involves Invoice Ninja, use this skill instead of calling the API directly."
+description: "Invoice Ninja (invoiceninja.com). Use this skill for ANY Invoice Ninja request — reading, creating, updating, and deleting data. Whenever a task involves Invoice Ninja, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Invoice Ninja"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["invoice_ninja"]
   icon: "https://static.oomol.com/logo/third-party/invoice_ninja.png"
 ---
@@ -46,8 +46,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_clients` — List Invoice Ninja clients with optional search and pagination filters.
 - `list_invoices` — List Invoice Ninja invoices with optional client, status, date, and search filters.
 - `list_payments` — List Invoice Ninja payments with optional client and search filters.
-- `update_client` — Update an Invoice Ninja client while replacing its complete contact list. [write]
-- `update_invoice` — Update documented fields or status actions on an Invoice Ninja invoice. [write]
+- `update_client` — Update an Invoice Ninja client while replacing its complete contact list. [destructive]
+- `update_invoice` — Update documented fields or status actions on an Invoice Ninja invoice. [destructive]
 
 ## Safety
 

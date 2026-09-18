@@ -1,11 +1,11 @@
 ---
 name: oo-skyvern
-description: "Skyvern (skyvern.com). Use this skill for ANY Skyvern request — reading, creating, and updating data. Whenever a task involves Skyvern, use this skill instead of calling the API directly."
+description: "Skyvern (skyvern.com). Use this skill for ANY Skyvern request — reading, creating, updating, and deleting data. Whenever a task involves Skyvern, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Skyvern"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["skyvern"]
   icon: "https://static.oomol.com/logo/third-party/skyvern.png"
 ---
@@ -37,10 +37,10 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_run` — Cancel one active Skyvern task or workflow run. [write]
+- `cancel_run` — Cancel one active Skyvern task or workflow run. [destructive]
 - `get_run` — Get the current state, output, hosted files, screenshots, and recording URLs for one Skyvern run.
 - `list_runs` — List Skyvern task and workflow runs with pagination and optional status, type, or text filters.
-- `run_task` — Start a high-level Skyvern browser automation task and return a run ID that can be polled until completion.
+- `run_task` — Start a high-level Skyvern browser automation task and return a run ID that can be polled until completion. [write]
 
 ## Safety
 

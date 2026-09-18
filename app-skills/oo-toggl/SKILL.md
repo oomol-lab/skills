@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Toggl Track"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["toggl"]
   icon: "https://static.oomol.com/logo/third-party/Toggl.svg"
 ---
@@ -56,7 +56,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_tasks` — List Toggl Track tasks for a project.
 - `list_time_entries` — List Toggl Track time entries for the authenticated user.
 - `list_workspaces` — List the Toggl Track workspaces available to the authenticated user.
-- `stop_time_entry` — Stop a running Toggl Track time entry. [write]
+- `stop_time_entry` — Stop a running Toggl Track time entry. [destructive]
 - `update_project` — Update an existing Toggl Track project. [write]
 - `update_tag` — Update an existing Toggl Track tag. [write]
 - `update_task` — Update an existing Toggl Track task. [write]

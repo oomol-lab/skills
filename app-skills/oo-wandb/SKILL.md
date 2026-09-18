@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Weights & Biases"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wandb"]
   icon: "https://static.oomol.com/logo/third-party/wandb.svg"
 ---
@@ -41,10 +41,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `compare_runs` — Compare configuration, summary metrics, metadata, and optionally metric history for two W&B runs.
 - `count_weave_traces` — Count matching classic Weave traces and root traces without returning trace payloads.
 - `create_report` — Create a W&B report with narrative text, plots, and configurable panels. [write]
-- `diagnose_run` — Inspect loss metrics and run state to diagnose the training health of a W&B run.
+- `diagnose_run` — Inspect loss metrics and run state to diagnose the training health of a W&B run. [write]
 - `get_artifact_details` — Get metadata, lineage, and optionally files for a W&B artifact version.
 - `get_run_history` — Retrieve sampled time-series metric history for a W&B run.
-- `infer_trace_schema` — Sample classic Weave traces to discover field paths, types, and frequent values.
+- `infer_trace_schema` — Sample classic Weave traces to discover field paths, types, and frequent values. [write]
 - `list_artifact_versions` — List versions of a W&B project artifact or registry collection.
 - `list_automations` — List W&B Automations that trigger on artifact, run-state, or run-metric events.
 - `list_entities` — List W&B user and team entities accessible with the configured API key.
@@ -52,8 +52,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_projects` — List W&B projects for one entity or for all entities accessible with the configured API key.
 - `list_registries` — List W&B model registries for an organization.
 - `list_registry_collections` — List artifact collections within a W&B model registry.
-- `log_analysis` — Log analysis rows, charts, and scalar metrics to W&B as a new run.
-- `probe_project` — Sample W&B runs to discover a project's metrics, configuration keys, tags, groups, and structure.
+- `log_analysis` — Log analysis rows, charts, and scalar metrics to W&B as a new run. [write]
+- `probe_project` — Sample W&B runs to discover a project's metrics, configuration keys, tags, groups, and structure. [write]
 - `query_wandb` — Run a read-only GraphQL query against W&B experiment data with bounded pagination.
 - `query_weave_traces` — Query classic Weave traces with filters, ordering, selected columns, cost data, feedback, and detail-level controls.
 - `resolve_trace_roots` — Resolve the root spans for a batch of classic Weave trace IDs.

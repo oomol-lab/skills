@@ -1,11 +1,11 @@
 ---
 name: oo-beebole
-description: "Beebole (beebole.com). Use this skill for ANY Beebole request — searching and reading data. Whenever a task involves Beebole, use this skill instead of calling the API directly."
+description: "Beebole (beebole.com). Use this skill for ANY Beebole request — reading, creating, and updating data. Whenever a task involves Beebole, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Beebole"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["beebole"]
   icon: "https://static.oomol.com/logo/third-party/beebole.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_graphql` — Execute a JSON-friendly Beebole GraphQL query or mutation against the connected account.
+- `execute_graphql` — Execute a JSON-friendly Beebole GraphQL query or mutation against the connected account. [write]
 
 ## Safety
 

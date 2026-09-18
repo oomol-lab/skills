@@ -1,11 +1,11 @@
 ---
 name: oo-ghost
-description: "Ghost (ghost.org). Use this skill for ANY Ghost request — reading, creating, and updating data. Whenever a task involves Ghost, use this skill instead of calling the API directly."
+description: "Ghost (ghost.org). Use this skill for ANY Ghost request — searching and reading data. Whenever a task involves Ghost, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ghost"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ghost"]
   icon: "https://static.oomol.com/logo/third-party/ghost.png"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_author` — Get one public Ghost author by ID or slug.
 - `get_page` — Get one published Ghost page by ID or slug.
-- `get_post` — Get one published Ghost post by ID or slug. [write]
+- `get_post` — Get one published Ghost post by ID or slug.
 - `get_tag` — Get one public Ghost tag by ID or slug.
 - `list_authors` — List public authors from the connected Ghost site.
 - `list_pages` — List published pages from the connected Ghost site.

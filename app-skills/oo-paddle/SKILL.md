@@ -1,11 +1,11 @@
 ---
 name: oo-paddle
-description: "Paddle (paddle.com). Use this skill for ANY Paddle request — reading, creating, and updating data. Whenever a task involves Paddle, use this skill instead of calling the API directly."
+description: "Paddle (paddle.com). Use this skill for ANY Paddle request — reading, creating, updating, and deleting data. Whenever a task involves Paddle, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Paddle"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["paddle"]
   icon: "https://static.oomol.com/logo/third-party/paddle.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_prices` — List Paddle prices with optional product, status, recurring, and billing filters.
 - `list_products` — List Paddle products with optional filtering, pagination, and price inclusion.
 - `update_customer` — Update a Paddle customer, including archiving or reactivating it through status. [write]
-- `update_price` — Update a Paddle price, including archiving or reactivating it through status. [write]
+- `update_price` — Update a Paddle price, including archiving or reactivating it through status. [destructive]
 - `update_product` — Update a Paddle product, including archiving or reactivating it through status. [write]
 
 ## Safety

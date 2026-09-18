@@ -1,11 +1,11 @@
 ---
 name: oo-cardly
-description: "Cardly (card.ly). Use this skill for ANY Cardly request — searching and reading data. Whenever a task involves Cardly, use this skill instead of calling the API directly."
+description: "Cardly (card.ly). Use this skill for ANY Cardly request — reading, creating, and updating data. Whenever a task involves Cardly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cardly"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cardly"]
   icon: "https://static.oomol.com/logo/third-party/cardly.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `echo` — Send a JSON payload to Cardly's authenticated echo endpoint for credential and request debugging.
+- `echo` — Send a JSON payload to Cardly's authenticated echo endpoint for credential and request debugging. [write]
 - `get_balance` — Retrieve the current Cardly card credit and gift credit balances.
 - `list_credit_history` — List Cardly account credit history records with pagination and time filters.
 - `list_fonts` — List Cardly fonts available for handwriting and text personalization.

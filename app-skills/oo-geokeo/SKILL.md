@@ -1,11 +1,11 @@
 ---
 name: oo-geokeo
-description: "Geokeo (geokeo.com). Use this skill for ANY Geokeo request — reading, creating, and updating data. Whenever a task involves Geokeo, use this skill instead of calling the API directly."
+description: "Geokeo (geokeo.com). Use this skill for ANY Geokeo request — searching and reading data. Whenever a task involves Geokeo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Geokeo"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["geokeo"]
   icon: "https://static.oomol.com/logo/third-party/Geokeo.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `geocode_forward` — Convert an address or place query into Geokeo geocoding results. [write]
+- `geocode_forward` — Convert an address or place query into Geokeo geocoding results.
 - `geocode_reverse` — Convert coordinates into Geokeo reverse geocoding results.
 
 ## Safety

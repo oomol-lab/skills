@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zotero"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zotero"]
   icon: "https://static.oomol.com/logo/third-party/zotero.png"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_collections` — List collections in a Zotero user or group library.
 - `list_groups` — List Zotero groups accessible to the user connected by the current API key.
 - `list_items` — List or search items in a Zotero user or group library.
-- `update_collection` — Replace the editable fields of one Zotero collection at a known version. [write]
+- `update_collection` — Replace the editable fields of one Zotero collection at a known version. [destructive]
 - `update_item` — Partially update one Zotero item at a known version. [write]
 
 ## Safety

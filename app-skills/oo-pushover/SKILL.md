@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pushover"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["pushover"]
   icon: "https://static.oomol.com/logo/third-party/Pushover.svg"
 ---
@@ -41,12 +41,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_group_user` — Add an existing Pushover user to a delivery group. [write]
 - `add_team_user` — Add a user to a Pushover for Teams organization using the Team API token. [write]
 - `assign_license` — Assign one prepaid Pushover license credit to a user by key or email address. [write]
-- `cancel_receipt_retries` — Cancel further retries for one emergency receipt before it expires. [write]
-- `cancel_retries_by_tag` — Cancel retries for all active emergency receipts that share the provided tag. [write]
+- `cancel_receipt_retries` — Cancel further retries for one emergency receipt before it expires. [destructive]
+- `cancel_retries_by_tag` — Cancel retries for all active emergency receipts that share the provided tag. [destructive]
 - `check_license_credits` — Get the number of prepaid Pushover license credits remaining on the application.
-- `client_login` — Authenticate an Open Client user with email, password, and optional two-factor code.
+- `client_login` — Authenticate an Open Client user with email, password, and optional two-factor code. [write]
 - `create_group` — Create a new Pushover delivery group. [write]
-- `disable_group_user` — Temporarily disable deliveries to a user, or one of the user's devices, inside a delivery group. [write]
+- `disable_group_user` — Temporarily disable deliveries to a user, or one of the user's devices, inside a delivery group. [destructive]
 - `enable_group_user` — Re-enable deliveries to a previously disabled user, or one of the user's devices, inside a delivery group. [write]
 - `fetch_client_messages` — Download pending Open Client messages for a registered device.
 - `get_app_icon_image` — Download a Pushover application icon PNG by icon identifier and return its binary content as base64.
@@ -56,7 +56,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_receipt_status` — Get the status of an emergency notification receipt, including acknowledgment, callback, and expiry details.
 - `get_team_api_token` — Return the Team API token resolved from the action input or the connected credential metadata.
 - `list_groups` — List the delivery groups owned by the connected Pushover application account.
-- `listen_client_websocket` — Open a temporary Open Client WebSocket session, login with the provided device and secret, and collect realtime events until timeout or close.
+- `listen_client_websocket` — Open a temporary Open Client WebSocket session, login with the provided device and secret, and collect realtime events until timeout or close. [write]
 - `register_client_device` — Register an Open Client desktop device using a user session secret. [write]
 - `remove_group_user` — Remove a user, or one of the user's devices, from a delivery group. [destructive]
 - `remove_team_user` — Remove a user from a Pushover for Teams organization without deleting the user's Pushover account. [destructive]

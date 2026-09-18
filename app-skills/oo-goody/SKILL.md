@@ -1,11 +1,11 @@
 ---
 name: oo-goody
-description: "Goody (ongoody.com). Use this skill for ANY Goody request — reading, creating, and updating data. Whenever a task involves Goody, use this skill instead of calling the API directly."
+description: "Goody (ongoody.com). Use this skill for ANY Goody request — searching and reading data. Whenever a task involves Goody, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Goody"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["goody"]
   icon: "https://static.oomol.com/logo/third-party/goody.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_current_user` — Retrieve the current Goody API user.
-- `get_order` — Retrieve a Goody order by ID. [write]
+- `get_order` — Retrieve a Goody order by ID.
 - `get_product` — Retrieve a Goody product by ID.
 - `list_orders` — List Goody orders, optionally filtered by creation timestamp.
 - `list_payment_methods` — List Goody payment methods available to the current account.

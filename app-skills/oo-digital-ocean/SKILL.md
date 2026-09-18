@@ -1,11 +1,11 @@
 ---
 name: oo-digital-ocean
-description: "DigitalOcean (digitalocean.com). Use this skill for ANY DigitalOcean request — searching and reading data. Whenever a task involves DigitalOcean, use this skill instead of calling the API directly."
+description: "DigitalOcean (digitalocean.com). Use this skill for ANY DigitalOcean request — reading, creating, updating, and deleting data. Whenever a task involves DigitalOcean, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "DigitalOcean"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["digital_ocean"]
   icon: "https://static.oomol.com/logo/third-party/DigitalOcean.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_firewalls` — List DigitalOcean cloud firewalls with pagination.
 - `list_load_balancers` — List DigitalOcean load balancers with pagination.
 - `list_vpcs` — List DigitalOcean VPC networks with pagination.
-- `manage_droplet_lifecycle` — Initiate a basic DigitalOcean Droplet lifecycle action such as reboot, shutdown, or power cycle.
+- `manage_droplet_lifecycle` — Initiate a basic DigitalOcean Droplet lifecycle action such as reboot, shutdown, or power cycle. [destructive]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LIFX"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lifx"]
   icon: "https://static.oomol.com/logo/third-party/lifx.png"
 ---
@@ -41,8 +41,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_lights` — List LIFX lights visible to the API token, optionally limited by a selector.
 - `list_scenes` — List scenes available to the authenticated LIFX account.
 - `set_state` — Set power, color, brightness, infrared, or transition duration for LIFX lights matching a selector. [write]
-- `toggle_power` — Toggle the power state for LIFX lights matching a selector.
-- `turn_effects_off` — Turn off running LIFX effects for lights matching a selector, optionally powering the lights off.
+- `toggle_power` — Toggle the power state for LIFX lights matching a selector. [write]
+- `turn_effects_off` — Turn off running LIFX effects for lights matching a selector, optionally powering the lights off. [write]
 - `validate_color` — Validate a LIFX color string and return the hue, saturation, brightness, and kelvin values LIFX will use.
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-appdrag
-description: "AppDrag (appdrag.com). Use this skill for ANY AppDrag request — searching and reading data. Whenever a task involves AppDrag, use this skill instead of calling the API directly."
+description: "AppDrag (appdrag.com). Use this skill for ANY AppDrag request — reading, creating, and updating data. Whenever a task involves AppDrag, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "AppDrag"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["appdrag"]
   icon: "https://static.oomol.com/logo/third-party/appdrag.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_function` — Execute one AppDrag Cloud Backend API function by folder, function name, HTTP method, and optional parameters.
+- `execute_function` — Execute one AppDrag Cloud Backend API function by folder, function name, HTTP method, and optional parameters. [write]
 
 ## Safety
 

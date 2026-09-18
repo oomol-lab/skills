@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MaintainX"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["maintainx"]
   icon: "https://static.oomol.com/logo/third-party/maintainx.svg"
 ---
@@ -44,10 +44,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_location` — Delete a MaintainX location by id. [destructive]
 - `get_location` — Retrieve one MaintainX location by id.
 - `get_user` — Retrieve one MaintainX user by id.
-- `get_work_order` — Retrieve one MaintainX work order by global id. [write]
+- `get_work_order` — Retrieve one MaintainX work order by global id.
 - `list_locations` — List MaintainX locations with official filters and cursor pagination.
 - `list_users` — List MaintainX users with official filters and cursor pagination.
-- `list_work_order_comments` — List comments on a MaintainX work order. [write]
+- `list_work_order_comments` — List comments on a MaintainX work order.
 - `list_work_orders` — List MaintainX work orders with official filters and cursor pagination.
 - `update_location` — Update a MaintainX location. [write]
 - `update_user` — Update a MaintainX user. [write]

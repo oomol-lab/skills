@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Userflow"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["userflow"]
   icon: "https://static.oomol.com/logo/third-party/userflow.png"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_group` — Fetch one Userflow group by ID.
 - `get_user` — Fetch one Userflow user by ID.
 - `list_users` — List Userflow users with optional cursor pagination and filters.
-- `track_event` — Track one Userflow event for a user.
+- `track_event` — Track one Userflow event for a user. [write]
 - `upsert_group` — Create or update one Userflow group. [write]
 - `upsert_user` — Create or update one Userflow user. [write]
 

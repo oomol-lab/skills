@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slab"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["slab"]
   icon: "https://static.oomol.com/logo/third-party/slab.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_post` — Delete a Slab post by ID. [destructive]
 - `delete_topic` — Delete a Slab topic by ID. [destructive]
 - `get_organization` — Get the current Slab organization visible to the API token.
-- `get_post` — Get one Slab post by ID. [write]
+- `get_post` — Get one Slab post by ID.
 - `get_posts` — Get multiple Slab posts by ID.
 - `get_topic` — Get one Slab topic by ID.
 - `get_topics` — Get multiple Slab topics by ID.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Okta"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["okta"]
   icon: "https://static.oomol.com/logo/third-party/okta.svg"
 ---
@@ -49,7 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_groups` — List Okta groups with search, filtering, sorting, expansion, and cursor pagination.
 - `list_users` — List Okta users with search, filtering, sorting, field projection, and cursor pagination.
 - `remove_user_from_group` — Unassign an Okta user from an Okta-managed group. [destructive]
-- `update_group` — Replace an Okta-managed group's profile. [write]
+- `update_group` — Replace an Okta-managed group's profile. [destructive]
 - `update_user` — Partially update an Okta user's profile or credentials. [write]
 
 ## Safety

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CloudConvert"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cloudconvert"]
   icon: "https://static.oomol.com/logo/third-party/CloudConvert.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_task` — Cancel a CloudConvert task that is still waiting or processing. [write]
+- `cancel_task` — Cancel a CloudConvert task that is still waiting or processing. [destructive]
 - `create_url_conversion_job` — Create a CloudConvert job that imports a remote file URL, converts it, and exports the result via `export/url`. [write]
 - `create_url_conversion_job_and_wait` — Create a URL-based CloudConvert conversion job and wait synchronously until the job finishes. [write]
 - `delete_job` — Delete a CloudConvert job, including all tasks and related data. [destructive]
@@ -49,8 +49,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_jobs` — List CloudConvert jobs for the current account.
 - `list_tasks` — List CloudConvert tasks for the current account.
 - `retry_task` — Retry a CloudConvert task by creating a new task from the original payload. [write]
-- `wait_for_job` — Wait synchronously for a CloudConvert job to finish and return the finished or failed job with tasks.
-- `wait_for_task` — Wait synchronously for a CloudConvert task to finish and return the finished or failed task.
+- `wait_for_job` — Wait synchronously for a CloudConvert job to finish and return the finished or failed job with tasks. [write]
+- `wait_for_task` — Wait synchronously for a CloudConvert task to finish and return the finished or failed task. [write]
 
 ## Safety
 

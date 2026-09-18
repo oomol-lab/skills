@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Trello"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["trello"]
   icon: "https://static.oomol.com/logo/third-party/trello.svg"
 ---
@@ -42,8 +42,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_card_label` — Add a Trello label to a card. [write]
 - `add_card_member` — Assign a Trello member to a card. [write]
 - `add_checkitem` — Add a check item to a Trello checklist. [write]
-- `archive_card` — Archive a Trello card. [write]
-- `archive_list` — Archive a Trello list. [write]
+- `archive_card` — Archive a Trello card. [destructive]
+- `archive_list` — Archive a Trello list. [destructive]
 - `create_board` — Create a Trello board. [write]
 - `create_card` — Create a Trello card in a list. [write]
 - `create_checklist` — Create a Trello checklist on a card. [write]

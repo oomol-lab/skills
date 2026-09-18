@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shipday"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["shipday"]
   icon: "https://static.oomol.com/logo/third-party/shipday.png"
 ---
@@ -40,8 +40,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_order` — Insert a Shipday delivery order. [write]
 - `delete_order` — Delete a Shipday delivery order by order ID. [destructive]
 - `edit_order` — Edit an existing Shipday delivery order. [write]
-- `get_order` — Retrieve one Shipday delivery order by order number. [write]
-- `get_order_progress` — Retrieve real-time delivery progress and ETA for a Shipday order. [write]
+- `get_order` — Retrieve one Shipday delivery order by order number.
+- `get_order_progress` — Retrieve real-time delivery progress and ETA for a Shipday order.
 - `list_active_orders` — Retrieve active delivery orders from Shipday.
 - `list_carriers` — Retrieve carriers configured in Shipday.
 

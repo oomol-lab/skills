@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Apple Ads"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["apple_ads"]
   icon: "https://static.oomol.com/logo/third-party/apple_ads.svg"
 ---
@@ -37,12 +37,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `apply_daily_budget_recommendations` — Accept one or more daily budget recommendations. Apple Ads raises each campaign's daily budget and moves the recommendation to the terminal APPLIED state.
-- `apply_target_cpa_recommendations` — Accept one or more target CPA recommendations. Apple Ads changes the target the campaign's Maximize Conversions bidding optimizes toward and moves each recommendation to the terminal APPLIED state.
+- `apply_daily_budget_recommendations` — Accept one or more daily budget recommendations. Apple Ads raises each campaign's daily budget and moves the recommendation to the terminal APPLIED state. [destructive]
+- `apply_target_cpa_recommendations` — Accept one or more target CPA recommendations. Apple Ads changes the target the campaign's Maximize Conversions bidding optimizes toward and moves each recommendation to the terminal APPLIED state. [destructive]
 - `bulk_create_keywords` — Create many keywords in one request, spanning as many ad groups as you like. The whole batch counts as a single call against the rate limit, which makes it the way to seed a keyword list. [write]
 - `bulk_create_negative_keywords` — Create many negative keywords in one request, mixing campaign-level and ad-group-level exclusions freely. The whole batch counts as a single call against the rate limit. Each outcome carries the zero-based index of the payload it belongs to. [write]
-- `bulk_update_keywords` — Change the bid or the status of many keywords in one request, for example to reprice a set of high performers or pause a set of weak ones. Apple Ads accepts nothing else on an update. [write]
-- `bulk_update_negative_keywords` — Pause or resume many negative keywords in one request. status is the only field Apple Ads allows changing, and every payload identifies its record by id. Each outcome carries the zero-based index of the payload it belongs to. [write]
+- `bulk_update_keywords` — Change the bid or the status of many keywords in one request, for example to reprice a set of high performers or pause a set of weak ones. Apple Ads accepts nothing else on an update. [destructive]
+- `bulk_update_negative_keywords` — Pause or resume many negative keywords in one request. status is the only field Apple Ads allows changing, and every payload identifies its record by id. Each outcome carries the zero-based index of the payload it belongs to. [destructive]
 - `create_ad` — Create an ad that links an existing ad creative to an ad group. adGroupId and creativeId are fixed at creation: serve a different ad creative by creating another ad and deleting this one. The ad creative must have a systemStatus of VALID, and only one ad per ad group can be ENABLED at a time. [write]
 - `create_ad_account` — Create an ad account under the organization the access token is bound to. The currency, time zone and payment model are inherited from the organization, and productFeatures is fixed at creation: an account authorized for the App Store can never run Apple Maps campaigns, or the other way around. [write]
 - `create_ad_group` — Create an ad group inside an existing campaign. campaignId, pricingModel and automatedKeywordsRequired are fixed at creation. Keywords and negative keywords cannot be created inline: add them afterwards with the keyword actions. [write]
@@ -61,8 +61,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_keyword` — Soft-delete one keyword. Apple Ads keeps the record and stops bidding on the term, and leaves the parent ad group and campaign untouched. To pause the term temporarily, update its status to PAUSED instead. [destructive]
 - `delete_location_group` — Soft-delete one location group. Deletion is permanent and there is no restore: ad groups targeting the group lose that constraint immediately and keep serving only if they target another location group. A group whose systemStatus is INVALID or PENDING cannot be deleted. [destructive]
 - `delete_negative_keyword` — Soft-delete one negative keyword. The excluded term stops being suppressed right away, across every ad group of the campaign for a campaign-level record. Use update_negative_keyword with status PAUSED instead when the exclusion should come back later. [destructive]
-- `dismiss_daily_budget_recommendations` — Reject one or more daily budget recommendations. Each campaign keeps its current daily budget, but the recommendation moves to the terminal DISMISSED state and never returns to AVAILABLE.
-- `dismiss_target_cpa_recommendations` — Reject one or more target CPA recommendations. The campaign keeps its current target, but each recommendation moves to the terminal DISMISSED state and never returns to AVAILABLE.
+- `dismiss_daily_budget_recommendations` — Reject one or more daily budget recommendations. Each campaign keeps its current daily budget, but the recommendation moves to the terminal DISMISSED state and never returns to AVAILABLE. [destructive]
+- `dismiss_target_cpa_recommendations` — Reject one or more target CPA recommendations. The campaign keeps its current target, but each recommendation moves to the terminal DISMISSED state and never returns to AVAILABLE. [destructive]
 - `get_ad` — Read one ad by identifier, including systemStatus, displayStatus and the reason arrays that explain why it is not delivering. Apple Ads still returns a soft-deleted ad with deleted set to true.
 - `get_ad_account` — Read the full record of one ad account, including its delegated advertiser resources and the reasons it is not operational.
 - `get_ad_group` — Read one ad group by identifier, including its full targeting and bid strategy. Apple Ads returns the ad group regardless of its deleted state.
@@ -78,7 +78,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_brand_campaign_report` — Retrieve Apple Maps campaign performance, one row per campaign with spend, engagement and Apple Maps action metrics aggregated over the date range. Filter on campaignId to scope the report to specific campaigns.
 - `get_brand_keyword_report` — Retrieve Apple Maps keyword performance, one row per keyword with metrics aggregated over the date range and an optional bid recommendation. Always filter on campaignId or adGroupId so the report does not span every keyword in the ad account.
 - `get_brand_search_term_report` — Retrieve the Apple Maps search terms that matched a keyword and produced an impression on the Search Results placement, one row per search term with the keyword it matched. Always filter on campaignId or adGroupId. Apple Ads suppresses or aggregates low-volume terms to protect user privacy.
-- `get_budget_order` — Read one budget order by identifier, including its amount, active date range, assigned ad account and invoice details. [write]
+- `get_budget_order` — Read one budget order by identifier, including its amount, active date range, assigned ad account and invoice details.
 - `get_business_category` — Read one Apple Maps business category by its MUID, including its qualifiedId taxonomy path and eligibility status.
 - `get_campaign` — Read one campaign by identifier. Apple Ads returns the campaign regardless of its deleted state.
 - `get_campaign_limited_status_details` — Read why a legacy app campaign delivers below its potential in each country or region, as a map of country or region code to limiting reason.
@@ -111,7 +111,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `query_creatives` — Search the ad creatives of one ad account with filters, sorting and offset pagination. Soft-deleted ad creatives are excluded unless a deleted EQUALS true filter asks for them, which is the only way to read one back after deletion.
 - `query_daily_budget_recommendations` — List the daily budget increases Apple Ads recommends for one promoted object, with the historical and projected performance behind each one. This is the only recommendation type available for Apple Maps brand campaigns.
 - `query_geo_locations` — Look up geo targeting locations by identifier. Pass the geo location ids or pipe-delimited legacy ids you already have, and Apple Ads returns their metadata and eligibility scoped to one supply source. Use it to batch-validate targeting values before applying them to an ad group; this endpoint never filters soft-blocked geos out.
-- `query_impression_share` — Measure what share of the available impressions one App Store app captured for each search term and country or region. Apple Maps brand campaigns have no impression share equivalent. [write]
+- `query_impression_share` — Measure what share of the available impressions one App Store app captured for each search term and country or region. Apple Maps brand campaigns have no impression share equivalent.
 - `query_keyword_suggestions` — Discover keywords worth targeting for one promoted object, ranked by relative popularity. Suggestions are stateless: turn one into a live keyword with create_keyword.
 - `query_keywords` — Search the keywords of one ad account with filters, sorting and offset pagination. Apple Ads requires a filter on adGroupId or campaignId unless you filter on id, and soft-deleted keywords are excluded unless a filter on deleted asks for them.
 - `query_location_groups` — Search the location groups of one ad account with filters, sorting and offset pagination. Soft-deleted groups are excluded unless a filter on deleted asks for them.
@@ -126,15 +126,15 @@ Each action is listed below with a one-line description; actions that change sta
 - `query_target_cpa_suggestion` — Read the target CPA Apple Ads suggests as the starting point for a new Maximize Conversions campaign, computed from the app's tap-install CPI over the last 28 days. It applies to App Store apps only, so the request always asks for promotedObjectType APPSTORE_APP.
 - `search_apps` — Search the App Store for apps by name or content provider, or list the apps the organization owns. Supply at least one of query, cpids or returnOwnedApps set to true. Campaigns can only promote apps the ad account owns, so use returnOwnedApps to find a usable promotedObjectId.
 - `search_geo_locations` — Search geo targeting locations by name. Use it to discover the geo location ids to put in an ad group's country, adminArea, locality or postalCode targeting dimension. Soft-blocked geos are returned with their eligibility data unless eligible is true.
-- `update_ad` — Change the name or status of one ad. They are the only mutable fields; adGroupId, creativeId, campaignId and adAccountId are locked at creation. Only the fields you pass are changed. Updating a soft-deleted ad returns 404. [write]
-- `update_ad_account` — Change the name or the delegated advertiser resources of one ad account. Only the fields you pass are changed, and the delegations array you pass replaces the stored one entirely. The currency, time zone, payment model, organization and productFeatures are fixed and cannot be updated. [write]
-- `update_ad_group` — Change the mutable fields of one ad group. Only the fields you pass are changed, and targeting is merged dimension by dimension: a dimension you pass replaces the stored one, and a dimension you omit is left alone. campaignId, pricingModel and automatedKeywordsRequired cannot be changed. [write]
-- `update_budget_order` — Change the mutable fields of one budget order. Only the fields you pass are changed. On a budget order that is already active, an end date can only be shortened, never extended, and passing endTime as null removes the expiration date entirely. [write]
-- `update_campaign` — Change the mutable fields of one campaign. Only the fields you pass are changed, but an array you pass replaces the stored array entirely. [write]
-- `update_creative` — Change the name or creative spec of one ad creative. They are the only mutable fields; creativeType and destination are locked at creation. Changing creativeSpec can send the ad creative back to PENDING for re-review, which stops the ads referencing it from delivering until it is VALID again. [write]
-- `update_keyword` — Change the bid or the status of one keyword. Apple Ads accepts nothing else on an update, and returns 404 for a keyword that has already been deleted. [write]
-- `update_location_group` — Change the mutable fields of one location group. Only the fields you pass are changed, but locationIds and rules replace the stored array entirely rather than merging into it. Changing rules sends a DYNAMIC group back to PENDING while Apple Ads re-evaluates membership. A group whose systemStatus is INVALID or PENDING cannot be updated. [write]
-- `update_negative_keyword` — Pause or resume one negative keyword. status is the only field Apple Ads allows changing: PAUSED lets the excluded term reach the auction again, ENABLED restores the exclusion. Apple Ads answers a request for a deleted negative keyword with 404. [write]
+- `update_ad` — Change the name or status of one ad. They are the only mutable fields; adGroupId, creativeId, campaignId and adAccountId are locked at creation. Only the fields you pass are changed. Updating a soft-deleted ad returns 404. [destructive]
+- `update_ad_account` — Change the name or the delegated advertiser resources of one ad account. Only the fields you pass are changed, and the delegations array you pass replaces the stored one entirely. The currency, time zone, payment model, organization and productFeatures are fixed and cannot be updated. [destructive]
+- `update_ad_group` — Change the mutable fields of one ad group. Only the fields you pass are changed, and targeting is merged dimension by dimension: a dimension you pass replaces the stored one, and a dimension you omit is left alone. campaignId, pricingModel and automatedKeywordsRequired cannot be changed. [destructive]
+- `update_budget_order` — Change the mutable fields of one budget order. Only the fields you pass are changed. On a budget order that is already active, an end date can only be shortened, never extended, and passing endTime as null removes the expiration date entirely. [destructive]
+- `update_campaign` — Change the mutable fields of one campaign. Only the fields you pass are changed, but an array you pass replaces the stored array entirely. [destructive]
+- `update_creative` — Change the name or creative spec of one ad creative. They are the only mutable fields; creativeType and destination are locked at creation. Changing creativeSpec can send the ad creative back to PENDING for re-review, which stops the ads referencing it from delivering until it is VALID again. [destructive]
+- `update_keyword` — Change the bid or the status of one keyword. Apple Ads accepts nothing else on an update, and returns 404 for a keyword that has already been deleted. [destructive]
+- `update_location_group` — Change the mutable fields of one location group. Only the fields you pass are changed, but locationIds and rules replace the stored array entirely rather than merging into it. Changing rules sends a DYNAMIC group back to PENDING while Apple Ads re-evaluates membership. A group whose systemStatus is INVALID or PENDING cannot be updated. [destructive]
+- `update_negative_keyword` — Pause or resume one negative keyword. status is the only field Apple Ads allows changing: PAUSED lets the excluded term reach the auction again, ENABLED restores the exclusion. Apple Ads answers a request for a deleted negative keyword with 404. [destructive]
 
 ## Safety
 

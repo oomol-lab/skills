@@ -1,11 +1,11 @@
 ---
 name: oo-descript
-description: "Descript (descript.com). Use this skill for ANY Descript request — reading, creating, and updating data. Whenever a task involves Descript, use this skill instead of calling the API directly."
+description: "Descript (descript.com). Use this skill for ANY Descript request — reading, creating, updating, and deleting data. Whenever a task involves Descript, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Descript"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["descript"]
   icon: "https://static.oomol.com/logo/third-party/descript.svg"
 ---
@@ -37,15 +37,15 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_job` — Cancel a running Descript job. [write]
+- `cancel_job` — Cancel a running Descript job. [destructive]
 - `get_job` — Get the current state and type-specific result of a Descript job.
 - `get_project` — Get a Descript project with its media, compositions, and published links.
 - `import_media` — Import URL-hosted media into a new or existing Descript project asynchronously. [write]
 - `list_agent_models` — List the current Descript Underlord models and stable aliases.
 - `list_jobs` — List recent Descript jobs with optional project, type, time, and pagination filters.
 - `list_projects` — List projects accessible to the Drive associated with the Descript API token.
-- `prompt_agent` — Submit an asynchronous Underlord request to create or edit a Descript project.
-- `publish_project` — Publish or republish a Descript composition and produce share and download URLs asynchronously. [write]
+- `prompt_agent` — Submit an asynchronous Underlord request to create or edit a Descript project. [write]
+- `publish_project` — Publish or republish a Descript composition and produce share and download URLs asynchronously. [destructive]
 
 ## Safety
 

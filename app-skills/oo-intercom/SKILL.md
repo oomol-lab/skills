@@ -1,11 +1,11 @@
 ---
 name: oo-intercom
-description: "Intercom (intercom.com). Use this skill for ANY Intercom request — reading, creating, and updating data. Whenever a task involves Intercom, use this skill instead of calling the API directly."
+description: "Intercom (intercom.com). Use this skill for ANY Intercom request — reading, creating, updating, and deleting data. Whenever a task involves Intercom, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Intercom"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["intercom"]
   icon: "https://static.oomol.com/logo/third-party/Intercom.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `close_conversation` — Close an Intercom conversation. [write]
+- `close_conversation` — Close an Intercom conversation. [destructive]
 - `create_contact` — Create a new Intercom contact. [write]
 - `get_admin` — Get a single Intercom admin by identifier.
 - `get_article` — Get a single Intercom help center article by identifier.

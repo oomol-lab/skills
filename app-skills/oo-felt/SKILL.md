@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Felt"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["felt"]
   icon: "https://static.oomol.com/logo/third-party/felt.png"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_map` — Get one Felt map by ID.
 - `get_project` — Get one Felt project by ID.
 - `list_projects` — List Felt projects accessible to the authenticated user.
-- `move_map` — Move a Felt map to another project or folder in the same workspace. [write]
+- `move_map` — Move a Felt map to another project or folder in the same workspace. [destructive]
 - `update_map` — Update Felt map metadata and sharing settings. [write]
 - `update_project` — Update Felt project properties. [write]
 

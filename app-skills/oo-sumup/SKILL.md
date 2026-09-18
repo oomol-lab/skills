@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SumUp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sumup"]
   icon: "https://static.oomol.com/logo/third-party/sumup.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_checkout` — Create a SumUp checkout, optionally enabling the SumUp-hosted payment page. [write]
 - `create_customer` — Create a saved customer in SumUp for future payment workflows. [write]
 - `deactivate_checkout` — Deactivate a pending SumUp checkout so it can no longer be processed. [destructive]
-- `get_checkout` — Retrieve a SumUp checkout and its current payment status. [write]
+- `get_checkout` — Retrieve a SumUp checkout and its current payment status.
 - `get_customer` — Retrieve a saved SumUp customer by its merchant-scoped identifier.
 - `list_checkouts` — List SumUp checkouts, optionally filtered by checkout reference.
 - `list_payment_instruments` — List payment instruments saved for a SumUp customer.

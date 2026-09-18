@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Starton"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["starton"]
   icon: "https://static.oomol.com/logo/third-party/starton.jpg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_pin` — Delete a Starton pin by pin identifier. [destructive]
 - `get_pin` — Read one IPFS pin from Starton by pin identifier.
 - `list_pins` — List IPFS pins from the current Starton project.
-- `pin_existing_file` — Create a Starton pin for an existing IPFS CID.
+- `pin_existing_file` — Create a Starton pin for an existing IPFS CID. [write]
 
 ## Safety
 

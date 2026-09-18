@@ -1,11 +1,11 @@
 ---
 name: oo-appcues
-description: "Appcues (appcues.com). Use this skill for ANY Appcues request — reading, creating, and updating data. Whenever a task involves Appcues, use this skill instead of calling the API directly."
+description: "Appcues (appcues.com). Use this skill for ANY Appcues request — reading, creating, updating, and deleting data. Whenever a task involves Appcues, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Appcues"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["appcues"]
   icon: "https://static.oomol.com/logo/third-party/appcues.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_flows` — List Appcues Flow 2.0 experiences for the connected account.
 - `list_tags` — List content tags for the connected Appcues account.
 - `publish_flow` — Publish one Appcues Flow 2.0 experience. [write]
-- `unpublish_flow` — Unpublish one Appcues Flow 2.0 experience.
+- `unpublish_flow` — Unpublish one Appcues Flow 2.0 experience. [destructive]
 
 ## Safety
 

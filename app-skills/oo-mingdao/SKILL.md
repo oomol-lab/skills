@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mingdao"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["mingdao"]
   icon: "https://static.oomol.com/logo/third-party/mingdao.png"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `batch_create_records` — Create multiple Mingdao worksheet records with the batch API's string-encoded field values and URL-based attachments. [write]
 - `batch_create_views` — Create table, kanban, gallery, calendar, hierarchy, gantt, resource, detail or map views with their configuration. [write]
 - `batch_delete_records` — Delete multiple Mingdao worksheet records, optionally permanently instead of using the recycle bin. [destructive]
-- `batch_update_records` — Apply the same field updates to multiple Mingdao worksheet records and report successful and failed record IDs. [write]
+- `batch_update_records` — Apply the same field updates to multiple Mingdao worksheet records and report successful and failed record IDs. [destructive]
 - `create_app_items` — Create blank worksheet or custom-page application items. [write]
 - `create_app_sections` — Create navigation sections in the connected Mingdao application. [write]
 - `create_chart` — Create a worksheet chart with dimensions, metrics, date ranges and filters. [write]
@@ -54,7 +54,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_record` — Delete a Mingdao worksheet record, optionally permanently instead of using the recycle bin. [destructive]
 - `delete_role` — Delete an application role and revoke the access it grants. [destructive]
 - `delete_worksheet` — Delete a worksheet from the connected application. [destructive]
-- `disable_optionset` — Disable an existing application option set. [write]
+- `disable_optionset` — Disable an existing application option set. [destructive]
 - `generate_record_share_link` — Generate a record share link with selected visible fields, optional password and expiration. Omitted or zero expiration means the link does not expire. [write]
 - `get_app` — Get the connected Mingdao application's identity, metadata and navigation sections.
 - `get_approval` — Get the execution details, current steps and available operation metadata for an existing Mingdao record approval.
@@ -79,11 +79,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `remove_role_members` — Remove users, departments, department trees, jobs or organization roles from an application role. [destructive]
 - `remove_user_from_all_roles` — Remove a user from every role in the connected application. [destructive]
 - `search_knowledge` — Search Mingdao knowledge content using vector, keyword or hybrid retrieval. Knowledge bases with different embedding models must be searched in separate calls.
-- `trigger_workflow` — Trigger an existing Mingdao workflow with its defined parameters. Its configured steps may update or delete business data; the returned result does not imply that all downstream work has completed. [write]
-- `update_custom_page` — Replace the complete custom-page component layout, including inline charts, views, tabs, containers and filter groups. [write]
-- `update_optionset` — Update an option set's name, keyed options, order, colors and scores. [write]
-- `update_record` — Update a Mingdao worksheet record, replacing, adding or removing supported field values. [write]
-- `update_worksheet` — Update worksheet metadata and add, edit or delete fields. [write]
+- `trigger_workflow` — Trigger an existing Mingdao workflow with its defined parameters. Its configured steps may update or delete business data; the returned result does not imply that all downstream work has completed. [destructive]
+- `update_custom_page` — Replace the complete custom-page component layout, including inline charts, views, tabs, containers and filter groups. [destructive]
+- `update_optionset` — Update an option set's name, keyed options, order, colors and scores. [destructive]
+- `update_record` — Update a Mingdao worksheet record, replacing, adding or removing supported field values. [destructive]
+- `update_worksheet` — Update worksheet metadata and add, edit or delete fields. [destructive]
 
 ## Safety
 

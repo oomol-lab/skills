@@ -1,11 +1,11 @@
 ---
 name: oo-metabase
-description: "Metabase (metabase.com). Use this skill for ANY Metabase request — reading, creating, and updating data. Whenever a task involves Metabase, use this skill instead of calling the API directly."
+description: "Metabase (metabase.com). Use this skill for ANY Metabase request — reading, creating, updating, and deleting data. Whenever a task involves Metabase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Metabase"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["metabase"]
   icon: "https://static.oomol.com/logo/third-party/metabase.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_question` — Save a constructed MBQL or SQL query as a question. [write]
 - `execute_query` — Execute constructed MBQL and return rows and columns. Native SQL handles are not supported.
 - `execute_question` — Run a saved question. Parameterized questions and input template tags are not supported by native MCP.
-- `execute_sql` — Execute native SQL. Requires native-query permission and the instance's execute-SQL setting to be enabled.
+- `execute_sql` — Execute native SQL. Requires native-query permission and the instance's execute-SQL setting to be enabled. [destructive]
 - `get_card` — Retrieve one Metabase card by ID.
 - `get_collection` — Retrieve one Metabase collection by ID.
 - `get_current_user` — Get the Metabase user associated with the API key.
@@ -62,9 +62,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `read_resource` — Read up to five Metabase entity URIs. Preserves individual resource errors; list endpoints cap at 25 items.
 - `search` — Search Metabase content visible to the API key.
 - `search_content` — Search native Metabase MCP content using keyword or semantic queries (not the REST search action). Requires native MCP on the instance.
-- `update_dashboard` — Patch a dashboard and apply ordered add/remove/move card mutations. [write]
-- `update_metric` — Patch a metric; replacement queries must still meet metric requirements. [write]
-- `update_question` — Patch a saved question, optionally replacing its query with a stored handle. [write]
+- `update_dashboard` — Patch a dashboard and apply ordered add/remove/move card mutations. [destructive]
+- `update_metric` — Patch a metric; replacement queries must still meet metric requirements. [destructive]
+- `update_question` — Patch a saved question, optionally replacing its query with a stored handle. [destructive]
 
 ## Safety
 

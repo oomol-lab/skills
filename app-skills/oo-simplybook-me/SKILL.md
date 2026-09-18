@@ -1,11 +1,11 @@
 ---
 name: oo-simplybook-me
-description: "SimplyBook.me (simplybook.me). Use this skill for ANY SimplyBook.me request — reading, creating, and updating data. Whenever a task involves SimplyBook.me, use this skill instead of calling the API directly."
+description: "SimplyBook.me (simplybook.me). Use this skill for ANY SimplyBook.me request — searching and reading data. Whenever a task involves SimplyBook.me, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "SimplyBook.me"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["simplybook_me"]
   icon: "https://static.oomol.com/logo/third-party/simplybook_me.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_available_units` — Get performer ids available for a SimplyBook.me service at a specific date-time.
 - `get_company_info` — Get public company profile and configuration details from SimplyBook.me.
-- `get_start_time_matrix` — Get available SimplyBook.me start times for a service and performer over a date range. [write]
+- `get_start_time_matrix` — Get available SimplyBook.me start times for a service and performer over a date range.
 - `list_performers` — List SimplyBook.me service performers that can provide services.
 - `list_services` — List SimplyBook.me public service events available for booking.
 

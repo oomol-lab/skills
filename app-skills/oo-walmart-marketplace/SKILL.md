@@ -1,11 +1,11 @@
 ---
 name: oo-walmart-marketplace
-description: "Walmart Marketplace (marketplace.walmart.com). Use this skill for ANY Walmart Marketplace request — reading, creating, and updating data. Whenever a task involves Walmart Marketplace, use this skill instead of calling the API directly."
+description: "Walmart Marketplace (marketplace.walmart.com). Use this skill for ANY Walmart Marketplace request — reading, creating, updating, and deleting data. Whenever a task involves Walmart Marketplace, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Walmart Marketplace"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["walmart_marketplace"]
   icon: "https://static.oomol.com/logo/third-party/walmart_marketplace.png"
 ---
@@ -39,10 +39,10 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_inventory` — Get the current Walmart Marketplace inventory for one seller SKU.
 - `get_item` — Get one Walmart Marketplace seller item by product identifier.
-- `get_order` — Get one Walmart Marketplace purchase order by purchase order ID. [write]
+- `get_order` — Get one Walmart Marketplace purchase order by purchase order ID.
 - `list_items` — List items in the connected Walmart Marketplace seller catalog.
 - `list_orders` — List recent Walmart Marketplace purchase orders with optional filters.
-- `update_inventory` — Replace the Walmart Marketplace inventory amount for one seller SKU. [write]
+- `update_inventory` — Replace the Walmart Marketplace inventory amount for one seller SKU. [destructive]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-nusii-proposals
-description: "Nusii Proposals (nusii.com). Use this skill for ANY Nusii Proposals request — reading, creating, and updating data. Whenever a task involves Nusii Proposals, use this skill instead of calling the API directly."
+description: "Nusii Proposals (nusii.com). Use this skill for ANY Nusii Proposals request — reading, creating, updating, and deleting data. Whenever a task involves Nusii Proposals, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Nusii Proposals"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["nusii_proposals"]
   icon: "https://static.oomol.com/logo/third-party/nusii_proposals.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_proposal` — Archive a Nusii proposal by ID. [write]
+- `archive_proposal` — Archive a Nusii proposal by ID. [destructive]
 - `create_client` — Create a client in the connected Nusii account. [write]
 - `create_proposal` — Create a Nusii proposal, optionally resolving a client and copying sections from a template. [write]
 - `get_account` — Get the Nusii account associated with the connected API token.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Komari"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["komari"]
   icon: "https://static.oomol.com/logo/third-party/komari.png"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_load_notification` — Create a load notification rule. [write]
 - `add_ping_task` — Create a ping task. [write]
 - `batch_delete_clipboard` — Delete multiple clipboard entries. [destructive]
-- `cancel_metric_migration` — Cancel the active metric-store migration. [write]
+- `cancel_metric_migration` — Cancel the active metric-store migration. [destructive]
 - `clear_all_records` — Permanently delete all load and ping records. [destructive]
 - `clear_records` — Permanently delete all load records. [destructive]
 - `create_clipboard` — Create a clipboard entry. [write]
@@ -50,60 +50,60 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_load_notification` — Delete load notification rules. [destructive]
 - `delete_ping_tasks` — Delete ping tasks and their records. [destructive]
 - `delete_session` — Revoke one login session using the stable identifier returned by list_sessions. [destructive]
-- `disable_offline_notifications` — Disable offline notifications for clients. [write]
-- `disable_traffic_report_notifications` — Disable traffic reports for clients. [write]
+- `disable_offline_notifications` — Disable offline notifications for clients. [destructive]
+- `disable_traffic_report_notifications` — Disable traffic reports for clients. [destructive]
 - `edit_client` — Update client fields. This changes Komari configuration. [write]
 - `edit_load_notification` — Replace load notification rule fields. [write]
 - `edit_offline_notifications` — Replace offline notification rule fields. [write]
 - `edit_ping_tasks` — Replace ping task fields. [write]
-- `edit_settings` — Update arbitrary Komari settings; invalid database settings can disrupt service. [write]
+- `edit_settings` — Update arbitrary Komari settings; invalid database settings can disrupt service. [destructive]
 - `edit_traffic_report_notifications` — Replace traffic-report rule fields. [write]
 - `enable_offline_notifications` — Enable offline notifications for clients. [write]
 - `enable_traffic_report_notifications` — Enable traffic reports for clients. [write]
-- `execute_command` — DANGEROUS: execute a shell command on selected clients. Komari API keys bypass interactive 2FA for this sensitive RPC. [write]
-- `get_client` — Get one client without returning its enrollment token. [write]
-- `get_client_task_result` — Get one client's result for an execution task. [write]
-- `get_client_token` — Get a client enrollment token. Treat the response as a secret. [write]
-- `get_clipboard` — Get one clipboard entry. [write]
+- `execute_command` — DANGEROUS: execute a shell command on selected clients. Komari API keys bypass interactive 2FA for this sensitive RPC. [destructive]
+- `get_client` — Get one client without returning its enrollment token.
+- `get_client_task_result` — Get one client's result for an execution task.
+- `get_client_token` — Get a client enrollment token. Treat the response as a secret.
+- `get_clipboard` — Get one clipboard entry.
 - `get_current_user` — Get the current Komari user or guest identity.
-- `get_database_size` — Inspect main and monitoring database storage. [write]
-- `get_execution_task` — Get one remote execution task and its results. [write]
+- `get_database_size` — Inspect main and monitoring database storage.
+- `get_execution_task` — Get one remote execution task and its results.
 - `get_load_history` — Get persisted resource metrics for a node.
-- `get_message_sender_provider` — Get one message-sender configuration or list available templates. The result may contain secrets. [write]
-- `get_metric_migration_status` — Get metric-store migration progress. [write]
-- `get_oidc_provider` — Get one OIDC configuration or list templates. The result may contain client secrets. [write]
+- `get_message_sender_provider` — Get one message-sender configuration or list available templates. The result may contain secrets.
+- `get_metric_migration_status` — Get metric-store migration progress.
+- `get_oidc_provider` — Get one OIDC configuration or list templates. The result may contain client secrets.
 - `get_ping_history` — Get ping records by node, task, or both.
 - `get_ping_metric_stats` — Get aggregate latency, loss, percentile, and standard-deviation statistics.
 - `get_public_settings` — Get settings that Komari exposes to its public frontend.
 - `get_recent_metrics` — Get the short in-memory window of recent reports for a node.
-- `get_settings` — Get all Komari settings. The result can contain secrets and database DSNs. [write]
-- `get_terminal_settings` — Get xterm.js terminal appearance settings. [write]
+- `get_settings` — Get all Komari settings. The result can contain secrets and database DSNs.
+- `get_terminal_settings` — Get xterm.js terminal appearance settings.
 - `get_version` — Get the Komari server version and build hash.
-- `list_audit_logs` — List paged audit logs. [write]
-- `list_client_execution_tasks` — List execution tasks assigned to a client. [write]
-- `list_clients` — List all clients without returning enrollment tokens. [write]
-- `list_clipboard` — List clipboard entries. [write]
-- `list_execution_tasks` — List remote execution tasks and their results, which may contain command output. [write]
-- `list_load_notifications` — List load notification rules. [write]
-- `list_metric_definitions` — List all metric definitions and retention policies. [write]
+- `list_audit_logs` — List paged audit logs.
+- `list_client_execution_tasks` — List execution tasks assigned to a client.
+- `list_clients` — List all clients without returning enrollment tokens.
+- `list_clipboard` — List clipboard entries.
+- `list_execution_tasks` — List remote execution tasks and their results, which may contain command output.
+- `list_load_notifications` — List load notification rules.
+- `list_metric_definitions` — List all metric definitions and retention policies.
 - `list_nodes` — List visible Komari nodes without client tokens or private address fields.
-- `list_offline_notifications` — List offline notification rules. [write]
-- `list_ping_tasks` — List all ping tasks including targets. [write]
+- `list_offline_notifications` — List offline notification rules.
+- `list_ping_tasks` — List all ping tasks including targets.
 - `list_public_metric_definitions` — List public metric definitions and retention policies.
 - `list_public_ping_tasks` — List ping tasks using the public response shape.
-- `list_sessions` — List login sessions using stable identifiers while redacting session tokens and IP addresses. [write]
-- `list_task_results` — List all client results for an execution task. [write]
-- `list_traffic_report_notifications` — List traffic-report rules. [write]
+- `list_sessions` — List login sessions using stable identifiers while redacting session tokens and IP addresses.
+- `list_task_results` — List all client results for an execution task.
+- `list_traffic_report_notifications` — List traffic-report rules.
 - `order_clients` — Set client display weights using a UUID-to-weight map. [write]
 - `order_ping_tasks` — Set ping-task weights using an ID-to-weight map. [write]
 - `query_metrics` — Query metric time-series points with filters, aggregation, and downsampling.
-- `record_visitor_event` — Record a bounded visitor audit event in Komari.
+- `record_visitor_event` — Record a bounded visitor audit event in Komari. [write]
 - `remove_client` — Permanently delete a client and its runtime state. [destructive]
 - `set_message_sender_provider` — Save and possibly reload a message-sender provider configuration. [write]
 - `set_oidc_provider` — Save and possibly reload an OIDC provider configuration. [write]
 - `set_terminal_settings` — Update xterm.js terminal appearance settings, including optional custom CSS. [write]
 - `start_metric_migration` — Start migrating metrics from a source store into the current store. [write]
-- `test_geoip` — Test Komari GeoIP lookup. [write]
+- `test_geoip` — Test Komari GeoIP lookup.
 - `test_message_sender` — Send a test notification through the active message sender. [write]
 - `update_clipboard` — Update a clipboard entry. [write]
 - `update_metric_definition` — Change a metric retention policy; zero deletes stored data for that metric. [write]

@@ -1,11 +1,11 @@
 ---
 name: oo-deutschlandgpt
-description: "DeutschlandGPT (deutschlandgpt.de). Use this skill for ANY DeutschlandGPT request — reading, creating, and updating data. Whenever a task involves DeutschlandGPT, use this skill instead of calling the API directly."
+description: "DeutschlandGPT (deutschlandgpt.de). Use this skill for ANY DeutschlandGPT request — searching and reading data. Whenever a task involves DeutschlandGPT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "DeutschlandGPT"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["deutschlandgpt"]
   icon: "https://static.oomol.com/logo/third-party/deutschlandgpt.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a synchronous text chat completion through DeutschlandGPT. [write]
-- `create_embeddings` — Create embedding vectors for one or more text inputs through DeutschlandGPT. [write]
+- `create_chat_completion` — Create a synchronous text chat completion through DeutschlandGPT.
+- `create_embeddings` — Create embedding vectors for one or more text inputs through DeutschlandGPT.
 - `list_models` — List text models enabled for the connected DeutschlandGPT workspace.
 
 ## Safety

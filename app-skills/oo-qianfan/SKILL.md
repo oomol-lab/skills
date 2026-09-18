@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baidu Qianfan"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["qianfan"]
   icon: "https://static.oomol.com/logo/third-party/Qianfan.png"
 ---
@@ -37,12 +37,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_batch` — Cancel a Baidu Qianfan batch prediction job by its identifier. [write]
-- `cancel_video_generation_task` — Cancel a Baidu Qianfan video generation task by its task identifier. [write]
-- `create_ai_search_completion` — Create a non-streaming AI search chat completion with Baidu Qianfan. [write]
+- `cancel_batch` — Cancel a Baidu Qianfan batch prediction job by its identifier. [destructive]
+- `cancel_video_generation_task` — Cancel a Baidu Qianfan video generation task by its task identifier. [destructive]
+- `create_ai_search_completion` — Create a non-streaming AI search chat completion with Baidu Qianfan.
 - `create_air_image_generation` — Generate images with the Baidu Qianfan MuseSteamer Air image endpoint. [write]
 - `create_batch` — Create a Baidu Qianfan batch prediction job from an uploaded input file. [write]
-- `create_chat_completion` — Create a non-streaming OpenAI-compatible chat completion with Baidu Qianfan. [write]
+- `create_chat_completion` — Create a non-streaming OpenAI-compatible chat completion with Baidu Qianfan.
 - `create_completion` — Create a non-streaming fill-in-the-middle completion with Baidu Qianfan. [write]
 - `create_embeddings` — Generate embedding vectors for one or more input strings with Baidu Qianfan. [write]
 - `create_image_generation` — Generate images with the Baidu Qianfan general image generation endpoint. [write]
@@ -59,8 +59,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_response_input_items` — List the stored context items for a previously created Baidu Qianfan response.
 - `list_video_generation_tasks` — List Baidu Qianfan video generation tasks with optional filters.
 - `rerank` — Score and rank candidate documents against a query with a Baidu Qianfan rerank model.
-- `run_paddleocr_vl` — Run the Baidu Qianfan PaddleOCR-VL endpoint on a document or image.
-- `run_pp_structure_v3` — Run the Baidu Qianfan PP-StructureV3 OCR endpoint on a document or image.
+- `run_paddleocr_vl` — Run the Baidu Qianfan PaddleOCR-VL endpoint on a document or image. [write]
+- `run_pp_structure_v3` — Run the Baidu Qianfan PP-StructureV3 OCR endpoint on a document or image. [write]
 - `upload_file` — Upload a file to Baidu Qianfan for batch or other file-based APIs. [write]
 
 ## Safety

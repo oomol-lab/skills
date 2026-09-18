@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "JSONBin.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["jsonbin"]
   icon: "https://static.oomol.com/logo/third-party/jsonbin.png"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_bin` — Create a JSONBin bin from a JSON object and return the stored record plus bin metadata. [write]
 - `delete_bin` — Delete a JSONBin bin and return the deletion metadata returned by JSONBin. [destructive]
 - `read_bin` — Read the latest or a specific version of a JSONBin bin.
-- `update_bin` — Replace the JSON object stored in a JSONBin bin and return the updated record plus metadata. [write]
+- `update_bin` — Replace the JSON object stored in a JSONBin bin and return the updated record plus metadata. [destructive]
 
 ## Safety
 

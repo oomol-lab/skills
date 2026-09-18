@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Strava"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["strava"]
   icon: "https://static.oomol.com/logo/third-party/Strava.svg"
 ---
@@ -54,7 +54,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_segment_effort` — Get Strava segment performance details by ID.
 - `get_segment_effort_streams` — Get streaming data for a specified Strava segment score.
 - `get_segment_streams` — Get flow data for a specified Strava segment.
-- `get_upload` — Query the status of Strava activity upload tasks. [write]
+- `get_upload` — Query the status of Strava activity upload tasks.
 - `get_zones` — Get the current Strava athlete's training partition.
 - `list_activity_comments` — Lists comments for the specified Strava activity.
 - `list_activity_kudoers` — List athletes who have liked the specified Strava activity.

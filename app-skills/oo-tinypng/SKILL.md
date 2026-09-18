@@ -1,11 +1,11 @@
 ---
 name: oo-tinypng
-description: "TinyPNG (tinypng.com). Use this skill for ANY TinyPNG request — searching and reading data. Whenever a task involves TinyPNG, use this skill instead of calling the API directly."
+description: "TinyPNG (tinypng.com). Use this skill for ANY TinyPNG request — reading, creating, and updating data. Whenever a task involves TinyPNG, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TinyPNG"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tinypng"]
   icon: "https://static.oomol.com/logo/third-party/TinyPNG.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `output_image` — Transform a TinyPNG output image and return a transit URL for the resulting file.
-- `shrink_image` — Create a TinyPNG compressed image resource from a public URL or base64-encoded image bytes.
+- `shrink_image` — Create a TinyPNG compressed image resource from a public URL or base64-encoded image bytes. [write]
 
 ## Safety
 

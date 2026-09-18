@@ -1,11 +1,11 @@
 ---
 name: oo-envoy
-description: "Envoy (envoy.com). Use this skill for ANY Envoy request — reading, creating, and updating data. Whenever a task involves Envoy, use this skill instead of calling the API directly."
+description: "Envoy (envoy.com). Use this skill for ANY Envoy request — searching and reading data. Whenever a task involves Envoy, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Envoy"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["envoy"]
   icon: "https://static.oomol.com/logo/third-party/envoy.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_employee` — Fetch one Envoy employee by ID.
 - `get_flow` — Fetch one Envoy sign-in flow by ID.
-- `get_invite` — Fetch one Envoy invite by ID. [write]
+- `get_invite` — Fetch one Envoy invite by ID.
 - `get_location` — Fetch one Envoy location by ID.
 - `list_employees` — List Envoy employees with optional search filters and pagination.
 - `list_flows` — List Envoy sign-in flows with optional filters and pagination.

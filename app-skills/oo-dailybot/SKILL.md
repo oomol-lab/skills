@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dailybot"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["dailybot"]
   icon: "https://static.oomol.com/logo/third-party/dailybot.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_team_members` — List members of a specific Dailybot team.
 - `list_teams` — List teams in the authenticated Dailybot organization.
 - `list_users` — List users in the authenticated Dailybot organization.
-- `open_conversation` — Open a direct Dailybot conversation with a user.
+- `open_conversation` — Open a direct Dailybot conversation with a user. [write]
 - `send_email` — Send an email notification through Dailybot. [write]
 - `send_message` — Send a chat message to a Dailybot user, team, or channel. [write]
 

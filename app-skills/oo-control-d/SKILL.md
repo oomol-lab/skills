@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Control D"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["control_d"]
   icon: "https://static.oomol.com/logo/third-party/Control%20D.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_profiles` — List the Control D profiles available to the authenticated API token.
 - `list_service_categories` — List the Control D service categories that can be used for service discovery.
 - `list_services_by_category` — List the Control D services available in one service category.
-- `upsert_profile_rule` — Create or replace root-folder custom DNS rules on a Control D profile for one or more hostname patterns. [write]
+- `upsert_profile_rule` — Create or replace root-folder custom DNS rules on a Control D profile for one or more hostname patterns. [destructive]
 
 ## Safety
 

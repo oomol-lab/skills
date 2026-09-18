@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AfterShip"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aftership"]
   icon: "https://static.oomol.com/logo/third-party/aftership.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_couriers` — List AfterShip couriers, optionally limited to active couriers or slugs.
 - `list_trackings` — List AfterShip trackings with cursor pagination and shipment filters.
 - `mark_tracking_completed` — Mark an AfterShip tracking record as completed by ID. [write]
-- `retrack_tracking` — Ask AfterShip to retrack an expired tracking record by ID.
+- `retrack_tracking` — Ask AfterShip to retrack an expired tracking record by ID. [write]
 - `update_tracking` — Update editable fields on an AfterShip tracking record. [write]
 
 ## Safety

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zhihu"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["zhihu"]
   icon: "https://static.oomol.com/logo/third-party/zhihu.svg"
 ---
@@ -52,7 +52,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `user_contents` — List the current Access Secret owner's public Zhihu creations.
 - `user_favlists` — List the current Access Secret owner's public Zhihu collections.
 - `user_followees` — List the current Access Secret owner's public Zhihu followees.
-- `zhida` — Create a non-streaming Zhihu Zhida chat completion.
+- `zhida` — Create a non-streaming Zhihu Zhida chat completion. [write]
 - `zhihu_search` — Search Zhihu content and return matching questions, answers, and articles.
 
 ## Safety

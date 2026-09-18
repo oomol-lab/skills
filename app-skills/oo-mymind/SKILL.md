@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "mymind"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mymind"]
   icon: "https://static.oomol.com/logo/third-party/mymind.svg"
 ---
@@ -54,16 +54,16 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_objects` — List objects in a mind, optionally narrowed to a text query, a space, specific identifiers, or objects similar to one you already have.
 - `list_spaces` — List the spaces in a mind. The objects in each space are returned by get_space.
 - `list_tags` — List the tags in a mind, most recently used first.
-- `pin_object` — Pin a mymind object, optionally into a specific slot.
+- `pin_object` — Pin a mymind object, optionally into a specific slot. [write]
 - `remove_object_from_space` — Take a mymind object out of a space. The object stays in the mind. [destructive]
 - `remove_object_tags` — Remove tags from a mymind object. [destructive]
-- `restore_object` — Restore a soft-deleted mymind object.
+- `restore_object` — Restore a soft-deleted mymind object. [write]
 - `save_url` — Save a URL to a mind. mymind fetches the page itself and fills in the title, summary, tags, and screenshot. [write]
 - `search_objects` — Search a mind and return the matching objects with their relevance scores. Supports keyword syntax (quoted phrases, && || -, wildcards, and field filters such as tag:, type:, domain:, created:) and, with semantic enabled, matching by meaning rather than exact terms.
-- `unpin_object` — Unpin a mymind object.
+- `unpin_object` — Unpin a mymind object. [destructive]
 - `update_object` — Update the title, summary, or completed state of a mymind object. [write]
-- `update_object_content` — Replace the content body of a mymind object with markdown. [write]
-- `update_object_note` — Replace the body of a note attached to a mymind object. [write]
+- `update_object_content` — Replace the content body of a mymind object with markdown. [destructive]
+- `update_object_note` — Replace the body of a note attached to a mymind object. [destructive]
 - `update_space` — Rename a mymind space or change its colour. [write]
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-recharge
-description: "Recharge (getrecharge.com). Use this skill for ANY Recharge request — reading, creating, and updating data. Whenever a task involves Recharge, use this skill instead of calling the API directly."
+description: "Recharge (getrecharge.com). Use this skill for ANY Recharge request — searching and reading data. Whenever a task involves Recharge, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Recharge"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["recharge"]
   icon: "https://static.oomol.com/logo/third-party/recharge.svg"
 ---
@@ -37,9 +37,9 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_charge` — Retrieve one Recharge charge by ID. [write]
+- `get_charge` — Retrieve one Recharge charge by ID.
 - `get_customer` — Retrieve one Recharge customer by ID.
-- `get_order` — Retrieve one Recharge order by ID. [write]
+- `get_order` — Retrieve one Recharge order by ID.
 - `get_product` — Retrieve one Recharge product by ID.
 - `get_subscription` — Retrieve one Recharge subscription by ID.
 - `list_charges` — List Recharge charges with cursor pagination and common filters.

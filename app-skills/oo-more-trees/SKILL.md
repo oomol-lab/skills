@@ -1,11 +1,11 @@
 ---
 name: oo-more-trees
-description: "More Trees (moretrees.eco). Use this skill for ANY More Trees request — searching and reading data. Whenever a task involves More Trees, use this skill instead of calling the API directly."
+description: "More Trees (moretrees.eco). Use this skill for ANY More Trees request — reading, creating, and updating data. Whenever a task involves More Trees, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "More Trees"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["more_trees"]
   icon: "https://static.oomol.com/logo/third-party/more_trees.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_account` — Get account identity, planting credit balance, and forest identifiers for the connected More Trees account.
 - `get_forest` — Get More Trees forest branding and cumulative planting and carbon statistics.
 - `list_projects` — List active More Trees planting projects and the tree species available within each project.
-- `plant_trees` — Plant trees for the connected More Trees account or gift trees to recipients, with optional non-persistent test mode.
+- `plant_trees` — Plant trees for the connected More Trees account or gift trees to recipients, with optional non-persistent test mode. [write]
 
 ## Safety
 

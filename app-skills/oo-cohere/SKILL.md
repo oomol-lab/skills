@@ -1,11 +1,11 @@
 ---
 name: oo-cohere
-description: "Cohere (cohere.com). Use this skill for ANY Cohere request — searching and reading data. Whenever a task involves Cohere, use this skill instead of calling the API directly."
+description: "Cohere (cohere.com). Use this skill for ANY Cohere request — reading, creating, and updating data. Whenever a task involves Cohere, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cohere"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cohere"]
   icon: "https://static.oomol.com/logo/third-party/cohere.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `chat` — Generate a synchronous text response using the Cohere Chat API.
-- `embed_texts` — Generate embeddings for text inputs using the Cohere Embed API.
+- `embed_texts` — Generate embeddings for text inputs using the Cohere Embed API. [write]
 - `rerank_documents` — Rank text documents by relevance to a query using the Cohere Rerank API.
 
 ## Safety

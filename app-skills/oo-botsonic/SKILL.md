@@ -1,11 +1,11 @@
 ---
 name: oo-botsonic
-description: "Botsonic (botsonic.com). Use this skill for ANY Botsonic request — searching and reading data. Whenever a task involves Botsonic, use this skill instead of calling the API directly."
+description: "Botsonic (botsonic.com). Use this skill for ANY Botsonic request — reading, creating, and updating data. Whenever a task involves Botsonic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Botsonic"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["botsonic"]
   icon: "https://static.oomol.com/logo/third-party/botsonic.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_response` — Generate one synchronous response from the connected Botsonic bot.
+- `generate_response` — Generate one synchronous response from the connected Botsonic bot. [write]
 - `get_conversation` — Get one Botsonic conversation by chat identifier.
 - `list_conversations` — List conversations for the connected Botsonic bot token.
 - `list_faqs` — List FAQs attached to the connected Botsonic bot token.

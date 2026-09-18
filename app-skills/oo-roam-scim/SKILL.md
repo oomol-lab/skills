@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Roam SCIM"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["roam_scim"]
   icon: "https://static.oomol.com/logo/third-party/roam_scim.png"
 ---
@@ -46,10 +46,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_user` — Get one Roam SCIM user by Roam Person ID.
 - `list_groups` — List Roam SCIM groups with optional pagination.
 - `list_users` — List Roam SCIM users with optional SCIM filtering and pagination.
-- `replace_group` — Fully replace a Roam SCIM group display name and member list. [write]
-- `replace_user` — Fully replace supported attributes for a Roam SCIM user. [write]
-- `set_user_active` — Archive or reactivate a Roam SCIM user by replacing the active flag. [write]
-- `update_group_members` — Patch Roam SCIM group members with add, remove, or replace semantics. [write]
+- `replace_group` — Fully replace a Roam SCIM group display name and member list. [destructive]
+- `replace_user` — Fully replace supported attributes for a Roam SCIM user. [destructive]
+- `set_user_active` — Archive or reactivate a Roam SCIM user by replacing the active flag. [destructive]
+- `update_group_members` — Patch Roam SCIM group members with add, remove, or replace semantics. [destructive]
 
 ## Safety
 

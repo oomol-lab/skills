@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Netlify"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["netlify"]
   icon: "https://static.oomol.com/logo/third-party/netlify.svg"
 ---
@@ -37,14 +37,15 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_deploy` — Cancel one Netlify deploy by deploy ID. [write]
+- `cancel_deploy` — Cancel one Netlify deploy by deploy ID. [destructive]
+- `create_site` — Create a Netlify site, optionally assigning its account, name, domains, notification email, and HTTPS settings. [write]
 - `create_site_build` — Start a Netlify build for one site without uploading binary files. [write]
 - `create_site_deploy_from_zip_url` — Create a Netlify site deploy by downloading a public zip file URL and uploading it to Netlify. [write]
 - `delete_submission` — Delete one Netlify form submission by submission ID. [destructive]
 - `get_account` — Retrieve one Netlify account membership, including billing and capability fields returned by Netlify.
 - `get_build` — Retrieve one Netlify build by build ID.
 - `get_current_user` — Retrieve the Netlify user associated with the connected credential.
-- `get_deploy` — Retrieve one Netlify deploy by deploy ID. [write]
+- `get_deploy` — Retrieve one Netlify deploy by deploy ID.
 - `get_site` — Retrieve one Netlify site by site ID or name.
 - `list_accounts` — List Netlify accounts accessible to the connected credential.
 - `list_site_deploys` — List deploys for one Netlify site.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Meet"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googlemeet"]
   icon: "https://static.oomol.com/logo/third-party/googlemeet.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_space` — Create a Google Meet space and return its join URL. [write]
-- `end_active_conference` — End the active conference currently running in a Google Meet space.
+- `end_active_conference` — End the active conference currently running in a Google Meet space. [write]
 - `get_conference_record` — Retrieve one Google Meet conference record.
 - `get_participant` — Retrieve one participant from a Google Meet conference record.
 - `get_participant_session` — Retrieve one Google Meet participant session.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "V2EX"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["v2ex"]
   icon: "https://static.oomol.com/logo/third-party/v2ex.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `boost_topic` — Boost one of the authenticated member's V2EX topics to the homepage.
+- `boost_topic` — Boost one of the authenticated member's V2EX topics to the homepage. [write]
 - `create_token` — Create a new V2EX Personal Access Token from an existing token. [write]
 - `delete_notification` — Delete one V2EX notification by its numeric identifier. [destructive]
 - `get_current_member` — Fetch the authenticated V2EX member profile.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Customer.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["customerio"]
   icon: "https://static.oomol.com/logo/third-party/customerio.svg"
 ---
@@ -38,12 +38,12 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `delete_customer` — Delete a Customer.io person and their information through the Track API. [destructive]
-- `identify_customer` — Add or update a Customer.io person through the Track API.
+- `identify_customer` — Add or update a Customer.io person through the Track API. [write]
 - `merge_customers` — Merge two Customer.io people, keeping the primary profile and deleting the secondary profile. [write]
-- `suppress_customer` — Delete and suppress a Customer.io person identifier so it cannot be re-added until unsuppressed.
-- `track_anonymous_event` — Track an event for an anonymous person in Customer.io.
-- `track_customer_event` — Track an event associated with an identified Customer.io person.
-- `unsuppress_customer` — Unsuppress a Customer.io person identifier so a new profile can be created later.
+- `suppress_customer` — Delete and suppress a Customer.io person identifier so it cannot be re-added until unsuppressed. [destructive]
+- `track_anonymous_event` — Track an event for an anonymous person in Customer.io. [write]
+- `track_customer_event` — Track an event associated with an identified Customer.io person. [write]
+- `unsuppress_customer` — Unsuppress a Customer.io person identifier so a new profile can be created later. [write]
 
 ## Safety
 

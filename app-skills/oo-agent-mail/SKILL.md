@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AgentMail"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["agent_mail"]
   icon: "https://static.oomol.com/logo/third-party/agent_mail.svg"
 ---
@@ -136,8 +136,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_pod_thread` — Update labels on an AgentMail thread scoped to a pod. [write]
 - `update_thread` — Update labels on an AgentMail thread. [write]
 - `update_webhook` — Update an AgentMail webhook. [write]
-- `verify_domain` — Ask AgentMail to verify a domain's DNS records.
-- `verify_pod_domain` — Ask AgentMail to verify a pod domain's DNS records.
+- `verify_domain` — Ask AgentMail to verify a domain's DNS records. [write]
+- `verify_pod_domain` — Ask AgentMail to verify a pod domain's DNS records. [write]
 - `who_am_i` — Get AgentMail identity information for the current API key.
 
 ## Safety

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fireflies"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["fireflies"]
   icon: "https://static.oomol.com/logo/third-party/Fireflies.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `continue_askfred_thread` — Continue a Fireflies AskFred thread with a follow-up question.
+- `continue_askfred_thread` — Continue a Fireflies AskFred thread with a follow-up question. [write]
 - `create_askfred_thread` — Create a Fireflies AskFred thread from a meeting question. [write]
 - `create_bite` — Create a Fireflies bite from a transcript time range. [write]
 - `delete_askfred_thread` — Delete a Fireflies AskFred thread by thread ID. [destructive]

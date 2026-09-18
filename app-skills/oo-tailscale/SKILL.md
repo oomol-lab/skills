@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tailscale"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tailscale"]
   icon: "https://static.oomol.com/logo/third-party/tailscale.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `approve_user` — Approve a pending Tailscale user for the tailnet. [write]
-- `batch_update_device_posture_attributes` — Set or remove custom posture attributes across multiple Tailscale devices. [write]
+- `batch_update_device_posture_attributes` — Set or remove custom posture attributes across multiple Tailscale devices. [destructive]
 - `create_key` — Create an auth key, OAuth client credential, or federated trust credential and return its secret. [write]
 - `create_oauth_app` — Create a Tailscale OAuth application and return its client secret. [write]
 - `create_posture_integration` — Create a device posture integration using its external provider credentials. [write]
@@ -52,12 +52,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_service` — Permanently delete a named Tailscale Service. [destructive]
 - `delete_user` — Permanently delete a Tailscale user from the tailnet. [destructive]
 - `delete_webhook` — Permanently delete a Tailscale webhook endpoint. [destructive]
-- `disable_log_streaming` — Disable and remove the destination configuration for a Tailscale log stream. [write]
-- `expire_device_key` — Immediately expire a device key and require the device to authenticate again. [destructive]
-- `get_aws_external_id` — Create or retrieve the AWS external ID used by Tailscale log streaming.
+- `disable_log_streaming` — Disable and remove the destination configuration for a Tailscale log stream. [destructive]
+- `expire_device_key` — Immediately expire a device key and require the device to authenticate again. [write]
+- `get_aws_external_id` — Create or retrieve the AWS external ID used by Tailscale log streaming. [write]
 - `get_contacts` — Get the account, support, and security contacts for the tailnet.
 - `get_device` — Get one Tailscale device by its preferred node ID or legacy device ID.
-- `get_device_invite` — Get one Tailscale device share invite. [write]
+- `get_device_invite` — Get one Tailscale device share invite.
 - `get_device_posture_attributes` — Get the posture attributes currently reported for a Tailscale device.
 - `get_dns_configuration` — Get the complete DNS configuration for the tailnet.
 - `get_dns_preferences` — Get the tailnet DNS preferences, including MagicDNS state.
@@ -88,35 +88,35 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_users` — List tailnet users with optional user-type and role filters.
 - `list_webhooks` — List webhook endpoints configured for the tailnet.
 - `preview_policy_rule_matches` — Preview which rules in a proposed policy match a user or IP address and port without saving it.
-- `resend_contact_verification_email` — Resend the verification email for a tailnet contact.
-- `restore_user` — Restore a suspended Tailscale user.
+- `resend_contact_verification_email` — Resend the verification email for a tailnet contact. [write]
+- `restore_user` — Restore a suspended Tailscale user. [write]
 - `rotate_webhook_secret` — Rotate a webhook signing secret and return the new secret once.
-- `set_device_authorized` — Authorize or deauthorize a Tailscale device. [write]
+- `set_device_authorized` — Authorize or deauthorize a Tailscale device. [destructive]
 - `set_device_ip` — Set the Tailscale IPv4 address for a device. [write]
-- `set_device_key_expiry` — Enable or disable key expiry for a Tailscale device. [write]
-- `set_device_name` — Set a Tailscale device name, or reset it from the OS hostname with an empty name. [write]
-- `set_device_posture_attribute` — Set one custom posture attribute on a Tailscale device. [write]
-- `set_device_routes` — Replace the enabled subnet routes for a Tailscale device. [write]
-- `set_device_tags` — Replace all ACL tags assigned to a Tailscale device. [write]
-- `set_dns_configuration` — Replace the entire tailnet DNS configuration, including nameservers, split DNS, search paths, and preferences. [write]
-- `set_dns_nameservers` — Replace the global DNS nameservers configured for the tailnet. [write]
-- `set_dns_preferences` — Enable or disable MagicDNS for the tailnet. [write]
-- `set_dns_search_paths` — Replace the DNS search paths configured for the tailnet. [write]
-- `set_log_streaming_configuration` — Create or replace a Tailscale log streaming destination configuration. [write]
-- `set_policy_file` — Replace the Tailscale policy file after its embedded tests pass. [write]
-- `set_split_dns` — Replace the entire tailnet split DNS configuration. [write]
-- `suspend_user` — Suspend a Tailscale user and their access to the tailnet.
-- `test_webhook` — Send a test event to a Tailscale webhook endpoint.
+- `set_device_key_expiry` — Enable or disable key expiry for a Tailscale device. [destructive]
+- `set_device_name` — Set a Tailscale device name, or reset it from the OS hostname with an empty name. [destructive]
+- `set_device_posture_attribute` — Set one custom posture attribute on a Tailscale device. [destructive]
+- `set_device_routes` — Replace the enabled subnet routes for a Tailscale device. [destructive]
+- `set_device_tags` — Replace all ACL tags assigned to a Tailscale device. [destructive]
+- `set_dns_configuration` — Replace the entire tailnet DNS configuration, including nameservers, split DNS, search paths, and preferences. [destructive]
+- `set_dns_nameservers` — Replace the global DNS nameservers configured for the tailnet. [destructive]
+- `set_dns_preferences` — Enable or disable MagicDNS for the tailnet. [destructive]
+- `set_dns_search_paths` — Replace the DNS search paths configured for the tailnet. [destructive]
+- `set_log_streaming_configuration` — Create or replace a Tailscale log streaming destination configuration. [destructive]
+- `set_policy_file` — Replace the Tailscale policy file after its embedded tests pass. [destructive]
+- `set_split_dns` — Replace the entire tailnet split DNS configuration. [destructive]
+- `suspend_user` — Suspend a Tailscale user and their access to the tailnet. [destructive]
+- `test_webhook` — Send a test event to a Tailscale webhook endpoint. [write]
 - `update_contact` — Change the account, support, or security contact email for the tailnet. [write]
-- `update_key` — Replace the mutable configuration of an OAuth or federated Tailscale trust credential. [write]
-- `update_oauth_app` — Replace the configuration of a Tailscale OAuth application. [write]
-- `update_posture_integration` — Update a device posture integration and optionally replace its client secret. [write]
-- `update_service` — Create or replace a named Tailscale Service definition. [write]
-- `update_service_device_approval` — Approve or revoke approval for a Service on a device. [write]
-- `update_split_dns` — Merge domain-to-resolver entries into the tailnet split DNS configuration. [write]
-- `update_tailnet_settings` — Update reversible feature, logging, networking, or policy-link settings for the tailnet. [write]
+- `update_key` — Replace the mutable configuration of an OAuth or federated Tailscale trust credential. [destructive]
+- `update_oauth_app` — Replace the configuration of a Tailscale OAuth application. [destructive]
+- `update_posture_integration` — Update a device posture integration and optionally replace its client secret. [destructive]
+- `update_service` — Create or replace a named Tailscale Service definition. [destructive]
+- `update_service_device_approval` — Approve or revoke approval for a Service on a device. [destructive]
+- `update_split_dns` — Merge domain-to-resolver entries into the tailnet split DNS configuration. [destructive]
+- `update_tailnet_settings` — Update reversible feature, logging, networking, or policy-link settings for the tailnet. [destructive]
 - `update_user_role` — Change a Tailscale user's administrative role. [write]
-- `update_webhook` — Replace the subscribed events for a Tailscale webhook endpoint. [write]
+- `update_webhook` — Replace the subscribed events for a Tailscale webhook endpoint. [destructive]
 - `validate_aws_external_id` — Validate an AWS IAM role trust policy against a Tailscale external ID.
 - `validate_policy_file` — Validate a proposed policy file or run ACL tests without changing the tailnet policy.
 

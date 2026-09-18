@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fast Note Sync"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fast_note_sync"]
   icon: "https://static.oomol.com/logo/third-party/fast_note_sync.png"
 ---
@@ -49,7 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_vaults` — List every note vault owned by the authenticated FNS user.
 - `search_notes` — Search note paths or note content in an FNS vault.
 - `upload_attachment` — Download a public file URL and upload it as an attachment to an FNS vault. [write]
-- `upsert_note` — Create an FNS note or replace the content of an existing note at the same path. [write]
+- `upsert_note` — Create an FNS note or replace the content of an existing note at the same path. [destructive]
 - `upsert_vault` — Create an FNS vault or update an existing vault when its id is provided. [write]
 
 ## Safety

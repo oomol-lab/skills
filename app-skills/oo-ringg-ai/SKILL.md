@@ -1,11 +1,11 @@
 ---
 name: oo-ringg-ai
-description: "Ringg AI (ringg.ai). Use this skill for ANY Ringg AI request — searching and reading data. Whenever a task involves Ringg AI, use this skill instead of calling the API directly."
+description: "Ringg AI (ringg.ai). Use this skill for ANY Ringg AI request — reading, creating, and updating data. Whenever a task involves Ringg AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ringg AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ringg_ai"]
   icon: "https://static.oomol.com/logo/third-party/ringg_ai.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_assistant` — Retrieve detailed configuration for one Ringg AI assistant.
 - `get_call` — Retrieve details for one Ringg AI call, optionally including analysis data.
 - `get_workspace` — Retrieve information about the Ringg AI workspace associated with the API key.
-- `initiate_call` — Initiate one outbound call with a Ringg AI assistant and caller number.
+- `initiate_call` — Initiate one outbound call with a Ringg AI assistant and caller number. [write]
 - `list_assistants` — List assistants available in the current Ringg AI workspace.
 - `list_calls` — List Ringg AI call history with pagination and optional filters.
 - `list_voices` — List voices available for Ringg AI assistants, optionally filtered by language.

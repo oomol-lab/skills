@@ -1,11 +1,11 @@
 ---
 name: oo-x-ai
-description: "xAI (x.ai). Use this skill for ANY xAI request — reading, creating, and updating data. Whenever a task involves xAI, use this skill instead of calling the API directly."
+description: "xAI (x.ai). Use this skill for ANY xAI request — searching and reading data. Whenever a task involves xAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "xAI"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["x_ai"]
   icon: "https://static.oomol.com/logo/third-party/x_ai.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a non-streaming xAI OpenAI-compatible chat completion. [write]
+- `create_chat_completion` — Create a non-streaming xAI OpenAI-compatible chat completion.
 - `get_model` — Fetch metadata for one xAI model.
 - `list_models` — List the xAI models available to the current API key.
 

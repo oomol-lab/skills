@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jumpseller"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["jumpseller"]
   icon: "https://static.oomol.com/logo/third-party/jumpseller.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_product` — Create a product in Jumpseller. [write]
 - `get_category` — Retrieve a single category from Jumpseller.
 - `get_customer` — Retrieve a single customer from Jumpseller.
-- `get_order` — Retrieve a single order from Jumpseller. [write]
+- `get_order` — Retrieve a single order from Jumpseller.
 - `get_product` — Retrieve a single product from Jumpseller.
 - `get_store_info` — Retrieve store information from Jumpseller.
 - `list_categories` — Retrieve categories from Jumpseller.

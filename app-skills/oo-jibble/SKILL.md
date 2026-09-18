@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jibble"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["jibble"]
   icon: "https://static.oomol.com/logo/third-party/jibble.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_organizations` — List the Jibble organizations accessible to the personal access token.
 - `list_locations` — List Jibble work locations with optional OData filtering and pagination.
 - `list_members` — List people in the Jibble organization with optional OData filtering and pagination.
-- `update_location` — Update or archive an existing Jibble work location. [write]
+- `update_location` — Update or archive an existing Jibble work location. [destructive]
 
 ## Safety
 

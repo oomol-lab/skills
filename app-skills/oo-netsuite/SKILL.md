@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "NetSuite"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["netsuite"]
   icon: "https://static.oomol.com/logo/third-party/netsuite.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_record` — Create one NetSuite record for a record type. [write]
 - `get_record` — Retrieve one NetSuite record by record type and ID.
 - `list_records` — List NetSuite records of one record type with optional REST filtering.
-- `run_suiteql` — Execute a SuiteQL query through NetSuite REST Web Services.
+- `run_suiteql` — Execute a SuiteQL query through NetSuite REST Web Services. [write]
 - `update_record` — Update one NetSuite record by record type and ID. [write]
 
 ## Safety

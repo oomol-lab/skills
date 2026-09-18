@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Knock"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["knock"]
   icon: "https://static.oomol.com/logo/third-party/knock.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `delete_user` — Permanently delete a Knock user and associated data. [destructive]
 - `get_user` — Retrieve a Knock user by user ID.
-- `identify_user` — Create or update a Knock user with identification data.
+- `identify_user` — Create or update a Knock user with identification data. [write]
 - `list_users` — List Knock users with cursor pagination.
 - `trigger_workflow` — Trigger a Knock workflow for one or more recipients and return the workflow run request ID. [write]
 

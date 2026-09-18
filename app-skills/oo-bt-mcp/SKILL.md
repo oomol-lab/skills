@@ -1,11 +1,11 @@
 ---
 name: oo-bt-mcp
-description: "BT Panel MCP (bt.cn). Use this skill for ANY BT Panel MCP request — searching and reading data. Whenever a task involves BT Panel MCP, use this skill instead of calling the API directly."
+description: "BT Panel MCP (bt.cn). Use this skill for ANY BT Panel MCP request — reading, creating, updating, and deleting data. Whenever a task involves BT Panel MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "BT Panel MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bt_mcp"]
   icon: "https://static.oomol.com/logo/third-party/bt_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current BT Panel MCP tool with JSON arguments. Discover the tool first and obtain explicit confirmation because the server may expose command execution, firewall changes, file writes, or irreversible deletion operations.
+- `call_tool` — Call a current BT Panel MCP tool with JSON arguments. Discover the tool first and obtain explicit confirmation because the server may expose command execution, firewall changes, file writes, or irreversible deletion operations. [destructive]
 - `list_tools` — Discover the current server-management tools, behavior annotations, and live input schemas exposed by this BT Panel MCP connection.
 
 ## Safety

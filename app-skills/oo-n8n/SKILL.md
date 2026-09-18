@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "n8n"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["n8n"]
   icon: "https://static.oomol.com/logo/third-party/n8n.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `activate_workflow` — Activate or publish an n8n workflow. [write]
-- `archive_workflow` — Archive an n8n workflow. [write]
+- `archive_workflow` — Archive an n8n workflow. [destructive]
 - `create_data_table` — Create an n8n data table with columns. [write]
 - `create_data_table_column` — Add a column to an n8n data table. [write]
 - `create_tag` — Create an n8n tag. [write]
@@ -62,16 +62,16 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_tags` — List n8n tags with cursor pagination.
 - `list_variables` — List n8n variables with optional filters and cursor pagination.
 - `list_workflows` — List n8n workflows with optional filters and cursor pagination.
-- `retry_execution` — Retry one n8n execution.
-- `stop_execution` — Stop one running n8n execution. [write]
-- `unarchive_workflow` — Unarchive an n8n workflow.
+- `retry_execution` — Retry one n8n execution. [write]
+- `stop_execution` — Stop one running n8n execution. [destructive]
+- `unarchive_workflow` — Unarchive an n8n workflow. [write]
 - `update_data_table` — Rename an n8n data table. [write]
 - `update_data_table_column` — Rename or reorder an n8n data table column. [write]
 - `update_data_table_rows` — Update rows in an n8n data table by filter. [write]
-- `update_execution_tags` — Replace annotation tags attached to an n8n execution. [write]
+- `update_execution_tags` — Replace annotation tags attached to an n8n execution. [destructive]
 - `update_tag` — Update an n8n tag. [write]
 - `update_variable` — Update an n8n variable value. [write]
-- `update_workflow_tags` — Replace tags attached to an n8n workflow. [write]
+- `update_workflow_tags` — Replace tags attached to an n8n workflow. [destructive]
 - `upsert_data_table_row` — Upsert one row in an n8n data table by filter. [write]
 
 ## Safety

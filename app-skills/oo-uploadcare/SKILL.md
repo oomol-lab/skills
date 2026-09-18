@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Uploadcare"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["uploadcare"]
   icon: "https://static.oomol.com/logo/third-party/uploadcare.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_project_info` — Get Uploadcare project details for the connected public key.
 - `list_files` — List Uploadcare files with documented pagination and filters.
 - `list_groups` — List Uploadcare file groups with documented pagination.
-- `store_file` — Mark an Uploadcare file as permanently stored.
+- `store_file` — Mark an Uploadcare file as permanently stored. [write]
 
 ## Safety
 

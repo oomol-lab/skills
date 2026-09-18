@@ -1,11 +1,11 @@
 ---
 name: oo-tanium
-description: "Tanium (tanium.com). Use this skill for ANY Tanium request — searching and reading data. Whenever a task involves Tanium, use this skill instead of calling the API directly."
+description: "Tanium (tanium.com). Use this skill for ANY Tanium request — reading, creating, and updating data. Whenever a task involves Tanium, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tanium"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tanium"]
   icon: "https://static.oomol.com/logo/third-party/tanium.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_graphql` — Execute a GraphQL document against the connected Tanium Gateway endpoint.
+- `execute_graphql` — Execute a GraphQL document against the connected Tanium Gateway endpoint. [write]
 
 ## Safety
 

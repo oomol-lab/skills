@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PostHog"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["posthog"]
   icon: "https://static.oomol.com/logo/third-party/PostHog.svg"
 ---
@@ -39,9 +39,9 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_dashboard_collaborator` — Add a collaborator to a PostHog dashboard. [write]
 - `add_persons_to_static_cohort` — Add person UUIDs to a static PostHog cohort. [write]
-- `bulk_update_event_definition_tags` — Bulk add, remove, or set tags on PostHog event definitions. [write]
-- `bulk_update_property_definition_tags` — Bulk add, remove, or set tags on PostHog property definitions. [write]
-- `cancel_query` — Cancel a PostHog async query by project ID and query ID. [write]
+- `bulk_update_event_definition_tags` — Bulk add, remove, or set tags on PostHog event definitions. [destructive]
+- `bulk_update_property_definition_tags` — Bulk add, remove, or set tags on PostHog property definitions. [destructive]
+- `cancel_query` — Cancel a PostHog async query by project ID and query ID. [destructive]
 - `copy_dashboard_tile` — Copy an existing PostHog dashboard tile to another dashboard. [write]
 - `create_annotation` — Create an annotation in a PostHog project. [write]
 - `create_cohort` — Create a cohort in a PostHog project. [write]
@@ -84,8 +84,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_property_definitions` — List property definitions for a PostHog project.
 - `move_dashboard_tile` — Move a PostHog dashboard tile to another dashboard. [write]
 - `remove_dashboard_collaborator` — Remove a collaborator from a PostHog dashboard. [destructive]
-- `reorder_dashboard_tiles` — Reorder tiles on a PostHog dashboard.
-- `run_dashboard_insights` — Run all insights on a PostHog dashboard and return their results.
+- `reorder_dashboard_tiles` — Reorder tiles on a PostHog dashboard. [write]
+- `run_dashboard_insights` — Run all insights on a PostHog dashboard and return their results. [write]
 - `run_query` — Run a PostHog query and return a stable top-level query result shape.
 - `update_annotation` — Partially update a PostHog annotation by ID. [write]
 - `update_cohort` — Partially update a PostHog cohort by ID. [write]

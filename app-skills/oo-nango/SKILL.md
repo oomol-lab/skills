@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Nango"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["nango"]
   icon: "https://static.oomol.com/logo/third-party/nango.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_integrations` — List integrations configured in the Nango environment.
 - `list_providers` — List provider configurations available in Nango.
 - `patch_connection_tags` — Edit tags for a Nango connection. [write]
-- `set_connection_metadata` — Replace metadata for one or more Nango connections. [write]
+- `set_connection_metadata` — Replace metadata for one or more Nango connections. [destructive]
 
 ## Safety
 

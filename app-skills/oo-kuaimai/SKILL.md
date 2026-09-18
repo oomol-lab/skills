@@ -1,11 +1,11 @@
 ---
 name: oo-kuaimai
-description: "Kuaimai ERP (kuaimai.com). Use this skill for ANY Kuaimai ERP request — searching and reading data. Whenever a task involves Kuaimai ERP, use this skill instead of calling the API directly."
+description: "Kuaimai ERP (kuaimai.com). Use this skill for ANY Kuaimai ERP request — reading, creating, and updating data. Whenever a task involves Kuaimai ERP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kuaimai ERP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["kuaimai"]
   icon: "https://static.oomol.com/logo/third-party/kuaimai.png"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_sales_stockouts` — List Kuaimai ERP sales stockout records and their order details.
 - `list_shops` — List shops configured for the connected Kuaimai ERP company.
 - `list_warehouses` — List warehouses configured for the connected Kuaimai ERP company.
-- `refresh_session` — Extend the Kuaimai Open Platform session validity by another 30 days.
+- `refresh_session` — Extend the Kuaimai Open Platform session validity by another 30 days. [write]
 
 ## Safety
 

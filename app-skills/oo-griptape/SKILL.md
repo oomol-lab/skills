@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Griptape"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["griptape"]
   icon: "https://static.oomol.com/logo/third-party/griptape.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_assistant_run` — Cancel a Griptape Cloud assistant run. [write]
+- `cancel_assistant_run` — Cancel a Griptape Cloud assistant run. [destructive]
 - `create_assistant` — Create a Griptape Cloud assistant. [write]
 - `create_assistant_run` — Create a run for a Griptape Cloud assistant. [write]
 - `delete_assistant` — Delete a Griptape Cloud assistant. [destructive]

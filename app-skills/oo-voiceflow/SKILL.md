@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Voiceflow"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["voiceflow"]
   icon: "https://static.oomol.com/logo/third-party/voiceflow.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `interact` — Send one non-streaming action to a Voiceflow conversation session.
+- `interact` — Send one non-streaming action to a Voiceflow conversation session. [write]
 - `list_environments` — List environments for the connected Voiceflow project.
 - `query_knowledge_base` — Query the Voiceflow knowledge base and return the synthesized answer and chunks.
 - `start_session` — Start a Voiceflow conversation session for one user and return the session key used by non-streaming interact calls. [write]

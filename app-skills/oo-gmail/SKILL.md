@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gmail"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["gmail"]
   icon: "https://static.oomol.com/logo/third-party/Gmail.svg"
 ---
@@ -64,7 +64,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_history` — List Gmail mailbox change history after a known `startHistoryId`. Use this for incremental sync and checkpoint the latest returned `historyId`.
 - `list_labels` — List all system and user-created Gmail labels. Use this to discover the internal label IDs required by label mutation actions.
 - `list_threads` — List Gmail threads with optional query filtering and pagination. Spam and trash stay excluded unless you explicitly target them in the query.
-- `modify_thread_labels` — Add and/or remove labels on every message in a Gmail thread. Use this when the label change should apply to the whole conversation. [write]
+- `modify_thread_labels` — Add and/or remove labels on every message in a Gmail thread. Use this when the label change should apply to the whole conversation. [destructive]
 - `move_thread_to_trash` — Move an entire Gmail thread to trash, including all messages in that conversation. [destructive]
 - `move_to_trash` — Move a Gmail message to trash. The message remains recoverable until it is permanently deleted by Gmail. [destructive]
 - `patch_label` — Patch a user-created Gmail label. Use this for partial updates to the label name, visibility settings, or color. [write]
@@ -75,9 +75,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `send_email` — Send an email from the connected Gmail account. At least one recipient and one of subject or body are required. [write]
 - `settings_get_imap` — Get the Gmail IMAP settings, including whether IMAP is enabled and how expunge or folder size settings are configured.
 - `settings_get_pop` — Get the Gmail POP settings, including access window and message disposition.
-- `stop_watch` — Stop Gmail push watch notifications for the mailbox. Use this to disable notifications that were previously created via the watch endpoint. [write]
-- `untrash_message` — Restore a previously trashed Gmail message back to the mailbox.
-- `untrash_thread` — Restore a previously trashed Gmail thread and its messages.
+- `stop_watch` — Stop Gmail push watch notifications for the mailbox. Use this to disable notifications that were previously created via the watch endpoint. [destructive]
+- `untrash_message` — Restore a previously trashed Gmail message back to the mailbox. [write]
+- `untrash_thread` — Restore a previously trashed Gmail thread and its messages. [write]
 - `update_draft` — Update an existing Gmail draft in place. Omitted fields fall back to the current draft content, so you can replace only the parts you want to change. [write]
 - `update_imap_settings` — Update the Gmail IMAP settings, including enablement, auto-expunge behavior, expunge behavior, or max folder size. [write]
 - `update_label` — Update an existing Gmail label's properties, including name, visibility settings, or color. [write]

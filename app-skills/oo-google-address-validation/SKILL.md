@@ -1,11 +1,11 @@
 ---
 name: oo-google-address-validation
-description: "Google Address Validation (developers.google.com). Use this skill for ANY Google Address Validation request — searching and reading data. Whenever a task involves Google Address Validation, use this skill instead of calling the API directly."
+description: "Google Address Validation (developers.google.com). Use this skill for ANY Google Address Validation request — reading, creating, and updating data. Whenever a task involves Google Address Validation, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Address Validation"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["google_address_validation"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Address%20Validation.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `provide_validation_feedback` — Send the final outcome of a completed Google address validation sequence using the first responseId from that sequence.
+- `provide_validation_feedback` — Send the final outcome of a completed Google address validation sequence using the first responseId from that sequence. [write]
 - `validate_address` — Validate and standardize a postal address with Google Address Validation and return verdict, parsed address, and geocode details.
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-fellow
-description: "Fellow (fellow.app). Use this skill for ANY Fellow request — reading, creating, and updating data. Whenever a task involves Fellow, use this skill instead of calling the API directly."
+description: "Fellow (fellow.app). Use this skill for ANY Fellow request — reading, creating, updating, and deleting data. Whenever a task involves Fellow, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fellow"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fellow"]
   icon: "https://static.oomol.com/logo/third-party/fellow.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_action_item` — Archive a Fellow action item by marking it as won't do. [write]
+- `archive_action_item` — Archive a Fellow action item by marking it as won't do. [destructive]
 - `get_action_item` — Retrieve one Fellow action item by ID.
 - `get_current_user` — Get the Fellow user and workspace associated with the current API key.
 - `get_note` — Retrieve one Fellow meeting note by ID.

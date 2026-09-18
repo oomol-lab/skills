@@ -6,12 +6,12 @@ For Kingdee Galaxy Enterprise (金蝶星空企业版). Read after selecting an o
 
 Use `apiInfoId` from the chosen index entry as an opaque string. Base URL: `https://openapi.open.kingdee.com/mscdp/apicenter`.
 
-| Read | GET path | Purpose |
-| --- | --- | --- |
-| Detail | `/apiinfo/detail/{apiInfoId}` | Verify `formName`, `name`, `formId`, `number`, version and dedicated URL |
-| Request fields | `/apiinfoparam/apiinfo/{apiInfoId}/paramfield/req` | Construct the input |
-| Response fields | `/apiinfoparam/apiinfo/{apiInfoId}/paramfield/res` | Interpret an unfamiliar result |
-| Examples | `/apiinfoparam/apiinfo/{apiInfoId}/paramjson` | Inspect request/response shapes when needed |
+| Read            | GET path                                           | Purpose                                                                  |
+| --------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
+| Detail          | `/apiinfo/detail/{apiInfoId}`                      | Verify `formName`, `name`, `formId`, `number`, version and dedicated URL |
+| Request fields  | `/apiinfoparam/apiinfo/{apiInfoId}/paramfield/req` | Construct the input                                                      |
+| Response fields | `/apiinfoparam/apiinfo/{apiInfoId}/paramfield/res` | Interpret an unfamiliar result                                           |
+| Examples        | `/apiinfoparam/apiinfo/{apiInfoId}/paramjson`      | Inspect request/response shapes when needed                              |
 
 These are documentation endpoints, not enterprise execution endpoints. Read them with a public HTTP tool or curl without Cookie, Authorization or application credentials. Check both HTTP status and the JSON `result` flag. Fields are in `dataList`; examples are in `data.requestJson` and `data.responseJson` and may themselves be JSON strings.
 
@@ -43,10 +43,10 @@ For object `body`, the CLI/Connector serializes the outer JSON. In the named-par
 
 Let `formId` and operation `number` come from the verified detail. A method's presence below does not mean every form supports it; the object must list that operation.
 
-| Family | Method path | Outer body |
-| --- | --- | --- |
-| Standard | `DynamicFormService.<method>` | `{ "formid": formId, "data": serializedBusinessData }` |
-| Special | `DynamicFormService.<method>` | `{ "data": serializedBusinessData }` |
+| Family            | Method path                          | Outer body                                                                          |
+| ----------------- | ------------------------------------ | ----------------------------------------------------------------------------------- |
+| Standard          | `DynamicFormService.<method>`        | `{ "formid": formId, "data": serializedBusinessData }`                              |
+| Special           | `DynamicFormService.<method>`        | `{ "data": serializedBusinessData }`                                                |
 | General operation | `DynamicFormService.ExcuteOperation` | `{ "formid": formId, "opNumber": operationNumber, "data": serializedBusinessData }` |
 
 All paths above start with `/Kingdee.BOS.WebApi.ServicesStub.` and end with `.common.kdsvc`. Use POST with JSON. The standard envelope's outer key is lowercase **`formid`**. Query's **`FormId`** is inside the serialized business data. The general method is spelled **`ExcuteOperation`**.
@@ -62,14 +62,14 @@ Some official SDKs show a positional `parameters` array. This is an alternative 
 
 The CLI proxy envelope is `{ "data": { "status": ..., "headers": ..., "data": ... }, "meta": { "executionId": ... } }`. Read HTTP status from `response.data.status`, the Kingdee payload from `response.data.data`, and the trace ID from `response.meta.executionId`. This envelope is based on the connector/CLI contract; no real enterprise request was used during skill authoring.
 
-| Kingdee payload | Interpretation |
-| --- | --- |
-| Ordinary business result | Check `Result.ResponseStatus.IsSuccess`; inspect `Errors`, error codes and messages |
-| Report result | Check its documented status, commonly `Result.IsSuccess`; preserve Rows/RowCount only if returned |
-| Query two-dimensional array | Match columns to FieldKeys order; nested objects with `IsSuccess=false` are errors, not records |
-| Batch result | Inspect both errors and `SuccessEntitys`; report partial completion with exact known successful/failed identifiers |
-| Text beginning `response_error:` | Treat as failure, including when encoded as a JSON string |
-| Unknown shape | Inspect the selected operation's response fields/example before declaring success |
+| Kingdee payload                  | Interpretation                                                                                                     |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Ordinary business result         | Check `Result.ResponseStatus.IsSuccess`; inspect `Errors`, error codes and messages                                |
+| Report result                    | Check its documented status, commonly `Result.IsSuccess`; preserve Rows/RowCount only if returned                  |
+| Query two-dimensional array      | Match columns to FieldKeys order; nested objects with `IsSuccess=false` are errors, not records                    |
+| Batch result                     | Inspect both errors and `SuccessEntitys`; report partial completion with exact known successful/failed identifiers |
+| Text beginning `response_error:` | Treat as failure, including when encoded as a JSON string                                                          |
+| Unknown shape                    | Inspect the selected operation's response fields/example before declaring success                                  |
 
 Connector transport success and HTTP 200 are not business success. Upstream 4xx/5xx may appear inside the CLI data envelope. Do not manufacture totals, next-page flags or record IDs. Queries that include entries can produce several rows per bill.
 

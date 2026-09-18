@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "timeBuzzer"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["timebuzzer"]
   icon: "https://static.oomol.com/logo/third-party/timebuzzer.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_activities` — List timeBuzzer activities with offset-based pagination.
 - `list_layers` — List the timeBuzzer layers that organize tiles in hierarchy order.
 - `list_tiles` — List timeBuzzer tiles available to the connected user.
-- `update_activity` — Replace the editable fields of an existing timeBuzzer activity. [write]
+- `update_activity` — Replace the editable fields of an existing timeBuzzer activity. [destructive]
 
 ## Safety
 

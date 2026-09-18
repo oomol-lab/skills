@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Datalust Seq"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["datalust"]
   icon: "https://static.oomol.com/logo/third-party/datalust.svg"
 ---
@@ -45,8 +45,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_event` — Read one Seq event by its event identifier.
 - `get_saved_query` — Read one saved Seq SQL query by its identifier.
 - `get_signal` — Read one saved Seq signal by its identifier.
-- `ingest_event` — Ingest one structured log event into Seq using compact log event format.
-- `ingest_events` — Ingest a JSON array of structured log events as one newline-delimited CLEF batch.
+- `ingest_event` — Ingest one structured log event into Seq using compact log event format. [write]
+- `ingest_events` — Ingest a JSON array of structured log events as one newline-delimited CLEF batch. [write]
 - `list_saved_queries` — List saved Seq SQL queries visible to the API key.
 - `list_signals` — List saved Seq signals visible to the API key.
 - `search_events` — Search a page of Seq events using a filter, signal, time range, or cursor.

@@ -1,11 +1,11 @@
 ---
 name: oo-waterfall
-description: "Waterfall (waterfall.io). Use this skill for ANY Waterfall request — searching and reading data. Whenever a task involves Waterfall, use this skill instead of calling the API directly."
+description: "Waterfall (waterfall.io). Use this skill for ANY Waterfall request — reading, creating, and updating data. Whenever a task involves Waterfall, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Waterfall"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["waterfall"]
   icon: "https://static.oomol.com/logo/third-party/waterfall.svg"
 ---
@@ -41,8 +41,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_account_usage` — Get Waterfall usage metrics for the authenticated API key and full account.
 - `get_company_enrichment` — Retrieve Waterfall company enrichment job state and output by job ID.
 - `get_contact_enrichment` — Retrieve Waterfall contact enrichment job state and output by job ID.
-- `launch_company_enrichment` — Launch a Waterfall company enrichment job and return the job envelope.
-- `launch_contact_enrichment` — Launch a Waterfall contact enrichment job and return the job envelope.
+- `launch_company_enrichment` — Launch a Waterfall company enrichment job and return the job envelope. [write]
+- `launch_contact_enrichment` — Launch a Waterfall contact enrichment job and return the job envelope. [write]
 - `verify_email` — Verify one email address with Waterfall and return deliverability status.
 
 ## Safety

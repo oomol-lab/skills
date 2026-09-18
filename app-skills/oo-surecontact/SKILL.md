@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SureContact"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["surecontact"]
   icon: "https://static.oomol.com/logo/third-party/surecontact.svg"
 ---
@@ -38,16 +38,16 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `add_contacts_to_list` — Add one or more SureContact contacts to a list. [write]
-- `attach_contact_lists` — Attach one or more SureContact lists to a contact.
-- `attach_contact_tags` — Attach one or more SureContact tags to a contact.
+- `attach_contact_lists` — Attach one or more SureContact lists to a contact. [write]
+- `attach_contact_tags` — Attach one or more SureContact tags to a contact. [write]
 - `create_contact` — Create a SureContact contact and optionally attach lists or tags. [write]
 - `create_list` — Create a SureContact list. [write]
 - `create_tag` — Create a SureContact tag. [write]
 - `delete_contact` — Delete a SureContact contact by UUID. [destructive]
 - `delete_list` — Delete a SureContact list by UUID. [destructive]
 - `delete_tag` — Delete a SureContact tag by UUID. [destructive]
-- `detach_contact_lists` — Detach one or more SureContact lists from a contact.
-- `detach_contact_tags` — Detach one or more SureContact tags from a contact.
+- `detach_contact_lists` — Detach one or more SureContact lists from a contact. [destructive]
+- `detach_contact_tags` — Detach one or more SureContact tags from a contact. [destructive]
 - `get_contact` — Retrieve one SureContact contact by UUID.
 - `get_contact_by_email` — Retrieve one SureContact contact by email address.
 - `get_list` — Retrieve one SureContact list by UUID.

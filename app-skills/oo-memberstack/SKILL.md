@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Memberstack"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["memberstack"]
   icon: "https://static.oomol.com/logo/third-party/memberstack.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_member` — Retrieve one Memberstack member by member ID or email address, optionally embedding team memberships.
 - `list_members` — List Memberstack members with cursor pagination and optional JSON-field inclusion.
 - `remove_free_plan` — Remove a free Memberstack plan from an existing member. [destructive]
-- `update_member` — Partially update a Memberstack member's email, custom fields, metadata, JSON data, login redirect, verified status, or profile image. [write]
+- `update_member` — Partially update a Memberstack member's email, custom fields, metadata, JSON data, login redirect, verified status, or profile image. [destructive]
 - `verify_member_token` — Verify a Memberstack member JWT and return the decoded token payload.
 
 ## Safety

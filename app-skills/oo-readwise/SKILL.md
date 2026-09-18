@@ -1,11 +1,11 @@
 ---
 name: oo-readwise
-description: "Readwise (readwise.io). Use this skill for ANY Readwise request — reading, creating, and updating data. Whenever a task involves Readwise, use this skill instead of calling the API directly."
+description: "Readwise (readwise.io). Use this skill for ANY Readwise request — reading, creating, updating, and deleting data. Whenever a task involves Readwise, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Readwise"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["readwise"]
   icon: "https://static.oomol.com/logo/third-party/readwise.svg"
 ---
@@ -38,11 +38,11 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_highlights` — Create one or more highlights in Readwise. [write]
-- `export_highlights` — Export Readwise books and highlights updated after an optional date cursor.
+- `export_highlights` — Export Readwise books and highlights updated after an optional date cursor. [write]
 - `list_books` — List Readwise books or sources with optional category and update filters.
 - `list_documents` — List Readwise Reader documents with optional filters and pagination.
 - `save_document` — Save a URL into Readwise Reader with optional metadata. [write]
-- `update_document` — Update the location, tags, or metadata for a Readwise Reader document. [write]
+- `update_document` — Update the location, tags, or metadata for a Readwise Reader document. [destructive]
 
 ## Safety
 

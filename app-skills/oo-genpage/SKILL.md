@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GenPage"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["genpage"]
   icon: "https://static.oomol.com/logo/third-party/genpage.svg"
 ---
@@ -43,13 +43,13 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_audience` — Delete a GenPage audience while keeping all leads in the workspace. [destructive]
 - `get_campaign_analytics` — Get visit and click performance metrics for GenPage campaigns.
 - `get_credit_balance` — Get the account credit balance and usage for a GenPage workspace.
-- `link_audience_to_campaign` — Link a GenPage audience to a campaign so its leads receive campaign pages.
+- `link_audience_to_campaign` — Link a GenPage audience to a campaign so its leads receive campaign pages. [write]
 - `list_audiences` — List audiences in a GenPage workspace.
 - `list_campaigns` — List campaigns in a GenPage workspace.
 - `list_workspace_variables` — List the default and custom lead variables in a GenPage workspace.
 - `list_workspaces` — List the GenPage workspaces accessible to the API token.
 - `remove_audience_leads` — Remove leads from a GenPage audience without deleting the leads. [destructive]
-- `unlink_audience_from_campaign` — Unlink a GenPage audience from a campaign without deleting leads or pages.
+- `unlink_audience_from_campaign` — Unlink a GenPage audience from a campaign without deleting leads or pages. [destructive]
 
 ## Safety
 

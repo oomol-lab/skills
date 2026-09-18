@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.9"
+  version: "1.0.10"
   services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_object` — Delete one R2 object by key. [destructive]
 - `delete_objects` — Delete a list of R2 objects by key in one request. [destructive]
 - `delete_objects_by_prefix` — Start a background job that deletes every object under a key prefix, or empties the whole bucket. [destructive]
-- `disable_sippy` — Disable Sippy on an R2 bucket. [write]
+- `disable_sippy` — Disable Sippy on an R2 bucket. [destructive]
 - `download_object` — Download one R2 object and upload it to connector transit storage.
 - `enable_sippy` — Enable Sippy so that objects missing from the R2 bucket are copied on demand from a source bucket on AWS S3, Google Cloud Storage, an S3-compatible service, or Azure Blob Storage. [write]
 - `generate_presigned_url` — Generate a pre-signed R2 URL for one GET, PUT, or HEAD request using a custom API token credential.
@@ -58,7 +58,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_bucket_job` — Get the current status of one R2 bucket background job.
 - `get_bucket_lifecycle` — Get the object lifecycle rules of an R2 bucket.
 - `get_bucket_local_uploads` — Get whether local uploads are enabled, which writes objects to the nearest region before replicating to the primary region.
-- `get_bucket_lock` — Get the object lock rules of an R2 bucket. [write]
+- `get_bucket_lock` — Get the object lock rules of an R2 bucket.
 - `get_custom_domain` — Get the settings of one custom domain attached to an R2 bucket.
 - `get_event_notification_rules` — Get the event notification rules that send R2 bucket events to one queue.
 - `get_managed_domain` — Get the r2.dev managed domain and its public access state for an R2 bucket.
@@ -69,14 +69,14 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_custom_domains` — List the custom domains attached to an R2 bucket.
 - `list_event_notification_rules` — List every event notification rule of an R2 bucket grouped by target queue.
 - `list_objects` — List objects in an R2 bucket with optional prefix, delimiter grouping, and cursor pagination.
-- `put_object` — Upload one R2 object from a public URL, plain text, or base64-encoded content. [write]
+- `put_object` — Upload one R2 object from a public URL, plain text, or base64-encoded content. [destructive]
 - `update_bucket` — Update mutable R2 bucket properties such as default storage class or jurisdiction. [write]
-- `update_bucket_cors_policy` — Replace the bucket-level CORS policy for an R2 bucket. [write]
-- `update_bucket_lifecycle` — Replace the object lifecycle rules of an R2 bucket with the given rule set. [write]
-- `update_bucket_local_uploads` — Enable or disable local uploads for an R2 bucket. [write]
-- `update_bucket_lock` — Replace the object lock rules of an R2 bucket with the given rule set. [write]
+- `update_bucket_cors_policy` — Replace the bucket-level CORS policy for an R2 bucket. [destructive]
+- `update_bucket_lifecycle` — Replace the object lifecycle rules of an R2 bucket with the given rule set. [destructive]
+- `update_bucket_local_uploads` — Enable or disable local uploads for an R2 bucket. [destructive]
+- `update_bucket_lock` — Replace the object lock rules of an R2 bucket with the given rule set. [destructive]
 - `update_custom_domain` — Update the public access, TLS version, or cipher settings of a custom domain. [write]
-- `update_managed_domain` — Enable or disable public access to an R2 bucket through its r2.dev domain. [write]
+- `update_managed_domain` — Enable or disable public access to an R2 bucket through its r2.dev domain. [destructive]
 
 ## Safety
 

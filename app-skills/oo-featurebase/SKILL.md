@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Featurebase"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["featurebase"]
   icon: "https://static.oomol.com/logo/third-party/featurebase.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_post` — Delete one Featurebase post by ID. [destructive]
 - `get_board` — Get one Featurebase board by ID.
 - `get_contact` — Get one Featurebase contact by ID.
-- `get_post` — Get one Featurebase post by ID. [write]
+- `get_post` — Get one Featurebase post by ID.
 - `list_boards` — List all Featurebase boards for the authenticated organization.
 - `list_contacts` — List Featurebase contacts with cursor pagination and contact type filtering.
 - `list_posts` — List Featurebase posts with cursor pagination and optional filters.

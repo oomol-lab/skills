@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "NetEase Mail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["netease_mail"]
   icon: "https://static.oomol.com/logo/third-party/netease_mail.png"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_folders` — List folders visible to the connected NetEase Mail account.
 - `mark_email_read` — Mark one NetEase Mail message as read. [write]
 - `mark_email_unread` — Mark one NetEase Mail message as unread. [write]
-- `move_email` — Move one NetEase Mail message to another folder. [write]
+- `move_email` — Move one NetEase Mail message to another folder. [destructive]
 - `reply_email` — Reply to one NetEase Mail email using SMTP reply headers and quoted content. [write]
 - `search_emails` — Search one NetEase Mail folder and return lightweight email summaries.
 - `send_email` — Send an email through NetEase Mail SMTP. [write]

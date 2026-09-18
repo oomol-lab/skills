@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Perplexity"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["perplexity"]
   icon: "https://static.oomol.com/logo/third-party/Perplexity%20AI.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a Perplexity Sonar chat completion grounded by web search when enabled. [write]
+- `create_chat_completion` — Create a Perplexity Sonar chat completion grounded by web search when enabled.
 - `create_embeddings` — Generate vector embeddings for one or more input strings with Perplexity. [write]
 - `list_models` — List the models currently available from Perplexity.
 - `search` — Search the web and return ranked raw results from Perplexity without LLM synthesis.

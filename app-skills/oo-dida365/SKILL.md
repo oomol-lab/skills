@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dida365"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["dida365"]
   icon: "https://static.oomol.com/logo/third-party/ticktick.svg"
 ---
@@ -53,7 +53,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_completed_tasks` — List completed Dida365 tasks within optional project and date filters by using the official completed-tasks endpoint.
 - `list_habit_checkins` — List Dida365 habit check-ins for one or more habits over a date stamp range.
 - `list_habits` — List habits available to the connected Dida365 account.
-- `move_tasks` — Move one or more Dida365 tasks between projects by using the official move endpoint. [write]
+- `move_tasks` — Move one or more Dida365 tasks between projects by using the official move endpoint. [destructive]
 - `update_project` — Update a Dida365 project by project ID. [write]
 - `update_task` — Update a Dida365 task by task ID and project ID, including checklist items and recurrence fields. [write]
 

@@ -1,11 +1,11 @@
 ---
 name: oo-mixpanel
-description: "Mixpanel (mixpanel.com). Use this skill for ANY Mixpanel request — searching and reading data. Whenever a task involves Mixpanel, use this skill instead of calling the API directly."
+description: "Mixpanel (mixpanel.com). Use this skill for ANY Mixpanel request — reading, creating, and updating data. Whenever a task involves Mixpanel, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mixpanel"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mixpanel"]
   icon: "https://static.oomol.com/logo/third-party/Mixpanel.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `export_events` — Export raw Mixpanel events for a project and date range.
+- `export_events` — Export raw Mixpanel events for a project and date range. [write]
 - `list_funnels` — List saved funnels available in a Mixpanel project.
 - `list_saved_cohorts` — List saved cohorts available in a Mixpanel project.
 - `profile_event_activity` — Get event activity for one or more Mixpanel profiles over a date range.

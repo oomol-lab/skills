@@ -1,11 +1,11 @@
 ---
 name: oo-timecamp
-description: "TimeCamp (timecamp.com). Use this skill for ANY TimeCamp request — reading, creating, and updating data. Whenever a task involves TimeCamp, use this skill instead of calling the API directly."
+description: "TimeCamp (timecamp.com). Use this skill for ANY TimeCamp request — reading, creating, updating, and deleting data. Whenever a task involves TimeCamp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TimeCamp"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["timecamp"]
   icon: "https://static.oomol.com/logo/third-party/timecamp.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_time_entries` — List TimeCamp time entries for a date or modification range.
 - `list_users` — List users in the connected TimeCamp account.
 - `start_timer` — Start a TimeCamp timer, optionally attached to a task. [write]
-- `stop_timer` — Stop the current TimeCamp timer and save the tracked time. [write]
+- `stop_timer` — Stop the current TimeCamp timer and save the tracked time. [destructive]
 - `update_time_entry` — Update an existing TimeCamp time entry. [write]
 
 ## Safety

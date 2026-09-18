@@ -1,11 +1,11 @@
 ---
 name: oo-resend
-description: "Resend (resend.com). Use this skill for ANY Resend request — reading, creating, and updating data. Whenever a task involves Resend, use this skill instead of calling the API directly."
+description: "Resend (resend.com). Use this skill for ANY Resend request — reading, creating, updating, and deleting data. Whenever a task involves Resend, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Resend"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["resend"]
   icon: "https://static.oomol.com/logo/third-party/Resend.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_scheduled_email` — Cancel a scheduled Resend email before delivery. [write]
+- `cancel_scheduled_email` — Cancel a scheduled Resend email before delivery. [destructive]
 - `get_received_email` — Retrieve one received Resend email, including its content, headers, and attachment metadata.
 - `get_received_email_attachment` — Retrieve one attachment from a received Resend email, including its temporary download URL.
 - `get_sent_email` — Retrieve one sent Resend email, including its message content and delivery state.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PDF.co"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["pdf_co"]
   icon: "https://static.oomol.com/logo/third-party/pdf_co.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `compress_pdf` — Compress a PDF URL and return the generated compressed PDF file URL.
+- `compress_pdf` — Compress a PDF URL and return the generated compressed PDF file URL. [write]
 - `get_account_balance` — Get the current PDF.co account credit balance for the API key.
 - `get_pdf_info` — Read metadata, page information, and security details from a PDF URL.
 - `html_to_pdf` — Convert raw HTML into a PDF document and return the generated file URL.

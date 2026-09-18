@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Plunk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["plunk"]
   icon: "https://static.oomol.com/logo/third-party/plunk.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_contact` — Get a single Plunk contact by ID.
 - `list_contacts` — List Plunk contacts with cursor pagination.
 - `send_email` — Send a transactional email through Plunk. [write]
-- `track_event` — Track an event for a Plunk contact.
+- `track_event` — Track an event for a Plunk contact. [write]
 - `update_contact` — Update a Plunk contact by ID. [write]
 - `verify_email` — Verify an email address with Plunk.
 

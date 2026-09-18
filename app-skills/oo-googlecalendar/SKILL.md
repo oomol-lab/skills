@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Calendar"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["googlecalendar"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Calendar.svg"
 ---
@@ -62,7 +62,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_events` — List events from a Google Calendar.
 - `list_events_all_calendars` — List events across multiple Google Calendars and aggregate the result.
 - `list_settings` — List Google Calendar settings.
-- `move_event` — Move a Google Calendar event to another calendar. [write]
+- `move_event` — Move a Google Calendar event to another calendar. [destructive]
 - `patch_acl_rule` — Patch writable fields on a Google Calendar ACL rule. [write]
 - `patch_calendar` — Patch writable fields on a Google Calendar resource. [write]
 - `patch_calendar_list_entry` — Patch writable fields on a Google Calendar list entry. [write]
@@ -71,10 +71,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `remove_attendee` — Remove one attendee email from a Google Calendar event. [destructive]
 - `remove_calendar_from_list` — Remove a calendar from the current user's Calendar list. [destructive]
 - `sync_events` — Incrementally sync events from a Google Calendar. [write]
-- `update_acl_rule` — Replace writable fields on a Google Calendar ACL rule. [write]
-- `update_calendar` — Replace writable fields on a Google Calendar resource. [write]
-- `update_calendar_list_entry` — Replace writable fields on a Google Calendar list entry. [write]
-- `update_event` — Replace writable fields on a Google Calendar event. [write]
+- `update_acl_rule` — Replace writable fields on a Google Calendar ACL rule. [destructive]
+- `update_calendar` — Replace writable fields on a Google Calendar resource. [destructive]
+- `update_calendar_list_entry` — Replace writable fields on a Google Calendar list entry. [destructive]
+- `update_event` — Replace writable fields on a Google Calendar event. [destructive]
 
 ## Safety
 

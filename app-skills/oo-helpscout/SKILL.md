@@ -1,11 +1,11 @@
 ---
 name: oo-helpscout
-description: "Help Scout (helpscout.com). Use this skill for ANY Help Scout request — reading, creating, and updating data. Whenever a task involves Help Scout, use this skill instead of calling the API directly."
+description: "Help Scout (helpscout.com). Use this skill for ANY Help Scout request — reading, creating, updating, and deleting data. Whenever a task involves Help Scout, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Help Scout"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["helpscout"]
   icon: "https://static.oomol.com/logo/third-party/helpscout.svg"
 ---
@@ -37,14 +37,14 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `assign_conversation` — Assign a Help Scout conversation to a user or leave it unassigned. [write]
+- `assign_conversation` — Assign a Help Scout conversation to a user or leave it unassigned. [destructive]
 - `create_conversation` — Create a Help Scout conversation with one initial text thread. [write]
 - `create_customer` — Create a Help Scout customer with a primary email address. [write]
 - `create_note` — Add an internal note to a Help Scout conversation. [write]
 - `create_reply` — Add a published reply or draft reply to a Help Scout conversation. [write]
 - `get_conversation` — Get one Help Scout conversation by ID.
 - `get_customer` — Get one Help Scout customer by ID.
-- `get_saved_reply` — Get the complete email and chat content of a Help Scout saved reply. [write]
+- `get_saved_reply` — Get the complete email and chat content of a Help Scout saved reply.
 - `list_conversations` — List and filter conversations in the connected Help Scout account.
 - `list_customers` — List and filter customers in the connected Help Scout account.
 - `list_inbox_custom_fields` — List the custom field definitions and dropdown options for a Help Scout inbox.
@@ -55,12 +55,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_threads` — List the complete threads belonging to a Help Scout conversation.
 - `list_users` — List Help Scout users, optionally filtered by email or inbox.
 - `list_workflows` — List Help Scout workflows, including the manual automations that can be run.
-- `replace_conversation_custom_fields` — Replace the complete custom field state of a Help Scout conversation. [write]
-- `replace_conversation_tags` — Replace the complete tag list on a Help Scout conversation. [write]
-- `run_manual_workflow` — Run a configured Help Scout manual workflow on up to 50 conversations. [write]
-- `set_conversation_status` — Replace the status of a Help Scout conversation. [write]
-- `snooze_conversation` — Snooze a Help Scout conversation until a specific future time. [write]
-- `unsnooze_conversation` — Remove the snooze from a Help Scout conversation and return it to its queue. [write]
+- `replace_conversation_custom_fields` — Replace the complete custom field state of a Help Scout conversation. [destructive]
+- `replace_conversation_tags` — Replace the complete tag list on a Help Scout conversation. [destructive]
+- `run_manual_workflow` — Run a configured Help Scout manual workflow on up to 50 conversations. [destructive]
+- `set_conversation_status` — Replace the status of a Help Scout conversation. [destructive]
+- `snooze_conversation` — Snooze a Help Scout conversation until a specific future time. [destructive]
+- `unsnooze_conversation` — Remove the snooze from a Help Scout conversation and return it to its queue. [destructive]
 
 ## Safety
 

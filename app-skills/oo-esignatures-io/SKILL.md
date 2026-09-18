@@ -1,11 +1,11 @@
 ---
 name: oo-esignatures-io
-description: "eSignatures.com (esignatures.com). Use this skill for ANY eSignatures.com request — reading, creating, and updating data. Whenever a task involves eSignatures.com, use this skill instead of calling the API directly."
+description: "eSignatures.com (esignatures.com). Use this skill for ANY eSignatures.com request — reading, creating, updating, and deleting data. Whenever a task involves eSignatures.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "eSignatures.com"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["esignatures_io"]
   icon: "https://static.oomol.com/logo/third-party/esignatures_io.png"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_template` — Retrieve one eSignatures.com template by ID.
 - `get_template_content` — Retrieve the Markdown content for one eSignatures.com template.
 - `list_templates` — List eSignatures.com templates available to the connected account.
-- `withdraw_contract` — Withdraw an eSignatures.com contract so it can no longer be signed while preserving query access.
+- `withdraw_contract` — Withdraw an eSignatures.com contract so it can no longer be signed while preserving query access. [destructive]
 
 ## Safety
 

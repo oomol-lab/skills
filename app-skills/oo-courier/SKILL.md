@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Courier"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["courier"]
   icon: "https://static.oomol.com/logo/third-party/courier.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `merge_profile` — Merge values into a Courier user profile or create it when missing. [write]
 - `send_message` — Send a Courier message to one or more recipients. [write]
 - `unsubscribe_list_subscriber` — Unsubscribe one Courier user profile from a subscription list. [destructive]
-- `upsert_list` — Create or replace a Courier subscription list. [write]
+- `upsert_list` — Create or replace a Courier subscription list. [destructive]
 
 ## Safety
 

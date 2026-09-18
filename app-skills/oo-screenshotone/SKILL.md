@@ -1,11 +1,11 @@
 ---
 name: oo-screenshotone
-description: "ScreenshotOne (screenshotone.com). Use this skill for ANY ScreenshotOne request — searching and reading data. Whenever a task involves ScreenshotOne, use this skill instead of calling the API directly."
+description: "ScreenshotOne (screenshotone.com). Use this skill for ANY ScreenshotOne request — reading, creating, and updating data. Whenever a task involves ScreenshotOne, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "ScreenshotOne"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["screenshotone"]
   icon: "https://static.oomol.com/logo/third-party/Screenshotone.jpeg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_devices` — List the ScreenshotOne device presets available for viewport emulation.
 - `take_animated_screenshot` — Take an animated ScreenshotOne capture as a video or GIF file.
 - `take_bulk_screenshots` — Submit multiple ScreenshotOne screenshot requests in a single bulk call.
-- `take_screenshot` — Take a ScreenshotOne screenshot from a website URL, HTML, or Markdown source.
+- `take_screenshot` — Take a ScreenshotOne screenshot from a website URL, HTML, or Markdown source. [write]
 
 ## Safety
 

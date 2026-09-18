@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Oracle Cloud Infrastructure"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["oracle_cloud"]
   icon: "https://static.oomol.com/logo/third-party/oracle_cloud.png"
 ---
@@ -54,7 +54,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_vnic` — Get a VNIC and its assigned IP addresses by OCID.
 - `get_vnic_attachment` — Get a VNIC attachment by OCID.
 - `instance_action` — Perform one of the instance actions exposed by Oracle's official Compute MCP server.
-- `launch_instance` — Launch a compute instance from an image in a subnet.
+- `launch_instance` — Launch a compute instance from an image in a subnet. [write]
 - `list_alarms` — List Monitoring alarms in a compartment.
 - `list_availability_domains` — List availability domains accessible from a compartment or tenancy.
 - `list_compartments` — List child compartments, optionally traversing the tenancy subtree.
@@ -68,7 +68,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_subscribed_regions` — List regions to which a tenancy is subscribed.
 - `list_vcns` — List virtual cloud networks in a compartment.
 - `list_vnic_attachments` — List VNIC attachments in a compartment, optionally for one instance.
-- `run_instance_agent_command` — Run a shell or batch script through Oracle Cloud Agent. The script executes on the target host with the agent service account's privileges.
+- `run_instance_agent_command` — Run a shell or batch script through Oracle Cloud Agent. The script executes on the target host with the agent service account's privileges. [write]
 - `terminate_instance` — Permanently terminate a compute instance. This destructive operation cannot be undone. [destructive]
 - `update_instance` — Update flexible shape resources for an instance; OCI may restart the instance. [write]
 

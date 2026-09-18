@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Reddit"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["reddit"]
   icon: "https://static.oomol.com/logo/third-party/reddit.png"
 ---
@@ -40,9 +40,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_comment` — Reply to a Reddit post or comment as the authenticated Reddit user. [write]
 - `create_post` — Create a text or link post in a subreddit as the authenticated Reddit user. [write]
 - `delete_content` — Permanently delete an authenticated user's Reddit post or comment. [destructive]
-- `edit_content` — Replace the body of an authenticated user's Reddit comment or text post. [write]
+- `edit_content` — Replace the body of an authenticated user's Reddit comment or text post. [destructive]
 - `get_me` — Get the profile of the authenticated Reddit account.
-- `get_post_comments` — Get a Reddit post and its comment tree. [write]
+- `get_post_comments` — Get a Reddit post and its comment tree.
 - `list_posts` — List posts from a subreddit using a supported Reddit sort order.
 - `search_posts` — Search Reddit posts globally or within one subreddit.
 

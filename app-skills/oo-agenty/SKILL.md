@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Agenty"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["agenty"]
   icon: "https://static.oomol.com/logo/third-party/Agenty.svg"
 ---
@@ -65,7 +65,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_job_files` — List the files generated for one Agenty job.
 - `list_jobs` — List Agenty jobs with optional pagination, sorting, and agent filtering parameters.
 - `start_job` — Start one Agenty job for an existing agent. [write]
-- `stop_job` — Stop one running Agenty job by job identifier. [write]
+- `stop_job` — Stop one running Agenty job by job identifier. [destructive]
 - `update_agent` — Update one Agenty agent by agent identifier. [write]
 - `update_agent_inputs` — Update the Agenty input configuration for one agent. [write]
 

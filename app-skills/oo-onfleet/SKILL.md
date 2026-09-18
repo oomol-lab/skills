@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Onfleet"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["onfleet"]
   icon: "https://static.oomol.com/logo/third-party/onfleet.png"
 ---
@@ -37,13 +37,13 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `clone_task` — Clone an existing Onfleet task with optional metadata and field overrides.
-- `complete_task` — Force complete an active Onfleet task as successful or failed. [write]
+- `clone_task` — Clone an existing Onfleet task with optional metadata and field overrides. [write]
+- `complete_task` — Force complete an active Onfleet task as successful or failed. [destructive]
 - `create_task` — Create a pickup or delivery task in Onfleet. [write]
 - `delete_task` — Delete an unstarted Onfleet task. [destructive]
 - `get_task` — Get one Onfleet task by ID.
 - `list_tasks` — List Onfleet tasks in a time range with cursor pagination and task filters.
-- `update_task` — Update supported fields on an Onfleet task. [write]
+- `update_task` — Update supported fields on an Onfleet task. [destructive]
 
 ## Safety
 

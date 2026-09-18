@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CompanyCam"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["companycam"]
   icon: "https://static.oomol.com/logo/third-party/companycam.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_project` — Archive a CompanyCam project by ID. [write]
+- `archive_project` — Archive a CompanyCam project by ID. [destructive]
 - `create_project` — Create a CompanyCam project with optional address, coordinates, and contact data. [write]
 - `create_tag` — Create a CompanyCam tag. [write]
 - `delete_tag` — Delete a CompanyCam tag by ID. [destructive]
@@ -49,7 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_projects` — List CompanyCam projects with optional name, address, and modified-since filters.
 - `list_tags` — List CompanyCam tags visible to the API token.
 - `list_users` — List CompanyCam users visible to the API token.
-- `restore_project` — Restore an archived CompanyCam project by ID.
+- `restore_project` — Restore an archived CompanyCam project by ID. [write]
 - `update_project` — Update a CompanyCam project's name, address, coordinates, or geofence. [write]
 - `update_tag` — Update a CompanyCam tag label. [write]
 

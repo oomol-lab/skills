@@ -1,11 +1,11 @@
 ---
 name: oo-ritekit
-description: "RiteKit (ritekit.com). Use this skill for ANY RiteKit request — searching and reading data. Whenever a task involves RiteKit, use this skill instead of calling the API directly."
+description: "RiteKit (ritekit.com). Use this skill for ANY RiteKit request — reading, creating, and updating data. Whenever a task involves RiteKit, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "RiteKit"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["ritekit"]
   icon: "https://static.oomol.com/logo/third-party/ritekit.svg"
 ---
@@ -41,9 +41,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `clean_banned_instagram_hashtags` — Remove hashtags that RiteKit identifies as currently blocked by Instagram.
 - `get_hashtag_stats` — Get current engagement statistics for one or more hashtags.
 - `list_trending_hashtags` — List hashtags that are currently trending according to RiteKit.
-- `suggest_hashtags_for_image` — Generate engagement-ranked hashtag suggestions from a public image URL.
-- `suggest_hashtags_for_text` — Generate engagement-ranked hashtag suggestions from text.
-- `suggest_hashtags_for_url` — Generate engagement-ranked hashtag suggestions from a public webpage URL.
+- `suggest_hashtags_for_image` — Generate engagement-ranked hashtag suggestions from a public image URL. [write]
+- `suggest_hashtags_for_text` — Generate engagement-ranked hashtag suggestions from text. [write]
+- `suggest_hashtags_for_url` — Generate engagement-ranked hashtag suggestions from a public webpage URL. [write]
 
 ## Safety
 

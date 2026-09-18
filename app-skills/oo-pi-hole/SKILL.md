@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pi-hole"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pi_hole"]
   icon: "https://static.oomol.com/logo/third-party/pi_hole.svg"
 ---
@@ -50,7 +50,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_group` — Delete one Pi-hole group by name. [destructive]
 - `delete_list` — Delete one Pi-hole allowlist or blocklist entry by address. [destructive]
 - `export_backup` — Create a complete Pi-hole teleporter backup archive (teleporter.zip) with all settings, lists, and clients.
-- `flush_dns_logs` — Flush the Pi-hole DNS query log.
+- `flush_dns_logs` — Flush the Pi-hole DNS query log. [destructive]
 - `get_config` — Fetch the current Pi-hole configuration, such as DNS settings, privacy level, and API settings.
 - `get_dhcp_leases` — Fetch the currently active DHCP leases assigned by the Pi-hole DHCP server.
 - `get_dns_blocking_status` — Fetch whether Pi-hole DNS blocking is currently enabled, disabled, failed, or unknown.
@@ -63,20 +63,20 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_top_clients` — Fetch the clients that have queried Pi-hole the most, optionally limited to blocked ones.
 - `get_top_domains` — Fetch the domains Pi-hole has handled the most, optionally limited to blocked ones.
 - `get_upstreams` — Fetch metrics about Pi-hole's DNS upstream destinations, including response times.
-- `import_backup` — Restore a Pi-hole teleporter backup archive (a previously exported teleporter.zip) to this instance. [write]
+- `import_backup` — Restore a Pi-hole teleporter backup archive (a previously exported teleporter.zip) to this instance. [destructive]
 - `list_clients` — List all Pi-hole clients and their group memberships.
 - `list_domains` — List the individual Pi-hole domain entries, optionally restricted to one type or kind.
 - `list_groups` — List all Pi-hole groups and their memberships.
 - `list_lists` — List the Pi-hole allowlists and blocklists (subscription lists).
 - `restart_dns` — Restart Pi-hole's DNS server and reload its DNS configuration. [write]
-- `run_gravity` — Run the Pi-hole gravity update to refresh the blocklists. The instance streams the gravity log; the action reports a best-effort status from the log plus the tail of the stream.
+- `run_gravity` — Run the Pi-hole gravity update to refresh the blocklists. The instance streams the gravity log; the action reports a best-effort status from the log plus the tail of the stream. [write]
 - `search_domain` — Search whether a domain appears in Pi-hole's allowlists, blocklists, or gravity lists, to understand why it is blocked or allowed.
-- `set_dns_blocking` — Enable or disable Pi-hole DNS blocking, optionally for a limited time after which the opposite mode is restored automatically. [write]
-- `update_client` — Update one Pi-hole client's comment or group memberships. [write]
-- `update_config` — Change part of the Pi-hole configuration, for example DNS upstreams, the privacy level, or API settings. The provided fields are merged into the current configuration. [write]
-- `update_domain` — Update one Pi-hole domain entry: change its comment, enabled state, or group memberships. [write]
-- `update_group` — Update one Pi-hole group: rename it, or change its comment or enabled state. [write]
-- `update_list` — Update one Pi-hole list: change its comment, enabled state, or group memberships. [write]
+- `set_dns_blocking` — Enable or disable Pi-hole DNS blocking, optionally for a limited time after which the opposite mode is restored automatically. [destructive]
+- `update_client` — Update one Pi-hole client's comment or group memberships. [destructive]
+- `update_config` — Change part of the Pi-hole configuration, for example DNS upstreams, the privacy level, or API settings. The provided fields are merged into the current configuration. [destructive]
+- `update_domain` — Update one Pi-hole domain entry: change its comment, enabled state, or group memberships. [destructive]
+- `update_group` — Update one Pi-hole group: rename it, or change its comment or enabled state. [destructive]
+- `update_list` — Update one Pi-hole list: change its comment, enabled state, or group memberships. [destructive]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-ticketmaster
-description: "Ticketmaster (ticketmaster.com). Use this skill for ANY Ticketmaster request — searching and reading data. Whenever a task involves Ticketmaster, use this skill instead of calling the API directly."
+description: "Ticketmaster (ticketmaster.com). Use this skill for ANY Ticketmaster request — reading, creating, and updating data. Whenever a task involves Ticketmaster, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ticketmaster"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["ticketmaster"]
   icon: "https://static.oomol.com/logo/third-party/Ticketmaster.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_season_ticketing_command` — Execute a Ticketmaster Season Ticketing command and optionally poll until the command finishes.
+- `execute_season_ticketing_command` — Execute a Ticketmaster Season Ticketing command and optionally poll until the command finishes. [write]
 - `get_attraction_details` — Get the details for a specific Ticketmaster attraction by ID.
 - `get_attractions` — Search Discovery API attractions for artists, teams, performers, and other attraction entities.
 - `get_classification_details` — Get the details for a specific Ticketmaster classification by ID.

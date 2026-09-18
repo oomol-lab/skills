@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "U301"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["u301"]
   icon: "https://static.oomol.com/logo/third-party/u301.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `delete_link` — Delete one U301 short link by its domain/slug identifier. [destructive]
 - `list_domains` — List the U301 short-link domains available in the connected workspace.
-- `shorten_link` — Create one U301 short link for a destination URL.
+- `shorten_link` — Create one U301 short link for a destination URL. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TwitterAPI.io"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["twitterapi_io"]
   icon: "https://static.oomol.com/logo/third-party/twitterapi_io.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_tweet_filter_rule` — Add a Webhook/WebSocket tweet filter rule. [write]
 - `advanced_search_tweets` — Run an advanced Twitter search query.
 - `batch_get_users` — Retrieve multiple X user profiles by user ID.
-- `check_follow_relationship` — Check whether one X user follows or is followed by another user. [write]
+- `check_follow_relationship` — Check whether one X user follows or is followed by another user.
 - `delete_tweet_filter_rule` — Delete a Webhook/WebSocket tweet filter rule. [destructive]
 - `get_account_info` — Retrieve twitterapi.io account credit information for the API key.
 - `get_article` — Retrieve an X article by Tweet ID.

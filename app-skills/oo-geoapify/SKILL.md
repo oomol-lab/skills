@@ -1,11 +1,11 @@
 ---
 name: oo-geoapify
-description: "Geoapify (geoapify.com). Use this skill for ANY Geoapify request — reading, creating, and updating data. Whenever a task involves Geoapify, use this skill instead of calling the API directly."
+description: "Geoapify (geoapify.com). Use this skill for ANY Geoapify request — searching and reading data. Whenever a task involves Geoapify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Geoapify"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["geoapify"]
   icon: "https://static.oomol.com/logo/third-party/Geoapify.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `address_autocomplete` — Return address autocomplete suggestions from Geoapify.
-- `forward_geocode` — Convert free-form text into geocoding results with Geoapify. [write]
+- `forward_geocode` — Convert free-form text into geocoding results with Geoapify.
 - `get_route` — Calculate a route between waypoints with the Geoapify Routing API.
 - `get_route_matrix` — Calculate a travel matrix between sources and targets with Geoapify.
 - `reverse_geocode` — Convert latitude and longitude into place results with Geoapify.

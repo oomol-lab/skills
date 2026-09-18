@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cursor"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cursor"]
   icon: "https://static.oomol.com/logo/third-party/cursor.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_agent` — Archive a session while retaining readable history. Call unarchive_agent before sending another prompt. [write]
-- `cancel_run` — Cancel an active run. To continue afterward, create a new run on the same session. [write]
+- `archive_agent` — Archive a session while retaining readable history. Call unarchive_agent before sending another prompt. [destructive]
+- `cancel_run` — Cancel an active run. To continue afterward, create a new run on the same session. [destructive]
 - `create_agent` — Create a durable Cursor cloud session and enqueue its first run. Returns immediately; poll get_run for the result. MCP servers can give the session access to external tools. [write]
 - `create_run` — Send a follow-up using the session's conversation and workspace. Wait for or cancel an active run before starting another. Unarchive archived sessions first. [write]
 - `delete_agent` — Permanently delete a cloud session. This is irreversible; archive_agent provides reversible removal. [destructive]
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_models` — List available cloud agent models and their supported parameters and variants.
 - `list_runs` — List a cloud session's runs, newest first, with cursor pagination.
 - `list_team_members` — List Cursor team members visible to the team API key.
-- `unarchive_agent` — Restore an archived session so it can accept new runs.
+- `unarchive_agent` — Restore an archived session so it can accept new runs. [write]
 
 ## Safety
 

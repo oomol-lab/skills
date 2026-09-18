@@ -1,11 +1,11 @@
 ---
 name: oo-luno
-description: "Luno (luno.com). Use this skill for ANY Luno request — reading, creating, and updating data. Whenever a task involves Luno, use this skill instead of calling the API directly."
+description: "Luno (luno.com). Use this skill for ANY Luno request — searching and reading data. Whenever a task involves Luno, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Luno"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["luno"]
   icon: "https://static.oomol.com/logo/third-party/luno.png"
 ---
@@ -38,9 +38,9 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_balances` — List Luno account balances, optionally filtered by asset code.
-- `get_order` — Get one Luno order by its order identifier. [write]
+- `get_order` — Get one Luno order by its order identifier.
 - `get_ticker` — Get the latest Luno ticker indicators for one currency pair.
-- `get_top_order_book` — Get the best 100 aggregated Luno bid and ask levels for one currency pair. [write]
+- `get_top_order_book` — Get the best 100 aggregated Luno bid and ask levels for one currency pair.
 - `list_orders` — List recently placed Luno orders with optional state, pair, and time filters.
 - `list_recent_trades` — List up to 100 recent public Luno trades for one currency pair.
 - `list_tickers` — List latest Luno ticker indicators for active currency pairs.

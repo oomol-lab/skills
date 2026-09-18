@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LinkFox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["linkfox"]
   icon: "https://static.oomol.com/logo/third-party/linkfox.svg"
 ---
@@ -48,12 +48,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_chuhaijiang_image_upload_url` — Create a temporary upload URL for a JPG, JPEG or PNG image through LinkFox and Chuhaijiang. [write]
 - `get_1688_product` — Get public product, SKU, price, inventory, media, shipping, and supplier details from 1688 through LinkFox.
 - `get_amazon_ads_authorization_url` — Create an Amazon Ads authorization URL through LinkFox.
-- `get_amazon_ads_report` — Create or resume an Amazon Ads report and wait for a download URL.
+- `get_amazon_ads_report` — Create or resume an Amazon Ads report and wait for a download URL. [write]
 - `get_amazon_opportunity_report` — Generate a LinkFox Amazon commercial opportunity report for a keyword.
-- `get_amazon_policy_update` — Get the full content of an Amazon policy or compliance news record through LinkFox. [write]
+- `get_amazon_policy_update` — Get the full content of an Amazon policy or compliance news record through LinkFox.
 - `get_amazon_product` — Get detailed Amazon product data for up to forty ASINs through LinkFox.
 - `get_amazon_store_authorization_url` — Create an Amazon Selling Partner authorization URL through LinkFox.
-- `get_amazon_store_report` — Create or resume an Amazon Selling Partner report and wait for a download URL.
+- `get_amazon_store_report` — Create or resume an Amazon Selling Partner report and wait for a download URL. [write]
 - `get_chuhaijiang_ad` — Get TikTok ad details through LinkFox and Chuhaijiang.
 - `get_chuhaijiang_creative` — Get TikTok creative details through LinkFox and Chuhaijiang.
 - `get_chuhaijiang_creator` — Get TikTok creator details through LinkFox and Chuhaijiang.
@@ -83,6 +83,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_ozon_product` — Get analytics for one Ozon product through LinkFox and MPSTATS.
 - `get_ozon_product_trend` — Get daily analytics trends for one Ozon product through LinkFox and MPSTATS.
 - `get_seerfar_ozon_product` — Get an Ozon product snapshot and sales history through LinkFox and Seerfar.
+- `get_sif_asin_traffic_summary` — Summarize natural, advertising, and recommendation traffic sources for up to ten Amazon ASINs through LinkFox and SIF.
+- `get_sif_keyword_overview` — Get SIF search demand, supply-demand ratio, and advertising or recommendation competition for one Amazon keyword through LinkFox.
+- `get_sif_keyword_traffic_summary` — Analyze competitor ASIN traffic shares and natural, advertising, or recommendation exposure for one Amazon keyword through LinkFox and SIF.
 - `get_tiktok_shop_product` — Get public details for one TikTok Shop product through LinkFox.
 - `get_zhihuiya_patent_abstract_images` — Get patent abstract image URLs through LinkFox and Patsnap.
 - `get_zhihuiya_patent_bibliography` — Get detailed patent bibliographic records through LinkFox and Patsnap.
@@ -138,6 +141,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_ozon_seller_products` — List Ozon products for a seller through LinkFox and MPSTATS.
 - `list_seerfar_ozon_category_products` — List Ozon category products and aggregate statistics through LinkFox and Seerfar.
 - `list_seerfar_ozon_shop_products` — List Ozon shop products and aggregate statistics through LinkFox and Seerfar.
+- `list_sif_asin_keywords` — Reverse-search one Amazon ASIN's SIF traffic keywords, ranks, traffic shares, and conversion markers through LinkFox.
 - `list_sp_campaigns` — List Sponsored Products campaigns through the LinkFox Amazon Ads gateway.
 - `mine_seerfar_ozon_keywords` — Mine Ozon keywords from a seed keyword through LinkFox and Seerfar.
 - `query_amazon_aba` — Run a natural-language Amazon Brand Analytics query through LinkFox.
@@ -154,7 +158,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_chuhaijiang_creators` — Search TikTok creators through LinkFox and Chuhaijiang.
 - `search_chuhaijiang_lives` — Search TikTok live streams through LinkFox and Chuhaijiang.
 - `search_chuhaijiang_products` — Search TikTok products through LinkFox and Chuhaijiang.
-- `search_chuhaijiang_products_by_image` — Find visually similar TikTok products using an image URL or an uploaded object key through LinkFox and Chuhaijiang.
+- `search_chuhaijiang_products_by_image` — Find visually similar TikTok products using an image URL or an uploaded object key through LinkFox and Chuhaijiang. [write]
 - `search_chuhaijiang_shops` — Search TikTok shops through LinkFox and Chuhaijiang.
 - `search_chuhaijiang_videos` — Search TikTok videos through LinkFox and Chuhaijiang.
 - `search_ebay_products` — Search public eBay listings through LinkFox.

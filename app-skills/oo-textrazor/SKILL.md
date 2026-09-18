@@ -1,11 +1,11 @@
 ---
 name: oo-textrazor
-description: "TextRazor (textrazor.com). Use this skill for ANY TextRazor request — searching and reading data. Whenever a task involves TextRazor, use this skill instead of calling the API directly."
+description: "TextRazor (textrazor.com). Use this skill for ANY TextRazor request — reading, creating, updating, and deleting data. Whenever a task involves TextRazor, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TextRazor"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["textrazor"]
   icon: "https://static.oomol.com/logo/third-party/TextRazor.svg"
 ---
@@ -40,8 +40,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `account_info` — Retrieve the current TextRazor account plan and request quota summary.
 - `analyze_content` — Analyze text with one or more TextRazor extractors and return the official analysis payload.
 - `classify_text` — Classify text with one or more TextRazor classifiers and return the official categories payload.
-- `custom_classifier_manager` — Manage TextRazor custom classifier categories, including upload, listing, retrieval, and deletion.
-- `dictionary_manager` — Manage TextRazor custom entity dictionaries, including lifecycle and entry operations.
+- `custom_classifier_manager` — Manage TextRazor custom classifier categories, including upload, listing, retrieval, and deletion. [destructive]
+- `dictionary_manager` — Manage TextRazor custom entity dictionaries, including lifecycle and entry operations. [destructive]
 - `extract_entities` — Extract named entities from text using the official TextRazor entities extractor.
 
 ## Safety

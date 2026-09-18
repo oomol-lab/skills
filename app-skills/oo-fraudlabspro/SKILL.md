@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "FraudLabs Pro"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["fraudlabspro"]
   icon: "https://static.oomol.com/logo/third-party/fraudlabspro.svg"
 ---
@@ -38,8 +38,8 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `feedback_order` — Send approve or reject feedback for a FraudLabs Pro order transaction. [write]
-- `get_order_result` — Retrieve a FraudLabs Pro order screening result by transaction id. [write]
-- `screen_order` — Screen an order transaction for fraud risk with FraudLabs Pro. [write]
+- `get_order_result` — Retrieve a FraudLabs Pro order screening result by transaction id.
+- `screen_order` — Screen an order transaction for fraud risk with FraudLabs Pro.
 
 ## Safety
 

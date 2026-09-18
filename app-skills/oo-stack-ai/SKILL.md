@@ -1,11 +1,11 @@
 ---
 name: oo-stack-ai
-description: "StackAI (stack-ai.com). Use this skill for ANY StackAI request — searching and reading data. Whenever a task involves StackAI, use this skill instead of calling the API directly."
+description: "StackAI (stack-ai.com). Use this skill for ANY StackAI request — reading, creating, and updating data. Whenever a task involves StackAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "StackAI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["stack_ai"]
   icon: "https://static.oomol.com/logo/third-party/stack_ai.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_run_metadata` — Fetch metadata for one previously started Stack AI run.
-- `run_flow` — Run a deployed Stack AI flow with JSON variables and return its normalized result.
+- `run_flow` — Run a deployed Stack AI flow with JSON variables and return its normalized result. [write]
 
 ## Safety
 

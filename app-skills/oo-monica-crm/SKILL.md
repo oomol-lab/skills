@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Monica CRM"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["monica_crm"]
   icon: "https://static.oomol.com/logo/third-party/monica_crm.png"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_note` — Get a Monica note by ID.
 - `list_contacts` — List or search contacts in the authenticated Monica account.
 - `list_notes` — List notes in the Monica account or for one contact.
-- `update_note` — Replace a Monica note by ID. [write]
+- `update_note` — Replace a Monica note by ID. [destructive]
 
 ## Safety
 

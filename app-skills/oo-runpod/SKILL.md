@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Runpod"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["runpod"]
   icon: "https://static.oomol.com/logo/third-party/RunPod.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `reset_pod` — Reset a Runpod Pod. [destructive]
 - `restart_pod` — Restart a Runpod Pod. [write]
 - `start_pod` — Start or resume a Runpod Pod. [write]
-- `stop_pod` — Stop a Runpod Pod. [write]
+- `stop_pod` — Stop a Runpod Pod. [destructive]
 
 ## Safety
 

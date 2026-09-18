@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hashnode"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hashnode"]
   icon: "https://static.oomol.com/logo/third-party/hashnode.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_draft` — Soft-delete an accessible Hashnode draft from a Pro publication. [destructive]
 - `get_current_user` — Get the profile for the user authenticated by the connected Hashnode PAT.
 - `get_draft` — Get one accessible Hashnode draft by ID from a Pro publication.
-- `get_post` — Get one published Hashnode post by ID, including Markdown and rendered HTML. [write]
+- `get_post` — Get one published Hashnode post by ID, including Markdown and rendered HTML.
 - `list_my_publications` — List publications available to the authenticated Hashnode user.
 - `list_publication_posts` — List posts from a Hashnode publication with cursor pagination; the publication must have an active Pro plan.
 - `publish_draft` — Publish an existing Hashnode draft from a Pro publication. [write]

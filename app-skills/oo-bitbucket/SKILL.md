@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bitbucket"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bitbucket"]
   icon: "https://static.oomol.com/logo/third-party/bitbucket.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_pipeline_variable` — Create a repository-level Bitbucket Pipelines variable. [write]
 - `create_pull_request` — Create a pull request in a Bitbucket repository. [write]
 - `create_pull_request_comment` — Create a comment on a Bitbucket pull request. [write]
-- `decline_pull_request` — Decline a Bitbucket pull request. [write]
+- `decline_pull_request` — Decline a Bitbucket pull request. [destructive]
 - `delete_branch` — Delete a branch from a Bitbucket repository. [destructive]
 - `delete_pipeline_variable` — Delete a repository-level Bitbucket Pipelines variable. [destructive]
 - `delete_repository` — Permanently delete a Bitbucket repository. [destructive]
@@ -54,7 +54,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_issue` — Get an issue from a repository that still supports the deprecated Bitbucket issue tracker.
 - `get_pipeline` — Get a Pipelines run from a Bitbucket repository.
 - `get_pull_request` — Get a pull request from a Bitbucket repository.
-- `get_pull_request_merge_task_status` — Get the status of an asynchronous Bitbucket pull request merge task. [write]
+- `get_pull_request_merge_task_status` — Get the status of an asynchronous Bitbucket pull request merge task.
 - `get_repository` — Get a Bitbucket repository by workspace and repository slug or UUID.
 - `get_snippet` — Get a Bitbucket snippet by workspace and encoded snippet ID.
 - `get_workspace` — Get a Bitbucket workspace by slug or UUID.
@@ -73,11 +73,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_workspace_members` — List members of a Bitbucket workspace.
 - `list_workspace_projects` — List projects in a Bitbucket workspace.
 - `list_workspaces` — List workspaces available to the authenticated Bitbucket user.
-- `merge_pull_request` — Merge a Bitbucket pull request. [write]
-- `run_pipeline` — Trigger a Bitbucket Pipelines run for a branch, tag, or commit.
-- `stop_pipeline` — Stop a running Bitbucket pipeline. [write]
-- `update_issue` — Update an issue in a repository that still supports the deprecated Bitbucket issue tracker. [write]
-- `update_pipeline_variable` — Replace a repository-level Bitbucket Pipelines variable. [write]
+- `merge_pull_request` — Merge a Bitbucket pull request. [destructive]
+- `run_pipeline` — Trigger a Bitbucket Pipelines run for a branch, tag, or commit. [write]
+- `stop_pipeline` — Stop a running Bitbucket pipeline. [destructive]
+- `update_issue` — Update an issue in a repository that still supports the deprecated Bitbucket issue tracker. [destructive]
+- `update_pipeline_variable` — Replace a repository-level Bitbucket Pipelines variable. [destructive]
 
 ## Safety
 

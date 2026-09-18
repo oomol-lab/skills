@@ -1,11 +1,11 @@
 ---
 name: oo-shopify-partner
-description: "Shopify Partner (shopify.com). Use this skill for ANY Shopify Partner request — searching and reading data. Whenever a task involves Shopify Partner, use this skill instead of calling the API directly."
+description: "Shopify Partner (shopify.com). Use this skill for ANY Shopify Partner request — reading, creating, and updating data. Whenever a task involves Shopify Partner, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shopify Partner"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["shopify_partner"]
   icon: "https://static.oomol.com/logo/third-party/shopify_partner.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_graphql` — Execute a JSON-friendly Shopify Partner GraphQL query or mutation against the connected organization.
+- `execute_graphql` — Execute a JSON-friendly Shopify Partner GraphQL query or mutation against the connected organization. [write]
 - `get_app` — Retrieve one Shopify Partner app by GraphQL global ID.
 - `list_app_events` — List app events for a Shopify Partner app.
 - `list_partner_events` — List historical Shopify Partner events for the authenticated organization.

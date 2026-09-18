@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "monday"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["monday"]
   icon: "https://static.oomol.com/logo/third-party/Monday.svg"
 ---
@@ -40,8 +40,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `activate_form` — Activate a monday Workform so it starts accepting submissions. [write]
 - `add_teams_to_board` — Add monday teams to a board as subscribers or owners. [write]
 - `add_users_to_board` — Add monday users to a board as subscribers or owners. [write]
-- `archive_board` — Archive a monday board. [write]
-- `archive_item` — Archive a monday item. [write]
+- `archive_board` — Archive a monday board. [destructive]
+- `archive_item` — Archive a monday item. [destructive]
 - `assign_department_members` — Assign users to a monday department on an enterprise account. [write]
 - `change_item_position` — Change a monday item's position on the same board. [write]
 - `change_multiple_column_values` — Change multiple monday column values in one mutation using the official JSON payload shape. [write]
@@ -90,14 +90,14 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_subitems_by_parent` — List monday subitems for one or more parent items.
 - `list_team_members` — List the members of a specific monday team.
 - `list_teams` — List monday teams, optionally filtering by team IDs.
-- `list_update_replies` — List monday replies for updates on one or more boards. [write]
+- `list_update_replies` — List monday replies for updates on one or more boards.
 - `list_updates` — List monday updates with optional date filtering.
 - `list_users` — List monday users with official root-level filters and pagination.
 - `list_workspaces` — List monday workspaces with official filters and pagination.
-- `move_item_to_board` — Move a monday item to another board and target group. [write]
+- `move_item_to_board` — Move a monday item to another board and target group. [destructive]
 - `move_item_to_group` — Move a monday item to another group on the same board. [write]
-- `set_item_description_content` — Replace a monday item description using markdown content. [write]
-- `update_board` — Update a monday board attribute with the official update_board mutation. [write]
+- `set_item_description_content` — Replace a monday item description using markdown content. [destructive]
+- `update_board` — Update a monday board attribute with the official update_board mutation. [destructive]
 - `update_column` — Update a monday column with the official update_column mutation. [write]
 - `update_dashboard` — Update a monday dashboard with the official dashboard mutation. [write]
 - `update_department` — Update a monday department on an enterprise account. [write]

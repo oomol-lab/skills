@@ -1,11 +1,11 @@
 ---
 name: oo-replicate
-description: "Replicate (replicate.com). Use this skill for ANY Replicate request — reading, creating, and updating data. Whenever a task involves Replicate, use this skill instead of calling the API directly."
+description: "Replicate (replicate.com). Use this skill for ANY Replicate request — reading, creating, updating, and deleting data. Whenever a task involves Replicate, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Replicate"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["replicate"]
   icon: "https://static.oomol.com/logo/third-party/replicate.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_prediction` — Cancel a running Replicate prediction by prediction ID. [write]
+- `cancel_prediction` — Cancel a running Replicate prediction by prediction ID. [destructive]
 - `create_prediction` — Create a Replicate prediction using JSON model input and optional synchronous wait headers. [write]
 - `get_account` — Retrieve the authenticated Replicate account for the connected API token.
 - `get_collection` — Retrieve one Replicate collection by slug.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "apaleo"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["apaleo"]
   icon: "https://static.oomol.com/logo/third-party/Apaleo.svg"
 ---
@@ -37,12 +37,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_property` — Archive a live property by ID. [write]
+- `archive_property` — Archive a live property by ID. [destructive]
 - `check_property_exists` — Check whether a property exists by ID.
 - `check_unit_attribute_exists` — Check whether a unit attribute definition exists by ID.
 - `check_unit_exists` — Check whether a unit exists by ID.
 - `check_unit_group_exists` — Check whether a unit group exists by ID.
-- `clone_property` — Clone an existing property into a new property with inventory and rate plans.
+- `clone_property` — Clone an existing property into a new property with inventory and rate plans. [write]
 - `count_properties` — Return the total number of properties accessible to the connected apaleo account.
 - `count_unit_groups` — Return the total number of unit groups matching the provided filters.
 - `count_units` — Return the total number of units matching the provided filters.
@@ -64,7 +64,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_unit_groups` — List unit groups with filters for property, unit group type, pagination, and embedded resources.
 - `list_units` — List units with filters for property, unit group, attributes, occupancy, maintenance state, archive state, and expansions.
 - `move_property_to_live` — Move a test property to live status. [write]
-- `replace_unit_group` — Completely replace the mutable fields of an existing unit group. [write]
+- `replace_unit_group` — Completely replace the mutable fields of an existing unit group. [destructive]
 - `reset_property_data` — Delete all transactional data for a test property. [destructive]
 
 ## Safety

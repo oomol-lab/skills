@@ -1,11 +1,11 @@
 ---
 name: oo-stealthgpt
-description: "StealthGPT (stealthgpt.ai). Use this skill for ANY StealthGPT request — searching and reading data. Whenever a task involves StealthGPT, use this skill instead of calling the API directly."
+description: "StealthGPT (stealthgpt.ai). Use this skill for ANY StealthGPT request — reading, creating, and updating data. Whenever a task involves StealthGPT, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "StealthGPT"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["stealthgpt"]
   icon: "https://static.oomol.com/logo/third-party/stealthgpt.svg"
 ---
@@ -38,9 +38,9 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `detect_ai_text` — Score how likely text is to be flagged as AI-generated with StealthGPT.
-- `generate_text` — Generate text from instructions with StealthGPT and return usage details.
+- `generate_text` — Generate text from instructions with StealthGPT and return usage details. [write]
 - `get_balance` — Get the current StealthGPT prepaid and pay-as-you-go word balance.
-- `humanize_text` — Humanize existing text with StealthGPT and return usage details.
+- `humanize_text` — Humanize existing text with StealthGPT and return usage details. [write]
 
 ## Safety
 

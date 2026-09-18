@@ -1,11 +1,11 @@
 ---
 name: oo-lingxing-mcp
-description: "Lingxing MCP (lingxing.com). Use this skill for ANY Lingxing MCP request — searching and reading data. Whenever a task involves Lingxing MCP, use this skill instead of calling the API directly."
+description: "Lingxing MCP (lingxing.com). Use this skill for ANY Lingxing MCP request — reading, creating, and updating data. Whenever a task involves Lingxing MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Lingxing MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lingxing_mcp"]
   icon: "https://static.oomol.com/logo/third-party/lingxing_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current Lingxing ERP MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because some Lingxing tools create or update ERP data.
+- `call_tool` — Call a current Lingxing ERP MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because some Lingxing tools create or update ERP data. [write]
 - `list_tools` — Discover the current Lingxing ERP MCP tools, behavior annotations, and live input schemas before choosing a tool to call.
 
 ## Safety

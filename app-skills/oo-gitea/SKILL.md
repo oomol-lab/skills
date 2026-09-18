@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gitea"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["gitea"]
   icon: "https://static.oomol.com/logo/third-party/Gitea.svg"
 ---
@@ -66,8 +66,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_repository_hook` — Delete a webhook from a Gitea repository. [destructive]
 - `delete_repository_key` — Delete a deploy key from a Gitea repository. [destructive]
 - `delete_tag` — Delete a tag from a Gitea repository. [destructive]
-- `dismiss_pull_request_review` — Dismiss a review on a Gitea pull request.
-- `fork_repository` — Fork a Gitea repository to the authenticated user or an organization.
+- `dismiss_pull_request_review` — Dismiss a review on a Gitea pull request. [destructive]
+- `fork_repository` — Fork a Gitea repository to the authenticated user or an organization. [write]
 - `get_branch` — Get a branch of a Gitea repository by name.
 - `get_collaborator_permission` — Get the permission level of a Gitea repository collaborator.
 - `get_commit` — Get a commit of a Gitea repository by SHA.
@@ -109,16 +109,16 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_repository_topics` — List topics of a Gitea repository.
 - `list_repository_watchers` — List watchers of a Gitea repository.
 - `list_tags` — List tags of a Gitea repository.
-- `merge_pull_request` — Merge a Gitea pull request. [write]
+- `merge_pull_request` — Merge a Gitea pull request. [destructive]
 - `remove_collaborator` — Remove a collaborator from a Gitea repository. [destructive]
 - `remove_issue_label` — Remove a label from a Gitea issue. [destructive]
 - `remove_pull_request_reviewers` — Remove requested reviewers from a Gitea pull request. [destructive]
-- `replace_issue_labels` — Replace all labels of a Gitea issue. [write]
-- `request_pull_request_reviewers` — Request reviews for a Gitea pull request from users or teams.
+- `replace_issue_labels` — Replace all labels of a Gitea issue. [destructive]
+- `request_pull_request_reviewers` — Request reviews for a Gitea pull request from users or teams. [write]
 - `search_repositories` — Search Gitea repositories by keyword with optional repository filters.
 - `star_repository` — Star a Gitea repository for the authenticated user. [write]
 - `submit_pull_request_review` — Submit a pending Gitea pull request review. [write]
-- `unstar_repository` — Remove a star from a Gitea repository for the authenticated user. [write]
+- `unstar_repository` — Remove a star from a Gitea repository for the authenticated user. [destructive]
 - `update_file` — Update or create a file in a Gitea repository. [write]
 - `update_issue` — Update an issue in a Gitea repository. [write]
 - `update_issue_comment` — Update a comment on a Gitea issue. [write]
@@ -129,7 +129,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_release` — Update a release of a Gitea repository. [write]
 - `update_repository` — Update settings of a Gitea repository. [write]
 - `update_repository_hook` — Update a webhook of a Gitea repository. [write]
-- `update_repository_topics` — Replace all topics of a Gitea repository. [write]
+- `update_repository_topics` — Replace all topics of a Gitea repository. [destructive]
 
 ## Safety
 

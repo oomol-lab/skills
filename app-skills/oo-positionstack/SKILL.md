@@ -1,11 +1,11 @@
 ---
 name: oo-positionstack
-description: "Positionstack (positionstack.com). Use this skill for ANY Positionstack request — reading, creating, and updating data. Whenever a task involves Positionstack, use this skill instead of calling the API directly."
+description: "Positionstack (positionstack.com). Use this skill for ANY Positionstack request — searching and reading data. Whenever a task involves Positionstack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Positionstack"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["positionstack"]
   icon: "https://static.oomol.com/logo/third-party/positionstack.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `forward_geocode` — Convert an address or place query into Positionstack geocoding results. [write]
+- `forward_geocode` — Convert an address or place query into Positionstack geocoding results.
 - `reverse_geocode` — Convert coordinates or an IP address into Positionstack reverse geocoding results.
 
 ## Safety

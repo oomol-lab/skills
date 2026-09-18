@@ -1,11 +1,11 @@
 ---
 name: oo-zip-archive-api
-description: "Zip Archive API (archiveapi.com). Use this skill for ANY Zip Archive API request — reading, creating, and updating data. Whenever a task involves Zip Archive API, use this skill instead of calling the API directly."
+description: "Zip Archive API (archiveapi.com). Use this skill for ANY Zip Archive API request — searching and reading data. Whenever a task involves Zip Archive API, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zip Archive API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zip_archive_api"]
   icon: "https://static.oomol.com/logo/third-party/zip_archive_api.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `compress_files` — Compress one or more publicly accessible files into a ZIP archive and return a transit download URL.
-- `extract_archive` — Extract a publicly accessible archive and return each extracted file through transit storage. [write]
+- `extract_archive` — Extract a publicly accessible archive and return each extracted file through transit storage.
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ClickMeeting"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["clickmeeting"]
   icon: "https://static.oomol.com/logo/third-party/clickmeeting.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_conference` — Create a ClickMeeting meeting or webinar room. [write]
 - `delete_conference` — Delete a ClickMeeting room. [destructive]
-- `generate_access_tokens` — Generate access tokens for a token-protected ClickMeeting room.
+- `generate_access_tokens` — Generate access tokens for a token-protected ClickMeeting room. [write]
 - `get_conference` — Get details for a ClickMeeting room.
 - `get_session` — Get details for a ClickMeeting room session.
 - `list_access_tokens` — List generated access tokens for a ClickMeeting room.

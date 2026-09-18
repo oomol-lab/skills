@@ -1,11 +1,11 @@
 ---
 name: oo-alpaca
-description: "Alpaca (alpaca.markets). Use this skill for ANY Alpaca request — reading, creating, and updating data. Whenever a task involves Alpaca, use this skill instead of calling the API directly."
+description: "Alpaca (alpaca.markets). Use this skill for ANY Alpaca request — searching and reading data. Whenever a task involves Alpaca, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alpaca"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["alpaca"]
   icon: "https://static.oomol.com/logo/third-party/alpaca.svg"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_market_calendar` — Get Alpaca Trading API US market calendar days.
 - `get_market_clock` — Get Alpaca Trading API US market clock information.
 - `get_option_contract` — Get one Alpaca option contract by contract symbol or ID.
-- `get_order` — Get one Alpaca order by order ID or client order ID. [write]
+- `get_order` — Get one Alpaca order by order ID or client order ID.
 - `get_position` — Get one open Alpaca position by symbol or asset ID.
 - `get_stock_bars` — Get historical OHLC stock bars from Alpaca Market Data API.
 - `get_stock_snapshots` — Get latest stock snapshots from Alpaca Market Data API.

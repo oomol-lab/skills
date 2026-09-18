@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Chatarmin"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["chatarmin"]
   icon: "https://static.oomol.com/logo/third-party/chatarmin.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `add_or_replace_voucher_codes` — Add new voucher codes to a Chatarmin pool or replace one unused code. [write]
+- `add_or_replace_voucher_codes` — Add new voucher codes to a Chatarmin pool or replace one unused code. [destructive]
 - `create_contact` — Create a new Chatarmin contact. [write]
 - `create_voucher_pool` — Create a Chatarmin voucher pool with an initial list of voucher codes. [write]
 - `create_webhook` — Create a Chatarmin webhook for one supported topic. [write]

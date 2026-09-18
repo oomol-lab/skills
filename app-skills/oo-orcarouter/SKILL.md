@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OrcaRouter"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["orcarouter"]
   icon: "https://static.oomol.com/logo/third-party/orcarouter.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create an OrcaRouter chat completion through the OpenAI-compatible `/chat/completions` endpoint. [write]
+- `create_chat_completion` — Create an OrcaRouter chat completion through the OpenAI-compatible `/chat/completions` endpoint.
 - `create_embeddings` — Create embeddings through the OpenAI-compatible `/embeddings` endpoint. [write]
 - `create_message` — Create an OrcaRouter Anthropic-format message through the `/messages` endpoint. [write]
 - `list_models` — List the models available through OrcaRouter.

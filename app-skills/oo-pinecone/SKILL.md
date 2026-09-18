@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pinecone"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["pinecone"]
   icon: "https://static.oomol.com/logo/third-party/pinecone.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `configure_index` — Configure an existing Pinecone index.
+- `configure_index` — Configure an existing Pinecone index. [write]
 - `create_index` — Create a Pinecone serverless index. [write]
 - `delete_index` — Delete one Pinecone index by name. [destructive]
 - `delete_vectors` — Delete vectors from a Pinecone index namespace by IDs, filter, or deleteAll. [destructive]

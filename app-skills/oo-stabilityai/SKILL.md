@@ -1,11 +1,11 @@
 ---
 name: oo-stabilityai
-description: "Stability AI (stability.ai). Use this skill for ANY Stability AI request — searching and reading data. Whenever a task involves Stability AI, use this skill instead of calling the API directly."
+description: "Stability AI (stability.ai). Use this skill for ANY Stability AI request — reading, creating, and updating data. Whenever a task involves Stability AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Stability AI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["stabilityai"]
   icon: "https://static.oomol.com/logo/third-party/stabilityai.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `text_to_audio` — Generate audio from a text prompt with Stability AI and upload the generated file to connector transit storage.
+- `text_to_audio` — Generate audio from a text prompt with Stability AI and upload the generated file to connector transit storage. [write]
 
 ## Safety
 

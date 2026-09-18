@@ -1,11 +1,11 @@
 ---
 name: oo-gift-up
-description: "Gift Up (giftup.com). Use this skill for ANY Gift Up request — reading, creating, and updating data. Whenever a task involves Gift Up, use this skill instead of calling the API directly."
+description: "Gift Up (giftup.com). Use this skill for ANY Gift Up request — reading, creating, updating, and deleting data. Whenever a task involves Gift Up, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gift Up"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["gift_up"]
   icon: "https://static.oomol.com/logo/third-party/gift_up.png"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_company` — Get the Gift Up company associated with the API key.
 - `get_gift_card` — Get one Gift Up gift card by code.
 - `get_item` — Get one Gift Up item by ID.
-- `get_order` — Get one Gift Up order by ID or order number. [write]
+- `get_order` — Get one Gift Up order by ID or order number.
 - `get_report_transaction` — Get one Gift Up report transaction by ID.
 - `list_gift_cards` — List Gift Up gift cards with optional filters.
 - `list_items` — List Gift Up items, optionally filtered by item group.
@@ -48,12 +48,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_orders` — List Gift Up orders with optional filters.
 - `list_promotions` — List Gift Up promotions.
 - `list_report_transactions` — List Gift Up report transactions with optional filters.
-- `reactivate_gift_card` — Reactivate a voided Gift Up gift card.
-- `redeem_gift_card` — Redeem a currency amount or units from a Gift Up gift card.
-- `redeem_gift_card_in_full` — Redeem all remaining balance from a Gift Up gift card.
-- `top_up_gift_card` — Add currency amount or units to a Gift Up gift card.
-- `undo_gift_card_redemption` — Undo a previous Gift Up gift card redemption transaction.
-- `void_gift_card` — Void a Gift Up gift card so it can no longer be redeemed.
+- `reactivate_gift_card` — Reactivate a voided Gift Up gift card. [write]
+- `redeem_gift_card` — Redeem a currency amount or units from a Gift Up gift card. [destructive]
+- `redeem_gift_card_in_full` — Redeem all remaining balance from a Gift Up gift card. [destructive]
+- `top_up_gift_card` — Add currency amount or units to a Gift Up gift card. [write]
+- `undo_gift_card_redemption` — Undo a previous Gift Up gift card redemption transaction. [write]
+- `void_gift_card` — Void a Gift Up gift card so it can no longer be redeemed. [destructive]
 
 ## Safety
 

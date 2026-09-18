@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SMS Alert"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["sms_alert"]
   icon: "https://static.oomol.com/logo/third-party/sms_alert.jpg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_otp` — Generate and send an OTP message through SMS Alert.
+- `generate_otp` — Generate and send an OTP message through SMS Alert. [write]
 - `get_credit_balance` — Get the remaining SMS Alert credits grouped by delivery route.
 - `list_sender_ids` — List the sender IDs available in the SMS Alert account.
 - `list_templates` — List SMS templates from the SMS Alert account with optional pagination.

@@ -1,11 +1,11 @@
 ---
 name: oo-ship-station
-description: "ShipStation (shipstation.com). Use this skill for ANY ShipStation request — reading, creating, and updating data. Whenever a task involves ShipStation, use this skill instead of calling the API directly."
+description: "ShipStation (shipstation.com). Use this skill for ANY ShipStation request — searching and reading data. Whenever a task involves ShipStation, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "ShipStation"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ship_station"]
   icon: "https://static.oomol.com/logo/third-party/ship_station.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_purchase_order` — Retrieve a ShipStation V2 purchase order by ID, including detailed product lines when returned. [write]
+- `get_purchase_order` — Retrieve a ShipStation V2 purchase order by ID, including detailed product lines when returned.
 - `list_inventory_levels` — List ShipStation V2 inventory stock levels and inventory-related properties for SKUs.
 - `list_inventory_warehouses` — List inventory warehouses configured in ShipStation V2.
 - `list_purchase_orders` — List ShipStation V2 purchase orders with optional filters and pagination.

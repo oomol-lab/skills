@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "YouTube"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["youtube"]
   icon: "https://static.oomol.com/logo/third-party/youtube.svg"
 ---
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_video_rating` — Get the authenticated user's rating for one or more YouTube videos.
 - `list_caption_tracks` — List YouTube caption tracks for a video or caption track IDs.
 - `list_channels` — List YouTube channel resources by ID, username, handle, or authenticated owner.
-- `list_comment_threads` — List top-level YouTube comment threads for a video, channel, or thread IDs. [write]
+- `list_comment_threads` — List top-level YouTube comment threads for a video, channel, or thread IDs.
 - `list_comments` — List YouTube comments by parent comment ID or comment IDs.
 - `list_i18n_languages` — List YouTube interface languages.
 - `list_i18n_regions` — List YouTube content regions.
@@ -57,7 +57,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_video_categories` — List YouTube video categories for a region or category IDs.
 - `list_videos` — List YouTube video resources by ID or chart.
 - `post_comment` — Post a top-level public comment on a YouTube video. [write]
-- `rate_video` — Set or clear the authenticated user's rating for a YouTube video. [write]
+- `rate_video` — Set or clear the authenticated user's rating for a YouTube video. [destructive]
 - `search` — Search YouTube for videos, channels, or playlists.
 - `set_thumbnail_from_url` — Upload and set a custom YouTube video thumbnail from an HTTPS image URL. [write]
 - `update_caption` — Update a YouTube caption track's metadata. [write]

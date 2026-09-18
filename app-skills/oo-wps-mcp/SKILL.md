@@ -1,11 +1,11 @@
 ---
 name: oo-wps-mcp
-description: "WPS MCP (wps.cn). Use this skill for ANY WPS MCP request — reading, creating, and updating data. Whenever a task involves WPS MCP, use this skill instead of calling the API directly."
+description: "WPS MCP (wps.cn). Use this skill for ANY WPS MCP request — reading, creating, updating, and deleting data. Whenever a task involves WPS MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "WPS MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wps_mcp"]
   icon: "https://static.oomol.com/logo/third-party/wps_mcp.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current WPS MCP tool with JSON arguments after checking its live schema and behavior annotations.
+- `call_tool` — Call a current WPS MCP tool with JSON arguments after checking its live schema and behavior annotations. [destructive]
 - `create_file_with_content` — Create a WPS document, PDF, spreadsheet, or smart sheet and populate it with JSON-friendly content. [write]
 - `create_folder` — Create a folder in a known WPS drive and parent folder. [write]
 - `get_file_info` — Get metadata, drive details, extended attributes, or permissions for a WPS file.

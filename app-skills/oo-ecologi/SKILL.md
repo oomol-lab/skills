@@ -1,11 +1,11 @@
 ---
 name: oo-ecologi
-description: "Ecologi (ecologi.com). Use this skill for ANY Ecologi request — searching and reading data. Whenever a task involves Ecologi, use this skill instead of calling the API directly."
+description: "Ecologi (ecologi.com). Use this skill for ANY Ecologi request — reading, creating, and updating data. Whenever a task involves Ecologi, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ecologi"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ecologi"]
   icon: "https://static.oomol.com/logo/third-party/ecologi.png"
 ---
@@ -42,11 +42,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_habitat_restoration_totals` — Get the confirmed and pending square metres of habitat restored by an Ecologi user.
 - `get_total_impact` — Get a combined view of an Ecologi user's confirmed and pending impact totals.
 - `get_tree_totals` — Get the confirmed and pending number of trees funded by an Ecologi user.
-- `purchase_carbon_avoidance` — Purchase Ecologi carbon avoidance by kilograms or tonnes.
-- `purchase_carbon_removal` — Purchase permanent Ecologi carbon removal measured in kilograms.
-- `purchase_habitat_restoration` — Purchase Ecologi habitat restoration measured in square metres.
-- `purchase_local_trees` — Purchase Ecologi tree planting in the UK, US, Australia, or Brazil.
-- `purchase_trees` — Purchase Ecologi tree planting with optional test mode, attribution, notification, and idempotency.
+- `purchase_carbon_avoidance` — Purchase Ecologi carbon avoidance by kilograms or tonnes. [write]
+- `purchase_carbon_removal` — Purchase permanent Ecologi carbon removal measured in kilograms. [write]
+- `purchase_habitat_restoration` — Purchase Ecologi habitat restoration measured in square metres. [write]
+- `purchase_local_trees` — Purchase Ecologi tree planting in the UK, US, Australia, or Brazil. [write]
+- `purchase_trees` — Purchase Ecologi tree planting with optional test mode, attribution, notification, and idempotency. [write]
 
 ## Safety
 

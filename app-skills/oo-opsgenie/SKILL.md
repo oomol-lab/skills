@@ -1,11 +1,11 @@
 ---
 name: oo-opsgenie
-description: "Opsgenie (atlassian.com). Use this skill for ANY Opsgenie request — reading, creating, and updating data. Whenever a task involves Opsgenie, use this skill instead of calling the API directly."
+description: "Opsgenie (atlassian.com). Use this skill for ANY Opsgenie request — reading, creating, updating, and deleting data. Whenever a task involves Opsgenie, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Opsgenie"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["opsgenie"]
   icon: "https://static.oomol.com/logo/third-party/opsgenie.png"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `acknowledge_alert` — Acknowledge an Opsgenie alert and return the asynchronous request ID.
-- `close_alert` — Close an Opsgenie alert and return the asynchronous request ID. [write]
+- `acknowledge_alert` — Acknowledge an Opsgenie alert and return the asynchronous request ID. [write]
+- `close_alert` — Close an Opsgenie alert and return the asynchronous request ID. [destructive]
 - `create_alert` — Create an Opsgenie alert and return the asynchronous request ID. [write]
 - `get_alert` — Get one Opsgenie alert by ID, tiny ID, or alias.
 - `get_current_account` — Validate the Opsgenie API key and return account information for the key.

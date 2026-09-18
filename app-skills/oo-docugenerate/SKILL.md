@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DocuGenerate"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["docugenerate"]
   icon: "https://static.oomol.com/logo/third-party/docugenerate.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `delete_document` — Permanently delete one generated DocuGenerate document by document ID. [destructive]
-- `generate_document` — Generate and store a DocuGenerate document from a template and JSON merge data, returning a download URL.
+- `generate_document` — Generate and store a DocuGenerate document from a template and JSON merge data, returning a download URL. [write]
 - `get_document` — Retrieve one generated DocuGenerate document by document ID.
 - `get_template` — Retrieve one DocuGenerate template by template ID.
 - `list_documents` — List all DocuGenerate documents generated from one template.

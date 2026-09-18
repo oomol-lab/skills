@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cyberimpact"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cyberimpact"]
   icon: "https://static.oomol.com/logo/third-party/cyberimpact.svg"
 ---
@@ -49,7 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_groups` — Retrieve a paginated list of Cyberimpact groups.
 - `list_members` — Retrieve a paginated list of Cyberimpact members with optional status, date, and sort filters.
 - `list_templates` — Retrieve a paginated list of Cyberimpact email templates.
-- `replace_template` — Replace a Cyberimpact email template by numerical ID. [write]
+- `replace_template` — Replace a Cyberimpact email template by numerical ID. [destructive]
 - `update_group` — Edit the title or visibility of a static Cyberimpact group. [write]
 - `update_member` — Edit one or more fields on a Cyberimpact member by email address or member ID. [write]
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WorkOS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["workos"]
   icon: "https://static.oomol.com/logo/third-party/workos.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_organization_memberships` — List WorkOS organization memberships filtered by user, organization, or membership status.
 - `list_organizations` — List WorkOS organizations with optional cursor, domain, and text filters.
 - `list_users` — List WorkOS AuthKit users with optional cursor and identity filters.
-- `reactivate_organization_membership` — Reactivate an inactive WorkOS organization membership.
+- `reactivate_organization_membership` — Reactivate an inactive WorkOS organization membership. [write]
 - `update_organization` — Update properties of an existing WorkOS organization. [write]
 - `update_organization_membership` — Update roles on an existing WorkOS organization membership. [write]
 - `update_user` — Update properties of an existing WorkOS AuthKit user. [write]

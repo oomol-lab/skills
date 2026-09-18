@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DeepSeek"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["deepseek"]
   icon: "https://static.oomol.com/logo/third-party/DeepSeek.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_anthropic_message` — Create a DeepSeek message via the Anthropic-compatible API. [write]
-- `create_chat_completion` — Create a DeepSeek chat completion via the OpenAI-compatible API. [write]
+- `create_chat_completion` — Create a DeepSeek chat completion via the OpenAI-compatible API.
 - `get_user_balance` — Get the current DeepSeek account balance.
 - `list_models` — List the available DeepSeek models.
 

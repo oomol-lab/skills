@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Simla.com"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["simla"]
   icon: "https://static.oomol.com/logo/third-party/simla.svg"
 ---
@@ -42,8 +42,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `edit_customer` — Edit a Simla customer by internal ID or external ID. [write]
 - `edit_order` — Edit a Simla order by internal ID or external ID. [write]
 - `get_customer` — Get full Simla customer information by internal ID or external ID.
-- `get_order` — Get full Simla order information by internal ID or external ID. [write]
-- `get_order_statuses` — Get Simla status information for orders by internal IDs or external IDs. [write]
+- `get_order` — Get full Simla order information by internal ID or external ID.
+- `get_order_statuses` — Get Simla status information for orders by internal IDs or external IDs.
 - `list_customers` — List Simla customers with optional pagination and filter parameters.
 - `list_orders` — List Simla orders with optional pagination and filter parameters.
 

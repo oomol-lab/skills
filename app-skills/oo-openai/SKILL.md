@@ -1,11 +1,11 @@
 ---
 name: oo-openai
-description: "OpenAI (openai.com). Use this skill for ANY OpenAI request — reading, creating, and updating data. Whenever a task involves OpenAI, use this skill instead of calling the API directly."
+description: "OpenAI (openai.com). Use this skill for ANY OpenAI request — reading, creating, updating, and deleting data. Whenever a task involves OpenAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenAI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["openai"]
   icon: "https://static.oomol.com/logo/third-party/OpenAI.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_batch` — Cancel one OpenAI batch job by its identifier. [write]
+- `cancel_batch` — Cancel one OpenAI batch job by its identifier. [destructive]
 - `create_audio_transcription` — Transcribe one uploaded audio file with the OpenAI audio transcription API. [write]
 - `create_audio_translation` — Translate one uploaded audio file into English with the OpenAI audio translation API. [write]
 - `create_batch` — Create an OpenAI batch job from an uploaded input file. [write]

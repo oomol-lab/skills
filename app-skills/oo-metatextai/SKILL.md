@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MetatextAI"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["metatextai"]
   icon: "https://static.oomol.com/logo/third-party/metatextai.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_policy` — Create one guardrail policy for the connected MetatextAI application. [write]
 - `evaluate` — Evaluate one chat transcript against the connected MetatextAI application's configured guardrails.
 - `list_policies` — List all guardrail policies configured for the connected MetatextAI application.
-- `run_test_scan` — Run a MetatextAI red-team test scan for the connected application with the selected probes.
+- `run_test_scan` — Run a MetatextAI red-team test scan for the connected application with the selected probes. [write]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-baremetrics
-description: "Baremetrics (baremetrics.com). Use this skill for ANY Baremetrics request — reading, creating, and updating data. Whenever a task involves Baremetrics, use this skill instead of calling the API directly."
+description: "Baremetrics (baremetrics.com). Use this skill for ANY Baremetrics request — reading, creating, updating, and deleting data. Whenever a task involves Baremetrics, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baremetrics"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["baremetrics"]
   icon: "https://static.oomol.com/logo/third-party/baremetrics.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_subscription` — Cancel a Baremetrics subscription at a documented cancellation timestamp. [write]
+- `cancel_subscription` — Cancel a Baremetrics subscription at a documented cancellation timestamp. [destructive]
 - `create_customer` — Create a customer record in a Baremetrics API source. [write]
 - `create_plan` — Create a plan for use in Baremetrics subscription records. [write]
 - `create_subscription` — Create a subscription in a Baremetrics API source. [write]

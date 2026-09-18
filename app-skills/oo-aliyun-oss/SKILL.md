@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alibaba Cloud OSS"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["aliyun_oss"]
   icon: "https://static.oomol.com/logo/third-party/alibabacloud.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `head_object` — Fetch structured metadata for one OSS object.
 - `list_buckets` — List OSS buckets visible to the connected Alibaba Cloud credential.
 - `list_objects` — List objects in an OSS bucket with the ListObjectsV2 API.
-- `put_object` — Upload one object to OSS from a public URL, plain text, or base64-encoded content. [write]
+- `put_object` — Upload one object to OSS from a public URL, plain text, or base64-encoded content. [destructive]
 
 ## Safety
 

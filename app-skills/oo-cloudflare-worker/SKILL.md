@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Worker"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["cloudflare_worker"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_build` — Cancel a queued or running Workers Builds job. [write]
+- `cancel_build` — Cancel a queued or running Workers Builds job. [destructive]
 - `create_manual_build` — Start a Workers Builds job from a configured trigger and branch or commit. [write]
 - `create_worker` — Create a Cloudflare Worker using the Workers beta API. [write]
 - `delete_worker` — Delete a Cloudflare Worker and its associated resources using the Workers beta API. [destructive]
@@ -57,11 +57,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_worker_scripts` — List Worker scripts in a Cloudflare account.
 - `list_workers` — List Workers in a Cloudflare account using the Workers beta API.
 - `patch_worker_script_settings` — Patch Worker metadata and configuration for a Cloudflare Worker script. [write]
-- `put_worker_script_content` — Replace only the content of a Cloudflare Worker script without changing metadata. [write]
-- `put_worker_script_secret` — Add or replace a secret_text binding on a Cloudflare Worker script. [write]
+- `put_worker_script_content` — Replace only the content of a Cloudflare Worker script without changing metadata. [destructive]
+- `put_worker_script_secret` — Add or replace a secret_text binding on a Cloudflare Worker script. [destructive]
 - `search_worker_scripts` — Search Worker scripts in a Cloudflare account by name or script tag.
-- `update_worker` — Replace a Cloudflare Worker using the Workers beta API, setting omitted fields to API defaults. [write]
-- `upload_worker_script` — Create or replace a Cloudflare Worker script by uploading a module bundle as multipart/form-data. [write]
+- `update_worker` — Replace a Cloudflare Worker using the Workers beta API, setting omitted fields to API defaults. [destructive]
+- `upload_worker_script` — Create or replace a Cloudflare Worker script by uploading a module bundle as multipart/form-data. [destructive]
 
 ## Safety
 

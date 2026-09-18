@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Email Routing"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cloudflare_email_routing"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_email_routing.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_routing_rule` — Delete a Cloudflare Email Routing rule from a zone. [destructive]
 - `list_destination_addresses` — List Cloudflare Email Routing destination addresses and their verification status.
 - `list_routing_rules` — List Cloudflare Email Routing rules for a zone or account.
-- `update_routing_rule` — Replace a Cloudflare Email Routing rule in a zone. [write]
+- `update_routing_rule` — Replace a Cloudflare Email Routing rule in a zone. [destructive]
 
 ## Safety
 

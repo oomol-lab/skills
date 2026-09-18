@@ -1,11 +1,11 @@
 ---
 name: oo-tidb
-description: "TiDB Cloud (pingcap.com). Use this skill for ANY TiDB Cloud request — reading, creating, and updating data. Whenever a task involves TiDB Cloud, use this skill instead of calling the API directly."
+description: "TiDB Cloud (pingcap.com). Use this skill for ANY TiDB Cloud request — searching and reading data. Whenever a task involves TiDB Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TiDB Cloud"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tidb"]
   icon: "https://static.oomol.com/logo/third-party/tidb.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_branch` — Fetch one TiDB Cloud Starter or Essential branch by branch ID.
 - `get_cluster` — Fetch one TiDB Cloud Starter, Essential, or Dedicated cluster by ID.
 - `get_export` — Fetch one TiDB Cloud Starter or Essential export task.
-- `get_import` — Fetch one TiDB Cloud Starter, Essential, or Dedicated import task. [write]
+- `get_import` — Fetch one TiDB Cloud Starter, Essential, or Dedicated import task.
 - `get_node_spec` — Fetch one TiDB Cloud Dedicated node spec by region, component type, and key.
 - `get_region` — Fetch one TiDB Cloud Dedicated region by region ID.
 - `list_api_keys` — List TiDB Cloud API keys visible to the connected organization API key.

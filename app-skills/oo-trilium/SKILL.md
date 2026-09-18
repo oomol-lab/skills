@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TriliumNext Notes"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["trilium"]
   icon: "https://static.oomol.com/logo/third-party/trilium.svg"
 ---
@@ -55,7 +55,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_attribute` — Update the value or position of a Trilium label, or the position of a relation. [write]
 - `update_branch` — Update the position, prefix, or expanded state of a Trilium branch. [write]
 - `update_note` — Update mutable metadata on a Trilium note. [write]
-- `update_note_content` — Replace the text content of a text-based Trilium note. [write]
+- `update_note_content` — Replace the text content of a text-based Trilium note. [destructive]
 - `upload_attachment` — Download a public file URL and upload it as a Trilium note attachment. [write]
 
 ## Safety

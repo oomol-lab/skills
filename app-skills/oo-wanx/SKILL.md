@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Wanx"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wanx"]
   icon: "https://static.oomol.com/logo/third-party/wanx.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_image` — Generate or edit images with the Wan Image 2.7 family.
+- `generate_image` — Generate or edit images with the Wan Image 2.7 family. [write]
 - `get_video_generation` — Retrieve a Wan 3.0 video task state and output.
 - `submit_video_generation` — Submit a unified asynchronous Wan 3.0 video generation task. [write]
 

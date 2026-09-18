@@ -1,11 +1,11 @@
 ---
 name: oo-fal-ai
-description: "fal.ai (fal.ai). Use this skill for ANY fal.ai request — reading, creating, and updating data. Whenever a task involves fal.ai, use this skill instead of calling the API directly."
+description: "fal.ai (fal.ai). Use this skill for ANY fal.ai request — reading, creating, updating, and deleting data. Whenever a task involves fal.ai, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "fal.ai"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["fal_ai"]
   icon: "https://static.oomol.com/logo/third-party/Fal.ai.svg"
 ---
@@ -37,14 +37,14 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_queue_request` — Cancel a queued or in-progress fal request using its cancellation URL. [write]
+- `cancel_queue_request` — Cancel a queued or in-progress fal request using its cancellation URL. [destructive]
 - `estimate_pricing` — Estimate total fal model cost using either historical API call quantities or expected billing-unit quantities.
 - `get_jwks` — Retrieve the fal JSON Web Key Set used for webhook signature verification.
 - `get_models` — Discover fal model endpoints with optional text search, status, category, pagination, endpoint filtering, and response expansion.
 - `get_pricing` — Retrieve unit pricing information for one or more fal model endpoints, including billing unit and currency.
 - `get_queue_request_result` — Retrieve the stored final result payload for a completed fal queued request.
 - `queue_get_status` — Check the status of a queued fal request, with optional log retrieval for in-progress or completed work.
-- `queue_get_status_stream` — Consume fal queue status updates as a streamed sequence of SSE events until the server closes the stream.
+- `queue_get_status_stream` — Consume fal queue status updates as a streamed sequence of SSE events until the server closes the stream. [write]
 - `submit_queue_request` — Submit a job to a fal model endpoint's async queue and return the URLs used to track it. [write]
 
 ## Safety

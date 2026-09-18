@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Databricks"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["databricks"]
   icon: "https://static.oomol.com/logo/third-party/Databricks.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_run` — Cancel a Databricks job run by run ID. [write]
+- `cancel_run` — Cancel a Databricks job run by run ID. [destructive]
 - `create_cluster` — Create a Databricks cluster from a raw official clusters create payload and return the new cluster ID. [write]
 - `create_job` — Create a Databricks job from a raw official Jobs API settings object and return the new job ID. [write]
 - `create_repo` — Create a Databricks workspace repo that links a Git remote into the connected workspace. [write]
@@ -61,8 +61,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_secret_scopes` — List Databricks secret scopes in the connected workspace.
 - `list_secrets` — List Databricks secret metadata rows in one secret scope.
 - `permanent_delete_cluster` — Permanently delete a Databricks cluster by cluster ID. [destructive]
-- `put_secret` — Create or overwrite a Databricks secret value inside one Databricks secret scope. [write]
-- `run_now_job` — Trigger an immediate run for a Databricks job with optional parameter maps and idempotency token.
+- `put_secret` — Create or overwrite a Databricks secret value inside one Databricks secret scope. [destructive]
+- `run_now_job` — Trigger an immediate run for a Databricks job with optional parameter maps and idempotency token. [write]
 - `start_cluster` — Start a terminated Databricks cluster by cluster ID. [write]
 - `submit_run` — Submit a one-time Databricks run from a raw official Jobs API submit payload and return the run ID. [write]
 - `update_job_by_id` — Update an existing Databricks job by ID using the official partial-update payload fields. [write]
@@ -72,7 +72,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `workspace_get_status` — Get metadata for one Databricks workspace object by absolute path.
 - `workspace_import` — Import base64 content into the Databricks workspace at an absolute path. [write]
 - `workspace_list` — List the direct Databricks workspace objects under a workspace path.
-- `workspace_mkdirs` — Create a Databricks workspace directory, including any missing parent directories.
+- `workspace_mkdirs` — Create a Databricks workspace directory, including any missing parent directories. [write]
 
 ## Safety
 
