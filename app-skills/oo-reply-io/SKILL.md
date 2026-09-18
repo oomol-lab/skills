@@ -1,11 +1,11 @@
 ---
 name: oo-reply-io
-description: "Reply.io (reply.io). Use this skill for ANY Reply.io request — reading, creating, and updating data. Whenever a task involves Reply.io, use this skill instead of calling the API directly."
+description: "Reply.io (reply.io). Use this skill for ANY Reply.io request — reading, creating, updating, and deleting data. Whenever a task involves Reply.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Reply.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["reply_io"]
   icon: "https://static.oomol.com/logo/third-party/reply_io.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_sequence` — Get a Reply.io sequence by ID.
 - `list_contacts` — List Reply.io contacts with optional pagination.
 - `list_sequences` — List Reply.io sequences with optional pagination and filters.
-- `pause_sequence` — Pause an active Reply.io sequence. [write]
+- `pause_sequence` — Pause an active Reply.io sequence. [destructive]
 - `start_sequence` — Start a paused or new Reply.io sequence. [write]
 - `update_contact` — Update a Reply.io contact by ID. [write]
 

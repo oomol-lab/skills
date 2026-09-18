@@ -1,11 +1,11 @@
 ---
 name: oo-pretix
-description: "pretix (pretix.eu). Use this skill for ANY pretix request — reading, creating, and updating data. Whenever a task involves pretix, use this skill instead of calling the API directly."
+description: "pretix (pretix.eu). Use this skill for ANY pretix request — searching and reading data. Whenever a task involves pretix, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "pretix"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pretix"]
   icon: "https://static.oomol.com/logo/third-party/pretix.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_event` — Get one pretix event by organizer and event slug.
 - `get_item` — Get one product or ticket item from a pretix event.
-- `get_order` — Get one pretix order by organizer, event, and order code. [write]
+- `get_order` — Get one pretix order by organizer, event, and order code.
 - `get_organizer` — Get one pretix organizer by slug.
 - `list_events` — List events belonging to a pretix organizer.
 - `list_items` — List products or ticket items configured for a pretix event.

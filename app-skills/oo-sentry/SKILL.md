@@ -1,11 +1,11 @@
 ---
 name: oo-sentry
-description: "Sentry (sentry.io). Use this skill for ANY Sentry request — reading, creating, and updating data. Whenever a task involves Sentry, use this skill instead of calling the API directly."
+description: "Sentry (sentry.io). Use this skill for ANY Sentry request — reading, creating, updating, and deleting data. Whenever a task involves Sentry, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sentry"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["sentry"]
   icon: "https://static.oomol.com/logo/third-party/Sentry.svg"
 ---
@@ -55,7 +55,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_organization_releases` — List releases that belong to a Sentry organization, optionally filtered by version prefix.
 - `list_organization_replays` — List session replays for a Sentry organization, with optional project and environment filters.
 - `list_organization_sentry_apps` — List the custom Sentry Apps created by a Sentry organization.
-- `update_issue` — Update mutable attributes on one Sentry issue, such as status, assignment, or bookmarks. [write]
+- `update_issue` — Update mutable attributes on one Sentry issue, such as status, assignment, or bookmarks. [destructive]
 
 ## Safety
 

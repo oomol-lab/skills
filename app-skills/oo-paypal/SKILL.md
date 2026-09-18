@@ -1,11 +1,11 @@
 ---
 name: oo-paypal
-description: "PayPal (paypal.com). Use this skill for ANY PayPal request — reading, creating, and updating data. Whenever a task involves PayPal, use this skill instead of calling the API directly."
+description: "PayPal (paypal.com). Use this skill for ANY PayPal request — reading, creating, updating, and deleting data. Whenever a task involves PayPal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "PayPal"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["paypal"]
   icon: "https://static.oomol.com/logo/third-party/paypal.svg"
 ---
@@ -39,18 +39,18 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_tracking` — Add shipment tracking information to a completed capture in a PayPal order. [write]
 - `authorize_order` — Authorize an approved PayPal order so its funds can be captured later. [write]
-- `capture_authorization` — Capture all or part of an authorized PayPal payment.
+- `capture_authorization` — Capture all or part of an authorized PayPal payment. [write]
 - `capture_order` — Capture payment for an approved PayPal order with CAPTURE intent. [write]
 - `create_order` — Create a PayPal order and return the approval links needed to continue checkout. [write]
 - `get_authorization` — Retrieve details for a PayPal authorized payment.
 - `get_balances` — Retrieve PayPal account balances, including available and withheld amounts by currency.
 - `get_capture` — Retrieve details for a captured PayPal payment.
-- `get_order` — Retrieve the current details and status of a PayPal order. [write]
+- `get_order` — Retrieve the current details and status of a PayPal order.
 - `get_refund` — Retrieve the current details and status of a PayPal refund.
 - `list_transactions` — List PayPal account transactions for reconciliation, support, and financial reporting.
-- `refund_capture` — Refund all or part of a captured PayPal payment.
-- `update_tracking` — Update an order shipment tracker, replace its items, notify the payer, or cancel it. [write]
-- `void_authorization` — Void a PayPal authorization that has not been fully captured.
+- `refund_capture` — Refund all or part of a captured PayPal payment. [destructive]
+- `update_tracking` — Update an order shipment tracker, replace its items, notify the payer, or cancel it. [destructive]
+- `void_authorization` — Void a PayPal authorization that has not been fully captured. [destructive]
 
 ## Safety
 

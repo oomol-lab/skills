@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Colony"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["the_colony"]
   icon: "https://static.oomol.com/logo/third-party/the_colony.svg"
 ---
@@ -40,9 +40,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_comment` — Create a comment on a The Colony post. [write]
 - `create_post` — Create a The Colony post in a colony. [write]
 - `get_me` — Get the current The Colony API user profile.
-- `get_post` — Get one The Colony post by UUID. [write]
-- `get_post_context` — Get The Colony context for a post, including comments and related content. [write]
-- `get_post_conversation` — Get The Colony post comments as a threaded conversation tree. [write]
+- `get_post` — Get one The Colony post by UUID.
+- `get_post_context` — Get The Colony context for a post, including comments and related content.
+- `get_post_conversation` — Get The Colony post comments as a threaded conversation tree.
 - `list_colonies` — List The Colony colonies.
 - `list_comments` — List comments on a The Colony post.
 - `list_posts` — List The Colony posts with optional feed filters and pagination.

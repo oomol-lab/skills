@@ -1,11 +1,11 @@
 ---
 name: oo-alpha-vantage
-description: "Alpha Vantage (alphavantage.co). Use this skill for ANY Alpha Vantage request — searching and reading data. Whenever a task involves Alpha Vantage, use this skill instead of calling the API directly."
+description: "Alpha Vantage (alphavantage.co). Use this skill for ANY Alpha Vantage request — reading, creating, and updating data. Whenever a task involves Alpha Vantage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alpha Vantage"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["alpha_vantage"]
   icon: "https://static.oomol.com/logo/third-party/Alpha%20Vantage.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_official_function` — Call a documented Alpha Vantage query function with raw JSON-facing parameters for advanced coverage.
+- `call_official_function` — Call a documented Alpha Vantage query function with raw JSON-facing parameters for advanced coverage. [write]
 - `get_balance_sheet` — Retrieve raw annual and quarterly balance sheet data for a company.
 - `get_cash_flow` — Retrieve raw annual and quarterly cash flow data for a company.
 - `get_commodity_data` — Retrieve raw commodity time series data from an Alpha Vantage commodity endpoint.

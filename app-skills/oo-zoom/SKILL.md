@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zoom"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["zoom"]
   icon: "https://static.oomol.com/logo/third-party/zoom.svg"
 ---
@@ -38,8 +38,8 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_meeting` — Create a Zoom meeting for a user with the core official scheduling fields and first-pass settings. [write]
-- `get_user` — Fetch one Zoom user by user ID, email address, or me when supported by the app. [write]
-- `list_meetings` — List scheduled, live, upcoming, or previous meetings for a Zoom user using official pagination. [write]
+- `get_user` — Fetch one Zoom user by user ID, email address, or me when supported by the app.
+- `list_meetings` — List scheduled, live, upcoming, or previous meetings for a Zoom user using official pagination.
 - `update_meeting` — Update a Zoom meeting by meeting ID with the core official scheduling fields and first-pass settings. [write]
 
 ## Safety

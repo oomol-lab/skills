@@ -1,11 +1,11 @@
 ---
 name: oo-eversign
-description: "Xodo Sign (eversign.com). Use this skill for ANY Xodo Sign request — reading, creating, and updating data. Whenever a task involves Xodo Sign, use this skill instead of calling the API directly."
+description: "Xodo Sign (eversign.com). Use this skill for ANY Xodo Sign request — reading, creating, updating, and deleting data. Whenever a task involves Xodo Sign, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Xodo Sign"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["eversign"]
   icon: "https://static.oomol.com/logo/third-party/eversign.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_businesses` — List businesses available to the connected Xodo Sign API key.
 - `list_documents` — List Xodo Sign documents for a business, optionally filtering by documented status.
 - `list_templates` — List active, archived, or draft Xodo Sign templates for a business.
-- `reassign_signer` — Replace a signer on a Xodo Sign document and notify the affected participants. [write]
+- `reassign_signer` — Replace a signer on a Xodo Sign document and notify the affected participants. [destructive]
 - `send_reminder` — Send a reminder to one signer of a Xodo Sign document. [write]
 
 ## Safety

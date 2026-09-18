@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ImageKit"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["imagekit"]
   icon: "https://static.oomol.com/logo/third-party/imagekit.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `delete_file` — Delete one ImageKit file and all of its versions permanently. [destructive]
 - `get_file_details` — Get details for the current version of an ImageKit file.
-- `get_purge_status` — Get the status of an ImageKit cache purge request. [destructive]
+- `get_purge_status` — Get the status of an ImageKit cache purge request.
 - `get_remote_file_metadata` — Get image or video metadata from a remote URL through ImageKit.
 - `get_uploaded_file_metadata` — Get image or video metadata for an uploaded ImageKit file.
 - `list_assets` — List or search assets in the ImageKit media library.

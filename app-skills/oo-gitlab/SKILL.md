@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitLab"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["gitlab"]
   icon: "https://static.oomol.com/logo/third-party/gitlab.svg"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_project` — Get a GitLab project by numeric ID or URL-encoded path with namespace.
 - `get_project_issue` — Get a single issue from a GitLab project by its internal issue ID.
 - `list_project_issues` — List issues for a GitLab project with common state, label, assignee, and search filters.
-- `list_project_merge_requests` — List merge requests for a GitLab project with state, branch, search, and pagination filters. [write]
+- `list_project_merge_requests` — List merge requests for a GitLab project with state, branch, search, and pagination filters.
 - `list_projects` — List GitLab projects visible to the authenticated personal access token, with optional search and membership filters.
 - `merge_merge_request` — Accept and merge a GitLab merge request. [write]
 - `update_merge_request` — Update a GitLab merge request. [write]

@@ -1,11 +1,11 @@
 ---
 name: oo-excalidraw-mcp
-description: "Excalidraw MCP (excalidraw.com). Use this skill for ANY Excalidraw MCP request — reading, creating, and updating data. Whenever a task involves Excalidraw MCP, use this skill instead of calling the API directly."
+description: "Excalidraw MCP (excalidraw.com). Use this skill for ANY Excalidraw MCP request — searching and reading data. Whenever a task involves Excalidraw MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Excalidraw MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["excalidraw_mcp"]
   icon: "https://static.oomol.com/logo/third-party/excalidraw_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_view` — Render a hand-drawn Excalidraw diagram from a JSON array string of elements. [write]
+- `create_view` — Render a hand-drawn Excalidraw diagram from a JSON array string of elements.
 - `read_me` — Fetch the Excalidraw element format guide and drawing tips from the MCP server.
 
 ## Safety

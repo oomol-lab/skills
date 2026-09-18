@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "L2S"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["l2s"]
   icon: "https://static.oomol.com/logo/third-party/l2s.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_url_details` — Get the stored details for one shortened URL in L2S.
-- `shorten_url` — Create a shortened URL in L2S with optional custom key, UTM tags, and title.
+- `shorten_url` — Create a shortened URL in L2S with optional custom key, UTM tags, and title. [write]
 - `update_url_details` — Update the stored details for one shortened URL in L2S. [write]
 
 ## Safety

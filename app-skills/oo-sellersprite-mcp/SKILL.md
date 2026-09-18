@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SellerSprite MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sellersprite_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sellersprite_mcp.svg"
 ---
@@ -47,13 +47,13 @@ Each action is listed below with a one-line description; actions that change sta
 - `asin_prediction` — Retrieve SellerSprite sales predictions for one Amazon ASIN.
 - `asin_sales_trend` — Retrieve the historical sales trend for one Amazon ASIN.
 - `bsr_prediction` — Estimate Amazon product sales from a Best Sellers Rank and top-level category.
-- `call_tool` — Call a current SellerSprite MCP tool with JSON arguments after inspecting its live schema and behavior annotations with list_tools.
+- `call_tool` — Call a current SellerSprite MCP tool with JSON arguments after inspecting its live schema and behavior annotations with list_tools. [write]
 - `competitor_lookup` — Find competing Amazon products by marketplace, category, brand, seller, ASIN, keyword, and product filters.
 - `google_trend` — Retrieve Google Trends interest data for an Amazon marketplace keyword.
 - `keepa_info` — Retrieve SellerSprite's Keepa-style historical product trend data for one Amazon ASIN.
 - `keyword_conversion` — Analyze Amazon keyword search, click, purchase, conversion, advertising, price, and budget performance.
 - `keyword_miner` — Discover related Amazon keywords using search volume, purchase, competition, relevancy, PPC, price, and review filters.
-- `keyword_order` — Reverse-search the weekly or monthly Amazon keywords that generated orders for selected ASINs. [write]
+- `keyword_order` — Reverse-search the weekly or monthly Amazon keywords that generated orders for selected ASINs.
 - `keyword_research` — Research Amazon keywords using search, purchase, competition, price, review, growth, PPC, and demand filters.
 - `keyword_research_trends` — Retrieve the historical SellerSprite trend for one Amazon keyword.
 - `list_tools` — Discover the current SellerSprite Amazon research and market-data MCP tools with their live input schemas and behavior annotations.

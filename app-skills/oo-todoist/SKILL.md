@@ -1,11 +1,11 @@
 ---
 name: oo-todoist
-description: "Todoist (todoist.com). Use this skill for ANY Todoist request — reading, creating, and updating data. Whenever a task involves Todoist, use this skill instead of calling the API directly."
+description: "Todoist (todoist.com). Use this skill for ANY Todoist request — reading, creating, updating, and deleting data. Whenever a task involves Todoist, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Todoist"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["todoist"]
   icon: "https://static.oomol.com/logo/third-party/Todoist.svg"
 ---
@@ -37,12 +37,12 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `close_task` — Mark a Todoist task complete. Recurring tasks advance to their next occurrence. [write]
+- `close_task` — Mark a Todoist task complete. Recurring tasks advance to their next occurrence. [destructive]
 - `create_comment` — Create a Todoist comment on exactly one task or project. [write]
 - `create_project` — Create a Todoist project with optional description, color, parent, view style, and workspace placement. [write]
 - `create_section` — Create a Todoist section inside a project. [write]
 - `create_task` — Create a Todoist task with optional project, section, parent, labels, assignment, due date, deadline, and duration fields. [write]
-- `get_comment` — Get a Todoist comment by comment ID. [write]
+- `get_comment` — Get a Todoist comment by comment ID.
 - `get_current_user` — Retrieve the current Todoist user profile and plan metadata.
 - `get_project` — Get a Todoist project by project ID.
 - `get_section` — Get a Todoist section by section ID.

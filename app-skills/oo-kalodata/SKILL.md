@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kalodata"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["kalodata"]
   icon: "https://static.oomol.com/logo/third-party/kalodata.svg"
 ---
@@ -39,16 +39,25 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_category` — Get Kalodata analytics for one TikTok product category.
 - `get_creator` — Get Kalodata analytics for one TikTok creator.
+- `get_creator_avatar_images` — Get signed avatar URLs for up to 100 TikTok creators, keyed by creator ID. Use the URLs promptly and observe expires_at.
+- `get_creator_by_handle` — Look up a TikTok creator by account handle. Matching can be fuzzy; verify creator_handle in the returned detail before using it.
+- `get_credit_balance` — Get the remaining Kalodata credits for the connected account.
 - `get_livestream` — Get Kalodata analytics for one TikTok livestream.
 - `get_product` — Get Kalodata analytics for one TikTok product.
+- `get_product_analysis` — Get product selling points and specification attributes. If analysis is still being generated, poll this action with the same input until status is ready.
+- `get_product_images` — Get signed product gallery image URLs and their expiration time. Use the URLs promptly; they typically expire in about five minutes.
+- `get_product_review_insights` — Get AI review insights for a TikTok product, including buyer pain points, positives, scenarios, and original comments. Kalodata credits may be consumed.
 - `get_shop` — Get Kalodata analytics for one TikTok shop.
 - `get_video` — Get Kalodata analytics for one TikTok video.
+- `get_video_url` — Get a signed playable video URL and its expiration time. Use the URL promptly; it typically expires in about five minutes.
 - `list_categories` — List TikTok product categories ranked by Kalodata analytics and optional filters.
 - `list_creators` — List TikTok creators ranked by Kalodata analytics and optional filters.
+- `list_credit_logs` — List Kalodata credit consumption records by date and page. Top-ups and refunds are not included.
 - `list_livestreams` — List TikTok livestreams ranked by Kalodata analytics and optional filters.
 - `list_products` — List TikTok products ranked by Kalodata analytics and optional filters.
 - `list_shops` — List TikTok shops ranked by Kalodata analytics and optional filters.
 - `list_videos` — List TikTok videos ranked by Kalodata analytics and optional filters.
+- `search_categories` — Find TikTok Shop category IDs by keyword for subsequent ranking and detail queries.
 
 ## Safety
 

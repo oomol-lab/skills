@@ -1,11 +1,11 @@
 ---
 name: oo-pagerduty
-description: "PagerDuty (pagerduty.com). Use this skill for ANY PagerDuty request — reading, creating, and updating data. Whenever a task involves PagerDuty, use this skill instead of calling the API directly."
+description: "PagerDuty (pagerduty.com). Use this skill for ANY PagerDuty request — reading, creating, updating, and deleting data. Whenever a task involves PagerDuty, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "PagerDuty"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pagerduty"]
   icon: "https://static.oomol.com/logo/third-party/pagerduty.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `acknowledge_incident` — Acknowledge a PagerDuty incident as the specified user.
+- `acknowledge_incident` — Acknowledge a PagerDuty incident as the specified user. [destructive]
 - `get_current_user` — Get the PagerDuty user associated with the API token.
 - `get_incident` — Get a PagerDuty incident by ID.
 - `list_incidents` — List PagerDuty incidents with status, service, assignment, and paging filters.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bitly"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bitly"]
   icon: "https://static.oomol.com/logo/third-party/bitly.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_group` — Get details for a Bitly group.
 - `get_user` — Get the authenticated Bitly user details.
 - `list_groups` — List Bitly groups available to the authenticated user.
-- `shorten_link` — Create a short Bitly link for a destination URL.
+- `shorten_link` — Create a short Bitly link for a destination URL. [write]
 - `update_bitlink` — Update editable fields on an existing Bitly Bitlink. [write]
 
 ## Safety

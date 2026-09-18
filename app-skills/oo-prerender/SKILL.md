@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Prerender"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["prerender"]
   icon: "https://static.oomol.com/logo/third-party/prerender.svg"
 ---
@@ -39,8 +39,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_sitemap` — Submit a sitemap XML URL to Prerender so it can discover and cache new URLs from that sitemap. [write]
 - `clear_cache` — Queue a Prerender cache clear request for URLs matching a wildcard query pattern. [destructive]
-- `get_cache_clear_status` — Check whether a Prerender cache clear job is currently running for the authenticated account. [destructive]
-- `recache_urls` — Queue one or more URLs for first-time caching or recaching with the Prerender recache API.
+- `get_cache_clear_status` — Check whether a Prerender cache clear job is currently running for the authenticated account.
+- `recache_urls` — Queue one or more URLs for first-time caching or recaching with the Prerender recache API. [write]
 
 ## Safety
 

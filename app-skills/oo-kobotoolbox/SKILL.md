@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "KoboToolbox"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["kobotoolbox"]
   icon: "https://static.oomol.com/logo/third-party/kobotoolbox.svg"
 ---
@@ -37,16 +37,16 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `clone_project` — Clone an existing KoboToolbox asset into a new survey project.
+- `clone_project` — Clone an existing KoboToolbox asset into a new survey project. [write]
 - `create_project` — Create a new draft KoboToolbox survey project. [write]
 - `delete_submission` — Permanently delete one KoboToolbox form submission. [destructive]
-- `deploy_project` — Deploy or redeploy the current form version for a KoboToolbox project. [write]
+- `deploy_project` — Deploy or redeploy the current form version for a KoboToolbox project. [destructive]
 - `get_asset` — Retrieve one KoboToolbox project or library asset by UID.
 - `get_export` — Get the status and download URL of a KoboToolbox export task.
 - `get_submission` — Retrieve one KoboToolbox form submission by ID or UUID.
 - `list_assets` — List KoboToolbox projects and library assets visible to the connected account.
 - `list_submissions` — List form submissions for a KoboToolbox project.
-- `set_submission_validation` — Replace the validation status of one KoboToolbox submission. [write]
+- `set_submission_validation` — Replace the validation status of one KoboToolbox submission. [destructive]
 - `start_export` — Start an asynchronous KoboToolbox submission data export. [write]
 
 ## Safety

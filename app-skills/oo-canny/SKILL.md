@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Canny"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["canny"]
   icon: "https://static.oomol.com/logo/third-party/Canny.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_posts` — List Canny posts with optional filtering, search, sorting, and pagination.
 - `list_users` — List Canny users with cursor-based pagination.
 - `retrieve_board` — Retrieve a single Canny board by board ID.
-- `retrieve_post` — Retrieve a single Canny post by post ID. [write]
+- `retrieve_post` — Retrieve a single Canny post by post ID.
 - `retrieve_user` — Retrieve a single Canny user by id, userID, or email.
 - `update_post` — Update mutable fields on an existing Canny post. [write]
 

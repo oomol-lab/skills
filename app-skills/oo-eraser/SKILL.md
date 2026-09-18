@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Eraser"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["eraser"]
   icon: "https://static.oomol.com/logo/third-party/eraser.svg"
 ---
@@ -37,18 +37,18 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_file` — Archive an Eraser file. [write]
+- `archive_file` — Archive an Eraser file. [destructive]
 - `create_diagram` — Create a diagram from Eraser DSL inside an existing file. [write]
 - `create_file` — Create an Eraser file with optional Markdown content. [write]
 - `delete_diagram` — Delete a diagram from an Eraser file. [destructive]
-- `generate_diagram_from_dsl` — Render Eraser DSL into a diagram image and optional editable Eraser file.
-- `generate_diagram_from_prompt` — Generate or revise an Eraser diagram from a natural-language prompt.
+- `generate_diagram_from_dsl` — Render Eraser DSL into a diagram image and optional editable Eraser file. [write]
+- `generate_diagram_from_prompt` — Generate or revise an Eraser diagram from a natural-language prompt. [write]
 - `get_diagram` — Get one diagram from an Eraser file.
 - `get_file` — Get an Eraser file and its current content.
 - `list_diagrams` — List diagrams contained in an Eraser file.
 - `list_files` — List files available to the authenticated Eraser team.
-- `update_diagram` — Replace the Eraser DSL source of a diagram in a file. [write]
-- `update_file` — Replace selected metadata or Markdown content of an Eraser file. [write]
+- `update_diagram` — Replace the Eraser DSL source of a diagram in a file. [destructive]
+- `update_file` — Replace selected metadata or Markdown content of an Eraser file. [destructive]
 
 ## Safety
 

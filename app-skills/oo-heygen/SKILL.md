@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HeyGen"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["heygen"]
   icon: "https://static.oomol.com/logo/third-party/HeyGen.svg"
 ---
@@ -39,8 +39,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `delete_asset` — Delete a HeyGen asset that is no longer needed. [destructive]
 - `delete_video` — Delete a generated or translated HeyGen video that is no longer needed. [destructive]
-- `generate_template_video` — Start an asynchronous HeyGen template video generation job with explicit template variables.
-- `generate_video` — Start an asynchronous HeyGen avatar video generation job and return the generated video ID.
+- `generate_template_video` — Start an asynchronous HeyGen template video generation job with explicit template variables. [write]
+- `generate_video` — Start an asynchronous HeyGen avatar video generation job and return the generated video ID. [write]
 - `get_avatar` — Retrieve details for a single HeyGen avatar by avatar ID.
 - `get_current_user` — Retrieve profile information for the HeyGen account associated with the API key.
 - `get_remaining_quota` — Retrieve the remaining generation quota for the authenticated HeyGen account.

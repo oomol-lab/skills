@@ -1,11 +1,11 @@
 ---
 name: oo-baselinker
-description: "BaseLinker (baselinker.com). Use this skill for ANY BaseLinker request — reading, creating, and updating data. Whenever a task involves BaseLinker, use this skill instead of calling the API directly."
+description: "BaseLinker (baselinker.com). Use this skill for ANY BaseLinker request — searching and reading data. Whenever a task involves BaseLinker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "BaseLinker"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["baselinker"]
   icon: "https://static.oomol.com/logo/third-party/baselinker.svg"
 ---
@@ -40,8 +40,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_inventories` — List inventory catalogs available in BaseLinker storage.
 - `list_inventory_products` — List basic product data from a BaseLinker inventory catalog.
 - `list_inventory_warehouses` — List warehouses available in BaseLinker inventories.
-- `list_order_events` — List recent BaseLinker order events from the order journal. [write]
-- `list_order_statuses` — List order statuses configured in the BaseLinker order manager. [write]
+- `list_order_events` — List recent BaseLinker order events from the order journal.
+- `list_order_statuses` — List order statuses configured in the BaseLinker order manager.
 - `list_orders` — List BaseLinker orders using official order manager filters, returning up to 100 orders.
 
 ## Safety

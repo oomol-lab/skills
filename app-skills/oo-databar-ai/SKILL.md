@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Databar.ai"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["databar_ai"]
   icon: "https://static.oomol.com/logo/third-party/databar_ai.svg"
 ---
@@ -46,8 +46,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `insert_rows` — Insert up to 50 rows into a Databar table using human-readable column names. [write]
 - `list_enrichments` — List Databar enrichments with optional search and pagination.
 - `list_tables` — List Databar tables in the current workspace.
-- `run_enrichment` — Submit a Databar enrichment task and return the task ID for later status polling.
-- `run_waterfall` — Submit a Databar waterfall task and return the task ID for later status polling.
+- `run_enrichment` — Submit a Databar enrichment task and return the task ID for later status polling. [write]
+- `run_waterfall` — Submit a Databar waterfall task and return the task ID for later status polling. [write]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-mapbox
-description: "Mapbox (mapbox.com). Use this skill for ANY Mapbox request — reading, creating, and updating data. Whenever a task involves Mapbox, use this skill instead of calling the API directly."
+description: "Mapbox (mapbox.com). Use this skill for ANY Mapbox request — searching and reading data. Whenever a task involves Mapbox, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mapbox"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mapbox"]
   icon: "https://static.oomol.com/logo/third-party/Mapbox.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `batch_geocode` — Submit multiple forward or reverse geocoding queries in one Mapbox batch request.
-- `forward_geocode` — Convert free-form text into geographic features with Mapbox Geocoding v6. [write]
+- `forward_geocode` — Convert free-form text into geographic features with Mapbox Geocoding v6.
 - `get_directions` — Compute a route between multiple coordinates with the Mapbox Directions API.
 - `get_matrix` — Compute a travel time or distance matrix with the Mapbox Matrix API.
 - `reverse_geocode` — Convert a coordinate pair into place features with Mapbox Geocoding v6.

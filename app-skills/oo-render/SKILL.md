@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Render"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["render"]
   icon: "https://static.oomol.com/logo/third-party/Render.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `restart_service` — Restart a Render service. [write]
 - `resume_service` — Resume a suspended Render service. [write]
 - `rollback_deploy` — Trigger a rollback to a previous deploy for a Render service. [destructive]
-- `suspend_service` — Suspend a Render service.
+- `suspend_service` — Suspend a Render service. [destructive]
 - `trigger_deploy` — Trigger a new deploy for a Render service. [write]
 
 ## Safety

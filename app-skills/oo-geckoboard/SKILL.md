@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Geckoboard"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["geckoboard"]
   icon: "https://static.oomol.com/logo/third-party/geckoboard.png"
 ---
@@ -37,10 +37,10 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `append_dataset_data` — Append records to a Geckoboard dataset, updating existing rows when unique_by fields match.
+- `append_dataset_data` — Append records to a Geckoboard dataset, updating existing rows when unique_by fields match. [destructive]
 - `delete_dataset` — Delete a Geckoboard dataset by identifier. [destructive]
 - `find_or_create_dataset` — Find or create a Geckoboard dataset with a declared field schema. [write]
-- `replace_dataset_data` — Replace all records in a Geckoboard dataset with the supplied records. [write]
+- `replace_dataset_data` — Replace all records in a Geckoboard dataset with the supplied records. [destructive]
 
 ## Safety
 

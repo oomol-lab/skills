@@ -1,11 +1,11 @@
 ---
 name: oo-qase
-description: "Qase (qase.io). Use this skill for ANY Qase request — reading, creating, and updating data. Whenever a task involves Qase, use this skill instead of calling the API directly."
+description: "Qase (qase.io). Use this skill for ANY Qase request — reading, creating, updating, and deleting data. Whenever a task involves Qase, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Qase"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["qase"]
   icon: "https://static.oomol.com/logo/third-party/qase.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `complete_run` — Complete an active test run in a Qase project. [write]
+- `complete_run` — Complete an active test run in a Qase project. [destructive]
 - `create_case` — Create a test case in a Qase project. [write]
 - `create_run` — Create a test run in a Qase project. [write]
 - `get_case` — Retrieve one test case from a Qase project.

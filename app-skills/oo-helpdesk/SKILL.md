@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HelpDesk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["helpdesk"]
   icon: "https://static.oomol.com/logo/third-party/helpdesk.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_agents` — List HelpDesk agents available for ticket assignment and following.
 - `list_teams` — List HelpDesk teams available for ticket assignment and visibility.
 - `list_tickets` — List and search HelpDesk tickets with documented filters and composite cursor pagination.
-- `move_ticket_to_silo` — Move a HelpDesk ticket between the active, archive, trash, or spam silos. [write]
+- `move_ticket_to_silo` — Move a HelpDesk ticket between the active, archive, trash, or spam silos. [destructive]
 - `update_ticket` — Partially update a HelpDesk ticket and optionally add one plain-text public or private message. [write]
 
 ## Safety

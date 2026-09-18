@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mailchimp"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mailchimp"]
   icon: "https://static.oomol.com/logo/third-party/Mailchimp.svg"
 ---
@@ -37,16 +37,16 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `archive_member` — Archive a Mailchimp member from the specified audience/list. [write]
+- `archive_member` — Archive a Mailchimp member from the specified audience/list. [destructive]
 - `delete_member_permanently` — Permanently delete a Mailchimp member from the specified audience/list. [destructive]
 - `get_list` — Fetch a single Mailchimp audience/list by ID.
 - `get_member` — Fetch a single Mailchimp member by subscriber hash or email address.
 - `list_lists` — List Mailchimp audiences/lists visible to the current API key.
 - `list_member_tags` — List tags currently attached to a Mailchimp member.
 - `list_members` — List members in a Mailchimp audience/list.
-- `list_merge_fields` — List merge fields defined for a Mailchimp audience/list. [write]
+- `list_merge_fields` — List merge fields defined for a Mailchimp audience/list.
 - `update_member` — Patch an existing Mailchimp member by subscriber hash or email address. [write]
-- `update_member_tags` — Add or remove Mailchimp member tags using the official tag-update endpoint. [write]
+- `update_member_tags` — Add or remove Mailchimp member tags using the official tag-update endpoint. [destructive]
 - `upsert_member` — Add or update a Mailchimp member using the official upsert endpoint. [write]
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-airbrake
-description: "Airbrake (airbrake.io). Use this skill for ANY Airbrake request — reading, creating, and updating data. Whenever a task involves Airbrake, use this skill instead of calling the API directly."
+description: "Airbrake (airbrake.io). Use this skill for ANY Airbrake request — searching and reading data. Whenever a task involves Airbrake, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Airbrake"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["airbrake"]
   icon: "https://static.oomol.com/logo/third-party/airbrake.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_deploy` — Get details for one Airbrake deploy. [write]
+- `get_deploy` — Get details for one Airbrake deploy.
 - `get_group` — Get details for one Airbrake error group.
 - `get_notice_status` — Get Airbrake processing status for a notice UUID.
 - `get_project` — Get details for one Airbrake project.

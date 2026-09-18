@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Faktoora"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["faktoora"]
   icon: "https://static.oomol.com/logo/third-party/faktoora.svg"
 ---
@@ -37,10 +37,10 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `attach_project_document` — Attach one Faktoora document to an empty project.
+- `attach_project_document` — Attach one Faktoora document to an empty project. [write]
 - `create_project` — Create a Faktoora project. [write]
 - `delete_project` — Permanently delete a Faktoora project without deleting its attached document. [destructive]
-- `detach_project_document` — Detach one Faktoora document from a project.
+- `detach_project_document` — Detach one Faktoora document from a project. [destructive]
 - `get_project` — Retrieve a Faktoora project by UUID.
 - `list_projects` — List Faktoora projects with pagination, filtering, and sorting.
 - `update_project` — Partially update a Faktoora project. [write]

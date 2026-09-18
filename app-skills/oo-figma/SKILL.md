@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Figma"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["figma"]
   icon: "https://static.oomol.com/logo/third-party/figma.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_comment_reaction` — Delete an emoji reaction created by the authenticated user. [destructive]
 - `delete_dev_resource` — Delete a Figma dev resource from a main file. [destructive]
 - `get_component` — Get metadata for a published Figma component by key.
-- `get_component_set` — Get metadata for a published Figma component set by key. [write]
+- `get_component_set` — Get metadata for a published Figma component set by key.
 - `get_current_user` — Get the current Figma user associated with the API key.
 - `get_dev_resources` — Get dev resources attached to a Figma main file.
 - `get_file` — Get the JSON document for a Figma file or branch.
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_image_fills` — Get temporary download URLs for image fills used in a Figma file.
 - `get_project_metadata` — Get metadata for a Figma project.
 - `get_style` — Get metadata for a published Figma style by key.
-- `list_comment_reactions` — List emoji reactions on a Figma file comment. [write]
+- `list_comment_reactions` — List emoji reactions on a Figma file comment.
 - `list_comments` — List comments on a Figma file or branch.
 - `list_file_component_sets` — List published component sets in a Figma main file library.
 - `list_file_components` — List published components in a Figma main file library.

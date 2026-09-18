@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sunsama MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sunsama_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sunsama_mcp.svg"
 ---
@@ -40,10 +40,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `accept_meeting_invite` — Confirms attendance to a meeting that the user is invited to. [write]
 - `add_subtasks_to_task` — Adds multiple subtasks to an existing task. Do not use for merging existing tasks in as subtasks. [write]
 - `add_task_to_channel` — Adds a task to a channel. [write]
-- `align_task_with_objective` — Aligns a task with an objective.
-- `append_task_notes` — Appends Markdown content to the end of an existing task's notes. Existing notes are preserved; the new content is added below them with a horizontal rule separator. Use edit_task_notes to replace the notes body entirely.
-- `call_tool` — Call a Sunsama MCP tool with JSON arguments.
-- `change_backlog_folder` — Moves one or more tasks to a backlog folder. If folderId is null, removes tasks from their current folder.
+- `align_task_with_objective` — Aligns a task with an objective. [write]
+- `append_task_notes` — Appends Markdown content to the end of an existing task's notes. Existing notes are preserved; the new content is added below them with a horizontal rule separator. Use edit_task_notes to replace the notes body entirely. [write]
+- `call_tool` — Call a Sunsama MCP tool with JSON arguments. [destructive]
+- `change_backlog_folder` — Moves one or more tasks to a backlog folder. If folderId is null, removes tasks from their current folder. [write]
 - `create_calendar_event` — Creates a new calendar event. [write]
 - `create_channel` — Creates a new channel for the user. [write]
 - `create_task` — Creates a single task with a title, optional notes (markdown), and estimated time. Scheduled to a day by default; pass `backlog` instead to stage it in the backlog. This is also the tool for a task that links to an item in another tool — pass `integrationUrl`, which works for a backlog task too. [write]
@@ -79,9 +79,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `move_task_to_day` — Moves or defers a task to a specific date. [write]
 - `read_resource` — Reads a specific resource by URI. Use this tool to fetch data from resources when the client doesn't support the MCP resources protocol natively. For static resources, pass the exact URI from list_resources. For templated resources, fill in the placeholders with actual values. Example: If list_resources shows uri_template "sunsama://tasks/{calendarDay}", you would call this with uri "sunsama://tasks/2025-01-15" to get tasks for that day.
 - `rename_channel` — Renames one of the user's channels. Takes a channel ID, not a channel name — use the search_channels tool to resolve a name the user mentions into an ID first. Renaming only changes the channel's label; the tasks, objectives, and calendar events assigned to it stay assigned. [write]
-- `reorder_tasks` — Reorders tasks for the calendar day according to the provided order of taskIds.
-- `reposition_task_in_backlog` — Repositions a task within the backlog by moving it to a specific time bucket (horizon) and position (append/prepend).
-- `restore_task` — Changes a task from deleted to not deleted.
+- `reorder_tasks` — Reorders tasks for the calendar day according to the provided order of taskIds. [write]
+- `reposition_task_in_backlog` — Repositions a task within the backlog by moving it to a specific time bucket (horizon) and position (append/prepend). [write]
+- `restore_task` — Changes a task from deleted to not deleted. [write]
 - `search_channels` — Searches the user's channels by meaning, not just by exact name. Returns the closest matching channels ordered by relevance, so "client work" can match a channel named "Acme Corp". Use this to resolve a channel a user mentions into a channel ID before assigning tasks to it.
 - `search_tasks` — Searches for tasks. Returns tasks that match the search term or are similar to the search term.
 - `set_backlog_priority` — Sets the backlog priority of a task. Backlog priority persists and is used for tasks in the backlog. Valid values: "urgent", "high", "medium", "low", "none". Set to null to clear. [write]
@@ -89,10 +89,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `set_daily_priority` — Sets the daily priority of a task. Daily priority is tied to a specific day and decays after that day. Valid values: "urgent", "important", "normal", "low". Set to null to clear. The date is automatically determined from the task. [write]
 - `set_shutdown_time` — Sets the shutdown time for a specific day. [write]
 - `start_task_timer` — Starts the timer for a task or subtask. If a subtaskId is provided, starts the timer for that specific subtask. [write]
-- `stop_task_timer` — Stops the timer for a task or subtask. If a subtaskId is provided, stops the timer for that specific subtask. [write]
-- `timebox_a_task_to_calendar` — Timeboxes a task to the calendar. This will create a timebox event for the task. This may also be referred to as "scheduling" a task or "adding a task to the calendar".
+- `stop_task_timer` — Stops the timer for a task or subtask. If a subtaskId is provided, stops the timer for that specific subtask. [destructive]
+- `timebox_a_task_to_calendar` — Timeboxes a task to the calendar. This will create a timebox event for the task. This may also be referred to as "scheduling" a task or "adding a task to the calendar". [write]
 - `toggle_auto_import_events` — Enables or disables automatic importing of calendar events to the daily task list. [write]
-- `unarchive_task` — Unarchives a task and moves it to a specific date or the backlog if no date is provided.
+- `unarchive_task` — Unarchives a task and moves it to a specific date or the backlog if no date is provided. [write]
 - `update_all_incomplete_recurring_task_instances` — Updates all incomplete instances of a recurring task to match the current task. This is useful when you want to apply changes made to one instance of a recurring task to all future incomplete instances. [write]
 - `update_calendar_preferences` — Updates preferences for a specific calendar including whether it is the default for tasks, default for events, and whether it is included in auto-importing of events. [write]
 - `update_import_event_filters` — Updates the exclusion filters that determine which calendar events are excluded from automatic import. Events matching any of these filters will NOT be automatically imported. [write]

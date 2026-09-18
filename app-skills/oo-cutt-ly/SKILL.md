@@ -1,11 +1,11 @@
 ---
 name: oo-cutt-ly
-description: "Cuttly (cutt.ly). Use this skill for ANY Cuttly request — searching and reading data. Whenever a task involves Cuttly, use this skill instead of calling the API directly."
+description: "Cuttly (cutt.ly). Use this skill for ANY Cuttly request — reading, creating, and updating data. Whenever a task involves Cuttly, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cuttly"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cutt_ly"]
   icon: "https://static.oomol.com/logo/third-party/Cutt.ly.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_link_analytics` — Retrieve click analytics for a Cuttly short URL.
-- `shorten_url` — Create a short URL with the Cuttly Regular API.
+- `shorten_url` — Create a short URL with the Cuttly Regular API. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mem"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mem"]
   icon: "https://static.oomol.com/logo/third-party/mem.svg"
 ---
@@ -41,10 +41,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_note` — Permanently delete a Mem note; this operation cannot be restored. [destructive]
 - `list_notes` — List Mem notes with cursor pagination, chronological ordering, and filters.
 - `read_note` — Read the full current state of one Mem note, including trash state.
-- `restore_note` — Restore a previously trashed Mem note to the active note set.
+- `restore_note` — Restore a previously trashed Mem note to the active note set. [write]
 - `search_notes` — Search Mem notes by relevance with filters and bounded snapshot pagination.
 - `trash_note` — Move a Mem note to trash so it can be restored later. [destructive]
-- `update_note` — Replace a Mem note's markdown body using its exact current content version. [write]
+- `update_note` — Replace a Mem note's markdown body using its exact current content version. [destructive]
 
 ## Safety
 

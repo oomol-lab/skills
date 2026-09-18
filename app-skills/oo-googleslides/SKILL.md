@@ -1,11 +1,11 @@
 ---
 name: oo-googleslides
-description: "Google Slides (workspace.google.com). Use this skill for ANY Google Slides request — reading, creating, and updating data. Whenever a task involves Google Slides, use this skill instead of calling the API directly."
+description: "Google Slides (workspace.google.com). Use this skill for ANY Google Slides request — reading, creating, updating, and deleting data. Whenever a task involves Google Slides, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Slides"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googleslides"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Slides.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_presentation` — Create a blank Google Slides presentation. Optional locale, page size, and presentation ID values are forwarded when provided. [write]
 - `get_page_thumbnail2` — Generate a thumbnail for a Google Slides page. Returns a temporary content URL plus thumbnail dimensions when Google provides them.
-- `presentations_batch_update` — Apply raw Google Slides batchUpdate requests to a presentation. [write]
+- `presentations_batch_update` — Apply raw Google Slides batchUpdate requests to a presentation. [destructive]
 - `presentations_copy_from_template` — Copy an existing Google Slides presentation through Google Drive so the new presentation preserves the original themes, masters, and layouts. [write]
 - `presentations_get` — Retrieve a Google Slides presentation by presentation ID, or search Google Drive by exact presentation title first and then fetch the presentation.
 - `presentations_pages_get` — Retrieve a specific page from a Google Slides presentation, including its page elements and page-specific properties.

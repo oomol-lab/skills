@@ -1,11 +1,11 @@
 ---
 name: oo-everhour
-description: "Everhour (everhour.com). Use this skill for ANY Everhour request — reading, creating, and updating data. Whenever a task involves Everhour, use this skill instead of calling the API directly."
+description: "Everhour (everhour.com). Use this skill for ANY Everhour request — reading, creating, updating, and deleting data. Whenever a task involves Everhour, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Everhour"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["everhour"]
   icon: "https://static.oomol.com/logo/third-party/everhour.png"
 ---
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_users` — List the users in the Everhour team that the API key can access.
 - `search_tasks` — Search Everhour tasks across accessible projects.
 - `start_timer` — Start an Everhour timer for a task with an optional user date and comment. [write]
-- `stop_timer` — Stop the current Everhour timer and return the final timer snapshot. [write]
+- `stop_timer` — Stop the current Everhour timer and return the final timer snapshot. [destructive]
 
 ## Safety
 

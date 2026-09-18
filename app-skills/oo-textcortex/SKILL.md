@@ -1,11 +1,11 @@
 ---
 name: oo-textcortex
-description: "TextCortex (textcortex.com). Use this skill for ANY TextCortex request — reading, creating, and updating data. Whenever a task involves TextCortex, use this skill instead of calling the API directly."
+description: "TextCortex (textcortex.com). Use this skill for ANY TextCortex request — searching and reading data. Whenever a task involves TextCortex, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TextCortex"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["textcortex"]
   icon: "https://static.oomol.com/logo/third-party/textcortex.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a non-streaming OpenAI-compatible chat completion with TextCortex. [write]
+- `create_chat_completion` — Create a non-streaming OpenAI-compatible chat completion with TextCortex.
 - `list_models` — List TextCortex models available to the API key.
 - `retrieve_model` — Retrieve metadata for one TextCortex model by model id.
 

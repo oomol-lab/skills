@@ -1,11 +1,11 @@
 ---
 name: oo-vectorshift
-description: "VectorShift (vectorshift.ai). Use this skill for ANY VectorShift request — searching and reading data. Whenever a task involves VectorShift, use this skill instead of calling the API directly."
+description: "VectorShift (vectorshift.ai). Use this skill for ANY VectorShift request — reading, creating, and updating data. Whenever a task involves VectorShift, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "VectorShift"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["vectorshift"]
   icon: "https://static.oomol.com/logo/third-party/vectorshift.png"
 ---
@@ -37,10 +37,10 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `bulk_run_pipeline` — Run multiple instances of the same VectorShift pipeline with JSON-safe inputs in one request.
+- `bulk_run_pipeline` — Run multiple instances of the same VectorShift pipeline with JSON-safe inputs in one request. [write]
 - `get_pipeline` — Fetch one VectorShift pipeline by pipeline ID or by pipeline name.
 - `list_pipelines` — List VectorShift pipelines that are accessible to the connected API key.
-- `run_pipeline` — Run one VectorShift pipeline with JSON-safe inputs and return the resulting outputs.
+- `run_pipeline` — Run one VectorShift pipeline with JSON-safe inputs and return the resulting outputs. [write]
 
 ## Safety
 

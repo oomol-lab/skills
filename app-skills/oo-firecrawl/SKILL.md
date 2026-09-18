@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Firecrawl"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["firecrawl"]
   icon: "https://static.oomol.com/logo/third-party/Firecrawl.svg"
 ---
@@ -37,28 +37,28 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `agent_cancel` — Cancel a running Firecrawl agent job by job ID. [write]
-- `batch_scrape` — Start a Firecrawl batch scrape job for multiple URLs and return the async job ID.
-- `batch_scrape_cancel` — Cancel a running Firecrawl batch scrape job by job ID. [write]
+- `agent_cancel` — Cancel a running Firecrawl agent job by job ID. [destructive]
+- `batch_scrape` — Start a Firecrawl batch scrape job for multiple URLs and return the async job ID. [write]
+- `batch_scrape_cancel` — Cancel a running Firecrawl batch scrape job by job ID. [destructive]
 - `batch_scrape_get` — Get the current status and paged results of a Firecrawl batch scrape job by job ID.
 - `batch_scrape_get_errors` — Get the failed URLs and robots.txt blocks from a Firecrawl batch scrape job.
-- `crawl` — Start a Firecrawl crawl job with compatibility fields accepted from legacy crawl inputs.
-- `crawl_cancel` — Cancel a running Firecrawl crawl job by job ID. [write]
+- `crawl` — Start a Firecrawl crawl job with compatibility fields accepted from legacy crawl inputs. [write]
+- `crawl_cancel` — Cancel a running Firecrawl crawl job by job ID. [destructive]
 - `crawl_delete` — Compatibility alias of crawl_cancel for the FIRECRAWL_CRAWL_DELETE action name. [destructive]
 - `crawl_get` — Get the current status and paged results of a Firecrawl crawl job by job ID.
 - `crawl_get_errors` — Get the failed URLs and robots.txt blocks from a Firecrawl crawl job.
 - `crawl_list_active` — List the currently active Firecrawl crawl jobs for the authenticated team.
 - `crawl_params_preview` — Preview the crawl parameters that Firecrawl would infer from a URL and prompt before starting the crawl.
-- `crawl_v2` — Start a Firecrawl crawl job with the official v2 crawl fields, including prompt-driven options generation.
+- `crawl_v2` — Start a Firecrawl crawl job with the official v2 crawl fields, including prompt-driven options generation. [write]
 - `credit_usage_get` — Get the authenticated Firecrawl team's current credit usage summary.
 - `credit_usage_get_historical` — Get the authenticated Firecrawl team's historical credit usage summary.
-- `deep_research` — Start a Firecrawl deep research job. This endpoint remains alpha and Firecrawl currently documents it outside the main v2 endpoint set.
-- `extract` — Start a Firecrawl extract job that returns structured data for one or more URLs.
+- `deep_research` — Start a Firecrawl deep research job. This endpoint remains alpha and Firecrawl currently documents it outside the main v2 endpoint set. [write]
+- `extract` — Start a Firecrawl extract job that returns structured data for one or more URLs. [write]
 - `extract_get` — Get the current status and output of a Firecrawl extract job by job ID.
 - `get_agent_status` — Get the current status and output of a Firecrawl agent job by job ID.
 - `get_deep_research_status` — Get the current status and output of a Firecrawl deep research job by job ID.
 - `get_the_status_of_a_crawl_job` — Compatibility alias of crawl_get for the FIRECRAWL_GET_THE_STATUS_OF_A_CRAWL_JOB action name.
-- `llms_txt_generate` — Start an LLMs.txt generation job for a website. This endpoint remains outside the main v2 endpoint set in Firecrawl's docs.
+- `llms_txt_generate` — Start an LLMs.txt generation job for a website. This endpoint remains outside the main v2 endpoint set in Firecrawl's docs. [write]
 - `llms_txt_get` — Get the current status and generated content of an LLMs.txt job by job ID.
 - `map_multiple_urls_based_on_options` — Discover URLs from a website with Firecrawl's map endpoint using a legacy action name.
 - `queue_get` — Get the authenticated Firecrawl team's queue status and concurrency information.

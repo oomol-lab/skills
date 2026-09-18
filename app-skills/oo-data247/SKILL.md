@@ -1,11 +1,11 @@
 ---
 name: oo-data247
-description: "Data247 (data247.com). Use this skill for ANY Data247 request — searching and reading data. Whenever a task involves Data247, use this skill instead of calling the API directly."
+description: "Data247 (data247.com). Use this skill for ANY Data247 request — reading, creating, and updating data. Whenever a task involves Data247, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Data247"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["data247"]
   icon: "https://static.oomol.com/logo/third-party/data247.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `append_gender` — Infer a probable gender from a first name using Data247.
+- `append_gender` — Infer a probable gender from a first name using Data247. [write]
 - `check_balance` — Check the current Data247 account balance.
 - `check_dnc` — Check a phone number against Data247 Do-Not-Call data.
 - `get_carrier_type` — Determine whether a USA or Canadian phone number is mobile, landline, or VOIP.

@@ -1,11 +1,11 @@
 ---
 name: oo-apify
-description: "Apify (apify.com). Use this skill for ANY Apify request — searching and reading data. Whenever a task involves Apify, use this skill instead of calling the API directly."
+description: "Apify (apify.com). Use this skill for ANY Apify request — reading, creating, and updating data. Whenever a task involves Apify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Apify"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["apify"]
   icon: "https://static.oomol.com/logo/third-party/Apify.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_current_user` — Retrieve the currently authenticated Apify user account.
 - `get_dataset_items` — Retrieve JSON items from one Apify dataset.
 - `get_run` — Retrieve the current status and storage identifiers for one Apify actor run.
-- `run_actor` — Start one Apify actor run with an optional JSON input payload.
+- `run_actor` — Start one Apify actor run with an optional JSON input payload. [write]
 
 ## Safety
 

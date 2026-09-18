@@ -1,11 +1,11 @@
 ---
 name: oo-clickhouse
-description: "ClickHouse (clickhouse.com). Use this skill for ANY ClickHouse request — searching and reading data. Whenever a task involves ClickHouse, use this skill instead of calling the API directly."
+description: "ClickHouse (clickhouse.com). Use this skill for ANY ClickHouse request — reading, creating, updating, and deleting data. Whenever a task involves ClickHouse, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "ClickHouse"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["clickhouse"]
   icon: "https://static.oomol.com/logo/third-party/clickhouse.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_query` — Execute a SQL query against a ClickHouse instance and return JSON rows.
+- `execute_query` — Execute a SQL query against a ClickHouse instance and return JSON rows. [destructive]
 - `get_database_schema` — Get an overview of one ClickHouse database with tables and optional column name lists.
 - `get_table_schema` — Get column metadata for one ClickHouse table.
 - `list_databases` — List databases available in the connected ClickHouse instance.

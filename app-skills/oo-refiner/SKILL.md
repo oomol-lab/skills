@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Refiner"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["refiner"]
   icon: "https://static.oomol.com/logo/third-party/Refiner.svg"
 ---
@@ -41,14 +41,14 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_account_info` — Retrieve the current Refiner account, project, and subscription information.
 - `get_contact` — Retrieve a single Refiner contact by id, email, or uuid.
 - `get_reporting` — Retrieve Refiner reporting metrics for forms, segments, and questions.
-- `identify_user` — Create or update a Refiner contact using the official identify-user endpoint.
+- `identify_user` — Create or update a Refiner contact using the official identify-user endpoint. [write]
 - `list_contacts` — List contacts available in the connected Refiner workspace.
 - `list_forms` — List forms in the connected Refiner workspace.
 - `list_responses` — List survey responses collected in Refiner.
 - `list_segments` — List segments in the connected Refiner workspace.
 - `remove_contact_from_segment` — Remove a Refiner contact from a manual segment. [destructive]
-- `tag_response` — Apply a tag to a Refiner response.
-- `track_event` — Track a product event for a Refiner contact.
+- `tag_response` — Apply a tag to a Refiner response. [write]
+- `track_event` — Track a product event for a Refiner contact. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Wachete"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wachete"]
   icon: "https://static.oomol.com/logo/third-party/wachete.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_or_update_monitor` — Create a Wachete SinglePage monitor, or replace an existing monitor with a SinglePage definition when id is provided. [write]
+- `create_or_update_monitor` — Create a Wachete SinglePage monitor, or replace an existing monitor with a SinglePage definition when id is provided. [destructive]
 - `delete_monitor` — Delete a Wachete monitor by ID. [destructive]
 - `get_monitor` — Retrieve a Wachete monitor definition by ID.
 - `get_monitor_history` — Retrieve paginated check history for a Wachete monitor.

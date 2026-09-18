@@ -1,11 +1,11 @@
 ---
 name: oo-codemagic
-description: "Codemagic (codemagic.io). Use this skill for ANY Codemagic request — reading, creating, and updating data. Whenever a task involves Codemagic, use this skill instead of calling the API directly."
+description: "Codemagic (codemagic.io). Use this skill for ANY Codemagic request — reading, creating, updating, and deleting data. Whenever a task involves Codemagic, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Codemagic"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["codemagic"]
   icon: "https://static.oomol.com/logo/third-party/Codemagic.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_build` — Cancel a Codemagic build by its build ID. [write]
+- `cancel_build` — Cancel a Codemagic build by its build ID. [destructive]
 - `create_build` — Start a new Codemagic build for the specified app and workflow. [write]
 - `get_build` — Get detailed information about a single Codemagic build.
 - `get_current_user` — Get the authenticated Codemagic user and their available team permissions.

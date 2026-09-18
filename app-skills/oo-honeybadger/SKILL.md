@@ -1,11 +1,11 @@
 ---
 name: oo-honeybadger
-description: "Honeybadger (honeybadger.io). Use this skill for ANY Honeybadger request — searching and reading data. Whenever a task involves Honeybadger, use this skill instead of calling the API directly."
+description: "Honeybadger (honeybadger.io). Use this skill for ANY Honeybadger request — reading, creating, and updating data. Whenever a task involves Honeybadger, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Honeybadger"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["honeybadger"]
   icon: "https://static.oomol.com/logo/third-party/Honeybadger.svg"
 ---
@@ -37,11 +37,11 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `report_check_in` — Report a Honeybadger check-in by id or slug.
-- `report_check_in_with_payload` — Report a Honeybadger check-in with payload data.
-- `report_deployment` — Report a deployment to Honeybadger.
-- `report_event` — Report one or more Honeybadger Insights events.
-- `report_exception` — Report an exception notice to Honeybadger.
+- `report_check_in` — Report a Honeybadger check-in by id or slug. [write]
+- `report_check_in_with_payload` — Report a Honeybadger check-in with payload data. [write]
+- `report_deployment` — Report a deployment to Honeybadger. [write]
+- `report_event` — Report one or more Honeybadger Insights events. [write]
+- `report_exception` — Report an exception notice to Honeybadger. [write]
 
 ## Safety
 

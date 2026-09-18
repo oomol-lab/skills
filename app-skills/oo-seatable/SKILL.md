@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SeaTable"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["seatable"]
   icon: "https://static.oomol.com/logo/third-party/seatable.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `append_rows` — Append one or more rows to a SeaTable table using column names as keys.
+- `append_rows` — Append one or more rows to a SeaTable table using column names as keys. [write]
 - `delete_rows` — Delete one or more SeaTable rows by row ID. [destructive]
 - `get_metadata` — Get metadata for the SeaTable base associated with the API token.
 - `get_row` — Get one row from a SeaTable table by row ID.

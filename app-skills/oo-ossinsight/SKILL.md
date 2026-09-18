@@ -1,11 +1,11 @@
 ---
 name: oo-ossinsight
-description: "OSS Insight (ossinsight.io). Use this skill for ANY OSS Insight request — searching and reading data. Whenever a task involves OSS Insight, use this skill instead of calling the API directly."
+description: "OSS Insight (ossinsight.io). Use this skill for ANY OSS Insight request — reading, creating, and updating data. Whenever a task involves OSS Insight, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "OSS Insight"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["ossinsight"]
   icon: "https://static.oomol.com/logo/third-party/ossinsight.png"
 ---
@@ -52,9 +52,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_stargazer_countries` — List countries or regions of stargazers for a GitHub repository.
 - `list_stargazer_organizations` — List organizations of stargazers for a GitHub repository.
 - `list_trending_repos` — List recently trending GitHub repositories from OSS Insight.
-- `rank_collection_repos_by_issues` — Rank repositories in an OSS Insight collection by issue growth.
-- `rank_collection_repos_by_pull_requests` — Rank repositories in an OSS Insight collection by pull request growth.
-- `rank_collection_repos_by_stars` — Rank repositories in an OSS Insight collection by star growth.
+- `rank_collection_repos_by_issues` — Rank repositories in an OSS Insight collection by issue growth. [write]
+- `rank_collection_repos_by_pull_requests` — Rank repositories in an OSS Insight collection by pull request growth. [write]
+- `rank_collection_repos_by_stars` — Rank repositories in an OSS Insight collection by star growth. [write]
 
 ## Safety
 

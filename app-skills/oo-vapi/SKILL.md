@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vapi"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["vapi"]
   icon: "https://static.oomol.com/logo/third-party/Vapi.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_analytics_query` — Create and execute one or more Vapi analytics queries across call and subscription data. [write]
+- `create_analytics_query` — Create and execute one or more Vapi analytics queries across call and subscription data.
 - `create_assistant` — Create a new Vapi assistant with required transcriber, voice, and model settings plus optional messaging and duration controls. [write]
 - `create_eval` — Create a Vapi eval for a mock conversation and define the checkpoint messages used to evaluate model behavior. [write]
 - `create_openai_chat` — Create an OpenAI-compatible Vapi chat response using an assistant or squad, with optional session and transport settings. [write]

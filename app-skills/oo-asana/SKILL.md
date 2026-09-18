@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Asana"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["asana"]
   icon: "https://static.oomol.com/logo/third-party/Asana.svg"
 ---
@@ -126,7 +126,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `remove_workspace_user` — Remove a user from an Asana workspace or organization. [destructive]
 - `search_workspace_projects` — Search projects in a workspace using Asana's documented project filters. Asana does not paginate search results; use limit to cap the page size.
 - `search_workspace_tasks` — Search tasks in an Asana workspace using advanced filters.
-- `set_task_parent` — Set, change, or remove an Asana task's parent. [write]
+- `set_task_parent` — Set, change, or remove an Asana task's parent. [destructive]
 - `update_custom_field` — Update an Asana custom field. [write]
 - `update_custom_field_enum_option` — Update an Asana enum option. [write]
 - `update_project` — Update one or more writable fields on an Asana project. [write]

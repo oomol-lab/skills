@@ -1,11 +1,11 @@
 ---
 name: oo-better-stack
-description: "Better Stack (betterstack.com). Use this skill for ANY Better Stack request — reading, creating, and updating data. Whenever a task involves Better Stack, use this skill instead of calling the API directly."
+description: "Better Stack (betterstack.com). Use this skill for ANY Better Stack request — reading, creating, updating, and deleting data. Whenever a task involves Better Stack, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Better Stack"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["better_stack"]
   icon: "https://static.oomol.com/logo/third-party/Better%20Stack.svg"
 ---
@@ -37,9 +37,9 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `acknowledge_incident` — Acknowledge a Better Stack incident to stop further escalations.
+- `acknowledge_incident` — Acknowledge a Better Stack incident to stop further escalations. [destructive]
 - `create_incident` — Create a Better Stack incident and alert the current on-call responder. [write]
-- `escalate_incident` — Escalate a Better Stack incident to a user, team, schedule, policy, or organization.
+- `escalate_incident` — Escalate a Better Stack incident to a user, team, schedule, policy, or organization. [write]
 - `get_incident` — Get a Better Stack incident by ID with included resource context when available.
 - `list_incident_comments` — List all comments attached to a Better Stack incident.
 - `list_incidents` — List Better Stack incidents with optional date and status filters.

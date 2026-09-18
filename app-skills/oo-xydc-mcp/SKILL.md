@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "XYDC MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["xydc_mcp"]
   icon: "https://static.oomol.com/logo/third-party/xydc_mcp.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current XYDC MCP tool with JSON arguments matching its live schema. Calls may consume Credits. Each successful generate_category_insight_resource call costs 500 Credits, including existing resources; reuse the returned resource and do not blindly retry generation. Connector waits at most 55 seconds for generation. A timeout does not confirm upstream cancellation or prevent charges; the result may be unknown. Do not automatically retry generation after a timeout.
-- `generate_category_insight_resource` — Generate a category insight resource for a user-confirmed marketplace and category. XYDC waits up to five minutes and rebuilds failed resources internally. Each independent successful call costs 500 Credits, including existing-resource hits. Reuse resourceId for subsequent queries; do not blindly retry. Connector waits at most 55 seconds for generation. A timeout does not confirm upstream cancellation or prevent charges; the result may be unknown. Do not automatically retry generation after a timeout. Read xydc_mcp.read_category_insight_guide before the first category insight task.
+- `call_tool` — Call a current XYDC MCP tool with JSON arguments matching its live schema. Calls may consume Credits. Each successful generate_category_insight_resource call costs 500 Credits, including existing resources; reuse the returned resource and do not blindly retry generation. Connector waits at most 55 seconds for generation. A timeout does not confirm upstream cancellation or prevent charges; the result may be unknown. Do not automatically retry generation after a timeout. [write]
+- `generate_category_insight_resource` — Generate a category insight resource for a user-confirmed marketplace and category. XYDC waits up to five minutes and rebuilds failed resources internally. Each independent successful call costs 500 Credits, including existing-resource hits. Reuse resourceId for subsequent queries; do not blindly retry. Connector waits at most 55 seconds for generation. A timeout does not confirm upstream cancellation or prevent charges; the result may be unknown. Do not automatically retry generation after a timeout. Read xydc_mcp.read_category_insight_guide before the first category insight task. [write]
 - `get_asin_ad_change_trends` — Get daily newly observed advertising campaigns for one ASIN. This does not establish whether existing campaigns stopped, decreased, were deleted or remain active. Use traffic trends for traffic changes.
 - `get_asin_bsr_trends` — Get daily BSR category-ranking trends for one ASIN. Supports US, CA, MX, BR, UK, DE, FR, ES, IT and JP; this is not keyword ranking.
 - `get_asin_info` — Get product titles, prices, currencies, star ratings, rating counts, images and Amazon links for up to 100 ASINs sharing one marketplace.
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_asin_keywords` — Reverse-search keywords bringing rankings and traffic to one ASIN in the latest seven-day snapshot. Use daily or monthly tools for historical dates.
 - `get_asin_keywords_daily` — Get historical daily reverse-search keywords, rankings and traffic for one ASIN over a date range.
 - `get_asin_keywords_monthly` — Get historical monthly reverse-search keywords, rankings and traffic for one ASIN over a month range.
-- `get_asin_order_trends` — Get monthly order counts for one ASIN over an explicit month range. Use get_asin_orders_last_30_days for recent orders. [write]
+- `get_asin_order_trends` — Get monthly order counts for one ASIN over an explicit month range. Use get_asin_orders_last_30_days for recent orders.
 - `get_asin_orders_last_30_days` — Get recent order counts for one or more ASINs, measured over the last 30 days.
 - `get_asin_traffic` — Get the latest seven-day organic, advertising and total traffic scores and period-over-period changes for one or more ASINs.
 - `get_asin_traffic_trends` — Get daily organic, advertising and placement-level traffic-score trends for one ASIN.
@@ -83,7 +83,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_primary_asin_children` — Get children and complete trends for one representative primaryAsin string, with reporting periods, price bands and pagination. Costs 5 Credits per 20 child ASINs. Read xydc_mcp.read_category_insight_guide before the first category insight task.
 - `list_tools` — Discover the current XYDC MCP tools, behavior annotations, and live input schemas before choosing a tool to call.
 - `read_category_insight_guide` — Read the official XYDC category insight workflow before a category analysis: marketplace and category confirmation, resource generation, reuse, reporting periods, pagination and Credits.
-- `report_missing_xiyou_capability` — Submit a missing-capability feedback event to XYDC when requested by the user. This records product feedback, not Amazon data, and should not be used for ordinary input errors. Redact sensitive information before submission.
+- `report_missing_xiyou_capability` — Submit a missing-capability feedback event to XYDC when requested by the user. This records product feedback, not Amazon data, and should not be used for ordinary input errors. Redact sensitive information before submission. [write]
 - `search_market_insight_categories` — Search Amazon categories by keyword or ASIN, returning paths, representative-ASIN counts, availability and existing translations. Free. Present candidates and obtain user confirmation before generating a category resource, even for one candidate. Read xydc_mcp.read_category_insight_guide before the first category insight task.
 
 ## Safety

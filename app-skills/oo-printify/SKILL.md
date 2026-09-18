@@ -1,11 +1,11 @@
 ---
 name: oo-printify
-description: "Printify (printify.com). Use this skill for ANY Printify request — reading, creating, and updating data. Whenever a task involves Printify, use this skill instead of calling the API directly."
+description: "Printify (printify.com). Use this skill for ANY Printify request — searching and reading data. Whenever a task involves Printify, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Printify"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["printify"]
   icon: "https://static.oomol.com/logo/third-party/printify.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_order` — Retrieve one order from a Printify shop by its order ID. [write]
+- `get_order` — Retrieve one order from a Printify shop by its order ID.
 - `get_product` — Retrieve one product from a Printify shop by its product ID.
 - `list_orders` — List orders in a Printify shop with optional status and SKU filters.
 - `list_products` — List products created in a Printify shop with page-based pagination.

@@ -1,11 +1,11 @@
 ---
 name: oo-celigo
-description: "Celigo (celigo.com). Use this skill for ANY Celigo request — reading, creating, and updating data. Whenever a task involves Celigo, use this skill instead of calling the API directly."
+description: "Celigo (celigo.com). Use this skill for ANY Celigo request — searching and reading data. Whenever a task involves Celigo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Celigo"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["celigo"]
   icon: "https://static.oomol.com/logo/third-party/Celigo.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_connection` — Get one Celigo connection by connection ID.
 - `get_export` — Get one Celigo export by export ID.
 - `get_flow` — Get one Celigo flow by flow ID.
-- `get_import` — Get one Celigo import by import ID. [write]
+- `get_import` — Get one Celigo import by import ID.
 - `get_token_info` — Get metadata for the current Celigo API token.
 - `list_exports` — List exports available in the current Celigo account.
 - `list_flows` — List flows available in the current Celigo account.

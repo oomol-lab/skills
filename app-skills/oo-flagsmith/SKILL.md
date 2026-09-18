@@ -1,11 +1,11 @@
 ---
 name: oo-flagsmith
-description: "Flagsmith (flagsmith.com). Use this skill for ANY Flagsmith request — searching and reading data. Whenever a task involves Flagsmith, use this skill instead of calling the API directly."
+description: "Flagsmith (flagsmith.com). Use this skill for ANY Flagsmith request — reading, creating, and updating data. Whenever a task involves Flagsmith, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Flagsmith"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["flagsmith"]
   icon: "https://static.oomol.com/logo/third-party/flagsmith.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_feature_flag` — Retrieve one feature flag by feature name from the connected environment.
 - `get_identity_flags` — Retrieve evaluated flags and traits for a Flagsmith identity.
-- `identify_identity` — Identify a Flagsmith user, optionally set traits, and return evaluated flags.
+- `identify_identity` — Identify a Flagsmith user, optionally set traits, and return evaluated flags. [write]
 - `list_flags` — List feature flags for the connected Flagsmith environment.
 
 ## Safety

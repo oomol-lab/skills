@@ -1,11 +1,11 @@
 ---
 name: oo-waffo
-description: "Waffo Pancake (waffo.ai). Use this skill for ANY Waffo Pancake request — reading, creating, and updating data. Whenever a task involves Waffo Pancake, use this skill instead of calling the API directly."
+description: "Waffo Pancake (waffo.ai). Use this skill for ANY Waffo Pancake request — reading, creating, updating, and deleting data. Whenever a task involves Waffo Pancake, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Waffo Pancake"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["waffo"]
   icon: "https://static.oomol.com/logo/third-party/waffo.svg"
 ---
@@ -37,21 +37,21 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_subscription` — Cancel a pending Waffo subscription immediately or schedule an active subscription to end after its current period. [write]
+- `cancel_subscription` — Cancel a pending Waffo subscription immediately or schedule an active subscription to end after its current period. [destructive]
 - `create_checkout_session` — Create a Waffo hosted checkout session for a one-time or subscription product. [write]
 - `create_one_time_product` — Create a one-time purchase product with multi-currency pricing in Waffo. [write]
-- `create_refund_ticket` — Request a full or partial Waffo refund for a succeeded payment. [write]
+- `create_refund_ticket` — Request a full or partial Waffo refund for a succeeded payment. [destructive]
 - `create_store` — Create a Waffo store for the connected merchant account. [write]
 - `create_subscription_product` — Create a recurring subscription product with multi-currency pricing in Waffo. [write]
 - `list_products` — List one-time or subscription products in the connected Waffo API key environment.
 - `list_stores` — List stores available to the connected Waffo merchant account.
 - `publish_product` — Publish the active test version of a one-time or subscription product to production for the first time. [write]
-- `resubmit_refund_ticket` — Revise and resubmit a rejected or failed Waffo refund ticket.
+- `resubmit_refund_ticket` — Revise and resubmit a rejected or failed Waffo refund ticket. [destructive]
 - `run_query` — Run a read-only query against the Waffo GraphQL API for stores, products, orders, payments, refunds, customers, or analytics.
 - `search_orders` — Search one-time or subscription orders by store, status, merchant reference, or creation time.
 - `search_payments` — Find a Waffo payment by ID or search payments by status, merchant order reference, or creation time.
 - `search_refund_tickets` — Search Waffo refund tickets by status, payment, merchant reference, or creation time.
-- `set_product_status` — Activate or deactivate a one-time or subscription product in the connected Waffo API key environment. [write]
+- `set_product_status` — Activate or deactivate a one-time or subscription product in the connected Waffo API key environment. [destructive]
 - `update_product` — Update a one-time or subscription product in the connected Waffo API key environment, creating an immutable version when content changes. [write]
 
 ## Safety

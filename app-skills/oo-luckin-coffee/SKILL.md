@@ -1,11 +1,11 @@
 ---
 name: oo-luckin-coffee
-description: "Luckin Coffee (open.lkcoffee.com). Use this skill for ANY Luckin Coffee request — searching and reading data. Whenever a task involves Luckin Coffee, use this skill instead of calling the API directly."
+description: "Luckin Coffee (open.lkcoffee.com). Use this skill for ANY Luckin Coffee request — reading, creating, updating, and deleting data. Whenever a task involves Luckin Coffee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Luckin Coffee"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["luckin_coffee"]
   icon: "https://static.oomol.com/logo/third-party/luckin_coffee.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancelOrder` — Cancel a Luckin Coffee order. This changes a real order and may be irreversible; confirm the exact order with the user first.
-- `createOrder` — Create a real Luckin Coffee order that may require payment. Preview the order first and obtain the user's confirmation before calling this action.
+- `cancelOrder` — Cancel a Luckin Coffee order. This changes a real order and may be irreversible; confirm the exact order with the user first. [destructive]
+- `createOrder` — Create a real Luckin Coffee order that may require payment. Preview the order first and obtain the user's confirmation before calling this action. [write]
 - `previewOrder` — Preview a Luckin Coffee order, including prices and available coupons, without creating it.
 - `queryOrderDetailInfo` — Get the current status, pickup details, products, payment, and delivery information for an order.
 - `queryProductDetailInfo` — Get the current details, attributes, SKU, and price for one Luckin Coffee product at a store.

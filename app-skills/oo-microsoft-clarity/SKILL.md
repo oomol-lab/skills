@@ -1,11 +1,11 @@
 ---
 name: oo-microsoft-clarity
-description: "Microsoft Clarity (clarity.microsoft.com). Use this skill for ANY Microsoft Clarity request — searching and reading data. Whenever a task involves Microsoft Clarity, use this skill instead of calling the API directly."
+description: "Microsoft Clarity (clarity.microsoft.com). Use this skill for ANY Microsoft Clarity request — reading, creating, and updating data. Whenever a task involves Microsoft Clarity, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Microsoft Clarity"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["microsoft_clarity"]
   icon: "https://static.oomol.com/logo/third-party/microsoft_clarity.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `export_live_insights` — Export Microsoft Clarity live insights for the last 1 to 3 days with up to three optional breakdown dimensions.
+- `export_live_insights` — Export Microsoft Clarity live insights for the last 1 to 3 days with up to three optional breakdown dimensions. [write]
 
 ## Safety
 

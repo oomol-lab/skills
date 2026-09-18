@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Algolia"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["algolia"]
   icon: "https://static.oomol.com/logo/third-party/Algolia.svg"
 ---
@@ -37,13 +37,13 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `add_or_replace_record` — Add a new record or replace an existing Algolia record using its objectID. [write]
+- `add_or_replace_record` — Add a new record or replace an existing Algolia record using its objectID. [destructive]
 - `browse_index` — Browse records from a single Algolia index, optionally continuing with a cursor.
 - `delete_records_by_filter` — Delete Algolia records that match a filter expression. [destructive]
 - `get_record` — Retrieve a single record from an Algolia index by objectID.
 - `list_indices` — List Algolia indices accessible to the current API key.
-- `save_rule` — Save a single Algolia rule by objectID. [write]
-- `save_synonym` — Save a single Algolia synonym by objectID. [write]
+- `save_rule` — Save a single Algolia rule by objectID. [destructive]
+- `save_synonym` — Save a single Algolia synonym by objectID. [destructive]
 - `search_index` — Search a single Algolia index with the most common search parameters.
 - `update_record_partially` — Partially update an existing Algolia record by objectID. [write]
 

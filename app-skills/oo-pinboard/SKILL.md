@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pinboard"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pinboard"]
   icon: "https://static.oomol.com/logo/third-party/pinboard.svg"
 ---
@@ -37,10 +37,10 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `add_bookmark` — Add or replace a Pinboard bookmark. [write]
+- `add_bookmark` — Add or replace a Pinboard bookmark. [destructive]
 - `delete_bookmark` — Delete a Pinboard bookmark by URL. [destructive]
 - `get_bookmarks` — Get Pinboard bookmarks for a URL, date, or up to three tags using the posts/get endpoint.
-- `get_last_update` — Get the most recent time a Pinboard bookmark was added, updated, or deleted. [write]
+- `get_last_update` — Get the most recent time a Pinboard bookmark was added, updated, or deleted.
 - `list_recent_bookmarks` — List the user's most recent Pinboard bookmarks, optionally filtered by one tag.
 - `list_tags` — List the user's Pinboard tags and bookmark counts.
 

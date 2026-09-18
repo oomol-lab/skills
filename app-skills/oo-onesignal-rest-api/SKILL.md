@@ -1,11 +1,11 @@
 ---
 name: oo-onesignal-rest-api
-description: "OneSignal (onesignal.com). Use this skill for ANY OneSignal request — reading, creating, and updating data. Whenever a task involves OneSignal, use this skill instead of calling the API directly."
+description: "OneSignal (onesignal.com). Use this skill for ANY OneSignal request — reading, creating, updating, and deleting data. Whenever a task involves OneSignal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "OneSignal"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["onesignal_rest_api"]
   icon: "https://static.oomol.com/logo/third-party/onesignal_rest_api.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_message` — Cancel one scheduled OneSignal message by id. [write]
+- `cancel_message` — Cancel one scheduled OneSignal message by id. [destructive]
 - `create_push_notification` — Create a push notification for the connected OneSignal app using one official targeting method. [write]
 - `get_message` — Retrieve one OneSignal message by id from the connected app.
 - `list_messages` — List messages from the connected OneSignal app.

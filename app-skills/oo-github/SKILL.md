@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.9"
+  version: "1.0.10"
   services: ["github"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_issue_assignees` — Add assignees to a GitHub issue. [write]
 - `add_issue_labels` — Add labels to a GitHub issue. [write]
 - `add_repository_collaborator` — Add a collaborator to a GitHub repository or update their permission. [write]
-- `cancel_workflow_run` — Cancel a GitHub Actions workflow run. [write]
+- `cancel_workflow_run` — Cancel a GitHub Actions workflow run. [destructive]
 - `check_pull_request_merged` — Check whether a GitHub pull request has been merged.
 - `check_repository_starred` — Check whether the authenticated user has starred a GitHub repository.
 - `clear_issue_labels` — Remove all labels from a GitHub issue. [destructive]
@@ -53,7 +53,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_issue_reaction` — Add a reaction to a GitHub issue. [write]
 - `create_label` — Create a label in a GitHub repository. [write]
 - `create_milestone` — Create a milestone in a GitHub repository. [write]
-- `create_or_update_file` — Create or update a repository file through the GitHub contents API. Writing under .github/workflows may require GitHub workflow scope. [write]
+- `create_or_update_file` — Create or update a repository file through the GitHub contents API. Writing under .github/workflows may require GitHub workflow scope. [destructive]
 - `create_pull_request` — Create a pull request in a GitHub repository. [write]
 - `create_pull_request_review` — Create a review for a GitHub pull request, optionally with inline comments. [write]
 - `create_pull_request_review_comment` — Create a review comment on a GitHub pull request diff. [write]
@@ -70,20 +70,20 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_release` — Delete a GitHub release by numeric id. [destructive]
 - `delete_release_asset` — Delete a GitHub release asset by numeric id. [destructive]
 - `delete_repository` — Delete a GitHub repository by owner and name. [destructive]
-- `disable_workflow` — Disable a GitHub Actions workflow. [write]
-- `dismiss_pull_request_review` — Dismiss a GitHub pull request review. [write]
+- `disable_workflow` — Disable a GitHub Actions workflow. [destructive]
+- `dismiss_pull_request_review` — Dismiss a GitHub pull request review. [destructive]
 - `dispatch_workflow` — Trigger a GitHub Actions workflow dispatch event. [write]
 - `download_workflow_artifact` — Download a GitHub Actions workflow artifact ZIP to temporary file transit.
 - `enable_workflow` — Enable a GitHub Actions workflow. [write]
 - `fork_repository` — Fork a GitHub repository. Forking happens asynchronously, so the returned repository may not be immediately ready. [write]
-- `generate_release_notes` — Generate release notes content for a GitHub release. [write]
+- `generate_release_notes` — Generate release notes content for a GitHub release.
 - `get_branch` — Get a GitHub branch by name.
 - `get_commit` — Get a commit by SHA in a GitHub repository.
 - `get_commit_statuses` — List statuses for a commit reference in reverse chronological order.
 - `get_current_user` — Get the current authenticated GitHub user profile.
 - `get_file_contents` — Read a repository file and return both base64 and decoded text when available.
 - `get_issue` — Get a GitHub issue by number.
-- `get_issue_comment` — Get a GitHub issue comment by ID. [write]
+- `get_issue_comment` — Get a GitHub issue comment by ID.
 - `get_label` — Get a GitHub label by name.
 - `get_latest_release` — Get the latest published release for a GitHub repository.
 - `get_milestone` — Get a GitHub milestone by number.
@@ -146,15 +146,15 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_workflow_run_artifacts` — List artifacts for a GitHub Actions workflow run.
 - `list_workflow_run_jobs` — List jobs for a GitHub workflow run.
 - `list_workflow_runs` — List GitHub workflow runs for a repository.
-- `lock_issue` — Lock a GitHub issue conversation. [write]
+- `lock_issue` — Lock a GitHub issue conversation. [destructive]
 - `merge_branch` — Merge one branch into another in a GitHub repository. [write]
-- `merge_pull_request` — Merge a GitHub pull request. [write]
+- `merge_pull_request` — Merge a GitHub pull request. [destructive]
 - `remove_issue_assignees` — Remove assignees from a GitHub issue. [destructive]
 - `remove_issue_label` — Remove one label from a GitHub issue. [destructive]
 - `remove_pull_request_reviewers` — Remove requested reviewers from a GitHub pull request. [destructive]
 - `remove_repository_collaborator` — Remove a collaborator from a GitHub repository. [destructive]
-- `rename_branch` — Rename a branch in a GitHub repository. [write]
-- `replace_repository_topics` — Replace all topics of a GitHub repository. [write]
+- `rename_branch` — Rename a branch in a GitHub repository. [destructive]
+- `replace_repository_topics` — Replace all topics of a GitHub repository. [destructive]
 - `reply_pull_request_review_comment` — Reply to a top-level GitHub pull request review comment. [write]
 - `request_pull_request_reviewers` — Request reviewers on a GitHub pull request. [write]
 - `rerequest_check_run` — Re-request a GitHub check run. [write]
@@ -168,22 +168,22 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_repositories` — Search GitHub repositories with GitHub search syntax.
 - `search_topics` — Search GitHub topics with GitHub search syntax.
 - `search_users` — Search GitHub users with GitHub search syntax.
-- `set_issue_labels` — Replace all labels on a GitHub issue. [write]
+- `set_issue_labels` — Replace all labels on a GitHub issue. [destructive]
 - `star_repository` — Star a GitHub repository for the authenticated user. [write]
 - `submit_pull_request_review` — Submit a pending GitHub pull request review. [write]
 - `sync_fork_branch_with_upstream` — Sync a fork branch with its upstream branch. [write]
 - `unlock_issue` — Unlock a GitHub issue conversation. [write]
-- `unstar_repository` — Unstar a GitHub repository for the authenticated user. [write]
-- `update_issue` — Update a GitHub issue by number. [write]
+- `unstar_repository` — Unstar a GitHub repository for the authenticated user. [destructive]
+- `update_issue` — Update a GitHub issue by number. [destructive]
 - `update_issue_comment` — Update a GitHub issue comment by ID. [write]
 - `update_label` — Update a GitHub label by name. [write]
-- `update_milestone` — Update a GitHub milestone by number. [write]
-- `update_pull_request` — Update a GitHub pull request title, body, state, base branch, or maintainer-can-modify flag. [write]
+- `update_milestone` — Update a GitHub milestone by number. [destructive]
+- `update_pull_request` — Update a GitHub pull request title, body, state, base branch, or maintainer-can-modify flag. [destructive]
 - `update_pull_request_branch` — Update a GitHub pull request branch with the latest base branch changes. [write]
 - `update_pull_request_review_comment` — Update a GitHub pull request review comment by ID. [write]
-- `update_ref` — Update a Git reference in a GitHub repository. [write]
+- `update_ref` — Update a Git reference in a GitHub repository. [destructive]
 - `update_release` — Update a GitHub release by numeric id. [write]
-- `update_repository` — Update settings and metadata for a GitHub repository. [write]
+- `update_repository` — Update settings and metadata for a GitHub repository. [destructive]
 
 ## Safety
 

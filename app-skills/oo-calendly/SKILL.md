@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Calendly"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["calendly"]
   icon: "https://static.oomol.com/logo/third-party/Calendly.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_scheduled_event` — Cancel one Calendly scheduled event by scheduled-event URI. [write]
+- `cancel_scheduled_event` — Cancel one Calendly scheduled event by scheduled-event URI. [destructive]
 - `create_event_invitee` — Create one Calendly invitee booking for a confirmed available start time. [write]
 - `create_invitee_no_show` — Mark one Calendly invitee as a no-show by invitee URI. [write]
 - `create_organization_invitation` — Create one organization invitation for a Calendly organization. [write]
@@ -57,7 +57,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_routing_form_submission` — Retrieve one Calendly routing form submission by submission URI.
 - `get_scheduled_event` — Retrieve one Calendly scheduled event by scheduled-event URI.
 - `get_user` — Retrieve one Calendly user by user URI.
-- `get_user_availability_schedule` — Retrieve one Calendly user availability schedule by schedule URI. [write]
+- `get_user_availability_schedule` — Retrieve one Calendly user availability schedule by schedule URI.
 - `get_webhook_subscription` — Retrieve one Calendly webhook subscription by URI.
 - `list_event_invitees` — List invitees for one Calendly scheduled event.
 - `list_event_type_availability_schedules` — List the official Calendly availability schedules attached to one event type.

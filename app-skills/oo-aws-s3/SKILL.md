@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AWS S3"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["aws_s3"]
   icon: "https://static.oomol.com/logo/third-party/aws_s3.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `head_object` — Fetch structured metadata for one S3 object.
 - `list_buckets` — List Amazon S3 buckets visible to the connected AWS credential.
 - `list_objects` — List objects in an S3 bucket with the ListObjectsV2 API.
-- `put_object` — Upload one object to S3 from a public URL, plain text, or base64-encoded content. [write]
+- `put_object` — Upload one object to S3 from a public URL, plain text, or base64-encoded content. [destructive]
 
 ## Safety
 

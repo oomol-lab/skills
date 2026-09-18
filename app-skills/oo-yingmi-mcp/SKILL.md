@@ -1,11 +1,11 @@
 ---
 name: oo-yingmi-mcp
-description: "Yingmi MCP (qieman.com). Use this skill for ANY Yingmi MCP request — searching and reading data. Whenever a task involves Yingmi MCP, use this skill instead of calling the API directly."
+description: "Yingmi MCP (qieman.com). Use this skill for ANY Yingmi MCP request — reading, creating, and updating data. Whenever a task involves Yingmi MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Yingmi MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["yingmi_mcp"]
   icon: "https://static.oomol.com/logo/third-party/yingmi_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current Yingmi MCP tool with JSON arguments after checking its live schema and behavior annotations.
+- `call_tool` — Call a current Yingmi MCP tool with JSON arguments after checking its live schema and behavior annotations. [write]
 - `list_tools` — Discover the current Yingmi financial data, research, and advisory MCP tools with their live input schemas.
 
 ## Safety

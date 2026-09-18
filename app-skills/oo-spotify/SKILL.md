@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Spotify"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["spotify"]
   icon: "https://static.oomol.com/logo/third-party/spotify.svg"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `check_saved_shows` — Check whether the current authenticated Spotify user has saved the given shows.
 - `check_saved_tracks` — Check whether the current authenticated Spotify user has saved the given tracks.
 - `check_user_follows_artists_or_users` — Check whether the current authenticated Spotify user follows the given artists or users.
-- `check_users_follow_playlist` — Check whether the given Spotify users follow a playlist. [write]
+- `check_users_follow_playlist` — Check whether the given Spotify users follow a playlist.
 - `create_playlist` — Create a Spotify playlist for a user account owned by the authenticated user. [write]
 - `follow_artists_or_users` — Follow one or more Spotify artists or users on behalf of the authenticated user. [write]
 - `follow_playlist` — Follow a Spotify playlist on behalf of the authenticated user. [write]
@@ -101,7 +101,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_user_saved_tracks` — Get tracks saved by the current authenticated Spotify user.
 - `get_user_top_artists` — Get the current Spotify user's top artists for a selected affinity time range.
 - `get_user_top_tracks` — Get the current Spotify user's top tracks for a selected affinity time range.
-- `pause_playback` — Pause Spotify playback on the targeted device or current active device. [write]
+- `pause_playback` — Pause Spotify playback on the targeted device or current active device. [destructive]
 - `remove_playlist_items` — Remove tracks or episodes from a Spotify playlist. [destructive]
 - `remove_user_s_saved_audiobooks` — Remove one or more Spotify audiobooks from the authenticated user's library. [destructive]
 - `remove_user_s_saved_episodes` — Remove one or more Spotify episodes from the authenticated user's library. [destructive]
@@ -122,9 +122,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `start_resume_playback` — Start a new Spotify playback context or resume playback on the targeted device. [write]
 - `toggle_playback_shuffle` — Enable or disable Spotify playback shuffle on the targeted device. [write]
 - `transfer_playback` — Transfer Spotify playback to another available device. [write]
-- `unfollow_artists_or_users` — Unfollow one or more Spotify artists or users on behalf of the authenticated user. [write]
-- `unfollow_playlist` — Unfollow a Spotify playlist on behalf of the authenticated user. [write]
-- `update_playlist_items` — Replace all items in a Spotify playlist or reorder an existing range of items. [write]
+- `unfollow_artists_or_users` — Unfollow one or more Spotify artists or users on behalf of the authenticated user. [destructive]
+- `unfollow_playlist` — Unfollow a Spotify playlist on behalf of the authenticated user. [destructive]
+- `update_playlist_items` — Replace all items in a Spotify playlist or reorder an existing range of items. [destructive]
 
 ## Safety
 

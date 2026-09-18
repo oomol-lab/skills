@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Notion"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["notion"]
   icon: "https://static.oomol.com/logo/third-party/Notion.svg"
 ---
@@ -44,12 +44,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_page` — Create a Notion page under a parent page, data source, or workspace-level private area. Use parentId + title for a simple child page under an existing page. Use parent with an official Notion parent payload for advanced cases: { page_id: "..." }, { data_source_id: "..." }, or { workspace: true } for OAuth public integrations. When parent is provided, do not use the top-level title field; provide the page title through properties.title instead. Internal integration secrets usually cannot create workspace-level private pages and should use a parent page or data source. [write]
 - `delete_block` — Archive a Notion block through the official delete endpoint. [destructive]
 - `get_page` — Get a Notion page together with its first-level child blocks. This is a repo-level aggregate helper over page retrieval plus block-children listing.
-- `list_block_children` — List the direct child blocks under a Notion block with pagination. [write]
+- `list_block_children` — List the direct child blocks under a Notion block with pagination.
 - `list_data_source_templates` — List templates available on a Notion data source.
 - `list_users` — List users in the Notion workspace with pagination.
 - `move_page` — Move a Notion page under another page or under a data source through the official page move API. [write]
 - `query_data_source` — Query a Notion data source with filters, sorts, pagination, and optional property filtering.
-- `retrieve_block` — Retrieve a Notion block by block ID. [write]
+- `retrieve_block` — Retrieve a Notion block by block ID.
 - `retrieve_data_source` — Retrieve a Notion data source by data source ID.
 - `retrieve_database` — Retrieve a Notion database's metadata and schema by database ID.
 - `retrieve_page` — Retrieve a Notion page's properties and metadata by page ID. This does not include child block content.
@@ -57,10 +57,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `retrieve_page_property` — Retrieve a specific property item from a Notion page by page ID and property ID. Title, rich_text, relation, and people properties return the paginated list response with type property_item.
 - `retrieve_user` — Retrieve a Notion user by user ID.
 - `search` — Search Notion pages and data sources with optional filter, sort, and pagination controls.
-- `update_block` — Update a Notion block using raw block fields, including block-type payloads and optional trash state. [write]
-- `update_data_source` — Update a Notion data source's title, icon, properties schema, parent, or trash status. [write]
-- `update_database` — Update a Notion database container's parent, title, description, icon, cover, inline display, trash status, or locked state. [write]
-- `update_page` — Update a Notion page's properties, title, icon, cover, trash status, or locked state. [write]
+- `update_block` — Update a Notion block using raw block fields, including block-type payloads and optional trash state. [destructive]
+- `update_data_source` — Update a Notion data source's title, icon, properties schema, parent, or trash status. [destructive]
+- `update_database` — Update a Notion database container's parent, title, description, icon, cover, inline display, trash status, or locked state. [destructive]
+- `update_page` — Update a Notion page's properties, title, icon, cover, trash status, or locked state. [destructive]
 - `update_page_markdown` — Update a Notion page's content as enhanced Markdown through the official page markdown API. [write]
 
 ## Safety

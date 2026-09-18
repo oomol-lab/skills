@@ -1,11 +1,11 @@
 ---
 name: oo-sanity
-description: "Sanity (sanity.io). Use this skill for ANY Sanity request — searching and reading data. Whenever a task involves Sanity, use this skill instead of calling the API directly."
+description: "Sanity (sanity.io). Use this skill for ANY Sanity request — reading, creating, updating, and deleting data. Whenever a task involves Sanity, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sanity"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["sanity"]
   icon: "https://static.oomol.com/logo/third-party/sanity.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_documents` — Retrieve the latest Sanity documents by ID while bypassing the query cache.
-- `mutate_documents` — Execute an atomic transaction of Sanity document mutations.
+- `mutate_documents` — Execute an atomic transaction of Sanity document mutations. [destructive]
 - `query_documents` — Run a GROQ query against a Sanity Content Lake dataset.
 
 ## Safety

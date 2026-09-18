@@ -1,11 +1,11 @@
 ---
 name: oo-sportsdata
-description: "SportsDataIO (sportsdata.io). Use this skill for ANY SportsDataIO request — reading, creating, and updating data. Whenever a task involves SportsDataIO, use this skill instead of calling the API directly."
+description: "SportsDataIO (sportsdata.io). Use this skill for ANY SportsDataIO request — searching and reading data. Whenever a task involves SportsDataIO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "SportsDataIO"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sportsdata"]
   icon: "https://static.oomol.com/logo/third-party/sportsdata.png"
 ---
@@ -40,8 +40,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_athletes` — List SportsDataIO athletes for a competition.
 - `list_competitions` — List SportsDataIO competitions for a sport.
 - `list_event_results_by_date` — List final SportsDataIO event results for a competition on a UTC date.
-- `list_event_schedule_by_date` — List SportsDataIO scheduled events for a competition on a UTC date. [write]
-- `list_event_schedule_by_phase` — List SportsDataIO scheduled events for a competition phase. [write]
+- `list_event_schedule_by_date` — List SportsDataIO scheduled events for a competition on a UTC date.
+- `list_event_schedule_by_phase` — List SportsDataIO scheduled events for a competition phase.
 - `list_live_event_results_by_date` — List live and final SportsDataIO event results for a competition on a UTC date.
 - `list_phases` — List SportsDataIO phases for a competition season.
 - `list_seasons` — List SportsDataIO seasons for a competition.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Forem"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["forem"]
   icon: "https://static.oomol.com/logo/third-party/forem.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_article` — Create a Forem article for the authenticated user. [write]
 - `get_article` — Retrieve one published Forem article by numeric ID.
 - `get_article_by_path` — Retrieve one published Forem article by username and slug.
-- `get_comment` — Retrieve one Forem comment thread by numeric ID. [write]
+- `get_comment` — Retrieve one Forem comment thread by numeric ID.
 - `get_current_user` — Retrieve the Forem user associated with the connected API key.
 - `list_articles` — List published Forem articles with optional filters.
 - `list_comments` — List Forem comments for an article or podcast episode as threaded conversations.

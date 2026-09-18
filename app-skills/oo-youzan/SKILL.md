@@ -1,11 +1,11 @@
 ---
 name: oo-youzan
-description: "Youzan (youzan.com). Use this skill for ANY Youzan request — reading, creating, and updating data. Whenever a task involves Youzan, use this skill instead of calling the API directly."
+description: "Youzan (youzan.com). Use this skill for ANY Youzan request — searching and reading data. Whenever a task involves Youzan, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Youzan"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["youzan"]
   icon: "https://static.oomol.com/logo/third-party/youzan.png"
 ---
@@ -38,8 +38,8 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_item` — Get a Youzan item by its item ID.
-- `get_order` — Get a Youzan order by its order ID. [write]
-- `get_order_logistics` — Get all express or local-delivery packages and tracking details for a Youzan order. [write]
+- `get_order` — Get a Youzan order by its order ID.
+- `get_order_logistics` — Get all express or local-delivery packages and tracking details for a Youzan order.
 - `get_refund` — Get a Youzan refund or after-sale record by its refund ID.
 - `get_shop` — Get the identity and basic profile of the connected Youzan shop.
 - `list_inventory_items` — List shelved or sold-out items from a Youzan store inventory.

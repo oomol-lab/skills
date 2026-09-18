@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Businessmap"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["businessmap"]
   icon: "https://static.oomol.com/logo/third-party/businessmap.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_boards` — List Businessmap boards visible to the connected API key.
 - `list_cards` — List Businessmap cards with common board, workflow, state, and date filters.
 - `list_workspaces` — List Businessmap workspaces visible to the connected API key.
-- `update_board` — Update a Businessmap board name, description, or archive state. [write]
+- `update_board` — Update a Businessmap board name, description, or archive state. [destructive]
 - `update_card` — Update a Businessmap card using JSON card fields. [write]
 
 ## Safety

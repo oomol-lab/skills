@@ -1,11 +1,11 @@
 ---
 name: oo-mcdonalds-cn-mcp
-description: "McDonald's China MCP (open.mcd.cn). Use this skill for ANY McDonald's China MCP request — searching and reading data. Whenever a task involves McDonald's China MCP, use this skill instead of calling the API directly."
+description: "McDonald's China MCP (open.mcd.cn). Use this skill for ANY McDonald's China MCP request — reading, creating, and updating data. Whenever a task involves McDonald's China MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "McDonald's China MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mcdonalds_cn_mcp"]
   icon: "https://static.oomol.com/logo/third-party/mcdonalds_cn_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current McDonald's China MCP tool with JSON arguments. Discover the tool first and confirm the user's intent before actions that create an address, claim coupons, redeem points, or create an order.
+- `call_tool` — Call a current McDonald's China MCP tool with JSON arguments. Discover the tool first and confirm the user's intent before actions that create an address, claim coupons, redeem points, or create an order. [write]
 - `list_tools` — Discover the current McDonald's China ordering, coupon, campaign, and points-mall MCP tools with their live input schemas and behavior annotations.
 
 ## Safety

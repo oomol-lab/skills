@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Harvest"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["harvest"]
   icon: "https://static.oomol.com/logo/third-party/Harvest.svg"
 ---
@@ -50,7 +50,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_tasks` — List tasks available in the connected Harvest account.
 - `list_time_entries` — List Harvest time entries with optional resource and date filters.
 - `restart_time_entry` — Restart a stopped Harvest time entry. [write]
-- `stop_time_entry` — Stop a running Harvest time entry. [write]
+- `stop_time_entry` — Stop a running Harvest time entry. [destructive]
 - `update_time_entry` — Update an existing Harvest time entry. [write]
 
 ## Safety

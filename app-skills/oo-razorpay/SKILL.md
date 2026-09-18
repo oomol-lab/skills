@@ -1,11 +1,11 @@
 ---
 name: oo-razorpay
-description: "Razorpay (razorpay.com). Use this skill for ANY Razorpay request — reading, creating, and updating data. Whenever a task involves Razorpay, use this skill instead of calling the API directly."
+description: "Razorpay (razorpay.com). Use this skill for ANY Razorpay request — reading, creating, updating, and deleting data. Whenever a task involves Razorpay, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Razorpay"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["razorpay"]
   icon: "https://static.oomol.com/logo/third-party/razorpay.png"
 ---
@@ -38,8 +38,8 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_order` — Create a Razorpay order for an amount, currency, and optional receipt metadata. [write]
-- `create_refund` — Create a Razorpay refund for a payment, with optional amount, speed, and notes. [write]
-- `get_order` — Fetch one Razorpay order by its order identifier. [write]
+- `create_refund` — Create a Razorpay refund for a payment, with optional amount, speed, and notes. [destructive]
+- `get_order` — Fetch one Razorpay order by its order identifier.
 - `get_payment` — Fetch one Razorpay payment by its payment identifier.
 - `list_orders` — List Razorpay orders with optional receipt, status-window, and expansion filters.
 - `list_payments` — List Razorpay payments within an optional time window and pagination range.

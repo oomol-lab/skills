@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Ads"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googleads"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Ads.svg"
 ---
@@ -43,8 +43,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_campaign_by_name` — Retrieve all Google Ads campaigns that exactly match a campaign name.
 - `list_accessible_customers` — List Google Ads customer resource names accessible to the current OAuth credential.
 - `list_customer_lists` — List Google Ads customer lists available under the specified customer account.
-- `mutate_ad_groups` — Create, update, or remove Google Ads ad groups in a single mutate request. [write]
-- `mutate_campaigns` — Create, update, or remove Google Ads campaigns in a single mutate request. [write]
+- `mutate_ad_groups` — Create, update, or remove Google Ads ad groups in a single mutate request. [destructive]
+- `mutate_campaigns` — Create, update, or remove Google Ads campaigns in a single mutate request. [destructive]
 - `search_stream_gaql` — Execute a GAQL streaming query and return the aggregated result rows in one response.
 
 ## Safety

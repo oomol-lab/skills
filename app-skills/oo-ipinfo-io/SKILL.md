@@ -1,11 +1,11 @@
 ---
 name: oo-ipinfo-io
-description: "IPinfo (ipinfo.io). Use this skill for ANY IPinfo request — searching and reading data. Whenever a task involves IPinfo, use this skill instead of calling the API directly."
+description: "IPinfo (ipinfo.io). Use this skill for ANY IPinfo request — reading, creating, and updating data. Whenever a task involves IPinfo, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "IPinfo"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["ipinfo_io"]
   icon: "https://static.oomol.com/logo/third-party/ipinfo_io.png"
 ---
@@ -63,7 +63,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_region_by_ip` — Retrieve the region or state name for a specific IP address.
 - `get_timezone_by_ip` — Retrieve the IANA timezone name for a specific IP address.
 - `get_token_info` — Retrieve account and usage metadata for the current IPinfo token.
-- `map_ips` — Upload up to 500,000 IP addresses to the IPinfo map tool and return the generated report URL.
+- `map_ips` — Upload up to 500,000 IP addresses to the IPinfo map tool and return the generated report URL. [write]
 
 ## Safety
 

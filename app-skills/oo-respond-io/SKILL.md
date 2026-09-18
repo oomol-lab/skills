@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Respond.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["respond_io"]
   icon: "https://static.oomol.com/logo/third-party/respond_io.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `add_contact_tags` — Add up to ten tags to a Respond.io contact. [write]
-- `assign_conversation` — Assign or unassign the open conversation for a Respond.io contact. [write]
+- `assign_conversation` — Assign or unassign the open conversation for a Respond.io contact. [destructive]
 - `create_comment` — Add an internal comment to a Respond.io contact conversation. [write]
 - `create_contact` — Create a Respond.io contact identified by an email address or phone number. [write]
 - `create_or_update_contact` — Create a Respond.io contact when it does not exist, or update it when the identifier already exists. [write]
@@ -49,7 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_users` — List users in the connected Respond.io workspace with cursor pagination.
 - `remove_contact_tags` — Remove up to ten tags from a Respond.io contact. [destructive]
 - `update_contact` — Update one or more fields on an existing Respond.io contact. [write]
-- `update_conversation_status` — Open or close a Respond.io contact conversation with optional closing context. [write]
+- `update_conversation_status` — Open or close a Respond.io contact conversation with optional closing context. [destructive]
 
 ## Safety
 

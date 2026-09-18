@@ -1,11 +1,11 @@
 ---
 name: oo-browser-use
-description: "Browser Use (browser-use.com). Use this skill for ANY Browser Use request — reading, creating, and updating data. Whenever a task involves Browser Use, use this skill instead of calling the API directly."
+description: "Browser Use (browser-use.com). Use this skill for ANY Browser Use request — reading, creating, updating, and deleting data. Whenever a task involves Browser Use, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Browser Use"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["browser_use"]
   icon: "https://static.oomol.com/logo/third-party/browser_use.svg"
 ---
@@ -41,8 +41,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_session` — Get a Browser Use Cloud session and poll for task completion.
 - `list_session_messages` — List Browser Use Cloud messages for one session.
 - `list_sessions` — List Browser Use Cloud sessions for the authenticated project.
-- `run_task` — Create or reuse a Browser Use Cloud session and dispatch an agent task.
-- `stop_session` — Stop a Browser Use Cloud session or the current task in that session. [write]
+- `run_task` — Create or reuse a Browser Use Cloud session and dispatch an agent task. [write]
+- `stop_session` — Stop a Browser Use Cloud session or the current task in that session. [destructive]
 
 ## Safety
 

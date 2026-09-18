@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Instatus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["instatus"]
   icon: "https://static.oomol.com/logo/third-party/instatus.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_incident_update` — Delete one Instatus incident update by ID. [destructive]
 - `get_component` — Get one Instatus component by ID.
 - `get_incident` — Get one Instatus incident by ID.
-- `get_incident_update` — Get one Instatus incident update by ID. [write]
+- `get_incident_update` — Get one Instatus incident update by ID.
 - `list_components` — List components on an Instatus status page.
 - `list_incidents` — List incidents on an Instatus status page.
 - `list_status_pages` — List Instatus status pages in the authenticated account.

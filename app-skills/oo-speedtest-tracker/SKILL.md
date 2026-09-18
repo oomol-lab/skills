@@ -1,11 +1,11 @@
 ---
 name: oo-speedtest-tracker
-description: "Speedtest Tracker (speedtest-tracker.dev). Use this skill for ANY Speedtest Tracker request — searching and reading data. Whenever a task involves Speedtest Tracker, use this skill instead of calling the API directly."
+description: "Speedtest Tracker (speedtest-tracker.dev). Use this skill for ANY Speedtest Tracker request — reading, creating, and updating data. Whenever a task involves Speedtest Tracker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Speedtest Tracker"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["speedtest_tracker"]
   icon: "https://static.oomol.com/logo/third-party/speedtest_tracker.png"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_stats` — Retrieve aggregated ping, download, and upload statistics, optionally limited to a date range. Requires a token with the Read Results ability.
 - `list_results` — List speedtest results with optional filters, sorting, and pagination. Requires a token with the Read Results ability.
 - `list_servers` — List nearby Ookla speedtest servers as seen by the instance, for choosing a serverId for run_speedtest. Requires a token with the List Servers ability.
-- `run_speedtest` — Queue a new Ookla speedtest on the instance and return the queued result immediately. Poll get_result with the returned ID until the status is completed, failed, or skipped. Requires a token with the Run Speedtest ability.
+- `run_speedtest` — Queue a new Ookla speedtest on the instance and return the queued result immediately. Poll get_result with the returned ID until the status is completed, failed, or skipped. Requires a token with the Run Speedtest ability. [write]
 
 ## Safety
 

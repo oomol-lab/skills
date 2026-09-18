@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vultr"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["vultr"]
   icon: "https://static.oomol.com/logo/third-party/vultr.svg"
 ---
@@ -49,7 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_plans` — List Vultr VPS plans with plan-type and Windows compatibility filters.
 - `list_regions` — List Vultr deployment regions and the features available in each region.
 - `list_snapshots` — List snapshots in the connected Vultr account.
-- `manage_instance_power` — Start, reboot, or halt a Vultr VPS instance.
+- `manage_instance_power` — Start, reboot, or halt a Vultr VPS instance. [write]
 - `update_instance` — Update common settings on a Vultr VPS instance without reinstalling it. [write]
 
 ## Safety

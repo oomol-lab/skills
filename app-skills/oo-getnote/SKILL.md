@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Get Biji"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["getnote"]
   icon: "https://static.oomol.com/logo/third-party/getnote.png"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_blogger_content` — Get one Getnote blogger content detail, including original text when returned.
 - `get_live_detail` — Get one Getnote live detail, including AI summary and transcript when returned.
 - `get_note` — Get one Getnote note detail, including fields that are not present in lists.
-- `get_save_task` — Check the progress of an asynchronous Getnote link or image save task. [write]
+- `get_save_task` — Check the progress of an asynchronous Getnote link or image save task.
 - `list_blogger_contents` — List content items for a subscribed blogger in a Getnote knowledge base.
 - `list_knowledge_base_bloggers` — List bloggers subscribed in one Getnote knowledge base.
 - `list_knowledge_base_lives` — List completed live sessions in one Getnote knowledge base.

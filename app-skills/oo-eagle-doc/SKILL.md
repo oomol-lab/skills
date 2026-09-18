@@ -1,11 +1,11 @@
 ---
 name: oo-eagle-doc
-description: "Eagle Doc (eagle-doc.com). Use this skill for ANY Eagle Doc request — searching and reading data. Whenever a task involves Eagle Doc, use this skill instead of calling the API directly."
+description: "Eagle Doc (eagle-doc.com). Use this skill for ANY Eagle Doc request — reading, creating, and updating data. Whenever a task involves Eagle Doc, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Eagle Doc"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["eagle_doc"]
   icon: "https://static.oomol.com/logo/third-party/eagle_doc.png"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_quota` — Fetch the overall Eagle Doc management quota summary tied to the connected API key.
 - `list_monthly_usage` — List Eagle Doc monthly usage history together with pricing metadata for each month returned.
 - `list_usage_logs` — List recent Eagle Doc request log rows with processed page counts and timestamps.
-- `process_finance_document` — Upload one invoice, receipt, or PDF to Eagle Doc Finance OCR and return the structured extraction result.
+- `process_finance_document` — Upload one invoice, receipt, or PDF to Eagle Doc Finance OCR and return the structured extraction result. [write]
 
 ## Safety
 

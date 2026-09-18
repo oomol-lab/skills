@@ -1,11 +1,11 @@
 ---
 name: oo-hotjar
-description: "Hotjar (hotjar.com). Use this skill for ANY Hotjar request — reading, creating, and updating data. Whenever a task involves Hotjar, use this skill instead of calling the API directly."
+description: "Hotjar (hotjar.com). Use this skill for ANY Hotjar request — reading, creating, updating, and deleting data. Whenever a task involves Hotjar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hotjar"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hotjar"]
   icon: "https://static.oomol.com/logo/third-party/hotjar.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_survey` — Get one Hotjar survey with its question definitions.
 - `list_survey_responses` — List responses submitted to one Hotjar survey with cursor pagination.
 - `list_surveys` — List surveys for a Hotjar site with cursor pagination.
-- `submit_user_lookup` — Submit a Hotjar organization user lookup request, optionally deleting all matching data when deleteAllHits is true. [write]
+- `submit_user_lookup` — Submit a Hotjar organization user lookup request, optionally deleting all matching data when deleteAllHits is true. [destructive]
 
 ## Safety
 

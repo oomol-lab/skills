@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Claid AI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["claid_ai"]
   icon: "https://static.oomol.com/logo/third-party/claid_ai.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `edit_image` — Edit one publicly accessible image with Claid's synchronous image editing API and return the processed image metadata. [write]
-- `get_edit_task` — Poll one Claid async image editing task by ID and return its current status plus the finished result when available. [write]
+- `get_edit_task` — Poll one Claid async image editing task by ID and return its current status plus the finished result when available.
 - `submit_edit_image` — Submit one publicly accessible image to Claid's async image editing API and return the task handle for later polling. [write]
 
 ## Safety

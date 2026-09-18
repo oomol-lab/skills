@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "VirusTotal"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["virustotal"]
   icon: "https://static.oomol.com/logo/third-party/Virustotal.webp"
 ---
@@ -49,8 +49,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_metadata` — Retrieve VirusTotal metadata, including available privileges, engines, and relationship names.
 - `get_url_report` — Retrieve the latest VirusTotal report for a URL using either a raw URL or a VirusTotal URL identifier.
 - `get_votes` — Retrieve community votes for a file, URL, domain, or IP address in VirusTotal.
-- `rescan_file` — Request a fresh VirusTotal analysis for a previously submitted file.
-- `scan_url` — Submit a URL to VirusTotal for analysis.
+- `rescan_file` — Request a fresh VirusTotal analysis for a previously submitted file. [write]
+- `scan_url` — Submit a URL to VirusTotal for analysis. [write]
 - `search` — Search files, URLs, domains, IPs, and other objects in VirusTotal.
 - `upload_file` — Upload a file to VirusTotal for analysis, automatically using the large-file upload URL when needed. [write]
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Payhip"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["payhip"]
   icon: "https://static.oomol.com/logo/third-party/payhip.svg"
 ---
@@ -38,9 +38,9 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_coupon` — Create a Payhip coupon for a fixed amount or percentage discount. [write]
-- `decrease_license_uses` — Decrease the available uses for a Payhip license key.
+- `decrease_license_uses` — Decrease the available uses for a Payhip license key. [write]
 - `delete_coupon` — Delete a Payhip coupon by ID. [destructive]
-- `disable_license` — Disable a Payhip license key using the product secret key. [write]
+- `disable_license` — Disable a Payhip license key using the product secret key. [destructive]
 - `enable_license` — Enable a Payhip license key using the product secret key. [write]
 - `get_coupon` — Retrieve a Payhip coupon by ID.
 - `list_coupons` — List Payhip coupons, optionally starting from a specific results page.

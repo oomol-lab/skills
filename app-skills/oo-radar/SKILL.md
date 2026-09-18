@@ -1,11 +1,11 @@
 ---
 name: oo-radar
-description: "Radar (radar.com). Use this skill for ANY Radar request — reading, creating, and updating data. Whenever a task involves Radar, use this skill instead of calling the API directly."
+description: "Radar (radar.com). Use this skill for ANY Radar request — searching and reading data. Whenever a task involves Radar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Radar"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["radar"]
   icon: "https://static.oomol.com/logo/third-party/radar.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `autocomplete` — Autocomplete a partial address or place name with Radar.
-- `forward_geocode` — Convert a complete address into coordinates with Radar. [write]
+- `forward_geocode` — Convert a complete address into coordinates with Radar.
 - `ip_geocode` — Geocode the connector request IP with Radar.
 - `reverse_geocode` — Convert coordinates into nearby addresses with Radar.
 - `search_places` — Search Radar places near coordinates by chain or category.

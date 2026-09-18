@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gist"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["gist"]
   icon: "https://static.oomol.com/logo/third-party/github.png"
 ---
@@ -42,9 +42,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_gist_comment` — Create a comment on a GitHub gist. [write]
 - `delete_gist` — Delete a GitHub gist. [destructive]
 - `delete_gist_comment` — Delete a GitHub gist comment. [destructive]
-- `fork_gist` — Fork a GitHub gist.
+- `fork_gist` — Fork a GitHub gist. [write]
 - `get_gist` — Get a GitHub gist by id.
-- `get_gist_comment` — Get a GitHub gist comment by id. [write]
+- `get_gist_comment` — Get a GitHub gist comment by id.
 - `get_gist_revision` — Get a specific revision of a GitHub gist.
 - `list_gist_comments` — List comments for a GitHub gist.
 - `list_gist_commits` — List commit history for a GitHub gist.
@@ -54,7 +54,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_starred_gists` — List gists starred by the authenticated GitHub user.
 - `list_user_gists` — List public gists for a GitHub user.
 - `star_gist` — Star a GitHub gist. [write]
-- `unstar_gist` — Unstar a GitHub gist. [write]
+- `unstar_gist` — Unstar a GitHub gist. [destructive]
 - `update_gist` — Update a GitHub gist description or files. [write]
 - `update_gist_comment` — Update a GitHub gist comment. [write]
 

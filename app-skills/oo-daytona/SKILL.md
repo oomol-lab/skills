@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Daytona"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["daytona"]
   icon: "https://static.oomol.com/logo/third-party/daytona.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_sandbox` — Get one Daytona sandbox by ID or name.
 - `list_sandboxes` — List Daytona sandboxes with cursor pagination and common filters.
 - `start_sandbox` — Start, restore, or resume a Daytona sandbox according to its current state. [write]
-- `stop_sandbox` — Stop a Daytona sandbox, optionally forcing an immediate stop. [write]
+- `stop_sandbox` — Stop a Daytona sandbox, optionally forcing an immediate stop. [destructive]
 
 ## Safety
 

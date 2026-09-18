@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Stripe"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["stripe"]
   icon: "https://static.oomol.com/logo/third-party/stripe.svg"
 ---
@@ -53,7 +53,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_prices` — Search Stripe prices with Stripe's search query syntax.
 - `search_products` — Search Stripe products with Stripe's search query syntax.
 - `update_customer` — Update a Stripe customer with common profile and metadata fields. [write]
-- `update_price` — Update mutable fields on a Stripe price. [write]
+- `update_price` — Update mutable fields on a Stripe price. [destructive]
 - `update_product` — Update a Stripe product with common catalog fields. [write]
 
 ## Safety

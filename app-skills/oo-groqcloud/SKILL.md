@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GroqCloud"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["groqcloud"]
   icon: "https://static.oomol.com/logo/third-party/GroqCloud.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_audio_transcription` — Transcribe an audio file into text in its original language using a GroqCloud Whisper model. Supply the audio inline as base64 or as a public URL that GroqCloud downloads. [write]
 - `create_audio_translation` — Translate an audio file into English text using a GroqCloud Whisper model. Supply the audio inline as base64 or as a public URL that GroqCloud downloads. [write]
-- `create_chat_completion` — Create a non-streaming GroqCloud OpenAI-compatible chat completion. [write]
+- `create_chat_completion` — Create a non-streaming GroqCloud OpenAI-compatible chat completion.
 - `get_model` — Fetch metadata for one GroqCloud model.
 - `list_models` — List the GroqCloud models available to the current API key.
 

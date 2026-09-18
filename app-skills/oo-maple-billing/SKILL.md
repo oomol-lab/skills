@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Measure"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["maple_billing"]
   icon: "https://static.oomol.com/logo/third-party/maple_billing.png"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `find_product_pricing` — Search Measure product pricing records with official query criteria.
 - `find_products` — Search Measure products with pagination and official query criteria.
 - `find_subscriptions` — Search Measure subscriptions with pagination and official query criteria.
-- `get_checkout_session` — Retrieve a Measure checkout session by ID. [write]
+- `get_checkout_session` — Retrieve a Measure checkout session by ID.
 - `get_customer` — Retrieve a Measure customer by ID or external identifier.
 - `get_product` — Retrieve a Measure product by ID or external identifier.
 - `get_product_pricing` — Retrieve a Measure product pricing record by ID or external identifier.

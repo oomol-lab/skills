@@ -1,11 +1,11 @@
 ---
 name: oo-myotp-app
-description: "MyOTP.App (myotp.app). Use this skill for ANY MyOTP.App request — searching and reading data. Whenever a task involves MyOTP.App, use this skill instead of calling the API directly."
+description: "MyOTP.App (myotp.app). Use this skill for ANY MyOTP.App request — reading, creating, and updating data. Whenever a task involves MyOTP.App, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "MyOTP.App"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["myotp_app"]
   icon: "https://static.oomol.com/logo/third-party/myotp_app.png"
 ---
@@ -38,8 +38,8 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `check_otp_status` — Check the delivery and validity status of a MyOTP.App OTP message.
-- `extend_otp` — Extend the expiry time of an existing MyOTP.App OTP.
-- `generate_otp` — Generate and deliver an OTP through MyOTP.App by SMS or WhatsApp.
+- `extend_otp` — Extend the expiry time of an existing MyOTP.App OTP. [write]
+- `generate_otp` — Generate and deliver an OTP through MyOTP.App by SMS or WhatsApp. [write]
 - `get_transactions_report` — Retrieve a paginated MyOTP.App transaction report for a date range.
 - `verify_otp` — Verify an OTP using its message id or destination phone number.
 

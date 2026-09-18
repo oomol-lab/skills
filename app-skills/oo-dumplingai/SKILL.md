@@ -1,11 +1,11 @@
 ---
 name: oo-dumplingai
-description: "DumplingAI (dumplingai.com). Use this skill for ANY DumplingAI request — searching and reading data. Whenever a task involves DumplingAI, use this skill instead of calling the API directly."
+description: "DumplingAI (dumplingai.com). Use this skill for ANY DumplingAI request — reading, creating, and updating data. Whenever a task involves DumplingAI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "DumplingAI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dumplingai"]
   icon: "https://static.oomol.com/logo/third-party/dumplingai.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_catalog_details` — Get the current contract and metadata for a DumplingAI catalog item.
 - `list_transactions` — List credit transactions for the connected DumplingAI API key.
 - `list_usage` — List usage and request logs for the connected DumplingAI API key.
-- `run` — Run a DumplingAI capability or managed provider endpoint with JSON input.
+- `run` — Run a DumplingAI capability or managed provider endpoint with JSON input. [write]
 - `search_catalog` — Search DumplingAI capabilities, providers, and managed provider endpoints.
 
 ## Safety

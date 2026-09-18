@@ -1,11 +1,11 @@
 ---
 name: oo-you
-description: "You.com (you.com). Use this skill for ANY You.com request — searching and reading data. Whenever a task involves You.com, use this skill instead of calling the API directly."
+description: "You.com (you.com). Use this skill for ANY You.com request — reading, creating, and updating data. Whenever a task involves You.com, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "You.com"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["you"]
   icon: "https://static.oomol.com/logo/third-party/you.svg"
 ---
@@ -38,9 +38,9 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `fetch_contents` — Fetch HTML, Markdown, or metadata for one or more webpages with You.com.
-- `finance_research` — Generate a cited finance-grade answer with the You.com Finance Research API.
+- `finance_research` — Generate a cited finance-grade answer with the You.com Finance Research API. [write]
 - `get_account_balance` — Get the remaining You.com credit balance for the API key account.
-- `research` — Generate a cited research answer with the You.com Research API.
+- `research` — Generate a cited research answer with the You.com Research API. [write]
 - `search` — Search web and news sources with the You.com Search API.
 
 ## Safety

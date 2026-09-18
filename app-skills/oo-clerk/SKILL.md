@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Clerk"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["clerk"]
   icon: "https://static.oomol.com/logo/third-party/clerk.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_user` — Retrieve a Clerk user by ID.
 - `list_users` — List Clerk users with optional filtering and pagination.
 - `lock_user` — Lock a Clerk user. [write]
-- `unban_user` — Unban a Clerk user.
+- `unban_user` — Unban a Clerk user. [write]
 - `unlock_user` — Unlock a Clerk user. [write]
 - `update_user` — Update a Clerk user. [write]
 - `update_user_metadata` — Deep merge metadata for a Clerk user. [write]

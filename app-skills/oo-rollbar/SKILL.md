@@ -1,11 +1,11 @@
 ---
 name: oo-rollbar
-description: "Rollbar (rollbar.com). Use this skill for ANY Rollbar request — reading, creating, and updating data. Whenever a task involves Rollbar, use this skill instead of calling the API directly."
+description: "Rollbar (rollbar.com). Use this skill for ANY Rollbar request — searching and reading data. Whenever a task involves Rollbar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Rollbar"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["rollbar"]
   icon: "https://static.oomol.com/logo/third-party/rollbar.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_deploy` — Get one Rollbar deploy by deploy ID. [write]
+- `get_deploy` — Get one Rollbar deploy by deploy ID.
 - `get_item` — Get one Rollbar item by item ID.
 - `get_occurrence` — Get one Rollbar occurrence by occurrence ID.
 - `get_project` — Get one Rollbar project by project ID.

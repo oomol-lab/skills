@@ -1,11 +1,11 @@
 ---
 name: oo-precoro
-description: "Precoro (precoro.com). Use this skill for ANY Precoro request — reading, creating, and updating data. Whenever a task involves Precoro, use this skill instead of calling the API directly."
+description: "Precoro (precoro.com). Use this skill for ANY Precoro request — searching and reading data. Whenever a task involves Precoro, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Precoro"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["precoro"]
   icon: "https://static.oomol.com/logo/third-party/precoro.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_item` — Get one Precoro catalog item by numeric item ID.
-- `get_purchase_order` — Get one Precoro purchase order by its company-visible IDN. [write]
+- `get_purchase_order` — Get one Precoro purchase order by its company-visible IDN.
 - `get_supplier` — Get one Precoro supplier by numeric supplier ID.
 - `list_items` — List Precoro catalog items with pagination and optional modified-since filtering.
 - `list_purchase_orders` — List Precoro purchase orders with pagination and optional status/date filters.

@@ -1,11 +1,11 @@
 ---
 name: oo-abuseipdb
-description: "AbuseIPDB (abuseipdb.com). Use this skill for ANY AbuseIPDB request — reading, creating, and updating data. Whenever a task involves AbuseIPDB, use this skill instead of calling the API directly."
+description: "AbuseIPDB (abuseipdb.com). Use this skill for ANY AbuseIPDB request — searching and reading data. Whenever a task involves AbuseIPDB, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "AbuseIPDB"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["abuseipdb"]
   icon: "https://static.oomol.com/logo/third-party/abuseipdb.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `blacklist` — Read the structured AbuseIPDB blacklist feed in JSON format.
-- `check_block` — Inspect a CIDR block for reported addresses with AbuseIPDB. [write]
+- `check_block` — Inspect a CIDR block for reported addresses with AbuseIPDB.
 - `check_ip` — Check the abuse reputation of a single IP address with AbuseIPDB.
 - `get_reports` — List detailed AbuseIPDB reports for a single IP address.
 

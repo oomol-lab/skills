@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pinata"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pinata"]
   icon: "https://static.oomol.com/logo/third-party/pinata.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_group` — Get one Pinata group by ID from the public or private IPFS network.
 - `list_files` — List Pinata files from the public or private IPFS network with optional filters.
 - `list_groups` — List Pinata file groups from the public or private IPFS network.
-- `pin_by_cid` — Ask Pinata to pin an existing public IPFS CID. [write]
+- `pin_by_cid` — Ask Pinata to pin an existing public IPFS CID.
 - `query_pin_requests` — Query Pinata pin-by-CID requests with optional filters and pagination.
 - `remove_file_from_group` — Remove a Pinata file from a Pinata group. [destructive]
 - `update_file` — Update a Pinata file name or key-value metadata. [write]

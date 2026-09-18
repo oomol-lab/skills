@@ -1,11 +1,11 @@
 ---
 name: oo-ongage
-description: "Ongage (ongage.com). Use this skill for ANY Ongage request — reading, creating, and updating data. Whenever a task involves Ongage, use this skill instead of calling the API directly."
+description: "Ongage (ongage.com). Use this skill for ANY Ongage request — reading, creating, updating, and deleting data. Whenever a task involves Ongage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ongage"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ongage"]
   icon: "https://static.oomol.com/logo/third-party/ongage.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `change_contact_status` — Change non-destructive subscription or delivery status for contacts in an Ongage list.
+- `change_contact_status` — Change non-destructive subscription or delivery status for contacts in an Ongage list. [destructive]
 - `get_contact_by_email` — Get one contact from an Ongage list by email address.
 - `get_contact_by_id` — Get one contact from an Ongage list by contact ID.
 - `get_list` — Get one Ongage list by its numeric ID.

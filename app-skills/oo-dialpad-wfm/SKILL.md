@@ -1,11 +1,11 @@
 ---
 name: oo-dialpad-wfm
-description: "Dialpad WFM (dialpad.com). Use this skill for ANY Dialpad WFM request — reading, creating, and updating data. Whenever a task involves Dialpad WFM, use this skill instead of calling the API directly."
+description: "Dialpad WFM (dialpad.com). Use this skill for ANY Dialpad WFM request — searching and reading data. Whenever a task involves Dialpad WFM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dialpad WFM"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["dialpad_wfm"]
   icon: "https://static.oomol.com/logo/third-party/dialpad_wfm.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_schedule` — Retrieve one page of Dialpad WFM schedule entries for an RFC 3339 time interval. [write]
+- `get_schedule` — Retrieve one page of Dialpad WFM schedule entries for an RFC 3339 time interval.
 - `list_activity_metrics` — Retrieve one cursor page of Dialpad WFM activity metrics for an RFC 3339 interval.
 - `list_agent_metrics` — Retrieve one cursor page of Dialpad WFM agent metrics for an RFC 3339 interval.
 

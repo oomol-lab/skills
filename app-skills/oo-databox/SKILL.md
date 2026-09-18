@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Databox"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["databox"]
   icon: "https://static.oomol.com/logo/third-party/databox.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_dataset` — Delete a Databox dataset by ID. [destructive]
 - `get_dataset_ingestion_status` — Get the processing status of a Databox dataset ingestion.
 - `list_accounts` — List Databox accounts accessible to the API key.
-- `push_dataset_data` — Push JSON records into a Databox dataset.
+- `push_dataset_data` — Push JSON records into a Databox dataset. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Healthchecks.io"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["healthchecks_io"]
   icon: "https://static.oomol.com/logo/third-party/healthchecks_io.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_checks` — List Healthchecks.io checks in the current project.
 - `list_flips` — List Healthchecks.io status flips for a check by UUID or unique key.
 - `list_pings` — List recent Healthchecks.io pings for a check by UUID.
-- `pause_check` — Pause monitoring for a Healthchecks.io check by UUID. [write]
+- `pause_check` — Pause monitoring for a Healthchecks.io check by UUID. [destructive]
 - `resume_check` — Resume monitoring for a Healthchecks.io check by UUID. [write]
 - `update_check` — Update a Healthchecks.io check by UUID. [write]
 

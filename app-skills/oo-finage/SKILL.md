@@ -1,11 +1,11 @@
 ---
 name: oo-finage
-description: "Finage (finage.co.uk). Use this skill for ANY Finage request — reading, creating, and updating data. Whenever a task involves Finage, use this skill instead of calling the API directly."
+description: "Finage (finage.co.uk). Use this skill for ANY Finage request — searching and reading data. Whenever a task involves Finage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Finage"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["finage"]
   icon: "https://static.oomol.com/logo/third-party/Finage.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_aggregates` — Get Finage OHLCV aggregate bars for a U.S. stock over a date range.
 - `get_last_quote` — Get the latest Finage quote for a single U.S. stock symbol.
 - `get_last_trade` — Get the latest Finage trade for a single U.S. stock symbol.
-- `get_previous_close` — Get the previous close aggregate bar for a single Finage U.S. stock symbol. [write]
+- `get_previous_close` — Get the previous close aggregate bar for a single Finage U.S. stock symbol.
 - `get_snapshot` — Get a Finage stock snapshot for a bounded list of U.S. stock symbols, including quotes, trades, or both.
 - `list_stock_symbols` — List Finage U.S. stock symbols with optional page and search filters.
 

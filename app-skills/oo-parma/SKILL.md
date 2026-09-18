@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Parma"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["parma"]
   icon: "https://static.oomol.com/logo/third-party/parma.png"
 ---
@@ -57,7 +57,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_stages` — List pipeline stages in the connected Parma workspace.
 - `list_users` — List users in the connected Parma workspace.
 - `remove_relationship_from_group` — Remove a Parma relationship from one of its groups. [destructive]
-- `update_note` — Update a Parma note by ID. [write]
+- `update_note` — Update a Parma note by ID. [destructive]
 - `update_relationship` — Update a Parma relationship and its custom properties. [write]
 
 ## Safety

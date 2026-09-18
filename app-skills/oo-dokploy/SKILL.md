@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dokploy"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dokploy"]
   icon: "https://static.oomol.com/logo/third-party/dokploy.png"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_application_deployment` — Cancel a Dokploy application deployment. Warning: this operation can interrupt an active deployment. [write]
-- `cancel_compose_deployment` — Cancel a Dokploy compose deployment. Warning: this operation can interrupt an active deployment. [write]
+- `cancel_application_deployment` — Cancel a Dokploy application deployment. Warning: this operation can interrupt an active deployment. [destructive]
+- `cancel_compose_deployment` — Cancel a Dokploy compose deployment. Warning: this operation can interrupt an active deployment. [destructive]
 - `count_servers` — Count Dokploy servers visible to the API key.
 - `create_domain` — Create a Dokploy domain route. [write]
 - `create_environment` — Create a Dokploy environment inside a project. [write]
@@ -74,7 +74,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_redis` — Get a Dokploy Redis service by ID.
 - `get_server` — Get a Dokploy server by ID.
 - `get_server_time` — Get the current server time from Dokploy.
-- `kill_deployment_process` — Kill a Dokploy deployment process. Warning: this operation can interrupt an active deployment.
+- `kill_deployment_process` — Kill a Dokploy deployment process. Warning: this operation can interrupt an active deployment. [destructive]
 - `list_application_deployments` — List deployments for a Dokploy application.
 - `list_application_domains` — List Dokploy domains attached to an application.
 - `list_bitbucket_branches` — List branches for a repository through a Dokploy Bitbucket provider connection.
@@ -110,20 +110,20 @@ Each action is listed below with a one-line description; actions that change sta
 - `read_mysql_logs` — Read logs for a Dokploy MySQL service.
 - `read_postgres_logs` — Read logs for a Dokploy Postgres service.
 - `read_redis_logs` — Read logs for a Dokploy Redis service.
-- `rebuild_libsql` — Rebuild a Dokploy LibSQL service. Warning: this operation can disrupt running services.
-- `rebuild_mariadb` — Rebuild a Dokploy MariaDB service. Warning: this operation can disrupt running services.
-- `rebuild_mongo` — Rebuild a Dokploy MongoDB service. Warning: this operation can disrupt running services.
-- `rebuild_mysql` — Rebuild a Dokploy MySQL service. Warning: this operation can disrupt running services.
-- `rebuild_postgres` — Rebuild a Dokploy Postgres service. Warning: this operation can disrupt running services.
-- `rebuild_redis` — Rebuild a Dokploy Redis service. Warning: this operation can disrupt running services.
-- `redeploy_application` — Redeploy a Dokploy application.
-- `redeploy_compose` — Redeploy a Dokploy compose service.
-- `reload_libsql` — Reload a Dokploy LibSQL service.
-- `reload_mariadb` — Reload a Dokploy MariaDB service.
-- `reload_mongo` — Reload a Dokploy MongoDB service.
-- `reload_mysql` — Reload a Dokploy MySQL service.
-- `reload_postgres` — Reload a Dokploy Postgres service.
-- `reload_redis` — Reload a Dokploy Redis service.
+- `rebuild_libsql` — Rebuild a Dokploy LibSQL service. Warning: this operation can disrupt running services. [destructive]
+- `rebuild_mariadb` — Rebuild a Dokploy MariaDB service. Warning: this operation can disrupt running services. [destructive]
+- `rebuild_mongo` — Rebuild a Dokploy MongoDB service. Warning: this operation can disrupt running services. [destructive]
+- `rebuild_mysql` — Rebuild a Dokploy MySQL service. Warning: this operation can disrupt running services. [destructive]
+- `rebuild_postgres` — Rebuild a Dokploy Postgres service. Warning: this operation can disrupt running services. [destructive]
+- `rebuild_redis` — Rebuild a Dokploy Redis service. Warning: this operation can disrupt running services. [destructive]
+- `redeploy_application` — Redeploy a Dokploy application. [write]
+- `redeploy_compose` — Redeploy a Dokploy compose service. [write]
+- `reload_libsql` — Reload a Dokploy LibSQL service. [write]
+- `reload_mariadb` — Reload a Dokploy MariaDB service. [write]
+- `reload_mongo` — Reload a Dokploy MongoDB service. [write]
+- `reload_mysql` — Reload a Dokploy MySQL service. [write]
+- `reload_postgres` — Reload a Dokploy Postgres service. [write]
+- `reload_redis` — Reload a Dokploy Redis service. [write]
 - `search_applications` — Search Dokploy applications with optional filters and pagination.
 - `search_composes` — Search Dokploy compose services with optional filters and pagination.
 - `search_environments` — Search Dokploy environments with optional filters and pagination.
@@ -141,14 +141,14 @@ Each action is listed below with a one-line description; actions that change sta
 - `start_mysql` — Start a Dokploy MySQL service. [write]
 - `start_postgres` — Start a Dokploy Postgres service. [write]
 - `start_redis` — Start a Dokploy Redis service. [write]
-- `stop_application` — Stop a Dokploy application. Warning: this operation can disrupt running services. [write]
-- `stop_compose` — Stop a Dokploy compose service. Warning: this operation can disrupt running services. [write]
-- `stop_libsql` — Stop a Dokploy LibSQL service. Warning: this operation can disrupt running services. [write]
-- `stop_mariadb` — Stop a Dokploy MariaDB service. Warning: this operation can disrupt running services. [write]
-- `stop_mongo` — Stop a Dokploy MongoDB service. Warning: this operation can disrupt running services. [write]
-- `stop_mysql` — Stop a Dokploy MySQL service. Warning: this operation can disrupt running services. [write]
-- `stop_postgres` — Stop a Dokploy Postgres service. Warning: this operation can disrupt running services. [write]
-- `stop_redis` — Stop a Dokploy Redis service. Warning: this operation can disrupt running services. [write]
+- `stop_application` — Stop a Dokploy application. Warning: this operation can disrupt running services. [destructive]
+- `stop_compose` — Stop a Dokploy compose service. Warning: this operation can disrupt running services. [destructive]
+- `stop_libsql` — Stop a Dokploy LibSQL service. Warning: this operation can disrupt running services. [destructive]
+- `stop_mariadb` — Stop a Dokploy MariaDB service. Warning: this operation can disrupt running services. [destructive]
+- `stop_mongo` — Stop a Dokploy MongoDB service. Warning: this operation can disrupt running services. [destructive]
+- `stop_mysql` — Stop a Dokploy MySQL service. Warning: this operation can disrupt running services. [destructive]
+- `stop_postgres` — Stop a Dokploy Postgres service. Warning: this operation can disrupt running services. [destructive]
+- `stop_redis` — Stop a Dokploy Redis service. Warning: this operation can disrupt running services. [destructive]
 - `update_domain` — Update a Dokploy domain route. [write]
 - `update_environment` — Update a Dokploy environment. [write]
 - `validate_domain` — Validate whether a domain points at a Dokploy server.

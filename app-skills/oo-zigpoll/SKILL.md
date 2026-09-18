@@ -1,11 +1,11 @@
 ---
 name: oo-zigpoll
-description: "Zigpoll (zigpoll.com). Use this skill for ANY Zigpoll request — searching and reading data. Whenever a task involves Zigpoll, use this skill instead of calling the API directly."
+description: "Zigpoll (zigpoll.com). Use this skill for ANY Zigpoll request — reading, creating, and updating data. Whenever a task involves Zigpoll, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zigpoll"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zigpoll"]
   icon: "https://static.oomol.com/logo/third-party/zigpoll.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_survey_link` — Generate a unique trackable Zigpoll survey link for a poll.
+- `generate_survey_link` — Generate a unique trackable Zigpoll survey link for a poll. [write]
 - `get_current_user` — Fetch the authenticated Zigpoll user object.
 - `get_poll` — Fetch a Zigpoll poll by ID.
 - `list_accounts` — List Zigpoll account objects available to the authenticated user.

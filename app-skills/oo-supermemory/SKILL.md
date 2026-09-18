@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Supermemory"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["supermemory"]
   icon: "https://static.oomol.com/logo/third-party/supermemory.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_document` — Submit raw text, a transcript, or a public URL for asynchronous memory extraction or managed RAG indexing. [write]
 - `create_memories` — Store one or more already-known facts directly as immediately searchable Supermemory memories. [write]
 - `delete_document` — Permanently delete one source document by its Supermemory ID or caller-provided custom ID. [destructive]
-- `forget_memory` — Soft-delete one memory by ID so it is excluded from normal recall while remaining auditable.
+- `forget_memory` — Soft-delete one memory by ID so it is excluded from normal recall while remaining auditable. [destructive]
 - `get_document` — Get a Supermemory document and its current processing status, including the final extracted content when available.
 - `get_profile` — Retrieve long-term, recent, and bucketed profile context for one user or tenant container.
 - `search` — Recall relevant memories, document chunks, or both for a question within one tenant container.

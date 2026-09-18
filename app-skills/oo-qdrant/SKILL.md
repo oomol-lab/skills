@@ -1,11 +1,11 @@
 ---
 name: oo-qdrant
-description: "Qdrant Cloud (qdrant.tech). Use this skill for ANY Qdrant Cloud request — reading, creating, and updating data. Whenever a task involves Qdrant Cloud, use this skill instead of calling the API directly."
+description: "Qdrant Cloud (qdrant.tech). Use this skill for ANY Qdrant Cloud request — reading, creating, updating, and deleting data. Whenever a task involves Qdrant Cloud, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Qdrant Cloud"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["qdrant"]
   icon: "https://static.oomol.com/logo/third-party/qdrant.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_collections` — List the Qdrant collections visible to the authenticated API key.
 - `query_points` — Search a dense-vector Qdrant collection with an optional payload filter.
 - `scroll_points` — Read one page of points from a Qdrant collection with an optional payload filter.
-- `upsert_points` — Insert or replace dense-vector points in a Qdrant collection and wait for the write to commit. [write]
+- `upsert_points` — Insert or replace dense-vector points in a Qdrant collection and wait for the write to commit. [destructive]
 
 ## Safety
 

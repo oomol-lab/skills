@@ -1,11 +1,11 @@
 ---
 name: oo-dachser
-description: "DACHSER (dachser.com). Use this skill for ANY DACHSER request — reading, creating, and updating data. Whenever a task involves DACHSER, use this skill instead of calling the API directly."
+description: "DACHSER (dachser.com). Use this skill for ANY DACHSER request — searching and reading data. Whenever a task involves DACHSER, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "DACHSER"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dachser"]
   icon: "https://static.oomol.com/logo/third-party/dachser.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_delivery_order_status` — Retrieve DACHSER delivery-order status using order references and filters. [write]
+- `get_delivery_order_status` — Retrieve DACHSER delivery-order status using order references and filters.
 - `get_shipment_history` — Retrieve the full DACHSER event history for shipments matching a tracking reference.
 - `get_shipment_status` — Retrieve the current DACHSER status for shipments matching a tracking reference.
 

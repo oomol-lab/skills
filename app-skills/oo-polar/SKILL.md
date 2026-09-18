@@ -1,11 +1,11 @@
 ---
 name: oo-polar
-description: "Polar (polar.sh). Use this skill for ANY Polar request — reading, creating, and updating data. Whenever a task involves Polar, use this skill instead of calling the API directly."
+description: "Polar (polar.sh). Use this skill for ANY Polar request — searching and reading data. Whenever a task involves Polar, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Polar"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["polar"]
   icon: "https://static.oomol.com/logo/third-party/polar.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_customer_by_external_id` — Get a Polar customer by external ID.
 - `get_customer_state` — Get a Polar customer state by customer ID, including subscriptions and benefits.
 - `get_customer_state_by_external_id` — Get a Polar customer state by external customer ID, including subscriptions and benefits.
-- `get_order` — Get a Polar order by ID. [write]
+- `get_order` — Get a Polar order by ID.
 - `get_organization` — Get a Polar organization by ID.
 - `get_product` — Get a Polar product by ID.
 - `get_subscription` — Get a Polar subscription by ID.

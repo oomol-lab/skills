@@ -1,11 +1,11 @@
 ---
 name: oo-buildkite
-description: "Buildkite (buildkite.com). Use this skill for ANY Buildkite request — reading, creating, and updating data. Whenever a task involves Buildkite, use this skill instead of calling the API directly."
+description: "Buildkite (buildkite.com). Use this skill for ANY Buildkite request — reading, creating, updating, and deleting data. Whenever a task involves Buildkite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Buildkite"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["buildkite"]
   icon: "https://static.oomol.com/logo/third-party/Buildkite.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_build` — Cancel a Buildkite build by build number. [write]
+- `cancel_build` — Cancel a Buildkite build by build number. [destructive]
 - `create_build` — Create a new Buildkite build for a pipeline. [write]
 - `get_build` — Get a single Buildkite build by organization, pipeline slug, and build number.
 - `get_current_access_token` — Inspect the current Buildkite API access token, including scopes and owner summary.
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_builds_for_pipeline` — List builds for a single Buildkite pipeline.
 - `list_organizations` — List Buildkite organizations accessible to the current API token.
 - `list_pipelines` — List Buildkite pipelines for an organization.
-- `rebuild_build` — Rebuild a Buildkite build by build number.
+- `rebuild_build` — Rebuild a Buildkite build by build number. [write]
 
 ## Safety
 

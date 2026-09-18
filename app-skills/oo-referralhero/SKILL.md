@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ReferralHero"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["referralhero"]
   icon: "https://static.oomol.com/logo/third-party/referralhero.svg"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_lists` — List active ReferralHero referral campaigns in the connected account.
 - `list_rewards` — List the rewards configured for a ReferralHero campaign.
 - `list_subscribers` — List subscribers in a ReferralHero campaign with pagination and optional sorting.
-- `track_conversion` — Track the second conversion event for a two-step or three-step referral campaign.
+- `track_conversion` — Track the second conversion event for a two-step or three-step referral campaign. [write]
 - `update_subscriber` — Update fields on one verified ReferralHero subscriber. [write]
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-junglescout
-description: "Jungle Scout (junglescout.com). Use this skill for ANY Jungle Scout request — reading, creating, and updating data. Whenever a task involves Jungle Scout, use this skill instead of calling the API directly."
+description: "Jungle Scout (junglescout.com). Use this skill for ANY Jungle Scout request — searching and reading data. Whenever a task involves Jungle Scout, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jungle Scout"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["junglescout"]
   icon: "https://static.oomol.com/logo/third-party/junglescout.svg"
 ---
@@ -41,7 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_keywords_by_asin` — Retrieve keywords that rank for up to 10 Amazon ASINs, including volume, trend, bid, relevance, and rank data.
 - `get_keywords_by_keyword` — Retrieve related Amazon keywords from a search term with volume, trend, bid, relevance, and competition data.
 - `get_sales_estimates` — Retrieve daily estimated Amazon unit sales for one ASIN over a date range.
-- `get_share_of_voice` — Retrieve Amazon keyword share of voice by brand, including organic, sponsored, and top-ASIN conversion data. [write]
+- `get_share_of_voice` — Retrieve Amazon keyword share of voice by brand, including organic, sponsored, and top-ASIN conversion data.
 - `search_products` — Search the Jungle Scout Amazon product database by category, keywords, price, demand, revenue, rating, seller, and listing-quality filters.
 
 ## Safety

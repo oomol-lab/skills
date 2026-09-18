@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pushbullet"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["pushbullet"]
   icon: "https://static.oomol.com/logo/third-party/Pushbullet.svg"
 ---
@@ -50,7 +50,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_pushes` — List Pushbullet pushes with optional active, modified-after, and cursor filters.
 - `update_chat` — Mute or unmute an existing Pushbullet chat. [write]
 - `update_device` — Update metadata for an existing Pushbullet device. [write]
-- `update_push` — Update a Pushbullet push, typically to dismiss it or update list items. [write]
+- `update_push` — Update a Pushbullet push, typically to dismiss it or update list items. [destructive]
 
 ## Safety
 

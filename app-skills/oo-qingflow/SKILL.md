@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Qingflow"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["qingflow"]
   icon: "https://static.oomol.com/logo/third-party/qingflow.png"
 ---
@@ -53,11 +53,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_records` — List and filter business-data records from one Qingflow application.
 - `list_roles` — List roles in the connected Qingflow workspace.
 - `list_workflow_logs` — List workflow-node processing logs for one Qingflow record.
-- `process_record` — Submit, approve, reject, complete, or copy a Qingflow workflow node.
+- `process_record` — Submit, approve, reject, complete, or copy a Qingflow workflow node. [write]
 - `reassign_record` — Reassign active approval or fill-in nodes on one Qingflow record. [write]
 - `rollback_record` — Roll one Qingflow record back to an allowed earlier workflow node. [destructive]
 - `update_record` — Update selected field answers on one Qingflow record and return its asynchronous request ID. [write]
-- `urge_record` — Send a Qingflow reminder for one in-progress business-data record.
+- `urge_record` — Send a Qingflow reminder for one in-progress business-data record. [write]
 
 ## Safety
 

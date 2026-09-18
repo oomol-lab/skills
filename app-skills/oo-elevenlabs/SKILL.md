@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ElevenLabs"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["elevenlabs"]
   icon: "https://static.oomol.com/logo/third-party/ElevenLabs.svg"
 ---
@@ -49,8 +49,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_voice_settings` — Get the synthesis settings configured for one ElevenLabs voice.
 - `get_voices` — List the available ElevenLabs voices with their key metadata and settings.
 - `search_voices` — Search ElevenLabs voices with v2 pagination, filtering, sorting, and optional total count.
-- `text_to_speech` — Generate speech audio from text by calling ElevenLabs text-to-speech and uploading the binary result to connector transit storage.
-- `text_to_speech_with_timestamps` — Generate speech audio with character-level timing, upload the audio to connector transit storage, and return timing metadata.
+- `text_to_speech` — Generate speech audio from text by calling ElevenLabs text-to-speech and uploading the binary result to connector transit storage. [write]
+- `text_to_speech_with_timestamps` — Generate speech audio with character-level timing, upload the audio to connector transit storage, and return timing metadata. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "UnifAPI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["unifapi"]
   icon: "https://static.oomol.com/logo/third-party/unifapi.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `browse_reddit_feed_home` — Browse Reddit's anonymous home feed.
 - `browse_reddit_feed_news` — Browse Reddit's news feed.
 - `browse_reddit_feed_popular` — Browse Reddit's popular feed.
-- `browse_youtube_trending` — Browse YouTube's trending videos.
+- `browse_youtube_trending` — Browse YouTube's trending videos. [write]
 - `capture_screenshot` — Capture a page screenshot.
 - `check_x_friendship` — Check whether one X user follows another.
 - `classify_seo_keyword_intent` — Classify keyword search intent.
@@ -58,7 +58,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `count_seo_bulk_new_lost_backlinks` — Count new and lost backlinks for many targets.
 - `count_seo_bulk_new_lost_referring_domains` — Count new and lost referring domains for many targets.
 - `count_seo_bulk_referring_domains` — Count referring domains for many targets.
-- `discover_seo_keyword_ideas` — Discover keyword ideas.
+- `discover_seo_keyword_ideas` — Discover keyword ideas. [write]
 - `estimate_seo_bulk_traffic` — Estimate organic traffic for domains.
 - `estimate_seo_historical_bulk_traffic` — Estimate historical traffic for domains.
 - `extract_instagram_shortcode` — Extract a post shortcode from an Instagram URL.
@@ -81,7 +81,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_hacker_news_user` — Get Hacker News user by ID.
 - `get_hotel_info` — Get Hotels detail.
 - `get_instagram_location` — Get an Instagram location by id.
-- `get_instagram_post` — Get an Instagram post (photo / video / carousel / reel) by shortcode. [write]
+- `get_instagram_post` — Get an Instagram post (photo / video / carousel / reel) by shortcode.
 - `get_instagram_user` — Get an Instagram user profile by username.
 - `get_linkedin_ad` — Get a LinkedIn Ad Library entry by ID.
 - `get_linkedin_company` — Get a LinkedIn company profile by URL slug.
@@ -89,12 +89,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_linkedin_company_member_insights` — Get a LinkedIn company's aggregated member insights.
 - `get_linkedin_group` — Get a LinkedIn group by ID.
 - `get_linkedin_job` — Get a LinkedIn job posting by ID.
-- `get_linkedin_post` — Get a LinkedIn post by ID. [write]
+- `get_linkedin_post` — Get a LinkedIn post by ID.
 - `get_linkedin_user` — Get a LinkedIn user profile by URL slug.
 - `get_linkedin_user_about` — Get a LinkedIn profile's 'about' metadata.
 - `get_linkedin_user_contact` — Get a LinkedIn user's public contact info.
 - `get_linkedin_user_follower_count` — Get a LinkedIn user's follower & connection counts.
-- `get_reddit_post` — Get a Reddit post by id. [write]
+- `get_reddit_post` — Get a Reddit post by id.
 - `get_reddit_subreddit` — Get a Reddit subreddit by name.
 - `get_reddit_user` — Get a Reddit user profile by username.
 - `get_seo_backlink_history` — Get historical backlink metrics for a target.
@@ -135,8 +135,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_hacker_news_story_items` — List Hacker News story items.
 - `list_instagram_location_posts` — List posts tagged with an Instagram location.
 - `list_instagram_nearby_locations` — List Instagram locations geographically near a given location.
-- `list_instagram_post_comment_replies` — List replies to an Instagram comment. [write]
-- `list_instagram_post_comments` — List comments on an Instagram post. [write]
+- `list_instagram_post_comment_replies` — List replies to an Instagram comment.
+- `list_instagram_post_comments` — List comments on an Instagram post.
 - `list_instagram_user_followers` — List followers of an Instagram user.
 - `list_instagram_user_following` — List accounts an Instagram user follows.
 - `list_instagram_user_former_usernames` — List former usernames for an Instagram user.
@@ -150,10 +150,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_linkedin_company_people` — List employees of a LinkedIn company.
 - `list_linkedin_company_posts` — List posts published by a LinkedIn company page.
 - `list_linkedin_group_posts` — List posts in a LinkedIn group.
-- `list_linkedin_post_comment_replies` — List replies to a LinkedIn comment. [write]
-- `list_linkedin_post_comments` — List top-level comments on a LinkedIn post. [write]
-- `list_linkedin_post_reactions` — List users who reacted to a LinkedIn post. [write]
-- `list_linkedin_post_reposts` — List reposts of a LinkedIn post. [write]
+- `list_linkedin_post_comment_replies` — List replies to a LinkedIn comment.
+- `list_linkedin_post_comments` — List top-level comments on a LinkedIn post.
+- `list_linkedin_post_reactions` — List users who reacted to a LinkedIn post.
+- `list_linkedin_post_reposts` — List reposts of a LinkedIn post.
 - `list_linkedin_user_certifications` — List a LinkedIn user's certifications.
 - `list_linkedin_user_comments` — List comments authored by a LinkedIn user.
 - `list_linkedin_user_educations` — List a LinkedIn user's education.
@@ -169,7 +169,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_linkedin_user_skills` — List a LinkedIn user's skills.
 - `list_linkedin_user_videos` — List video posts authored by a LinkedIn user.
 - `list_linkedin_user_volunteers` — List a LinkedIn user's volunteer experience.
-- `list_reddit_post_comments` — List Reddit comments on a post. [write]
+- `list_reddit_post_comments` — List Reddit comments on a post.
 - `list_reddit_trending_searches` — List Reddit's current trending search queries.
 - `list_reddit_user_comments` — List Reddit comments authored by a user.
 - `list_reddit_user_posts` — List Reddit posts authored by a user.
@@ -189,7 +189,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_tiktok_user_following` — List users a TikTok user is following.
 - `list_tiktok_user_likes` — List videos liked by a TikTok user.
 - `list_tiktok_user_videos` — List videos posted by a TikTok user.
-- `list_tiktok_video_comment_replies` — List replies to a TikTok comment. [write]
+- `list_tiktok_video_comment_replies` — List replies to a TikTok comment.
 - `list_tiktok_video_comments` — List top-level comments on a TikTok video.
 - `list_x_community_media` — Get media Posts from an X Community.
 - `list_x_community_members` — Get members of an X Community.
@@ -224,7 +224,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `resolve_tiktok_user` — Resolve a TikTok username to a user id.
 - `resolve_tiktok_video` — Resolve a TikTok share URL to a video.
 - `resolve_youtube_channel_id` — Resolve a YouTube channel URL to its UC... channel id.
-- `score_seo_keyword_difficulty` — Score keyword difficulty.
+- `score_seo_keyword_difficulty` — Score keyword difficulty. [write]
 - `search_events` — Search Events.
 - `search_geo_ai_mode` — Search AI Mode generative results.
 - `search_geo_mentions` — Search LLM mentions of a domain or keyword.

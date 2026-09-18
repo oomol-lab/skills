@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Manus"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["manus"]
   icon: "https://static.oomol.com/logo/third-party/manus.svg"
 ---
@@ -51,7 +51,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_task_messages` — List Manus task event messages with cursor pagination.
 - `list_tasks` — List Manus tasks with optional scope filters and cursor pagination.
 - `send_message` — Send a follow-up message to an existing Manus task. [write]
-- `stop_task` — Stop a running Manus task. [write]
+- `stop_task` — Stop a running Manus task. [destructive]
 - `update_agent` — Update a Manus custom agent's display name or description. [write]
 - `update_task` — Update a Manus task title, sharing visibility, or task-list visibility. [write]
 

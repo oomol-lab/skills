@@ -1,11 +1,11 @@
 ---
 name: oo-tiktok-business-mcp
-description: "TikTok for Business MCP (business.tiktok.com). Use this skill for ANY TikTok for Business MCP request — searching and reading data. Whenever a task involves TikTok for Business MCP, use this skill instead of calling the API directly."
+description: "TikTok for Business MCP (business.tiktok.com). Use this skill for ANY TikTok for Business MCP request — reading, creating, updating, and deleting data. Whenever a task involves TikTok for Business MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "TikTok for Business MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tiktok_business_mcp"]
   icon: "https://static.oomol.com/logo/third-party/tiktok_business_mcp.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current TikTok for Business MCP tool with JSON arguments. Discover the live schema first and confirm the user's intent because tools may create ads, change budgets or delivery, revoke access, or delete advertising assets.
+- `call_tool` — Call a current TikTok for Business MCP tool with JSON arguments. Discover the live schema first and confirm the user's intent because tools may create ads, change budgets or delivery, revoke access, or delete advertising assets. [destructive]
 - `list_tools` — List the complete current tool catalog and live input schemas exposed by the connected TikTok for Business MCP account.
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-pingbell
-description: "PingBell (pingbell.io). Use this skill for ANY PingBell request — searching and reading data. Whenever a task involves PingBell, use this skill instead of calling the API directly."
+description: "PingBell (pingbell.io). Use this skill for ANY PingBell request — reading, creating, and updating data. Whenever a task involves PingBell, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "PingBell"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pingbell"]
   icon: "https://static.oomol.com/logo/third-party/pingbell.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `list_sources` — List the sources available to the connected PingBell account.
-- `ring_source` — Ring a PingBell source so its counter, screens, and subscribed devices update.
+- `ring_source` — Ring a PingBell source so its counter, screens, and subscribed devices update. [write]
 
 ## Safety
 

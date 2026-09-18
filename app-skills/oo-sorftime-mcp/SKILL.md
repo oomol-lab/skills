@@ -1,11 +1,11 @@
 ---
 name: oo-sorftime-mcp
-description: "Sorftime MCP (sorftime.com). Use this skill for ANY Sorftime MCP request — searching and reading data. Whenever a task involves Sorftime MCP, use this skill instead of calling the API directly."
+description: "Sorftime MCP (sorftime.com). Use this skill for ANY Sorftime MCP request — reading, creating, updating, and deleting data. Whenever a task involves Sorftime MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sorftime MCP"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["sorftime_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sorftime_mcp.png"
 ---
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `amazon_list_categories` — Browse Amazon categories through Sorftime. Omit parentId for the top levels, then pass a returned category ID to explore its children.
 - `amazon_list_keywords` — Discover Amazon keywords ranked by weekly search volume through Sorftime. Supports optional rank and search-volume bounds.
 - `amazon_search_products` — Find Amazon products by name through Sorftime.
-- `call_tool` — Run a tool from list_tools with its required arguments. Supports research queries and changes to favorites, including deletion. Credit cost depends on the tool.
+- `call_tool` — Run a tool from list_tools with its required arguments. Supports research queries and changes to favorites, including deletion. Credit cost depends on the tool. [destructive]
 - `list_tools` — List all tools available to your Sorftime MCP account with their descriptions and argument schemas.
 - `shopee_get_product` — Inspect one Shopee product using its ID from shopee_search_products through Sorftime.
 - `shopee_get_product_trend` — Inspect historical Shopee product performance through Sorftime. Returns available dimensions together. Ranges beyond one year cost 10 credits.

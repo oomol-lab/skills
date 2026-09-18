@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeCom Bot"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["wecom_bot"]
   icon: "https://static.oomol.com/logo/third-party/wecom_bot.png"
 ---
@@ -38,10 +38,10 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `add_schedule_attendees` — Add attendees to a WeCom schedule. [write]
-- `call_tool` — Call a dynamically discovered WeCom MCP tool that does not have a curated action yet.
-- `cancel_meeting` — Cancel a scheduled WeCom meeting. [write]
-- `cancel_schedule` — Cancel a WeCom schedule. [write]
-- `change_todo_user_status` — Change one follower's status on a WeCom todo.
+- `call_tool` — Call a dynamically discovered WeCom MCP tool that does not have a curated action yet. [destructive]
+- `cancel_meeting` — Cancel a scheduled WeCom meeting. [destructive]
+- `cancel_schedule` — Cancel a WeCom schedule. [destructive]
+- `change_todo_user_status` — Change one follower's status on a WeCom todo. [destructive]
 - `check_availability` — Read busy time slots for up to 10 WeCom members.
 - `create_doc` — Create an empty WeCom document, online sheet, or smart sheet. [write]
 - `create_meeting` — Create a scheduled WeCom meeting. [write]
@@ -55,8 +55,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_meeting_info` — Get complete details for a WeCom meeting.
 - `get_message` — Read recent messages from one WeCom direct chat or group chat.
 - `get_msg_chat_list` — List chats that had messages during a time range.
-- `get_schedule_detail` — Get details for up to 50 WeCom schedules. [write]
-- `get_schedule_list_by_range` — List WeCom schedule IDs within a time range. [write]
+- `get_schedule_detail` — Get details for up to 50 WeCom schedules.
+- `get_schedule_list_by_range` — List WeCom schedule IDs within a time range.
 - `get_todo_detail` — Get details for up to 20 WeCom todos.
 - `get_todo_list` — List WeCom todos for one follower with optional time and status filters.
 - `get_userlist` — List WeCom members visible to the API-mode smart bot.
@@ -71,12 +71,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `send_text_message` — Send a text message through the WeCom bot webhook. [write]
 - `set_invite_meeting_members` — Replace the full invitee list for a WeCom meeting. [write]
 - `sheet_add_sub` — Add a sub-sheet to a WeCom online sheet. [write]
-- `sheet_append_data` — Append one row to the end of a WeCom online sheet.
+- `sheet_append_data` — Append one row to the end of a WeCom online sheet. [write]
 - `sheet_delete_sub` — Permanently delete a sub-sheet from a WeCom online sheet. [destructive]
 - `sheet_get_info` — Get online-sheet metadata and sub-sheet IDs.
 - `sheet_update_range_data` — Write cells and formats into a specified online-sheet range. [write]
 - `smartpage_create` — Create a WeCom smart page from inline text or Markdown pages. [write]
-- `smartpage_export` — Export complete WeCom smart-page content as Markdown with polling handled internally.
+- `smartpage_export` — Export complete WeCom smart-page content as Markdown with polling handled internally. [write]
 - `smartsheet_add_fields` — Add fields to a WeCom smart-sheet sub-sheet. [write]
 - `smartsheet_add_records` — Add records to a WeCom smart sheet, uploading `fileUrl` attachments before the write. [write]
 - `smartsheet_add_sheet` — Add a sub-sheet to a WeCom smart sheet. [write]

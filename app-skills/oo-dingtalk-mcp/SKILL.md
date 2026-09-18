@@ -1,11 +1,11 @@
 ---
 name: oo-dingtalk-mcp
-description: "DingTalk MCP (dingtalk.com). Use this skill for ANY DingTalk MCP request — searching and reading data. Whenever a task involves DingTalk MCP, use this skill instead of calling the API directly."
+description: "DingTalk MCP (dingtalk.com). Use this skill for ANY DingTalk MCP request — reading, creating, updating, and deleting data. Whenever a task involves DingTalk MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "DingTalk MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dingtalk_mcp"]
   icon: "https://static.oomol.com/logo/third-party/dingtalk_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current DingTalk MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because the endpoint may expose actions that send, overwrite, cancel, or delete DingTalk data.
+- `call_tool` — Call a current DingTalk MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because the endpoint may expose actions that send, overwrite, cancel, or delete DingTalk data. [destructive]
 - `list_tools` — Discover the current tools, behavior annotations, and live input schemas exposed by this DingTalk MCP connection.
 
 ## Safety

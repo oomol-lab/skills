@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LogSnag"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["logsnag"]
   icon: "https://static.oomol.com/logo/third-party/logsnag.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `identify_user` — Add or update key-value properties on a LogSnag user profile.
-- `mutate_insight` — Increment or decrement an existing numeric LogSnag insight.
+- `identify_user` — Add or update key-value properties on a LogSnag user profile. [write]
+- `mutate_insight` — Increment or decrement an existing numeric LogSnag insight. [write]
 - `publish_event` — Publish an event to a LogSnag project channel. [write]
 - `publish_insight` — Publish the latest value for a LogSnag real-time insight. [write]
 

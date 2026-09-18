@@ -1,11 +1,11 @@
 ---
 name: oo-uspto
-description: "USPTO (uspto.gov). Use this skill for ANY USPTO request — reading, creating, and updating data. Whenever a task involves USPTO, use this skill instead of calling the API directly."
+description: "USPTO (uspto.gov). Use this skill for ANY USPTO request — searching and reading data. Whenever a task involves USPTO, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "USPTO"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["uspto"]
   icon: "https://static.oomol.com/logo/third-party/uspto.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_trademark_case_last_update` — Get the latest recorded TSDR update dates for a trademark application serial number. [write]
+- `get_trademark_case_last_update` — Get the latest recorded TSDR update dates for a trademark application serial number.
 - `get_trademark_case_status` — Get the official TSDR case status record for a trademark application serial number as XML.
 - `get_trademark_documents_metadata` — Get TSDR metadata for documents associated with a trademark application serial number.
 

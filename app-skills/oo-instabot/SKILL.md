@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Instabot"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["instabot"]
   icon: "https://static.oomol.com/logo/third-party/instabot.svg"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_user` — Get one Instabot user by object ID.
 - `list_updated_users` — List Instabot users changed since an ISO-8601 timestamp.
 - `list_users` — List Instabot users with pagination, sorting, and optional related resources.
-- `restore_user` — Restore a previously deleted Instabot user.
+- `restore_user` — Restore a previously deleted Instabot user. [write]
 - `update_user` — Update writable fields on an Instabot user. [write]
 
 ## Safety

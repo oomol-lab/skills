@@ -1,11 +1,11 @@
 ---
 name: oo-voicemaker
-description: "Voicemaker (voicemaker.in). Use this skill for ANY Voicemaker request — searching and reading data. Whenever a task involves Voicemaker, use this skill instead of calling the API directly."
+description: "Voicemaker (voicemaker.in). Use this skill for ANY Voicemaker request — reading, creating, and updating data. Whenever a task involves Voicemaker, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Voicemaker"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["voicemaker"]
   icon: "https://static.oomol.com/logo/third-party/voicemaker.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_tts` — Convert text to speech and return the generated audio URL and usage details.
+- `generate_tts` — Convert text to speech and return the generated audio URL and usage details. [write]
 - `list_voices` — List Voicemaker text-to-speech voices, optionally filtered by language.
 
 ## Safety

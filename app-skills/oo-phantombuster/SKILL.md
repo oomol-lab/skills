@@ -1,11 +1,11 @@
 ---
 name: oo-phantombuster
-description: "PhantomBuster (phantombuster.com). Use this skill for ANY PhantomBuster request — reading, creating, and updating data. Whenever a task involves PhantomBuster, use this skill instead of calling the API directly."
+description: "PhantomBuster (phantombuster.com). Use this skill for ANY PhantomBuster request — reading, creating, updating, and deleting data. Whenever a task involves PhantomBuster, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "PhantomBuster"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["phantombuster"]
   icon: "https://static.oomol.com/logo/third-party/phantombuster.svg"
 ---
@@ -40,10 +40,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_agent` — Get a Phantombuster agent by ID.
 - `get_container` — Get a Phantombuster container by ID.
 - `get_current_organization` — Get the current Phantombuster organization for the connected API key.
-- `launch_agent` — Add a Phantombuster agent to the launch queue.
+- `launch_agent` — Add a Phantombuster agent to the launch queue. [write]
 - `list_agents` — List all Phantombuster agents in the current organization.
 - `list_containers` — List containers associated with a Phantombuster agent.
-- `stop_agent` — Stop a Phantombuster agent. [write]
+- `stop_agent` — Stop a Phantombuster agent. [destructive]
 
 ## Safety
 

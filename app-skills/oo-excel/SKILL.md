@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Excel"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["excel"]
   icon: "https://static.oomol.com/logo/third-party/excel.svg"
 ---
@@ -42,10 +42,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `add_table_row` — Add one or more rows to a workbook table. [write]
 - `add_worksheet` — Add a new worksheet to a workbook. [write]
 - `apply_table_filter` — Apply a Microsoft Graph filter criteria object to one table column. [write]
-- `apply_table_sort` — Apply a Microsoft Graph sort definition to one workbook table. [write]
+- `apply_table_sort` — Apply a Microsoft Graph sort definition to one workbook table. [destructive]
 - `clear_range` — Clear one worksheet range. [destructive]
 - `clear_table_filter` — Clear the current Microsoft Graph filter on one table column. [destructive]
-- `convert_table_to_range` — Convert a workbook table back into a plain worksheet range. [write]
+- `convert_table_to_range` — Convert a workbook table back into a plain worksheet range. [destructive]
 - `create_session` — Create an Excel workbook session for subsequent workbook operations. [write]
 - `create_workbook` — Create a new .xlsx workbook file and optionally populate worksheets and data. [write]
 - `delete_table_column` — Delete one column from a workbook table. [destructive]
@@ -64,8 +64,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_worksheets` — List worksheets in a workbook.
 - `merge_cells` — Merge cells inside one worksheet range. [write]
 - `search_files` — Search workbook files in the current OneDrive drive and return matching drive items.
-- `sort_range` — Apply a Microsoft Graph sort definition to one worksheet range. [write]
-- `update_range` — Update one worksheet range with values, formulas, formats, or visibility flags. [write]
+- `sort_range` — Apply a Microsoft Graph sort definition to one worksheet range. [destructive]
+- `update_range` — Update one worksheet range with values, formulas, formats, or visibility flags. [destructive]
 - `update_table` — Update table metadata such as the name, style, or header flags. [write]
 - `update_worksheet` — Update worksheet metadata such as the name, position, or visibility. [write]
 

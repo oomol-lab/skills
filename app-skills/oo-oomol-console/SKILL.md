@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Console"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["oomol_console"]
   icon: "https://static.oomol.com/logo/third-party/oomol_console.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `add_member` — Add an OOMOL user to the current team with the member role. [write]
-- `create_connection_permission_group` — Create a custom Connection permission group and replace the assignments of its members. [write]
+- `create_connection_permission_group` — Create a custom Connection permission group and replace the assignments of its members. [destructive]
 - `delete_connection_permission_group` — Delete a custom Connection permission group so its members return to the default group. [destructive]
 - `get_balance` — Return every available balance lot for the authenticated OOMOL account.
 - `get_billing_summary` — Return the compact OOMOL account billing metrics shown by Console.
@@ -50,8 +50,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_members` — List members of the current OOMOL team.
 - `list_team_connections` — List the Connections manageable by an administrator of the current OOMOL team.
 - `list_teams` — List the OOMOL teams visible to the authenticated account.
-- `update_connection_default_permission_group` — Replace the action permission of a Connection's non-deletable default permission group. [write]
-- `update_connection_permission_group` — Replace the name, member assignments, and action permission of a custom Connection permission group. [write]
+- `update_connection_default_permission_group` — Replace the action permission of a Connection's non-deletable default permission group. [destructive]
+- `update_connection_permission_group` — Replace the name, member assignments, and action permission of a custom Connection permission group. [destructive]
 
 ## Safety
 

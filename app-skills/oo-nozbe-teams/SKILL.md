@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Nozbe"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["nozbe_teams"]
   icon: "https://static.oomol.com/logo/third-party/nozbe_teams.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_comment` — Delete a Nozbe task comment and return the updated comment resource. [destructive]
 - `delete_project` — Delete a Nozbe project by ID. [destructive]
 - `delete_task` — Delete a Nozbe task by ID. [destructive]
-- `get_comment` — Get a Nozbe task comment by ID. [write]
+- `get_comment` — Get a Nozbe task comment by ID.
 - `get_project` — Get a Nozbe project by ID.
 - `get_task` — Get a Nozbe task by ID.
 - `list_comments` — List Nozbe task comments with pagination, sorting, and task filtering.

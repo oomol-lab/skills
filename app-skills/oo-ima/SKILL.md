@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ima"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["ima"]
   icon: "https://static.oomol.com/logo/third-party/ima.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `add_note_to_knowledge_base` — Add an existing IMA note into one IMA knowledge base. [write]
-- `append_note` — Append Markdown content to an existing IMA note.
+- `append_note` — Append Markdown content to an existing IMA note. [write]
 - `check_repeated_names` — Check whether file names already exist in an IMA knowledge-base folder.
 - `create_note` — Create a new IMA note from Markdown content. [write]
 - `get_knowledge_bases` — Fetch metadata for one or more IMA knowledge bases.

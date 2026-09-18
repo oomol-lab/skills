@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CodeRabbit"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["coderabbit"]
   icon: "https://static.oomol.com/logo/third-party/coderabbit.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `change_roles` — Bulk change CodeRabbit organization roles for up to 500 users.
+- `change_roles` — Bulk change CodeRabbit organization roles for up to 500 users. [destructive]
 - `create_role` — Create a CodeRabbit Enterprise custom role. [write]
 - `delete_role` — Delete a CodeRabbit Enterprise custom role when it is not assigned to users. [destructive]
 - `get_review_metrics` — Get CodeRabbit merged pull request review metrics for a date range with optional organization, repository, and user filters.
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_role_permissions` — List valid CodeRabbit role permission resource identifiers and access types for custom roles.
 - `list_roles` — List CodeRabbit built-in and Enterprise custom roles for the organization.
 - `list_users` — List CodeRabbit organization users with optional seat and role filters using cursor-based pagination.
-- `manage_seats` — Bulk assign or unassign CodeRabbit seats for up to 500 organization users.
+- `manage_seats` — Bulk assign or unassign CodeRabbit seats for up to 500 organization users. [destructive]
 - `update_role` — Update a CodeRabbit Enterprise custom role. [write]
 - `update_seat_assignment_mode` — Update the CodeRabbit seat assignment mode for a self-hosted Enterprise organization. [write]
 

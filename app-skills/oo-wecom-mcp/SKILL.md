@@ -1,11 +1,11 @@
 ---
 name: oo-wecom-mcp
-description: "WeCom MCP (work.weixin.qq.com). Use this skill for ANY WeCom MCP request — searching and reading data. Whenever a task involves WeCom MCP, use this skill instead of calling the API directly."
+description: "WeCom MCP (work.weixin.qq.com). Use this skill for ANY WeCom MCP request — reading, creating, updating, and deleting data. Whenever a task involves WeCom MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeCom MCP"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wecom_mcp"]
   icon: "https://static.oomol.com/logo/third-party/wecom_mcp.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call a current WeCom MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because the endpoint may expose actions that send, overwrite, cancel, or delete WeCom data.
+- `call_tool` — Call a current WeCom MCP tool with JSON arguments. Discover the tool first and confirm the user's intent because the endpoint may expose actions that send, overwrite, cancel, or delete WeCom data. [destructive]
 - `list_tools` — Discover the current tools, behavior annotations, and live input schemas exposed by this WeCom MCP connection.
 
 ## Safety

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Encodian"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["encodian"]
   icon: "https://static.oomol.com/logo/third-party/Encodian.svg"
 ---
@@ -37,11 +37,11 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `compress_pdf` — Compress one PDF document with Encodian and return the optimized PDF file as base64 content.
+- `compress_pdf` — Compress one PDF document with Encodian and return the optimized PDF file as base64 content. [write]
 - `extract_pdf_pages` — Extract selected pages from one PDF document and return the resulting PDF file as base64 content.
 - `get_pdf_text_layer` — Extract the text layer from one PDF document with optional page-range and encoding controls.
-- `secure_pdf_document` — Encrypt one PDF document with optional open and edit passwords, then return the protected PDF as base64 content.
-- `unlock_pdf_document` — Remove password protection from one PDF document and return the unlocked PDF as base64 content. [write]
+- `secure_pdf_document` — Encrypt one PDF document with optional open and edit passwords, then return the protected PDF as base64 content. [write]
+- `unlock_pdf_document` — Remove password protection from one PDF document and return the unlocked PDF as base64 content.
 
 ## Safety
 

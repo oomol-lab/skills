@@ -1,11 +1,11 @@
 ---
 name: oo-newsdata-io
-description: "NewsData.io (newsdata.io). Use this skill for ANY NewsData.io request — reading, creating, and updating data. Whenever a task involves NewsData.io, use this skill instead of calling the API directly."
+description: "NewsData.io (newsdata.io). Use this skill for ANY NewsData.io request — searching and reading data. Whenever a task involves NewsData.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "NewsData.io"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["newsdata_io"]
   icon: "https://static.oomol.com/logo/third-party/newsdata_io.png"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_latest_news` — Retrieve the latest and breaking news from NewsData.io with optional filters.
 - `list_crypto_news` — Retrieve cryptocurrency-related news articles from NewsData.io.
 - `list_news_sources` — List NewsData.io source domains with optional country, category, and language filters.
-- `search_news_archive` — Search historical NewsData.io archive articles with keyword, taxonomy, and date filters. [write]
+- `search_news_archive` — Search historical NewsData.io archive articles with keyword, taxonomy, and date filters.
 
 ## Safety
 

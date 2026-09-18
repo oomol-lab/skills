@@ -1,11 +1,11 @@
 ---
 name: oo-zorus
-description: "Zorus (zorustech.com). Use this skill for ANY Zorus request — reading, creating, and updating data. Whenever a task involves Zorus, use this skill instead of calling the API directly."
+description: "Zorus (zorustech.com). Use this skill for ANY Zorus request — searching and reading data. Whenever a task involves Zorus, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zorus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zorus"]
   icon: "https://static.oomol.com/logo/third-party/zorus.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `search_active_unblock_requests` — Search active Zorus unblock requests with documented filtering, pagination, and sorting. [write]
+- `search_active_unblock_requests` — Search active Zorus unblock requests with documented filtering, pagination, and sorting.
 - `search_customers` — Search Zorus customers with documented filtering, pagination, and sorting.
 - `search_endpoints` — Search Zorus endpoints with documented filtering, pagination, and sorting.
 - `search_groups` — Search Zorus groups with documented filtering, pagination, and sorting.

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fluxguard"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["fluxguard"]
   icon: "https://static.oomol.com/logo/third-party/fluxguard.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_account` — Get account attributes for the authenticated Fluxguard organization.
 - `get_page` — Get Fluxguard data for a monitored page.
 - `get_sample_webhook` — Get a sample Fluxguard webhook payload for the authenticated account.
-- `initiate_crawl` — Initiate a Fluxguard crawl for a monitored session.
+- `initiate_crawl` — Initiate a Fluxguard crawl for a monitored session. [write]
 - `list_categories` — List Fluxguard account categories.
 - `list_webhooks` — List Fluxguard webhooks configured for the authenticated account.
 - `upsert_webhook` — Create or replace the Fluxguard account webhook. [write]

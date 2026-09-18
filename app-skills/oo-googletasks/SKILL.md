@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Tasks"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googletasks"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Tasks.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_all_tasks` — List tasks across every Google Tasks task list visible to the current connection.
 - `list_task_lists` — List Google Tasks task lists visible to the current connection.
 - `list_tasks` — List tasks from a Google Tasks task list.
-- `move_task` — Move a Google Tasks task within a list or into another task list. [write]
+- `move_task` — Move a Google Tasks task within a list or into another task list. [destructive]
 - `patch_task` — Partially update a Google Tasks task. [write]
 - `patch_task_list` — Partially update the title of a Google Tasks task list. [write]
 - `update_task` — Deprecated alias for update_task_full. Fully replace the mutable fields of a Google Tasks task. [write]

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Happy Scribe"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["happy_scribe"]
   icon: "https://static.oomol.com/logo/third-party/happy_scribe.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_translation_order` — Submit a translation order for an existing Happy Scribe transcription. [write]
 - `delete_transcription` — Delete one Happy Scribe transcription by ID. [destructive]
 - `get_export` — Get the state and download link of a Happy Scribe export.
-- `get_order` — Get the current state and details of a Happy Scribe order. [write]
+- `get_order` — Get the current state and details of a Happy Scribe order.
 - `get_transcription` — Get one Happy Scribe transcription by ID.
 - `list_organizations` — List the Happy Scribe organizations available to the current API key.
 - `list_transcriptions` — List transcriptions in a Happy Scribe organization.

@@ -1,11 +1,11 @@
 ---
 name: oo-doubao-seedream
-description: "Doubao Seedream (volcengine.com). Use this skill for ANY Doubao Seedream request — searching and reading data. Whenever a task involves Doubao Seedream, use this skill instead of calling the API directly."
+description: "Doubao Seedream (volcengine.com). Use this skill for ANY Doubao Seedream request — reading, creating, and updating data. Whenever a task involves Doubao Seedream, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Doubao Seedream"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["doubao_seedream"]
   icon: "https://static.oomol.com/logo/third-party/doubao_seedream.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_image` — Generate or edit one or more images with Doubao Seedream.
+- `generate_image` — Generate or edit one or more images with Doubao Seedream. [write]
 
 ## Safety
 

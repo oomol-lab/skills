@@ -1,11 +1,11 @@
 ---
 name: oo-writer
-description: "Writer (writer.com). Use this skill for ANY Writer request — reading, creating, and updating data. Whenever a task involves Writer, use this skill instead of calling the API directly."
+description: "Writer (writer.com). Use this skill for ANY Writer request — searching and reading data. Whenever a task involves Writer, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Writer"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["writer"]
   icon: "https://static.oomol.com/logo/third-party/writer.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Generate a non-streaming Writer chat completion from plain-text conversation messages. [write]
+- `create_chat_completion` — Generate a non-streaming Writer chat completion from plain-text conversation messages.
 - `list_models` — Retrieve the Writer models available for text generation, chat completions, and other AI tasks.
 
 ## Safety

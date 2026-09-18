@@ -1,11 +1,11 @@
 ---
 name: oo-dune
-description: "Dune (dune.com). Use this skill for ANY Dune request — searching and reading data. Whenever a task involves Dune, use this skill instead of calling the API directly."
+description: "Dune (dune.com). Use this skill for ANY Dune request — reading, creating, and updating data. Whenever a task involves Dune, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dune"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dune"]
   icon: "https://static.oomol.com/logo/third-party/dune.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `execute_query` — Execute a saved Dune query and return an execution ID for status polling and result retrieval.
+- `execute_query` — Execute a saved Dune query and return an execution ID for status polling and result retrieval. [write]
 - `get_execution_result` — Get the JSON result and metadata for a Dune execution.
 - `get_execution_status` — Get the current state and metadata for a Dune query execution.
 - `get_latest_query_result` — Get the latest stored JSON result for a Dune query without starting a new execution.

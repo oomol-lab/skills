@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Permit.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["permit_io"]
   icon: "https://static.oomol.com/logo/third-party/permit_io.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_role_assignments` — List role assignments in a Permit.io environment.
 - `list_tenants` — List tenants in a Permit.io environment.
 - `list_users` — List users in a Permit.io environment.
-- `unassign_role` — Remove a Permit.io role assignment from a user.
+- `unassign_role` — Remove a Permit.io role assignment from a user. [destructive]
 - `update_tenant` — Partially update a Permit.io tenant. [write]
 - `update_user` — Partially update a Permit.io user. [write]
 

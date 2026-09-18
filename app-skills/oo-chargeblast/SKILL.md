@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Chargeblast"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["chargeblast"]
   icon: "https://static.oomol.com/logo/third-party/chargeblast.png"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `create_credit_request` — Create a Chargeblast credit request for a rejected alert. [write]
 - `get_alert` — Fetch one Chargeblast alert by identifier.
-- `get_order` — Fetch one Chargeblast order by identifier, including receipt and eligibility data. [write]
+- `get_order` — Fetch one Chargeblast order by identifier, including receipt and eligibility data.
 - `list_alerts` — List Chargeblast alerts with optional alert-network filtering and pagination.
 - `list_deflection_logs` — List Chargeblast digital receipt and deflection lookup logs.
 - `list_merchants` — List merchants in a Chargeblast account.

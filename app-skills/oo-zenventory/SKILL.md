@@ -1,11 +1,11 @@
 ---
 name: oo-zenventory
-description: "Zenventory (zenventory.com). Use this skill for ANY Zenventory request — reading, creating, and updating data. Whenever a task involves Zenventory, use this skill instead of calling the API directly."
+description: "Zenventory (zenventory.com). Use this skill for ANY Zenventory request — reading, creating, updating, and deleting data. Whenever a task involves Zenventory, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zenventory"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zenventory"]
   icon: "https://static.oomol.com/logo/third-party/zenventory.png"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_item` — Create an item in Zenventory. [write]
 - `get_item` — Get one Zenventory item by its identifier.
 - `list_items` — Search and page through items in Zenventory.
-- `update_item` — Replace the editable fields of an existing Zenventory item. [write]
+- `update_item` — Replace the editable fields of an existing Zenventory item. [destructive]
 
 ## Safety
 

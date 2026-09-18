@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SaaS Custom Domains"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["saas_custom_domains"]
   icon: "https://static.oomol.com/logo/third-party/saas_custom_domains.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_custom_domains` — List custom domains for a SaaS Custom Domains upstream.
 - `list_upstreams` — List upstreams for a SaaS Custom Domains account.
 - `purge_custom_domain_http_cache` — Initiate an HTTP cache purge for one SaaS Custom Domains custom domain. [destructive]
-- `verify_custom_domain_dns_records` — Trigger DNS record verification for one SaaS Custom Domains custom domain.
+- `verify_custom_domain_dns_records` — Trigger DNS record verification for one SaaS Custom Domains custom domain. [write]
 
 ## Safety
 

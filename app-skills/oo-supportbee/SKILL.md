@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SupportBee"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["supportbee"]
   icon: "https://static.oomol.com/logo/third-party/supportbee.png"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_ticket_reply` — Create a SupportBee ticket reply with JSON body content. [write]
 - `create_user` — Create a SupportBee user or customer group. [write]
 - `get_ticket` — Retrieve a SupportBee ticket by ID.
-- `get_ticket_reply` — Retrieve one SupportBee ticket reply by ticket ID and reply ID. [write]
+- `get_ticket_reply` — Retrieve one SupportBee ticket reply by ticket ID and reply ID.
 - `get_user` — Retrieve one SupportBee user or customer group by ID.
 - `list_labels` — List custom SupportBee labels for the connected desk.
 - `list_teams` — List SupportBee teams with optional user expansion filters.

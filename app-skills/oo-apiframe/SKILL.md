@@ -1,11 +1,11 @@
 ---
 name: oo-apiframe
-description: "Apiframe (apiframe.ai). Use this skill for ANY Apiframe request — searching and reading data. Whenever a task involves Apiframe, use this skill instead of calling the API directly."
+description: "Apiframe (apiframe.ai). Use this skill for ANY Apiframe request — reading, creating, and updating data. Whenever a task involves Apiframe, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Apiframe"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["apiframe"]
   icon: "https://static.oomol.com/logo/third-party/apiframe.svg"
 ---
@@ -37,9 +37,9 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `generate_image` — Submit an Apiframe image generation job and return its job ID.
-- `generate_music` — Submit an Apiframe music generation job and return its job ID.
-- `generate_video` — Submit an Apiframe video generation job and return its job ID.
+- `generate_image` — Submit an Apiframe image generation job and return its job ID. [write]
+- `generate_music` — Submit an Apiframe music generation job and return its job ID. [write]
+- `generate_video` — Submit an Apiframe video generation job and return its job ID. [write]
 - `get_job` — Get the current status and model-specific result for one Apiframe job.
 - `list_jobs` — List Apiframe jobs with cursor pagination and optional status or model filters.
 - `list_models` — List Apiframe models and their current generation control surfaces.

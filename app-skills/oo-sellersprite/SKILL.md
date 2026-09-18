@@ -1,11 +1,11 @@
 ---
 name: oo-sellersprite
-description: "SellerSprite (sellersprite.com). Use this skill for ANY SellerSprite request — searching and reading data. Whenever a task involves SellerSprite, use this skill instead of calling the API directly."
+description: "SellerSprite (sellersprite.com). Use this skill for ANY SellerSprite request — reading, creating, and updating data. Whenever a task involves SellerSprite, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "SellerSprite"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sellersprite"]
   icon: "https://static.oomol.com/logo/third-party/sellersprite.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_api_usage` — Retrieve current-month SellerSprite API usage for initialized purchased modules.
 - `get_asin_detail` — Retrieve SellerSprite product, listing, category, rating, seller, and variation details for an Amazon ASIN.
 - `lookup_competitors` — Query SellerSprite competitor products with sales, revenue, ranking, pricing, and seller estimates.
-- `research_products` — Research Amazon products in SellerSprite using product, sales, revenue, ranking, review, category, and seller filters.
+- `research_products` — Research Amazon products in SellerSprite using product, sales, revenue, ranking, review, category, and seller filters. [write]
 - `reverse_asin_keywords` — Find Amazon search traffic keywords, natural ranks, advertising ranks, and traffic estimates for an ASIN with SellerSprite.
 
 ## Safety

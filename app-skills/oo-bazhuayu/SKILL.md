@@ -1,11 +1,11 @@
 ---
 name: oo-bazhuayu
-description: "Bazhuayu (bazhuayu.com). Use this skill for ANY Bazhuayu request — reading, creating, and updating data. Whenever a task involves Bazhuayu, use this skill instead of calling the API directly."
+description: "Bazhuayu (bazhuayu.com). Use this skill for ANY Bazhuayu request — reading, creating, updating, and deleting data. Whenever a task involves Bazhuayu, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bazhuayu"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bazhuayu"]
   icon: "https://static.oomol.com/logo/third-party/bazhuayu.png"
 ---
@@ -51,9 +51,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `query_task_analytics` — Query Bazhuayu collection volume, execution, success-rate, and resource-usage metrics for the last three months. Requires a Flagship, Flagship+, Enterprise, or Team plan.
 - `start_subtasks` — Start selected cloud subtasks for a Bazhuayu task. Requires a Flagship+, Enterprise, or Team plan. [write]
 - `start_task` — Start a Bazhuayu task on cloud workers and return its batch number. Requires a Flagship+, Enterprise, or Team plan. [write]
-- `stop_subtasks` — Stop selected cloud subtasks for a Bazhuayu task. Requires a Flagship+, Enterprise, or Team plan. [write]
-- `stop_task` — Stop a running Bazhuayu cloud task. Requires a Flagship+, Enterprise, or Team plan. [write]
-- `update_loop_items` — Replace or append the text or URL items used by one Bazhuayu loop step. Requires a Flagship+, Enterprise, or Team plan. [write]
+- `stop_subtasks` — Stop selected cloud subtasks for a Bazhuayu task. Requires a Flagship+, Enterprise, or Team plan. [destructive]
+- `stop_task` — Stop a running Bazhuayu cloud task. Requires a Flagship+, Enterprise, or Team plan. [destructive]
+- `update_loop_items` — Replace or append the text or URL items used by one Bazhuayu loop step. Requires a Flagship+, Enterprise, or Team plan. [destructive]
 - `update_task_parameters` — Update supported properties and loop items in a Bazhuayu task. Requires a Flagship+, Enterprise, or Team plan. [write]
 
 ## Safety

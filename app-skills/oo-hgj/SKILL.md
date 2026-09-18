@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HaiGuanJia"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hgj"]
   icon: "https://static.oomol.com/logo/third-party/hgj.png"
 ---
@@ -40,10 +40,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `batch_get_truck_positions` — Get current positions for multiple trucks. Only query vehicles that the caller is authorized to track. HaiGuanJia may charge for this request.
 - `bind_ningbo_schedule` — Bind a Ningbo bill to an explicit vessel schedule. [write]
 - `bind_shanghai_schedule` — Bind a Shanghai bill to an explicit HaiGuanJia vessel schedule. [write]
-- `cancel_em_manifest_close` — Cancel EM Close for a full 8000-code house bill. [write]
+- `cancel_em_manifest_close` — Cancel EM Close for a full 8000-code house bill. [destructive]
 - `check_aci_bill_availability` — Check whether an ACI 8000-code and house-bill combination is available.
 - `check_em_bill_availability` — Check whether an EM 8000-code and house-bill combination is available.
-- `close_em_manifest` — Submit EM Close for a full 8000-code house bill. The official page has conflicting free/consumption wording, so Connector treats it as potentially chargeable and never retries automatically. [write]
+- `close_em_manifest` — Submit EM Close for a full 8000-code house bill. The official page has conflicting free/consumption wording, so Connector treats it as potentially chargeable and never retries automatically. [destructive]
 - `delete_aci_manifest` — Delete an ACI house bill through the selected agency or customer channel. [destructive]
 - `delete_afr_manifest` — Delete an AFR house bill with the required cancellation reason. [destructive]
 - `delete_ams_manifest` — Delete an AMS house bill through the selected agency or customer SCAC channel. [destructive]
@@ -56,25 +56,25 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_ai_customs_intake_status` — Get the raw HaiGuanJia AI customs-intake status. Automatic wait semantics are unavailable because the official status enum is not documented.
 - `get_export_customs_recognition_result` — Get the current export customs-recognition task state and structured or customs-XML result.
 - `get_full_journey_tracking` — Get carrier full-journey data for a subscription previously created by the connected HaiGuanJia account. Use this as a fallback when a callback was not received.
-- `get_import_customs_recognition_result` — Get the current import customs-recognition task state and structured or customs-XML result. [write]
+- `get_import_customs_recognition_result` — Get the current import customs-recognition task state and structured or customs-XML result.
 - `get_new_us_customs` — Get the complete new US customs result for a prior HaiGuanJia query, including BOL, air, importer-bond, and in-bond data when present.
 - `get_ningbo_master_house_bills` — Resolve Ningbo master and house bill relationships without requiring the caller to identify whether the supplied bill is a master or house bill.
-- `get_port_container` — Get current Ningbo, Shanghai, Shenzhen, or Qingdao container/cargo data. HaiGuanJia automatically subscribes missing data, so this operation may create a billed callback workflow and Connector never retries it automatically.
+- `get_port_container` — Get current Ningbo, Shanghai, Shenzhen, or Qingdao container/cargo data. HaiGuanJia automatically subscribes missing data, so this operation may create a billed callback workflow and Connector never retries it automatically. [write]
 - `get_port_schedule` — Get current Ningbo, Shanghai, Shenzhen, or Qingdao vessel schedule data. HaiGuanJia automatically subscribes missing or expired schedules, so Connector never retries this request automatically. [write]
 - `get_qingdao_shipping_agent` — Get the Qingdao shipping agent for a bill, carrier, vessel, and voyage.
 - `get_shanghai_manifest_deletion_status` — Get the receipt status for a Shanghai manifest deletion submitted through the connected HaiGuanJia account.
 - `get_shanghai_manifest_status` — Get send receipts for a customs declaration submitted through the connected HaiGuanJia account.
-- `get_shanghai_manifest_update_status` — Get the receipt status for a Shanghai manifest update submitted through the connected HaiGuanJia account. [write]
-- `get_shenzhen_nansha_schedule` — Query Shenzhen or Nansha vessel schedules using the selected product API ID and the shared official endpoint. [write]
+- `get_shanghai_manifest_update_status` — Get the receipt status for a Shanghai manifest update submitted through the connected HaiGuanJia account.
+- `get_shenzhen_nansha_schedule` — Query Shenzhen or Nansha vessel schedules using the selected product API ID and the shared official endpoint.
 - `get_ship_position` — Get the latest HaiGuanJia position and identity data for a vessel.
 - `list_shanghai_shipping_agents` — List candidate Shanghai shipping agent names for a bill, carrier, vessel, and voyage. HaiGuanJia documents the result as reference data only.
 - `list_ship_track_points` — List HaiGuanJia track points for a previously subscribed vessel within a time range.
 - `list_truck_track_points` — List a truck's historical track and parking events. Only query vehicles that the caller is authorized to track. HaiGuanJia documents this query as chargeable on every request.
-- `reallocate_qingdao_manifest` — Reallocate a Qingdao manifest to another vessel and voyage. The official page has conflicting billing labels, so Connector treats it as potentially chargeable and never retries automatically.
+- `reallocate_qingdao_manifest` — Reallocate a Qingdao manifest to another vessel and voyage. The official page has conflicting billing labels, so Connector treats it as potentially chargeable and never retries automatically. [destructive]
 - `recognize_custom_document` — Recognize one or more documents with a promptCode maintained in HaiGuanJia's external Storybrooke console. This business-side billed request requires the connection's separate secondaryApiKey and is never retried automatically.
 - `recognize_document` — Recognize one or more documents with a fixed HaiGuanJia product template. This business-side billed request requires the connection's separate secondaryApiKey and is never retried automatically.
-- `resend_qingdao_manifest` — Resend the rejected original Qingdao manifest. Connector sends the operation once and never retries automatically.
-- `resend_shanghai_manifest` — Resend an original Shanghai manifest that HaiGuanJia has rejected. This endpoint only accepts the rejected original manifest and Connector never retries it automatically.
+- `resend_qingdao_manifest` — Resend the rejected original Qingdao manifest. Connector sends the operation once and never retries automatically. [write]
+- `resend_shanghai_manifest` — Resend an original Shanghai manifest that HaiGuanJia has rejected. This endpoint only accepts the rejected original manifest and Connector never retries it automatically. [write]
 - `send_aci_manifest` — Send an ACI manifest through agency filing or the customer's own 8000-code channel. Each house bill is chargeable and Connector never retries automatically. [write]
 - `send_afr_manifest` — Send an AFR manifest. HaiGuanJia charges once per house bill, so Connector never retries automatically. [write]
 - `send_ams_manifest` — Send an AMS manifest through HaiGuanJia agency service or the customer's own SCAC channel. Each house bill is chargeable and Connector never retries automatically. [write]
@@ -99,20 +99,20 @@ Each action is listed below with a one-line description; actions that change sta
 - `subscribe_ship` — Subscribe a vessel in HaiGuanJia so its track information can be queried. [write]
 - `subscribe_us_customs_data` — Subscribe US destination customs data for a bill and carrier. HaiGuanJia documents this request as chargeable, so Connector never retries automatically. [write]
 - `subscribe_us_terminal_data` — Subscribe US terminal data for a container and port. HaiGuanJia documents this request as chargeable, so Connector never retries automatically. [write]
-- `update_aci_manifest` — Overwrite an ACI manifest through the selected agency or customer channel. [write]
-- `update_afr_manifest` — Overwrite an existing AFR house bill and its complete container data. [write]
-- `update_ai_customs_intake` — Overwrite an existing AI customs-intake request. Connector fixes isModify to true and HaiGuanJia fetches each attachment URL. [write]
-- `update_ams_manifest` — Overwrite an AMS manifest through the selected agency or customer SCAC channel. [write]
-- `update_em_manifest` — Overwrite an EM manifest through the selected agency or customer channel. [write]
-- `update_ics2_manifest` — Overwrite an ICS2 F14, F15, F16, or F17 manifest identified by billId. [write]
-- `update_isf10_manifest` — Overwrite an ISF-10 manifest through the selected agency or customer FILER CODE channel. [write]
-- `update_isf5_manifest` — Overwrite an ISF-5 manifest through the selected agency or customer FILER CODE channel. [write]
-- `update_qingdao_manifest` — Overwrite a Qingdao manifest. HaiGuanJia charges for affected master and house bills, so Connector never retries automatically. [write]
-- `update_shanghai_manifest` — Overwrite selected customs declarations in an existing Shanghai manifest. HaiGuanJia charges for each modified customs declaration, so Connector never retries this request automatically. [write]
+- `update_aci_manifest` — Overwrite an ACI manifest through the selected agency or customer channel. [destructive]
+- `update_afr_manifest` — Overwrite an existing AFR house bill and its complete container data. [destructive]
+- `update_ai_customs_intake` — Overwrite an existing AI customs-intake request. Connector fixes isModify to true and HaiGuanJia fetches each attachment URL. [destructive]
+- `update_ams_manifest` — Overwrite an AMS manifest through the selected agency or customer SCAC channel. [destructive]
+- `update_em_manifest` — Overwrite an EM manifest through the selected agency or customer channel. [destructive]
+- `update_ics2_manifest` — Overwrite an ICS2 F14, F15, F16, or F17 manifest identified by billId. [destructive]
+- `update_isf10_manifest` — Overwrite an ISF-10 manifest through the selected agency or customer FILER CODE channel. [destructive]
+- `update_isf5_manifest` — Overwrite an ISF-5 manifest through the selected agency or customer FILER CODE channel. [destructive]
+- `update_qingdao_manifest` — Overwrite a Qingdao manifest. HaiGuanJia charges for affected master and house bills, so Connector never retries automatically. [destructive]
+- `update_shanghai_manifest` — Overwrite selected customs declarations in an existing Shanghai manifest. HaiGuanJia charges for each modified customs declaration, so Connector never retries this request automatically. [destructive]
 - `validate_qingdao_voyage` — Validate a Qingdao vessel and voyage using the product API ID rather than the conflicting example ID.
 - `validate_shanghai_voyage` — Validate a Shanghai vessel and voyage and return its port calls and current planned timing.
-- `withdraw_qingdao_manifest` — Withdraw a rejected Qingdao manifest and request the documented refund.
-- `withdraw_shanghai_manifest` — Withdraw a rejected Shanghai manifest submission. A successful withdrawal refunds the documented balance or usage count.
+- `withdraw_qingdao_manifest` — Withdraw a rejected Qingdao manifest and request the documented refund. [destructive]
+- `withdraw_shanghai_manifest` — Withdraw a rejected Shanghai manifest submission. A successful withdrawal refunds the documented balance or usage count. [destructive]
 
 ## Safety
 

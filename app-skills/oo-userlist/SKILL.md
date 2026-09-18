@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Userlist"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["userlist"]
   icon: "https://static.oomol.com/logo/third-party/userlist.svg"
 ---
@@ -38,9 +38,9 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_event` — Create a Userlist event for a user, company, or both. [write]
-- `push_company` — Create or update a Userlist company through the Push API.
-- `push_relationship` — Create or update a Userlist relationship between a user and a company.
-- `push_user` — Create or update a Userlist user through the Push API.
+- `push_company` — Create or update a Userlist company through the Push API. [write]
+- `push_relationship` — Create or update a Userlist relationship between a user and a company. [write]
+- `push_user` — Create or update a Userlist user through the Push API. [write]
 - `send_message` — Send a Userlist transactional message to a user or email address. [write]
 
 ## Safety

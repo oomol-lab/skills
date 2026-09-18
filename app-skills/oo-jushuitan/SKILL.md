@@ -1,11 +1,11 @@
 ---
 name: oo-jushuitan
-description: "Jushuitan ERP (jushuitan.com). Use this skill for ANY Jushuitan ERP request — reading, creating, and updating data. Whenever a task involves Jushuitan ERP, use this skill instead of calling the API directly."
+description: "Jushuitan ERP (jushuitan.com). Use this skill for ANY Jushuitan ERP request — reading, creating, updating, and deleting data. Whenever a task involves Jushuitan ERP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jushuitan ERP"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["jushuitan"]
   icon: "https://static.oomol.com/logo/third-party/jushuitan.svg"
 ---
@@ -48,26 +48,26 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_package_serial_numbers` — Add unique package serial numbers in batches. [write]
 - `add_product_serial_numbers` — Add unique product serial numbers in batches. [write]
-- `adjust_inventory_by_count` — Adjust product inventory through an inventory count operation.
-- `append_wms_workload` — Append a WMS workload record.
-- `assign_order_shipping_warehouse` — Assign a shipping warehouse to an order. [write]
-- `assign_wave_to_robot` — Assign a picking wave to a specified warehouse robot. [write]
-- `batch_off_shelf_products` — Move products off warehouse shelves in batches.
-- `batch_shelve_products` — Place products onto warehouse shelves in batches.
-- `bind_seeding_bin_to_cart` — Bind a seeding cabinet identifier to a seeding cart.
-- `bind_seeding_cart` — Bind a seeding cart to a warehouse picking or seeding workflow.
-- `cancel_allocation` — Cancel an inventory allocation document. [write]
-- `cancel_cost_upload_batch` — Cancel a profitability data upload batch. [write]
-- `cancel_order_by_internal_id` — Cancel an order by its Jushuitan internal order number. [write]
-- `cancel_purchase_receipt` — Cancel a purchase receipt document. [write]
-- `cancel_purchase_return` — Cancel a purchase return outbound document. [write]
+- `adjust_inventory_by_count` — Adjust product inventory through an inventory count operation. [destructive]
+- `append_wms_workload` — Append a WMS workload record. [write]
+- `assign_order_shipping_warehouse` — Assign a shipping warehouse to an order. [destructive]
+- `assign_wave_to_robot` — Assign a picking wave to a specified warehouse robot. [destructive]
+- `batch_off_shelf_products` — Move products off warehouse shelves in batches. [destructive]
+- `batch_shelve_products` — Place products onto warehouse shelves in batches. [destructive]
+- `bind_seeding_bin_to_cart` — Bind a seeding cabinet identifier to a seeding cart. [destructive]
+- `bind_seeding_cart` — Bind a seeding cart to a warehouse picking or seeding workflow. [destructive]
+- `cancel_allocation` — Cancel an inventory allocation document. [destructive]
+- `cancel_cost_upload_batch` — Cancel a profitability data upload batch. [destructive]
+- `cancel_order_by_internal_id` — Cancel an order by its Jushuitan internal order number. [destructive]
+- `cancel_purchase_receipt` — Cancel a purchase receipt document. [destructive]
+- `cancel_purchase_return` — Cancel a purchase return outbound document. [destructive]
 - `check_seeding_cart_availability` — Check whether a seeding cart is currently available for use.
-- `complete_seeding_with_stock_out` — Submit seeding results and complete the associated stock-out operation. [write]
-- `complete_seeding_without_stock_out` — Submit seeding results without completing a stock-out operation. [write]
-- `confirm_after_sale` — Confirm an after-sale document. [write]
-- `confirm_after_sale_goods_received` — Confirm receipt of after-sale goods, including partial confirmations. [write]
-- `confirm_after_sale_receipt_by_serial_numbers` — Confirm after-sale goods receipt in batches by product serial number. [write]
-- `confirm_allocation` — Confirm an inventory allocation document. [write]
+- `complete_seeding_with_stock_out` — Submit seeding results and complete the associated stock-out operation. [destructive]
+- `complete_seeding_without_stock_out` — Submit seeding results without completing a stock-out operation. [destructive]
+- `confirm_after_sale` — Confirm an after-sale document. [destructive]
+- `confirm_after_sale_goods_received` — Confirm receipt of after-sale goods, including partial confirmations. [destructive]
+- `confirm_after_sale_receipt_by_serial_numbers` — Confirm after-sale goods receipt in batches by product serial number. [destructive]
+- `confirm_allocation` — Confirm an inventory allocation document. [destructive]
 - `create_allocation_difference` — Create an allocation difference document. [write]
 - `create_cost_upload_batch` — Create a batch identifier for profitability data uploads. [write]
 - `create_cross_border_first_leg` — Create a first-leg cross-border logistics document. [write]
@@ -79,12 +79,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_purchase_returns` — Create purchase return documents in batches. [write]
 - `create_virtual_warehouse_allocation` — Create a virtual-warehouse inventory allocation document. [write]
 - `create_virtual_warehouse_operation` — Create a virtual-warehouse allocation or return document. [write]
-- `force_confirm_and_stock_in_shortage_order` — Force-confirm a single-item shortage order and receive it into inventory. [write]
-- `force_confirm_shortage_order_for_shipping` — Force-confirm single-item shortage orders for shipment. [write]
-- `generate_fast_moving_labels` — Generate unique labels for fast-moving products.
+- `force_confirm_and_stock_in_shortage_order` — Force-confirm a single-item shortage order and receive it into inventory. [destructive]
+- `force_confirm_shortage_order_for_shipping` — Force-confirm single-item shortage orders for shipment. [destructive]
+- `generate_fast_moving_labels` — Generate unique labels for fast-moving products. [write]
 - `get_allocation_first_leg_fee` — Get first-leg logistics fees for an allocation document.
-- `get_cost_upload_batch_status` — Get status information for a profitability data upload batch. [write]
-- `get_fast_delivery_order_count` — Get the number of orders eligible for expedited shipment. [write]
+- `get_cost_upload_batch_status` — Get status information for a profitability data upload batch.
+- `get_fast_delivery_order_count` — Get the number of orders eligible for expedited shipment.
 - `get_fast_moving_serial_number` — Get unique serial-number information for a fast-moving product.
 - `get_product_by_sku` — Get ordinary product details by SKU code.
 - `get_product_historical_cost` — Get the historical cost price for a product at the requested point in time.
@@ -99,7 +99,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_allocations` — List inventory allocation documents.
 - `list_bundle_products` — List bundle products and their component product definitions.
 - `list_company_users` — List users belonging to the authorized Jushuitan merchant company.
-- `list_cost_upload_batch_errors` — List rejected or invalid records from a profitability data upload batch. [write]
+- `list_cost_upload_batch_errors` — List rejected or invalid records from a profitability data upload batch.
 - `list_cross_border_after_sales` — List cross-border after-sale documents.
 - `list_cross_border_logistics_channels` — List cross-border logistics providers and channels enabled for the merchant.
 - `list_cross_border_orders` — List cross-border orders.
@@ -144,45 +144,45 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_warehouses` — List warehouses available to the authorized merchant account.
 - `list_wms_stock_movements` — List WMS inbound and outbound stock movement records.
 - `list_wms_work_logs` — List WMS work logs for authorized warehouses.
-- `mark_orders_exception` — Move orders into the exception-order workflow. [write]
-- `mark_orders_shipped` — Mark orders as shipped and submit their shipment details. [write]
-- `pack_shipment` — Record packing details for a shipment.
-- `recalculate_wave_inventory_reservation` — Recalculate inventory reservations for a picking wave.
-- `record_fast_moving_arrival` — Record arrival of fast-moving products in the WMS workflow.
+- `mark_orders_exception` — Move orders into the exception-order workflow. [destructive]
+- `mark_orders_shipped` — Mark orders as shipped and submit their shipment details. [destructive]
+- `pack_shipment` — Record packing details for a shipment. [destructive]
+- `recalculate_wave_inventory_reservation` — Recalculate inventory reservations for a picking wave. [destructive]
+- `record_fast_moving_arrival` — Record arrival of fast-moving products in the WMS workflow. [destructive]
 - `register_express_shipments` — Register express shipment records in batches. [write]
 - `save_1688_product_mapping` — Create or update mappings for products sourced from 1688. [write]
 - `save_packing_video_record` — Save a packing-machine video record for a package or shipment. [write]
 - `save_product_categories` — Create or update product categories in Jushuitan. [write]
-- `save_product_suppliers` — Create or modify supplier relationships for products. [write]
+- `save_product_suppliers` — Create or modify supplier relationships for products. [destructive]
 - `save_products_batch` — Create or update ordinary product records in batches using the current API. [write]
-- `save_virtual_warehouse_purchase_request` — Create or update a virtual-warehouse purchase request. [write]
-- `set_after_sale_labels` — Set labels on after-sale documents. [write]
-- `ship_sales_outbounds` — Complete shipment for sales outbound documents.
-- `split_order` — Split an order into separate fulfillment orders. [write]
-- `unbind_outbound_from_seeding_cart` — Unbind outbound documents from a seeding cart.
-- `unbind_wave_cart` — Unbind a picking or seeding cart from a wave.
-- `uncancel_orders` — Reverse cancellation for eligible orders.
-- `unconfirm_after_sale` — Reverse confirmation of an after-sale document.
-- `update_cross_border_order_forwarding` — Update cross-border forwarding and logistics information for an order. [write]
-- `update_last_mile_shipping_fee` — Write back the last-mile shipping fee for a cross-border shipment. [write]
-- `update_order_invoice` — Update invoice information attached to an order. [write]
-- `update_order_labels` — Add or remove labels on orders. [write]
-- `update_order_logistics_company` — Change the logistics company assigned to an order. [write]
-- `update_order_offline_note` — Update an order note or offline remark by order number. [write]
-- `update_order_remark_flag` — Update an order remark flag and synchronize the change to its platform. [write]
-- `update_order_seller_remark_by_internal_id` — Update an order seller remark using the Jushuitan internal order number. [write]
-- `update_order_seller_remark_by_online_id` — Update an order seller remark using its online order number. [write]
-- `update_other_stock_movement_status` — Change the status of a miscellaneous inbound or outbound stock document. [write]
-- `update_product_bin_capacity` — Update warehouse bin-capacity information for products. [write]
-- `update_product_invoice_profile` — Update basic invoicing information for products. [write]
-- `update_product_mappings` — Bind or unbind product mapping relationships. [write]
-- `update_product_models` — Update product model information. [write]
-- `update_purchase_order` — Modify an existing purchase order. [write]
-- `update_purchase_order_labels` — Add or remove labels on purchase and manufacturing orders. [write]
-- `update_purchase_order_status` — Change the business status of a purchase order. [write]
-- `update_self_store_order_recipient` — Update recipient information for an order from a merchant-owned shop. [write]
-- `update_virtual_inventory` — Import or update virtual inventory quantities in batches. [write]
-- `update_wave_picking_status` — Update the picking status of a WMS wave. [write]
+- `save_virtual_warehouse_purchase_request` — Create or update a virtual-warehouse purchase request. [destructive]
+- `set_after_sale_labels` — Set labels on after-sale documents. [destructive]
+- `ship_sales_outbounds` — Complete shipment for sales outbound documents. [destructive]
+- `split_order` — Split an order into separate fulfillment orders. [destructive]
+- `unbind_outbound_from_seeding_cart` — Unbind outbound documents from a seeding cart. [destructive]
+- `unbind_wave_cart` — Unbind a picking or seeding cart from a wave. [destructive]
+- `uncancel_orders` — Reverse cancellation for eligible orders. [destructive]
+- `unconfirm_after_sale` — Reverse confirmation of an after-sale document. [destructive]
+- `update_cross_border_order_forwarding` — Update cross-border forwarding and logistics information for an order. [destructive]
+- `update_last_mile_shipping_fee` — Write back the last-mile shipping fee for a cross-border shipment. [destructive]
+- `update_order_invoice` — Update invoice information attached to an order. [destructive]
+- `update_order_labels` — Add or remove labels on orders. [destructive]
+- `update_order_logistics_company` — Change the logistics company assigned to an order. [destructive]
+- `update_order_offline_note` — Update an order note or offline remark by order number. [destructive]
+- `update_order_remark_flag` — Update an order remark flag and synchronize the change to its platform. [destructive]
+- `update_order_seller_remark_by_internal_id` — Update an order seller remark using the Jushuitan internal order number. [destructive]
+- `update_order_seller_remark_by_online_id` — Update an order seller remark using its online order number. [destructive]
+- `update_other_stock_movement_status` — Change the status of a miscellaneous inbound or outbound stock document. [destructive]
+- `update_product_bin_capacity` — Update warehouse bin-capacity information for products. [destructive]
+- `update_product_invoice_profile` — Update basic invoicing information for products. [destructive]
+- `update_product_mappings` — Bind or unbind product mapping relationships. [destructive]
+- `update_product_models` — Update product model information. [destructive]
+- `update_purchase_order` — Modify an existing purchase order. [destructive]
+- `update_purchase_order_labels` — Add or remove labels on purchase and manufacturing orders. [destructive]
+- `update_purchase_order_status` — Change the business status of a purchase order. [destructive]
+- `update_self_store_order_recipient` — Update recipient information for an order from a merchant-owned shop. [destructive]
+- `update_virtual_inventory` — Import or update virtual inventory quantities in batches. [destructive]
+- `update_wave_picking_status` — Update the picking status of a WMS wave. [destructive]
 - `upload_after_sales` — Upload after-sale return or refund records. [write]
 - `upload_bundle_products` — Upload bundle product definitions in batches. [write]
 - `upload_external_purchase_order_costs` — Upload cost data for externally purchased orders. [write]
@@ -197,9 +197,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `upload_shop_products` — Upload product records for a merchant-owned online shop. [write]
 - `upload_suppliers` — Upload supplier master records to Jushuitan. [write]
 - `upload_unidentified_after_sales` — Upload after-sale records for returned parcels without matching order information. [write]
-- `void_after_sale` — Void an after-sale document.
-- `void_purchase_documents` — Void purchase orders, manufacturing orders, or receiving bookings.
-- `weigh_sort_and_ship_orders` — Record order weights, sort express parcels, and mark orders as shipped.
+- `void_after_sale` — Void an after-sale document. [destructive]
+- `void_purchase_documents` — Void purchase orders, manufacturing orders, or receiving bookings. [destructive]
+- `weigh_sort_and_ship_orders` — Record order weights, sort express parcels, and mark orders as shipped. [destructive]
 
 ## Safety
 

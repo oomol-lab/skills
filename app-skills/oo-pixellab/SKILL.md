@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PixelLab"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["pixellab"]
   icon: "https://static.oomol.com/logo/third-party/pixellab.png"
 ---
@@ -37,33 +37,33 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `animate_with_skeleton` — Generate synchronous PixelLab animation frames from a reference character image and per-frame skeleton keypoints.
-- `animate_with_text_legacy` — Generate four animation frames synchronously with PixelLab's original text animation model.
+- `animate_with_skeleton` — Generate synchronous PixelLab animation frames from a reference character image and per-frame skeleton keypoints. [write]
+- `animate_with_text_legacy` — Generate four animation frames synchronously with PixelLab's original text animation model. [write]
 - `convert_to_pixel_art` — Convert a PNG or JPEG image to pixel art synchronously.
 - `create_pixen_image` — Generate one pixel-art image synchronously with the PixelLab Pixen model. [write]
 - `create_pixflux_image` — Generate one pixel-art image synchronously with the PixelLab Pixflux model. [write]
 - `delete_character` — Delete a persisted PixelLab character and its associated animations. [destructive]
 - `delete_object` — Delete one persisted PixelLab object. [destructive]
 - `delete_ui_asset` — Delete one saved PixelLab UI asset. [destructive]
-- `dismiss_object_review` — Discard all candidate frames for a one-direction object awaiting review.
+- `dismiss_object_review` — Discard all candidate frames for a one-direction object awaiting review. [destructive]
 - `download_character_zip` — Export one persisted PixelLab character as a ZIP transit file.
-- `enhance_animation_prompt` — Expand a motion description using the visible content of one or two animation frames.
-- `enhance_character_prompt` — Expand a short description into a model-ready PixelLab v3 character prompt.
-- `enhance_pixen_prompt` — Expand a short description into a model-ready PixelLab Pixen image prompt.
+- `enhance_animation_prompt` — Expand a motion description using the visible content of one or two animation frames. [write]
+- `enhance_character_prompt` — Expand a short description into a model-ready PixelLab v3 character prompt. [write]
+- `enhance_pixen_prompt` — Expand a short description into a model-ready PixelLab Pixen image prompt. [write]
 - `estimate_skeleton` — Estimate PixelLab skeleton keypoints from a PNG or JPEG character image.
 - `get_background_job` — Poll a PixelLab background animation job and store completed image frames in OOMOL file transit.
 - `get_balance` — Retrieve the current PixelLab USD credit and subscription generation balances.
 - `get_character` — Retrieve one persisted PixelLab character with rotations and animations.
 - `get_object` — Retrieve one persisted PixelLab object with rotations, review frames, and animations.
 - `get_ui_asset` — Retrieve one saved PixelLab UI asset and its generation status.
-- `inpaint_image_legacy` — Inpaint a masked area synchronously with PixelLab's original image model.
+- `inpaint_image_legacy` — Inpaint a masked area synchronously with PixelLab's original image model. [write]
 - `list_characters` — List persisted PixelLab characters with offset pagination.
 - `list_objects` — List persisted PixelLab objects with offset pagination.
 - `list_ui_assets` — List saved PixelLab UI assets with offset pagination.
 - `remove_background` — Remove a pixel-art image background synchronously and return a transparent PNG. [destructive]
-- `resize_image` — Resize pixel art synchronously while preserving its pixel-art appearance.
-- `rotate_image` — Rotate or tilt a pixel-art character or object synchronously.
-- `select_object_frames` — Keep selected candidate frames from a one-direction object review as individual objects.
+- `resize_image` — Resize pixel art synchronously while preserving its pixel-art appearance. [write]
+- `rotate_image` — Rotate or tilt a pixel-art character or object synchronously. [write]
+- `select_object_frames` — Keep selected candidate frames from a one-direction object review as individual objects. [write]
 - `start_animate_object` — Submit one or more directional animation jobs for an existing PixelLab object. [write]
 - `start_convert_to_pixel_art_pro` — Start Pro conversion of a PNG or JPEG image to automatically scaled pixel art. [write]
 - `start_create_character_4_directions` — Start creation of a persisted PixelLab character with four directional rotations. [write]
@@ -92,7 +92,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `start_text_animation_pro` — Start Pro text-guided animation from a reference character image. [write]
 - `start_transfer_outfit` — Start Pro transfer of an outfit or appearance across animation frames. [write]
 - `update_character_tags` — Replace the user-defined tags on a persisted PixelLab character. [write]
-- `update_object_tags` — Replace the user-defined tags on a persisted PixelLab object. [write]
+- `update_object_tags` — Replace the user-defined tags on a persisted PixelLab object. [destructive]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Canva"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["canva"]
   icon: "https://static.oomol.com/logo/third-party/canva.png"
 ---
@@ -46,7 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_design` — Get metadata for a Canva design, including owner, URLs, and thumbnail details.
 - `get_design_export_formats` — List the file formats currently available for exporting a Canva design.
 - `get_design_export_job` — Get the current status and result URLs for a Canva design export job created by create_design_export_job.
-- `get_url_asset_upload_job` — Get the current status and uploaded asset metadata for a Canva URL asset upload job. [write]
+- `get_url_asset_upload_job` — Get the current status and uploaded asset metadata for a Canva URL asset upload job.
 - `list_designs` — List metadata for the current Canva user's designs, with optional search, ownership, sorting, and pagination filters.
 - `list_folder_items` — List Canva folder contents, including folders, designs, and image assets, with pagination and filtering options.
 - `move_folder_item` — Move a Canva folder item to another Canva folder. [write]

@@ -1,11 +1,11 @@
 ---
 name: oo-klicktipp
-description: "KlickTipp (klicktipp.com). Use this skill for ANY KlickTipp request — searching and reading data. Whenever a task involves KlickTipp, use this skill instead of calling the API directly."
+description: "KlickTipp (klicktipp.com). Use this skill for ANY KlickTipp request — reading, creating, updating, and deleting data. Whenever a task involves KlickTipp, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "KlickTipp"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["klicktipp"]
   icon: "https://static.oomol.com/logo/third-party/klicktipp.svg"
 ---
@@ -37,9 +37,9 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `signin` — Create or update a subscriber and associate the tag linked to the KlickTipp Listbuilding API key.
-- `signoff` — Unsubscribe a contact by email address through the KlickTipp Listbuilding API key.
-- `signout` — Remove the tag linked to the KlickTipp Listbuilding API key from a subscriber by email address.
+- `signin` — Create or update a subscriber and associate the tag linked to the KlickTipp Listbuilding API key. [write]
+- `signoff` — Unsubscribe a contact by email address through the KlickTipp Listbuilding API key. [destructive]
+- `signout` — Remove the tag linked to the KlickTipp Listbuilding API key from a subscriber by email address. [destructive]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zylvie"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zylvie"]
   icon: "https://static.oomol.com/logo/third-party/zylvie.svg"
 ---
@@ -43,8 +43,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_product` — Delete a Zylvie product, or archive it when transaction history requires it. [destructive]
 - `get_current_user` — Get the Zylvie user and brand authenticated by the current API key.
 - `list_coupons` — List active or archived coupons for the authenticated Zylvie brand.
-- `redeem_license_key` — Mark a Zylvie license key as redeemed.
-- `refund_license_key` — Mark a Zylvie license key as refunded.
+- `redeem_license_key` — Mark a Zylvie license key as redeemed. [write]
+- `refund_license_key` — Mark a Zylvie license key as refunded. [destructive]
 - `update_coupon` — Update selected fields on an existing Zylvie coupon. [write]
 - `update_product` — Update selected fields on an existing Zylvie product. [write]
 - `verify_license_key` — Verify that a Zylvie license key is valid for a product.

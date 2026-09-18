@@ -1,11 +1,11 @@
 ---
 name: oo-iyunbiao
-description: "Yunbiao (iyunbiao.com). Use this skill for ANY Yunbiao request — reading, creating, and updating data. Whenever a task involves Yunbiao, use this skill instead of calling the API directly."
+description: "Yunbiao (iyunbiao.com). Use this skill for ANY Yunbiao request — reading, creating, updating, and deleting data. Whenever a task involves Yunbiao, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Yunbiao"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["iyunbiao"]
   icon: "https://static.oomol.com/logo/third-party/iyunbiao.jpg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `batch_save_forms` — Create or update multiple Yunbiao forms. Inspect errorFormList for individual failures even when the request succeeds. [write]
+- `batch_save_forms` — Create or update multiple Yunbiao forms. Inspect errorFormList for individual failures even when the request succeeds. [destructive]
 - `download_attachment` — Download a Yunbiao attachment to a usable file transit URL. Use the attachment file ID from get_form.
 - `download_cloud_file` — Download a Yunbiao enterprise cloud drive file to a usable file transit URL.
 - `get_form` — Read a Yunbiao form with its current version, detail rows and attachment references.
@@ -49,11 +49,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_users` — List Yunbiao users, optionally with filtering, sorting and pagination.
 - `query_detail_rows` — Query rows in a Yunbiao detail table across forms. Requires server 3.3.45.43 or later.
 - `query_forms` — Find Yunbiao forms with filters, sorting and pagination. Use get_form to retrieve full detail rows before editing.
-- `query_global_interface` — Call a global Yunbiao data interface. Its configured business logic may modify data.
-- `query_template_interface` — Call a data interface configured on a Yunbiao template. Its configured business logic may modify data.
-- `save_form` — Create or update a Yunbiao form. Before updating, read the complete form and preserve its objectId and current objectVersion. [write]
-- `save_role` — Create or update a Yunbiao role. Read get_role before updating and preserve its fields. [write]
-- `save_user` — Create or update a Yunbiao user. Read get_user before updating and preserve its fields. Passwords in the user record must already be MD5-encoded. [write]
+- `query_global_interface` — Call a global Yunbiao data interface. Its configured business logic may modify data. [destructive]
+- `query_template_interface` — Call a data interface configured on a Yunbiao template. Its configured business logic may modify data. [destructive]
+- `save_form` — Create or update a Yunbiao form. Before updating, read the complete form and preserve its objectId and current objectVersion. [destructive]
+- `save_role` — Create or update a Yunbiao role. Read get_role before updating and preserve its fields. [destructive]
+- `save_user` — Create or update a Yunbiao user. Read get_user before updating and preserve its fields. Passwords in the user record must already be MD5-encoded. [destructive]
 - `upload_attachment` — Upload a file from a URL to Yunbiao, returning an attachment entry to include in save_form. Upload alone does not attach it to a form. Connector upload limit: 64 MiB. [write]
 - `upload_cloud_file` — Upload a file from a URL to the Yunbiao enterprise cloud drive. Upload alone does not associate it with a form. Connector upload limit: 64 MiB. [write]
 

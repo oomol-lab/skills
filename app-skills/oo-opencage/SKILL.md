@@ -1,11 +1,11 @@
 ---
 name: oo-opencage
-description: "OpenCage (opencagedata.com). Use this skill for ANY OpenCage request — reading, creating, and updating data. Whenever a task involves OpenCage, use this skill instead of calling the API directly."
+description: "OpenCage (opencagedata.com). Use this skill for ANY OpenCage request — searching and reading data. Whenever a task involves OpenCage, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenCage"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["opencage"]
   icon: "https://static.oomol.com/logo/third-party/Opencage.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `geocode_forward` — Convert an address or place name into OpenCage geocoding results. [write]
+- `geocode_forward` — Convert an address or place name into OpenCage geocoding results.
 - `geocode_geojson` — Return OpenCage geocoding results in GeoJSON FeatureCollection format.
 - `geocode_reverse` — Convert a latitude and longitude pair into OpenCage reverse geocoding results.
 

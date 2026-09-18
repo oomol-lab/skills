@@ -1,11 +1,11 @@
 ---
 name: oo-edenai
-description: "Eden AI (edenai.co). Use this skill for ANY Eden AI request — reading, creating, and updating data. Whenever a task involves Eden AI, use this skill instead of calling the API directly."
+description: "Eden AI (edenai.co). Use this skill for ANY Eden AI request — searching and reading data. Whenever a task involves Eden AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Eden AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["edenai"]
   icon: "https://static.oomol.com/logo/third-party/edenai.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a non-streaming Eden AI OpenAI-compatible chat completion. [write]
+- `create_chat_completion` — Create a non-streaming Eden AI OpenAI-compatible chat completion.
 - `list_models` — List the Eden AI models available to the current API key.
 
 ## Safety

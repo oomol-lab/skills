@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OneDrive"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["one_drive"]
   icon: "https://static.oomol.com/logo/third-party/OneDrive.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_root` — Get metadata for the root folder of the current drive or a specific drive.
 - `list_folder_children` — List the direct children of a folder in OneDrive.
 - `search_items` — Search OneDrive for files and folders by keyword.
-- `update_file_content` — Replace the content of one existing OneDrive file. [write]
+- `update_file_content` — Replace the content of one existing OneDrive file. [destructive]
 - `update_item_metadata` — Rename, move, or update metadata for a drive item. [write]
 - `upload_file` — Upload one file to OneDrive, optionally creating destination folders on the way. [write]
 

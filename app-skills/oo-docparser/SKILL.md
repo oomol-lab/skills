@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Docparser"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["docparser"]
   icon: "https://static.oomol.com/logo/third-party/Docparser.svg"
 ---
@@ -44,8 +44,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_parser_models` — List all model layouts for a specific Docparser parser.
 - `list_parsers` — List all Document Parsers linked to the current Docparser account.
 - `ping` — Ping the Docparser API to verify that the provided API key is valid.
-- `reintegrate_documents` — Schedule one or more Docparser documents for the integration queue using their document IDs.
-- `reparse_documents` — Schedule one or more Docparser documents for re-parsing using their document IDs.
+- `reintegrate_documents` — Schedule one or more Docparser documents for the integration queue using their document IDs. [write]
+- `reparse_documents` — Schedule one or more Docparser documents for re-parsing using their document IDs. [write]
 - `upload_document_by_content` — Upload a document to a Docparser parser by sending base64-encoded file content and an optional file name. [write]
 
 ## Safety

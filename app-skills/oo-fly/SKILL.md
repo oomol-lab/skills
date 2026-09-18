@@ -1,11 +1,11 @@
 ---
 name: oo-fly
-description: "Fly.io (fly.io). Use this skill for ANY Fly.io request — reading, creating, and updating data. Whenever a task involves Fly.io, use this skill instead of calling the API directly."
+description: "Fly.io (fly.io). Use this skill for ANY Fly.io request — reading, creating, updating, and deleting data. Whenever a task involves Fly.io, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fly.io"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["fly"]
   icon: "https://static.oomol.com/logo/third-party/fly.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_machines` — List Fly Machines in an app with optional state, region, and summary filters.
 - `restart_machine` — Restart a Fly Machine, optionally with a Unix signal and timeout. [write]
 - `start_machine` — Start a Fly Machine. [write]
-- `stop_machine` — Stop a Fly Machine, optionally with a Unix signal and timeout. [write]
+- `stop_machine` — Stop a Fly Machine, optionally with a Unix signal and timeout. [destructive]
 - `wait_for_machine` — Wait for a Fly Machine to reach a desired state.
 
 ## Safety

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Make"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["make"]
   icon: "https://static.oomol.com/logo/third-party/make.png"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_scenario_usage` — Get daily usage for a Make scenario over the previous 30 days.
 - `list_scenarios` — List Make scenarios for one team or organization.
 - `list_teams` — List Make teams visible to the authenticated credential.
-- `run_scenario_once` — Run a Make scenario once on demand.
+- `run_scenario_once` — Run a Make scenario once on demand. [write]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-booqable
-description: "Booqable (booqable.com). Use this skill for ANY Booqable request — reading, creating, and updating data. Whenever a task involves Booqable, use this skill instead of calling the API directly."
+description: "Booqable (booqable.com). Use this skill for ANY Booqable request — searching and reading data. Whenever a task involves Booqable, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Booqable"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["booqable"]
   icon: "https://static.oomol.com/logo/third-party/booqable.svg"
 ---
@@ -39,7 +39,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `get_current_company` — Fetch the current Booqable company connected to the access token.
 - `get_customer` — Fetch one Booqable customer by id.
-- `get_order` — Fetch one Booqable order by id. [write]
+- `get_order` — Fetch one Booqable order by id.
 - `get_product_group` — Fetch one Booqable product group by id.
 - `list_customers` — List Booqable customers with optional fields, filters, includes, and paging.
 - `list_orders` — List Booqable orders with optional fields, filters, includes, and paging.

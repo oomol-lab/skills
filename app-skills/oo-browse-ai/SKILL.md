@@ -1,11 +1,11 @@
 ---
 name: oo-browse-ai
-description: "Browse AI (browse.ai). Use this skill for ANY Browse AI request — reading, creating, and updating data. Whenever a task involves Browse AI, use this skill instead of calling the API directly."
+description: "Browse AI (browse.ai). Use this skill for ANY Browse AI request — reading, creating, updating, and deleting data. Whenever a task involves Browse AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Browse AI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["browse_ai"]
   icon: "https://static.oomol.com/logo/third-party/Browseai.svg"
 ---
@@ -41,8 +41,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_robot_task` — Retrieve one Browse AI robot task and its captured data by robot and task IDs.
 - `list_robot_tasks` — List Browse AI robot tasks with pagination and status filters.
 - `list_robots` — List the Browse AI robots available to the connected API key.
-- `run_robot_task` — Start one Browse AI robot task with optional inputParameters overrides.
-- `update_robot_cookies` — Update the cookies stored on one Browse AI robot. [write]
+- `run_robot_task` — Start one Browse AI robot task with optional inputParameters overrides. [write]
+- `update_robot_cookies` — Update the cookies stored on one Browse AI robot. [destructive]
 
 ## Safety
 

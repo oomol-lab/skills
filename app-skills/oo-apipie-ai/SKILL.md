@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "APIpie AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["apipie_ai"]
   icon: "https://static.oomol.com/logo/third-party/apipie_ai.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Create a non-streaming APIpie AI OpenAI-compatible chat completion. [write]
+- `create_chat_completion` — Create a non-streaming APIpie AI OpenAI-compatible chat completion.
 - `create_embedding` — Generate APIpie AI embeddings for one or more text inputs. [write]
 - `list_detailed_models` — List detailed APIpie AI model metadata available to the current API key.
 - `list_models` — List the APIpie AI models available to the current API key.

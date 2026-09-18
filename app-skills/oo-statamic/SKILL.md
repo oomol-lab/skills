@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Statamic"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["statamic"]
   icon: "https://static.oomol.com/logo/third-party/statamic.svg"
 ---
@@ -40,7 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_site` — Create a Statamic site license with an optional domain or domains. [write]
 - `delete_site` — Delete a Statamic site by site key. [destructive]
 - `list_sites` — List Statamic sites available in the authenticated statamic.com account.
-- `update_site` — Update a Statamic site name or replace its licensed domain list. [write]
+- `update_site` — Update a Statamic site name or replace its licensed domain list. [destructive]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-baidu-netdisk
-description: "Baidu Netdisk (pan.baidu.com). Use this skill for ANY Baidu Netdisk request — reading, creating, and updating data. Whenever a task involves Baidu Netdisk, use this skill instead of calling the API directly."
+description: "Baidu Netdisk (pan.baidu.com). Use this skill for ANY Baidu Netdisk request — reading, creating, updating, and deleting data. Whenever a task involves Baidu Netdisk, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Baidu Netdisk"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["baidu_netdisk"]
   icon: "https://static.oomol.com/logo/third-party/baidu_netdisk.png"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_current_account` — Get the current Baidu Netdisk account and membership summary.
 - `get_quota` — Get total, used, remaining, free, and expiring Baidu Netdisk capacity.
 - `list_files` — List all files and folders, or only documents, images, or videos, from the user's Baidu Netdisk root.
-- `move` — Synchronously move one Baidu Netdisk file or folder. [write]
+- `move` — Synchronously move one Baidu Netdisk file or folder. [destructive]
 - `rename` — Synchronously rename one Baidu Netdisk file or folder. [write]
 - `search_files` — Search files and folders below an absolute Baidu Netdisk directory.
 - `semantic_search_files` — Search Baidu Netdisk using a natural-language description.

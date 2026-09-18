@@ -1,11 +1,11 @@
 ---
 name: oo-govee
-description: "Govee (govee.com). Use this skill for ANY Govee request — searching and reading data. Whenever a task involves Govee, use this skill instead of calling the API directly."
+description: "Govee (govee.com). Use this skill for ANY Govee request — reading, creating, updating, and deleting data. Whenever a task involves Govee, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Govee"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["govee"]
   icon: "https://static.oomol.com/logo/third-party/govee.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `control_capability` — Send one documented Govee capability value to a device, such as power, brightness, color, mode, or temperature.
+- `control_capability` — Send one documented Govee capability value to a device, such as power, brightness, color, mode, or temperature. [destructive]
 - `get_device_state` — Get the current state for one Govee device by sku and device id.
 - `list_devices` — List Govee devices visible to the API key, including each device's supported capabilities.
 - `list_diy_scenes` — List dynamic DIY scenes available for one Govee device.

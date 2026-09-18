@@ -1,11 +1,11 @@
 ---
 name: oo-aws-sts
-description: "AWS STS (aws.amazon.com). Use this skill for ANY AWS STS request — searching and reading data. Whenever a task involves AWS STS, use this skill instead of calling the API directly."
+description: "AWS STS (aws.amazon.com). Use this skill for ANY AWS STS request — reading, creating, and updating data. Whenever a task involves AWS STS, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "AWS STS"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["aws_sts"]
   icon: "https://static.oomol.com/logo/third-party/aws_sts.svg"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `assume_role` — Use a connected AWS access key pair to call STS AssumeRole and return temporary credentials.
+- `assume_role` — Use a connected AWS access key pair to call STS AssumeRole and return temporary credentials. [write]
 - `get_federated_credentials` — Return AWS STS temporary credentials from the connected OOMOL OIDC federation configuration.
 
 ## Safety

@@ -1,11 +1,11 @@
 ---
 name: oo-higgsfield-ai
-description: "Higgsfield AI (higgsfield.ai). Use this skill for ANY Higgsfield AI request — reading, creating, and updating data. Whenever a task involves Higgsfield AI, use this skill instead of calling the API directly."
+description: "Higgsfield AI (higgsfield.ai). Use this skill for ANY Higgsfield AI request — reading, creating, updating, and deleting data. Whenever a task involves Higgsfield AI, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Higgsfield AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["higgsfield_ai"]
   icon: "https://static.oomol.com/logo/third-party/higgsfield_ai.png"
 ---
@@ -37,7 +37,7 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `cancel_request` — Cancel a queued Higgsfield generation request. [write]
+- `cancel_request` — Cancel a queued Higgsfield generation request. [destructive]
 - `get_request_status` — Retrieve the current status and outputs for a Higgsfield generation request.
 - `submit_image_generation` — Submit a Higgsfield text-to-image generation request. [write]
 - `submit_video_generation` — Submit a Higgsfield image-to-video generation request. [write]

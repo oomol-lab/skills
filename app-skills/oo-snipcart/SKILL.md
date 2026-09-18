@@ -1,11 +1,11 @@
 ---
 name: oo-snipcart
-description: "Snipcart (snipcart.com). Use this skill for ANY Snipcart request — reading, creating, and updating data. Whenever a task involves Snipcart, use this skill instead of calling the API directly."
+description: "Snipcart (snipcart.com). Use this skill for ANY Snipcart request — searching and reading data. Whenever a task involves Snipcart, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Snipcart"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["snipcart"]
   icon: "https://static.oomol.com/logo/third-party/snipcart.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_customer` — Retrieve one Snipcart customer by ID.
-- `get_order` — Retrieve one Snipcart order by token. [write]
+- `get_order` — Retrieve one Snipcart order by token.
 - `list_customers` — List Snipcart customers with pagination and optional filters.
 - `list_orders` — List completed Snipcart orders with pagination and optional filters.
 

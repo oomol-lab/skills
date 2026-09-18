@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "QuickChart"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["quickchart"]
   icon: "https://static.oomol.com/logo/third-party/quickchart.svg"
 ---
@@ -37,8 +37,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `build_chart_url` — Build a QuickChart image URL from a Chart.js configuration without downloading the rendered image.
-- `build_qr_url` — Build a QuickChart QR code image URL for text, URLs, or other compact QR payloads.
+- `build_chart_url` — Build a QuickChart image URL from a Chart.js configuration without downloading the rendered image. [write]
+- `build_qr_url` — Build a QuickChart QR code image URL for text, URLs, or other compact QR payloads. [write]
 - `create_chart_short_url` — Create a QuickChart short URL for a Chart.js configuration and return the URL plus creation metadata. [write]
 
 ## Safety

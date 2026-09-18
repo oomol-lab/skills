@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Amplemarket"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["amplemarket"]
   icon: "https://static.oomol.com/logo/third-party/amplemarket.svg"
 ---
@@ -47,7 +47,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_task_statuses` — List task statuses supported by Amplemarket.
 - `list_task_types` — List task types supported by Amplemarket.
 - `list_tasks` — List Amplemarket tasks with cursor pagination and status, type, or user filters.
-- `skip_task` — Skip an Amplemarket task.
+- `skip_task` — Skip an Amplemarket task. [write]
 
 ## Safety
 

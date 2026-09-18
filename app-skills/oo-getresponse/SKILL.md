@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GetResponse"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["getresponse"]
   icon: "https://static.oomol.com/logo/third-party/getresponse.svg"
 ---
@@ -50,7 +50,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_newsletters` — List GetResponse newsletters with filters and pagination.
 - `list_tags` — List GetResponse tags that can be assigned to contacts.
 - `update_campaign` — Update mutable fields on a GetResponse campaign. [write]
-- `update_contact` — Update a GetResponse contact, replacing tag and custom-field assignments when supplied. [write]
+- `update_contact` — Update a GetResponse contact, replacing tag and custom-field assignments when supplied. [destructive]
 
 ## Safety
 

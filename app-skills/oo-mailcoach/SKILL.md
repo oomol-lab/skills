@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mailcoach"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mailcoach"]
   icon: "https://static.oomol.com/logo/third-party/mailcoach.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_subscriber` — Get one Mailcoach subscriber by UUID.
 - `list_email_lists` — List email lists available to the connected Mailcoach API token.
 - `list_subscribers` — List subscribers in a Mailcoach email list.
-- `resend_subscriber_confirmation` — Resend the confirmation email for a Mailcoach subscriber by UUID.
+- `resend_subscriber_confirmation` — Resend the confirmation email for a Mailcoach subscriber by UUID. [write]
 - `subscribe` — Subscribe an email address to a Mailcoach email list. [write]
 - `unsubscribe_subscriber` — Unsubscribe a Mailcoach subscriber by UUID. [destructive]
 - `update_email_list` — Update a Mailcoach email list by UUID. [write]

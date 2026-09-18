@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "IMAP Mailbox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["generic_imap"]
   icon: "https://static.oomol.com/logo/third-party/generic_imap.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_folders` — List folders visible to the connected IMAP Mailbox account.
 - `mark_email_read` — Mark one IMAP Mailbox message as read. [write]
 - `mark_email_unread` — Mark one IMAP Mailbox message as unread. [write]
-- `move_email` — Move one IMAP Mailbox message to another folder. [write]
+- `move_email` — Move one IMAP Mailbox message to another folder. [destructive]
 - `reply_email` — Reply to one IMAP Mailbox email using SMTP reply headers and quoted content. [write]
 - `search_emails` — Search one IMAP Mailbox folder and return lightweight email summaries.
 - `send_email` — Send an email through IMAP Mailbox SMTP. [write]

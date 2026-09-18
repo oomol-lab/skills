@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Linear"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["linear"]
   icon: "https://static.oomol.com/logo/third-party/Linear.svg"
 ---
@@ -65,12 +65,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_linear_users` — List Linear users in the current workspace and support cursor paging.
 - `remove_issue_label` — Removes a label from the specified Linear issue. [destructive]
 - `remove_reaction` — Delete an existing Linear reaction. [destructive]
-- `run_mutation` — Perform a mutation directly on the Linear GraphQL API. [write]
+- `run_mutation` — Perform a mutation directly on the Linear GraphQL API. [destructive]
 - `run_query` — Execute a read-only query directly against the Linear GraphQL API.
 - `search_issues` — Retrieve issues through Linear's full-text search capabilities.
 - `update_issue` — Update an existing Linear issue and support fields such as title, description, status, project, label, etc. [write]
 - `update_linear_comment` — Update the text of an existing Linear comment. [write]
-- `update_linear_project` — Update an existing Linear project. [write]
+- `update_linear_project` — Update an existing Linear project. [destructive]
 
 ## Safety
 

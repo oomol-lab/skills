@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Docs"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googledocs"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Docs.svg"
 ---
@@ -61,10 +61,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `insert_table_column` — Insert one or more table columns at a specified location in a Google Docs document. [write]
 - `insert_text_action` — Insert text at a specific index or append it to the end of a Google Docs document. When inserting by index, the position must be inside an existing paragraph. [write]
 - `list_spreadsheet_charts` — List chart metadata from a Google Sheets spreadsheet so charts can be referenced or embedded elsewhere, including in Google Docs.
-- `replace_all_text` — Replace all matching text in a Google Docs document. Supports case-sensitive and regex-based matching. [write]
-- `replace_image` — Replace an existing image in a Google Docs document with a new image from a URI. [write]
+- `replace_all_text` — Replace all matching text in a Google Docs document. Supports case-sensitive and regex-based matching. [destructive]
+- `replace_image` — Replace an existing image in a Google Docs document with a new image from a URI. [destructive]
 - `search_documents` — Search Google Docs files with filters such as query text, dates, starred state, trash state, or shared-drive visibility.
-- `unmerge_table_cells` — Unmerge previously merged table cells in a Google Docs document. [write]
+- `unmerge_table_cells` — Unmerge previously merged table cells in a Google Docs document. [destructive]
 - `update_document_batch` — Apply raw Docs `batchUpdate` requests to a Google Docs document. This is the lower-level compatibility action for direct request arrays. [write]
 - `update_document_style` — Update global document style settings such as page size, margins, or text direction in a Google Docs document. [write]
 - `update_existing_document` — Apply one or more programmatic edits to an existing Google Docs document through `batchUpdate`. Use this for structured insert, delete, or formatting changes. [write]

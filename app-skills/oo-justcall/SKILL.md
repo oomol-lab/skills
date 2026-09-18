@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "JustCall"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["justcall"]
   icon: "https://static.oomol.com/logo/third-party/justcall.svg"
 ---
@@ -44,7 +44,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_contacts` — List JustCall contacts with optional agent, phone, name, status, and pagination filters.
 - `list_users` — List users in a JustCall account with availability, group, role, and pagination filters.
 - `update_contact` — Update a JustCall contact selected by ID or primary phone number. [write]
-- `update_contact_status` — Add or remove a JustCall contact from DND, DNM, or blacklist suppression lists. [write]
+- `update_contact_status` — Add or remove a JustCall contact from DND, DNM, or blacklist suppression lists. [destructive]
 
 ## Safety
 

@@ -1,11 +1,11 @@
 ---
 name: oo-ordinal
-description: "Ordinal (tryordinal.com). Use this skill for ANY Ordinal request — reading, creating, and updating data. Whenever a task involves Ordinal, use this skill instead of calling the API directly."
+description: "Ordinal (tryordinal.com). Use this skill for ANY Ordinal request — searching and reading data. Whenever a task involves Ordinal, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ordinal"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["ordinal"]
   icon: "https://static.oomol.com/logo/third-party/ordinal.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_idea` — Get a specific Ordinal idea by ID.
-- `get_post` — Get a specific Ordinal post by ID. [write]
+- `get_post` — Get a specific Ordinal post by ID.
 - `get_workspace` — Get details about the current Ordinal workspace.
 - `list_engagement_profiles` — List Ordinal engagement-only profiles connected to the workspace.
 - `list_ideas` — List Ordinal ideas with pagination and optional filters.

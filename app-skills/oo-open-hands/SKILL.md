@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenHands"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["open_hands"]
   icon: "https://static.oomol.com/logo/third-party/open_hands.png"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_conversation` — Get an OpenHands Cloud conversation by ID.
-- `get_start_task` — Get the status of an OpenHands Cloud conversation start task. [write]
+- `get_start_task` — Get the status of an OpenHands Cloud conversation start task.
 - `list_conversations` — List OpenHands Cloud conversations with optional filters.
 - `send_message` — Send a follow-up user message to an existing OpenHands Cloud conversation. [write]
 - `start_conversation` — Start an OpenHands Cloud conversation for a repository task. [write]

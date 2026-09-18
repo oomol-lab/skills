@@ -1,11 +1,11 @@
 ---
 name: oo-lingxing
-description: "Lingxing (lingxing.com). Use this skill for ANY Lingxing request — reading, creating, and updating data. Whenever a task involves Lingxing, use this skill instead of calling the API directly."
+description: "Lingxing (lingxing.com). Use this skill for ANY Lingxing request — searching and reading data. Whenever a task involves Lingxing, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Lingxing"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["lingxing"]
   icon: "https://static.oomol.com/logo/third-party/lingxing.png"
 ---
@@ -57,7 +57,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_listings` — List Amazon Listings in Lingxing with store, pairing, update-time, and product filters.
 - `list_marketplaces` — List all Amazon marketplaces configured in the Lingxing ERP account.
 - `list_msku_profit` — List Lingxing profit-report rows aggregated by merchant SKU.
-- `list_order_profit` — List Lingxing order-profit rows aggregated by merchant SKU. [write]
+- `list_order_profit` — List Lingxing order-profit rows aggregated by merchant SKU.
 - `list_product_performance` — List Amazon product performance aggregated by ASIN, parent ASIN, MSKU, or local SKU.
 - `list_products` — List local products in Lingxing with pagination, timestamp ranges, and SKU filters.
 - `list_sb_ad_group_reports` — List Sponsored Brands ad group performance for one report date.

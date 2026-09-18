@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Memos"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["memos"]
   icon: "https://static.oomol.com/logo/third-party/memos.webp"
 ---
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_memo_attachments` — List attachments associated with one memo.
 - `list_memos` — List memos with pagination, state selection, ordering, and CEL filtering.
 - `list_users` — List users visible to the connected Memos account.
-- `set_memo_attachments` — Replace the complete attachment set associated with one memo. [write]
+- `set_memo_attachments` — Replace the complete attachment set associated with one memo. [destructive]
 - `update_memo` — Update selected content, visibility, pin, state, time, or location fields on a memo. [write]
 - `upload_attachment` — Download a public file URL and upload its bytes to the connected Memos instance. [write]
 
