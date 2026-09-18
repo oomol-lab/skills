@@ -1,11 +1,11 @@
 ---
 name: oo-tongdaxin
-description: "Tongdaxin (vip.tdx.com.cn). Use this skill for ANY Tongdaxin request — searching and reading data. Whenever a task involves Tongdaxin, use this skill instead of calling the API directly."
+description: "Tongdaxin (vip.tdx.com.cn). Use this skill for ANY Tongdaxin request — reading, creating, updating, and deleting data. Whenever a task involves Tongdaxin, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tongdaxin"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tongdaxin"]
   icon: "https://static.oomol.com/logo/third-party/tongdaxin.png"
 ---
@@ -37,8 +37,32 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `call_tool` — Call one supported read-only Tongdaxin financial data MCP tool with arguments matching its live input schema.
-- `list_tools` — Discover the supported Tongdaxin market data, screening, news, announcement, and research MCP tools with their live input schemas.
+- `call_tool` — Call a Tongdaxin MCP tool with arguments matching its input schema. [destructive]
+- `get_board_and_industry_data` — Get Tongdaxin board profiles, returns, market statistics, industry chains, or important industry events.
+- `get_capital_and_trading_data` — Get Tongdaxin capital flow, northbound holdings, block trades, margin data, refinancing, limit analysis, or shareholder-change events.
+- `get_company_profile` — Get a Tongdaxin company overview, basic profile, issuance history, executives, or affiliates.
+- `get_dividends_and_financing` — Get Tongdaxin dividend, payout, yield, rights-issue, placement, or refinancing data.
+- `get_financial_statements` — Get structured A-share income statements, balance sheets, or cash-flow statements from Tongdaxin F10.
+- `get_hk_financials` — Get Tongdaxin Hong Kong income statements, balance sheets, or cash-flow statements.
+- `get_hot_topics` — Get Tongdaxin board-family, theme-library, event-driven, or information-overview data for a stock.
+- `get_institutional_holdings` — Get Tongdaxin institutional-holding periods, summaries, distributions, details, northbound holdings, or price comparisons.
+- `get_kline` — Get Tongdaxin historical OHLCV data for a security, index, board, or futures contract.
+- `get_quotes` — Get a real-time Tongdaxin market snapshot with optional order-book, valuation, financial, and ranking data.
+- `get_share_capital` — Get Tongdaxin share-capital structure, historical changes, restricted-share unlocks, or stock buybacks.
+- `get_shareholder_research` — Get Tongdaxin controlling-shareholder, shareholder-count, ranking, or top-shareholder data.
+- `get_valuation_and_ranking` — Get Tongdaxin valuation history, industry rankings, financial-sector indicators, or board valuation comparisons.
+- `list_tools` — Discover the Tongdaxin MCP tools available to this connection with their live input schemas.
+- `lookup_security` — Resolve a security, fund, index, futures contract, or option underlying to Tongdaxin codes and market parameters.
+- `query_indicators` — Query Tongdaxin valuation, financial, company, shareholder, market, concept, or industry-chain indicators for named entities.
+- `query_macro_data` — Query Tongdaxin macroeconomic data such as GDP, CPI, PPI, social financing, money supply, interest rates, exchange rates, trade, employment, and population.
+- `screen_fund_managers` — Screen fund managers with natural-language experience, performance, product, or risk criteria.
+- `screen_funds` — Screen funds with natural-language performance, manager, risk, holding, or allocation criteria.
+- `screen_hk_stocks` — Screen Hong Kong stocks with natural-language technical, capital-flow, and fundamental criteria.
+- `screen_indices` — Screen indices with natural-language market, valuation, performance, or technical criteria.
+- `screen_stocks` — Screen A-share securities with natural-language technical, capital-flow, and fundamental criteria.
+- `search_announcements` — Search Tongdaxin company announcements, regulatory filings, and periodic reports.
+- `search_news` — Search current Tongdaxin financial news, market briefs, themes, and company-related information.
+- `search_reports` — Search Tongdaxin broker research, rating changes, target prices, and opinion summaries.
 
 ## Safety
 
