@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["feishu_app_bot"]
-  icon: "https://static.oomol.com/logo/third-party/feishu_custom_bot.svg"
+  icon: "https://static.oomol.com/logo/third-party/feishu_app_bot.svg"
 ---
 
 # Feishu App Bot

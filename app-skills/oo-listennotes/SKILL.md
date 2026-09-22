@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Listen Notes"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["listennotes"]
-  icon: "https://static.oomol.com/logo/third-party/Listen%20Notes.svg"
+  icon: "https://static.oomol.com/logo/third-party/listennotes.png"
 ---
 
 # Listen Notes

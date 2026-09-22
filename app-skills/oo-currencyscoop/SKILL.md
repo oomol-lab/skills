@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CurrencyBeacon"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["currencyscoop"]
-  icon: "https://static.oomol.com/logo/third-party/CurrencyScoop.svg"
+  icon: "https://static.oomol.com/logo/third-party/currencyscoop.svg"
 ---
 
 # CurrencyBeacon

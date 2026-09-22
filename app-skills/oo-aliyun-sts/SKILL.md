@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alibaba Cloud STS"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["aliyun_sts"]
-  icon: "https://static.oomol.com/logo/third-party/alibabacloud.svg"
+  icon: "https://static.oomol.com/logo/third-party/aliyun_sts.svg"
 ---
 
 # Alibaba Cloud STS

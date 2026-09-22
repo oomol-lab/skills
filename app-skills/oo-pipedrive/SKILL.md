@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pipedrive"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["pipedrive"]
-  icon: "https://static.oomol.com/logo/third-party/Pipedrive.svg"
+  icon: "https://static.oomol.com/logo/third-party/pipedrive.png"
 ---
 
 # Pipedrive

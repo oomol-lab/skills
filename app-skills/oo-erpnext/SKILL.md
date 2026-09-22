@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ERPNext"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["erpnext"]
-  icon: "https://static.oomol.com/logo/third-party/Erpnext.svg"
+  icon: "https://static.oomol.com/logo/third-party/erpnext.svg"
 ---
 
 # ERPNext

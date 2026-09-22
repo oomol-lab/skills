@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack"
   author: "OOMOL"
-  version: "1.0.9"
+  version: "1.0.10"
   services: ["slack"]
   icon: "https://static.oomol.com/logo/third-party/Slack.svg"
 ---
@@ -58,10 +58,13 @@ If visible formatting matters, read the posted message back and confirm that
 ## Available actions
 
 - `add_reaction` — Add an emoji reaction to a Slack message. [write]
+- `conversations_members` — List one page of member user IDs for a Slack conversation.
 - `delete_file` — Delete a Slack file. [destructive]
 - `delete_message` — Delete a Slack message posted through this connection. [destructive]
+- `download_file` — Download a Slack-hosted file into Connector file transit storage using the connected identity's access.
 - `get_channel_messages` — Get recent messages from a Slack conversation.
 - `get_conversation` — Get metadata for a Slack conversation.
+- `get_current_user` — Get the workspace and user identity of the connected Slack credential.
 - `get_file` — Get metadata for a Slack file.
 - `get_message_permalink` — Get a permalink for a Slack message.
 - `get_reactions` — Get reactions for a Slack message.

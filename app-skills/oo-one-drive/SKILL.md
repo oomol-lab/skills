@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OneDrive"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["one_drive"]
   icon: "https://static.oomol.com/logo/third-party/OneDrive.svg"
 ---
@@ -46,6 +46,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_item` — Get metadata for a drive item by item ID or path.
 - `get_root` — Get metadata for the root folder of the current drive or a specific drive.
 - `list_folder_children` — List the direct children of a folder in OneDrive.
+- `list_item_permissions` — List the permissions on a OneDrive item, including who may read or write it.
 - `search_items` — Search OneDrive for files and folders by keyword.
 - `update_file_content` — Replace the content of one existing OneDrive file. [destructive]
 - `update_item_metadata` — Rename, move, or update metadata for a drive item. [write]

@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Render"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["render"]
-  icon: "https://static.oomol.com/logo/third-party/Render.svg"
+  icon: "https://static.oomol.com/logo/third-party/render.svg"
 ---
 
 # Render

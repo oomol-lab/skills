@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Logo.dev"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["logo_dev"]
-  icon: "https://static.oomol.com/logo/third-party/Logo.dev.svg"
+  icon: "https://static.oomol.com/logo/third-party/logo_dev.svg"
 ---
 
 # Logo.dev
