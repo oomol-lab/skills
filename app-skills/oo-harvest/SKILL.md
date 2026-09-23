@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Harvest"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["harvest"]
-  icon: "https://static.oomol.com/logo/third-party/Harvest.svg"
+  icon: "https://static.oomol.com/logo/third-party/harvest.svg"
 ---
 
 # Harvest

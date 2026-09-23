@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mixpanel"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["mixpanel"]
-  icon: "https://static.oomol.com/logo/third-party/Mixpanel.svg"
+  icon: "https://static.oomol.com/logo/third-party/mixpanel.png"
 ---
 
 # Mixpanel

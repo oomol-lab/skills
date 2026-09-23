@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "apaleo"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["apaleo"]
-  icon: "https://static.oomol.com/logo/third-party/Apaleo.svg"
+  icon: "https://static.oomol.com/logo/third-party/apaleo.png"
 ---
 
 # apaleo

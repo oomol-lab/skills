@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vapi"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["vapi"]
-  icon: "https://static.oomol.com/logo/third-party/Vapi.svg"
+  icon: "https://static.oomol.com/logo/third-party/vapi.svg"
 ---
 
 # Vapi

@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Forms"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googleforms"]
-  icon: "https://static.oomol.com/logo/third-party/Googleforms.svg"
+  icon: "https://static.oomol.com/logo/third-party/googleforms.svg"
 ---
 
 # Google Forms

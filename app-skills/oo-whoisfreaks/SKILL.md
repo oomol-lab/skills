@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WhoisFreaks"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["whoisfreaks"]
-  icon: "https://static.oomol.com/logo/third-party/Whoisfreaks.svg"
+  icon: "https://static.oomol.com/logo/third-party/whoisfreaks.svg"
 ---
 
 # WhoisFreaks

@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Intercom"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["intercom"]
-  icon: "https://static.oomol.com/logo/third-party/Intercom.svg"
+  icon: "https://static.oomol.com/logo/third-party/intercom.svg"
 ---
 
 # Intercom

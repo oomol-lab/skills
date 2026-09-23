@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TPSCheck"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tpscheck"]
-  icon: "https://static.oomol.com/logo/third-party/Tpscheck.svg"
+  icon: "https://static.oomol.com/logo/third-party/tpscheck.svg"
 ---
 
 # TPSCheck
