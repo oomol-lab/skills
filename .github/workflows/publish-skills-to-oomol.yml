@@ -35,8 +35,33 @@ name: Publish Skills to OOMOL
 #
 # exclude_skills (optional) skips specific skills for this run only — a comma-separated list of
 # slugs (e.g. "oo-ably,oo-github"). It applies to every mode and never edits any SKILL.md.
+#
+# Also callable as a reusable workflow (workflow_call) with the same inputs and defaults; see
+# publish-skills-all.yml.
 
 on:
+  workflow_call:
+    inputs:
+      mode:
+        type: string
+        required: false
+        default: dry-run
+      environment:
+        type: string
+        required: false
+        default: prod
+      skill_path:
+        type: string
+        required: false
+        default: ""
+      exclude_skills:
+        type: string
+        required: false
+        default: ""
+      concurrency:
+        type: string
+        required: false
+        default: "10"
   workflow_dispatch:
     inputs:
       mode:

@@ -40,8 +40,33 @@ name: Publish Skills to ClawHub
 # Reserved "admin" slug namespace: ClawHub rejects publishing any skill whose slug starts with
 # "admin-" or ends with "-admin". Such skills are auto-skipped (never published, never
 # changelogged) and reported in the log, so they no longer fail the run.
+#
+# Also callable as a reusable workflow (workflow_call) with the same inputs and defaults; see
+# publish-skills-all.yml.
 
 on:
+  workflow_call:
+    inputs:
+      mode:
+        type: string
+        required: false
+        default: dry-run
+      skill_path:
+        type: string
+        required: false
+        default: ""
+      exclude_skills:
+        type: string
+        required: false
+        default: ""
+      max_per_account:
+        type: string
+        required: false
+        default: "5"
+      generate_changelog:
+        type: boolean
+        required: false
+        default: true
   workflow_dispatch:
     inputs:
       mode:
