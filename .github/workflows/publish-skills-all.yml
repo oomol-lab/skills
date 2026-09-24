@@ -1,0 +1,29 @@
+name: Publish Skills (all)
+
+# One-click production publish of every new/changed skill under app-skills/ to all targets:
+#   - OOMOL (prod + dev), via publish-skills-to-oomol.yml
+#   - ClawHub, via publish-skills-to-clawhub.yml
+# Both run in parallel with mode=publish-catalog; every other input keeps its default. Use the
+# individual workflows for dry-runs, single-skill publishes, or non-default options.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  oomol:
+    name: OOMOL
+    uses: ./.github/workflows/publish-skills-to-oomol.yml
+    with:
+      mode: publish-catalog
+      environment: all
+    secrets: inherit
+
+  clawhub:
+    name: ClawHub
+    uses: ./.github/workflows/publish-skills-to-clawhub.yml
+    with:
+      mode: publish-catalog
+    secrets: inherit
