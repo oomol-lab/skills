@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Keepa"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["keepa"]
   icon: "https://static.oomol.com/logo/third-party/keepa.svg"
 ---
@@ -39,12 +39,19 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `find_deals` — Find recently changed Amazon products with Keepa deal filters and bounded pagination.
 - `find_products` — Find Amazon ASINs with Keepa Product Finder filters using official ProductFinderRequest field names.
+- `find_sellers` — Find seller IDs by official Seller Finder criteria without fetching seller profiles.
 - `get_best_sellers` — Retrieve Keepa's ordered Amazon best-seller ASIN list for a category node or website display group.
+- `get_lightning_deal` — Get lightning deals for a required ASIN, avoiding the costly full-list request.
+- `get_most_rated_sellers` — Get seller IDs ordered by rating count, with a local result window; each window fetches and pays for the full upstream list.
 - `get_product_history` — Retrieve named Keepa price, rank, offer-count, rating, review, monthly-sales, and coupon history for Amazon ASINs.
 - `get_product_snapshot` — Retrieve current Keepa product metadata and named statistics for one or more Amazon ASINs.
 - `get_seller_snapshot` — Retrieve compact Keepa marketplace seller profiles, ratings, category statistics, brands, and competitors.
+- `get_seller_storefront` — Inspect one seller's observed storefront ASINs and aligned last-seen times; the list can be incomplete.
 - `get_token_status` — Retrieve Keepa token availability and refill information without consuming tokens.
+- `list_lightning_deals` — List lightning deals with a local result window; Keepa charges 500 tokens for each full upstream request, regardless of window size.
+- `lookup_categories` — Look up up to ten Amazon category IDs and optionally their parent tree; ID zero lists roots.
 - `search_categories` — Search Keepa Amazon categories by name so category IDs can be used in product and best-seller queries.
+- `search_products` — Search Amazon products by keyword in Amazon result order, without fetching more details.
 
 ## Safety
 

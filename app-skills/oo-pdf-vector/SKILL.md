@@ -5,8 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PDF Vector"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pdf_vector"]
+  icon: "https://static.oomol.com/logo/third-party/pdf_vector.png"
 ---
 
 # PDF Vector
