@@ -29,8 +29,9 @@ name: Publish Skills to OOMOL
 #   prod  https://registry.oomol.com  (secret OOMOL_API_KEY)
 #   dev   https://registry.oomol.dev  (secret OOMOL_DEV_API_KEY, falling back to OOMOL_API_KEY
 #                                      when no dev-specific secret is configured)
+#   all   both of the above, as two independent matrix jobs (one failing does not cancel the other)
 # The two registries hold independent version histories, so the version diff (and therefore
-# what gets published) is always resolved against the selected environment.
+# what gets published) is always resolved against each environment separately.
 #
 # exclude_skills (optional) skips specific skills for this run only — a comma-separated list of
 # slugs (e.g. "oo-ably,oo-github"). It applies to every mode and never edits any SKILL.md.
@@ -55,6 +56,7 @@ on:
         options:
           - prod
           - dev
+          - all
       skill_path:
         description: Skill folder for publish-single, for example app-skills/<slug>.
         type: string
@@ -76,13 +78,20 @@ permissions:
 
 env:
   SKILLS_ROOT: app-skills
-  # dev is the same hub with the TLD swapped; every step (version lookup, ~/.npmrc auth host,
-  # `npm publish --registry`) derives from this single value.
-  OOMOL_REGISTRY: ${{ inputs.environment == 'dev' && 'https://registry.oomol.dev' || 'https://registry.oomol.com' }}
 
 jobs:
   publish:
+    name: publish (${{ matrix.environment }})
     runs-on: blacksmith-4vcpu-ubuntu-2404
+    # `all` fans out to one job per deployment; any other value runs a single job.
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: ${{ fromJSON(inputs.environment == 'all' && '["prod","dev"]' || format('["{0}"]', inputs.environment)) }}
+    env:
+      # dev is the same hub with the TLD swapped; every step (version lookup, ~/.npmrc auth host,
+      # `npm publish --registry`) derives from this single value.
+      OOMOL_REGISTRY: ${{ matrix.environment == 'dev' && 'https://registry.oomol.dev' || 'https://registry.oomol.com' }}
     # A catalog publish of the whole app-skills/ tree (hundreds of skills) at concurrency 10
     # still finishes well inside this; the cap is generous headroom.
     timeout-minutes: 120
@@ -136,8 +145,8 @@ jobs:
       - name: Configure OOMOL registry auth
         env:
           MODE: ${{ inputs.mode }}
-          KEY_NAME: ${{ inputs.environment == 'dev' && 'OOMOL_DEV_API_KEY (or OOMOL_API_KEY)' || 'OOMOL_API_KEY' }}
-          OOMOL_API_KEY: ${{ (inputs.environment == 'dev' && secrets.OOMOL_DEV_API_KEY) || secrets.OOMOL_API_KEY }}
+          KEY_NAME: ${{ matrix.environment == 'dev' && 'OOMOL_DEV_API_KEY (or OOMOL_API_KEY)' || 'OOMOL_API_KEY' }}
+          OOMOL_API_KEY: ${{ (matrix.environment == 'dev' && secrets.OOMOL_DEV_API_KEY) || secrets.OOMOL_API_KEY }}
         run: |
           set -euo pipefail
           if [[ -z "${OOMOL_API_KEY:-}" ]]; then
@@ -165,17 +174,17 @@ jobs:
           EXCLUDE_SKILLS: ${{ inputs.exclude_skills }}
           PUBLISH_CONCURRENCY: ${{ inputs.concurrency }}
           # npm interpolates ${OOMOL_API_KEY} from ~/.npmrc using this env var at publish time.
-          OOMOL_API_KEY: ${{ (inputs.environment == 'dev' && secrets.OOMOL_DEV_API_KEY) || secrets.OOMOL_API_KEY }}
+          OOMOL_API_KEY: ${{ (matrix.environment == 'dev' && secrets.OOMOL_DEV_API_KEY) || secrets.OOMOL_API_KEY }}
         run: bun contrib/scripts/oomol_publish.ts
 
       - name: Summarize
         if: always() && steps.publish.outputs.total != ''
         run: |
           {
-            echo "### OOMOL publish"
+            echo "### OOMOL publish (${{ matrix.environment }})"
             echo ""
             echo "- Mode: \`${{ inputs.mode }}\`"
-            echo "- Environment: \`${{ inputs.environment }}\` (\`${OOMOL_REGISTRY}\`)"
+            echo "- Environment: \`${{ matrix.environment }}\` (\`${OOMOL_REGISTRY}\`)"
             echo "- Published this run: **${{ steps.publish.outputs.published }}**"
             echo "- Skipped (up-to-date / already present): **${{ steps.publish.outputs.skipped }}**"
             echo "- Failed: **${{ steps.publish.outputs.failed }}**"
