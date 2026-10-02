@@ -1,11 +1,11 @@
 ---
 name: oo-googlechat
-description: "Google Chat (workspace.google.com). Use this skill for ANY Google Chat request — searching and reading data. Whenever a task involves Google Chat, use this skill instead of calling the API directly."
+description: "Google Chat (workspace.google.com). Use this skill for ANY Google Chat request — reading, creating, and updating data. Whenever a task involves Google Chat, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Chat"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["googlechat"]
   icon: "https://static.oomol.com/logo/third-party/googlechat.svg"
 ---
@@ -37,9 +37,13 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `get_message` — Retrieve a single Google Chat message by its resource name, or by space and message ID.
+- `create_message` — Send a plain-text message to a Google Chat space, optionally as a reply inside an existing thread. Under user authentication the Chat API only accepts plain text, so cards and attachments are not supported. When thread is provided but messageReplyOption is omitted, this action sends REPLY_MESSAGE_OR_FAIL rather than the Google default, which would silently ignore the thread and start a new one. messageReplyOption only applies to named spaces (spaceType=SPACE). Reusing a requestId returns the message that was already created instead of sending a new one. [write]
+- `find_direct_message` — Find the existing direct message space between the authenticated user and one other user, identified by email address or numeric user id. Use this to address a person by identity instead of by an opaque space id: a direct message space has no displayName, so list_spaces can never tell you who a DM is with. Only finds conversations that already exist; it never creates one. Caution when the result is fed to create_message: if the identifier is mistyped but still resolves to another real user this account already has a DM with, this action succeeds and returns that person's space, and the returned space id is opaque, so it cannot be eyeballed to confirm the recipient. The result therefore carries peer, the person the space actually belongs to, named by Google Chat or the Workspace directory: read it back to the user and confirm the name before sending. Nothing enforces that check. Naming the peer needs the chat.memberships.readonly and directory.readonly scopes plus the People API on top of the scope below. When the peer cannot be resolved at all (listing the members or reading your own People id failed), peer is null and peerError says why, while the space itself is still returned. A resolved peer can still be unnamed: displayName is null for an AMBIGUOUS peer, for a BOT or SELF peer Google Chat did not name, and for a HUMAN peer the directory could not name (profileUnavailableReason then says why). Treat a null peer or a null displayName as an unconfirmed recipient.
+- `get_direct_message_peer` — Name the other participant of a direct message space. Under user authentication Google Chat may report a member only as users/{id}, so a name or email Chat leaves out is looked up in the Workspace directory through the People API. Use it to tell who a direct message from list_spaces is with. Rejects spaces that are not direct messages. A HUMAN peer that cannot be named still comes back with its users/{id} and a profileUnavailableReason; BOT and SELF peers carry only what Google Chat reports, and an AMBIGUOUS peer has a null user and lists its candidates.
+- `get_message` — Retrieve a single Google Chat message by its resource name, or by space and message ID. A name or email Google Chat leaves out for a human sender is filled in from the Workspace directory, which needs the directory.readonly scope and the People API on top of the scope below; without them the sender keeps its users/{id} with a null displayName and a profileUnavailableReason, and the message is still returned.
 - `get_space` — Retrieve the details of a single Google Chat space.
-- `list_messages` — List the message history of a Google Chat space, with optional filtering, ordering, and pagination.
+- `list_messages` — List the message history of a Google Chat space, with optional filtering, ordering, and pagination. A name or email Google Chat leaves out for a human sender is filled in from the Workspace directory, which needs the directory.readonly scope and the People API on top of the scope below; without them such a sender keeps its users/{id} with a null displayName and a profileUnavailableReason, and the messages are still returned.
+- `list_space_members` — List the members of any Google Chat space, including group spaces, with each person's name and email. Like Google Chat's default, it leaves out memberships held through a Google Group and people who were invited but have not joined. Under user authentication Google Chat may report a member only as users/{id}, so every human on a page whose name or email Chat leaves out is looked up in the Workspace directory through the People API in one batch. Returns one page at a time; pass nextPageToken back as pageToken for the next page. Members whose profile cannot be read keep their users/{id} with a null displayName and a profileUnavailableReason.
 - `list_spaces` — List the Google Chat spaces the authenticated user is a member of, with optional filtering and pagination.
 
 ## Safety
