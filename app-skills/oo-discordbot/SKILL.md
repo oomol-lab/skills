@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Discord Bot"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["discordbot"]
   icon: "https://static.oomol.com/logo/third-party/Discord%20Bot.svg"
 ---
@@ -100,6 +100,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_guild_emoji` — Get a guild emoji by id.
 - `get_guild_member` — Get a guild member by guild id and user id.
 - `get_guild_preview` — Get the preview for a discoverable guild.
+- `get_guild_role` — Get a role in a Discord guild by ID.
+- `get_guild_role_member_counts` — Get the number of members holding each role in a Discord guild, excluding @everyone.
 - `get_guild_scheduled_event` — Get a guild scheduled event.
 - `get_guild_sticker` — Get a guild sticker by id.
 - `get_guild_template` — Get a guild template by code.
@@ -148,6 +150,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_sticker_packs` — List public sticker packs.
 - `list_thread_members` — List thread members.
 - `list_voice_regions` — List public voice regions.
+- `modify_guild_channel_positions` — Reorder or re-parent channels in a Discord guild. Requires the MANAGE_CHANNELS permission. Only one entry per request may change parent_id. [destructive]
+- `modify_guild_incident_actions` — Pause invites or direct messages in a Discord guild for up to 24 hours. Requires the MANAGE_GUILD permission. [destructive]
+- `modify_guild_role_positions` — Reorder roles in a Discord guild. Requires the MANAGE_ROLES permission. [write]
 - `pin_message` — Pin a message in a channel. [write]
 - `preview_prune_guild` — Preview how many members would be pruned from a guild.
 - `prune_guild` — Prune inactive members from a guild. [destructive]
