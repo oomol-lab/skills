@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack Bot"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["slackbot"]
   icon: "https://static.oomol.com/logo/third-party/slackbot.svg"
 ---
@@ -73,6 +73,7 @@ If visible formatting matters, read the posted message back and confirm that
 - `list_channels` — List Slack public channels visible to the connected Slack identity.
 - `list_conversations` — List Slack conversations visible to the connected Slack identity.
 - `list_files` — List Slack files visible to the connected Slack identity, optionally filtered by channel or user.
+- `list_reactions` — List the messages and files a Slack user reacted to, with the reactions on each. Defaults to the connected user.
 - `list_users` — List Slack users visible to the connected Slack identity.
 - `open_conversation` — Open or resume a direct message with one Slack user. [write]
 - `post_ephemeral_message` — Post an ephemeral Slack message visible only to one user in a conversation. [write]

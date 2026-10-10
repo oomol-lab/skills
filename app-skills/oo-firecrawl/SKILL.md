@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Firecrawl"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["firecrawl"]
   icon: "https://static.oomol.com/logo/third-party/Firecrawl.svg"
 ---
@@ -62,7 +62,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `llms_txt_get` — Get the current status and generated content of an LLMs.txt job by job ID.
 - `map_multiple_urls_based_on_options` — Discover URLs from a website with Firecrawl's map endpoint using a legacy action name.
 - `queue_get` — Get the authenticated Firecrawl team's queue status and concurrency information.
-- `scrape` — Scrape a single URL with Firecrawl and return the extracted page content in the requested formats.
+- `scrape` — Scrape a URL with Firecrawl or execute an enabled Alexandria provider tool and return the requested output formats.
 - `search` — Search the web with Firecrawl and optionally scrape the top results in the requested formats.
 - `start_agent` — Start a Firecrawl agent job for multi-page autonomous browsing and extraction. [write]
 - `token_usage_get` — Get the authenticated Firecrawl team's current token usage summary.
