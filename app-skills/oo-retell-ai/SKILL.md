@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Retell AI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["retell_ai"]
   icon: "https://static.oomol.com/logo/third-party/retell_ai.svg"
 ---
@@ -43,7 +43,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_voice_agent` — Retrieve details for a specific Retell AI voice agent.
 - `list_calls` — List Retell AI calls with pagination and optional simple filters.
 - `list_phone_numbers` — List Retell AI phone numbers with cursor pagination.
-- `list_voice_agents` — List Retell AI voice agents with optional pagination filters.
+- `list_voice_agents` — List unique Retell AI voice agents with cursor pagination. Use get_voice_agent for version details.
 - `list_voices` — List all Retell AI voices available to the authenticated workspace.
 
 ## Safety

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeChat Store"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["weixin_store"]
   icon: "https://static.oomol.com/logo/third-party/weixin_store.svg"
 ---
@@ -39,11 +39,14 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `accept_aftersale` — Accept a buyer's after-sale request. Accepting a return needs a merchant address id from list_addresses; acceptType chooses between accepting the return (1) and accepting the refund (2), and is chosen automatically when omitted. [write]
 - `add_product` — Create a product. All image fields must be WeChat-hosted URLs from upload_image. By default the product is saved as a draft; pass listing 1 to submit it for review and list it directly. Nested objects and arrays keep their WeChat snake_case fields as documented per field. [write]
+- `apply_category` — Apply for permission to sell in a leaf category using the new category tree and certificate groups. Returns an audit id; check the audit and effective permission before publishing products. [write]
 - `delete_product` — Permanently delete a product by product_id. A product under review cannot be deleted. This cannot be undone. [destructive]
 - `delisting_product` — Take a listed product off the shelf. [write]
 - `get_address` — Get one merchant address by address_id, including its contact, region, and send/recv flags. Accepting an after-sale return needs one of these address ids.
 - `get_aftersale_order` — Get one after-sale order by its id, including its status, type, products, and refund details.
 - `get_category` — Get the publishing rules of one leaf category: required product and sale attributes, brand restrictions, deposit, and qualifications.
+- `get_category_application` — Get the status and any rejection reason of a category application by audit id.
+- `get_category_product_rule` — Get the category's product attribute, sale attribute, qualification, price, and other publishing rules for the chosen release mode.
 - `get_freight_template` — Get one freight template by template_id, including its valuation type, shipping method, sender address, and freight rules. Freight templates bind to products through expressInfo on add_product.
 - `get_order` — Get one order by order_id, including its products, payment, price, and delivery details. Buyer address fields are masked.
 - `get_product` — Get one product by product_id. Products keep a draft and an online copy; dataType selects which.
@@ -51,18 +54,21 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_addresses` — List the merchant address ids of the store. After-sale returns need one of these address ids when accepting a return.
 - `list_aftersale_orders` — List the after-sale order ids of the store, paginated by cursor. At least one time range pair is required, as Unix timestamps in seconds spanning at most 24 hours.
 - `list_categories` — Get the full category tree of the store, including the qualifications each category requires. Use the leaf cat_id values from cats_v2 for add_product and get_category.
+- `list_category_permissions` — List the store's category permissions. Filter to status 1 to find categories currently allowed for sale.
 - `list_delivery_companies` — List the delivery companies the store can ship with, including each company's delivery_id.
 - `list_freight_templates` — List the freight template ids of the store.
 - `list_orders` — List the order ids of the store, paginated by cursor. At least one time range is required, as a pair of Unix timestamps in seconds spanning at most 7 days.
 - `list_products` — List the product ids of the store, paginated by cursor.
 - `list_valid_brands` — List the brand qualifications currently in effect for the store, paginated by cursor. Use a returned brand_id when adding a product in a brand-restricted category.
 - `listing_product` — Submit a product for review and list it once approved. [write]
+- `precheck_product_category` — Check whether the store may publish in a leaf category, including category permission, deposit, freight insurance, and store restrictions. Omit catId for store-wide checks only.
 - `reject_aftersale` — Reject a buyer's after-sale request with a reason. [write]
 - `send_delivery` — Ship an order, in one or more packages. Each package either ships by express with a waybill (deliverType 1, needs waybillId and deliveryId from list_delivery_companies, or OTHER when the company is not listed) or delivers virtual goods without logistics (deliverType 3, only for orders whose products use the phone-number delivery method). [write]
 - `update_order_merchant_notes` — Replace the merchant note of one order, optionally with a tag color. [write]
 - `update_product` — Replace a product's editable data. This is a full overwrite: every field of add_product applies, SKUs that carry an existing sku_id are updated, SKUs without one are added, and previously existing SKUs missing from the list are deleted. [write]
 - `update_product_stock` — Update the stock of a product's SKUs. This does not consume the product review quota. [write]
 - `upload_image` — Ask WeChat to fetch and host a public image URL for use in product image fields. At most 10 MB per image. [write]
+- `upload_qualification_image` — Upload a qualification image (up to 2 MB) and return the file_id required for category and brand applications. Product images from upload_image cannot be used here. [write]
 
 ## Safety
 

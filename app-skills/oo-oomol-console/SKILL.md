@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Console"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["oomol_console"]
   icon: "https://static.oomol.com/logo/third-party/oomol_console.svg"
 ---
@@ -48,7 +48,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_connection_executions` — List the execution records shown on an OOMOL Console Connection details page.
 - `list_connection_permission_groups` — List the default and custom permission groups for one current-team Connection.
 - `list_members` — List members of the current OOMOL team.
-- `list_team_connections` — List the Connections manageable by an administrator of the current OOMOL team.
+- `list_team_connections` — List the current-team Connections visible to the authenticated user or service account.
 - `list_teams` — List the OOMOL teams visible to the authenticated account.
 - `update_connection_default_permission_group` — Replace the action permission of a Connection's non-deletable default permission group. [destructive]
 - `update_connection_permission_group` — Replace the name, member assignments, and action permission of a custom Connection permission group. [destructive]

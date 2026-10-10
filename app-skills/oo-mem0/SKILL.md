@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mem0"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mem0"]
   icon: "https://static.oomol.com/logo/third-party/Mem0.svg"
 ---
@@ -45,7 +45,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_memory` — Get a single memory from Mem0 by memory ID.
 - `get_memory_history` — Get the change history of a Mem0 memory by memory ID.
 - `get_users` — List user entities from Mem0, optionally scoped by org and project.
-- `search_memories` — Search memories in Mem0 with semantic query and optional filters.
+- `search_memories` — Search memories in Mem0 with a semantic query and required non-empty filters.
 - `update_memory` — Update text or metadata of a Mem0 memory by memory ID. [write]
 
 ## Safety
