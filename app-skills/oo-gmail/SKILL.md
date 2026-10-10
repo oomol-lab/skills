@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gmail"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["gmail"]
   icon: "https://static.oomol.com/logo/third-party/Gmail.svg"
 ---
@@ -39,8 +39,8 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_label_to_email` — Add and/or remove labels on a single Gmail message. Provide at least one label mutation and use label IDs from `list_labels`. [write]
 - `batch_modify_messages` — Add and/or remove labels on up to 1,000 Gmail messages in one request. Use this for bulk archive, mark-as-read, or custom label workflows. [write]
-- `create_draft` — Create a Gmail draft with a simplified input and output shape. This compatibility action returns only the created `draftId`. [write]
-- `create_email_draft` — Create a Gmail draft with recipients, subject, body, and optional threading. Use `threadId` to draft a reply in an existing conversation. [write]
+- `create_draft` — Create a Gmail draft with a simplified input and output shape. Returns the stable draft ID and current message and thread IDs. [write]
+- `create_email_draft` — Create a Gmail draft with recipients, subject, body, and optional threading. Supply replyToMessageId or threadId to draft a reply; this requires mailbox read access. Omitted subject and recipients are inherited from the reply target. [write]
 - `create_filter` — Create a Gmail filter with matching criteria and resulting actions. Use this to automatically organize incoming mail. [write]
 - `create_label` — Create a new Gmail label and return its internal label ID. Use the returned ID in downstream label modification actions. [write]
 - `delete_draft` — Permanently delete a Gmail draft by draft ID instead of sending it. [destructive]
@@ -68,7 +68,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `move_thread_to_trash` — Move an entire Gmail thread to trash, including all messages in that conversation. [destructive]
 - `move_to_trash` — Move a Gmail message to trash. The message remains recoverable until it is permanently deleted by Gmail. [destructive]
 - `patch_label` — Patch a user-created Gmail label. Use this for partial updates to the label name, visibility settings, or color. [write]
-- `reply_email` — Reply to an existing Gmail thread using the original message's reply headers. This compatibility action returns only the new `messageId`. [write]
+- `reply_email` — Reply to an existing Gmail thread using the original message's reply headers. Supply to to override the original Reply-To or From recipient. [write]
 - `reply_to_thread` — Reply to an existing Gmail thread while preserving Gmail threading. Use this when you want the reply to stay in the same conversation and optionally override recipients. [write]
 - `search_threads` — Search Gmail threads by query and return lightweight thread summaries. Spam and trash stay excluded unless you explicitly target them in the query.
 - `send_draft` — Send an existing Gmail draft as-is using the recipients already stored in the draft. Sending is immediate and cannot be scheduled by this action. [write]
@@ -78,7 +78,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `stop_watch` — Stop Gmail push watch notifications for the mailbox. Use this to disable notifications that were previously created via the watch endpoint. [destructive]
 - `untrash_message` — Restore a previously trashed Gmail message back to the mailbox. [write]
 - `untrash_thread` — Restore a previously trashed Gmail thread and its messages. [write]
-- `update_draft` — Update an existing Gmail draft in place. Omitted fields fall back to the current draft content, so you can replace only the parts you want to change. [write]
+- `update_draft` — Update a Gmail draft. Supply replyToMessageId or a different threadId to rebuild its reply association; this requires mailbox read access. The subject must match the reply target. Header-only edits preserve the MIME body. Omit attachments to preserve them, supply a list to replace them, or [] to remove them. Empty strings clear fields. Content edits of unsupported MIME structures are rejected. [write]
 - `update_imap_settings` — Update the Gmail IMAP settings, including enablement, auto-expunge behavior, expunge behavior, or max folder size. [write]
 - `update_label` — Update an existing Gmail label's properties, including name, visibility settings, or color. [write]
 - `update_language_settings` — Update the Gmail display language settings for the connected account. [write]
