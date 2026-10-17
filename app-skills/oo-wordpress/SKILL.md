@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WordPress"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["wordpress"]
   icon: "https://static.oomol.com/logo/third-party/wordpress.png"
 ---
@@ -38,23 +38,39 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `create_category` — Create a WordPress category. [write]
+- `create_comment` — Create a WordPress comment or reply on a content object that allows comments. [write]
 - `create_page` — Create a WordPress page. [write]
 - `create_post` — Create a WordPress post. [write]
 - `create_tag` — Create a WordPress tag. [write]
+- `delete_category` — Permanently delete a WordPress category. WordPress terms do not support trash. [destructive]
 - `delete_comment` — Delete a WordPress comment by ID. [destructive]
+- `delete_media` — Delete a WordPress media attachment. Permanent deletion requires force=true; trashing depends on the site configuration. [destructive]
 - `delete_page` — Delete a WordPress page by ID. [destructive]
 - `delete_post` — Delete a WordPress post by ID. [destructive]
+- `delete_tag` — Permanently delete a WordPress tag. WordPress terms do not support trash. [destructive]
+- `get_category` — Get a WordPress category by ID.
+- `get_comment` — Get a WordPress comment by ID, including comments on password-protected posts.
 - `get_current_user` — Get the authenticated WordPress user.
+- `get_media` — Get a WordPress media attachment by ID.
 - `get_page` — Get a WordPress page by ID.
 - `get_post` — Get a WordPress post by ID.
+- `get_tag` — Get a WordPress tag by ID.
+- `get_user` — Get a WordPress user by ID. The edit context requires permission to view that user.
 - `list_categories` — List WordPress categories with optional filters and pagination.
 - `list_comments` — List WordPress comments with optional filters and pagination.
+- `list_media` — List WordPress media attachments with filters and pagination.
 - `list_pages` — List WordPress pages with optional filters and pagination.
 - `list_posts` — List WordPress posts with optional filters and pagination.
 - `list_tags` — List WordPress tags with optional filters and pagination.
-- `update_comment` — Update a WordPress comment by ID. [write]
+- `list_users` — List WordPress users with filters and pagination. User visibility and privileged filters depend on the connected user permissions.
+- `search` — Search WordPress posts, terms or post formats with pagination and subtype filters.
+- `update_category` — Update a WordPress category by ID. [write]
+- `update_comment` — Update a WordPress comment by ID. [destructive]
+- `update_media` — Update WordPress media metadata by ID, including replacing its caption and description. [write]
 - `update_page` — Update a WordPress page by ID. [write]
 - `update_post` — Update a WordPress post by ID. [write]
+- `update_tag` — Update a WordPress tag by ID. [write]
+- `upload_media` — Download fileUrl and upload it to the WordPress media library. Optional meta fields are applied after upload; if that step fails the error includes the created attachment ID. [write]
 
 ## Safety
 

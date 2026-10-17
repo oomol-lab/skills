@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AIsa"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aisa"]
   icon: "https://static.oomol.com/logo/third-party/aisa.svg"
 ---
@@ -58,6 +58,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_crypto_ohlc` — Get open, high, low, and close price candles for one coin.
 - `get_crypto_prices` — Get current prices and optional market metrics for multiple coins.
 - `get_dataforseo_ai_keyword_volume` — Get AI-search volume estimates for up to 1,000 keywords.
+- `get_dataforseo_keyword_trends` — Compare popularity over time for up to five keywords using DataForSEO Trends for Google Search, News, or Shopping. These are DataForSEO estimates, not original Google Trends data or absolute search volumes.
 - `get_dataforseo_llm_mention_metrics` — Aggregate LLM mention metrics for domains and keyword entities.
 - `get_dataforseo_llm_mention_top_domains` — Get domains cited most often in LLM responses matching target entities.
 - `get_filing_items` — Get selected sections and exhibits from a company filing.
