@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["feishu"]
   icon: "https://static.oomol.com/logo/third-party/feishu.svg"
 ---
@@ -195,6 +195,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_current_user` — Get the profile of the Feishu user who authorized this connection, using their user_access_token.
 - `get_document` — Get a Feishu docx document's basic metadata (title and revision) that the authorized user can read.
 - `get_document_content` — Read the full plain-text content of a Feishu docx document the authorized user can access.
+- `get_document_creation` — Get a document creation task status and its completed document. Do not repeat creation while the task is processing.
 - `get_document_revert_status` — Get the status of a Feishu document history revert task.
 - `get_drive_export` — Get the normalized status and generated file token of a Drive export task.
 - `get_drive_import` — Get the normalized status and created document token of a Drive import task.
@@ -229,7 +230,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_vc_meeting_note` — Resolve a video meeting to its note ID and return normalized meeting-note details.
 - `get_vc_note` — Get meeting-note metadata and its related document tokens.
 - `get_vc_recording_metadata` — Get recording URL and duration metadata for a Feishu video meeting.
-- `get_wiki_node` — Resolve and get a Feishu Wiki node by token and object type.
+- `get_wiki_node` — Resolve a Feishu Wiki node by node token or document token; the server detects the token type.
 - `get_wiki_space` — Get one Feishu Wiki space by ID.
 - `get_wiki_task` — Get a normalized Wiki asynchronous task status.
 - `get_workbook` — Get workbook structure and metadata, including all sub-sheets.
@@ -238,8 +239,6 @@ Each action is listed below with a one-line description; actions that change sta
 - `insert_docs_media` — Append an image or file to a Feishu docx document by creating a block, uploading media, and binding the file token with rollback on failure. [write]
 - `insert_sheet_dimension` — Insert blank rows or columns into a sub-sheet. [write]
 - `inspect_drive_item` — Inspect a Feishu Drive token to resolve its canonical type, title, URL, and underlying document for Wiki nodes.
-- `join_vc_meeting` — Join a Feishu video meeting with the app's meeting bot. [write]
-- `leave_vc_meeting` — Leave a Feishu video meeting previously joined by the app's meeting bot. [destructive]
 - `list_active_vc_meetings` — List active Feishu video meetings for the current user or a tenant user.
 - `list_app_slash_commands` — List every slash command registered on the currently connected Feishu app.
 - `list_approval_tasks` — List approval tasks grouped by pending, completed, initiated, or CC status.
