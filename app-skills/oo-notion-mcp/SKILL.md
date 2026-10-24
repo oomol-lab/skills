@@ -1,11 +1,11 @@
 ---
 name: oo-notion-mcp
-description: "Notion MCP (notion.so). Use this skill for ANY Notion MCP request — searching and reading data. Whenever a task involves Notion MCP, use this skill instead of calling the API directly."
+description: "Notion MCP (notion.so). Use this skill for ANY Notion MCP request — reading, creating, and updating data. Whenever a task involves Notion MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Notion MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["notion_mcp"]
   icon: "https://static.oomol.com/logo/third-party/notion_mcp.svg"
 ---
@@ -37,11 +37,14 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `create_comment` — Comment on a Notion page through notion-create-comment: at the top level, as a reply to a comment or a discussion, or as a new discussion on selected content. Returns the comment the server named and the raw response. [write]
+- `create_pages` — Create one or more Notion pages through notion-create-pages, under a page, a database, a data source or a teamspace, or as a private draft. Returns the pages the server named, an async task ID when it deferred the work, and the raw response. [write]
 - `fetch_page` — Read one Notion page through notion-fetch by ID or URL. Returns the title, properties block, Markdown content, a truncated flag, and the raw response.
 - `get_self` — Identify the connected Notion user through notion-get-users with user_id self. Returns the user ID, name, and email the server reports.
 - `list_comments` — List the comments on one Notion page through notion-get-comments, flattened across discussions. Block-level and resolved discussions are included unless turned off; the server offers no paging.
 - `search` — Search Notion pages through notion-search with optional text, sort, page size, date-range and creator filters. Returns typed results, the search type that ran, the server's notices about dropped filters, and the raw response. Filtering by editor or last-edited date and sorting by date need a Business or Enterprise plan; other plans drop them and name them in notices. When the connection can use AI search, a non-empty keyword query with no exact filter and relevance order runs AI search and can return results from connected apps. Notion allows 30 searches a minute.
 - `tool_access` — Report each MCP tool's access status on the connected Notion plan through notion-get-tool-access, keyed by the tool's base name such as search, with the parameters the plan restricts and the reason for each, such as the edited-by search filter below the Business plan.
+- `update_page` — Change one Notion page through notion-update-page: its properties, a targeted search-and-replace in its content, its whole content, or an insertion at the start or the end. Returns the page ID, the URL when the server names one, an async task ID when it deferred the work, and the raw response. [write]
 
 ## Safety
 
