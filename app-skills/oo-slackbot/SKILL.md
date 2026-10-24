@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Slack Bot"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["slackbot"]
   icon: "https://static.oomol.com/logo/third-party/slackbot.svg"
 ---
@@ -66,6 +66,7 @@ If visible formatting matters, read the posted message back and confirm that
 - `get_conversation` — Get metadata for a Slack conversation.
 - `get_current_user` — Get the workspace and user identity of the connected Slack credential.
 - `get_file` — Get metadata for a Slack file.
+- `get_installation` — Get the workspace and authorizing user from stored OAuth installation metadata. Returns null for incomplete metadata. OAuth credentials may be refreshed before execution.
 - `get_message_permalink` — Get a permalink for a Slack message.
 - `get_reactions` — Get reactions for a Slack message.
 - `get_thread` — Get messages in a Slack thread.

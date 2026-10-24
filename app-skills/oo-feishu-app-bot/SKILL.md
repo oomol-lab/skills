@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["feishu_app_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_app_bot.svg"
 ---
@@ -176,6 +176,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_calendar_event` — Get the complete details of one Feishu calendar event.
 - `get_cells` — Read one or more A1 ranges with values, formulas, and optional styles.
 - `get_chat` — Fetch one Feishu/Lark chat by `chat_id`.
+- `get_document_creation` — Get a document creation task status and its completed document. Do not repeat creation while the task is processing.
 - `get_document_revert_status` — Get the status of a Feishu document history revert task.
 - `get_drive_export` — Get the normalized status and generated file token of a Drive export task.
 - `get_drive_import` — Get the normalized status and created document token of a Drive import task.
@@ -200,7 +201,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_task` — Get one Feishu task by GUID.
 - `get_typed_table` — Read a sub-sheet range into a DataFrame-friendly typed table with inferred dtypes.
 - `get_user` — Get a Feishu user profile. User identity may omit userId to return the authenticated user.
-- `get_wiki_node` — Resolve and get a Feishu Wiki node by token and object type.
+- `get_wiki_node` — Resolve a Feishu Wiki node by node token or document token; the server detects the token type.
 - `get_wiki_space` — Get one Feishu Wiki space by ID.
 - `get_wiki_task` — Get a normalized Wiki asynchronous task status.
 - `get_workbook` — Get workbook structure and metadata, including all sub-sheets.

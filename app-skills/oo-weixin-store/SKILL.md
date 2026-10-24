@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeChat Store"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["weixin_store"]
   icon: "https://static.oomol.com/logo/third-party/weixin_store.svg"
 ---
@@ -47,23 +47,35 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_category` — Get the publishing rules of one leaf category: required product and sale attributes, brand restrictions, deposit, and qualifications.
 - `get_category_application` — Get the status and any rejection reason of a category application by audit id.
 - `get_category_product_rule` — Get the category's product attribute, sale attribute, qualification, price, and other publishing rules for the chosen release mode.
+- `get_compass_product_data` — Read historical Compass product click and transaction data. T+1 only: date must be yesterday or earlier in Asia/Shanghai. Monetary values and counts retain upstream string units.
 - `get_freight_template` — Get one freight template by template_id, including its valuation type, shipping method, sender address, and freight rules. Freight templates bind to products through expressInfo on add_product.
+- `get_league_plan` — Read an existing alliance plan's activation, eligibility and commission. The returned item.type uses legacy values 1/2/3; do not reuse it as request type 100/300.
+- `get_league_promoter` — Read a known alliance talent's profile, sales metrics and blacklist status. Supply exactly one talent identifier, not a nickname.
 - `get_order` — Get one order by order_id, including its products, payment, price, and delivery details. Buyer address fields are masked.
 - `get_product` — Get one product by product_id. Products keep a draft and an online copy; dataType selects which.
+- `get_product_audit_strategy` — Read store-wide product listing policy switches. This is not a historical delisting-reason log and does not change any policy.
+- `get_product_restricted_info` — Read restricted sales scenes for 1 to 50 products, including alliance and talent-window restrictions. This does not change product status. Merchant quota: 100 calls per minute.
 - `get_shop_info` — Get the basic information of the connected WeChat Store: name, avatar, subject type, and status.
+- `invite_league_promoter` — Invite one known talent to cooperate with the shop. This sends an external invitation: obtain approval for the exact recipient first. Supply promoterId or the deprecated finderId, never infer promoterId from talent_appid. Do not retry blindly after a timeout; WeChat rejects duplicate invitations within 24 hours and already-cooperating talents. [write]
 - `list_addresses` — List the merchant address ids of the store. After-sale returns need one of these address ids when accepting a return.
 - `list_aftersale_orders` — List the after-sale order ids of the store, paginated by cursor. At least one time range pair is required, as Unix timestamps in seconds spanning at most 24 hours.
 - `list_categories` — Get the full category tree of the store, including the qualifications each category requires. Use the leaf cat_id values from cats_v2 for add_product and get_category.
 - `list_category_permissions` — List the store's category permissions. Filter to status 1 to find categories currently allowed for sale.
 - `list_delivery_companies` — List the delivery companies the store can ship with, including each company's delivery_id.
 - `list_freight_templates` — List the freight template ids of the store.
+- `list_league_products` — List existing alliance products and eligibility status. Pagination is bounded by pageSize multiplied by pageIndex <= 5000; no undocumented cursor is sent.
+- `list_league_promoter_products` — Read a known cooperating talent's current window products or products sold in the last 30 days. This does not discover new talents or add products to a window.
+- `list_league_promoters` — List the connected merchant's alliance talents. This is not a platform-wide talent search; follow continue_flag to paginate.
 - `list_orders` — List the order ids of the store, paginated by cursor. At least one time range is required, as a pair of Unix timestamps in seconds spanning at most 7 days.
+- `list_product_promotion_plans` — List an existing product's alliance promotion plan identifiers before inspecting or changing a specific plan. Filtered audience type 200 is supported by this list only, not get_league_plan or update_league_plan.
+- `list_product_promotion_talents` — Read talents related to one existing product promotion plan and their promotion relationship status. This is not platform-wide discovery and does not prove that a product is in a talent's window.
 - `list_products` — List the product ids of the store, paginated by cursor.
 - `list_valid_brands` — List the brand qualifications currently in effect for the store, paginated by cursor. Use a returned brand_id when adding a product in a brand-restricted category.
 - `listing_product` — Submit a product for review and list it once approved. [write]
 - `precheck_product_category` — Check whether the store may publish in a leaf category, including category permission, deposit, freight insurance, and store restrictions. Omit catId for store-wide checks only.
 - `reject_aftersale` — Reject a buyer's after-sale request with a reason. [write]
 - `send_delivery` — Ship an order, in one or more packages. Each package either ships by express with a waybill (deliverType 1, needs waybillId and deliveryId from list_delivery_companies, or OTHER when the company is not listed) or delivers virtual goods without logistics (deliverType 3, only for orders whose products use the phone-number delivery method). [write]
+- `update_league_plan` — Change one existing alliance promotion plan: edit commission and activate (1), delist (2), or activate (4). Obtain approval for the exact plan and change first; activation or commission changes can incur commission spending. Read the plan before and after; no automatic fallback, audience changes, new plan creation or deletion is provided. [write]
 - `update_order_merchant_notes` — Replace the merchant note of one order, optionally with a tag color. [write]
 - `update_product` — Replace a product's editable data. This is a full overwrite: every field of add_product applies, SKUs that carry an existing sku_id are updated, SKUs without one are added, and previously existing SKUs missing from the list are deleted. [write]
 - `update_product_stock` — Update the stock of a product's SKUs. This does not consume the product review quota. [write]

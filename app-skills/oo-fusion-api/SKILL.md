@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.8"
+  version: "1.0.9"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---
@@ -74,10 +74,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `file_upload_generate_presigned_urls` — Generate a presigned URL for multipart upload parts
 - `jina_reader_read` — Read and extract URL content
 - `jina_reader_search` — Search web content
+- `oomol_ocr_result` — Get image text recognition and Chinese typo correction results
+- `oomol_ocr_submit` — Recognize image text and suggest corrections for Chinese typos [write]
 - `openai_image_async_result` — Get asynchronous OpenAI image generation result
-- `openai_image_async_submit` — Submit asynchronous OpenAI image generation requests, including gpt-image-2 image creation. [write]
+- `openai_image_async_submit` — Submit asynchronous OpenAI image generation requests, including gpt-image-2 and gpt-image-2.5 image creation. [write]
 - `openai_image_edit_async_result` — Get asynchronous OpenAI image edit result
-- `openai_image_edit_async_submit` — Submit asynchronous OpenAI image edit requests, including gpt-image-2 image editing. [write]
+- `openai_image_edit_async_submit` — Submit asynchronous OpenAI image edit requests, including gpt-image-2 and gpt-image-2.5 image editing. [write]
 - `pdf_transform_epub_result` — Get pdf-transform-epub task result
 - `pdf_transform_epub_state` — Get pdf-transform-epub task state
 - `pdf_transform_epub_submit` — Convert a PDF to EPUB format [write]
