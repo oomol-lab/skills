@@ -1,11 +1,11 @@
 ---
 name: oo-linear-mcp
-description: "Linear MCP (linear.app). Use this skill for ANY Linear MCP request — searching and reading data. Whenever a task involves Linear MCP, use this skill instead of calling the API directly."
+description: "Linear MCP (linear.app). Use this skill for ANY Linear MCP request — reading, creating, and updating data. Whenever a task involves Linear MCP, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "Linear MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["linear_mcp"]
   icon: "https://static.oomol.com/logo/third-party/linear_mcp.svg"
 ---
@@ -37,10 +37,17 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `create_comment` — Comment on a Linear issue through Linear's MCP save_comment tool, optionally as a reply to another comment. Needs the write scope on the grant. [write]
+- `create_issue` — Create a Linear issue through Linear's MCP save_issue tool. Needs the write scope on the grant; an id in the input is dropped so this never updates an existing issue. [write]
 - `get_issue` — Get one Linear issue with its full description through Linear's MCP get_issue tool.
 - `get_self` — Get the signed-in Linear user through Linear's MCP get_user tool.
 - `list_comments` — List the comments on one Linear issue through Linear's MCP list_comments tool.
+- `list_issue_labels` — List issue labels through Linear's MCP list_issue_labels tool, for the workspace or one team.
+- `list_issue_statuses` — List one team's workflow states through Linear's MCP list_issue_statuses tool: the names the issue tools take as state.
 - `list_issues` — List Linear issues through Linear's MCP list_issues tool with optional updated-since, ordering, limit, and cursor pagination. Descriptions may be clipped; call get_issue for the full text.
+- `list_projects` — List Linear projects through Linear's MCP list_projects tool, optionally for one team, with cursor pagination.
+- `list_teams` — List the teams of the connected Linear workspace through Linear's MCP list_teams tool: the keys and IDs the issue tools take as team.
+- `update_issue` — Update a Linear issue through Linear's MCP save_issue tool with its id: the title, description, team, assignee, state, priority, labels, project, due date, parent or estimate. Needs the write scope on the grant. [write]
 
 ## Safety
 

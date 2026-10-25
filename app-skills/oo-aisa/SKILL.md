@@ -1,11 +1,11 @@
 ---
 name: oo-aisa
-description: "AIsa (aisa.one). Use this skill for ANY AIsa request — searching and reading data. Whenever a task involves AIsa, use this skill instead of calling the API directly."
+description: "AIsa (aisa.one). Use this skill for ANY AIsa request — reading, creating, updating, and deleting data. Whenever a task involves AIsa, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
   title: "AIsa"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aisa"]
   icon: "https://static.oomol.com/logo/third-party/aisa.svg"
 ---
@@ -37,13 +37,21 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
+- `answer_exa` — Answer a question using Exa web retrieval with source citations and optional structured output.
+- `cancel_firecrawl_batch_scrape` — Request cancellation of a Firecrawl task. Work already performed may still be charged; poll the task for final state and pricing. [destructive]
+- `cancel_firecrawl_crawl` — Request cancellation of a Firecrawl task. Work already performed may still be charged; poll the task for final state and pricing. [destructive]
 - `compare_semrush_domains` — Compare organic or paid keyword portfolios across domains.
+- `crawl_tavily` — Synchronously crawl a website through Tavily and return page content. Set limit, depth and breadth to bound the crawl; this does not create a background job.
+- `enrich_akta_company` — Retrieve Akta company profile sections, including firmographics, management, products, and financial estimates.
 - `enrich_apollo_organization` — Enrich one organization from its domain using Apollo's global database.
 - `enrich_apollo_organizations` — Enrich multiple organizations from their domains in one Apollo request.
 - `enrich_apollo_people` — Enrich up to ten people from known identifiers in one Apollo request.
 - `enrich_apollo_person` — Enrich one person from known identifiers using Apollo's global database.
+- `extract_tavily` — Extract content from known URLs through Tavily. Inspect failed_results for per-URL failures; use crawl_tavily to discover and retrieve pages from a website.
 - `find_foreplay_brands` — Find candidate advertising brands associated with a domain.
 - `find_similar_creators` — Find creators similar to a seed account with optional audience filters.
+- `get_ahrefs_domain_rating` — Get Ahrefs Domain Rating and Ahrefs Rank for a domain on a specified date.
+- `get_ahrefs_site_metrics` — Get Ahrefs organic and paid keyword counts, traffic, and traffic value for a domain.
 - `get_analyst_estimates` — Get analyst estimates for a ticker and reporting period.
 - `get_apollo_job_postings` — List live job postings for an Apollo organization.
 - `get_apollo_organization` — Get one complete organization record from Apollo's global database.
@@ -57,12 +65,63 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_crypto_news` — Get recent cryptocurrency news with optional coin and language filters.
 - `get_crypto_ohlc` — Get open, high, low, and close price candles for one coin.
 - `get_crypto_prices` — Get current prices and optional market metrics for multiple coins.
+- `get_dataforseo_ai_gemini_search` — Get Gemini search answers through DataForSEO.
 - `get_dataforseo_ai_keyword_volume` — Get AI-search volume estimates for up to 1,000 keywords.
+- `get_dataforseo_ai_mentions_top_brands` — Get AI mentioned brands through DataForSEO.
+- `get_dataforseo_ai_mentions_top_pages` — Get AI cited pages through DataForSEO.
+- `get_dataforseo_amazon_asin` — Get Amazon product details through DataForSEO.
+- `get_dataforseo_amazon_products` — Get Amazon product search results through DataForSEO.
+- `get_dataforseo_amazon_sellers` — Get Amazon product sellers through DataForSEO.
+- `get_dataforseo_app_store_listings` — Get App Store listings through DataForSEO.
+- `get_dataforseo_backlinks_bulk_spam_score` — Get bulk backlink spam scores through DataForSEO.
+- `get_dataforseo_backlinks_domain_pages_summary` — Get page backlink summaries through DataForSEO.
+- `get_dataforseo_backlinks_page_intersection` — Get referring page intersections through DataForSEO.
+- `get_dataforseo_backlinks_referring_domains` — Get referring domains through DataForSEO.
+- `get_dataforseo_content_category_trends` — Get content category trends through DataForSEO.
+- `get_dataforseo_content_phrase_trends` — Get content mention trends through DataForSEO.
+- `get_dataforseo_content_sentiment` — Get content sentiment through DataForSEO.
+- `get_dataforseo_google_business_info` — Get Google Business profiles through DataForSEO.
+- `get_dataforseo_google_business_questions` — Get Google Business questions and answers through DataForSEO.
+- `get_dataforseo_keyword_trends` — Compare popularity over time for up to five keywords using DataForSEO Trends for Google Search, News, or Shopping. These are DataForSEO estimates, not original Google Trends data or absolute search volumes.
+- `get_dataforseo_keywords_bing_keywords_for_site` — Get Bing keywords for a website through DataForSEO.
+- `get_dataforseo_labs_amazon_bulk_search_volume` — Get Amazon search volumes through DataForSEO.
+- `get_dataforseo_labs_amazon_product_competitors` — Get Amazon product competitors through DataForSEO.
+- `get_dataforseo_labs_amazon_product_keyword_intersections` — Get Amazon keyword intersections through DataForSEO.
+- `get_dataforseo_labs_amazon_product_rank_overview` — Get Amazon product rank overview through DataForSEO.
+- `get_dataforseo_labs_amazon_ranked_keywords` — Get Amazon ranked keywords through DataForSEO.
+- `get_dataforseo_labs_amazon_related_keywords` — Get Amazon related keywords through DataForSEO.
+- `get_dataforseo_labs_app_store_app_competitors` — Get App Store competitors through DataForSEO.
+- `get_dataforseo_labs_app_store_bulk_app_metrics` — Get App Store app metrics through DataForSEO.
+- `get_dataforseo_labs_app_store_keywords_for_app` — Get App Store app keywords through DataForSEO.
+- `get_dataforseo_labs_bulk_keyword_difficulty` — Get Google keyword difficulty through DataForSEO.
+- `get_dataforseo_labs_competitors_domain` — Get Google domain competitors through DataForSEO.
+- `get_dataforseo_labs_domain_metrics_by_categories` — Get Google domain metrics by category through DataForSEO.
+- `get_dataforseo_labs_google_play_app_competitors` — Get Google Play competitors through DataForSEO.
+- `get_dataforseo_labs_google_play_app_intersection` — Get Google Play keyword intersections through DataForSEO.
+- `get_dataforseo_labs_keyword_ideas` — Get Google keyword ideas through DataForSEO.
+- `get_dataforseo_labs_keyword_overview` — Get Google keyword overview through DataForSEO.
+- `get_dataforseo_labs_keywords_for_categories` — Get Google category keywords through DataForSEO.
 - `get_dataforseo_llm_mention_metrics` — Aggregate LLM mention metrics for domains and keyword entities.
 - `get_dataforseo_llm_mention_top_domains` — Get domains cited most often in LLM responses matching target entities.
+- `get_dataforseo_onpage_content_parsing` — Get parsed page content through DataForSEO.
+- `get_dataforseo_onpage_lighthouse` — Get Lighthouse audits through DataForSEO.
+- `get_dataforseo_reference_data` — Look up DataForSEO model names, location codes, categories, or supported filter fields before a research query.
+- `get_dataforseo_serp_google_ai_mode` — Get Google AI Mode answers through DataForSEO.
+- `get_dataforseo_serp_google_finance_markets` — Get Google Finance markets through DataForSEO.
+- `get_dataforseo_serp_google_finance_quote` — Get Google Finance quotes through DataForSEO.
+- `get_dataforseo_serp_google_images` — Get Google image search results through DataForSEO.
+- `get_dataforseo_serp_google_local_finder` — Get Google local search results through DataForSEO.
+- `get_dataforseo_serp_google_news` — Get Google news results through DataForSEO.
+- `get_dataforseo_serp_youtube_comments` — Get YouTube comments through DataForSEO.
+- `get_dataforseo_serp_youtube_organic` — Get YouTube search results through DataForSEO.
+- `get_dataforseo_serp_youtube_subtitles` — Get YouTube subtitles through DataForSEO.
+- `get_dataforseo_serp_youtube_video_info` — Get YouTube video details through DataForSEO.
+- `get_exa_contents` — Retrieve text and metadata for known URLs through Exa. Inspect statuses for per-URL failures, including when other URLs succeed.
 - `get_filing_items` — Get selected sections and exhibits from a company filing.
 - `get_financial_metrics` — Get historical valuation, profitability, growth, and leverage metrics.
 - `get_financial_metrics_snapshot` — Get the latest available financial metrics for a company.
+- `get_firecrawl_batch_scrape` — Get a Firecrawl task state and results. Check outputExpired and job errors even when the task has finished.
+- `get_firecrawl_crawl` — Get a Firecrawl task state and results. Check outputExpired and job errors even when the task has finished.
 - `get_foreplay_brand_ads` — List ads for one or more known Foreplay brand IDs.
 - `get_foreplay_brand_analytics` — Get daily running-ad distribution and creative velocity for a brand page.
 - `get_income_statements` — Get standardized income statements for a company.
@@ -132,17 +191,26 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_crypto_exchanges` — List exchanges ranked by trust score and trading volume.
 - `list_crypto_markets` — List coin markets with price, capitalization, volume, and change metrics.
 - `lookup_creator_email` — Look up the public contact email for one creator profile; not-found results are billed.
+- `map_firecrawl` — Discover website links through Firecrawl. Set limit to bound discovery and usage before retrieving individual pages.
 - `query_dataforseo_chatgpt` — Run a live ChatGPT response query for GEO research through DataForSEO.
 - `query_dataforseo_claude` — Run a live Claude response query for GEO research through DataForSEO.
 - `query_dataforseo_gemini` — Run a live Gemini response query for GEO research through DataForSEO.
 - `query_dataforseo_perplexity` — Run a live Perplexity response query for GEO research through DataForSEO.
+- `scrape_firecrawl` — Retrieve one HTTPS web page as Markdown through Firecrawl. The AIsa route supports basic proxy mode and excludes PDF URLs.
+- `search_akta_companies` — Find Akta companies by name, website, or UUID.
+- `search_akta_company_list` — Search an Akta company list using natural language or structured filters, with optional enrichment and pagination.
+- `search_akta_industries` — Resolve industry terms to ranked Akta industry codes.
 - `search_apollo_company_news` — Search Apollo news articles for known organizations and event categories.
 - `search_apollo_organizations` — Search Apollo's global organization database by domain, location, size, and name.
 - `search_apollo_people` — Search Apollo's global people database by role, location, employer, and seniority.
 - `search_creators` — Find creators from a natural-language brief and optional audience filters.
 - `search_dataforseo_llm_mentions` — Search individual LLM mention records for domains and keywords.
+- `search_exa` — Search the web semantically through Exa. Request contents to include page text, or retrieve selected URLs with get_exa_contents.
+- `search_firecrawl` — Search the web through Firecrawl and return ranked URLs, titles, and snippets.
 - `search_foreplay_ads` — Search the Foreplay ad index by text, platform, format, niche, and activity.
 - `search_twitter_posts` — Search public Twitter posts using X query syntax and cursor pagination.
+- `submit_firecrawl_batch_scrape` — Start a background batch scrape of known URLs through AIsa Firecrawl. Poll the returned task ID for results. [write]
+- `submit_firecrawl_crawl` — Start a background website crawl through AIsa Firecrawl. Poll the returned task ID for results. [write]
 
 ## Safety
 
