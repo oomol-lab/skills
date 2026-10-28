@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hotjar"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["hotjar"]
   icon: "https://static.oomol.com/logo/third-party/hotjar.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Hotjar is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=hotjar
+  https://console.oomol.com/connections/hotjar
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Hotjar homepage: https://www.hotjar.com/
+- API documentation: https://help.hotjar.com/hc/en-us/articles/36820005914001-Hotjar-API-Reference

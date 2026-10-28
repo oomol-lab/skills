@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gemini"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["gemini"]
   icon: "https://static.oomol.com/logo/third-party/Gemini.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Gemini is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=gemini
+  https://console.oomol.com/connections/gemini
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Gemini homepage: https://ai.google.dev/gemini-api
+- API documentation: https://ai.google.dev/gemini-api

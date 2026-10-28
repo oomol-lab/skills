@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sendspark"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["sendspark"]
   icon: "https://static.oomol.com/logo/third-party/sendspark.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Sendspark is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=sendspark
+  https://console.oomol.com/connections/sendspark
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Sendspark homepage: https://sendspark.com/
+- API documentation: https://help.sendspark.com/en/articles/9051823-api-automatically-create-dynamic-videos-via-api

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Airmeet"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["airmeet"]
   icon: "https://static.oomol.com/logo/third-party/airmeet.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Airmeet is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=airmeet
+  https://console.oomol.com/connections/airmeet
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Airmeet homepage: https://www.airmeet.com/
+- API documentation: https://help.airmeet.com/support/solutions/articles/82000467794-airmeet-public-api-introduction

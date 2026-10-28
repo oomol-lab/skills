@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Terraform"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["terraform"]
   icon: "https://static.oomol.com/logo/third-party/terraform.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Terraform is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=terraform
+  https://console.oomol.com/connections/terraform
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Terraform homepage: https://www.hashicorp.com/products/terraform
+- API documentation: https://developer.hashicorp.com/terraform/cloud-docs/api-docs

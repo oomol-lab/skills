@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DumplingAI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["dumplingai"]
   icon: "https://static.oomol.com/logo/third-party/dumplingai.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — DumplingAI is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=dumplingai
+  https://console.oomol.com/connections/dumplingai
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - DumplingAI homepage: https://www.dumplingai.com
+- API documentation: https://docs.dumplingai.com/api-reference/v2/introduction

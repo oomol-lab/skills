@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tonghuashun Financial Data"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hithink_finance"]
   icon: "https://static.oomol.com/logo/third-party/hithink_finance.png"
 ---
@@ -126,7 +126,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Tonghuashun Financial Data is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=hithink_finance
+  https://console.oomol.com/connections/hithink_finance
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -134,3 +134,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Tonghuashun Financial Data homepage: https://fuyao.aicubes.cn/
+- API documentation: https://fuyao.aicubes.cn/docs/

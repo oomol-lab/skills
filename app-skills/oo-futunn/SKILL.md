@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Futunn"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["futunn"]
   icon: "https://static.oomol.com/logo/third-party/futunn.svg"
 ---
@@ -90,7 +90,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Futunn is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=futunn
+  https://console.oomol.com/connections/futunn
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -98,3 +98,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Futunn homepage: https://open.futunn.com
+- API documentation: https://open.futunn.com/zh-cn/api/overview/getting-started

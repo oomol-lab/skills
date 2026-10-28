@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cubox"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cubox"]
   icon: "https://static.oomol.com/logo/third-party/cubox.svg"
 ---
@@ -68,7 +68,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cubox is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cubox
+  https://console.oomol.com/connections/cubox
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -76,3 +76,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cubox homepage: https://cubox.pro
+- API documentation: https://help.cubox.pro/save/89d3/

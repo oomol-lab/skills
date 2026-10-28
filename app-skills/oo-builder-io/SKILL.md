@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Builder.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["builder_io"]
   icon: "https://static.oomol.com/logo/third-party/builder_io.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Builder.io is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=builder_io
+  https://console.oomol.com/connections/builder_io
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Builder.io homepage: https://www.builder.io
+- API documentation: https://www.builder.io/c/docs/content-api

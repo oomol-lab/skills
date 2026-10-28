@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Chat API for WhatsApp"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["chat_api_for_whatsapp"]
   icon: "https://static.oomol.com/logo/third-party/chat_api_for_whatsapp.png"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Chat API for WhatsApp is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=chat_api_for_whatsapp
+  https://console.oomol.com/connections/chat_api_for_whatsapp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Chat API for WhatsApp homepage: https://chat-api.com/en/
+- API documentation: https://chat-api.com/en/docs.html

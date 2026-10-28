@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Namely"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["namely"]
   icon: "https://static.oomol.com/logo/third-party/namely.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Namely is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=namely
+  https://console.oomol.com/connections/namely
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Namely homepage: https://www.namely.com
+- API documentation: https://developers.namely.com/docs/namely-api/72f9086e4f0e7-introduction

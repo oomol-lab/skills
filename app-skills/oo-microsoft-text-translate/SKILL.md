@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Microsoft Text Translate"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["microsoft_text_translate"]
   icon: "https://static.oomol.com/logo/third-party/microsoft_text_translate.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Microsoft Text Translate is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=microsoft_text_translate
+  https://console.oomol.com/connections/microsoft_text_translate
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Microsoft Text Translate homepage: https://azure.microsoft.com/en-us/products/ai-services/ai-translator
+- API documentation: https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/reference/v3/reference

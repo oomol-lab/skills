@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OCR Web Service"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["ocr_web_service"]
   icon: "https://static.oomol.com/logo/third-party/ocr_web_service.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — OCR Web Service is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=ocr_web_service
+  https://console.oomol.com/connections/ocr_web_service
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - OCR Web Service homepage: https://www.ocrwebservice.com
+- API documentation: https://www.ocrwebservice.com/api/restguide

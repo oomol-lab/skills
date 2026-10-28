@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TwittrAPI"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["twittrapi"]
   icon: "https://static.oomol.com/logo/third-party/twittrapi.svg"
 ---
@@ -82,7 +82,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — TwittrAPI is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=twittrapi
+  https://console.oomol.com/connections/twittrapi
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -90,3 +90,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - TwittrAPI homepage: https://twittrapi.com
+- API documentation: https://twittrapi.com/docs

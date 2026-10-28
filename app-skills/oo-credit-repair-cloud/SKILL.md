@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Credit Repair Cloud"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["credit_repair_cloud"]
   icon: "https://static.oomol.com/logo/third-party/credit_repair_cloud.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Credit Repair Cloud is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=credit_repair_cloud
+  https://console.oomol.com/connections/credit_repair_cloud
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Credit Repair Cloud homepage: https://www.creditrepaircloud.com
+- API documentation: https://app.creditrepaircloud.com/webapi

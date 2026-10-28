@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "JustCall"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["justcall"]
   icon: "https://static.oomol.com/logo/third-party/justcall.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — JustCall is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=justcall
+  https://console.oomol.com/connections/justcall
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - JustCall homepage: https://justcall.io
+- API documentation: https://developer.justcall.io/reference/authentication

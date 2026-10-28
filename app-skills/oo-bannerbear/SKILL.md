@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bannerbear"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["bannerbear"]
   icon: "https://static.oomol.com/logo/third-party/bannerbear.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Bannerbear is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=bannerbear
+  https://console.oomol.com/connections/bannerbear
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Bannerbear homepage: https://www.bannerbear.com/
+- API documentation: https://developers.bannerbear.com/

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Nango"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["nango"]
   icon: "https://static.oomol.com/logo/third-party/nango.svg"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Nango is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=nango
+  https://console.oomol.com/connections/nango
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Nango homepage: https://nango.dev
+- API documentation: https://nango.dev/docs/reference/backend/http-api/authentication

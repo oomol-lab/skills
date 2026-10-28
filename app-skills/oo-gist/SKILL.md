@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gist"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["gist"]
-  icon: "https://static.oomol.com/logo/third-party/github.png"
+  icon: "https://static.oomol.com/logo/third-party/github.svg"
 ---
 
 # Gist
@@ -87,7 +87,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Gist is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=gist
+  https://console.oomol.com/connections/gist
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -95,3 +95,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Gist homepage: https://gist.github.com
+- API documentation: https://developers.getgist.com/api/

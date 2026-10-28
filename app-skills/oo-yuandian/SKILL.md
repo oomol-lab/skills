@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Yuan Dian"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["yuandian"]
   icon: "https://static.oomol.com/logo/third-party/yuandian.svg"
 ---
@@ -90,7 +90,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Yuan Dian is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=yuandian
+  https://console.oomol.com/connections/yuandian
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -98,3 +98,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Yuan Dian homepage: https://open.chineselaw.com
+- API documentation: https://open.chineselaw.com/api-square/

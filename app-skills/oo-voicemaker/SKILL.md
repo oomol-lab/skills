@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Voicemaker"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["voicemaker"]
   icon: "https://static.oomol.com/logo/third-party/voicemaker.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Voicemaker is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=voicemaker
+  https://console.oomol.com/connections/voicemaker
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Voicemaker homepage: https://voicemaker.in/
+- API documentation: https://developer.voicemaker.in/apidocs/authentication

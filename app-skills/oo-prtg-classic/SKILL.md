@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PRTG Classic"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["prtg_classic"]
   icon: "https://static.oomol.com/logo/third-party/prtg_classic.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — PRTG Classic is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=prtg_classic
+  https://console.oomol.com/connections/prtg_classic
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - PRTG Classic homepage: https://www.paessler.com/prtg
+- API documentation: https://www.paessler.com/manuals/prtg/http_api

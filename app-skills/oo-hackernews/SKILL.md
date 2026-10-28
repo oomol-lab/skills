@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Hacker News"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["hackernews"]
   icon: "https://static.oomol.com/logo/third-party/Hacker%20News.svg"
 ---
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Hacker News homepage: https://news.ycombinator.com
+- API documentation: https://github.com/HackerNews/API

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Vonage"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["vonage"]
   icon: "https://static.oomol.com/logo/third-party/vonage.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Vonage is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=vonage
+  https://console.oomol.com/connections/vonage
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Vonage homepage: https://www.vonage.com/
+- API documentation: https://developer.vonage.com/en/api/sms

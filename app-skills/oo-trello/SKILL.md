@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Trello"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["trello"]
   icon: "https://static.oomol.com/logo/third-party/trello.svg"
 ---
@@ -95,7 +95,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Trello is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=trello
+  https://console.oomol.com/connections/trello
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -103,3 +103,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Trello homepage: https://trello.com
+- API documentation: https://developer.atlassian.com/cloud/trello/rest/

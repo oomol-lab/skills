@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Ads"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["googleads"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Ads.svg"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Google Ads is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=googleads
+  https://console.oomol.com/connections/googleads
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Google Ads homepage: https://ads.google.com
+- API documentation: https://developers.google.com/google-ads/api/docs/start

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cal.com"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["cal"]
   icon: "https://static.oomol.com/logo/third-party/Cal.svg"
 ---
@@ -114,7 +114,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cal.com is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cal
+  https://console.oomol.com/connections/cal
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -122,3 +122,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cal.com homepage: https://cal.com
+- API documentation: https://cal.com/docs/api-reference/v2/introduction

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Quant Data"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["quant_data"]
   icon: "https://static.oomol.com/logo/third-party/quant_data.svg"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Quant Data is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=quant_data
+  https://console.oomol.com/connections/quant_data
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Quant Data homepage: https://quantdata.us/
+- API documentation: https://quantdata.us/api/docs

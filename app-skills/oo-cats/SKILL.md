@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CATS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["cats"]
   icon: "https://static.oomol.com/logo/third-party/cats.svg"
 ---
@@ -77,7 +77,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — CATS is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cats
+  https://console.oomol.com/connections/cats
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -85,3 +85,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - CATS homepage: https://catsone.com/
+- API documentation: https://docs.catsone.com/api/v3/

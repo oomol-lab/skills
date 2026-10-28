@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dandelion API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dandelion"]
   icon: "https://static.oomol.com/logo/third-party/dandelion.png"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Dandelion API is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=dandelion
+  https://console.oomol.com/connections/dandelion
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Dandelion API homepage: https://dandelion.eu/
+- API documentation: https://dandelion.eu/docs/api/

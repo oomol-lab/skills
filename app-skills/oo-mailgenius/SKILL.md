@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MailGenius"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mailgenius"]
   icon: "https://static.oomol.com/logo/third-party/mailgenius.png"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — MailGenius is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=mailgenius
+  https://console.oomol.com/connections/mailgenius
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - MailGenius homepage: https://www.mailgenius.com/
+- API documentation: https://app.mailgenius.com/api-docs/index.html

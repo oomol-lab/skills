@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MiniMax"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["minimax"]
   icon: "https://static.oomol.com/logo/third-party/minimax.svg"
 ---
@@ -80,7 +80,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — MiniMax is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=minimax
+  https://console.oomol.com/connections/minimax
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -88,3 +88,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - MiniMax homepage: https://www.minimax.io
+- API documentation: https://platform.minimax.io/docs/api-reference/api-overview

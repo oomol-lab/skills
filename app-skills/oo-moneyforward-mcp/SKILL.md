@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Money Forward Cloud Accounting MCP"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["moneyforward_mcp"]
   icon: "https://static.oomol.com/logo/third-party/moneyforward_mcp.svg"
 ---
@@ -90,7 +90,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Money Forward Cloud Accounting MCP is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=moneyforward_mcp
+  https://console.oomol.com/connections/moneyforward_mcp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -98,3 +98,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Money Forward Cloud Accounting MCP homepage: https://developers.biz.moneyforward.com/mcp/
+- API documentation: https://developers.biz.moneyforward.com/mcp/

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Indiegogo"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["indiegogo"]
   icon: "https://static.oomol.com/logo/third-party/indiegogo.svg"
 ---
@@ -72,3 +72,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Indiegogo homepage: https://www.indiegogo.com
+- API documentation: https://help.indiegogo.com/article/616-indiegogo-public-api

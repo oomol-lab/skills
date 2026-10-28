@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Outlook"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["outlook"]
   icon: "https://static.oomol.com/logo/third-party/Outlook.webp"
 ---
@@ -82,7 +82,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Outlook is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=outlook
+  https://console.oomol.com/connections/outlook
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -90,3 +90,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Outlook homepage: https://www.microsoft.com/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook
+- API documentation: https://learn.microsoft.com/en-us/graph/api/resources/mail-api-overview?view=graph-rest-1.0

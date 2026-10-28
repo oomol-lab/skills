@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Artificial Analysis"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["artificial_analysis"]
   icon: "https://static.oomol.com/logo/third-party/artificial_analysis.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Artificial Analysis is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=artificial_analysis
+  https://console.oomol.com/connections/artificial_analysis
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Artificial Analysis homepage: https://artificialanalysis.ai
+- API documentation: https://artificialanalysis.ai/data-api/docs

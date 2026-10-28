@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RiteKit"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["ritekit"]
   icon: "https://static.oomol.com/logo/third-party/ritekit.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — RiteKit is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=ritekit
+  https://console.oomol.com/connections/ritekit
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - RiteKit homepage: https://ritekit.com/
+- API documentation: https://documenter.getpostman.com/view/2010712/SzS7Qku5?version=latest

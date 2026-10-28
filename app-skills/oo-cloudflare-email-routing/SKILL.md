@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Email Routing"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["cloudflare_email_routing"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare_email_routing.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare Email Routing is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cloudflare_email_routing
+  https://console.oomol.com/connections/cloudflare_email_routing
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cloudflare Email Routing homepage: https://www.cloudflare.com/developer-platform/products/email-routing/
+- API documentation: https://developers.cloudflare.com/api/resources/email_routing/

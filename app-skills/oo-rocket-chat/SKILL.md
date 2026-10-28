@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Rocket.Chat"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["rocket_chat"]
   icon: "https://static.oomol.com/logo/third-party/rocket_chat.png"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Rocket.Chat is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=rocket_chat
+  https://console.oomol.com/connections/rocket_chat
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Rocket.Chat homepage: https://www.rocket.chat
+- API documentation: https://developer.rocket.chat/apidocs

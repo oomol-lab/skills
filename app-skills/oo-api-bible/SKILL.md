@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "API.Bible"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["api_bible"]
   icon: "https://static.oomol.com/logo/third-party/api_bible.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — API.Bible is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=api_bible
+  https://console.oomol.com/connections/api_bible
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - API.Bible homepage: https://scripture.api.bible/
+- API documentation: https://docs.api.bible/

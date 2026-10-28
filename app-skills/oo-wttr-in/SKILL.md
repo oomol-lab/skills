@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "wttr.in"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["wttr_in"]
   icon: "https://static.oomol.com/logo/third-party/wttr_in.png"
 ---
@@ -70,3 +70,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - wttr.in homepage: https://wttr.in/
+- API documentation: https://github.com/chubin/wttr.in#json-output

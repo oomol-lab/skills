@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeCom MCP"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["wecom_mcp"]
   icon: "https://static.oomol.com/logo/third-party/wecom_mcp.png"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — WeCom MCP is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=wecom_mcp
+  https://console.oomol.com/connections/wecom_mcp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - WeCom MCP homepage: https://work.weixin.qq.com
+- API documentation: https://open.work.weixin.qq.com/help2/pc/21676

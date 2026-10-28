@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alibaba Cloud ACK"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["aliyun_ack"]
   icon: "https://static.oomol.com/logo/third-party/aliyun_ack.svg"
 ---
@@ -68,7 +68,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Alibaba Cloud ACK is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential, federated) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=aliyun_ack
+  https://console.oomol.com/connections/aliyun_ack
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -76,3 +76,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Alibaba Cloud ACK homepage: https://www.alibabacloud.com/product/kubernetes
+- API documentation: https://www.alibabacloud.com/help/en/ack/ack-managed-and-ack-dedicated/developer-reference/api-cs-2015-12-15-describeclusteruserkubeconfig

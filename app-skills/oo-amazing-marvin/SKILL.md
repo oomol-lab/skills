@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Amazing Marvin"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["amazing_marvin"]
   icon: "https://static.oomol.com/logo/third-party/amazing_marvin.png"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Amazing Marvin is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=amazing_marvin
+  https://console.oomol.com/connections/amazing_marvin
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Amazing Marvin homepage: https://amazingmarvin.com/
+- API documentation: https://help.amazingmarvin.com/amazing-marvin/api-getting-started

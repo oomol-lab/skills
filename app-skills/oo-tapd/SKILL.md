@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TAPD"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["tapd"]
   icon: "https://static.oomol.com/logo/third-party/tapd.svg"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — TAPD is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=tapd
+  https://console.oomol.com/connections/tapd
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - TAPD homepage: https://www.tapd.cn/
+- API documentation: https://open.tapd.cn/document/api-doc/API文档/api_reference/

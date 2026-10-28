@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "KrispCall"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["krispcall"]
   icon: "https://static.oomol.com/logo/third-party/krispcall.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — KrispCall is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=krispcall
+  https://console.oomol.com/connections/krispcall
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - KrispCall homepage: https://krispcall.com
+- API documentation: https://developer.krispcall.com/

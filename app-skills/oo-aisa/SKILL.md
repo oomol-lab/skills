@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AIsa"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["aisa"]
   icon: "https://static.oomol.com/logo/third-party/aisa.svg"
 ---
@@ -103,7 +103,6 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_dataforseo_labs_keywords_for_categories` — Get Google category keywords through DataForSEO.
 - `get_dataforseo_llm_mention_metrics` — Aggregate LLM mention metrics for domains and keyword entities.
 - `get_dataforseo_llm_mention_top_domains` — Get domains cited most often in LLM responses matching target entities.
-- `get_dataforseo_onpage_content_parsing` — Get parsed page content through DataForSEO.
 - `get_dataforseo_onpage_lighthouse` — Get Lighthouse audits through DataForSEO.
 - `get_dataforseo_reference_data` — Look up DataForSEO model names, location codes, categories, or supported filter fields before a research query.
 - `get_dataforseo_serp_google_ai_mode` — Get Google AI Mode answers through DataForSEO.
@@ -241,7 +240,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — AIsa is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=aisa
+  https://console.oomol.com/connections/aisa
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -249,3 +248,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - AIsa homepage: https://aisa.one
+- API documentation: https://aisa.one/docs/zh/api-reference

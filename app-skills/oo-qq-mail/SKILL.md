@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "QQ Mail"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["qq_mail"]
   icon: "https://static.oomol.com/logo/third-party/qq_mail.png"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — QQ Mail is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=qq_mail
+  https://console.oomol.com/connections/qq_mail
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - QQ Mail homepage: https://mail.qq.com/
+- API documentation: https://help.mail.qq.com/detail/0/1087

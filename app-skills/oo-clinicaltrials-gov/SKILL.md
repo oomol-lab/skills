@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ClinicalTrials.gov"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["clinicaltrials_gov"]
   icon: "https://static.oomol.com/logo/third-party/clinicaltrials_gov.svg"
 ---
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - ClinicalTrials.gov homepage: https://clinicaltrials.gov/
+- API documentation: https://clinicaltrials.gov/data-api/api

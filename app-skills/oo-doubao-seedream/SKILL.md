@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Doubao Seedream"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["doubao_seedream"]
   icon: "https://static.oomol.com/logo/third-party/doubao_seedream.svg"
 ---
@@ -68,7 +68,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Doubao Seedream is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=doubao_seedream
+  https://console.oomol.com/connections/doubao_seedream
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -76,3 +76,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Doubao Seedream homepage: https://www.volcengine.com/product/ark
+- API documentation: https://www.volcengine.com/docs/82379/1541523

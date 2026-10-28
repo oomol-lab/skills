@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Google Photos"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["googlephotos"]
   icon: "https://static.oomol.com/logo/third-party/Google%20Photos.svg"
 ---
@@ -85,7 +85,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Google Photos is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=googlephotos
+  https://console.oomol.com/connections/googlephotos
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -93,3 +93,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Google Photos homepage: https://www.google.com/photos/about/
+- API documentation: https://developers.google.com/photos/overview/about

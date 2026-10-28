@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Fxbaogao"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["fxbaogao"]
   icon: "https://static.oomol.com/logo/third-party/fxbaogao.png"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Fxbaogao is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=fxbaogao
+  https://console.oomol.com/connections/fxbaogao
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -78,3 +78,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Fxbaogao homepage: https://www.fxbaogao.com/
+- API documentation: https://www.fxbaogao.com/agent-interface

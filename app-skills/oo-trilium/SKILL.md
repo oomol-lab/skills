@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TriliumNext Notes"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["trilium"]
   icon: "https://static.oomol.com/logo/third-party/trilium.svg"
 ---
@@ -87,7 +87,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — TriliumNext Notes is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=trilium
+  https://console.oomol.com/connections/trilium
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -95,3 +95,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - TriliumNext Notes homepage: https://triliumnotes.org
+- API documentation: https://docs.triliumnotes.org/user-guide/advanced-usage/etapi

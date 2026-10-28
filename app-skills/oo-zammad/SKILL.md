@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zammad"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["zammad"]
   icon: "https://static.oomol.com/logo/third-party/zammad.svg"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Zammad is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=zammad
+  https://console.oomol.com/connections/zammad
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Zammad homepage: https://zammad.com/en
+- API documentation: https://docs.zammad.org/en/latest/api/intro.html

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Storyblok"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["storyblok"]
   icon: "https://static.oomol.com/logo/third-party/storyblok.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Storyblok is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=storyblok
+  https://console.oomol.com/connections/storyblok
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Storyblok homepage: https://www.storyblok.com
+- API documentation: https://www.storyblok.com/docs/api/content-delivery/v2

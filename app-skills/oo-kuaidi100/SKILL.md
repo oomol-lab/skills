@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kuaidi100"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["kuaidi100"]
   icon: "https://static.oomol.com/logo/third-party/kuaidi100.png"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Kuaidi100 is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=kuaidi100
+  https://console.oomol.com/connections/kuaidi100
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Kuaidi100 homepage: https://www.kuaidi100.com/
+- API documentation: https://api.kuaidi100.com/document/how-to-use-mcp-service

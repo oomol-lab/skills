@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Label Studio"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["label_studio"]
   icon: "https://static.oomol.com/logo/third-party/label_studio.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Label Studio is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=label_studio
+  https://console.oomol.com/connections/label_studio
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Label Studio homepage: https://labelstud.io
+- API documentation: https://api.labelstud.io/api-reference/introduction/getting-started

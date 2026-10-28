@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jev"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["jev"]
   icon: "https://static.oomol.com/logo/third-party/jev.svg"
 ---
@@ -70,3 +70,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Jev homepage: https://typesafe.ai
+- API documentation: https://developers.cloudflare.com/ai/models/typesafe/jev/

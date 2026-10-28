@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "TikTok for Business MCP"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tiktok_business_mcp"]
   icon: "https://static.oomol.com/logo/third-party/tiktok_business_mcp.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — TikTok for Business MCP is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=tiktok_business_mcp
+  https://console.oomol.com/connections/tiktok_business_mcp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - TikTok for Business MCP homepage: https://business.tiktok.com
+- API documentation: https://business-api.tiktok.com/portal/docs

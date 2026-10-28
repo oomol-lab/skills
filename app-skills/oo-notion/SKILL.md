@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Notion"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["notion"]
   icon: "https://static.oomol.com/logo/third-party/Notion.svg"
 ---
@@ -49,6 +49,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_comments` — List unresolved comments on a Notion page or block. Requires the read comments capability.
 - `list_data_source_templates` — List templates available on a Notion data source.
 - `list_users` — List users in the Notion workspace with pagination.
+- `list_views` — List saved Notion view references with pagination. Supply databaseId for views in one database, or dataSourceId to include accessible linked views across the workspace. Retrieve each view to inspect its filters, sorts, and layout settings.
 - `move_page` — Move a Notion page under another page or under a data source through the official page move API. [write]
 - `query_data_source` — Query a Notion data source with filters, sorts, pagination, and optional property filtering.
 - `retrieve_block` — Retrieve a Notion block by block ID.
@@ -58,12 +59,14 @@ Each action is listed below with a one-line description; actions that change sta
 - `retrieve_page_markdown` — Retrieve a Notion page or block subtree rendered as enhanced Markdown through the official page markdown API.
 - `retrieve_page_property` — Retrieve a specific property item from a Notion page by page ID and property ID. Title, rich_text, relation, and people properties return the paginated list response with type property_item.
 - `retrieve_user` — Retrieve a Notion user by user ID.
+- `retrieve_view` — Retrieve a saved Notion view's name, layout configuration, filters, sorts, and displayed properties.
 - `search` — Search Notion pages and data sources with optional filter, sort, and pagination controls.
 - `update_block` — Update a Notion block using raw block fields, including block-type payloads and optional trash state. [destructive]
 - `update_data_source` — Update a Notion data source's title, icon, properties schema, parent, or trash status. [destructive]
 - `update_database` — Update a Notion database container's parent, title, description, icon, cover, inline display, trash status, or locked state. [destructive]
 - `update_page` — Update a Notion page's properties, title, icon, cover, trash status, or locked state. [destructive]
 - `update_page_markdown` — Update a Notion page's content as enhanced Markdown through the official page markdown API. [write]
+- `update_view` — Update a saved Notion view's name, filters, sorts, quick filters, or presentation settings. Omitted fields stay unchanged. Pass null to clear filters or sorts. Configuration type must match the existing view; this action does not change the layout type. [destructive]
 
 ## Safety
 
@@ -94,7 +97,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Notion is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=notion
+  https://console.oomol.com/connections/notion
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -102,3 +105,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Notion homepage: https://www.notion.so
+- API documentation: https://developers.notion.com/

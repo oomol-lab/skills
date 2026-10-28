@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "RAWG"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["rawg"]
   icon: "https://static.oomol.com/logo/third-party/RAWG%20Video%20Games%20Database.svg"
 ---
@@ -88,7 +88,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — RAWG is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=rawg
+  https://console.oomol.com/connections/rawg
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -96,3 +96,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - RAWG homepage: https://rawg.io
+- API documentation: https://api.rawg.io/docs/

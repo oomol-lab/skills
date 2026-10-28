@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CaptainBI"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["captainbi"]
   icon: "https://static.oomol.com/logo/third-party/captainbi.svg"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — CaptainBI is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=captainbi
+  https://console.oomol.com/connections/captainbi
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - CaptainBI homepage: https://www.captainbi.com/
+- API documentation: https://www.captainbi.com/amz_faq_list-216.html

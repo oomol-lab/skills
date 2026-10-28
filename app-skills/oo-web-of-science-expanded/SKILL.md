@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Web of Science Expanded"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["web_of_science_expanded"]
   icon: "https://static.oomol.com/logo/third-party/web_of_science_expanded.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Web of Science Expanded is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=web_of_science_expanded
+  https://console.oomol.com/connections/web_of_science_expanded
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Web of Science Expanded homepage: https://clarivate.com/academia-government/scientific-and-academic-research/research-discovery-and-referencing/web-of-science/
+- API documentation: https://developer.clarivate.com/apis/wos

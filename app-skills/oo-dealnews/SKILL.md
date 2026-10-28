@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "DealNews"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["dealnews"]
   icon: "https://static.oomol.com/logo/third-party/dealnews.svg"
 ---
@@ -74,3 +74,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - DealNews homepage: https://www.dealnews.com/
+- API documentation: https://www.dealnews.com/pages/rss.html

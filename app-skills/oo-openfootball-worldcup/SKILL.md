@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenFootball World Cup"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["openfootball_worldcup"]
   icon: "https://static.oomol.com/logo/third-party/openfootball_worldcup.svg"
 ---
@@ -75,3 +75,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - OpenFootball World Cup homepage: https://github.com/openfootball/worldcup.json
+- API documentation: https://github.com/openfootball/worldcup.json

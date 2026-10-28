@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Resource Flow (Hub Planner)"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hub_planner"]
   icon: "https://static.oomol.com/logo/third-party/hub_planner.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Resource Flow (Hub Planner) is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=hub_planner
+  https://console.oomol.com/connections/hub_planner
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Resource Flow (Hub Planner) homepage: https://www.milientsoftware.com/hub-planner
+- API documentation: https://api-docs.hubplanner.com/

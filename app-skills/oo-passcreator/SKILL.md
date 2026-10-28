@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Passcreator"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["passcreator"]
   icon: "https://static.oomol.com/logo/third-party/passcreator.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Passcreator is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=passcreator
+  https://console.oomol.com/connections/passcreator
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Passcreator homepage: https://www.passcreator.com/
+- API documentation: https://developer.passcreator.com/en

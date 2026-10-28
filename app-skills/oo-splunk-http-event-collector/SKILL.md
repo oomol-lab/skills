@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Splunk HTTP Event Collector"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["splunk_http_event_collector"]
   icon: "https://static.oomol.com/logo/third-party/splunk_http_event_collector.png"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Splunk HTTP Event Collector is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=splunk_http_event_collector
+  https://console.oomol.com/connections/splunk_http_event_collector
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Splunk HTTP Event Collector homepage: https://www.splunk.com
+- API documentation: https://help.splunk.com/en/splunk-enterprise/leverage-rest-apis/rest-api-reference/10.4/input-endpoints/input-endpoint-descriptions

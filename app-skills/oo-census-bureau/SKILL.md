@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Census Bureau"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["census_bureau"]
   icon: "https://static.oomol.com/logo/third-party/census_bureau.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Census Bureau is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=census_bureau
+  https://console.oomol.com/connections/census_bureau
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Census Bureau homepage: https://www.census.gov
+- API documentation: https://www.census.gov/data/developers/guidance/api-user-guide.html

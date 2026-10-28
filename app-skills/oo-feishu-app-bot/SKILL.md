@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.8"
+  version: "1.0.9"
   services: ["feishu_app_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_app_bot.svg"
 ---
@@ -400,7 +400,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Feishu App Bot is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=feishu_app_bot
+  https://console.oomol.com/connections/feishu_app_bot
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -408,3 +408,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Feishu App Bot homepage: https://open.feishu.cn
+- API documentation: https://open.feishu.cn/document/server-docs/im-v1/message/create

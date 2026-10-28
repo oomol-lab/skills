@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tencent Docs"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["tencent_docs"]
   icon: "https://static.oomol.com/logo/third-party/tencent_docs.svg"
 ---
@@ -83,7 +83,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Tencent Docs is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=tencent_docs
+  https://console.oomol.com/connections/tencent_docs
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -91,3 +91,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Tencent Docs homepage: https://docs.qq.com
+- API documentation: https://docs.qq.com/open/document/

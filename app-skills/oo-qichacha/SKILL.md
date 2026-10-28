@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Qichacha"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["qichacha"]
   icon: "https://static.oomol.com/logo/third-party/qichacha.png"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Qichacha is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=qichacha
+  https://console.oomol.com/connections/qichacha
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Qichacha homepage: https://openapi.qcc.com/
+- API documentation: https://openapi.qcc.com/dataApi

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CloudConvert"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["cloudconvert"]
   icon: "https://static.oomol.com/logo/third-party/CloudConvert.svg"
 ---
@@ -81,7 +81,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — CloudConvert is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cloudconvert
+  https://console.oomol.com/connections/cloudconvert
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -89,3 +89,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - CloudConvert homepage: https://cloudconvert.com
+- API documentation: https://cloudconvert.com/api/v2

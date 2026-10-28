@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "V2EX"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["v2ex"]
   icon: "https://static.oomol.com/logo/third-party/v2ex.png"
 ---
@@ -80,7 +80,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — V2EX is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=v2ex
+  https://console.oomol.com/connections/v2ex
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -88,3 +88,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - V2EX homepage: https://www.v2ex.com
+- API documentation: https://v2ex.com/help/api

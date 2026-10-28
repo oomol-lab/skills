@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "LinkedIn"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["linkedin"]
   icon: "https://static.oomol.com/logo/third-party/linkedin.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — LinkedIn is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=linkedin
+  https://console.oomol.com/connections/linkedin
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - LinkedIn homepage: https://www.linkedin.com
+- API documentation: https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts
