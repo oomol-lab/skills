@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Softr"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["softr"]
   icon: "https://static.oomol.com/logo/third-party/softr.svg"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Softr is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=softr
+  https://console.oomol.com/connections/softr
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Softr homepage: https://www.softr.io/
+- API documentation: https://docs.softr.io/softr-api/softr-database-api

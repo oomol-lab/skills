@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sage Sales Management"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sage_sales_management"]
   icon: "https://static.oomol.com/logo/third-party/sage_sales_management.svg"
 ---
@@ -85,7 +85,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Sage Sales Management is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=sage_sales_management
+  https://console.oomol.com/connections/sage_sales_management
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -93,3 +93,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Sage Sales Management homepage: https://www.forcemanager.com/
+- API documentation: https://developer.forcemanager.com/

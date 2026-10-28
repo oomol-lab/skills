@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Adobe Commerce"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["adobe_commerce"]
   icon: "https://static.oomol.com/logo/third-party/adobe_commerce.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Adobe Commerce is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=adobe_commerce
+  https://console.oomol.com/connections/adobe_commerce
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Adobe Commerce homepage: https://business.adobe.com/products/magento/magento-commerce.html
+- API documentation: https://adobe-commerce.redoc.ly/2.4.8-admin/tag/products/

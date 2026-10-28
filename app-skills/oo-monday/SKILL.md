@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "monday"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["monday"]
   icon: "https://static.oomol.com/logo/third-party/Monday.svg"
 ---
@@ -134,7 +134,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — monday is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=monday
+  https://console.oomol.com/connections/monday
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -142,3 +142,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - monday homepage: https://monday.com
+- API documentation: https://developer.monday.com/api-reference/docs

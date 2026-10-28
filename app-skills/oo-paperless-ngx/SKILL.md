@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Paperless-ngx"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["paperless_ngx"]
   icon: "https://static.oomol.com/logo/third-party/paperless_ngx.svg"
 ---
@@ -206,7 +206,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Paperless-ngx is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=paperless_ngx
+  https://console.oomol.com/connections/paperless_ngx
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -214,3 +214,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Paperless-ngx homepage: https://docs.paperless-ngx.com
+- API documentation: https://docs.paperless-ngx.com/api/

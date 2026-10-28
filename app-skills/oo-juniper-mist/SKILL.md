@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Juniper Mist"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["juniper_mist"]
   icon: "https://static.oomol.com/logo/third-party/juniper_mist.png"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Juniper Mist is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=juniper_mist
+  https://console.oomol.com/connections/juniper_mist
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -78,3 +78,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Juniper Mist homepage: https://www.juniper.net/us/en/products/networking/mist-ai.html
+- API documentation: https://www.juniper.net/documentation/us/en/software/mist/api/http/guides/overview/mist-apis/

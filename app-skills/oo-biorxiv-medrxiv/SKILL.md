@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "bioRxiv and medRxiv"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["biorxiv_medrxiv"]
   icon: "https://static.oomol.com/logo/third-party/biorxiv_medrxiv.png"
 ---
@@ -75,3 +75,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - bioRxiv and medRxiv homepage: https://www.biorxiv.org/
+- API documentation: https://api.biorxiv.org/

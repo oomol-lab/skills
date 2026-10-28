@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Upstash Redis"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["upstash_redis"]
   icon: "https://static.oomol.com/logo/third-party/upstash_redis.png"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Upstash Redis is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=upstash_redis
+  https://console.oomol.com/connections/upstash_redis
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Upstash Redis homepage: https://upstash.com/redis
+- API documentation: https://upstash.com/docs/redis/features/restapi

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Quentn"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["quentn"]
   icon: "https://static.oomol.com/logo/third-party/quentn.png"
 ---
@@ -82,7 +82,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Quentn is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=quentn
+  https://console.oomol.com/connections/quentn
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -90,3 +90,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Quentn homepage: https://quentn.com
+- API documentation: https://help.quentn.com/hc/en-150/sections/4517317189009-API-documentation

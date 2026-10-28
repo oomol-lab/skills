@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WeChat Store"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["weixin_store"]
   icon: "https://static.oomol.com/logo/third-party/weixin_store.svg"
 ---
@@ -111,7 +111,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — WeChat Store is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=weixin_store
+  https://console.oomol.com/connections/weixin_store
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -119,3 +119,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - WeChat Store homepage: https://channels.weixin.qq.com/shop
+- API documentation: https://developers.weixin.qq.com/doc/store/API/basics/getaccesstoken.html

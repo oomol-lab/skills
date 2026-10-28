@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Wbiztool"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["wbiztool"]
   icon: "https://static.oomol.com/logo/third-party/wbiztool.png"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Wbiztool is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=wbiztool
+  https://console.oomol.com/connections/wbiztool
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Wbiztool homepage: https://wbiztool.com/
+- API documentation: https://wbiztool.com/docs/

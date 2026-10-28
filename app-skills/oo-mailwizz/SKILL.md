@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MailWizz"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["mailwizz"]
   icon: "https://static.oomol.com/logo/third-party/mailwizz.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — MailWizz is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=mailwizz
+  https://console.oomol.com/connections/mailwizz
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - MailWizz homepage: https://www.mailwizz.com
+- API documentation: https://api-docs.mailwizz.com/

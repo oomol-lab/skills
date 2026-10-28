@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Agora"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["agora"]
   icon: "https://static.oomol.com/logo/third-party/agora.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Agora is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=agora
+  https://console.oomol.com/connections/agora
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Agora homepage: https://www.agora.io
+- API documentation: https://docs.agora.io/en/signaling/rest-api/restful-authentication

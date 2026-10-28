@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ExpoFP"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["expofp"]
   icon: "https://static.oomol.com/logo/third-party/expofp.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — ExpoFP is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=expofp
+  https://console.oomol.com/connections/expofp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - ExpoFP homepage: https://expofp.com
+- API documentation: https://developer.expofp.com/guide/json-api

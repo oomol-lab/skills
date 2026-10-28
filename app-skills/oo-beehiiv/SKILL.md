@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Beehiiv"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["beehiiv"]
   icon: "https://static.oomol.com/logo/third-party/beehiiv.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Beehiiv is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=beehiiv
+  https://console.oomol.com/connections/beehiiv
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Beehiiv homepage: https://www.beehiiv.com
+- API documentation: https://developers.beehiiv.com/

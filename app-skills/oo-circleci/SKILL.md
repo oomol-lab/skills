@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CircleCI"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["circleci"]
   icon: "https://static.oomol.com/logo/third-party/CircleCI.svg"
 ---
@@ -78,7 +78,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — CircleCI is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=circleci
+  https://console.oomol.com/connections/circleci
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -86,3 +86,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - CircleCI homepage: https://circleci.com
+- API documentation: https://circleci.com/docs/api/v2/

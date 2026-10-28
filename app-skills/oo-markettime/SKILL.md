@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "MarketTime"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["markettime"]
   icon: "https://static.oomol.com/logo/third-party/markettime.svg"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — MarketTime is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=markettime
+  https://console.oomol.com/connections/markettime
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -78,3 +78,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - MarketTime homepage: https://www.markettime.com/
+- API documentation: https://publicapi.markettime.com/swagger-ui/index.html#/

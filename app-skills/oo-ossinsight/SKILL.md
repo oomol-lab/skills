@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OSS Insight"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["ossinsight"]
   icon: "https://static.oomol.com/logo/third-party/ossinsight.png"
 ---
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - OSS Insight homepage: https://ossinsight.io
+- API documentation: https://ossinsight.io/docs/api

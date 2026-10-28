@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pointagram"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["pointagram"]
   icon: "https://static.oomol.com/logo/third-party/pointagram.png"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Pointagram is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=pointagram
+  https://console.oomol.com/connections/pointagram
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Pointagram homepage: https://www.pointagram.com/
+- API documentation: https://www.pointagram.com/custom-api-2-0-gamification/

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare Worker"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["cloudflare_worker"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -92,7 +92,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare Worker is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential, OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cloudflare_worker
+  https://console.oomol.com/connections/cloudflare_worker
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -100,3 +100,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cloudflare Worker homepage: https://workers.cloudflare.com
+- API documentation: https://developers.cloudflare.com/workers/

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "NewsData.io"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["newsdata_io"]
   icon: "https://static.oomol.com/logo/third-party/newsdata_io.png"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — NewsData.io is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=newsdata_io
+  https://console.oomol.com/connections/newsdata_io
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - NewsData.io homepage: https://newsdata.io
+- API documentation: https://newsdata.io/documentation

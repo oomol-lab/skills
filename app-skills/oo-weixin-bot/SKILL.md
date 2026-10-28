@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Weixin Bot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["weixin_bot"]
   icon: "https://static.oomol.com/logo/third-party/weixin_bot.jpg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Weixin Bot is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=weixin_bot
+  https://console.oomol.com/connections/weixin_bot
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Weixin Bot homepage: https://github.com/Tencent/openclaw-weixin
+- API documentation: https://github.com/Tencent/openclaw-weixin

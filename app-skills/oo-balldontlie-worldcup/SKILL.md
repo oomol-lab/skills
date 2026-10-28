@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BALLDONTLIE World Cup"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["balldontlie_worldcup"]
   icon: "https://static.oomol.com/logo/third-party/balldontlie_worldcup.png"
 ---
@@ -87,7 +87,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — BALLDONTLIE World Cup is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=balldontlie_worldcup
+  https://console.oomol.com/connections/balldontlie_worldcup
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -95,3 +95,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - BALLDONTLIE World Cup homepage: https://fifa.balldontlie.io/
+- API documentation: https://fifa.balldontlie.io/

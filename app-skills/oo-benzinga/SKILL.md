@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Benzinga"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["benzinga"]
   icon: "https://static.oomol.com/logo/third-party/benzinga.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Benzinga is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=benzinga
+  https://console.oomol.com/connections/benzinga
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Benzinga homepage: https://www.benzinga.com/
+- API documentation: https://docs.benzinga.com/

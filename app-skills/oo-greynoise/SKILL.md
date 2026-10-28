@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GreyNoise"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["greynoise"]
   icon: "https://static.oomol.com/logo/third-party/greynoise.png"
 ---
@@ -70,3 +70,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - GreyNoise homepage: https://www.greynoise.io
+- API documentation: https://docs.greynoise.io/docs/using-the-greynoise-community-api

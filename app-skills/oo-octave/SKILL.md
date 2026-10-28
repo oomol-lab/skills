@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Octave"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["octave"]
   icon: "https://static.oomol.com/logo/third-party/octave.png"
 ---
@@ -78,7 +78,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Octave is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=octave
+  https://console.oomol.com/connections/octave
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -86,3 +86,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Octave homepage: https://www.octavehq.com/
+- API documentation: https://docs.octavehq.com/quickstart

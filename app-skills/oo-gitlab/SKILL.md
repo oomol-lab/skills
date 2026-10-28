@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitLab"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["gitlab"]
   icon: "https://static.oomol.com/logo/third-party/gitlab.svg"
 ---
@@ -82,7 +82,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — GitLab is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=gitlab
+  https://console.oomol.com/connections/gitlab
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -90,3 +90,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - GitLab homepage: https://gitlab.com
+- API documentation: https://docs.gitlab.com/api/rest/authentication/

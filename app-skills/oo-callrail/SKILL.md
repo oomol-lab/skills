@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CallRail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["callrail"]
   icon: "https://static.oomol.com/logo/third-party/callrail.png"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — CallRail is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=callrail
+  https://console.oomol.com/connections/callrail
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - CallRail homepage: https://www.callrail.com
+- API documentation: https://support.callrail.com/hc/en-us/articles/5712444672909-CallRail-s-API-documentation

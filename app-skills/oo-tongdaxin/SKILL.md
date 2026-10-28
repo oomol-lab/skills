@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Tongdaxin"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["tongdaxin"]
   icon: "https://static.oomol.com/logo/third-party/tongdaxin.png"
 ---
@@ -93,7 +93,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Tongdaxin is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=tongdaxin
+  https://console.oomol.com/connections/tongdaxin
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -101,3 +101,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Tongdaxin homepage: https://vip.tdx.com.cn/site/app/pc-mall/main.html#/page_product_mcp
+- API documentation: https://help.tdx.com.cn/tdxclaw/docs/markdown/tdxclaw-api-key-data.html

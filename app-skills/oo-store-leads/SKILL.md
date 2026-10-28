@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Store Leads"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["store_leads"]
   icon: "https://static.oomol.com/logo/third-party/store_leads.png"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Store Leads is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=store_leads
+  https://console.oomol.com/connections/store_leads
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Store Leads homepage: https://storeleads.app
+- API documentation: https://storeleads.app/api

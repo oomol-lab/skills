@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gumroad"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["gumroad"]
   icon: "https://static.oomol.com/logo/third-party/gumroad.png"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Gumroad is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=gumroad
+  https://console.oomol.com/connections/gumroad
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Gumroad homepage: https://gumroad.com
+- API documentation: https://gumroad.com/api

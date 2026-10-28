@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Snappy"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["snappy"]
   icon: "https://static.oomol.com/logo/third-party/snappy.svg"
 ---
@@ -77,7 +77,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Snappy is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=snappy
+  https://console.oomol.com/connections/snappy
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -85,3 +85,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Snappy homepage: https://www.snappy.com/
+- API documentation: https://docs.snappy.com/

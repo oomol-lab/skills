@@ -5,9 +5,9 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "GitHub"
   author: "OOMOL"
-  version: "1.0.10"
+  version: "1.0.11"
   services: ["github"]
-  icon: "https://static.oomol.com/logo/third-party/github.png"
+  icon: "https://static.oomol.com/logo/third-party/github.svg"
 ---
 
 # GitHub
@@ -214,7 +214,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — GitHub is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=github
+  https://console.oomol.com/connections/github
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -222,3 +222,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - GitHub homepage: https://github.com
+- API documentation: https://docs.github.com/en/rest

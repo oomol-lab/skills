@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Rocketlane"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["rocketlane"]
   icon: "https://static.oomol.com/logo/third-party/rocketlane.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Rocketlane is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=rocketlane
+  https://console.oomol.com/connections/rocketlane
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Rocketlane homepage: https://www.rocketlane.com
+- API documentation: https://developer.rocketlane.com/docs/authentication

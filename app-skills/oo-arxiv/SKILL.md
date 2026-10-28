@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "arXiv"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["arxiv"]
   icon: "https://static.oomol.com/logo/third-party/arxiv.svg"
 ---
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - arXiv homepage: https://arxiv.org/
+- API documentation: https://info.arxiv.org/help/api/user-manual.html

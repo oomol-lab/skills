@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Pdfless"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["pdfless"]
   icon: "https://static.oomol.com/logo/third-party/Pdfless.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Pdfless is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=pdfless
+  https://console.oomol.com/connections/pdfless
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Pdfless homepage: https://pdfless.com
+- API documentation: https://docs.pdfless.com/pdfs

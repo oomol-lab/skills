@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Ticket Tailor"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["ticket_tailor"]
   icon: "https://static.oomol.com/logo/third-party/ticket_tailor.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Ticket Tailor is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=ticket_tailor
+  https://console.oomol.com/connections/ticket_tailor
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Ticket Tailor homepage: https://www.tickettailor.com/
+- API documentation: https://developers.tickettailor.com/docs/api/ticket-tailor-api/

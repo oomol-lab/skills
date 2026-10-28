@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Swarm"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["the_swarm"]
   icon: "https://static.oomol.com/logo/third-party/the_swarm.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — The Swarm is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=the_swarm
+  https://console.oomol.com/connections/the_swarm
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - The Swarm homepage: https://www.theswarm.com
+- API documentation: https://docs.theswarm.com/docs/api-reference/introduction

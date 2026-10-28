@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mailgun"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["mailgun"]
   icon: "https://static.oomol.com/logo/third-party/mailgun.svg"
 ---
@@ -84,7 +84,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Mailgun is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=mailgun
+  https://console.oomol.com/connections/mailgun
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -92,3 +92,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Mailgun homepage: https://www.mailgun.com
+- API documentation: https://documentation.mailgun.com/docs/mailgun/api-reference/send/mailgun

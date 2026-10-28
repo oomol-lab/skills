@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Workpath"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["workpath"]
   icon: "https://static.oomol.com/logo/third-party/workpath.svg"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Workpath is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=workpath
+  https://console.oomol.com/connections/workpath
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Workpath homepage: https://www.workpath.com/
+- API documentation: https://developer.workpath.com/docs/connect-api-doc/ZG9jOjM2MjI2-welcome-to-connect-api

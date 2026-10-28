@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "IMAP Mailbox"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["generic_imap"]
   icon: "https://static.oomol.com/logo/third-party/generic_imap.svg"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — IMAP Mailbox is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=generic_imap
+  https://console.oomol.com/connections/generic_imap
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - IMAP Mailbox homepage: https://www.rfc-editor.org/rfc/rfc3501
+- API documentation: https://www.rfc-editor.org/rfc/rfc3501

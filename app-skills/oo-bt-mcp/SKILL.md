@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BT Panel MCP"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["bt_mcp"]
   icon: "https://static.oomol.com/logo/third-party/bt_mcp.png"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — BT Panel MCP is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=bt_mcp
+  https://console.oomol.com/connections/bt_mcp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - BT Panel MCP homepage: https://www.bt.cn/
+- API documentation: https://docs.bt.cn/ai-ops/mcp/

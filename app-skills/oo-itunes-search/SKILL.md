@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "iTunes Search API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["itunes_search"]
   icon: "https://static.oomol.com/logo/third-party/itunes_search.svg"
 ---
@@ -71,3 +71,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - iTunes Search API homepage: https://performance-partners.apple.com/search-api
+- API documentation: https://performance-partners.apple.com/search-api

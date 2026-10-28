@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Discord Bot"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["discordbot"]
   icon: "https://static.oomol.com/logo/third-party/Discord%20Bot.svg"
 ---
@@ -213,7 +213,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Discord Bot is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2, custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=discordbot
+  https://console.oomol.com/connections/discordbot
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -221,3 +221,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Discord Bot homepage: https://discord.com/developers/applications
+- API documentation: https://docs.discord.com/developers/intro

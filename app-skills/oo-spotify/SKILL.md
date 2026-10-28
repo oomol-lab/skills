@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Spotify"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["spotify"]
   icon: "https://static.oomol.com/logo/third-party/spotify.svg"
 ---
@@ -155,7 +155,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Spotify is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=spotify
+  https://console.oomol.com/connections/spotify
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -163,3 +163,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Spotify homepage: https://spotify.com
+- API documentation: https://developer.spotify.com/documentation/web-api

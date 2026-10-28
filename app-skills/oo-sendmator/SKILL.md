@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Sendmator"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["sendmator"]
   icon: "https://static.oomol.com/logo/third-party/sendmator.png"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Sendmator is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=sendmator
+  https://console.oomol.com/connections/sendmator
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Sendmator homepage: https://sendmator.com
+- API documentation: https://docs.sendmator.com/api/contacts/add-contact

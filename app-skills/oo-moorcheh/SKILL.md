@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Moorcheh"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["moorcheh"]
   icon: "https://static.oomol.com/logo/third-party/moorcheh.png"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Moorcheh is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=moorcheh
+  https://console.oomol.com/connections/moorcheh
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Moorcheh homepage: https://www.moorcheh.ai
+- API documentation: https://docs.moorcheh.ai/api-reference/introduction

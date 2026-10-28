@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Scopus"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["scopus"]
   icon: "https://static.oomol.com/logo/third-party/scopus.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Scopus is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=scopus
+  https://console.oomol.com/connections/scopus
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Scopus homepage: https://www.scopus.com/
+- API documentation: https://dev.elsevier.com/sc_apis.html

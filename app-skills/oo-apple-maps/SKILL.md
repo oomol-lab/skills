@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Apple Maps"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["apple_maps"]
   icon: "https://static.oomol.com/logo/third-party/apple_maps.png"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Apple Maps is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=apple_maps
+  https://console.oomol.com/connections/apple_maps
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Apple Maps homepage: https://developer.apple.com/maps/
+- API documentation: https://developer.apple.com/documentation/applemapsserverapi

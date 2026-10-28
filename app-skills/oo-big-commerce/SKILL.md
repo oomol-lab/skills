@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "BigCommerce"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["big_commerce"]
   icon: "https://static.oomol.com/logo/third-party/big_commerce.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — BigCommerce is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=big_commerce
+  https://console.oomol.com/connections/big_commerce
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - BigCommerce homepage: https://www.bigcommerce.com
+- API documentation: https://developer.bigcommerce.com/docs/start/authentication/api-accounts

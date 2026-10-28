@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Doubao Speech"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["doubao_speech"]
   icon: "https://static.oomol.com/logo/third-party/doubao_speech.svg"
 ---
@@ -71,7 +71,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Doubao Speech is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=doubao_speech
+  https://console.oomol.com/connections/doubao_speech
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -79,3 +79,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Doubao Speech homepage: https://www.volcengine.com/product/doubao-voice
+- API documentation: https://www.volcengine.com/docs/6561/overview

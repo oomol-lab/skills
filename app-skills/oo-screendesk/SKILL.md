@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Screendesk"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["screendesk"]
   icon: "https://static.oomol.com/logo/third-party/screendesk.svg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Screendesk is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=screendesk
+  https://console.oomol.com/connections/screendesk
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Screendesk homepage: https://screendesk.io
+- API documentation: https://docs.screendesk.io/api/screendesk-api/overview

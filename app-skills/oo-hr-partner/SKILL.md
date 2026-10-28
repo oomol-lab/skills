@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "HR Partner"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["hr_partner"]
   icon: "https://static.oomol.com/logo/third-party/hr_partner.png"
 ---
@@ -77,7 +77,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — HR Partner is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=hr_partner
+  https://console.oomol.com/connections/hr_partner
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -85,3 +85,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - HR Partner homepage: https://www.hrpartner.io/
+- API documentation: https://developer.hrpartner.io/

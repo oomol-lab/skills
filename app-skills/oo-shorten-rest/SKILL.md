@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Shorten.REST"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["shorten_rest"]
   icon: "https://static.oomol.com/logo/third-party/shorten_rest.jpg"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Shorten.REST is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=shorten_rest
+  https://console.oomol.com/connections/shorten_rest
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Shorten.REST homepage: https://shorten.rest
+- API documentation: https://docs.shorten.rest/

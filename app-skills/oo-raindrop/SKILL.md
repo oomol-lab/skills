@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Raindrop.io"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["raindrop"]
   icon: "https://static.oomol.com/logo/third-party/raindrop.svg"
 ---
@@ -79,7 +79,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Raindrop.io is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=raindrop
+  https://console.oomol.com/connections/raindrop
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -87,3 +87,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Raindrop.io homepage: https://raindrop.io
+- API documentation: https://developer.raindrop.io/

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "1Password Events API"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["one_password_events"]
   icon: "https://static.oomol.com/logo/third-party/one_password_events.svg"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — 1Password Events API is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=one_password_events
+  https://console.oomol.com/connections/one_password_events
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -78,3 +78,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - 1Password Events API homepage: https://1password.com
+- API documentation: https://www.1password.dev/events-api/reference

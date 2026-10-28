@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Mem0"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["mem0"]
   icon: "https://static.oomol.com/logo/third-party/Mem0.svg"
 ---
@@ -77,7 +77,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Mem0 is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=mem0
+  https://console.oomol.com/connections/mem0
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -85,3 +85,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Mem0 homepage: https://mem0.ai
+- API documentation: https://docs.mem0.ai/platform/quickstart

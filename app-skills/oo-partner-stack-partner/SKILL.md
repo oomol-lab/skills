@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PartnerStack Partner"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["partner_stack_partner"]
   icon: "https://static.oomol.com/logo/third-party/partner_stack_partner.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — PartnerStack Partner is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=partner_stack_partner
+  https://console.oomol.com/connections/partner_stack_partner
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - PartnerStack Partner homepage: https://partnerstack.com
+- API documentation: https://docs.partnerstack.com/docs/partner-api.md

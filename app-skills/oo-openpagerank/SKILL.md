@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OpenPageRank"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["openpagerank"]
   icon: "https://static.oomol.com/logo/third-party/openpagerank.webp"
 ---
@@ -68,7 +68,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — OpenPageRank is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=openpagerank
+  https://console.oomol.com/connections/openpagerank
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -76,3 +76,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - OpenPageRank homepage: https://openpagerank.com
+- API documentation: https://www.domcop.com/openpagerank/documentation

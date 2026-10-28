@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gift Up"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["gift_up"]
   icon: "https://static.oomol.com/logo/third-party/gift_up.png"
 ---
@@ -84,7 +84,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Gift Up is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=gift_up
+  https://console.oomol.com/connections/gift_up
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -92,3 +92,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Gift Up homepage: https://www.giftup.com/
+- API documentation: https://developer.giftup.com/api#authentication

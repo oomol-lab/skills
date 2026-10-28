@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AppleDB"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["appledb"]
   icon: "https://static.oomol.com/logo/third-party/appledb.png"
 ---
@@ -73,3 +73,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - AppleDB homepage: https://appledb.dev
+- API documentation: https://github.com/littlebyteorg/appledb

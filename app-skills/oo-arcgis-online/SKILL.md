@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "ArcGIS Online"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["arcgis_online"]
   icon: "https://static.oomol.com/logo/third-party/arcgis_online.svg"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — ArcGIS Online is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=arcgis_online
+  https://console.oomol.com/connections/arcgis_online
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -78,3 +78,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - ArcGIS Online homepage: https://www.arcgis.com
+- API documentation: https://developers.arcgis.com/rest/

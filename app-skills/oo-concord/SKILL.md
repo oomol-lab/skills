@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Concord"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["concord"]
   icon: "https://static.oomol.com/logo/third-party/concord.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Concord is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=concord
+  https://console.oomol.com/connections/concord
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Concord homepage: https://www.concord.app/
+- API documentation: https://help.concord.app/hc/en-us/articles/360055115911-getting-started-with-the-concord-api

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "FastMoss MCP"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["fastmoss_mcp"]
   icon: "https://static.oomol.com/logo/third-party/fastmoss_mcp.svg"
 ---
@@ -124,7 +124,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — FastMoss MCP is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=fastmoss_mcp
+  https://console.oomol.com/connections/fastmoss_mcp
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -132,3 +132,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - FastMoss MCP homepage: https://www.fastmoss.com/zh
+- API documentation: https://developer.fastmoss.com/zh/docs/mcp/setup

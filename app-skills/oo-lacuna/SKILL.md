@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Lacuna"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["lacuna"]
   icon: "https://static.oomol.com/logo/third-party/lacuna.svg"
 ---
@@ -75,3 +75,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Lacuna homepage: https://lacuna.tiptreesystems.com
+- API documentation: https://docs.tiptreesystems.com/lacuna-machine

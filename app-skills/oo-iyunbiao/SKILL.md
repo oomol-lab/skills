@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Yunbiao"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["iyunbiao"]
   icon: "https://static.oomol.com/logo/third-party/iyunbiao.jpg"
 ---
@@ -86,7 +86,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Yunbiao is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=iyunbiao
+  https://console.oomol.com/connections/iyunbiao
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -94,3 +94,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Yunbiao homepage: https://www.iyunbiao.com
+- API documentation: https://docs.iyunbiao.com/openAPI/1

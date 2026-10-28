@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Dida365"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["dida365"]
   icon: "https://static.oomol.com/logo/third-party/dida365.svg"
 ---
@@ -86,7 +86,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Dida365 is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=dida365
+  https://console.oomol.com/connections/dida365
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -94,3 +94,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Dida365 homepage: https://dida365.com
+- API documentation: https://developer.dida365.com/docs/index.html

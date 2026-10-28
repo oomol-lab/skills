@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OSV"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["osv"]
   icon: "https://static.oomol.com/logo/third-party/osv.svg"
 ---
@@ -71,3 +71,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - OSV homepage: https://osv.dev
+- API documentation: https://google.github.io/osv.dev/api/

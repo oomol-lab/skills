@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Europe PMC"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["europe_pmc"]
   icon: "https://static.oomol.com/logo/third-party/europe_pmc.svg"
 ---
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Europe PMC homepage: https://europepmc.org/
+- API documentation: https://europepmc.org/developers

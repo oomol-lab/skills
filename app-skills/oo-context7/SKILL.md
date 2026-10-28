@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Context7"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["context7"]
   icon: "https://static.oomol.com/logo/third-party/context7.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Context7 is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=context7
+  https://console.oomol.com/connections/context7
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Context7 homepage: https://context7.com
+- API documentation: https://context7.com/docs/api-guide

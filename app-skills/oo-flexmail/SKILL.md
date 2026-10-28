@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Flexmail"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["flexmail"]
   icon: "https://static.oomol.com/logo/third-party/flexmail.svg"
 ---
@@ -91,7 +91,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Flexmail is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=flexmail
+  https://console.oomol.com/connections/flexmail
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -99,3 +99,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Flexmail homepage: https://flexmail.be/en
+- API documentation: https://api.flexmail.eu/documentation/

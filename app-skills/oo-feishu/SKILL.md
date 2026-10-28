@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["feishu"]
   icon: "https://static.oomol.com/logo/third-party/feishu.svg"
 ---
@@ -469,7 +469,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Feishu is not connected, or the connection expired or lacks a scope. Connect once (auth type: OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=feishu
+  https://console.oomol.com/connections/feishu
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -477,3 +477,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Feishu homepage: https://www.feishu.cn
+- API documentation: https://open.feishu.cn/document/home/index

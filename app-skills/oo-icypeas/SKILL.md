@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Icypeas"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["icypeas"]
   icon: "https://static.oomol.com/logo/third-party/icypeas.png"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Icypeas is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=icypeas
+  https://console.oomol.com/connections/icypeas
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Icypeas homepage: https://www.icypeas.com
+- API documentation: https://api-doc.icypeas.com/getting-started

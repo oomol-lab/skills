@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "n8n"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["n8n"]
   icon: "https://static.oomol.com/logo/third-party/n8n.svg"
 ---
@@ -103,7 +103,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — n8n is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=n8n
+  https://console.oomol.com/connections/n8n
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -111,3 +111,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - n8n homepage: https://n8n.io
+- API documentation: https://docs.n8n.io/api/api-reference/

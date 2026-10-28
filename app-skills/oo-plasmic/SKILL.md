@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Plasmic"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["plasmic"]
   icon: "https://static.oomol.com/logo/third-party/plasmic.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Plasmic is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=plasmic
+  https://console.oomol.com/connections/plasmic
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Plasmic homepage: https://www.plasmic.app
+- API documentation: https://docs.plasmic.app/learn/plasmic-cms-api-reference/

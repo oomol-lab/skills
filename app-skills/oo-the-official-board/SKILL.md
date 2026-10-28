@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Official Board"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["the_official_board"]
   icon: "https://static.oomol.com/logo/third-party/the_official_board.png"
 ---
@@ -75,7 +75,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — The Official Board is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=the_official_board
+  https://console.oomol.com/connections/the_official_board
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -83,3 +83,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - The Official Board homepage: https://www.theofficialboard.com/
+- API documentation: https://rest.theofficialboard.com/rest/api/doc/

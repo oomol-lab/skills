@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Customer.io"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["customerio"]
   icon: "https://static.oomol.com/logo/third-party/customerio.svg"
 ---
@@ -74,7 +74,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Customer.io is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=customerio
+  https://console.oomol.com/connections/customerio
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -82,3 +82,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Customer.io homepage: https://customer.io/
+- API documentation: https://docs.customer.io/integrations/api/track/

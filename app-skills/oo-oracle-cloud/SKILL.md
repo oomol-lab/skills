@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Oracle Cloud Infrastructure"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["oracle_cloud"]
   icon: "https://static.oomol.com/logo/third-party/oracle_cloud.png"
 ---
@@ -101,7 +101,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Oracle Cloud Infrastructure is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=oracle_cloud
+  https://console.oomol.com/connections/oracle_cloud
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -109,3 +109,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Oracle Cloud Infrastructure homepage: https://www.oracle.com/cloud/
+- API documentation: https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "WHO Global Health Observatory"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["who_gho"]
   icon: "https://static.oomol.com/logo/third-party/who_gho.svg"
 ---
@@ -73,3 +73,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - WHO Global Health Observatory homepage: https://www.who.int/data/gho
+- API documentation: https://www.who.int/data/gho/info/gho-odata-api

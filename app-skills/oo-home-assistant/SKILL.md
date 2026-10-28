@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Home Assistant"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["home_assistant"]
   icon: "https://static.oomol.com/logo/third-party/home_assistant.svg"
 ---
@@ -95,7 +95,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Home Assistant is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=home_assistant
+  https://console.oomol.com/connections/home_assistant
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -103,3 +103,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Home Assistant homepage: https://www.home-assistant.io
+- API documentation: https://developers.home-assistant.io/docs/api/rest

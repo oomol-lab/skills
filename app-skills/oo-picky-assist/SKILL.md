@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Picky Assist"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["picky_assist"]
   icon: "https://static.oomol.com/logo/third-party/picky_assist.png"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Picky Assist is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=picky_assist
+  https://console.oomol.com/connections/picky_assist
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Picky Assist homepage: https://pickyassist.com/
+- API documentation: https://help.pickyassist.com/api-documentation-v2/introduction

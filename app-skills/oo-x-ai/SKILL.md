@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "xAI"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["x_ai"]
   icon: "https://static.oomol.com/logo/third-party/x_ai.svg"
 ---
@@ -70,7 +70,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — xAI is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=x_ai
+  https://console.oomol.com/connections/x_ai
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -78,3 +78,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - xAI homepage: https://x.ai
+- API documentation: https://docs.x.ai/

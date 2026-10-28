@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Docsend2pdf"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["docsend_2_pdf"]
   icon: "https://static.oomol.com/logo/third-party/docsend_2_pdf.png"
 ---
@@ -70,3 +70,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Docsend2pdf homepage: https://docsend2pdf.com
+- API documentation: https://docsend2pdf.com/api-docs

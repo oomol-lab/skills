@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Deck.co"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["deck_co"]
   icon: "https://static.oomol.com/logo/third-party/deck_co.png"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Deck.co is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=deck_co
+  https://console.oomol.com/connections/deck_co
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Deck.co homepage: https://www.deck.co
+- API documentation: https://docs.deck.co/api/using-the-api

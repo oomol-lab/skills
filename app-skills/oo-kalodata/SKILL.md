@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kalodata"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["kalodata"]
   icon: "https://static.oomol.com/logo/third-party/kalodata.svg"
 ---
@@ -88,7 +88,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Kalodata is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=kalodata
+  https://console.oomol.com/connections/kalodata
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -96,3 +96,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Kalodata homepage: https://www.kalodata.com
+- API documentation: https://www.kalodata.com/open-center/docs

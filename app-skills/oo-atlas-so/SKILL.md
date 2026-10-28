@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Atlas.so"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["atlas_so"]
   icon: "https://static.oomol.com/logo/third-party/atlas_so.svg"
 ---
@@ -77,7 +77,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Atlas.so is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=atlas_so
+  https://console.oomol.com/connections/atlas_so
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -85,3 +85,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Atlas.so homepage: https://atlas.so
+- API documentation: https://developers.atlas.so/reference/getting-started-with-your-api

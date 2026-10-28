@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bazhuayu"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["bazhuayu"]
   icon: "https://static.oomol.com/logo/third-party/bazhuayu.png"
 ---
@@ -85,7 +85,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Bazhuayu is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=bazhuayu
+  https://console.oomol.com/connections/bazhuayu
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -93,3 +93,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Bazhuayu homepage: https://www.bazhuayu.com/
+- API documentation: https://openapi.bazhuayu.com/zh-CN/

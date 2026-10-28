@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Snipe-IT"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["snipe_it"]
   icon: "https://static.oomol.com/logo/third-party/snipe_it.png"
 ---
@@ -73,7 +73,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Snipe-IT is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=snipe_it
+  https://console.oomol.com/connections/snipe_it
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -81,3 +81,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Snipe-IT homepage: https://snipeitapp.com
+- API documentation: https://snipe-it.readme.io/reference/api-overview

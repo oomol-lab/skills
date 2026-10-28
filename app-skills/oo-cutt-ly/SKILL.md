@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cuttly"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["cutt_ly"]
   icon: "https://static.oomol.com/logo/third-party/Cutt.ly.svg"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cuttly is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cutt_ly
+  https://console.oomol.com/connections/cutt_ly
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cuttly homepage: https://cutt.ly
+- API documentation: https://cutt.ly/api-documentation/cuttly-links-api

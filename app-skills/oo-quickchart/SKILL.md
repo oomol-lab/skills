@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "QuickChart"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["quickchart"]
   icon: "https://static.oomol.com/logo/third-party/quickchart.svg"
 ---
@@ -72,3 +72,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - QuickChart homepage: https://quickchart.io
+- API documentation: https://quickchart.io/documentation/

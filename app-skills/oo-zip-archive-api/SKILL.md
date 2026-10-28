@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Zip Archive API"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["zip_archive_api"]
   icon: "https://static.oomol.com/logo/third-party/zip_archive_api.png"
 ---
@@ -69,7 +69,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Zip Archive API is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=zip_archive_api
+  https://console.oomol.com/connections/zip_archive_api
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -77,3 +77,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Zip Archive API homepage: https://archiveapi.com
+- API documentation: https://archiveapi.com/rest-api/

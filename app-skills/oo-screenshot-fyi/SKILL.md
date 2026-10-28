@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "screenshot.fyi"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["screenshot_fyi"]
   icon: "https://static.oomol.com/logo/third-party/Screenshot.fyi.svg"
 ---
@@ -68,7 +68,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — screenshot.fyi is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=screenshot_fyi
+  https://console.oomol.com/connections/screenshot_fyi
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -76,3 +76,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - screenshot.fyi homepage: https://www.screenshot.fyi
+- API documentation: https://www.screenshot.fyi/

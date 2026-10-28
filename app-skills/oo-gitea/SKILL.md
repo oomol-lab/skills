@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Gitea"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["gitea"]
   icon: "https://static.oomol.com/logo/third-party/Gitea.svg"
 ---
@@ -160,7 +160,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Gitea is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=gitea
+  https://console.oomol.com/connections/gitea
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -168,3 +168,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Gitea homepage: https://about.gitea.com/products/gitea/
+- API documentation: https://docs.gitea.com/development/api-usage

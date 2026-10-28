@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Alibaba Cloud SLS"
   author: "OOMOL"
-  version: "1.0.2"
+  version: "1.0.3"
   services: ["aliyun_sls"]
   icon: "https://static.oomol.com/logo/third-party/aliyun_sls.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Alibaba Cloud SLS is not connected, or the connection expired or lacks a scope. Connect once (auth type: federated) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=aliyun_sls
+  https://console.oomol.com/connections/aliyun_sls
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Alibaba Cloud SLS homepage: https://www.alibabacloud.com/product/log-service
+- API documentation: https://www.alibabacloud.com/help/en/sls/developer-reference/request-signatures

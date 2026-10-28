@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cert Spotter"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["sslmate_cert_spotter_api"]
   icon: "https://static.oomol.com/logo/third-party/SSLMate%20Cert%20Spotter%20API.svg"
 ---
@@ -72,7 +72,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cert Spotter is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=sslmate_cert_spotter_api
+  https://console.oomol.com/connections/sslmate_cert_spotter_api
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -80,3 +80,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cert Spotter homepage: https://sslmate.com/certspotter/
+- API documentation: https://sslmate.com/help/reference/ct_search_api_v1

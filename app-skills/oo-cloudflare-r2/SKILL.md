@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare R2"
   author: "OOMOL"
-  version: "1.0.10"
+  version: "1.0.11"
   services: ["cloudflare_r2"]
   icon: "https://static.oomol.com/logo/third-party/Cloudflare.svg"
 ---
@@ -107,7 +107,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Cloudflare R2 is not connected, or the connection expired or lacks a scope. Connect once (auth type: custom credential, OAuth2) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=cloudflare_r2
+  https://console.oomol.com/connections/cloudflare_r2
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -115,3 +115,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Cloudflare R2 homepage: https://www.cloudflare.com
+- API documentation: https://developers.cloudflare.com/r2/api/s3/api/

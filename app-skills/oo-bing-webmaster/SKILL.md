@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Bing Webmaster Tools"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["bing_webmaster"]
   icon: "https://static.oomol.com/logo/third-party/bing_webmaster.png"
 ---
@@ -121,7 +121,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Bing Webmaster Tools is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=bing_webmaster
+  https://console.oomol.com/connections/bing_webmaster
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -129,3 +129,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Bing Webmaster Tools homepage: https://www.bing.com/webmasters/
+- API documentation: https://learn.microsoft.com/en-us/bingwebmaster/getting-access

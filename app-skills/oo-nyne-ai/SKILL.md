@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Nyne.ai"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["nyne_ai"]
   icon: "https://static.oomol.com/logo/third-party/nyne_ai.png"
 ---
@@ -76,7 +76,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 - **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — Nyne.ai is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
-  https://console.oomol.com/app-connections?provider=nyne_ai
+  https://console.oomol.com/connections/nyne_ai
   ```
 
 - **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
@@ -84,3 +84,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - Nyne.ai homepage: https://nyne.ai
+- API documentation: https://api.nyne.ai/documentation/authentication
