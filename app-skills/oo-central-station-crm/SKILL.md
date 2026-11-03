@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "CentralStationCRM"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["central_station_crm"]
   icon: "https://static.oomol.com/logo/third-party/central_station_crm.svg"
 ---
@@ -89,7 +89,9 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   https://console.oomol.com/connections/central_station_crm
   ```
 
-- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+- **`OOMOL_INSUFFICIENT_CREDIT`** — OOMOL billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+- **HTTP 402 without `OOMOL_INSUFFICIENT_CREDIT`** — the third-party account itself has no active plan or credit. Report the provider error message as is; do not ask the user to recharge OOMOL.
 
 ## Resources
 

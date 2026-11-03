@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kingdee"
   author: "OOMOL"
-  version: "1.1.2"
+  version: "1.1.3"
   services: ["kingdee"]
   icon: "https://static.oomol.com/logo/third-party/kingdee.svg"
 ---
@@ -131,7 +131,9 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   https://console.oomol.com/connections/kingdee
   ```
 
-- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+- **`OOMOL_INSUFFICIENT_CREDIT`** — OOMOL billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+- **HTTP 402 without `OOMOL_INSUFFICIENT_CREDIT`** — the third-party account itself has no active plan or credit. Report the provider error message as is; do not ask the user to recharge OOMOL.
 
 - **Ambiguous HTTP 401/403 or business error** — preserve the upstream error as reported; do not conclude that the application secret expired unless the response contains a documented credential signal.
 - **Official operation documentation unavailable** — report the missing contract. Do not guess fields, enumerate documentation IDs, or fetch every operation.
