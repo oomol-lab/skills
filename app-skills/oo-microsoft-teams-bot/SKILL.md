@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Microsoft Teams Bot"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["microsoft_teams_bot"]
   icon: "https://static.oomol.com/logo/third-party/microsoft_teams_bot.svg"
 ---
@@ -40,9 +40,10 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_conversation` — Start a proactive one-on-one conversation with a user, or a new thread in a team's general channel, and optionally post a first message. [write]
 - `delete_message` — Delete a message the bot previously sent. [destructive]
 - `list_conversation_members` — List one page of the members of a Teams conversation.
-- `reply_to_message` — Reply to an existing activity in a Teams conversation. [write]
-- `send_message` — Send a new message from the bot into an existing Teams conversation. [write]
-- `update_message` — Replace the text of a message the bot previously sent. [write]
+- `list_team_channels` — List the channels of a team the bot is installed in. The Bot Connector cannot list the teams a bot is in: learn a team's ID from channelData.team.id on its activities, such as the conversationUpdate Teams sends when the bot is added to the team.
+- `reply_to_message` — Reply to an existing activity in a Teams conversation, with text, cards such as an Adaptive Card, or both. [write]
+- `send_message` — Send a new message from the bot into an existing Teams conversation, with text, cards such as an Adaptive Card, or both. [write]
+- `update_message` — Replace a message the bot previously sent. The new text and cards replace the old message entirely, so leaving out attachments removes its cards, for example to swap a card with buttons for one without. [write]
 
 ## Safety
 
@@ -76,7 +77,9 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   https://console.oomol.com/connections/microsoft_teams_bot
   ```
 
-- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+- **`OOMOL_INSUFFICIENT_CREDIT`** — OOMOL billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+- **HTTP 402 without `OOMOL_INSUFFICIENT_CREDIT`** — the third-party account itself has no active plan or credit. Report the provider error message as is; do not ask the user to recharge OOMOL.
 
 ## Resources
 

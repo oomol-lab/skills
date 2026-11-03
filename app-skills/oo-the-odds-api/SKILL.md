@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "The Odds API"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["the_odds_api"]
   icon: "https://static.oomol.com/logo/third-party/the_odds_api.svg"
 ---
@@ -77,7 +77,9 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   https://console.oomol.com/connections/the_odds_api
   ```
 
-- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+- **`OOMOL_INSUFFICIENT_CREDIT`** — OOMOL billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+- **HTTP 402 without `OOMOL_INSUFFICIENT_CREDIT`** — the third-party account itself has no active plan or credit. Report the provider error message as is; do not ask the user to recharge OOMOL.
 
 ## Resources
 

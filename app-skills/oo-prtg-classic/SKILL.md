@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "PRTG Classic"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["prtg_classic"]
   icon: "https://static.oomol.com/logo/third-party/prtg_classic.svg"
 ---
@@ -72,7 +72,9 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   https://console.oomol.com/connections/prtg_classic
   ```
 
-- **HTTP 402 / `OOMOL_INSUFFICIENT_CREDIT`** — billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+- **`OOMOL_INSUFFICIENT_CREDIT`** — OOMOL billing stop. Recharge at `https://console.oomol.com/billing/token-recharge` before retrying.
+
+- **HTTP 402 without `OOMOL_INSUFFICIENT_CREDIT`** — the third-party account itself has no active plan or credit. Report the provider error message as is; do not ask the user to recharge OOMOL.
 
 ## Resources
 
