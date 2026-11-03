@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Console"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["oomol_console"]
   icon: "https://static.oomol.com/logo/third-party/oomol_console.svg"
 ---
@@ -35,21 +35,51 @@ oo connector run "oomol_console" --action "<action_name>" --data '<json>' --json
 
 Each action is listed below with a one-line description; actions that change state carry a `[write]` or `[destructive]` tag. Before constructing `--data`, fetch the action's live schema with `oo connector schema` to get its authoritative input fields.
 
+### Private skills and team access
+
+A bot joining a team does not share its owner's private skill packages. The
+package must be added to that team by an identity with both package access and
+team write permission. This grants access to the whole package without making
+it public. It is separate from Connection permission groups and local skill
+installation.
+
+For an installation failure, establish the exact package, failing identity,
+target team, active membership, and whether the package is configured for that
+team. `list_my_skill_packages` lists only the authenticated identity's maintained
+packages; an empty bot result says nothing about its owner's publications.
+Read the current action schemas before calling them. Keep team-scoped calls on
+the intended team, using a per-command team override when needed.
+
+When the user requests a fix and the package and team are unambiguous, use
+existing authorization to add the missing package and read the team list back.
+Retry installation with the original failing identity only when that identity
+is available; otherwise report that only team configuration was verified.
+For a question about the cause, diagnose without changing access. If the caller
+cannot access the package or write the team, explain the evidenced blocker and
+direct an authorized user to select the target team at
+https://console.oomol.com/skills. A 403 or 404 alone does not establish the cause.
+Do not switch to the owner's identity, make the package public, or create a
+temporary share to bypass the missing team authorization.
+
 ## Available actions
 
 - `add_member` — Add an OOMOL user to the current team with the member role. [write]
+- `add_skill_package_to_team` — Grant the current team access to an entire registry package, including its private skills. Requires package access and team write permission. Does not make the package public or install it locally. [write]
 - `create_connection_permission_group` — Create a custom Connection permission group and replace the assignments of its members. [destructive]
 - `delete_connection_permission_group` — Delete a custom Connection permission group so its members return to the default group. [destructive]
-- `get_balance` — Return every available balance lot for the authenticated OOMOL account.
-- `get_billing_summary` — Return the compact OOMOL account billing metrics shown by Console.
+- `get_balance` — Return every available balance lot owned by the current OOMOL team creator. This account balance may be shared by multiple teams.
+- `get_billing_summary` — Return current-team billing and usage metrics together with the team creator account balance.
 - `get_current_scope` — Return the current OOMOL team scope and authenticated principal.
 - `get_team_summary` — Return metadata and member counts for the current OOMOL team.
-- `get_usage_breakdown` — Return the daily OOMOL account usage breakdown by source and subject.
-- `list_connection_executions` — List the execution records shown on an OOMOL Console Connection details page.
+- `get_usage_breakdown` — Return the current OOMOL team daily usage breakdown by source and subject.
+- `list_connection_executions` — List current-team Connection execution records visible to the authenticated user or service account.
 - `list_connection_permission_groups` — List the default and custom permission groups for one current-team Connection.
 - `list_members` — List members of the current OOMOL team.
+- `list_my_skill_packages` — List skill packages maintained by the authenticated identity, including its private packages. A bot's results do not list its owner's packages. Supports keyword search and pagination.
 - `list_team_connections` — List the current-team Connections visible to the authenticated user or service account.
-- `list_teams` — List the OOMOL teams visible to the authenticated account.
+- `list_team_skill_packages` — List skill packages configured for the current team. Team membership alone does not grant access to an unconfigured private package. This lists team configuration, not local installations.
+- `list_teams` — List the OOMOL teams the authenticated user or service account belongs to.
+- `remove_skill_package_from_team` — Revoke the current team's access through this package binding for the entire registry package. Requires package access and team write permission. Does not delete the package, change its visibility, remove other access grants, or uninstall local skills. [destructive]
 - `update_connection_default_permission_group` — Replace the action permission of a Connection's non-deletable default permission group. [destructive]
 - `update_connection_permission_group` — Replace the name, member assignments, and action permission of a custom Connection permission group. [destructive]
 

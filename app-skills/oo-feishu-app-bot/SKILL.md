@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Feishu App Bot"
   author: "OOMOL"
-  version: "1.0.9"
+  version: "1.0.10"
   services: ["feishu_app_bot"]
   icon: "https://static.oomol.com/logo/third-party/feishu_app_bot.svg"
 ---
@@ -104,13 +104,13 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_base_dashboard_block` — Delete a block from a Base dashboard. [destructive]
 - `delete_base_field` — Delete one field from a Feishu Base table. [destructive]
 - `delete_base_form` — Delete a form from a Base table. [destructive]
-- `delete_base_form_questions` — Delete up to ten questions from a Base form. [destructive]
+- `delete_base_form_questions` — Delete up to ten questions from a Base form. By default this also deletes the underlying fields and record data; set keepFields to preserve them. [destructive]
 - `delete_base_record` — Delete one record from a Feishu Base table. [destructive]
 - `delete_base_role` — Delete a custom Base role; system roles cannot be deleted. [destructive]
 - `delete_base_table` — Delete a table from a Feishu Base. [destructive]
 - `delete_base_view` — Delete one view from a Feishu Base table by ID or accepted view name. [destructive]
 - `delete_calendar_event` — Delete a Feishu calendar event. [destructive]
-- `delete_document_cover` — Idempotently clear the cover of a Feishu docx document. [destructive]
+- `delete_document_cover` — Idempotently clear the cover of a Feishu docx document. [write]
 - `delete_drive_comment` — Delete a Feishu Drive comment. [destructive]
 - `delete_drive_comment_reply` — Delete a reply from a Feishu Drive comment. [destructive]
 - `delete_drive_item` — Delete a Feishu Drive file or folder and return a task ID when Feishu processes the deletion asynchronously. [destructive]
@@ -121,7 +121,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_sheet_chart` — Delete a chart object. [destructive]
 - `delete_sheet_conditional_format` — Delete a conditional format object. [destructive]
 - `delete_sheet_dimension` — Delete rows or columns in a sub-sheet. [destructive]
-- `delete_sheet_dropdowns` — Remove dropdown validation from multiple sheet-prefixed ranges. [destructive]
+- `delete_sheet_dropdowns` — Remove dropdown validation from multiple sheet-prefixed ranges. [write]
 - `delete_sheet_filter` — Delete a filter object. [destructive]
 - `delete_sheet_filter_view` — Delete a filter view object. [destructive]
 - `delete_sheet_float_image` — Delete a float image object. [destructive]
@@ -150,9 +150,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `export_whiteboard_svg` — Export a Feishu whiteboard as SVG and return the API's Base64 payload without writing a local file.
 - `fetch_document` — Fetch a Feishu document as Docx XML or Markdown, with optional structural detail and partial-read selection.
 - `fetch_markdown_file` — Fetch the latest or a specific version of a Markdown file from Feishu Drive.
-- `fill_sheet_range` — Fill a destination range from a source pattern. [destructive]
+- `fill_sheet_range` — Fill a destination range from a source pattern. [write]
 - `find_calendar_rooms` — Find meeting rooms available for the specified event time slots.
-- `freeze_sheet_dimension` — Freeze or unfreeze the leading rows or columns. [destructive]
+- `freeze_sheet_dimension` — Freeze or unfreeze the leading rows or columns. [write]
 - `get_app_info` — Get the Feishu custom app profile and configured scopes for this connection.
 - `get_app_permissions` — Get the currently published Feishu app version, tenant scopes, and subscribed events.
 - `get_base` — Get the metadata of a Feishu Base.
@@ -180,6 +180,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_document_revert_status` — Get the status of a Feishu document history revert task.
 - `get_drive_export` — Get the normalized status and generated file token of a Drive export task.
 - `get_drive_import` — Get the normalized status and created document token of a Drive import task.
+- `get_drive_permission_settings` — Get public access, sharing, collaborator management, security, and comment permission settings for a Feishu Drive resource. Download restrictions can only be determined when the corresponding fields are returned; this does not test a user's effective download permission.
 - `get_drive_task_status` — Get the current state of an asynchronous Drive move, copy, or delete task.
 - `get_drive_version` — Download one specific Feishu Drive file version into connector transit storage.
 - `get_mail_message` — Read one Feishu mail message with body and attachment metadata.
@@ -206,7 +207,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_wiki_task` — Get a normalized Wiki asynchronous task status.
 - `get_workbook` — Get workbook structure and metadata, including all sub-sheets.
 - `group_sheet_dimension` — Group rows or columns in a sub-sheet. [write]
-- `hide_sheet_dimension` — Hide rows or columns in a sub-sheet. [destructive]
+- `hide_sheet_dimension` — Hide rows or columns in a sub-sheet. [write]
 - `insert_docs_media` — Append an image or file to a Feishu docx document by creating a block, uploading media, and binding the file token with rollback on failure. [write]
 - `insert_sheet_dimension` — Insert blank rows or columns into a sub-sheet. [write]
 - `inspect_drive_item` — Inspect a Feishu Drive token to resolve its canonical type, title, URL, and underlying document for Wiki nodes.
@@ -261,27 +262,27 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_wiki_members` — List members of a Feishu Wiki space.
 - `list_wiki_nodes` — List nodes in a Feishu Wiki space or below one parent node.
 - `list_wiki_spaces` — List Feishu Wiki spaces accessible to the caller.
-- `manage_task_assignees` — Add or remove assignees on a Feishu task. [destructive]
-- `manage_task_followers` — Add or remove followers on a Feishu task. [destructive]
-- `manage_task_reminders` — List, add, or remove reminders on a Feishu task. [destructive]
+- `manage_task_assignees` — Add or remove assignees on a Feishu task. [write]
+- `manage_task_followers` — Add or remove followers on a Feishu task. [write]
+- `manage_task_reminders` — List, add, or remove reminders on a Feishu task. [write]
 - `manage_tasklist_members` — Add or remove members on a Feishu tasklist. [destructive]
 - `merge_sheet_range` — Merge cells in a range. [write]
-- `move_base_block` — Move and order a Base resource block. [destructive]
-- `move_drive_item` — Move a Feishu Drive file or folder and return a task ID when Feishu processes the move asynchronously. [destructive]
-- `move_sheet_dimension` — Move a contiguous row or column range to a new position. [destructive]
-- `move_sheet_range` — Move a cell range. [destructive]
-- `move_wiki_node` — Move a Feishu Wiki node to another space or parent node. [destructive]
-- `overwrite_markdown_file` — Overwrite an existing Feishu Drive Markdown file with a complete JSON Markdown string. [destructive]
-- `patch_markdown_file` — Fetch a Markdown file, replace literal text or a JavaScript regular expression locally, and overwrite only when matches exist. [destructive]
+- `move_base_block` — Move and order a Base resource block. [write]
+- `move_drive_item` — Move a Feishu Drive file or folder and return a task ID when Feishu processes the move asynchronously. [write]
+- `move_sheet_dimension` — Move a contiguous row or column range to a new position. [write]
+- `move_sheet_range` — Move a cell range. [write]
+- `move_wiki_node` — Move a Feishu Wiki node to another space or parent node. [write]
+- `overwrite_markdown_file` — Overwrite an existing Feishu Drive Markdown file with a complete JSON Markdown string. [write]
+- `patch_markdown_file` — Fetch a Markdown file, replace literal text or a JavaScript regular expression locally, and overwrite only when matches exist. [write]
 - `patch_okr` — Update content, notes, score, or deadline on an objective or key result. [write]
 - `pin_message` — Pin one Feishu/Lark message inside its chat. [write]
 - `preview_docs_media` — Download the source-file preview of Feishu document media into connector transit storage.
 - `put_typed_table` — Write a DataFrame-friendly typed table while preserving numbers, booleans, and real dates. [write]
 - `query_base_data` — Run the Base data-query DSL for server-side grouping, aggregation, filtering, sorting, and Top N analysis.
 - `query_calendar_freebusy` — Query a Feishu user's free/busy periods and RSVP status.
-- `recall_message` — Recall one Feishu/Lark message that the app bot sent. [write]
-- `recall_sent_mail` — Request asynchronous recall of one delivered Feishu mail message within its recall window. [write]
-- `remove_base_attachments` — Validate a Base attachment field and remove selected file tokens from one record cell. [destructive]
+- `recall_message` — Recall one Feishu/Lark message that the app bot sent. [destructive]
+- `recall_sent_mail` — Request asynchronous recall of one delivered Feishu mail message within its recall window. [destructive]
+- `remove_base_attachments` — Validate a Base attachment field and remove selected file tokens from one record cell. [write]
 - `remove_chat_members` — Remove users or bots from a Feishu chat. [destructive]
 - `remove_drive_permission` — Remove a collaborator permission from a Feishu Drive resource. [destructive]
 - `remove_message_reaction` — Remove one Feishu/Lark message reaction by `reaction_id`. [destructive]
@@ -291,9 +292,9 @@ Each action is listed below with a one-line description; actions that change sta
 - `rename_base_view` — Rename a Base view. [write]
 - `render_slide_screenshot` — Render one SML 2.0 slide XML fragment and store the decoded screenshot in connector transit storage.
 - `reopen_task` — Reopen a completed Feishu task. [write]
-- `reorder_okrs` — Replace the objective or key-result order with an explicit ID sequence. [destructive]
-- `replace_cells` — Find and replace matching text in a sub-sheet. [destructive]
-- `replace_slide_elements` — Replace or insert structural elements on one Slides page, with SML boilerplate added for common shape replacements. [destructive]
+- `reorder_okrs` — Replace the objective or key-result order with an explicit ID sequence. [write]
+- `replace_cells` — Find and replace matching text in a sub-sheet. [write]
+- `replace_slide_elements` — Replace or insert structural elements on one Slides page, with SML boilerplate added for common shape replacements. [write]
 - `replace_slides` — Replace multiple Slides pages by creating each replacement before its old page and then deleting the old page. [destructive]
 - `reply_calendar_event` — Accept, decline, or tentatively accept a Feishu calendar event invitation. [write]
 - `reply_message` — Reply to an existing Feishu/Lark message as the app bot. [write]
@@ -310,56 +311,57 @@ Each action is listed below with a one-line description; actions that change sta
 - `send_message` — Send a Feishu/Lark app bot message to a user or chat. [write]
 - `send_rich_message` — Send text, Markdown, image, file, audio, video, or raw Feishu content, uploading URL media before sending. [write]
 - `send_vc_meeting_message` — Send a text message or reaction through the app's in-meeting bot. [write]
-- `set_base_view_card` — Replace the card configuration of a Base view. [destructive]
-- `set_base_view_filter` — Replace the filter configuration of a Base view. [destructive]
-- `set_base_view_group` — Replace the grouping configuration of a Base view. [destructive]
-- `set_base_view_sort` — Replace the sorting configuration of a Base view. [destructive]
-- `set_base_view_timebar` — Replace the timeline configuration of a Base view. [destructive]
-- `set_base_view_visible_fields` — Replace the visible field configuration of a Base view. [destructive]
-- `set_cells` — Write values, formulas, styles, comments, or validation to an A1 range. [destructive]
+- `set_base_view_card` — Replace the card configuration of a Base view. [write]
+- `set_base_view_filter` — Replace the filter configuration of a Base view. [write]
+- `set_base_view_group` — Replace the grouping configuration of a Base view. [write]
+- `set_base_view_sort` — Replace the sorting configuration of a Base view. [write]
+- `set_base_view_timebar` — Replace the timeline configuration of a Base view. [write]
+- `set_base_view_visible_fields` — Replace the visible field configuration of a Base view. [write]
+- `set_cells` — Write values, formulas, styles, comments, or validation to an A1 range. [write]
 - `set_sheet_cell_image` — Fetch an image from a public URL, upload it to a Feishu spreadsheet, and embed it into one cell. [write]
-- `set_sheet_dropdown` — Set dropdown validation across every cell in a range. [destructive]
-- `set_task_ancestor` — Set or clear the ancestor of a Feishu task. [destructive]
-- `sort_sheet_range` — Sort a cell range by one or more columns. [destructive]
+- `set_sheet_dropdown` — Set dropdown validation across every cell in a range. [write]
+- `set_task_ancestor` — Set or clear the ancestor of a Feishu task. [write]
+- `sort_sheet_range` — Sort a cell range by one or more columns. [write]
 - `submit_base_form` — Submit JSON field values to a shared Base form. [write]
 - `submit_drive_export` — Submit an asynchronous Feishu Drive document export and return a handle for status polling. [write]
 - `submit_drive_import` — Fetch a source file, upload it as Feishu import media, and submit an asynchronous Drive import task. [write]
-- `submit_wiki_move_to_drive` — Move a Wiki node out of its knowledge space into Drive and return an asynchronous task handle. [destructive]
+- `submit_wiki_move_to_drive` — Move a Wiki node out of its knowledge space into Drive and return an asynchronous task handle. [write]
 - `suggest_calendar_times` — Suggest available meeting times for Feishu users and chats.
 - `triage_mail_messages` — Auto-paginate compact mailbox summaries through list or search APIs with a stable continuation token.
-- `ungroup_sheet_dimension` — Ungroup rows or columns in a sub-sheet. [destructive]
+- `ungroup_sheet_dimension` — Ungroup rows or columns in a sub-sheet. [write]
 - `unhide_sheet_dimension` — Unhide rows or columns in a sub-sheet. [write]
-- `unmerge_sheet_range` — Unmerge cells in a range. [destructive]
+- `unmerge_sheet_range` — Unmerge cells in a range. [write]
 - `update_app_slash_command` — Update the description, localized descriptions, or icon of a slash command selected by ID or name. [write]
 - `update_base_dashboard` — Update a Base dashboard name or theme. [write]
 - `update_base_dashboard_block` — Update a Base dashboard block name or data configuration. [write]
-- `update_base_field` — Replace one field definition in a Feishu Base table. Read the field first and include all writable configuration to preserve; this is a full PUT replacement, not a partial update. [destructive]
+- `update_base_field` — Replace one field definition in a Feishu Base table. Read the field first and include all writable configuration to preserve; this is a full PUT replacement, not a partial update. [write]
 - `update_base_form` — Update the name or description of a Base form. [write]
 - `update_base_form_questions` — Update up to ten Base form questions by question ID. [write]
 - `update_base_record` — Update one record in a Feishu Base table. [write]
 - `update_base_role` — Delta-merge changes into a Base role configuration. [write]
 - `update_base_table` — Rename a table in a Feishu Base. [write]
-- `update_base_workflow` — Replace a Base workflow definition while preserving its enabled state. [destructive]
+- `update_base_workflow` — Replace a Base workflow definition while preserving its enabled state. [write]
 - `update_calendar_event` — Update Feishu calendar event fields and incrementally add or remove attendees. [destructive]
 - `update_chat` — Update a Feishu chat's name or description. [write]
 - `update_document` — Update a Feishu document with a high-level text or block operation instead of manually orchestrating docx block APIs. [destructive]
 - `update_document_cover` — Upload an image from a public URL and set it as a Feishu docx document cover. [write]
 - `update_drive_comment` — Mark a Feishu Drive comment as solved or unresolved. [write]
 - `update_drive_permission` — Change a collaborator's permission role on a Feishu Drive resource. [write]
-- `update_mail_template` — Fetch and fully replace a mail template after merging provided JSON fields; concurrent writes are last-write-wins. [destructive]
+- `update_mail_template` — Fetch and fully replace a mail template after merging provided JSON fields; concurrent writes are last-write-wins. [write]
 - `update_okr_indicator` — Find the first indicator for an objective or key result and update its current value. [write]
 - `update_okr_progress` — Update the content or rate of an OKR progress record. [write]
-- `update_okr_weights` — Replace objective or key-result weights with explicit ID and weight pairs. [destructive]
+- `update_okr_weights` — Replace objective or key-result weights with explicit ID and weight pairs. [write]
 - `update_sheet` — Rename, move, hide, show, or recolor one sub-sheet. [write]
-- `update_sheet_chart` — Update a chart object. [destructive]
-- `update_sheet_conditional_format` — Update a conditional format object. [destructive]
-- `update_sheet_dropdowns` — Apply one dropdown configuration to multiple sheet-prefixed ranges. [destructive]
-- `update_sheet_filter` — Update a filter object. [destructive]
-- `update_sheet_filter_view` — Update a filter view object. [destructive]
-- `update_sheet_float_image` — Update a float image object. [destructive]
-- `update_sheet_pivot_table` — Update a pivot table object. [destructive]
-- `update_sheet_sparkline` — Update a sparkline object. [destructive]
+- `update_sheet_chart` — Update a chart object. [write]
+- `update_sheet_conditional_format` — Update a conditional format object. [write]
+- `update_sheet_dropdowns` — Apply one dropdown configuration to multiple sheet-prefixed ranges. [write]
+- `update_sheet_filter` — Update a filter object. [write]
+- `update_sheet_filter_view` — Update a filter view object. [write]
+- `update_sheet_float_image` — Update a float image object. [write]
+- `update_sheet_pivot_table` — Update a pivot table object. [write]
+- `update_sheet_sparkline` — Update a sparkline object. [write]
 - `update_task` — Update the editable attributes of a Feishu task. [write]
+- `update_wiki_node_title` — Update a Feishu Wiki node title. Supports doc, docx, and shortcut nodes. [write]
 - `upload_base_attachments` — Validate a Base attachment field, upload one or more files from public URLs, and append them to one record cell. [write]
 - `upload_docs_media` — Upload an image or attachment from a public URL to a Feishu document block, using multipart upload above 20 MB. [write]
 - `upload_drive_file` — Upload a file from a public URL to Feishu Drive, automatically using the three-step multipart protocol above 20 MB. [write]
