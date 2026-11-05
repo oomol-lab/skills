@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL RAG"
   author: "OOMOL"
-  version: "1.0.3"
+  version: "1.0.4"
   services: ["oomol_rag"]
   icon: "https://static.oomol.com/logo/third-party/oomol_rag.svg"
 ---
@@ -147,6 +147,40 @@ Supported: headings 1–6, paragraphs, bold/italic/strikethrough, inline and fen
 
 Both Markdown actions save a BlockNote format-3 draft. They never publish implicitly; use the existing publication workflow with the returned article revision when publication is requested.
 
+### Edit individual blocks without replacing the article
+
+Read `get_article` to obtain the current `revision` and block IDs (including nested `children`). Call `patch_article_blocks` with `articleId`, that revision, a stable `saveId`, and ordered `operations`. The backend applies the whole batch in one transaction, increments the revision once, and retains the article title. Any invalid or missing target rolls back every operation.
+
+```json
+{
+  "articleId": "<article ID>",
+  "revision": 3,
+  "saveId": "<stable patch ID>",
+  "operations": [
+    { "op": "update", "blockId": "paragraph-1", "props": { "textAlignment": "center" } },
+    {
+      "op": "insert",
+      "position": "after",
+      "blockId": "paragraph-1",
+      "blocks": [
+        {
+          "id": "new-paragraph",
+          "type": "paragraph",
+          "content": [{ "type": "text", "text": "Added paragraph", "styles": {} }]
+        }
+      ]
+    },
+    { "op": "delete", "blockId": "obsolete-block" }
+  ]
+}
+```
+
+`update` merges only provided property keys. Omit `content` to preserve text and inline formatting; if supplied, it replaces only the selected block's inline/table content and should include the desired inline styles. The block's ID, type and children cannot be overwritten through an update. Other blocks, images, tables and formatting remain intact.
+
+`insert` accepts `before`/`after` with a sibling `blockId`, or `start`/`end` with an optional `parentId` for children (omit it for root placement). Every inserted block and nested child needs a new, stable ID unique within the article. Later operations can target those new IDs. IDs deleted in the same batch cannot be reused. `delete` removes the target and its entire subtree; it does not remove other blocks or their image assets.
+
+Use 1–100 operations on a format-3 BlockNote article. Retry the exact same original revision, save ID and operations after an uncertain response. Different payloads with the same save ID conflict. On a version conflict, read and reconcile before creating a new patch intent; never silently replace the revision. Saving a patch does not publish; use `publish_article` when knowledge-base synchronization is requested.
+
 ## Available actions
 
 - `create_article` — Create an empty editable knowledge article as a draft. A caller-stable articleId prevents duplicate creation on retries; an existing ID returns its article without overwriting it. [write]
@@ -158,6 +192,7 @@ Both Markdown actions save a BlockNote format-3 draft. They never publish implic
 - `get_file` — Get metadata and processing status for a knowledge-base file.
 - `list_articles` — List knowledge articles with draft and synchronization metadata, without document bodies.
 - `list_files` — List files in the current OOMOL team's knowledge base.
+- `patch_article_blocks` — Atomically update, insert or delete BlockNote blocks by ID without replacing the article. Updates merge properties and replace only explicitly supplied block content, preserving other blocks, children, images and formatting. Operations run in order; a missing ID or invalid operation rolls back the entire batch. Requires format version 3 and the expected revision. Retry with identical saveId, revision and operations. Saves a draft; does not publish. [write]
 - `publish_article` — Publish an exact saved revision to the knowledge base, replacing its previous index asynchronously. Retry uncertain transport outcomes with the same publishId and revision. Stop and inspect failed or uncertain synchronization states. [write]
 - `retrieve` — Retrieve the most relevant text chunks from the current OOMOL team's knowledge base.
 - `save_article_draft` — Save BlockNote content and title with optimistic revision checking. This only saves a draft; publish_article updates retrieval. Retry an uncertain request with the identical saveId, revision and body. [write]
