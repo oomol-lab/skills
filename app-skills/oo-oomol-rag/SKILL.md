@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL RAG"
   author: "OOMOL"
-  version: "1.0.1"
+  version: "1.0.2"
   services: ["oomol_rag"]
   icon: "https://static.oomol.com/logo/third-party/oomol_rag.svg"
 ---
@@ -94,14 +94,55 @@ oo connector run "oomol_rag" \
   --json
 ```
 
+### Create or edit an editable knowledge article
+
+Use `create_article` -> `save_article_draft` -> `get_article`. Stop at a draft unless the user also requested publishing. When requested, use `publish_article` -> `wait_for_article_ready`.
+
+Generate a UUIDv7 once per creation intent and pass it as `articleId`. Generate distinct stable `saveId` and `publishId` values for each save and publication. After a network failure, retry with the identical ID and payload; do not generate another ID or silently overwrite a concurrent edit.
+
+For `save_article_draft`, use the returned `revision`, a `title`, and native BlockNote content:
+
+```json
+{
+  "articleId": "<stable article ID>",
+  "revision": 1,
+  "saveId": "<stable save ID>",
+  "title": "Example article",
+  "content": {
+    "type": "blocknote",
+    "blocks": [
+      {
+        "id": "intro",
+        "type": "paragraph",
+        "content": [{ "type": "text", "text": "Article text", "styles": {} }],
+        "children": []
+      }
+    ]
+  }
+}
+```
+
+Use `--data @draft.json` for document bodies. Markdown strings are not accepted as `content`; produce native BlockNote blocks. On an existing article, read it first, check `formatVersion`, and preserve its block structure and IDs. Do not reinterpret legacy editor JSON as BlockNote.
+
+On 409, fetch the latest article and reconcile changes before saving a new operation. Publication uses the saved `revision` and a stable `publishId`. Poll about every 15 seconds; stop on `failed` or `uncertain`. `ready` means `syncRevision` is indexed: a newer draft may exist, so compare `syncRevision` to the revision you published. An uncertain synchronization outcome requires investigation, not a fresh publication ID.
+
+`list_articles` returns metadata and a `nextCursor`; `get_article` returns the full body. `delete_article` removes the editable article and excludes its index from retrieval while preserving the original converted file. Delete only when requested by the user.
+
 ## Available actions
 
+- `create_article` — Create an empty editable knowledge article as a draft. A caller-stable articleId prevents duplicate creation on retries; an existing ID returns its article without overwriting it. [write]
+- `delete_article` — Delete an article and exclude its index from retrieval. Underlying index cleanup is asynchronous; any original converted file is preserved. [destructive]
 - `delete_file` — Start asynchronous deletion of a knowledge-base file. [destructive]
 - `download_file` — Download a knowledge-base file through OOMOL file transit and return a temporary public URL.
+- `get_article` — Read the full editable article, its format version, revision and knowledge-base synchronization state.
 - `get_file` — Get metadata and processing status for a knowledge-base file.
+- `list_articles` — List knowledge articles with draft and synchronization metadata, without document bodies.
 - `list_files` — List files in the current OOMOL team's knowledge base.
+- `publish_article` — Publish an exact saved revision to the knowledge base, replacing its previous index asynchronously. Retry uncertain transport outcomes with the same publishId and revision. Stop and inspect failed or uncertain synchronization states. [write]
 - `retrieve` — Retrieve the most relevant text chunks from the current OOMOL team's knowledge base.
+- `save_article_draft` — Save BlockNote content and title with optimistic revision checking. This only saves a draft; publish_article updates retrieval. Retry an uncertain request with the identical saveId, revision and body. [write]
 - `upload_file` — Upload a publicly reachable file URL to the current OOMOL team's knowledge base and start asynchronous indexing. [write]
+- `wait_for_article_ready` — Poll the latest article publication once. Ready means its syncRevision is indexed; a newer draft can still be unpublished. Compare syncRevision with your requested revision when tracking a particular publication.
 - `wait_for_file_deleted` — Get a file's deletion state while waiting for deletion to finish.
 - `wait_for_file_ready` — Get a file's ingestion state while waiting for it to become searchable.
 

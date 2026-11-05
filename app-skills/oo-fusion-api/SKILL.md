@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.10"
+  version: "1.0.11"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---
@@ -38,9 +38,6 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `cosyvoice_tts_generate` — Generate speech audio with CosyVoice TTS.
-- `cphone_nano_banana_result` — Get cphone-nano-banana task result
-- `cphone_nano_banana_state` — Get cphone-nano-banana task state
-- `cphone_nano_banana_submit` — Edit images with Nano Banana [write]
 - `deepseek_ocr_recognize` — Recognize text from a single image.
 - `doubao_stt_result` — Get doubao-stt task result
 - `doubao_stt_state` — Get doubao-stt task state
