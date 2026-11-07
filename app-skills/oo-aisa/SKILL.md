@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AIsa"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["aisa"]
   icon: "https://static.oomol.com/logo/third-party/aisa.svg"
 ---
@@ -40,6 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `answer_exa` — Answer a question using Exa web retrieval with source citations and optional structured output.
 - `cancel_firecrawl_batch_scrape` — Request cancellation of a Firecrawl task. Work already performed may still be charged; poll the task for final state and pricing. [destructive]
 - `cancel_firecrawl_crawl` — Request cancellation of a Firecrawl task. Work already performed may still be charged; poll the task for final state and pricing. [destructive]
+- `compare_dataforseo_ai_mentions` — Compare AI visibility for named groups of domains and brands.
 - `compare_semrush_domains` — Compare organic or paid keyword portfolios across domains.
 - `crawl_tavily` — Synchronously crawl a website through Tavily and return page content. Set limit, depth and breadth to bound the crawl; this does not create a background job.
 - `enrich_akta_company` — Retrieve Akta company profile sections, including firmographics, management, products, and financial estimates.
@@ -58,23 +59,31 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_balance_sheets` — Get standardized balance sheets for a company.
 - `get_cash_flow_statements` — Get standardized cash-flow statements for a company.
 - `get_company_facts` — Get standardized SEC company facts by ticker or CIK.
+- `get_company_guidance` — Get reported company guidance with metric and period filters.
+- `get_company_kpis` — Get company-specific operating performance indicators.
 - `get_company_news` — Get recent financial news, optionally filtered by ticker.
+- `get_company_non_gaap_metrics` — Get reported non-GAAP financial metrics.
 - `get_credits_balance` — Get the current AIsa account, key, and go-to-market credit balances.
 - `get_crypto_coin` — Get metadata, market data, and community signals for one coin.
 - `get_crypto_market_chart` — Get price, market-cap, and volume history for a coin over a Unix-time range.
-- `get_crypto_news` — Get recent cryptocurrency news with optional coin and language filters.
 - `get_crypto_ohlc` — Get open, high, low, and close price candles for one coin.
 - `get_crypto_prices` — Get current prices and optional market metrics for multiple coins.
 - `get_dataforseo_ai_gemini_search` — Get Gemini search answers through DataForSEO.
 - `get_dataforseo_ai_keyword_volume` — Get AI-search volume estimates for up to 1,000 keywords.
+- `get_dataforseo_ai_mentions_delta` — Compare changes in AI mentions across time periods.
+- `get_dataforseo_ai_mentions_history` — Get historical AI mentions for a domain or brand.
+- `get_dataforseo_ai_mentions_new_lost` — Track new and lost AI mentions over time.
 - `get_dataforseo_ai_mentions_top_brands` — Get AI mentioned brands through DataForSEO.
 - `get_dataforseo_ai_mentions_top_pages` — Get AI cited pages through DataForSEO.
 - `get_dataforseo_amazon_asin` — Get Amazon product details through DataForSEO.
 - `get_dataforseo_amazon_products` — Get Amazon product search results through DataForSEO.
 - `get_dataforseo_amazon_sellers` — Get Amazon product sellers through DataForSEO.
 - `get_dataforseo_app_store_listings` — Get App Store listings through DataForSEO.
+- `get_dataforseo_backlink_gap` — Compare referring domains linking to selected websites or pages.
+- `get_dataforseo_backlink_history` — Get historical backlink metrics for a domain.
 - `get_dataforseo_backlinks_bulk_spam_score` — Get bulk backlink spam scores through DataForSEO.
 - `get_dataforseo_backlinks_domain_pages_summary` — Get page backlink summaries through DataForSEO.
+- `get_dataforseo_backlinks_new_lost` — Track newly acquired and lost backlinks over time.
 - `get_dataforseo_backlinks_page_intersection` — Get referring page intersections through DataForSEO.
 - `get_dataforseo_backlinks_referring_domains` — Get referring domains through DataForSEO.
 - `get_dataforseo_content_category_trends` — Get content category trends through DataForSEO.
@@ -82,6 +91,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_dataforseo_content_sentiment` — Get content sentiment through DataForSEO.
 - `get_dataforseo_google_business_info` — Get Google Business profiles through DataForSEO.
 - `get_dataforseo_google_business_questions` — Get Google Business questions and answers through DataForSEO.
+- `get_dataforseo_keyword_gap` — Find shared or missing Google keywords between two domains.
 - `get_dataforseo_keyword_trends` — Compare popularity over time for up to five keywords using DataForSEO Trends for Google Search, News, or Shopping. These are DataForSEO estimates, not original Google Trends data or absolute search volumes.
 - `get_dataforseo_keywords_bing_keywords_for_site` — Get Bing keywords for a website through DataForSEO.
 - `get_dataforseo_labs_amazon_bulk_search_volume` — Get Amazon search volumes through DataForSEO.
@@ -101,8 +111,8 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_dataforseo_labs_keyword_ideas` — Get Google keyword ideas through DataForSEO.
 - `get_dataforseo_labs_keyword_overview` — Get Google keyword overview through DataForSEO.
 - `get_dataforseo_labs_keywords_for_categories` — Get Google category keywords through DataForSEO.
-- `get_dataforseo_llm_mention_metrics` — Aggregate LLM mention metrics for domains and keyword entities.
-- `get_dataforseo_llm_mention_top_domains` — Get domains cited most often in LLM responses matching target entities.
+- `get_dataforseo_llm_mention_metrics` — Aggregate AI mentions with initial dataset filters.
+- `get_dataforseo_llm_mention_top_domains` — Rank domains cited in AI mentions with per-list limits.
 - `get_dataforseo_onpage_lighthouse` — Get Lighthouse audits through DataForSEO.
 - `get_dataforseo_reference_data` — Look up DataForSEO model names, location codes, categories, or supported filter fields before a research query.
 - `get_dataforseo_serp_google_ai_mode` — Get Google AI Mode answers through DataForSEO.
@@ -123,13 +133,16 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_firecrawl_crawl` — Get a Firecrawl task state and results. Check outputExpired and job errors even when the task has finished.
 - `get_foreplay_brand_ads` — List ads for one or more known Foreplay brand IDs.
 - `get_foreplay_brand_analytics` — Get daily running-ad distribution and creative velocity for a brand page.
+- `get_fred_observations` — Read FRED observations with date, vintage, frequency, and unit transformations.
+- `get_fred_release_dates` — List FRED economic release dates and publication metadata.
+- `get_fred_series` — Get FRED series metadata, units, and observation coverage.
 - `get_income_statements` — Get standardized income statements for a company.
 - `get_insider_trades` — List reported insider transactions for a ticker.
 - `get_kalshi_markets` — List Kalshi prediction markets with live quotes, settlement rules, and pagination.
 - `get_kalshi_trades` — List executed Kalshi trades with prices, size, side, and pagination.
-- `get_polymarket_activity` — Get one wallet's Polymarket split, merge, and redemption activity.
 - `get_polymarket_events` — List Polymarket events and their related prediction markets.
 - `get_polymarket_markets` — List Polymarket questions with outcome prices, liquidity, volume, and date filters.
+- `get_reddit_post_comments` — Read public Reddit comments for a post URL.
 - `get_semrush_backlink_anchors` — Get backlink anchor text and backlink counts for a domain or URL.
 - `get_semrush_backlink_competitors` — Find domains competing with a target for backlinks.
 - `get_semrush_backlinks` — List backlinks pointing to a domain or URL.
@@ -189,6 +202,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_crypto_categories` — List cryptocurrency categories and their aggregate market performance.
 - `list_crypto_exchanges` — List exchanges ranked by trust score and trading volume.
 - `list_crypto_markets` — List coin markets with price, capitalization, volume, and change metrics.
+- `list_dataforseo_backlinks` — List backlinks with filters, sorting, and pagination.
 - `lookup_creator_email` — Look up the public contact email for one creator profile; not-found results are billed.
 - `map_firecrawl` — Discover website links through Firecrawl. Set limit to bound discovery and usage before retrieving individual pages.
 - `query_dataforseo_chatgpt` — Run a live ChatGPT response query for GEO research through DataForSEO.
@@ -196,6 +210,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `query_dataforseo_gemini` — Run a live Gemini response query for GEO research through DataForSEO.
 - `query_dataforseo_perplexity` — Run a live Perplexity response query for GEO research through DataForSEO.
 - `scrape_firecrawl` — Retrieve one HTTPS web page as Markdown through Firecrawl. The AIsa route supports basic proxy mode and excludes PDF URLs.
+- `screen_stocks` — Screen stocks by financial metrics and company identifiers.
 - `search_akta_companies` — Find Akta companies by name, website, or UUID.
 - `search_akta_company_list` — Search an Akta company list using natural language or structured filters, with optional enrichment and pagination.
 - `search_akta_industries` — Resolve industry terms to ranked Akta industry codes.
@@ -203,10 +218,15 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_apollo_organizations` — Search Apollo's global organization database by domain, location, size, and name.
 - `search_apollo_people` — Search Apollo's global people database by role, location, employer, and seniority.
 - `search_creators` — Find creators from a natural-language brief and optional audience filters.
-- `search_dataforseo_llm_mentions` — Search individual LLM mention records for domains and keywords.
+- `search_dataforseo_business_listings` — Find business listings by category, location, title, and review filters.
+- `search_dataforseo_llm_mentions` — Search AI mentions with filters, sorting, and pagination.
 - `search_exa` — Search the web semantically through Exa. Request contents to include page text, or retrieve selected URLs with get_exa_contents.
+- `search_financial_line_items` — Compare selected financial line items across companies.
 - `search_firecrawl` — Search the web through Firecrawl and return ranked URLs, titles, and snippets.
 - `search_foreplay_ads` — Search the Foreplay ad index by text, platform, format, niche, and activity.
+- `search_fred_series` — Find FRED economic series by text, tags, and frequency.
+- `search_reddit_posts` — Search public Reddit posts or comments with pagination.
+- `search_reddit_subreddit` — Search public Reddit discussions within one subreddit.
 - `search_twitter_posts` — Search public Twitter posts using X query syntax and cursor pagination.
 - `submit_firecrawl_batch_scrape` — Start a background batch scrape of known URLs through AIsa Firecrawl. Poll the returned task ID for results. [write]
 - `submit_firecrawl_crawl` — Start a background website crawl through AIsa Firecrawl. Poll the returned task ID for results. [write]
