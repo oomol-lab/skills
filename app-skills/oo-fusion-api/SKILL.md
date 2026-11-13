@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.11"
+  version: "1.0.12"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `doubao_stt_result` — Get doubao-stt task result
 - `doubao_stt_state` — Get doubao-stt task state
 - `doubao_stt_submit` — Convert speech to text with Doubao [write]
-- `doubao_text_to_image_seedream_generate` — Generate images from text with Doubao Seedream
+- `doubao_text_to_image_seedream_generate` — Generate, edit or decompose images with Seedream Pro or Flash [write]
 - `doubao_tts_result` — Get doubao-tts task result
 - `doubao_tts_state` — Get doubao-tts task state
 - `doubao_tts_submit` — Convert text to speech with Doubao [write]
@@ -93,12 +93,12 @@ Each action is listed below with a one-line description; actions that change sta
 - `qwen_mt_image_state` — Get qwen-mt-image task state
 - `qwen_mt_image_submit` — Image machine translation [write]
 - `qwen_tts_generate` — Generate speech audio
-- `qwen_voice_cloning_create` — Create a Qwen voice cloning voice and return a preview audio URL. [write]
+- `qwen_voice_cloning_create` — Create a custom Qwen-Audio voice. Return its ID even if preview generation fails. [write]
 - `qwen_voice_design_create` — Create a Qwen voice design voice and return preview audio. [write]
-- `qwen_voice_design_delete` — Delete a Qwen voice design voice. [destructive]
+- `qwen_voice_design_delete` — Delete a custom voice. [destructive]
 - `qwen_voice_design_generate` — Generate speech audio using a Qwen voice design voice.
-- `qwen_voice_design_list` — List Qwen voice design voices.
-- `qwen_voice_design_query` — Get details for a Qwen voice design voice.
+- `qwen_voice_design_list` — List cloned and designed custom voices.
+- `qwen_voice_design_query` — Query custom voice details and deployment status.
 - `seedance_video_result` — Query a Seedance video generation task result
 - `seedance_video_state` — Get a Seedance video generation task state
 - `seedance_video_submit` — Generate videos with Doubao Seedance [write]
