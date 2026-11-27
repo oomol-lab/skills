@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Trello"
   author: "OOMOL"
-  version: "1.0.7"
+  version: "1.0.8"
   services: ["trello"]
   icon: "https://static.oomol.com/logo/third-party/trello.svg"
 ---
@@ -48,13 +48,17 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_card` — Create a Trello card in a list. [write]
 - `create_checklist` — Create a Trello checklist on a card. [write]
 - `create_list` — Create a Trello list on a board. [write]
+- `download_card_attachment` — Download a file uploaded to a Trello card into temporary file storage. For external links, use get_card_attachment.
 - `get_board` — Get a Trello board by ID.
 - `get_card` — Get a Trello card by ID or short link.
+- `get_card_attachment` — Get metadata for one attachment on a Trello card.
 - `get_member` — Get a Trello member, defaulting to the authenticated member.
 - `list_board_cards` — List Trello cards on a board.
 - `list_board_labels` — List Trello labels on a board.
 - `list_board_lists` — List Trello lists on a board.
 - `list_board_members` — List Trello members on a board.
+- `list_card_activity` — List activity on a Trello card, newest first. Pass the last action ID as before to read the next page.
+- `list_card_attachments` — List uploaded files and external links attached to a Trello card.
 - `list_card_checklists` — List Trello checklists on a card.
 - `list_card_comments` — List comment actions on a Trello card.
 - `list_member_boards` — List Trello boards visible to a member.

@@ -1,22 +1,22 @@
 ---
 name: oo-uberllm
-description: "UberLLM (uberllm.dev). Use this skill for ANY UberLLM request — searching and reading data. Whenever a task involves UberLLM, use this skill instead of calling the API directly."
+description: "MartLLM (martllm.com). Use this skill for ANY MartLLM request — searching and reading data. Whenever a task involves MartLLM, use this skill instead of calling the API directly."
 allowed-tools: [Bash(oo *)]
 metadata:
-  title: "UberLLM"
+  title: "MartLLM"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["uberllm"]
   icon: "https://static.oomol.com/logo/third-party/uberllm.svg"
 ---
 
-# UberLLM
+# MartLLM
 
-Operate **UberLLM** through your OOMOL-connected account. This skill calls the `uberllm` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
+Operate **MartLLM** through your OOMOL-connected account. This skill calls the `uberllm` connector with the [oo CLI](https://github.com/oomol-lab/oo-cli); OOMOL injects credentials server-side, so you never handle raw tokens.
 
 ## Running an action
 
-Assume the user has already installed the oo CLI, signed in, and connected UberLLM. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
+Assume the user has already installed the oo CLI, signed in, and connected MartLLM. **Do not run `oo auth login` or open the connection URL proactively — just run the action.** Fall back to [First-time setup](#first-time-setup) only when a command actually fails with an auth or connection error.
 
 **1. Inspect the contract** to get the authoritative input/output schema before building a payload:
 
@@ -37,13 +37,13 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `create_chat_completion` — Generate a UberLLM chat completion through the OpenAI-compatible endpoint. This is a billed, non-streaming inference request.
-- `list_models` — List the model IDs UberLLM serves, with model metadata, without running inference.
+- `create_chat_completion` — Generate a MartLLM chat completion through the OpenAI-compatible endpoint. This is a billed, non-streaming inference request.
+- `list_models` — List the model IDs MartLLM serves, with model metadata, without running inference.
 
 ## Safety
 
 - Untagged actions are reads (get / list / search) — safe to run directly.
-- **Actions tagged `[write]` change UberLLM state — confirm the exact payload and effect with the user before running.**
+- **Actions tagged `[write]` change MartLLM state — confirm the exact payload and effect with the user before running.**
 - **Actions tagged `[destructive]` remove or overwrite data — always confirm the target and get explicit approval first.**
 
 ## First-time setup
@@ -66,7 +66,7 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
   oo auth login
   ```
 
-- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — UberLLM is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
+- **`scope_missing` / `credential_expired` / `app_not_ready` / `app_not_found`** — MartLLM is not connected, or the connection expired or lacks a scope. Connect once (auth type: API key) at:
 
   ```text
   https://console.oomol.com/connections/uberllm
@@ -78,5 +78,5 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 
 ## Resources
 
-- UberLLM homepage: https://uberllm.dev
-- API documentation: https://uberllm.dev/docs/quickstart
+- MartLLM homepage: https://martllm.com
+- API documentation: https://martllm.com/docs/quickstart

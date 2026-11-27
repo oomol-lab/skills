@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "OOMOL Fusion API"
   author: "OOMOL"
-  version: "1.0.12"
+  version: "1.0.13"
   services: ["fusion-api"]
   icon: "https://static.oomol.com/logo/logo.png"
 ---
@@ -42,7 +42,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `doubao_stt_result` — Get doubao-stt task result
 - `doubao_stt_state` — Get doubao-stt task state
 - `doubao_stt_submit` — Convert speech to text with Doubao [write]
-- `doubao_text_to_image_seedream_generate` — Generate, edit or decompose images with Seedream Pro or Flash [write]
+- `doubao_text_to_image_seedream_generate` — Generate, edit or decompose images with Seedream 5.5, Pro or Flash [write]
 - `doubao_tts_result` — Get doubao-tts task result
 - `doubao_tts_state` — Get doubao-tts task state
 - `doubao_tts_submit` — Convert text to speech with Doubao [write]
