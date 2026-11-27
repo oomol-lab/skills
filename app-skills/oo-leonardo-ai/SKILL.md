@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Leonardo.Ai"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["leonardo_ai"]
   icon: "https://static.oomol.com/logo/third-party/leonardo_ai.png"
 ---
@@ -40,6 +40,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `create_generation` — Create a Leonardo.Ai image, video, audio, or 3D generation job using JSON model parameters. [write]
 - `get_generation` — Retrieve a Leonardo.Ai generation job status and normalized generated image URLs.
 - `list_models` — List Leonardo.Ai production API models and their model-specific parameter schemas.
+- `remove_background` — Remove an image background synchronously with Leonardo.Ai. Returns image URLs or Base64 without polling; moderated outputs may be empty. Requires a Leonardo API key. [write]
 
 ## Safety
 

@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Kling AI"
   author: "OOMOL"
-  version: "1.0.4"
+  version: "1.0.5"
   services: ["kling"]
   icon: "https://static.oomol.com/logo/third-party/kling.svg"
 ---
@@ -38,7 +38,7 @@ Each action is listed below with a one-line description; actions that change sta
 ## Available actions
 
 - `get_video_generation` — Retrieve a Kling AI task state and its generated video when available.
-- `submit_video_generation` — Submit an asynchronous Kling AI V3 video generation task. [write]
+- `submit_video_generation` — Submit an asynchronous Kling AI video generation task. [write]
 
 ## Safety
 

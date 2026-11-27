@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Cloudflare"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["cloudflare"]
   icon: "https://static.oomol.com/logo/third-party/cloudflare.svg"
 ---
@@ -41,6 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `attach_worker_domain` — Attach a custom domain to a Worker service. [write]
 - `cancel_build` — Cancel a queued or running Workers Builds job. [destructive]
 - `create_bucket` — Create an R2 bucket in a Cloudflare account. [write]
+- `create_d1_database` — Create a D1 database. [write]
 - `create_dns_record` — Create a DNS record inside a Cloudflare zone. [write]
 - `create_event_notification_rules` — Add event notification rules that send R2 bucket events to a Cloudflare Queue. [write]
 - `create_kv_namespace` — Create a Workers KV namespace for application data. [write]
@@ -55,6 +56,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `delete_bucket` — Delete an R2 bucket by name. [destructive]
 - `delete_bucket_cors_policy` — Delete the bucket-level CORS policy for an R2 bucket. [destructive]
 - `delete_custom_domain` — Detach a custom domain from an R2 bucket. [destructive]
+- `delete_d1_database` — Delete a D1 database. [destructive]
 - `delete_dns_record` — Delete one DNS record from a Cloudflare zone. [destructive]
 - `delete_event_notification_rules` — Delete event notification rules bound to one queue. Deletes every rule for the queue when ruleIds is omitted. [destructive]
 - `delete_kv_namespace` — Delete a Workers KV namespace and all its keys. [destructive]
@@ -87,6 +89,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_build` — Get the current status and outcome of one Workers Builds job.
 - `get_build_logs` — Get one page of log lines for a Workers Builds job.
 - `get_custom_domain` — Get the settings of one custom domain attached to an R2 bucket.
+- `get_d1_database` — Read D1 database settings and metadata.
 - `get_dns_record` — Get one DNS record from a Cloudflare zone.
 - `get_event_notification_rules` — Get the event notification rules that send R2 bucket events to one queue.
 - `get_html_content` — Render a URL or raw HTML with Cloudflare Browser Run and return the fully rendered HTML content.
@@ -112,6 +115,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_build_triggers` — List Workers Builds triggers configured for one Worker script tag.
 - `list_builds` — List Workers Builds jobs for one Worker script tag.
 - `list_custom_domains` — List the custom domains attached to an R2 bucket.
+- `list_d1_databases` — List D1 databases in an account.
 - `list_destination_addresses` — List Cloudflare Email Routing destination addresses and their verification status.
 - `list_dns_records` — List DNS records inside one Cloudflare zone.
 - `list_event_notification_rules` — List every event notification rule of an R2 bucket grouped by target queue.
@@ -133,6 +137,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `put_object` — Upload one R2 object from a public URL, plain text, or base64-encoded content. [destructive]
 - `put_worker_script_content` — Replace only the content of a Cloudflare Worker script without changing metadata. [write]
 - `put_worker_script_secret` — Add or replace a secret_text binding on a Cloudflare Worker script. [write]
+- `query_d1_database` — Execute an ordered batch of one or more SQL statements on D1. [destructive]
 - `rename_kv_namespace` — Rename a Workers KV namespace. [write]
 - `rollback_pages_deployment` — Roll back a Pages project to a previous production deployment. [write]
 - `scrape_elements` — Render a URL or raw HTML with Cloudflare Browser Run and scrape selected HTML elements.
@@ -143,6 +148,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `update_bucket_local_uploads` — Enable or disable local uploads for an R2 bucket. [destructive]
 - `update_bucket_lock` — Replace the object lock rules of an R2 bucket with the given rule set. [destructive]
 - `update_custom_domain` — Update the public access, TLS version, or cipher settings of a custom domain. [write]
+- `update_d1_database` — Configure read replication for a D1 database. [write]
 - `update_dns_record` — Patch one DNS record inside a Cloudflare zone. [write]
 - `update_managed_domain` — Enable or disable public access to an R2 bucket through its r2.dev domain. [destructive]
 - `update_pages_project` — Update Pages project configuration using official API fields, including deployment_configs for environment variables and bindings. [write]

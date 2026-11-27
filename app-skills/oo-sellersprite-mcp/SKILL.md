@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "SellerSprite MCP"
   author: "OOMOL"
-  version: "1.0.5"
+  version: "1.0.6"
   services: ["sellersprite_mcp"]
   icon: "https://static.oomol.com/logo/third-party/sellersprite_mcp.svg"
 ---
@@ -37,53 +37,36 @@ Each action is listed below with a one-line description; actions that change sta
 
 ## Available actions
 
-- `aba_research_monthly` — Research monthly Amazon Brand Analytics keywords using rank, search, click, conversion, and market-pattern filters.
-- `aba_research_trend` — Retrieve weekly or monthly Amazon Brand Analytics trend data for one keyword.
-- `aba_research_weekly` — Research weekly Amazon Brand Analytics keywords using rank, search, click, conversion, and market-pattern filters.
-- `asin_competitor` — Retrieve competing products identified for one Amazon ASIN.
-- `asin_coupon_trend` — Retrieve the historical coupon trend for one Amazon ASIN.
-- `asin_detail` — Retrieve SellerSprite product, sales, ranking, price, review, and seller data for one Amazon ASIN.
-- `asin_detail_with_coupon_trend` — Retrieve ASIN details together with the product's historical coupon trend.
-- `asin_prediction` — Retrieve SellerSprite sales predictions for one Amazon ASIN.
-- `asin_sales_trend` — Retrieve the historical sales trend for one Amazon ASIN.
-- `bsr_prediction` — Estimate Amazon product sales from a Best Sellers Rank and top-level category.
+- `ads.insights.lookup` — Look up SP advertising campaigns, ad groups and activity for an ASIN.
+- `asin.content.list` — Read product bullet points and main images.
+- `asin.coreKeyword.trend` — Read monthly search-volume trends for an ASIN’s leading traffic keywords.
+- `asin.detail` — Read product details for up to 20 ASINs.
+- `asin.list` — Find Amazon products by keyword, category, brand, sales and price.
+- `asin.prediction.sales` — Read recent daily sales and BSR estimates for an ASIN.
+- `asin.related.list` — Find products linked through purchases, browsing and advertising.
+- `asin.review.list` — Read up to 100 product reviews with rating, media and SKU filters.
+- `asin.review.list.extended` — Read up to 500 product reviews. Extended retrieval may take about two minutes.
+- `asin.sales.trend` — Compare monthly parent and child ASIN sales, revenue and rank trends.
+- `bsr.prediction.sales` — Estimate daily and monthly sales from a category and BSR rank.
 - `call_tool` — Call a current SellerSprite MCP tool with JSON arguments after inspecting its live schema and behavior annotations with list_tools. [write]
-- `competitor_lookup` — Find competing Amazon products by marketplace, category, brand, seller, ASIN, keyword, and product filters.
-- `google_trend` — Retrieve Google Trends interest data for an Amazon marketplace keyword.
-- `keepa_info` — Retrieve SellerSprite's Keepa-style historical product trend data for one Amazon ASIN.
-- `keyword_conversion` — Analyze Amazon keyword search, click, purchase, conversion, advertising, price, and budget performance.
-- `keyword_miner` — Discover related Amazon keywords using search volume, purchase, competition, relevancy, PPC, price, and review filters.
-- `keyword_order` — Reverse-search the weekly or monthly Amazon keywords that generated orders for selected ASINs.
-- `keyword_research` — Research Amazon keywords using search, purchase, competition, price, review, growth, PPC, and demand filters.
-- `keyword_research_trends` — Retrieve the historical SellerSprite trend for one Amazon keyword.
+- `category.ai.feature.list` — Explore AI-extracted product attributes for a category.
+- `category.demand.report` — Read category demand, search and purchase trends from Amazon Product Opportunity Explorer.
+- `category.demand.trend` — Explore category keyword demand and 24-month search trends.
+- `category.report.detail` — Read a category’s market report for the last 30 days or 24 months.
+- `category.search` — Find Amazon categories and their node paths.
+- `category.stats.list` — Filter and compare categories by market size, growth and competition.
+- `category.top.list` — Rank leading products, brands or sellers within a category.
+- `category.trend` — Compare category distributions by sales, price, ratings, listing age and sellers.
+- `keepa.trend` — Read historical prices, rankings, ratings and coupon data.
+- `keyword.aba.list` — Search ABA keyword rankings or look up rankings by ASIN.
+- `keyword.aba.trend` — Read ABA rank, search volume and top-three click and conversion share trends.
+- `keyword.asin.list` — Find traffic keywords for up to 10 ASINs and compare their traffic shares.
+- `keyword.batch.info` — Compare search and purchase metrics for up to 20 keywords.
+- `keyword.conversion.analysis` — Analyze keyword advertising clicks, conversions, ACOS and CPA.
+- `keyword.google.trend` — Read Google Trends interest for a keyword on Web or Shopping.
+- `keyword.related.list` — Expand a seed keyword and compare demand, competition and PPC bids.
+- `keyword.trend` — Read keyword search volume, purchase volume and conversion trends.
 - `list_tools` — Discover the current SellerSprite Amazon research and market-data MCP tools with their live input schemas and behavior annotations.
-- `market_brand_concentration` — Retrieve brand concentration for one Amazon category market.
-- `market_ebc_distribution` — Retrieve the A+ content and video distribution for one Amazon category market.
-- `market_listing_date_distribution` — Retrieve the listing-age distribution for one Amazon category market.
-- `market_listing_trend_distribution` — Retrieve Amazon market listing-trend distribution data using the supplied optional market filters.
-- `market_price_distribution` — Retrieve the price distribution for one Amazon category market.
-- `market_product_concentration` — Retrieve product concentration for one Amazon category market.
-- `market_product_demand_trend` — Retrieve the product-demand trend for one Amazon category market.
-- `market_rating_distribution` — Retrieve the star-rating distribution for one Amazon category market.
-- `market_ratings_count_distribution` — Retrieve the review-count distribution for one Amazon category market.
-- `market_research` — Research Amazon categories and market segments using demand, competition, concentration, fulfillment, seller, and new-product filters.
-- `market_research_statistics` — Retrieve summary statistics for one Amazon category market.
-- `market_seller_concentration` — Retrieve seller concentration for one Amazon category market.
-- `market_seller_country_distribution` — Retrieve the seller-country distribution for one Amazon category market.
-- `market_seller_type_concentration` — Retrieve the fulfillment and seller-type distribution for one Amazon category market.
-- `product_node` — Find Amazon category nodes by marketplace, category path, keyword, or historical month.
-- `product_research` — Research Amazon products using sales, revenue, price, ranking, review, fulfillment, brand, seller, and category filters.
-- `review` — Retrieve Amazon reviews for one ASIN with optional star-rating and review-type filters.
-- `trademark_country_list` — Retrieve the countries and trademark offices covered by SellerSprite's global trademark database.
-- `trademark_detail` — Retrieve one global trademark record by trademark office and SellerSprite brand ID.
-- `trademark_list` — Search SellerSprite's global trademark records by text, office, brand, status, applicant, class, and year filters.
-- `trademark_stats` — Retrieve aggregate global trademark statistics for search text and selected trademark offices.
-- `traffic_extend` — Expand the traffic keywords shared by a set of Amazon ASINs using search, purchase, competition, and conversion filters.
-- `traffic_keyword` — Retrieve the search and conversion keywords that drive traffic to one Amazon ASIN.
-- `traffic_keyword_stat` — Retrieve aggregate traffic-keyword statistics for one Amazon ASIN.
-- `traffic_listing` — Retrieve Amazon listings related to selected ASINs by the requested traffic relationship types.
-- `traffic_listing_stat` — Retrieve aggregate related-listing traffic statistics for selected Amazon ASINs.
-- `traffic_source` — Trace Amazon keyword traffic from a query to the listings receiving that traffic.
 
 ## Safety
 
@@ -124,4 +107,4 @@ These are **one-time** steps — do not repeat them on every call. Run a step on
 ## Resources
 
 - SellerSprite MCP homepage: https://open.sellersprite.com/mcp
-- API documentation: https://open.sellersprite.com/mcp/16
+- API documentation: https://www.sellersprite.com/v3/knowledge/feature/MCP-V1-V2-Migration-Guide

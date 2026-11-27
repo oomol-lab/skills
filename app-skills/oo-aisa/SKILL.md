@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "AIsa"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["aisa"]
   icon: "https://static.oomol.com/logo/third-party/aisa.svg"
 ---
@@ -694,9 +694,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_surf_wallet_labels` — Get public entity names, types, and label confidence for up to 100 wallet addresses.
 - `get_temu_listing` — Retrieve Temu product attributes, ratings, price ranges, supply prices, inventory, hosting mode, sales metrics, and SKU variants. Supply prices use CNY; other amounts use marketplace currency.
 - `get_tiktok_shop_category_trends` — Retrieve TikTok Shop category trends using IDs from category discovery. Pages contain up to 10 rows; business-assumed category mappings remain unverified.
-- `get_tiktok_shop_creator` — Retrieve a TikTok Shop creator profile and available audience, engagement, and commerce metrics, preserving reporting windows.
-- `get_tiktok_shop_creator_rankings` — Rank TikTok Shop creators by seven-day GMV in descending order. The window and ordering are fixed; at most five pages, with GMV in marketplace currency.
+- `get_tiktok_shop_creator` — Retrieve a creator by numeric ID or @handle. For numeric IDs select creator.contact fields for public contacts or commerce fields for 30-day metrics; enrichment may incur additional charges.
+- `get_tiktok_shop_creator_performance` — Retrieve creator sales performance for the selected period, optionally scoped to a category or shop. GMV uses marketplace currency.
+- `get_tiktok_shop_creator_rankings` — Rank creators by the selected metric and period. Defaults to seven-day GMV in descending order.
 - `get_tiktok_shop_creator_trends` — Retrieve daily TikTok Shop creator metrics, with up to 10 rows per page. A full page can be followed by an empty final page.
+- `get_tiktok_shop_creators_batch` — Retrieve up to ten creator profiles in input order. Select public contact or 30-day commerce fields for optional paid enrichment.
 - `get_tiktok_shop_listing` — Retrieve TikTok Shop product attributes, variants, and offers from mapped sources. EchoTik is primary; category mappings retain verification evidence.
 - `get_tiktok_shop_listing_rankings` — Retrieve TikTok Shop product rankings for 7 or 30 days, optionally filtered by category. Uses source ordering and at most five pages; GMV is in marketplace currency.
 - `get_tiktok_shop_listing_trends` — Retrieve reported TikTok Shop product snapshots without interpolation. GMV is USD; source timezone and country verification limitations remain in provenance.
@@ -896,8 +898,11 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_surf_wallet_transfers` — Inspect a public wallet's ERC-20 or SPL token transfers by direction and token. EVM and Tron indexing refreshes daily; Solana uses a separate source. This is token transfer history, not arbitrary transaction history.
 - `list_surf_yield_pools` — Rank individual DeFi yield pools by APY or TVL. APY ranking includes only pools with TVL of at least USD 100,000.
 - `list_temu_categories` — Browse Temu root categories or direct children. The category tree is shared across marketplaces and names are Chinese; all matching children are returned without pagination.
+- `list_tiktok_shop_creator_listings` — List products promoted by a creator in the selected period, optionally scoped to a shop.
 - `list_tiktok_shop_creator_videos` — Retrieve TikTok Shop videos associated with a creator, optionally filtered by product. Sources can repeat videos across pages; results are not deduplicated.
+- `list_tiktok_shop_listing_creators` — Find creators promoting a product. In Malaysia, omit period for EchoTik or specify it for Kalodata.
 - `list_tiktok_shop_listing_videos` — Retrieve TikTok Shop videos associated with a product, optionally filtered by creator and publication dates.
+- `list_tiktok_shop_shop_creators` — List creators associated with a shop and their attributed sales in the selected period.
 - `list_tiktok_shop_shop_listings` — Retrieve products associated with a TikTok Shop shop. Returns product-list source fields without fetching every listing in full.
 - `list_twelvedata_etfs` — Discover Twelve Data ETF symbols by country and exchange before requesting fund or market data. The current AISA route only returns JSON; additional supplier metadata is preserved.
 - `list_twelvedata_exchanges` — Find Twelve Data exchange codes, names and timezones, optionally restricted to an ISO country. These supplier identifiers support exchange-specific instrument queries and are not interchangeable with EODHD suffixes.
@@ -1088,6 +1093,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `search_temu_listings` — Search Temu product titles or browse by category and sort order. Results cover at most the first 10,000 source records; displayed prices use marketplace currency.
 - `search_temu_shops` — Search Temu shops by name or category, returning ratings, counts, followers, sales, estimated GMV, average order value, hosting mode, and opening dates.
 - `search_tiktok_shop_categories` — Search or browse the global TikTok Shop category dictionary, with 100 results per page. Country scopes keys and does not prove local sales; retain mapping evidence.
+- `search_tiktok_shop_creators` — Search TikTok Shop creators by marketplace, audience, sales or relationship. US gender, language, engagement rate, average video views, showcase and sales channel filters select EchoTik and cannot be mixed with Kalodata-only filters.
 - `search_tiktok_shop_listings` — Search TikTok Shop products by keyword or browse with range filters. Keyword search returns up to 30 matches without subsequent pages, range filters, or sort direction.
 - `search_tiktok_shop_listings_by_image` — Find TikTok Shop products from a JPEG or PNG image. Returns image-search fields without fetching every product in full.
 - `search_tiktok_shop_livestreams` — Discover TikTok Shop livestream sessions by creator, status, and session metrics. These are session records, not an official daily, weekly, or monthly leaderboard.

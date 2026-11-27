@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Jira"
   author: "OOMOL"
-  version: "1.0.6"
+  version: "1.0.7"
   services: ["jira"]
   icon: "https://static.oomol.com/logo/third-party/Jira.svg"
 ---
@@ -39,11 +39,13 @@ Each action is listed below with a one-line description; actions that change sta
 
 - `add_comment` — Add a comment to one Jira issue. [write]
 - `create_issue` — Create a Jira issue and return the normalized issue detail. [write]
+- `download_attachment` — Download a Jira attachment and upload it to Connector file transit storage for downstream processing.
 - `get_issue` — Get one Jira issue by issue ID or key.
 - `get_project` — Get one Jira project by project ID or key.
 - `list_issue_comments` — List comments for one Jira issue.
 - `list_projects` — List Jira projects available to the connected Jira site.
 - `search_issues` — Search Jira issues with JQL on the connected Jira site.
+- `upload_attachment` — Upload a file attachment from a public URL to one Jira issue. [write]
 
 ## Safety
 

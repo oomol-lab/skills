@@ -5,7 +5,7 @@ allowed-tools: [Bash(oo *)]
 metadata:
   title: "Garmin Connect"
   author: "OOMOL"
-  version: "1.0.0"
+  version: "1.0.1"
   services: ["garmin_connect"]
   icon: "https://static.oomol.com/logo/third-party/garmin_connect.svg"
 ---
@@ -41,6 +41,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `get_fitness_age` — Get the latest Garmin fitness age calculated on or before a date: the fitness age, the best fitness age within reach, the user's age when it was calculated, and the inputs it is based on (vigorous activity, resting heart rate, and BMI or body fat), each with its current value and, where Garmin sets one, a target.
 - `get_heart_rate` — Get one day of heart rate: resting, minimum and maximum heart rate and the readings through the day.
 - `get_heart_rate_zones` — Get the user's heart rate zones: the default zones and any sport-specific zones, with the method and the resting, maximum and threshold heart rates they are built on.
+- `get_hrv` — Get one night of heart rate variability in detail: the summary that list_hrv_summaries returns plus the HRV readings taken every five minutes during sleep. The night is the one ending on the date. A night can have a summary but no readings when Garmin recorded no sleep window for it.
 - `get_sleep` — Get one night of sleep in detail: duration, sleep stages, sleep scores, overnight SpO2, respiration and stress, and Garmin's sleep need estimate.
 - `get_user_settings` — Get the Garmin Connect display name, time zone, locale and measurement units of the user. Use the time zone to read the local times that other actions return.
 - `list_activities` — List the user's recorded activities, newest first by default, with optional date, type and text filters. Each item is a summary; use get_activity for the full detail of one activity.
@@ -51,6 +52,7 @@ Each action is listed below with a one-line description; actions that change sta
 - `list_sleep_summaries` — List sleep summaries for a range of nights: duration, sleep stages and sleep need. The range may span at most 31 days; use get_sleep for the sleep scores of one night.
 - `list_vo2_max` — List the user's VO2 max estimates for a range of days: the general estimate and the cycling and rowing estimates, each with the sport of the activity it came from. Garmin lists only days that have an estimate. The range may span at most 366 days.
 - `list_weight` — List weigh-ins for a range of days with body composition from a smart scale, the range average, and the nearest weigh-ins before and after the range. Weights are in grams.
+- `list_wellness_activities` — List the user's wellness activities for a range of days, such as Health Snapshot sessions, with a summary of each measurement taken (heart rate, stress, respiration, heart rate variability and, when recorded, pulse oximetry) and the time spent in each heart rate zone.
 
 ## Safety
 
